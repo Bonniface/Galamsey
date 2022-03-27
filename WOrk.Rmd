@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "Galamsey Detection"
 output: html_document
 date: '2022-03-24'
 ---
@@ -9,12 +9,6 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-`
 ```{r}
 #' rgee: Image preprocessing SENTINEL2
 #' @author Kalong Boniface
@@ -36,21 +30,9 @@ ee_Initialize(drive = TRUE)
 ```{r}
 ee_Initialize(drive = TRUE, gcs = TRUE)
 
-project_id <- ee_get_earthengine_path() %>% 
-  list.files(., "/home/boniface/Desktop/Git/Dashboard/Data/rgee-345404-0c9bbc4ed65b.json", full.names = TRUE) %>% 
-  jsonlite::read_json() %>% 
-  '$'(project_id) # Get the Project ID
-
-googleCloudStorageR::gcs_create_bucket("Earth O", projectId = project_id)
-
-
 ```
 
-
-
 # /Loading and Filtering SENTINEL 1 Collection
-
-
 
 ```{r}
 Map$setCenter(-2.063,6.088,12)
