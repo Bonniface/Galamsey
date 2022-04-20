@@ -1,0 +1,63 @@
+---
+title: "Classification and Quantifying Of Change In Land Use With Time Series In Ghana"
+author: "Kalong Boniface 
+         "
+date: '`r Sys.Date()`'
+output: pdf_document
+toc: true
+toc_depth: 2
+number_sections: true
+fig_width: 7
+fig_height: 6
+fig_caption: true
+df_print: kable
+fontsize: 12pt
+
+template: quarterly-report.tex
+header-includes:
+  - \setmainfont{Times New Roman}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+\newpage
+##  Time Series Model
+#  Overview
+The purpose of this research is to establish a foundation for time series analysis on remotely sensed data  to understand the rates, causes, and consequences of changes in land, and the vulnerability and resilience of the Earth system to such changes. We will be introduced to the fundamentals of time series modeling, including decomposition, autocorrelation, modeling historical changes and classification of these changes in Ghana. At the completion of this project work, you will be able to build an explanatory model for temporal data which can be used in many different avenues of research.
+
+# Background
+One of the paradigm changing features of Earth Engine is the ability to access decades of imagery without the previous limitation of needing to download, organize, store and process this information. For instance, within the Satellite  image collection we can access imagery back to 1972, allowing us to look at an area to visualize and quantify how much it's changed over time. With Earth Engine, Google maintains the data and offers it's computing power for processing - users can access tens or hundreds of time-sequenced images and quantify change across decades using GIS() and R or other programming language to analyze  these datasets
+
+# Introduction
+Time series data is the collection of observations made sequentially at different points in time. This is opposed to cross-sectional data which observes individuals, companies, etc. at a single point in time.
+Because data points in time series are collected at adjacent time periods there is potential for correlation between observations. This is one of the features that distinguishes time series data from cross-sectional data.
+we propose some new tools to allow machine learning classifiers to cope with time series data. We first argue that, time-series classification problems can be solved by detecting and combining local properties or patterns in time series. Then, a technique is proposed to find patterns which are useful for classification. These patterns are combined to build interpretable classification rules. Experiments, carried out on several artificial and real problems, highlight the interest of the approach both in terms of interpretable and accuracy of the induced classifiers.
+
+\section{"Limitations in remote sensing time series"}
+Time series modeling aims to build an explanatory model of the data without over fitting the problem set, to use as simple a model as possible while accounting for as much of the data as possible. When breaking down time series data into component parts, remote sensing data has additional limitations that make this more challenging. It is almost inevitable that you will not get this same level of precision from remote sensing data. Landsat-8 has 16-day temporal resolution, but depending on the area, removing cloudy pixels will remove a significant portion. In a test area in the Galapagos Islands, over 85% of the data was removed due to cloud masking or atmospheric conditions. Issues such as the  Landsat 7 Scan Line Corrector malfunction  might prevent a cohesive time series datasets depending on your time period of research. Also,  with remote sensing we often run into situations where the magnitude of measurement changes. If we are researching winter crop yield and an image is collected right after a heavy snowfall, how do we compare this value? Do we keep this data or remove it? Additionally, atmospheric conditions can skew the visual results, where the hue of the vegetation changes drastically from image to image due to atmospheric conditions (fog, ground moisture, cloud cover).
+# Methods And Datasets
+Time series data in Earth Engine are represented as a series of images called 'Image Collections
+ As a result of the complicating factors in remote sensing discussed earlier,
+analyzing time series in Earth Engine is unlike time series modeling in traditional methods. From a programming sense, we will join data together to define temporal relationships between collection items and build functions to reduce this time.\
+First, some very basic mathematical notation for time series. A time series is an array of the value being measured, sorted chronologically:\
+$\ p_{t} = t_{0}+ t_{1} + ...+ t_{N} $, where each is the given value in the series.
+# Data Preparation and Processing
+The first step in analysis of time series data is to import data of interest and plot the data around our region of interest, a deciduous forest around Southern part of Ghana.
+We'll use the Normalized Difference Vegetation Index (NDVI) as our time series signal. It is a well-known metric for measuring vegetation
+productivity—for this region of interest, we expect there to be strong seasonality, and perhaps a gradual linear trend over time. In the code
+block below, we create a function called addVariables that extracts the date of each image, calculates NDVI and adds it to an array. We can then use .map() to apply the functions we defined to build a time series model of our data.
+# Linear modeling of time
+Lots of interesting analyses can be done to time series by harnessing the linearRegression() reducer. To estimate linear trends over time, consider the following
+linear model, where Et is a random error:
+This is the model behind the trendline added to the chart you just created. We can use this model to detrend our data (explain the upward
+or downward movement of the data by subtracting observed values from the fitted model values). For now, the goal is to discover the values of the beta coefficients.
+To fit this trend model to the Landsat-based NDVI series using Ordinary Least Squares (OLS), use the linearRegression() reducer:
+Maximum Likelihood Classification and Optimization
+The supervised classification using the established Maximum Likelihood classifier was
+transformed to a python code using the scripting extension provided by QGIS. With this extension, it is possible to execute all software tools from a programming environment. Next, we implemented an innovative script logic to determine the raster band combination that results in the highest accuracy of the LULC classification, which likewise indicates that this band combination is suited best for the respective classification. Basically, the whole process was repetitively executed with stepwise addition of the input bands, until the highest accuracy was reached or all input bands were used. 
+The script logic in pseudo-code is as follows:
+    1. Classify and validate all input  bands individually.
+    2. Choose the one which results in the classification with the highest accuracy.
+    3. Combine this/these band(s) of the final stack successively with those bands that are not in the final stack. Add the band whose combination resulted in the highest accuracy-increase into the final stack.
+    4. Repeat step 3 until the accuracy does not increase any more or all bands are used.
