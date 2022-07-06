@@ -1,18 +1,13 @@
 ---
 title: "Galamsey Detection"
+author: "Kalong Boniface"
 output: html_document
 date: '2022-03-24'
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE,message=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-```
 
-## R Markdown
-```{r}
-#' rgee: Image preprocessing SENTINEL2
-#' @author Kalong Boniface
-#' 
 library(reticulate)
 library(cptcity)
 library(raster)
@@ -32,7 +27,7 @@ ee_Initialize(drive = TRUE, gcs = TRUE)
 
 ```
 
-# /Loading and Filtering SENTINEL 1 Collection
+# Loading and Filtering SENTINEL 1 Collection
 
 ```{r}
 Map$setCenter(-2.063,6.088,12)

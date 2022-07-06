@@ -1,0 +1,472 @@
+---
+title: "ENSC-520 rgee Case Study"
+author: "Anthony Holmes"
+date: "`r Sys.Date()`"
+output: html_notebook
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(cache = TRUE)
+```
+
+# Time Series Analysis of Satellite Derived Vegetation Indices in R: A Case Study in Clackamas County, OR
+
+[![](71569603-3341d680-2ac8-11ea-8787-4dd1fbba326f.png)](https://csaybar.github.io/blog/20%2020/06/15/rgee_02_io/)
+
+## **Case Study Learning Objectives:**
+
+1.  Gain familiarity with R Markdown, Reticulate and the R Spatial Ecosystem
+
+2.  Process satellite imagery using the Google Earth Engine API
+
+3.  Perform time series analysis on satellite derived vegetation indices
+
+4.  Create an interactive web map
+
+## **Introduction:**
+
+Land degradation is a pressing environmental concern, as more land is cleared for agriculture or developed. According to the UN, habitat loss and deterioration have already reduced global terrestrial habitat by 30% and land degradation has reduced productivity by 23% of the global terrestrial area^1^. Vegetation Indices such as NDVI and EVI serve as a functional proxy for plant photosynthetic activity, this is because chlorophyll absorbs visible light in the 0.4 to 0.7 µm range while strongly reflecting near-infrared light in the 0.7 to 1.1 µm range, the more/greater area of leaves a plant has, the greater the signal of reflected infrared light. NDVI is calculated from the visible and rear infrared light hitting vegetation, healthy vegetation absorbs more visible light and reflects a large portion of light near-infrared part of the spectrum while unhealthy or sparse vegetation does the opposite. The absorption and reflection of photosynthetically active radiation over time can be used to gauge the health of vegetation in a given area. The Enhanced Vegetation Index is similar in many ways to NDVI with the added feature that it corrects for atmospheric distortions and does not become saturated as easily in areas with dense vegetation^3^.
+
+For this case study, we will be extracting vegetation index values from MODIS imagery for the years 2000-2019 using Google Earth Engine in R Markdown! Creating a hex-grid over Clackamas County (or any other county) we can take the mean EVI value for each year and then perform time series analysis on the resulting grid values, we can then extract the trend for each cell and analyze it spatially.
+
+## **Case Study Backgrounders:**
+
+1.  [r-spatial.github.io/rgee/](https://r-spatial.github.io/rgee/){.uri}
+
+    Unlike the Python or Java interface to GEE, R is not 'native' rgee is a bindings package for Google Earth Engine (GEE) which wraps the [Earth Engine Python API](https://github.com/google/earthengine-api) using [reticulate](https://rstudio.github.io/reticulate/), this package allows seamless interoperability between R and Python, GEE requests created in R are converted to Python syntax and fed into Earth Engine's Python API which transforms the request to JSON format and delivers it to GEE's Web REST API. So why go through all the trouble? Why not just use the native Java or Python interface? There are a few reasons you might want to do this, here are some:
+
+    -   If you are already familiar with R, like me, there is less of a learning curve, your knowledge of R is still valid and you can use all the tools you would use for any other type of data analysis.
+
+    -   You like the R-Studio interface.
+
+    -   R and Python are very similar, but there are some key differences between. R is built and maintained by statisticians and provides a wide array of statistical models and specialized analytics. Many users prefer the data visualization capabilities of R which was built to display the results of statistical analysis. According to IBM, "R programming is better suited for statistical learning, with unmatched libraries for data exploration and experimentation. Python is a better choice for machine learning and large-scale applications, especially for data analysis within web applications"^4^.
+
+2.  [earthengine.google.com/](https://earthengine.google.com/){.uri}
+
+    Google Earth Engine is a Multi-Petabyte catalog of remotely sensed imagery and geospatial data-sets which make it quick and easy to perform computationally intensive spatial analysis, no need to build your own server! GEE makes it possible to carry out planetary scale analyses in a matter of minutes.
+
+3.  [rstudio.github.io/reticulate/](https://rstudio.github.io/reticulate/){.uri}
+
+    Let's stop arguing about whether R or Python is better, Reticulate make's it possible to call Python functions within an R session! Even better, you can create Python code chunks in R Studio! This is demonstrated later. If you are a Python user who wants to use R, check out rpy2 \<[rpy2.github.io](rpy2.github.io)\>!
+
+4.  [bookdown.org/yihui/rmarkdown-cookbook/](https://bookdown.org/yihui/rmarkdown-cookbook/)
+
+    This is an [R Markdown](http://rmarkdown$rstudio$com) Notebook. When you execute code within the notebook, the results appear beneath the code. R Markdown also allows you to convert your analysis into high quality documents, reports, presentations, dashboards or interactive tutorials like this one.
+
+5.  [towardsdatascience.com/a-quick-introduction-to-time-series-analysis-d86e4ff5fdd](https://towardsdatascience.com/a-quick-introduction-to-time-series-analysis-d86e4ff5fdd)
+
+    If this is your first foray into time series analysis or you need a refresher, the above resource covers a lot of ground, if you want to dig deeper, I encourage you to check out the book "[Time Series Analysis: with applications in R](https://link-springer-com.ezproxy.proxy.library.oregonstate.edu/book/10.1007%2F978-0-387-75959-3)" by Jonathan D. Cryer and Kung-Sik Chan.
+
+6.  [lpdaac.usgs.gov/documents/621/MOD13_User_Guide_V61.pdf](https://lpdaac.usgs.gov/documents/621/MOD13_User_Guide_V61.pdf)
+
+    Finally, we will review the MODIS Vegetation Product Users Manual which describes the algorithms used to calculate the MODIS 16-Day 250m Surface Reflectance product, vegetation indices, quality bands, etc. According to the authors, "The MODIS VI products (MOD13) provide consistent, spatial and temporal time series comparisons of global vegetation conditions that can be used to monitor the Earth's terrestrial photosynthetic vegetation activity in support of phenology, change detection, and biophysical interpretations." View some of the other MODIS collections hosted by GEE [here](https://developers.google.com/earth-engine/datasets/catalog/modis).For this analysis, we will be using the MOD13Q1 V6 product which contains the Enhanced Vegetation Index (EVI) discussed earlier. Calculated as:
+
+    ![](Eq.PNG)
+
+    "Where NIR, Red, and Blue are the full or partially atmospheric-corrected (for Rayleigh scattering and ozone absorption) surface reflectances; L is the canopy background adjustment for correcting the nonlinear, differential NIR and red radiant transfer through a canopy; C1 and C2 are the coefficients of the aerosol resistance term (which uses the blue band to correct for aerosol influences in the red band); and G is a gain or scaling factor. The coefficients adopted for the MODIS EVI algorithm are, L=1, C1=6, C2=7.5, and G=2.5"
+
+## **Case Study Background Readings:**
+
+1.  Eckert, Hüsler, F., Liniger, H., & Hodel, E. (2015). Trend analysis of MODIS NDVI time series for detecting land degradation and regeneration in Mongolia. Journal of Arid Environments, 113, 16--28. [\<https://doi.org/10.1016/j.jaridenv.2014.09.001\>](https://doi.org/10.1016/j.jaridenv.2014.09.001){.uri}
+
+2.  Baeza, & Paruelo, J. M. (2020). Land Use/Land Cover Change (2000--2014) in the Rio de la Plata Grasslands: An Analysis Based on MODIS NDVI Time Series. Remote Sensing (Basel, Switzerland), 12(3), 381. <https://doi.org/10.3390/rs12030381>
+
+## **Case Study Assignment:**
+
+We will be implementing a method similar to the one presented by Eckert, et al. (2015) in producing a MODIS EVI trend map.
+
+-   First, we will pull MODIS EVI data from Google Earth Engine, applying a quality filter to mask poor quality pixels.
+
+-   Instead of performing our analysis on the imagery itself, we will be summarizing the mean EVI value with cells in a Hex-Grid, this will allow the analysis to take less time while producing a visually appealing and informative map.
+
+-   Some cells will not contain an EVI value for a given month, to correct this, we will apply [Kalman smoothing](https://towardsdatascience.com/state-space-model-and-kalman-filter-for-time-series-prediction-basic-structural-dynamic-linear-2421d7b49fa6#:~:text=Kalman%20filter%20algorithm%20uses%20a,on%20a%20single%20measurement%20alone.) using an ARIMA function.
+
+-   Once NA values are remove, we will decompose the time series to remove seasonality and fit a linear model to the normalized data.
+
+-   Once we have extracted the linear trend, we will join it back to the hex-grid and map it.
+
+![](Flow_Chart.PNG)
+
+### **Let's get started!**
+
+This is an R-Notebook, you can execute code by clicking the *Run* (Green arrow) button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*
+
+The first step is to set up your directory and download the necessary libraries.
+
+```{r, results=FALSE, warning=FALSE}
+if(!require("pacman")){install.packages("pacman")}
+pacman::p_load(char = c('reticulate', 'rgee', 'remotes', 'sf', 'magrittr', 'tigris', 'tibble', 'stars', 'raster', 'dplyr', 'forecast', 'stars', 'st', 'lubridate', 'imputeTS', 'leaflet', 'classInt', 'RColorBrewer', 'ggplot2', 'googledrive', 'geojsonio', 'ggpubr'), install = T, update = F, character.only = T)
+dir.create(dir <- paste0(getwd(),"/gee_rmd")) #Create project directory, you can also set this manually.
+```
+
+Now we need to set up our Python and Google Earth Engine API, if you don't already have a GEE account, make sure to sign up here: <https://earthengine.google.com/signup/>. You will be prompted to log in when you initialize your GEE session.
+
+```{r}
+options(reticulate.repl.quiet = TRUE)
+
+#Numpy is good to have too!
+reticulate::py_numpy_available(initialize = T)
+np <- reticulate::import("numpy", convert = FALSE)
+
+#Now you can use numpy in R!
+np$divide(16,4)
+```
+
+
+And now we will initialize our installation of GEE. You will reveive two pop-ups asking you to authorize the tidycensus and Google Earth Engine API's, select to allow Drive access and copy the OAuth token, paste this into your console below where prompted.
+
+```{r}
+#ee_clean_credentials() # Remove credentials if you want to change the user
+ee_Initialize(drive = TRUE) # initialize GEE, this will have you log in to Google Drive
+ee_check() # Check non-R dependencies
+#ee_clean_pyenv() # Remove reticulate system variables
+ee$String('Hello World from EE!')$getInfo()
+```
+
+Now we will download a shapefile for the boundary of Clackamas County, OR. Feel free to use any other county in the US if you're interested
+
+**Q1.** *Look at the documentation for the tigris package, what does it allow users to do?*
+
+```{r, warning=FALSE, message=FALSE}
+#cc <- tigris::counties(state = 'Oregon') %>%
+#subset(NAME == 'Clackamas')
+#cc <- st_transform(cc, st_crs(4326))
+#cc.ee <- st_bbox(cc) %>% 
+#st_as_sfc() %>% 
+#sf_as_ee() #Converts it to an Earth Engine Object
+```
+
+These functions return the QA value from MODIS imagery and apply a quality Mask, returning quality masked EVI values, this technique was adapted from one presented by Cesar Aybar (one of the rgee authors) [here](https://csaybar.github.io/blog/2020/06/15/rgee_02_io/).
+
+```{r}
+getQABits <- function(image, qa) {
+  # Convert binary (character) to decimal (little endian)
+  qa <- sum(2^(which(rev(unlist(strsplit(as.character(qa), "")) == 1))-1))
+  # Return a mask band image, giving the qa value.
+  image$bitwiseAnd(qa)$lt(1)
+}
+
+mod.clean <- function(img) {
+  # Extract the NDVI band
+  ndvi_values <- img$select("EVI")
+  # Extract the quality band
+  ndvi_qa <- img$select("SummaryQA")
+  # Select pixels to mask
+  quality_mask <- getQABits(ndvi_qa, "11")
+  # Mask pixels with value zero.
+  ndvi_values$updateMask(quality_mask)$divide(ee$Image$constant(10000)) #0.0001 is the MODIS Scale Factor
+}
+
+modis.evi <- ee$ImageCollection("MODIS/006/MOD13Q1")$filter(ee$Filter$date('2001-01-01', '2019-12-31'))$map(mod.clean)
+```
+
+Now we will create a hexagonal grid over the study area
+
+```{r}
+cc.proj <- st_transform(cc, st_crs(2992))
+hex <- st_make_grid(x = cc.proj, cellsize = 5280, square = FALSE) %>%
+st_sf() %>%
+rowid_to_column('hex_id')
+hex <- hex[cc.proj,]
+plot(hex)
+```
+
+Now we will use the grid created above to extract the mean EVI values within each cell for the years 2000-2020. The finer the spatial resolution, the longer it will take, this next chunk should take 30 minutes.
+
+**If you want to download the pre-processed data from Google Drive instead (recommended), type "no" and then Enter in the prompt that appears in your console below.**
+
+```{r, eval = FALSE}
+#This will take about 30 minutes
+if(readline(prompt = "This will take 30 minutes. Hit enter to proceed or type 'no' to download the data from G-Drive. ") == "no"){
+googledrive::drive_download(file = googledrive::as_id("https://drive.google.com/drive/folders/1jvZmBeEIRVtnuojsAI2HWbkAYU5-mxD0?usp=sharing"), overwrite = T)
+evi.df <- read.csv("clackamas_evi.csv")
+evi.df <- evi.df[,3:ncol(evi.df)]
+colnames(evi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(evi.df[, 2:ncol(evi.df)]), 2, 11), "_", "-")) #Convert dates to unambiguous format
+} else {
+#This will take about 30 minutes
+paste0(system.time(expr = cc.evi <- ee_extract(x = modis.evi, y = hex["hex_id"], sf = FALSE, scale = 250, fun = ee$Reducer$mean(), via = "drive", quiet = T))/60, " Minutes Elapsed. ")
+evi.df <- as.data.frame(cc.evi)
+colnames(evi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(evi.df[, 2:ncol(evi.df)]), 2, 11), "_", "-"))
+write.csv(x = evi.df, file = "~/clackamas_evi.csv")}
+```
+
+Now we are going to perform a time series analysis on the data within each grid cell. But first, we will work through the procedure one step at a time.
+
+```{r}
+evi.hw.lst <- list() #Create an empty list, this will be used to house the time series projections for each cell. 
+evi.dcmp.lst <- list() #Create an empty list, this will be used to house the time series decomposition for each cell.
+evi.trend <- data.frame(hex_id = evi.df$hex_id, na.cnt = NA, na.cnt.2 = NA, trend = NA, p.val = NA, r2 = NA, std.er = NA, trnd.strngth = NA, seas.strngth = NA) #This data frame will hold the trend data
+Dates <- data.frame(date = seq(as.Date('2001-01-01'), as.Date('2019-11-01'), "month"))
+Dates$month <- month(Dates$date)
+Dates$year <- year(Dates$date)
+i <- 1
+tsv <- data.frame(evi = t(evi.df[i, 2:ncol(evi.df)])) #converting the data to a transposed data frame
+colnames(tsv) <- c("evi")
+head(tsv) #let's take a look
+```
+
+As you can see, there are multiple dates in the same month, we want to create a monthly time series so will take the mean value for each month.
+
+```{r}
+na.cnt <- length(tsv[is.na(tsv)]) #We want to get an idea of the number of entries with no EVI value
+evi.trend$na.cnt[i] <- na.cnt
+td <- tsv %>% 
+  mutate(month = month(as.Date(rownames(tsv))), year = year(as.Date(rownames(tsv)))) %>% 
+  group_by(year, month) %>%
+  summarise(mean_evi = mean(evi, na.rm = T), .groups = "keep") %>%
+  as.data.frame()
+head(td)
+```
+
+That looks better! Unfortunately though, there are a number of dates which don't have any evi value at all, let's figure out which ones these are.
+
+```{r}
+td$date <- as.Date(paste0(td$year, "-", td$month, "-01"))
+dx <- Dates[!(Dates$date %in% td$date),]
+dx
+```
+
+**Q2.** *Why might NA values occur, are there more during a certain time of year, why do you think that is?*
+
+Now let's append those NA records to the data frame so we can impute them, this is necessary to perform any other time-series analysis.
+
+```{r}
+dx$mean_evi <- NA
+tdx <- rbind(td, dx) %>% 
+  arrange(date)
+na.cnt <- length(tdx[is.na(tdx)])
+evi.trend$na.cnt.2[i] <- na.cnt #add count of na values to dataframe
+rm(td, dx) #remove data we're no longer using, this is a good rule of thumb, especially when working with larger datasets.
+tdx <- ts(data = tdx$mean_evi, start = c(2001, 1), end = c(2019, 11), frequency = 12) #convert data to time series.
+plot(tdx)
+```
+
+Looks spotty... Let's fill in those values using time series imputation, we will be applying an auto arima function using the Kalman smoothing.
+
+```{r}
+tdx <- if(na.cnt > 0){imputeTS::na_kalman(tdx, model = "auto.arima", smooth = T)} else {
+    tdx
+}
+plot(tdx)
+```
+
+**Q3.** *Look at the documentation for the forecast::auto.arima function, which model summary statistic does the function use in selecting the best fit ARIMA model.*
+
+Now we're ready for time series analysis! First, we decompose the time series.
+
+```{r}
+tdx.dcp <- stl(tdx, s.window = 'periodic')
+plot(tdx.dcp)
+```
+
+**Q4.** *Describe what you see in the plot above. For example, is there a clear seasonal pattern? What is the general trend of the series? Do you notice any pattern in the remainders? Is there a seasonal pattern we might not be accounting for?*
+
+Now we remove seasonality from the time series before fitting a linear model.
+
+```{r}
+tdx.ns <- data.frame(time = c(1:length(tdx)), trend = tdx - tdx.dcp$time.series[,1])
+Tt <- trendcycle(tdx.dcp)
+St <- seasonal(tdx.dcp)
+Rt <- remainder(tdx.dcp)
+trend.summ <- summary(lm(formula = trend ~ time, data = tdx.ns)) #tslm
+plot(tdx.ns)
+abline(a = trend.summ$coefficients[1,1], b = trend.summ$coefficients[2,1], col='red')
+```
+
+**Q5.** *Why would we want to remove seasonality before fitting a model to this data?*
+
+Now we will add trend strength calculations and model summary statistics to our trend dataframe.
+
+```{r}
+evi.trend$trend[i] <- trend.summ$coefficients[2,1]
+evi.trend$trnd.strngth[i] <- round(max(0,1 - (var(Rt)/var(Tt + Rt))), 1) #Trend Strength Calculation <https://towardsdatascience.com/rainfall-time-series-analysis-and-forecasting-87a29316494e>
+evi.trend$seas.strngth[i] <- round(max(0,1 - (var(Rt)/var(St + Rt))), 1) #Seasonal Strength Calculation
+evi.trend$p.val[i] <- trend.summ$coefficients[2,4]
+evi.trend$r2[i] <- trend.summ$r.squared
+evi.trend$std.er[i] <- trend.summ$sigma
+evi.trend[i,]
+```
+
+**Q6.** *Based on the plot above and the model summary statistics, describe the trend. For example, is the trend significant? How much do EVI values change per month? Are they increasing or decreasing?*
+
+And now, for fun, let's forecast EVI values using a Holt-Winter's model.
+
+```{r}
+plot(evi.hw <- forecast::hw(y = tdx, h = 12, damped = T))
+```
+
+And for the grand finale, let's run all of the above processes for all 2,312 cells in our hex grid! This could take 50+ minutes, **if you want to skip ahead and download the data from Google Drive (recommended), type "no" and then Enter in the prompt that appears in your console below.**
+
+```{r, eval=FALSE}
+if(readline(prompt = "This could take 50+ mins. Hit enter to proceed or type 'no' to download the data from G-Drive. ") == "no"){
+googledrive::drive_download(file = googledrive::as_id("https://drive.google.com/file/d/1nEIBmVZj4FHFdlAxuU5krxFACHfvLe3z/view?usp=sharing"), overwrite = T)
+evi.trend <- read.csv("evi_trend.csv")
+} else {
+dir.create(paste0(dir,"/decomp_plots"))
+dir.create(paste0(dir,"/hw_plots"))
+for(i in 1:nrow(evi.df)){
+tsv <- data.frame(evi = t(evi.df[i, 2:ncol(evi.df)])) 
+colnames(tsv) <- c("evi")
+na.cnt <- length(tsv[is.na(tsv)])
+evi.trend$na.cnt[i] <- na.cnt
+if(na.cnt < 263){
+td <- tsv %>% 
+  mutate(month = month(as.Date(rownames(tsv))), year = year(as.Date(rownames(tsv)))) %>% 
+  group_by(year, month) %>%
+  summarise(mean_evi = mean(evi, na.rm = T), .groups = "keep") %>%
+  as.data.frame()
+td$date <- as.Date(paste0(td$year, "-", td$month, "-01"))
+dx <- Dates[!(Dates$date %in% td$date),]
+dx$mean_evi <- NA
+tdx <- rbind(td, dx) %>% 
+  arrange(date)
+na.cnt <- length(tdx[is.na(tdx)])
+evi.trend$na.cnt.2[i] <- na.cnt
+rm(td, dx)
+tdx <- ts(data = tdx$mean_evi, start = c(2001, 1), end = c(2019, 11), frequency = 12)
+tdx <- if(na.cnt > 0){imputeTS::na_kalman(tdx, model = "auto.arima", smooth = T)} else {
+    tdx
+}
+tdx.dcp <- stl(tdx, s.window = 'periodic')
+evi.dcmp[[i]] <- tdx.dcp
+png(filename = paste0(dir,"/decomp_plots/hw_", i,".png"), width = 1200, height = 650) #This will save our decomposition plots
+
+
+
+plot(tdx.dcp)
+dev.off()
+tdx.ns <- data.frame(time = c(1:length(tdx)), trend = tdx - tdx.dcp$time.series[,1])
+Tt <- trendcycle(tdx.dcp)
+St <- seasonal(tdx.dcp)
+Rt <- remainder(tdx.dcp)
+trend.summ <- summary(lm(formula = trend ~ time, data = tdx.ns)) #tslm
+evi.trend$trend[i] <- trend.summ$coefficients[2,1]
+evi.trend$trnd.strngth[i] <- round(max(0,1 - (var(Rt)/var(Tt + Rt))), 1) #Trend Strength Calculation <https://towardsdatascience.com/rainfall-time-series-analysis-and-forecasting-87a29316494e>
+evi.trend$seas.strngth[i] <- round(max(0,1 - (var(Rt)/var(St + Rt))), 1)
+#Seasonal Strength Calculation
+
+
+
+evi.trend$p.val[i] <- trend.summ$coefficients[2,4]
+evi.trend$r2[i] <- trend.summ$r.squared
+evi.trend$std.er[i] <- trend.summ$sigma
+evi.hw <- forecast::hw(y = tdx, h = 12, damped = T)
+evi.hw.lst[[i]] <- evi.hw
+png(filename = paste0(dir,"/hw_plots/hw_", i,".png"), width = 1200, height = 650)
+#This will save our projection plots
+
+
+plot(evi.hw)
+dev.off()
+rm(evi.hw, trend.summ, tdx.ns, tdx.dcp, Tt, St, Rt, tdx, na.cnt)
+gc()
+} else {
+  evi.ts[[i]] <- NA
+    }
+  }
+}
+
+head(evi.trend) #Let's take a peak
+```
+
+And plot a density plot showing the spread of trend values in Clackamas county
+
+```{r}
+ggdensity(evi.trend, x = "trend", 
+          fill = "#0073C2FF", 
+          color = "#0073C2FF",
+          add = "mean", 
+          rug = TRUE)
+```
+
+**Q7.** *What appears to be the overall trend in EVI values in the county, is it getting more or less green over time? What might be the implications of this?*
+
+Now we will join the trend data to the hex grid we created previously.
+
+```{r}
+hex_trend <- hex %>%
+  left_join(evi.trend, by = 'hex_id', keep = F) %>%
+  replace(is.na(.), 0)
+hex_trend <- st_transform(hex_trend, st_crs(4326))
+```
+
+**And create a Leaflet Web Map!**
+
+```{r}
+trend_brks <- classIntervals(hex_trend$trend, n=11, style = "fisher")
+colorscheme <- RColorBrewer::brewer.pal(n = 11, 'RdYlGn')
+palette_sds <- colorBin(colorscheme, domain = hex_trend$trend, bins=trend_brks$brks, na.color = "#ffffff", pretty = T)
+
+pop <- paste0("<b> Hex ID: </b>",hex_trend$hex_id,"<br><b>NA Count: </b>",hex_trend$na.cnt+hex_trend$na.cnt.2,"<br><b>Trend: </b>",format(round(hex_trend$trend, 4), scientific = FALSE),"<br><b> P-Value: </b>",round(hex_trend$p.val, 4),"<br><b>R2: </b>",round(hex_trend$r2, 4),"<br><b>Std Err: </b>",round(hex_trend$std.er, 4),"<br><b>Trend Strength: </b>",round(hex_trend$trnd.strngth, 2),"<br><b>Seasonal Strength: </b>",round(hex_trend$seas.strngth, 4),"<br>")
+#Here we're creating a popup for our interactive map.
+```
+
+```{r}
+map <- hex_trend %>%
+  leaflet() %>%
+  setView(-122.2207, 45.1879, 9) %>%
+  addProviderTiles("Esri.WorldTopoMap", group = "Topo Map") %>%
+  addProviderTiles("Esri.WorldImagery", group = "Imagery", 
+                   options = providerTileOptions(opacity = 0.7)) %>%
+  addPolygons(
+    fillColor = ~palette_sds(hex_trend$trend),
+    fillOpacity = hex_trend$trnd.strngth,
+    opacity = 0.5,
+    weight = 0.1,
+    color='white', 
+    group = "Hexbins", 
+    highlightOptions = highlightOptions(
+       color = "white",
+       weight = 2,
+       bringToFront = TRUE),
+       popup = pop,
+    popupOptions = popupOptions(
+       maxHeight = 250, 
+       maxWidth = 250)) %>%
+  addLegend(
+    title = "Trend: lm(EVI ~ Month)",
+    pal = palette_sds,
+    values = hex_trend$trend,
+    opacity = 0.7,
+    labFormat = labelFormat(
+      digits = 5)) %>%
+  addLayersControl(
+       baseGroups = c("Topo Map", "Imagery"),
+       overlayGroups = c("Hexbins"),
+       options = layersControlOptions(collapsed = FALSE)) %>%
+  addScaleBar(position='bottomleft')
+    
+map
+```
+
+## **Discussion Questions**
+
+1.  Turn on and off the basemap layers and Hexbins, locate grid cells with the strongest negative and positive trend values. What landcover processes might be influencing these trends? Note the big red spot in the center of our map (Hex ID: 1597), what might be responsible for the strong negative trend here? Stumped? See [here](https://www.nasa.gov/content/goddard/36-pit-fire-in-oregon/).
+
+2.  Look at some of the other datasets available on Google Earth Engine [here](https://developers.google.com/earth-engine/datasets). What other datasets would you be interested in analyzing using the methods presented in this case study? How could this type of analysis be used?
+
+## Works Cited
+
+[1]. "Forests, Desertification and Biodiversity - United Nations Sustainable Development." *United Nations*, United Nations, <https://www.un.org/sustainabledevelopment/biodiversity.>
+
+[2]. Eckert, Hüsler, F., Liniger, H., & Hodel, E. (2015). Trend analysis of MODIS NDVI time series for detecting land degradation and regeneration in Mongolia. Journal of Arid Environments, 113, 16--28. <https://doi.org/10.1016/j.jaridenv.2014.09.001>
+
+[3]. Weier, John, and David Herring. "Measuring Vegetation (Ndvi & Evi)." *NASA Earth Observatory*, NASA, 30 Aug. 2000, <https://earthobservatory.nasa.gov/features/MeasuringVegetation.>
+
+[4]. "Python vs. R: What's the Difference?" *IBM*, IBM Cloud Team, 23 Mar. 2021, <https://www.ibm.com/cloud/blog/python-vs-r.>
+
+[5]. Didan, K., Munoz, A.B. (2015). MODIS Vegetation Index User's Guide (MOD13 Series). The University of Arizona, Vegetation Index and Phenology Lab. [https://lpdaac.usgs.gov/documents/621/MOD13_User_Guide_V61.pdf](https://www.ibm.com/cloud/blog/python-vs-r.){.uri}
+
+[6]. Cesar Aybar (2022). rgee: R Bindings for Calling the 'Earth Engine' API. [https://github.com/r-spatial/rgee/](https://github.com/r-spatial/rgee/,); [https://r-spatial.github.io/rgee/](https://r-spatial.github.io/rgee/,); <https://github.com/google/earthengine-api/.>
+
+[7]. Kevin Ushey, JJ Allaire and Yuan Tang (2022). reticulate: Interface to 'Python'. R package version 1.24. <https://CRAN.R-project.org/package=reticulate>
+
+[8]. Joe Cheng, Bhaskar Karambelkar and Yihui Xie (2021). leaflet: Create Interactive Web Maps with the JavaScript 'Leaflet' Library. R. package version 2.0.4.1. <https://CRAN.R-project.org/package=leaflet>
+
+[9]. Hyndman R, Athanasopoulos G, Bergmeir C, Caceres G, Chhay L, O'Hara-Wild M, Petropoulos F, Razbash S, Wang E, Yasmeen F (2020). forecast: Forecasting functions for time series and linear models. R package version 8.13. <https://pkg.robjhyndman.com/forecast/>
+
+[10]. Moritz S, Bartz-Beielstein T (2017). "imputeTS: Time Series Missing Value Imputation in R." The R Journal, 9(1), 207-218. doi: 10.32614/RJ-2017-00. <https://doi.org/10.32614/RJ-2017-009>.)
+
+```{r}
+ee_clean_credentials()
+```

@@ -1,0 +1,117 @@
+---
+title: "Untitled"
+author: "Boniface Kalong"
+date: "7/5/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+var geometry = 
+    /* color: #98ff00 */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[-3.007824218750006, 7.4081065763447915],
+          [-3.029796875000006, 7.211960077873069],
+          [-3.139660156250006, 7.015728571542966],
+          [-3.271496093750006, 6.863046746089341],
+          [-3.337414062500006, 6.644845142428538],
+          [-3.205578125000006, 6.2955224286385265],
+          [-3.117687500000006, 5.989671745610213],
+          [-3.051769531250006, 5.683649664856603],
+          [-2.832042968750006, 5.399340383800823],
+          [-2.788097656250006, 5.1805497954337785],
+          [-3.183605468750006, 5.136782483497589],
+          [-3.205578125000006, 4.983573388385371],
+          [-2.941906250000006, 4.961683432496302],
+          [-2.546398437500006, 4.917901345694763],
+          [-2.260753906250006, 4.76464153725879],
+          [-1.843273437500006, 4.76464153725879],
+          [-1.469738281250006, 5.005462615038529],
+          [-1.096203125000006, 5.0930121658917935],
+          [-0.6787226562500059, 5.268075300982709],
+          [-0.32716015625000594, 5.443089130082682],
+          [-0.06348828125000594, 5.530577048985597],
+          [0.13426562499999406, 5.749239821392908],
+          [0.5297734374999941, 5.727377271547448],
+          [0.9033085937499941, 5.771101531370169],
+          [0.9033085937499941, 6.033375395251874],
+          [0.5297734374999941, 6.1426190508161795],
+          [-0.10743359375000594, 6.448380803066864],
+          [-0.5029414062500059, 6.601193099689023],
+          [-0.9423945312500059, 6.775777926515634],
+          [-1.293957031250006, 6.950299570294267],
+          [-1.821300781250006, 7.124756435280375],
+          [-2.216808593750006, 7.34273399517254],
+          [-2.590343750000006, 7.495254919894138],
+          [-2.897960937500006, 7.582385826926395]]]);
+```
+
+
+```{r}
+ Map.setCenter(-2.063,6.088,12);
+
+var Forest_NonForest = ee.ImageCollection('JAXA/ALOS/PALSAR/YEARLY/FNF')
+                  .filterDate('2017-01-01', '2017-12-31');
+var forestNonForest = Forest_NonForest.select('fnf');
+var forestNonForestVis = {
+  min: 1.0,
+  max: 3.0,
+  palette: ['006400', 'FEFF99', '0000FF'],
+};
+
+Map.addLayer(forestNonForest, forestNonForestVis, 'Forest/Non-Forest',opacity);
+
+// Settlement
+var Settlement = ee.Image("DLR/WSF/WSF2015/v1");
+
+var opacity = 0.75;
+//var blackBackground = ee.Image(0);
+//Map.addLayer(blackBackground, null, "Black background", true, opacity);
+
+var visualization = {
+  min: 0,
+  max: 255,
+};
+Map.addLayer(Settlement, visualization, "Human settlement areas");
+
+
+// Fire
+// Folder name for a series of tables.
+var folder = 'JRC/GWIS/GlobFire/v2/DailyPerimeters';
+
+// List available tables using ee.data.listAssets with asynchronous callback.
+function printAssetList(listAssetsOutput) {
+  print('Asset list:', listAssetsOutput['assets']);
+}
+ee.data.listAssets(folder, {}, printAssetList);
+
+// Define a table name (table id) identified from the list of available tables.
+var tableName = 'JRC/GWIS/GlobFire/v2/DailyPerimeters/2020';
+
+var computeArea = function (f) {
+  return f.set({'area': f.area()});
+}
+// Import a selected table as a FeatureCollection.
+var features = ee.FeatureCollection(tableName).map(computeArea);
+
+// Visualization parameters for linear fire area gradient.
+var visParams = {
+  palette: ['f5ff64', 'b5ffb4', 'beeaff', 'ffc0e8', '8e8dff', 'adadad'],
+  min: 0.0,
+  max: 600000000.0,
+  opacity: 0.8,
+};
+
+// Paint fire perimeters to an image using computed fire area as the value property.
+var image = ee.Image().float().paint(features, 'area')
+
+// Display the image to the map (include features for exploring with Inspector).
+Map.addLayer(image, visParams, 'GlobFire 2020');
+Map.addLayer(features, null, 'For Inspector', false);
+```
+  
+  

@@ -1,0 +1,68 @@
+---
+title: "Untitled"
+author: "Boniface Kalong"
+date: "7/5/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+var geometry = 
+    /* color: #0b4a8b */
+    /* displayProperties: [
+      {
+        "type": "rectangle"
+      }
+    ] */
+    ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Polygon(
+                [[[-2.090671121147858, 6.238499750885412],
+                  [-2.090671121147858, 5.861583229053705],
+                  [-1.634738503960358, 5.861583229053705],
+                  [-1.634738503960358, 6.238499750885412]]], null, false),
+            {
+              "system:index": "0"
+            })]);
+```
+
+
+```{r}
+// Import the example feature collection and subset the forest feature.
+var forest = ee.FeatureCollection('projects/google/charts_feature_example')
+                 .filter(ee.Filter.eq('label', 'Forest'));
+var now = Date.now();
+var DateNow = ee.Date(now);
+// Load MODIS vegetation indices data and subset a decade of images.
+var vegIndices = ee.ImageCollection('MODIS/006/MOD13A1')
+                     .filter(ee.Filter.date('1999-01-01', DateNow))
+                     .select(['NDVI', 'EVI']);
+
+// Define the chart and print it to the console.
+var chart =
+    ui.Chart.image
+        .series({
+          imageCollection: vegIndices,
+          region: geometry,
+          reducer: ee.Reducer.mean(),
+          scale: 500,
+          xProperty: 'system:time_start'
+        })
+        .setSeriesNames(['EVI', 'NDVI'])
+        .setOptions({
+          title: 'Average Vegetation Index Value by Date for Forest',
+          hAxis: {title: 'Date', titleTextStyle: {italic: false, bold: true}},
+          vAxis: {
+            title: 'Vegetation index (x1e4)',
+            titleTextStyle: {italic: false, bold: true}
+          },
+          lineWidth: 5,
+          colors: ['e37d05', '1d6b99'],
+          curveType: 'function'
+        });
+print(chart);
+```
+

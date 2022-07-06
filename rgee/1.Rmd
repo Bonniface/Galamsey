@@ -1,0 +1,27 @@
+---
+title: "Untitled"
+author: "Boniface Kalong"
+date: "7/5/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(dplyr)
+```
+
+```{r}
+
+rgee <- read.csv("rgee.csv")
+
+head(rgee)
+rgee <- rgee%>%mutate()
+```
+
+```{r}
+library(tidyr)
+pivot_longer(rgee,names_to = "Type",values_to = "EVI")
+```
+
+
