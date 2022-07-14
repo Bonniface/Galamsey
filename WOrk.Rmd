@@ -18,12 +18,12 @@ library(reshape2)
 library(ggplot2)
 library(sf)
 library(googleCloudStorageR)
-ee_Initialize(drive = TRUE)
+ee_Initialize(email = gee_email,drive = TRUE)
 ```
 
 
 ```{r}
-ee_Initialize(drive = TRUE, gcs = TRUE)
+ee_Initialize(email = gee_email, drive = TRUE)
 
 ```
 

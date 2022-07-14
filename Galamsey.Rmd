@@ -1,0 +1,127 @@
+---
+title: "Galamsey"
+author: "Boniface Kalong"
+date: "7/2/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# Loading Packages and Preparing The Datall0
+
+if(!require("pacman")){install.packages("pacman")}
+pacman::p_load(char = c('raster','tidyverse','dplyr','sf','mapview','mapeddit','caret','forcats','reticulate', 'rgee', 'remotes', 'magrittr', 'tigris', 'tibble', 'stars', 'stars', 'st', 'lubridate', 'imputeTS', 'leaflet', 'classInt', 'RColorBrewer', 'ggplot2', 'googledrive', 'geojsonio', 'ggpubr','cartogram'), install = T, update = F, character.only = T)
+
+
+ee_Initialize("Kalong",drive = TRUE) # initialize GEE, this will have you log in to Google Drive
+ee_check() 
+```
+
+### Time Series Analysis of Satellite Derived Vegetation Indices in R: A Case Study in Quantifying the Status of Galamsey In Ghana With Time Series Classification.
+
+## Adstract
+All thing change, but how we respond to change is our responsibility, to  fare it or embrasse it. Resisting change leads to one fiat. Our own extinction. Time is a smybole of freedom and peace
+## Introduction:
+
+The purpose of this paper is to establish an understanding in time series analysis on remotely sensed data. Which will introduced us to the fundamentals of time series modeling, including decomposition, autocorrelation and modeling historical changes in Galamsey Operation in Ghana, the Cause,Dangers and it’s Environmental impact.
+Galamsey("gather them and sell"),(OwusuNimo2018) is the term given by local Ghanaian for illegal small-scale gold mining in Ghana (DavidYawDanquah2019). The major cause of Galamsey is unemployment among the youth in Ghana(Gracia2018). Young university graduates rarely find work and when they do it hardly sustains them. The result is that these youth go the extra mile to earn a living for themselves and their family.
+Another factor is that lack of job security.
+
+On November 13, 2009 a collapse occurred in an illegal, privately owned mine in Dompoase, in the Ashanti Region of Ghana. At least 18 workers were killed, including 13 women, who worked as porters for the miners. Officials described the disaster as the worst mine collapse in Ghanaian history(News2009).
+
+Illegal mining causes damage to the land and water supply(Ansah2017). In March 2017, the Minister of Lands and Natural Resources, Mr. John Peter Amewu, gave the Galamsey operators/illegal miners a three-week ultimatum to stop their activities or be prepared to face the law(Allotey2017). The activities by Galamseyers have depleted Ghana’s forest cover and they have caused water pollution, due to the crude and unregulated nature of the mining process(Gyekye2021).
+
+Under current Ghanaian constitution, it is illegal to operate as galamseyer.That is to dig on land granted to mining companies as concessions or licenses and any other land in search for gold. In some cases, Galamseyers are the first to discover and work extensive gold deposits before mining companies find out and take over. Galamseyers are the main indicator of the presence of gold in free metallic dust form or they process
+oxide or sulfide gold ore using liquid mercury.
+Between 20,000 to 50,000, including thousands from China are believed to be engaged in Galamsey in Ghana.But according to the Information Minister 200,000 and nearly 3 million people, recently are now into Galamsey operation and rely on it for their livelihoods(Burrows2017). Their operations are mostly in the southern part of Ghana where it is believe to have substantial reserves of gold deposits, usually within the area
+of large mining companies(Barenblitt2021). As a group, they are economically disad vantaged. Galamsey settlements are usually poorer than neighboring agricultural villages. They have high rates of accidents and are exposed to mercury poisoning from their crude processing methods. Many women are among the workers, acting mostly as porters for the miners.
+
+## Problem Statement
+The Footprint of Galamsey is Spreading at a very faster rate, causing vegetation loss.Other factors accounting to vegetation loss may largely include climate change,urban and exurban development, bush fires. But not much works or research has been done to tell the extent to which Galamsey causes vegetation loss. This research attempts to segregate the variability climate is responsible for in vegetation loss so as to attribute the residual variability to Galamsey and other related activities such as bush-fires etc.
+
+## Objectives
+# Overview
+The purpose is to establish an understanding in time series analysis on remotely sensed data. We will be introduced to the fundamentals of time series modeling, including decomposition, autocorrelation and modeling historical changes.
+
+• Perform time series analysis on satellite derived vegetation indices
+
+• Estimate the extent to which Galamsey causes vegetation loss
+
+• Dissociate or single out the variability climate is responsible for in vegetation loss
+
+• Create a Statistical interactive dashboard
+
+## Data collection and Methodology
+# Data
+As Galamsey is considered an illegal activity, they operations are hidden to the eyes of the authorities.So locating them is quite tricky ,but with satellite imagery ,it now possible to locate their operating and put an end to it. One of the features of Google Earth Engine is the ability to access years of satellite imagery without needing to download,
+organize, store and process this information. For instance, within the Satellite image
+
+
+collection, now it possible to access imagery back to the 90’s, allowing us to look at areas of interest on the map to visualize and quantify how much things has changed over time. With Earth Engine, Google maintains the data and offers it’s computing power for processing.Users can now access hundreds of time series images and analyze changes across decades using GIS and R or other programming language to analyze these datasets.
+```{r}
+library('sf')
+# Load shape file
+
+setwd("C:/Users/Guy/Documents/GitHub/Artisanal-Mining-In-Ghana-Galamsey/Ghana/New Regions")
+aoi <- read_sf('New_Regions.shp')
+aoi <- st_transform(aoi, st_crs(4326))
+aoi.ee <- st_bbox(aoi) %>% 
+st_as_sfc() %>% 
+sf_as_ee() #Converts it to an Earth Engine Object
+```
+Now we will create a hexagonal grid over the study area
+
+```{r}
+aoi.proj <- st_transform(aoi, st_crs(2992))
+hex <- st_make_grid(x = aoi.proj, cellsize = 5280, square = FALSE) %>%
+st_sf() %>%
+rowid_to_column('hex_id')
+hex <- hex[aoi.proj,]
+plot(hex)
+```
+These functions return the QA value from MODIS imagery and apply a quality Mask, returning quality masked EVI values, this technique was adapted from one presented by Cesar Aybar (one of the rgee authors) [here](https://csaybar.github.io/blog/2020/06/15/rgee_02_io/).
+
+```{r}
+getQABits <- function(image, qa) {
+  # Convert binary (character) to decimal (little endian)
+  qa <- sum(2^(which(rev(unlist(strsplit(as.character(qa), "")) == 1))-1))
+  # Return a mask band image, giving the qa value.
+  image$bitwiseAnd(qa)$lt(1)
+}
+
+mod.clean <- function(img) {
+  # Extract the NDVI band
+  ndvi_values <- img$select("EVI")
+  # Extract the quality band
+  ndvi_qa <- img$select("SummaryQA")
+  # Select pixels to mask
+  quality_mask <- getQABits(ndvi_qa, "11")
+  # Mask pixels with value zero.
+  ndvi_values$updateMask(quality_mask)$divide(ee$Image$constant(10000)) #0.0001 is the MODIS Scale Factor
+}
+
+modis.evi <- ee$ImageCollection("MODIS/006/MOD13Q1")$filter(ee$Filter$date('2001-01-01','2019-12-31'))$map(mod.clean)
+```
+Now we will use the grid created above to extract the mean EVI values within each cell for the years 2000-2020. The finer the spatial resolution, the longer it will take, this next chunk should take 30 minutes.
+
+# Method
+Time series data is the collection of observations made sequentially at different points in time.Because data points in time series are collected at adjacent time periods there is potential for correlation between observations. we propose some new tools to allow machine learning classifiers to cope with time series data. We first argue that, time-series classification problems can be solved by detecting and combining local properties or patterns in time series. Then, a technique is proposed to find patterns which are useful for classification. These patterns are combined to build interpretable classification rules.
+First, we will pull Sentinel 2 to select NDVI and EVI data from Google Earth Engine,applying a quality filter to mask poor quality pixels.Instead of performing our analysis on the imagery itself, we will be summarizing the mean NDVI and EVI value , this will allow the analysis to take less time while producing a visually appealing and informative map.Some cells may not contain NDVI and EVI for a given month, to correct this, we will apply smoothing method using an ARIMA function.
+Once NA values are remove, we will decompose the time series to remove seasonality and fit a linear model to the normalized data.
+Once we have extracted the linear trend, we will then make a move to classifier our dataon the map and map it.
+
+## Finding
+## Significance Of the Study
+## Limitations
+Time series modeling aims to build an explanatory model of the data without over fitting the problem set, to use as simple a model as possible while accounting for as much of the data as possible. When breaking down time series data into component parts, remote sensing data has additional limitations that make this more challenging. It is almost inevitable that you will not get this same level of precision from remote sensing data. Additionally, atmospheric conditions can skew the visual results, where the hue of the vegetation changes drastically from image to image due to atmospheric conditions (fog,ground moisture, cloud cover).
+
+
+
+
+
+
+
+
+
+
+

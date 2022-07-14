@@ -11,7 +11,7 @@ knitr::opts_chunk$set(cache = TRUE)
 
 # Time Series Analysis of Satellite Derived Vegetation Indices in R: A Case Study in Clackamas County, OR
 
-[![](71569603-3341d680-2ac8-11ea-8787-4dd1fbba326f.png)](https://csaybar.github.io/blog/20%2020/06/15/rgee_02_io/)
+
 
 ## **Case Study Learning Objectives:**
 
@@ -33,59 +33,7 @@ For this case study, we will be extracting vegetation index values from MODIS im
 
 1.  [r-spatial.github.io/rgee/](https://r-spatial.github.io/rgee/){.uri}
 
-    Unlike the Python or Java interface to GEE, R is not 'native' rgee is a bindings package for Google Earth Engine (GEE) which wraps the [Earth Engine Python API](https://github.com/google/earthengine-api) using [reticulate](https://rstudio.github.io/reticulate/), this package allows seamless interoperability between R and Python, GEE requests created in R are converted to Python syntax and fed into Earth Engine's Python API which transforms the request to JSON format and delivers it to GEE's Web REST API. So why go through all the trouble? Why not just use the native Java or Python interface? There are a few reasons you might want to do this, here are some:
-
-    -   If you are already familiar with R, like me, there is less of a learning curve, your knowledge of R is still valid and you can use all the tools you would use for any other type of data analysis.
-
-    -   You like the R-Studio interface.
-
-    -   R and Python are very similar, but there are some key differences between. R is built and maintained by statisticians and provides a wide array of statistical models and specialized analytics. Many users prefer the data visualization capabilities of R which was built to display the results of statistical analysis. According to IBM, "R programming is better suited for statistical learning, with unmatched libraries for data exploration and experimentation. Python is a better choice for machine learning and large-scale applications, especially for data analysis within web applications"^4^.
-
-2.  [earthengine.google.com/](https://earthengine.google.com/){.uri}
-
-    Google Earth Engine is a Multi-Petabyte catalog of remotely sensed imagery and geospatial data-sets which make it quick and easy to perform computationally intensive spatial analysis, no need to build your own server! GEE makes it possible to carry out planetary scale analyses in a matter of minutes.
-
-3.  [rstudio.github.io/reticulate/](https://rstudio.github.io/reticulate/){.uri}
-
-    Let's stop arguing about whether R or Python is better, Reticulate make's it possible to call Python functions within an R session! Even better, you can create Python code chunks in R Studio! This is demonstrated later. If you are a Python user who wants to use R, check out rpy2 \<[rpy2.github.io](rpy2.github.io)\>!
-
-4.  [bookdown.org/yihui/rmarkdown-cookbook/](https://bookdown.org/yihui/rmarkdown-cookbook/)
-
-    This is an [R Markdown](http://rmarkdown$rstudio$com) Notebook. When you execute code within the notebook, the results appear beneath the code. R Markdown also allows you to convert your analysis into high quality documents, reports, presentations, dashboards or interactive tutorials like this one.
-
-5.  [towardsdatascience.com/a-quick-introduction-to-time-series-analysis-d86e4ff5fdd](https://towardsdatascience.com/a-quick-introduction-to-time-series-analysis-d86e4ff5fdd)
-
-    If this is your first foray into time series analysis or you need a refresher, the above resource covers a lot of ground, if you want to dig deeper, I encourage you to check out the book "[Time Series Analysis: with applications in R](https://link-springer-com.ezproxy.proxy.library.oregonstate.edu/book/10.1007%2F978-0-387-75959-3)" by Jonathan D. Cryer and Kung-Sik Chan.
-
-6.  [lpdaac.usgs.gov/documents/621/MOD13_User_Guide_V61.pdf](https://lpdaac.usgs.gov/documents/621/MOD13_User_Guide_V61.pdf)
-
-    Finally, we will review the MODIS Vegetation Product Users Manual which describes the algorithms used to calculate the MODIS 16-Day 250m Surface Reflectance product, vegetation indices, quality bands, etc. According to the authors, "The MODIS VI products (MOD13) provide consistent, spatial and temporal time series comparisons of global vegetation conditions that can be used to monitor the Earth's terrestrial photosynthetic vegetation activity in support of phenology, change detection, and biophysical interpretations." View some of the other MODIS collections hosted by GEE [here](https://developers.google.com/earth-engine/datasets/catalog/modis).For this analysis, we will be using the MOD13Q1 V6 product which contains the Enhanced Vegetation Index (EVI) discussed earlier. Calculated as:
-
-    ![](Eq.PNG)
-
-    "Where NIR, Red, and Blue are the full or partially atmospheric-corrected (for Rayleigh scattering and ozone absorption) surface reflectances; L is the canopy background adjustment for correcting the nonlinear, differential NIR and red radiant transfer through a canopy; C1 and C2 are the coefficients of the aerosol resistance term (which uses the blue band to correct for aerosol influences in the red band); and G is a gain or scaling factor. The coefficients adopted for the MODIS EVI algorithm are, L=1, C1=6, C2=7.5, and G=2.5"
-
-## **Case Study Background Readings:**
-
-1.  Eckert, Hüsler, F., Liniger, H., & Hodel, E. (2015). Trend analysis of MODIS NDVI time series for detecting land degradation and regeneration in Mongolia. Journal of Arid Environments, 113, 16--28. [\<https://doi.org/10.1016/j.jaridenv.2014.09.001\>](https://doi.org/10.1016/j.jaridenv.2014.09.001){.uri}
-
-2.  Baeza, & Paruelo, J. M. (2020). Land Use/Land Cover Change (2000--2014) in the Rio de la Plata Grasslands: An Analysis Based on MODIS NDVI Time Series. Remote Sensing (Basel, Switzerland), 12(3), 381. <https://doi.org/10.3390/rs12030381>
-
-## **Case Study Assignment:**
-
-We will be implementing a method similar to the one presented by Eckert, et al. (2015) in producing a MODIS EVI trend map.
-
--   First, we will pull MODIS EVI data from Google Earth Engine, applying a quality filter to mask poor quality pixels.
-
--   Instead of performing our analysis on the imagery itself, we will be summarizing the mean EVI value with cells in a Hex-Grid, this will allow the analysis to take less time while producing a visually appealing and informative map.
-
--   Some cells will not contain an EVI value for a given month, to correct this, we will apply [Kalman smoothing](https://towardsdatascience.com/state-space-model-and-kalman-filter-for-time-series-prediction-basic-structural-dynamic-linear-2421d7b49fa6#:~:text=Kalman%20filter%20algorithm%20uses%20a,on%20a%20single%20measurement%20alone.) using an ARIMA function.
-
--   Once NA values are remove, we will decompose the time series to remove seasonality and fit a linear model to the normalized data.
-
--   Once we have extracted the linear trend, we will join it back to the hex-grid and map it.
-
-![](Flow_Chart.PNG)
+ 
 
 ### **Let's get started!**
 
@@ -116,24 +64,56 @@ np$divide(16,4)
 And now we will initialize our installation of GEE. You will reveive two pop-ups asking you to authorize the tidycensus and Google Earth Engine API's, select to allow Drive access and copy the OAuth token, paste this into your console below where prompted.
 
 ```{r}
-#ee_clean_credentials() # Remove credentials if you want to change the user
-ee_Initialize(drive = TRUE) # initialize GEE, this will have you log in to Google Drive
+
+ee_Initialize("kalongboniface97@gmail.com",drive = TRUE) # initialize GEE, this will have you log in to Google Drive
 ee_check() # Check non-R dependencies
 #ee_clean_pyenv() # Remove reticulate system variables
 ee$String('Hello World from EE!')$getInfo()
 ```
+#ee_clean_credentials() # Remove credentials if you want to change the user
+```{r}
+ee_clean_credentials('kalongboniface97@gmail.com')
+```
 
-Now we will download a shapefile for the boundary of Clackamas County, OR. Feel free to use any other county in the US if you're interested
+
+
+```{r}
+library(rgdal)
+setwd("C:/Users/Guy/Documents/GitHub/Artisanal-Mining-In-Ghana-Galamsey/Ghana")
+cc <- readOGR("Ghana Districts", "GHANA_260" )
+# Define a geometry
+#st_crs(shp)
+```
+
+
+
+0Now we will download a shapefile for the boundary of Clackamas County, OR. Feel free to use any other county in the US if you're interested
 
 **Q1.** *Look at the documentation for the tigris package, what does it allow users to do?*
 
 ```{r, warning=FALSE, message=FALSE}
-#cc <- tigris::counties(state = 'Oregon') %>%
-#subset(NAME == 'Clackamas')
-#cc <- st_transform(cc, st_crs(4326))
-#cc.ee <- st_bbox(cc) %>% 
-#st_as_sfc() %>% 
-#sf_as_ee() #Converts it to an Earth Engine Object
+
+cc <- st_transform(cc, st_crs(4326))
+cc.ee <- st_bbox(cc) %>% 
+st_as_sfc() %>% 
+sf_as_ee() #Converts it to an Earth Engine Object
+```
+```{r}
+library(dplyr)
+setwd("C:/Users/Guy/Documents/GitHub/Artisanal-Mining-In-Ghana-Galamsey/Ghana/New Regions")
+mask <- st_read("New_Regions.shp")
+  st_transform(mask,st_crs(4326))%>%
+  mask.ee <- st_bbox(mask) %>% 
+  st_as_sfc() %>%
+  sf_as_ee()
+#region <- mask$geometry()$bounds()
+```
+```{r}
+nc <- st_read("C:/Users/Guy/Documents/GitHub/Artisanal-Mining-In-Ghana-Galamsey/Ghana/New Regions/New_Regions.shp", package = "sf",
+  stringsAsFactors = FALSE,
+  quiet = TRUE
+)
+
 ```
 
 These functions return the QA value from MODIS imagery and apply a quality Mask, returning quality masked EVI values, this technique was adapted from one presented by Cesar Aybar (one of the rgee authors) [here](https://csaybar.github.io/blog/2020/06/15/rgee_02_io/).
@@ -178,7 +158,8 @@ Now we will use the grid created above to extract the mean EVI values within eac
 ```{r, eval = FALSE}
 #This will take about 30 minutes
 if(readline(prompt = "This will take 30 minutes. Hit enter to proceed or type 'no' to download the data from G-Drive. ") == "no"){
-googledrive::drive_download(file = googledrive::as_id("https://drive.google.com/drive/folders/1jvZmBeEIRVtnuojsAI2HWbkAYU5-mxD0?usp=sharing"), overwrite = T)
+googledrive::drive_download(file = googledrive::as_id("https://drive.google.com/drive/folders/1jvZmBeEIRVtnuojsAI2HWbkAYU5-mxD0?usp=sharing"),
+                            overwrite = T)
 evi.df <- read.csv("clackamas_evi.csv")
 evi.df <- evi.df[,3:ncol(evi.df)]
 colnames(evi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(evi.df[, 2:ncol(evi.df)]), 2, 11), "_", "-")) #Convert dates to unambiguous format

@@ -1,27 +1,40 @@
----
-title: "Untitled"
-author: "Boniface Kalong"
-date: "7/5/2022"
-output: html_document
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-library(tidyverse)
-library(dplyr)
-```
-
 ```{r}
-
-rgee <- read.csv("rgee.csv")
-
-head(rgee)
-rgee <- rgee%>%mutate()
+library(reticulate)
 ```
 
-```{r}
-library(tidyr)
-pivot_longer(rgee,names_to = "Type",values_to = "EVI")
+#1
+```{python}
+import ee
+import geemap.plotlymap as geemap
+# Import the example feature collection and subset the forest feature.
+ forest = ee.FeatureCollection('projects/google/charts_feature_example')
+                 .filter(ee.Filter.eq('label', 'Forest'))
+ now = Date.now()
+ DateNow = ee.Date(now)
+# Load MODIS vegetation indices data and subset a decade of images.
+ vegIndices = ee.ImageCollection('MODIS/006/MOD13A1')
+                     .filter(ee.Filter.date('1999-01-01', DateNow))
+                     .select(['NDVI', 'EVI'])
+
+# Define the chart and print it to the console.
+ chart =  ui.Chart.image.series({
+          imageCollection: vegIndices,
+          region: geometry,
+          reducer: ee.Reducer.mean(),
+          scale: 500,
+          xProperty: 'system:time_start'
+        })
+        .setSeriesNames(['EVI', 'NDVI'])
+        .setOptions({
+          title: 'Average Vegetation Index Value by Date for Forest',
+          hAxis: {title: 'Date', titleTextStyle: {italic: false, bold: true}},
+          vAxis: {
+            title: 'Vegetation index (x1e4)',
+            titleTextStyle: {italic: false, bold: true}
+          },
+          lineWidth: 5,
+          colors: ['e37d05', '1d6b99'],
+          curveType: 'function'
+        })
+print(chart)
 ```
-
-
