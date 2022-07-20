@@ -98,6 +98,7 @@ cc.ee <- st_bbox(cc) %>%
 st_as_sfc() %>% 
 sf_as_ee() #Converts it to an Earth Engine Object
 ```
+
 ```{r}
 library(dplyr)
 setwd("C:/Users/Guy/Documents/GitHub/Artisanal-Mining-In-Ghana-Galamsey/Ghana/New Regions")

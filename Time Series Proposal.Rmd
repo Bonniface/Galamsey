@@ -29,6 +29,21 @@ The purpose of this research is to establish a foundation for time series analys
 # Background
 One of the paradigm changing features of Earth Engine is the ability to access decades of imagery without the previous limitation of needing to download, organize, store and process this information. For instance, within the Satellite  image collection we can access imagery back to 1972, allowing us to look at an area to visualize and quantify how much it's changed over time. With Earth Engine, Google maintains the data and offers it's computing power for processing - users can access tens or hundreds of time-sequenced images and quantify change across decades using GIS() and R or other programming language to analyze  these datasets
 
+# Highlights
+• MODIS NDVI time series were used to identify land degradation and regeneration areas.
+
+• MODIS land cover class changes coincide with MODIS NDVI trend areas.
+
+• Changes in precipitation might have an influence on large NDVI trend areas.
+
+• Short-term changes in temperature have no influence on NDVI trend areas.
+
+
+# Abstract 
+This study examines whether MODIS NDVI satellite data time series can be used to detect land degradation and regeneration areas in Mongolia. Time series analysis was applied to an 11-year MODIS NDVI satellite data record, based on the hypothesis that the resulting NDVI residual trend vectors would enable successful detection of changes in photosynthetically active vegetation. We performed regression analysis, derived regression slope values, and generated a map of significant trends. We also examined land cover development and meteorological data for the same period.
+
+11-year time series of MODIS 16-day composite NDVI data proved sufficient for deriving statistically significant trend values for 50% of Mongolia's surface. MODIS land cover products proved suitable for identifying areas of vegetation cover change. Areas showing positive and negative NDVI trends mostly coincided with areas of land cover class change indicating an increase or a decrease in vegetation, respectively. Precipitation changes in the same time period seem to have had an influence on large NDVI trend areas. The NDVI time series trend analysis methodology applied successfully detected changes due to deforestation, forest fires, mining activities, urban expansion, and grassland regeneration. These findings demonstrate that NDVI time series trend analysis is suitable for detecting vegetation change areas and for identifying land degradation and regeneration.
+
 # Introduction
 Time series data is the collection of observations made sequentially at different points in time. This is opposed to cross-sectional data which observes individuals, companies, etc. at a single point in time.
 Because data points in time series are collected at adjacent time periods there is potential for correlation between observations. This is one of the features that distinguishes time series data from cross-sectional data.
@@ -61,3 +76,100 @@ The script logic in pseudo-code is as follows:
     2. Choose the one which results in the classification with the highest accuracy.
     3. Combine this/these band(s) of the final stack successively with those bands that are not in the final stack. Add the band whose combination resulted in the highest accuracy-increase into the final stack.
     4. Repeat step 3 until the accuracy does not increase any more or all bands are used.
+    
+```{r}
+#Install and load sf, after that, initialize the Earth Engine R API.
+
+library(magick)
+library(rgee)
+library('sf')
+library(sf)
+ee_Initialize()
+#Define the regional bounds of animation frames and a mask to clip the NDVI data by.
+
+mask <- read_sf("New Regions/New_Regions.shp")
+mask <- st_transform(mask, st_crs(4326))
+mask <- st_bbox(mask) %>% 
+st_as_sfc() %>% 
+sf_as_ee()
+region <- mask$ee$geometry()$bounds()
+#Retrieve the MODIS Terra Vegetation Indices 16-Day Global 1km dataset as an ee.ImageCollection and select the NDVI band.
+
+col <- ee$ImageCollection('MODIS/006/MOD13A2')$select('NDVI')
+#Group images by composite date
+
+col <- col$map(function(img) {
+  doy <- ee$Date(img$get('system:time_start'))$getRelative('day', 'year')
+  img$set('doy', doy)
+})
+distinctDOY <- col$filterDate('2013-01-01', '2014-01-01')
+#Define a filter that identifies which images from the complete collection match the DOY from the distinct DOY collection.
+
+filter <- ee$Filter$equals(leftField = 'doy', rightField = 'doy')
+#Define a join; convert the resulting FeatureCollection to an ImageCollection.
+
+join <- ee$Join$saveAll('doy_matches')
+joinCol <- ee$ImageCollection(join$apply(distinctDOY, col, filter))
+#Apply median reduction among matching DOY collections.
+
+comp <- joinCol$map(function(img) {
+  doyCol = ee$ImageCollection$fromImages(
+    img$get('doy_matches')
+  )
+  doyCol$reduce(ee$Reducer$median())
+})
+#Define RGB visualization parameters.
+
+visParams = list(
+  min = 0.0,
+  max = 9000.0,
+  bands = "NDVI_median",
+  palette = c(
+    'FFFFFF', 'CE7E45', 'DF923D', 'F1B555', 'FCD163', '99B718', '74A901',
+    '66A000', '529400', '3E8601', '207401', '056201', '004C00', '023B01',
+    '012E01', '011D01', '011301'
+  )
+)
+#Create RGB visualization images for use as animation frames.
+
+rgbVis <- comp$map(function(img) {
+  do.call(img$visualize, visParams) %>%
+    ee$Image$clip(mask)
+})
+#Define GIF visualization parameters.
+
+gifParams <- list(
+  region = region,
+  dimensions = 600,
+  crs = 'EPSG:3857',
+  framesPerSecond = 10
+)
+#Get month names
+
+dates_modis_mabbr <- distinctDOY %>%
+  ee_get_date_ic %>% # Get Image Collection dates
+  '[['("time_start") %>% # Select time_start column
+  lubridate::month() %>% # Get the month component of the datetime
+  '['(month.abb, .) # subset around month abbreviations
+#Use ee_utils_gif_* functions to render the GIF animation and add some texts.
+
+animation <- ee_utils_gif_creator(rgbVis, gifParams, mode = "wb")
+animation %>%
+  ee_utils_gif_annotate(
+    text = "NDVI: MODIS/006/MOD13A2",
+    size = 15, color = "white",
+    location = "+10+10"
+  ) %>%
+  ee_utils_gif_annotate(
+    text = dates_modis_mabbr,
+    size = 30,
+    location = "+290+350",
+    color = "white",
+    font = "arial",
+    boxcolor = "#000000"
+  ) # -> animation_wtxt
+
+# ee_utils_gif_save(animation_wtxt, path = "raster_as_ee.gif")
+```
+    
+    
