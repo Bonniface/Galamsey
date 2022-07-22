@@ -70,6 +70,15 @@ of large mining companies(Barenblitt2021). As a group, they are economically dis
 The Footprint of Galamsey is Spreading at a very faster rate, causing vegetation loss.Other factors accounting to vegetation loss may largely include climate change,urban and exurban development, bush fires. But not much works or research has been done to tell the extent to which Galamsey causes vegetation loss. This research attempts to segregate the variability climate is responsible for in vegetation loss so as to attribute the residual variability to Galamsey and other related activities such as bush-fires etc.
 
 ## Objectives
+# Highlights
+• MODIS NDVI time series were used to identify land degradation and regeneration areas.
+
+• MODIS land cover class changes coincide with MODIS NDVI trend areas.
+
+• Changes in precipitation might have an influence on large NDVI trend areas.
+
+• Short-term changes in temperature have no influence on NDVI trend areas.
+
 # Overview
 The purpose is to establish an understanding in time series analysis on remotely sensed data. We will be introduced to the fundamentals of time series modeling, including decomposition, autocorrelation and modeling historical changes.
 
