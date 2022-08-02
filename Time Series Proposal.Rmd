@@ -79,47 +79,58 @@ The script logic in pseudo-code is as follows:
     
 ```{r}
 #Install and load sf, after that, initialize the Earth Engine R API.
-
+library(reticulate)
 library(magick)
 library(rgee)
 library('sf')
 library(sf)
+
+```
+```{r}
 ee_Initialize()
+```
 #Define the regional bounds of animation frames and a mask to clip the NDVI data by.
-
-mask <- read_sf("New Regions/New_Regions.shp")
-mask <- st_transform(mask, st_crs(4326))
-mask <- st_bbox(mask) %>% 
-st_as_sfc() %>% 
+```{r}
+mask <- read_sf("New Regions/New_Regions.shp")%>% 
 sf_as_ee()
-region <- mask$ee$geometry()$bounds()
+
+
+
+region <- mask$geometry()$bounds()
+
+```
 #Retrieve the MODIS Terra Vegetation Indices 16-Day Global 1km dataset as an ee.ImageCollection and select the NDVI band.
-
+```{r}
 col <- ee$ImageCollection('MODIS/006/MOD13A2')$select('NDVI')
+```
 #Group images by composite date
-
+```{r}
 col <- col$map(function(img) {
   doy <- ee$Date(img$get('system:time_start'))$getRelative('day', 'year')
   img$set('doy', doy)
 })
-distinctDOY <- col$filterDate('2013-01-01', '2014-01-01')
+distinctDOY <- col$filterDate('2000-01-01', '2022-01-01')
+```
 #Define a filter that identifies which images from the complete collection match the DOY from the distinct DOY collection.
-
+```{r}
 filter <- ee$Filter$equals(leftField = 'doy', rightField = 'doy')
+```
 #Define a join; convert the resulting FeatureCollection to an ImageCollection.
-
+```{r}
 join <- ee$Join$saveAll('doy_matches')
 joinCol <- ee$ImageCollection(join$apply(distinctDOY, col, filter))
+```
 #Apply median reduction among matching DOY collections.
-
+```{r}
 comp <- joinCol$map(function(img) {
   doyCol = ee$ImageCollection$fromImages(
     img$get('doy_matches')
   )
   doyCol$reduce(ee$Reducer$median())
 })
+```
 #Define RGB visualization parameters.
-
+```{r}
 visParams = list(
   min = 0.0,
   max = 9000.0,
@@ -130,29 +141,33 @@ visParams = list(
     '012E01', '011D01', '011301'
   )
 )
+```
 #Create RGB visualization images for use as animation frames.
-
+```{r}
 rgbVis <- comp$map(function(img) {
   do.call(img$visualize, visParams) %>%
     ee$Image$clip(mask)
 })
+```
 #Define GIF visualization parameters.
-
+```{r}
 gifParams <- list(
   region = region,
   dimensions = 600,
   crs = 'EPSG:3857',
   framesPerSecond = 10
 )
+```
 #Get month names
-
+```{r}
 dates_modis_mabbr <- distinctDOY %>%
   ee_get_date_ic %>% # Get Image Collection dates
   '[['("time_start") %>% # Select time_start column
   lubridate::month() %>% # Get the month component of the datetime
   '['(month.abb, .) # subset around month abbreviations
+```
 #Use ee_utils_gif_* functions to render the GIF animation and add some texts.
-
+```{r}
 animation <- ee_utils_gif_creator(rgbVis, gifParams, mode = "wb")
 animation %>%
   ee_utils_gif_annotate(
