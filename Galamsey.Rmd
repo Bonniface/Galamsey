@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, message=FALSE}
 
-if(!require("pacman")){install.packages("pacman")}
+#if(!require("pacman")){install.packages("pacman")}
 pacman::p_load(char = c('rgee','reticulate','raster','tidyverse','dplyr','sf','mapview','mapeddit','caret','forcats','reticulate', 'rgee', 'remotes', 'magrittr', 'tigris', 'tibble', 'stars', 'stars', 'st', 'lubridate', 'imputeTS', 'leaflet', 'classInt', 'RColorBrewer', 'ggplot2', 'googledrive', 'geojsonio', 'ggpubr','cartogram'), install = F, update = F, character.only = T)
 ```
 
@@ -33,7 +33,7 @@ ee_check()
 ```
 
 ```{r}
-library(googleCloudStorageR)
+
 ee_Initialize("kalong",drive = TRUE) # initialize GEE, this will have you log in to Google Drive
 
 ```
@@ -123,12 +123,13 @@ mod.clean <- function(img) {
   ndvi_values$updateMask(quality_mask)$divide(ee$Image$constant(10000)) #0.0001 is the MODIS Scale Factor
 }
 
-modis.evi <- ee$ImageCollection("MODIS/006/MOD13Q1")$filter(ee$Filter$date('2001-01-01','2019-12-31'))$map(mod.clean)
+modis.evi <- ee$ImageCollection("MODIS/006/MOD13Q1")$filter(ee$Filter$date('2000-01-01','2022-01-01'))$map(mod.clean)
 ```
 Now we will create a hexagonal grid over the study area
 ```{r}
-aoi.proj <- st_transform(aoi, st_crs(2992))
-hex <- st_make_grid(x = aoi.proj, cellsize = 5280, square = FALSE) %>%
+library(tibble)
+aoi.proj <- st_transform(aoi, st_crs(2392))
+hex <- st_make_grid(x = aoi.proj, cellsize = 17280, square = FALSE) %>%
 st_sf() %>%
 rowid_to_column('hex_id')
 hex <- hex[aoi.proj,]
@@ -137,10 +138,11 @@ plot(hex)
 Now we will use the grid created above to extract the mean EVI values within each cell for the years 2000-2020. The finer the spatial resolution, the longer it will take, this next chunk should take 30 minutes.
 ```{r}
 #This will take about 30 minutes
-if(readline(prompt = "This will take 30 minutes. Hit enter to proceed or type 'no' to download the data from G-Drive. ") == "no"){
-googledrive::drive_download(file = googledrive::as_id("https://drive.google.com/drive/folders/1jvZmBeEIRVtnuojsAI2HWbkAYU5-mxD0?usp=sharing"),
-                            overwrite = T)
-evi.df <- read.csv("clackamas_evi.csv")
+if(readline(prompt = "Hit enter to proceed or type 'no' to download the data from G-Drive. ") == "no"){
+googledrive::drive_download(file = 
+                              googledrive::as_id("https://drive.google.com/drive/folders/1ZnCpYz38ezSU1XG7ixJ2sPg_DX7bO07J?usp=sharing"),overwrite = T)
+  #https://drive.google.com/drive/folders/1ZnCpYz38ezSU1XG7ixJ2sPg_DX7bO07J?usp=sharing
+evi.df <- read.csv("rgee_file_2d44527a3b0e_2022_07_28_15_40_52.csv")
 evi.df <- evi.df[,3:ncol(evi.df)]
 colnames(evi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(evi.df[, 2:ncol(evi.df)]), 2, 11), "_", "-")) #Convert dates to unambiguous format
 } else {
@@ -148,7 +150,7 @@ colnames(evi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(evi.df[
 paste0(system.time(expr = aoi.evi <- ee_extract(x = modis.evi, y = hex["hex_id"], sf = FALSE, scale = 250, fun = ee$Reducer$mean(), via = "drive", quiet = T))/60, " Minutes Elapsed. ")
 evi.df <- as.data.frame(aoi.evi)
 colnames(evi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(evi.df[, 2:ncol(evi.df)]), 2, 11), "_", "-"))
-write.csv(x = evi.df, file = "~/clackamas_evi.csv")}
+write.csv(x = evi.df, file = "~/rgee_file_2d44527a3b0e_2022_07_28_15_40_52.csv")}
 ```
 Now we are going to perform a time series analysis on the data within each grid cell. But first, we will work through the procedure one step at a time.
 
@@ -185,9 +187,30 @@ head(td)
 That looks better! Unfortunately though, there are a number of dates which don't have any evi value at all, let's figure out which ones these are.
 
 ```{r}
+
 td$date <- as.Date(paste0(td$year, "-", td$month, "-01"))
 dx <- Dates[!(Dates$date %in% td$date),]
 dx
+```
+```{r}
+dx$mean_evi <- NA
+tdx <- rbind(td, dx) %>% 
+  arrange(date)
+na.cnt <- length(tdx[is.na(tdx)])
+evi.trend$na.cnt.2[i] <- na.cnt #add count of na values to dataframe
+rm(td, dx) #remove data we're no longer using, this is a good rule of thumb, especially when working with larger datasets.
+tdx <- ts(data = tdx$mean_evi, start = c(2001, 1), end = c(2019, 11), frequency = 12) #convert data to time series.
+plot(tdx)
+```
+```{r}
+tdx <- if(na.cnt > 0){imputeTS::na_kalman(tdx, model = "auto.arima", smooth = T)} else {
+    tdx
+}
+plot(tdx)
+```
+```{r}
+tdx.dcp <- stl(tdx, s.window = 'periodic')
+plot(tdx.dcp)
 ```
 
 ## Finding
