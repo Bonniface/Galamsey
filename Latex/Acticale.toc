@@ -1,44 +1,44 @@
-\contentsline {section}{\numberline {1}CHAPTER ONE}{3}{}%
-\contentsline {section}{\numberline {2}INTRODUCTION}{3}{}%
-\contentsline {subsection}{\numberline {2.1}Background of The Study}{5}{}%
-\contentsline {subsection}{\numberline {2.2}Problem Statement}{6}{}%
-\contentsline {subsection}{\numberline {2.3}Research Question}{7}{}%
-\contentsline {subsubsection}{\numberline {2.3.1}Research Objectives}{7}{}%
-\contentsline {subsection}{\numberline {2.4}Significance Of The Study}{8}{}%
-\contentsline {subsection}{\numberline {2.5}Scope of The Study}{8}{}%
-\contentsline {subsection}{\numberline {2.6}Limitation Of The Study }{8}{}%
-\contentsline {subsection}{\numberline {2.7} Organization of The Study}{8}{}%
-\contentsline {section}{\numberline {3}CHAPTER TWO}{8}{}%
-\contentsline {section}{\numberline {4}LITERATURE REVIEW}{8}{}%
-\contentsline {subsection}{\numberline {4.1}Theoretical Review}{8}{}%
-\contentsline {subsubsection}{\numberline {4.1.1}WHAT IS TIME SERIES ANALYSIS?}{9}{}%
-\contentsline {subsubsection}{\numberline {4.1.2}VARIOUS METHODS USED IN TIME SERIES FORECASTING AND COMPARING FEW METHODS}{10}{}%
-\contentsline {subsubsection}{\numberline {4.1.3}ADVANTAGES AND DISADVANTAGES OF TIME SERIES FORECASTING}{18}{}%
-\contentsline {subsubsection}{\numberline {4.1.4}}{20}{}%
-\contentsline {subsubsection}{\numberline {4.1.5}}{20}{}%
-\contentsline {subsection}{\numberline {4.2}Empirical Review}{20}{}%
-\contentsline {section}{\numberline {5}CHAPTER THREE}{20}{}%
-\contentsline {section}{\numberline {6}METHODOLOGY}{20}{}%
-\contentsline {subsection}{\numberline {6.1}Research Design}{22}{}%
-\contentsline {subsection}{\numberline {6.2}Specification of the Model}{22}{}%
-\contentsline {subsubsection}{\numberline {6.2.1}Data Representation}{22}{}%
-\contentsline {subsubsection}{\numberline {6.2.2}The Analysis Of Variance (ANOVA) Method}{22}{}%
-\contentsline {subsubsection}{\numberline {6.2.3}The Empirical * Theory model}{22}{}%
-\contentsline {subsubsection}{\numberline {6.2.4}Assumptions Underlying EBCT Model 1}{22}{}%
-\contentsline {subsubsection}{\numberline {6.2.5}Parameter Estimation}{22}{}%
-\contentsline {section}{\numberline {7}CHAPTER FOUR}{22}{}%
-\contentsline {section}{\numberline {8}ANALYSES AND FINDINGS}{22}{}%
-\contentsline {subsubsection}{\numberline {8.0.1}Summary Statistics}{22}{}%
-\contentsline {subsubsection}{\numberline {8.0.2}Distribution of Claim Amounts.}{22}{}%
-\contentsline {subsubsection}{\numberline {8.0.3}Time Series Trend Of Insurance Claim In Ghana Data}{22}{}%
-\contentsline {subsubsection}{\numberline {8.0.4}The Analysis Of Variance (ANOVA) Model Estimates.}{22}{}%
-\contentsline {subsubsection}{\numberline {8.0.5}The Empirical * Model Approach}{22}{}%
-\contentsline {subsubsection}{\numberline {8.0.6}Comparing ANOVA model and * model Premium E}{22}{}%
-\contentsline {subsubsection}{\numberline {8.0.7}Expected Claims versus Actual Claims}{22}{}%
-\contentsline {subsubsection}{\numberline {8.0.8}Goodness of Fit Test}{22}{}%
-\contentsline {section}{\numberline {9}CHAPTER FIVE}{22}{}%
-\contentsline {section}{\numberline {10}CONCLUSIONS AND RECOMMENDATIONS}{22}{}%
-\contentsline {subsubsection}{\numberline {10.0.1}Summary}{22}{}%
-\contentsline {subsubsection}{\numberline {10.0.2} Conclusions}{22}{}%
-\contentsline {subsubsection}{\numberline {10.0.3}Recommendations}{22}{}%
-\contentsline {section}{\numberline {11}References}{22}{}%
+\contentsline {chapter}{\numberline {1}CHAPTER ONE}{2}{}%
+\contentsline {section}{\numberline {1.1}INTRODUCTION}{2}{}%
+\contentsline {subsection}{\numberline {1.1.1}Background of The Study}{2}{}%
+\contentsline {subsection}{\numberline {1.1.2}Problem Statement}{3}{}%
+\contentsline {subsection}{\numberline {1.1.3}Research Question}{3}{}%
+\contentsline {subsubsection}{Research Objectives}{3}{}%
+\contentsline {subsection}{\numberline {1.1.4}Significance Of The Study}{3}{}%
+\contentsline {subsection}{\numberline {1.1.5}Scope of The Study}{3}{}%
+\contentsline {subsection}{\numberline {1.1.6}Limitation Of The Study }{3}{}%
+\contentsline {subsection}{\numberline {1.1.7} Organization of The Study}{3}{}%
+\contentsline {chapter}{\numberline {2}CHAPTER TWO}{4}{}%
+\contentsline {section}{\numberline {2.1}LITERATURE REVIEW}{4}{}%
+\contentsline {subsection}{\numberline {2.1.1}Theoretical Review}{4}{}%
+\contentsline {subsubsection}{What is Time Series Analysis?}{4}{}%
+\contentsline {subsubsection}{Time Series Forecasting Using Stochastic Models}{5}{}%
+\contentsline {subsubsection}{ADVANTAGES AND DISADVANTAGES OF TIME SERIES FORECASTING}{8}{}%
+\contentsline {subsubsection}{Time Series Forecasting Using Support Vector Machines}{9}{}%
+\contentsline {subsubsection}{Forecast Performance Measures }{9}{}%
+\contentsline {subsection}{\numberline {2.1.2}Empirical Review}{10}{}%
+\contentsline {chapter}{\numberline {3}CHAPTER THREE}{14}{}%
+\contentsline {section}{\numberline {3.1}METHODOLOGY}{14}{}%
+\contentsline {subsection}{\numberline {3.1.1}Research Design}{14}{}%
+\contentsline {subsection}{\numberline {3.1.2}Specification of the Model}{14}{}%
+\contentsline {subsubsection}{Data Representation}{14}{}%
+\contentsline {subsubsection}{The Analysis Of Variance (ANOVA) Method}{14}{}%
+\contentsline {subsubsection}{The Empirical * Theory model}{14}{}%
+\contentsline {subsubsection}{Assumptions Underlying EBCT Model 1}{14}{}%
+\contentsline {subsubsection}{Parameter Estimation}{14}{}%
+\contentsline {chapter}{\numberline {4}CHAPTER FOUR}{15}{}%
+\contentsline {section}{\numberline {4.1}ANALYSES AND FINDINGS}{15}{}%
+\contentsline {subsubsection}{Summary Statistics}{15}{}%
+\contentsline {subsubsection}{Distribution of Claim Amounts.}{15}{}%
+\contentsline {subsubsection}{Time Series Trend Of Insurance Claim In Ghana Data}{15}{}%
+\contentsline {subsubsection}{The Analysis Of Variance (ANOVA) Model Estimates.}{15}{}%
+\contentsline {subsubsection}{The Empirical * Model Approach}{15}{}%
+\contentsline {subsubsection}{Comparing ANOVA model and * model Premium E}{15}{}%
+\contentsline {subsubsection}{Expected Claims versus Actual Claims}{15}{}%
+\contentsline {subsubsection}{Goodness of Fit Test}{15}{}%
+\contentsline {chapter}{\numberline {5}CHAPTER FIVE}{16}{}%
+\contentsline {section}{\numberline {5.1}CONCLUSIONS AND RECOMMENDATIONS}{16}{}%
+\contentsline {subsubsection}{Summary}{16}{}%
+\contentsline {subsubsection}{ Conclusions}{16}{}%
+\contentsline {subsubsection}{Recommendations}{16}{}%
+\contentsline {section}{\numberline {5.2}References}{16}{}%

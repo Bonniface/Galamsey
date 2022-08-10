@@ -2,7 +2,7 @@
 title: "Galamsey"
 author: "Boniface Kalong"
 date: "7/2/2022"
-output: html_document
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
@@ -14,27 +14,33 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r, message=FALSE}
 
 #if(!require("pacman")){install.packages("pacman")}
-pacman::p_load(char = c('rgee','reticulate','raster','tidyverse','dplyr','sf','mapview','mapeddit','caret','forcats','reticulate', 'rgee', 'remotes', 'magrittr', 'tigris', 'tibble', 'stars', 'stars', 'st', 'lubridate', 'imputeTS', 'leaflet', 'classInt', 'RColorBrewer', 'ggplot2', 'googledrive', 'geojsonio', 'ggpubr','cartogram'), install = F, update = F, character.only = T)
+pacman::p_load(char = c('rgee','reticulate','raster','tidyverse',
+                        'dplyr','sf','mapview','mapeddit','caret','forcats','reticulate',
+                        'rgee', 'remotes', 'magrittr', 'tigris', 'tibble', 'stars', 'stars',
+                        'st', 'lubridate', 'imputeTS', 'leaflet', 'classInt', 'RColorBrewer',
+                        'ggplot2', 'googledrive', 'geojsonio', 'ggpubr','cartogram'), 
+               install = F, update = F, character.only = T)
 ```
 
 
-```{r}
+```{r, include=FALSE}
 #library(pacman)
 #pacman::p_load(char = c('googleAnalyticR','googleAuthR','googleCloudRunner','googlePublicData','googlePrintr','googlePloylines','googledrive','ComputeEngineR'), install = T, update = T, character.only =T  )
 ```
 
 
-```{r}
+```{r,results='hide'}
 library(rgee)
 
 library(reticulate)
-#ee_install()
+#ee_install() 
 ee_check()
 ```
 
 ```{r}
 
-ee_Initialize("kalong",drive = TRUE) # initialize GEE, this will have you log in to Google Drive
+ee_Initialize("kalong",drive = TRUE) # initialize GEE, 
+#this will have you log in to Google Drive
 
 ```
 
@@ -89,7 +95,9 @@ The purpose is to establish an understanding in time series analysis on remotely
 • Dissociate or single out the variability climate is responsible for in vegetation loss
 
 • Create a Statistical interactive dashboard
-
+## Significance Of the Study
+## Limitations
+Time series modeling aims to build an explanatory model of the data without over fitting the problem set, to use as simple a model as possible while accounting for as much of the data as possible. When breaking down time series data into component parts, remote sensing data has additional limitations that make this more challenging. It is almost inevitable that you will not get this same level of precision from remote sensing data. Additionally, atmospheric conditions can skew the visual results, where the hue of the vegetation changes drastically from image to image due to atmospheric conditions (fog,ground moisture, cloud cover).
 ## Data collection and Methodology
 # Data
 As Galamsey is considered an illegal activity, they operations are hidden to the eyes of the authorities.So locating them is quite tricky ,but with satellite imagery ,it now possible to locate their operating and put an end to it. One of the features of Google Earth Engine is the ability to access years of satellite imagery without needing to download,
@@ -102,7 +110,7 @@ library('sf')
 # Load shape file
 
 #setwd("C:/Users/Guy/Documents/GitHub/Artisanal-Mining-In-Ghana-Galamsey/New Regions")
-aoi <- read_sf('GHA/gadm41_GHA_1.shp')
+aoi <- read_sf('Ghana shp file/GHA/gadm41_GHA_1.shp')
 aoi <- st_transform(aoi, st_crs(4326))
 aoi.ee <- st_bbox(aoi) %>% 
 st_as_sfc() %>% 
@@ -166,13 +174,14 @@ Now we are going to perform a time series analysis on the data within each grid 
 ```{r}
 evi.hw.lst <- list() #Create an empty list, this will be used to house the time series projections for each cell. 
 evi.dcmp.lst <- list() #Create an empty list, this will be used to house the time series decomposition for each cell.
-evi.trend <- data.frame(hex_id = evi.df$hex_id, na.cnt = NA, na.cnt.2 = NA, trend = NA, p.val = NA, r2 = NA, std.er = NA, trnd.strngth = NA, seas.strngth = NA) #This data frame will hold the trend data
+evi.trend <- data.frame(hex_id = evi.df$hex_id, na.cnt = NA, NA_Values = NA, Trend = NA, P_value = NA, R_Squared = NA, Standard_Error = NA, Trend_Strength = NA, Seasonal_Strength = NA) #This data frame will hold the trend data
 Dates <- data.frame(date = seq(as.Date('2001-01-01'), as.Date('2019-11-01'), "month"))
 Dates$month <- month(Dates$date)
 Dates$year <- year(Dates$date)
 i <- 1
 tsv <- data.frame(evi = t(evi.df[i, 2:ncol(evi.df)])) #converting the data to a transposed data frame
 colnames(tsv) <- c("evi")
+#write.csv(tsv,"Data/tsv.csv")
 head(tsv) #let's take a look
 ```
 # Method
@@ -195,23 +204,29 @@ head(td)
 
 That looks better! Unfortunately though, there are a number of dates which don't have any evi value at all, let's figure out which ones these are.
 
-```{r}
+```{r, include=FALSE}
 
 td$date <- as.Date(paste0(td$year, "-", td$month, "-01"))
 dx <- Dates[!(Dates$date %in% td$date),]
-dx
 ```
+
 ```{r}
 dx$mean_evi <- NA
 tdx <- rbind(td, dx) %>% 
   arrange(date)
+write.csv(tdx,"Data/tdx.csv")
+tdx <- read.csv("Data/tdx.csv")
+head(tdx)
+```
+```{r}
 na.cnt <- length(tdx[is.na(tdx)])
-evi.trend$na.cnt.2[i] <- na.cnt #add count of na values to dataframe
+
 rm(td, dx) #remove data we're no longer using, this is a good rule of thumb, especially when working with larger datasets.
 tdx <- ts(data = tdx$mean_evi, start = c(2001, 1), end = c(2019, 11), frequency = 12) #convert data to time series.
 plot(tdx)
 ```
 ```{r}
+library(imputeTS)
 tdx <- if(na.cnt > 0){imputeTS::na_kalman(tdx, model = "auto.arima", smooth = T)} else {
     tdx
 }
@@ -221,11 +236,89 @@ plot(tdx)
 tdx.dcp <- stl(tdx, s.window = 'periodic')
 plot(tdx.dcp)
 ```
+```{r,message=FALSE}
+library(forecast)
+Tt <- trendcycle(tdx.dcp)
+St <- seasonal(tdx.dcp)
+Rt <- remainder(tdx.dcp)
+plot(Tt)
+plot(St)
+plot(Rt)
+```
+When investigating a time series, one of the first things to check before building an ARIMA model is to check that the series is stationary. That is, it needs to be determined that the time series is constant in mean and variance are constant and not dependent on time.
+
+Here, we will look at a couple methods for checking stationarity. If the time series is provided with seasonality, a trend, or a change point in the mean or variance, then the influences need to be removed or accounted for.
+```{r,warning=FALSE}
+library(tseries)
+adf.test(Rt)
+adf.test(Tt)
+adf.test(tdx)
+```
+#Autocorrelation Function (ACF)
+Identify if correlation at different time lags goes to 0
+```{r}
+plot.new()
+frame()
+# The Stationary Signal and ACF
+plto(tdx,Rt,
+     type = '1', col = 'red',
+     xlab = "Time (t)",
+     ylab = "Y(t)",
+     main = "Stationary Signal")
+acf(Rt, lag.max = length(Rt),
+    xlab = "lag #", ylab = 'ACF', main = '')
+
+#The Trend Signal anf ACF
+
+plot(tdx,Tt,
+     type = '1', col = 'red',
+     xlab = "Time (t)",
+     ylab = "Y(t)",
+     Main = "Trend Signal")
+acf(Tt, lag.max = length(Tt),
+    xlab = "lag#", ylab = "ACF", main = '')
+```
+
+
+```{r}
+
+tdx <- data.frame(time = c(1:length(tdx)), trend = tdx - tdx.dcp$time.series[,1])
+trend.summ <- summary(lm(formula = trend ~ time, data = tdx))
+
+```
+
+```{r}
+plot(tdx)
+abline(a = trend.summ$coefficients[1,1], b = trend.summ$coefficients[2,1], col = 'blue')
+```
+```{r}
+evi.trend$NA_Values[i] <- na.cnt #add count of na values to dataframe
+# Calculating Trend and Seasonal Strength
+evi.trend$Trend[i] <- trend.summ$coefficients[2,1]
+evi.trend$Trend_Strength[i] <- round(max(0,1-(var(Rt)/var(Tt+Rt))),1)
+evi.trend$Seasonal_Strength[i] <- round(max(0,1-(var(Rt)/var(St+Rt))),1)
+evi.trend$P_value[i] <- trend.summ$coefficients[2,4]
+evi.trend$R_Squared[i] <- trend.summ$r.squared
+evi.trend$Standard_Error[i] <- trend.summ$sigma
+evi.trend[i,]
+```
+```{r}
+
+ggdensity(evi.trend, x = "Trend", 
+          fill = "#0073C2FF", 
+          color = "#0073C2FF",
+          add = "mean", 
+          rug = TRUE)
+```
+
+```{r}
+evi.trend
+```
+
+
 
 ## Finding
-## Significance Of the Study
-## Limitations
-Time series modeling aims to build an explanatory model of the data without over fitting the problem set, to use as simple a model as possible while accounting for as much of the data as possible. When breaking down time series data into component parts, remote sensing data has additional limitations that make this more challenging. It is almost inevitable that you will not get this same level of precision from remote sensing data. Additionally, atmospheric conditions can skew the visual results, where the hue of the vegetation changes drastically from image to image due to atmospheric conditions (fog,ground moisture, cloud cover).
+
 
 
 
