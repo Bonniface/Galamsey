@@ -1,9 +1,8 @@
+
 \documentclass[10pt]{report}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
 \usepackage[margin=0.8in]{geometry}
 \usepackage{times}
 \linespread{1.5}
@@ -14,6 +13,12 @@
 
 \titleformat{\section}{\bfseries\large}{\thesection.}{0.5em}{}
 \titlespacing{\section}{0pt}{0pt}{20pt}
+
+\usepackage{fancyvrb}
+
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
 \begin{document}
 	\tableofcontents
 	\begin{flushleft}
@@ -128,7 +133,7 @@
 		
 		\textbf{Autocorrelation and Partial Autocorrelation Functions (ACF and PACF) }\\
 		To determine a proper model for a given time series data, it is necessary to carry out the ACF and PACF analysis. These statistical measures reflect how the observations in a time series are related to each other. For modeling and forecasting purpose it is often useful to plot the ACF and PACF against consecutive time lags. These plots help in determining the order of AR and MA terms. For a time series $ {x(t),t = 0,1, 2,...} $ the \emph{Autocovariance} [21, 23] at lag \emph{k} is defined as:
-		$\mu$ is the mean of the time series, i.e. $ \mu = E\left[x_{t}\right]  $. The autocovariance at lag zero i.e. $ y_{0} $ is the variance of the time series. From the definition it is clear that the autocorrelation coefficient $ p_{k} $ is dimensionless and so is independent of the scale of measurement. Also, clearly $ -1 \leq p_{k} \leq 1 $. Statisticians Box and Jenkins [6] termed $ y_{k} $ as the theoretical Autocovariance Function (ACVF) and ρk as the theoretical Autocorrelation Function (ACF). 
+		$\mu$ is the mean of the time series, i.e. $ \mu = E\left[x_{t}\right]  $. The autocovariance at lag zero i.e. $ y_{0} $ is the variance of the time series. From the definition it is clear that the autocorrelation coefficient $ p_{k} $ is dimensionless and so is independent of the scale of measurement. Also, clearly $ -1 \leq p_{k} \leq 1 $. Statisticians Box and Jenkins [6] termed $ y_{k} $ as the theoretical Autocovariance Function (ACVF) and $ p_{k} $ as the theoretical Autocorrelation Function (ACF). 
 		Another measure, known as the Partial Autucorrelation Function (PACF) is used to measure the correlation between an observation \emph{k} period ago and the current observation, after controlling for observations at intermediate lags (i.e. at lags < k ) [12]. At lag 1, PACF(1) is same as ACF(1). The detailed formulae for calculating PACF are given in [6, 23]. 
 		
 		
@@ -302,6 +307,11 @@
 		Once we have extracted the linear trend, we will then make a move to classifier our dataon the map and map it.
 		
 		\subsection{Research Design}
+%		\begin{Shaded}
+%			\begin{Highlighting}[]
+%				jgj
+%			\end{Highlighting}
+%		\end{Shaded}
 		\subsection{Specification of the Model}
 		\subsubsection{Data Representation}
 		\subsubsection{The Analysis Of Variance (ANOVA) Method}

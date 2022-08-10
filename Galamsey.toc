@@ -1,0 +1,39 @@
+\contentsline {section}{INTRODUCTION}{2}{section*.2}%
+\contentsline {subsection}{Background of The Study}{2}{section*.3}%
+\contentsline {subsection}{Problem Statement}{3}{section*.4}%
+\contentsline {subsection}{Research Question}{3}{section*.5}%
+\contentsline {subsubsection}{Research Objectives}{3}{section*.6}%
+\contentsline {subsection}{Significance Of The Study}{3}{section*.7}%
+\contentsline {subsection}{Scope of The Study}{3}{section*.8}%
+\contentsline {subsection}{Limitation Of The Study }{3}{section*.9}%
+\contentsline {subsection}{ Organization of The Study}{3}{section*.10}%
+\contentsline {section}{LITERATURE REVIEW}{3}{section*.11}%
+\contentsline {subsection}{Theoretical Review}{3}{section*.12}%
+\contentsline {subsubsection}{What is Time Series Analysis?}{4}{section*.13}%
+\contentsline {subsubsection}{Time Series Forecasting Using Stochastic Models}{4}{section*.14}%
+\contentsline {subsubsection}{ADVANTAGES AND DISADVANTAGES OF TIME SERIES FORECASTING}{7}{section*.15}%
+\contentsline {subsubsection}{Time Series Forecasting Using Support Vector Machines}{8}{section*.16}%
+\contentsline {subsubsection}{Forecast Performance Measures }{8}{section*.17}%
+\contentsline {subsection}{Empirical Review}{9}{section*.18}%
+\contentsline {section}{METHODOLOGY}{12}{section*.19}%
+\contentsline {subsection}{Research Design}{13}{section*.20}%
+\contentsline {subsection}{Specification of the Model}{13}{section*.21}%
+\contentsline {subsubsection}{Data Representation}{13}{section*.22}%
+\contentsline {subsubsection}{The Analysis Of Variance (ANOVA) Method}{13}{section*.23}%
+\contentsline {subsubsection}{The Empirical * Theory model}{13}{section*.24}%
+\contentsline {subsubsection}{Assumptions Underlying EBCT Model 1}{13}{section*.25}%
+\contentsline {subsubsection}{Parameter Estimation}{13}{section*.26}%
+\contentsline {section}{ANALYSES AND FINDINGS}{14}{section*.27}%
+\contentsline {subsubsection}{Summary Statistics}{14}{section*.28}%
+\contentsline {subsubsection}{Distribution of Time Series Trend.}{14}{section*.29}%
+\contentsline {subsubsection}{Time Series Trend Of Insurance Claim In Ghana Data}{15}{section*.30}%
+\contentsline {subsubsection}{The Analysis Of Variance (ANOVA) Model Estimates.}{15}{section*.31}%
+\contentsline {subsubsection}{The Empirical * Model Approach}{15}{section*.32}%
+\contentsline {subsubsection}{Comparing ANOVA model and * model Premium E}{15}{section*.33}%
+\contentsline {subsubsection}{Expected Claims versus Actual Claims}{15}{section*.34}%
+\contentsline {subsubsection}{Goodness of Fit Test}{15}{section*.35}%
+\contentsline {section}{CONCLUSIONS AND RECOMMENDATIONS}{15}{section*.36}%
+\contentsline {subsubsection}{Summary}{15}{section*.37}%
+\contentsline {subsubsection}{ Conclusions}{15}{section*.38}%
+\contentsline {subsubsection}{Recommendations}{16}{section*.39}%
+\contentsline {section}{References}{16}{section*.40}%
