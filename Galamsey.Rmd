@@ -4,8 +4,8 @@ title: Segregate The Variability Climate Is Responsible For In Vegetation Loss U
 author: 'Boniface Kalong,Fugah Seletey Mitchell '
 date: "7/2/2022"
 output:
-  word_document: default
   pdf_document: default
+  word_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -53,6 +53,7 @@ library(tinytex)
 		  \end{itemize}
 		  \subsection{Significance Of The  Study}
 		  \subsection{Scope of The  Study}
+		   
 		  \subsection{Limitation Of  The Study }
 		  Time series modeling aims to build an explanatory model of the data without over fitting the problem set, to use as simple a model as possible while accounting for as much of the data as possible. When breaking down time series data into component parts, remote sensing data has additional limitations that make this more challenging. It is almost inevitable that you will not get this same level of precision from remote sensing data. Additionally, atmospheric conditions can skew the visual results, where the hue of the vegetation changes drastically from image to image due to atmospheric conditions (fog,ground moisture, cloud cover).
 		  \subsection{ Organization  of  The  Study}
@@ -145,16 +146,16 @@ library(tinytex)
 	    \item	Plotting patterns in correlation
 		\item	Automatic selection techniques
 		\end{itemize}
-		\textbf{1) Plotting patterns in correlation: }
+		\textbf{ Plotting patterns in correlation: }
 		
 		There are two functions used for plotting patterns in correlation:
-		\textbf{a)	Auto correlation factor (ACF):} It is the correlation between the observations at the current time stamp and observations at the previous time stamp (Hagan, M.T. and Behr, S.M., 1987). 
-		\textbf{b)	Partial auto correlation factor (PACF):} The correlation between the observations at two different time stamps, assuming both observations are correlated to the observations at another time stamp (Hagan, M.T. and Behr, S.M., 1987). 
+		\textbf{	Auto correlation factor (ACF):} It is the correlation between the observations at the current time stamp and observations at the previous time stamp (Hagan, M.T. and Behr, S.M., 1987). 
+		\textbf{	Partial auto correlation factor (PACF):} The correlation between the observations at two different time stamps, assuming both observations are correlated to the observations at another time stamp (Hagan, M.T. and Behr, S.M., 1987). 
 		
-		\textbf{2) Automatic selection techniques: }
+		\textbf{ Automatic selection techniques: }
 		
 		There are three commonly used techniques for automatic selection of time series model:
-		\textbf{a)	Minimum info criteria (MINIC)}: This builds multiple combinations of models across a grid search of AR and MA terms. It then finds the model with lowest Bayesian information criteria (Stadnytska, T., Braun, S. and Werner, J., 2008). \\
+		\textbf{	Minimum info criteria (MINIC)}: This builds multiple combinations of models across a grid search of AR and MA terms. It then finds the model with lowest Bayesian information criteria (Stadnytska, T., Braun, S. and Werner, J., 2008). \\
 		\textbf{b)	Squared canonical correlations (SCAN):} It looks at correlation matrix of the data, then it compares it with its lags. It then looks at the eigen values from the correlation matrix to find the combination of AR and MA probably having SCAN as 0. It finds the pair as the best where the convergence is quickest (Stadnytska, T., Braun, S. and Werner, J., 2008).\\
 		\textbf{c)	The extended sample auto correlation function (ESACF):} As it is known that AR and MA are related. Essentially it filters out the AR terms until only MA piece is left. This process is repeated until fewest AR terms are left and maximum MA terms (Stadnytska, T., Braun, S. and Werner, J., 2008).\\
 		It completely depends on the individual to choose from either of the methods helping them to find the optimal value of p and q for better performance of the model.\\
@@ -412,6 +413,7 @@ head(tsv) #let's take a look
 		Once we have extracted the linear trend, we will then make a move to classifier our dataon the map and map it.
 		
 		\subsection{Research Design}
+		The submission adopted quantitative analysis in this study. Findings and inferences relied greatly on the usage of statistical tools and robust time series models rather than personal judgment.
 		\subsection{Specification of the Model}
 		\subsubsection{Data Representation}
 		\subsubsection{The Analysis Of Variance (ANOVA) Method}
