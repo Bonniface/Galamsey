@@ -310,8 +310,49 @@ rowid_to_column('hex_id')
 hex <- hex[aoi.proj,]
 plot(hex)
 ```
+```{r}
+terraclimate <- ee$ImageCollection("IDAHO_EPSCOR/MACAv2_METDATA") %>%
+  ee$ImageCollection$filterDate("2000-01-01", "2022-01-01") %>%
+  ee$ImageCollection$map(function(x) x$select("pr","tasmax","tasmin","huss")) %>% # Select only precipitation bands
+  ee$ImageCollection$toBands() %>% # from imagecollection to image
+  ee$Image$rename(sprintf("PP_%02d",1:12)) # rename the bands of an image
+```
+
+```{r}
+ee_nc_rain <- ee_extract(x = terraclimate, y = hex["NAME"], sf = FALSE)
+```
+```{r}
+ee_nc_rain %>%
+  pivot_longer(-NAME, names_to = "month", values_to = "pr") %>%
+  mutate(month, month=gsub("PP_", "", month)) %>%
+  ggplot(aes(x = month, y = pr, group = NAME, color = pr)) +
+  geom_line(alpha = 0.4) +
+  xlab("Month") +
+  ylab("Precipitation (mm)") +
+  theme_minimal()
+```
+
+
 Now we will use the grid created above to extract the mean EVI values within each cell for the years 2000-2020.
 ```{r,include=FALSE}
+#This will take about 30 minutes
+if(readline(prompt = "Hit enter to proceed or type 'no' to download the data from G-Drive. ") == "no"){
+googledrive::drive_download(file =
+                              googledrive::as_id("https://drive.google.com/drive/folders/1ZnCpYz38ezSU1XG7ixJ2sPg_DX7bO07J?usp=sharing"),overwrite = T)
+  #https://drive.google.com/drive/folders/1ZnCpYz38ezSU1XG7ixJ2sPg_DX7bO07J?usp=sharing
+terraclimate.df <- read.csv("rgee_file_2d44527a3b0e_2022_07_28_15_40_52.csv")
+terraclimate.df <- terraclimate.df[,3:ncol(terraclimate.df)]
+colnames(terraclimate.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(terraclimate.df[, 2:ncol(terraclimate.df)]), 2, 11), "_", "-")) #Convert dates to unambiguous format
+} else {
+#This will take about 30 minutes
+paste0(system.time(expr = aoi.evi <- ee_extract(x = terraclimate, y = hex["hex_id"], sf = FALSE, scale = 250, fun = ee$Reducer$mean(), via = "drive", quiet = T))/60, " Minutes Elapsed. ")
+terraclimate.df <- as.data.frame(aoi.evi)
+colnames(terraclimate.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(terraclimate.df[, 2:ncol(terraclimate.df)]), 2, 11), "_", "-"))
+write.csv(x = terraclimate.df, file = "~/rgee_file_2d44527a3b0e_2022_07_28_15_40_52.csv")}
+```
+
+```{r}
+####################################################################################
 #This will take about 30 minutes
 if(readline(prompt = "Hit enter to proceed or type 'no' to download the data from G-Drive. ") == "no"){
 googledrive::drive_download(file =
