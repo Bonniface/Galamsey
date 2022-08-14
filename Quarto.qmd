@@ -59,15 +59,21 @@ The purpose is to establish an understanding in time series analysis on remotely
 
 ### Significance Of The Study
 
-There are significant changes in vegetation cover in Ghana for the past 30 years, and these dynamics related strongly with climatic factors such as temperature and other factors.
+There are significant changes in vegetation cover in Ghana over the past 30 years, and these dynamics are related strongly to climatic factors such as temperature and other factors. Examining the effects of climatic change on Ghana's vegetation during thirty years.
+
+This study allows us to explore climatic differences and climate-related drivers thanks to this study. Additionally, it offers a chance to research how climatic variability affects the ecosystem and human health. By merging climate and vegetation variation utilizing NDVI, LST, and EVI data to understand the relationship between vegetation and climate change under tropical climate conditions, it closes research gaps in Ghana.
 
 ### Scope of The Study
 
 ### Limitation Of The Study
 
-Time series modeling aims to build an explanatory model of the data without over fitting the problem set, to use as simple a model as possible while accounting for as much of the data as possible. When breaking down time series data into component parts, remote sensing data has additional limitations that make this more challenging. It is almost inevitable that you will not get this same level of precision from remote sensing data. Additionally, atmospheric conditions can skew the visual results, where the hue of the vegetation changes drastically from image to image due to atmospheric conditions (fog,ground moisture, cloud cover).
+The goal of time series modeling is to employ the simplest model feasible to account for as much data as possible while still developing an explanatory model of the data that does not overfit the issue set.
 
-Organization of The Study
+Remote sensing data has additional limits that make this more difficult when dividing time series data into component pieces. It is almost certain that data from distant sensing will not provide the same level of precision.
+
+Additionally, atmospheric factors can distort the visual findings, causing the vegetation's color to shift dramatically from image to image as a result of atmospheric factors (fog, ground moisture, cloud cover).
+
+### Organization of The Study
 
 # CHAPTER TWO
 

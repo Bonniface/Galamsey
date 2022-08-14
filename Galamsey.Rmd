@@ -332,6 +332,15 @@ ee_nc_rain %>%
   theme_minimal()
 ```
 
+```{r}
+library(tibble)
+aoi.proj <- st_transform(aoi, st_crs(2392))
+hex <- st_make_grid(x = aoi.proj, cellsize = 17280, square = FALSE) %>%
+st_sf() %>%
+rowid_to_column('hex_id')
+hex <- hex[aoi.proj,]
+plot(hex)
+```
 
 Now we will use the grid created above to extract the mean EVI values within each cell for the years 2000-2020.
 ```{r,include=FALSE}

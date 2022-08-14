@@ -91,7 +91,7 @@ ee_Initialize()
 ```
 #Define the regional bounds of animation frames and a mask to clip the NDVI data by.
 ```{r}
-mask <- read_sf("New Regions/New_Regions.shp")%>% 
+mask <- read_sf("Ghana shp file/New Regions/New_Regions.shp")%>% 
 sf_as_ee()
 
 
@@ -182,7 +182,8 @@ animation %>%
     color = "white",
     font = "arial",
     boxcolor = "#000000"
-  ) # -> animation_wtxt
+  ) 
+# -> animation_wtxt
 
 # ee_utils_gif_save(animation_wtxt, path = "raster_as_ee.gif")
 ```
