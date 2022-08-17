@@ -15,7 +15,7 @@ editor: visual
 
 ## INTRODUCTION
 
-All thing change, but how we respond to change is our responsibility, to fare it or embrasse it. Resisting change leads to one fiat. Our own extinction. Time is a smybole of freedom and peace
+<!-- All thing change, but how we respond to change is our responsibility, to fare it or embrasse it. Resisting change leads to one fiat. Our own extinction. Time is a smybole of freedom and peace -->
 
 The purpose of this paper is to establish an understanding in time series analysis on remotely sensed data. Which will introduced us to the fundamentals of time series modeling, including decomposition, autocorrelation and modeling historical changes in Galamsey Operation in Ghana, the Cause,Dangers and it's Environmental impact.
 
@@ -137,19 +137,14 @@ This concept is used to make trending and seasonal data stationary. Subtraction 
 
 ##### **Autoregressive models (AR):**
 
-AR work on a concept called lags which is defined as the forecast of a series is solely based on the past values in the series (Cryer, J.D., 1986). Formula for Autoregression AR(1): \$\$\\displaystyle y\_{t = \\omega + \\phi Y \_{t-1+ e\_{t\$\$ is stationary when \$\$ \|\\phi\_{1\| \< 1, \$\$ with a constant mean \$\$\\displaystyle \\mu = \\frac{\\omega{1-\\phi\_{1 \$\$ and constant variance \$\$ \\displaystyle \\gamma\_{o = \\frac{\\sigma\^{2{1-\\phi\_{1\^{2 \$\$
+AR work on a concept called lags which is defined as the forecast of a series is solely based on the past values in the series (Cryer, J.D., 1986). Formula for Autoregression AR(1): $$\displaystyle y_{t} = \omega + \phi Y _{t-1}+ e_{t}$$ is stationary when $$ |\phi_{1}| < 1,  $$ with a constant mean $$\displaystyle \mu = \frac{\omega}{1-\phi_{1}} $$ and constant variance $$ \displaystyle \gamma_{o} = \frac{\sigma^{2}}{1-\phi_{1}^{2}} $$
 
-Where ; \\quad
-
-\$\$ y\_{t\$\$ = Target ,\\quad
-
-\$\$\\omega\$\$= Intercept,\\quad
-
-\$\$\\phi\$\$= Coefficient,\\quad
-
-\$\$Y \_{t-1\$\$=Lagged target,\\quad
-
-\$\$e\_{t\$\$= Error
+        Where ; \quad   
+        $$ y_{t}$$  = Target ,\quad
+        $\omega$$ = Intercept,\quad
+        $$\phi$$ = Coefficient,\quad
+        $$Y _{t-1}$$=Lagged target,\quad
+        $$e_{t}$$ = Error\\
 
 It depends only on one lag in the past and also called AR model of order one (Shibata, R., 1976). Autoregressive models are also known as long memory models as they must keep the memory of all the lags until its initial start point and must calculate their value. If there is any shock incident in the past which must have led to fluctuations in the data, it will have its effect on the present value which makes the model quite sensitive to shocks (Shibata, R., 1976).
 
@@ -157,7 +152,7 @@ It depends only on one lag in the past and also called AR model of order one (Sh
 
 The moving average model forecasts a series based on the past error in the series called error lags. Hunter, J.S., Formula for moving average method is given as:
 
-\$\$ y\_{t = \\omega + \\theta e \_{t-1+ e\_{t\$\$
+$$y_{t} = \omega + \theta e _{t-1}+ e_{t}$$
 
 In (2), all the abbreviations are same to AR model formula except, = Previous error
 
@@ -173,9 +168,9 @@ The findings of both the paper were quite different but one cannot prove either 
 
 ##### **Autocorrelation and Partial Autocorrelation Functions (ACF and PACF)**
 
-To determine a proper model for a given time series data, it is necessary to carry out the ACF and PACF analysis. These statistical measures reflect how the observations in a time series are related to each other. For modeling and forecasting purpose it is often useful to plot the ACF and PACF against consecutive time lags. These plots help in determining the order of AR and MA terms. For a time series \$\$ {x(t),t = 0,1, 2,... \$\$ the Autocovariance \[21, 23\] at lag k is defined as:
+To determine a proper model for a given time series data, it is necessary to carry out the ACF and PACF analysis. These statistical measures reflect how the observations in a time series are related to each other. For modeling and forecasting purpose it is often useful to plot the ACF and PACF against consecutive time lags. These plots help in determining the order of AR and MA terms. For a time series $$ {x(t),t = 0,1, 2,...} $$the Autocovariance \[21, 23\] at lag k is defined as:
 
-\$\$\\mu\$\$ is the mean of the time series, i.e. \$\$ \\mu = E\\left\[x\_{t\\right\] \$\$. The autocovariance at lag zero i.e. \$\$ y\_{0 \$\$ is the variance of the time series. From the definition it is clear that the autocorrelation coefficient \$\$ p\_{k \$\$ is dimensionless and so is independent of the scale of measurement. Also, clearly \$\$ -1 \\leq p\_{k \\leq 1 \$\$. Statisticians Box and Jenkins \[6\] termed \$\$ y\_{k \$\$ as the theoretical Autocovariance Function (ACVF) and \$\$ p\_{k \$\$ as the theoretical Autocorrelation Function (ACF).
+$$\mu$$ is the mean of the time series, i.e. $$ \mu = E\left[x_{t}\right]  $$. The autocovariance at lag zero i.e. $$ y_{0}$$ is the variance of the time series. From the definition it is clear that the autocorrelation coefficient $$ p_{k} $$ is dimensionless and so is independent of the scale of measurement. Also, clearly $$ -1 \leq p\_{k}\leq 1 $$. Statisticians Box and Jenkins \[6\] termed $$ y_{k }$$ as the theoretical Autocovariance Function (ACVF) and $$ p_{k} $$ as the theoretical Autocorrelation Function (ACF).
 
 Another measure, known as the Partial Autucorrelation Function (PACF) is used to measure the correlation between an observation k period ago and the current observation, after controlling for observations at intermediate lags (i.e. at lags \< k ) \[12\]. At lag 1, PACF(1) is same as ACF(1). The detailed formulae for calculating PACF are given in \[6, 23\].
 
@@ -225,7 +220,7 @@ To understand ARIMA model, we need to understand ARMA model as this is just an e
 
 #### **Seasonal Autoregressive Integrated Moving Average (SARIMA):**
 
-SARIMA models were introduced to handle seasonality in the data. Seasonality is different from stationarity; however, seasonality can be handled using stationarity up to some extent, but seasonal correlations cannot be eliminated completely. SARIMA models are mathematically written as SARIMA\$\$(p,d,q)(P,D,Q)\^{s\$\$.
+SARIMA models were introduced to handle seasonality in the data. Seasonality is different from stationarity; however, seasonality can be handled using stationarity up to some extent, but seasonal correlations cannot be eliminated completely. SARIMA models are mathematically written as SARIMA$$(p,d,q)(P,D,Q)^{s}$$.
 
 Where;
 
@@ -281,11 +276,11 @@ Due to the fundamental importance of time series forecasting in many practical s
 
 ##### Description of Various Forecast Performance Measures
 
-In each of the forthcoming definitions, \$\$ y\_{t \$\$ is the actual value, \$\$ f\_{t \$\$ is the forecasted value, \$\$ e\_{t = y\_{t - f\_{t \$\$ is the forecast error and n is the size of the test set. Also, \$\$ \\displaystyle \\bar{y = \\frac{1{n\\sum\_{t=1\^{ny\_{t \$\$ is the test mean and \$\$\\displaystyle \\sigma\^{2 = \\frac{1{n-1\\sum\_{t=1\^{n(y\_{t-\\bar{y)\^{2 \$\$is the test variance.
+In each of the forthcoming definitions, $$ y_{t }$$ is the actual value, $$ f_{t} $$ is the forecasted value, $$ e_{t} = y_{t} - f_{t} $$ is the forecast error and n is the size of the test set. Also, $$ \displaystyle \bar{y} = \frac{1}{n}\sum_{t=1}^{n}y_{t}$$ is the test mean and $$\displaystyle \sigma^{2} = \frac{1}{n-1}\sum_{t=1}^{n}(y_{t}-\bar{y})^{2} $$is the test variance.
 
 The Mean Forecast Error (MFE)
 
-This measure is defined as \[24\] \$\$ \\displaystyle MFE = \\frac{1{n\\sum\_{t=1\^{ne\_{t \$\$ The properties of MFE are:
+This measure is defined as \[24\] $$ \displaystyle MFE = \frac{1}{n}\sum_{t=1}^{n}e_{t}$$ The properties of MFE are:
 
 ### Empirical Review
 

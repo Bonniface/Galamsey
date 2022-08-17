@@ -319,7 +319,8 @@ terraclimate <- ee$ImageCollection("IDAHO_EPSCOR/MACAv2_METDATA") %>%
 ```
 
 ```{r}
-ee_nc_rain <- ee_extract(x = terraclimate, y = hex["NAME"], sf = FALSE)
+ee_nc_rain <- ee_extract(x = terraclimate, y = hex, sf = FALSE ,scale = 250)
+ee_nc_rain
 ```
 ```{r}
 ee_nc_rain %>%
