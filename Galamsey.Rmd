@@ -236,7 +236,7 @@ Similarly, in [1] used the maximum likelihood algorithm (MLA) and Markov chain m
         Also, a significant increase and a decrease of \textbf{LULC} were noticed between the years 1973, 1985, and 2000 within the classes.
         
 
-```{r, message=FALSE,results='hide'}
+```{r, message=FALSE,results='hide',warning=FALSE}
 
 #if(!require("pacman")){install.packages("pacman")}
 pacman::p_load(char = c('rgee','reticulate','raster','tidyverse',
@@ -275,31 +275,6 @@ sf_as_ee() #Converts it to an Earth Engine Object
 ```
 
 
-
-```{r}
-getQABits <- function(image, qa) {
-  # Convert binary (character) to decimal (little endian)
-  qa <- sum(2^(which(rev(unlist(strsplit(as.character(qa), "")) == 1))-1))
-  # Return a mask band image, giving the qa value.
-  image$bitwiseAnd(qa)$lt(1)
-}
-
-mod.clean <- function(img) {
-  # Extract the NDVI band
-  ndvi_values <- img$select("EVI")
-  # Extract the quality band
-  ndvi_qa <- img$select("SummaryQA")
-  # Select pixels to mask
-  quality_mask <- getQABits(ndvi_qa, "11")
-  # Mask pixels with value zero.
-  
-  #0.0001 is the MODIS Scale Factor
-  ndvi_values$updateMask(quality_mask)$divide(ee$Image$constant(10000)) 
-}
-
-modis.evi <- ee$ImageCollection("MODIS/006/MOD13Q1"
-                                )$filter(ee$Filter                                               $date('2000-01-01','2022-01-01'))$map(mod.clean)
-```
 Now we will create a hexagonal grid over the study area
 ```{r}
 library(tibble)
@@ -310,6 +285,7 @@ rowid_to_column('hex_id')
 hex <- hex[aoi.proj,]
 plot(hex)
 ```
+
 ```{r}
 terraclimate <- ee$ImageCollection("IDAHO_EPSCOR/MACAv2_METDATA") %>%
   ee$ImageCollection$filterDate("2000-01-01", "2022-01-01") %>%
@@ -319,7 +295,7 @@ terraclimate <- ee$ImageCollection("IDAHO_EPSCOR/MACAv2_METDATA") %>%
 ```
 
 ```{r}
-ee_nc_rain <- ee_extract(x = terraclimate, y = hex, sf = FALSE ,scale = 250)
+ee_nc_rain <- ee_extract(x = terraclimate, y = hex, sf = FALSE )
 ee_nc_rain
 ```
 ```{r}
@@ -333,15 +309,7 @@ ee_nc_rain %>%
   theme_minimal()
 ```
 
-```{r}
-library(tibble)
-aoi.proj <- st_transform(aoi, st_crs(2392))
-hex <- st_make_grid(x = aoi.proj, cellsize = 17280, square = FALSE) %>%
-st_sf() %>%
-rowid_to_column('hex_id')
-hex <- hex[aoi.proj,]
-plot(hex)
-```
+
 
 Now we will use the grid created above to extract the mean EVI values within each cell for the years 2000-2020.
 ```{r,include=FALSE}
