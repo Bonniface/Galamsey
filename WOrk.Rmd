@@ -18,6 +18,13 @@ library(reshape2)
 library(ggplot2)
 library(sf)
 library(googleCloudStorageR)
+
+
+# library(dygraphs)
+# dygraph(nhtemp) %>% 
+#   dyRangeSelector
+
+# knitr::kable(head(ggplot2::diamonds))
 ```
 
 

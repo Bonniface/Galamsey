@@ -9,7 +9,7 @@
 \setbeamertemplate{caption}[numbered]
 \setbeamertemplate{caption label separator}{: }
 \setbeamercolor{caption name}{fg=normal text.fg}
-\beamertemplatenavigationsymbolsempty
+\beamertemplatenavigationsymbolshorizontal
 % Prevent slide breaks in the middle of a paragraph
 \widowpenalties 1 10000
 \raggedbottom
@@ -100,6 +100,7 @@
 \def\fps@figure{htbp}
 \makeatother
 
+\titlegraphic{\includegraphics[width=0.4\paperwidth]{Latex\uenrlogo.png}}
 \makeatletter
 \makeatother
 \makeatletter
@@ -154,6 +155,8 @@
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
+\usepackage[]{biblatex}
+\addbibresource{references.bib}
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
@@ -165,45 +168,59 @@
 
 \title{Segregate The Variability Climate Is Responsible For In
 Vegetation Loss Using Time Series Analsis}
+\subtitle{Quantifying The Status of Galamsey With Time Series Analsis}
 \author{Kalong Boniface And Fugah Seletey Mitchell}
-\date{8/18/22}
+\date{8/21/22}
 
 \begin{document}
 \frame{\titlepage}
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, borderline west={3pt}{0pt}{shadecolor}, sharp corners, frame hidden, boxrule=0pt, breakable, interior hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, borderline west={3pt}{0pt}{shadecolor}, breakable, sharp corners, enhanced, frame hidden, boxrule=0pt]}{\end{tcolorbox}}\fi
 
-\begin{frame}{Quarto}
-\protect\hypertarget{quarto}{}
-Quarto enables you to weave together content and executable code into a
-finished presentation. To learn more about Quarto presentations see
-\url{https://quarto.org/docs/presentations/}.
+\begin{frame}{INTRODUCTION}
+\protect\hypertarget{introduction}{}
+The purpose of this paper is to establish an understanding of time
+series analysis on remotely sensed data. Which will introduced us to the
+fundamentals of time series modeling, including decomposition,
+autocorrelation and modeling historical changes in Galamsey Operation in
+Ghana, the Cause,Dangers and it's Environmental Impact. Galamsey also
+known as ``gather them and sell'' ( \textcite{owusu-nimo2018a} ), is the
+term given by local Ghanaian for illegal small-scale gold mining in
+Ghana( \textcite{ferring2016} )
 \end{frame}
 
-\begin{frame}{Bullets}
-\protect\hypertarget{bullets}{}
-When you click the \textbf{Render} button a document will be generated
-that includes:
-
-\begin{itemize}
-\tightlist
-\item
-  Content authored with markdown
-\item
-  Output from executable code
-\end{itemize}
+\begin{frame}{OUTLINE}
+\protect\hypertarget{outline}{}
 \end{frame}
 
-\begin{frame}[fragile]{Code}
-\protect\hypertarget{code}{}
-When you click the \textbf{Render} button a presentation will be
-generated that includes both content and the output of embedded code.
-You can embed code like this:
-
-\begin{verbatim}
-[1] 2
-\end{verbatim}
+\begin{frame}{ANATOMI OF THE PROJECT}
+\protect\hypertarget{anatomi-of-the-project}{}
 \end{frame}
 
+\begin{frame}{DATA AND RESEARCH DESIGN}
+\protect\hypertarget{data-and-research-design}{}
+\end{frame}
+
+\begin{frame}{METHODOLOGY AND RESULT}
+\protect\hypertarget{methodology-and-result}{}
+\end{frame}
+
+\begin{frame}{ANALYSIS AND DESCUSSION}
+\protect\hypertarget{analysis-and-descussion}{}
+\end{frame}
+
+\begin{frame}{CONCLUSION}
+\protect\hypertarget{conclusion}{}
+\end{frame}
+
+\begin{frame}{REFERENCES}
+\protect\hypertarget{references}{}
+\end{frame}
+
+
+\begin{frame}[allowframebreaks]{}
+  \bibliographytrue
+  \printbibliography[heading=none]
+\end{frame}
 
 
 \end{document}

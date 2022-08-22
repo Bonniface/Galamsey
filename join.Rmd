@@ -1,0 +1,35 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+Rain <-read.csv("Data/Rainfall.csv")
+Soil <- read.csv("Data/Soil Moisture.csv")
+NDVI <- read.csv("Data/eMODIS NDVI.csv")
+Evap <- read.csv("Data/Evaporative Stress.csv")
+Termp <- read.csv("Data/IMERG_D.csv")
+Percip <- read.csv("Data/Percip.csv")
+```
+
+```{r}
+library(lubridate)
+Dates <- data.frame(date = seq(as.Date('2000-01-01'), as.Date('2022-01-01'), "month"))
+Dates$month <- month(Dates$date)
+Dates$year <- year(Dates$date)
+```
+
+
+```{r}
+dim(Rain)
+dim(Soil)
+dim(NDVI)
+dim(Evap)
+dim(Termp)
+dim(Percip)
+```
+
+```{r}
+# dplyr::full_join(Rain,Soil,NDVI,Evap,Termp,Percip,by = DateTime)  
+```
+
