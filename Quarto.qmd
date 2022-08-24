@@ -127,7 +127,7 @@ To understand the methods and to evaluate different models, few concepts like *s
 
 Stationarity alludes to an irregular process that creates a time-series which has mean, and distribution to be constant through time. Distribution only depends on time and not location in time (Manuca, R. and Savit, R., 1996). If the distribution is same over different time windows is strong stationarity and if only mean and variance are similar, then it is weak stationarity. Irrespective of strong or weak, stationarity helps build a class of models such Autoregression (AR), Moving Average (MA), ARIMA (Witt, A., Kurths, J. and Pikovsky, A., 1998).
 
-An MA(q) process is always stationary, irrespective of the values the MA parameters \[23\]. The conditions regarding stationarity and invertibility of AR and MA processes also hold for an ARMA process. An ARMA(p, q) process is stationary if all the roots of the characteristic equation \$\$ \\phi(L) = 0 \$\$ lie outside the unit circle. Similarly, if all the roots of the lag equation
+An MA(q) process is always stationary, irrespective of the values the MA parameters \[23\]. The conditions regarding stationarity and invertibility of AR and MA processes also hold for an ARMA process. An ARMA(p, q) process is stationary if all the roots of the characteristic equation $$ \phi(L) = 0 $$ lie outside the unit circle. Similarly, if all the roots of the lag equation
 
 \$\$ \\theta (L) = 0 \$\$ lie outside the unit circle, then the ARMA(p, q) process is invertible and can be expressed as a pure AR process..
 
@@ -139,12 +139,12 @@ This concept is used to make trending and seasonal data stationary. Subtraction 
 
 AR work on a concept called lags which is defined as the forecast of a series is solely based on the past values in the series (Cryer, J.D., 1986). Formula for Autoregression AR(1): $$\displaystyle y_{t} = \omega + \phi Y _{t-1}+ e_{t}$$ is stationary when $$ |\phi_{1}| < 1,  $$ with a constant mean $$\displaystyle \mu = \frac{\omega}{1-\phi_{1}} $$ and constant variance $$ \displaystyle \gamma_{o} = \frac{\sigma^{2}}{1-\phi_{1}^{2}} $$
 
-        Where ; \quad   
-        $$ y_{t}$$  = Target ,\quad
-        $\omega$$ = Intercept,\quad
-        $$\phi$$ = Coefficient,\quad
-        $$Y _{t-1}$$=Lagged target,\quad
-        $$e_{t}$$ = Error\\
+        Where ;    
+        $$ y_{t} $$  = Target ,
+        $$ \omega $$ = Intercept,
+        $$ \phi$$ = Coefficient,
+        $$ Y _{t-1} $$=Lagged target,
+        $$ e_{t} $$ = Error
 
 It depends only on one lag in the past and also called AR model of order one (Shibata, R., 1976). Autoregressive models are also known as long memory models as they must keep the memory of all the lags until its initial start point and must calculate their value. If there is any shock incident in the past which must have led to fluctuations in the data, it will have its effect on the present value which makes the model quite sensitive to shocks (Shibata, R., 1976).
 
@@ -270,7 +270,7 @@ Another important characteristic of SVM is that here the training process is equ
 
 #### Forecast Performance Measures
 
-While applying a particular model to some real or simulated time series, first the raw data is divided into two parts, viz. the Training Set and Test Set. The observations in the training set are used for constructing the desired model. Often a small subpart of the training set is kept for validation purpose and is known as the Validation Set. Sometimes a preprocessing is done by normalizing the data or taking logarithmic or other transforms. One such famous technique is the Box-Cox Transformation \[23\]. Once a model is constructed, it is used for generating forecasts. The test set observations are kept for verifying how accurate the fitted model performed in forecasting these values. If necessary, an inverse transformation is applied on the forecasted values to convert them in original scale. In order to judge the forecasting accuracy of a particular model or for evaluating and comparing different models, their relative performance on the test dataset is considered.
+While applying a particular model to some real or simulated time series, first the raw data is divided into two parts, viz. the Training Set and Test Set. The observations in the training set are used for constructing the desired model. Often a small subpart of the training set is kept for validation purpose and is known as the Validation Set. Sometimes a preprocessing is done by normalizing the data or taking logarithmic or other transforms. One such famous technique is the \[23\]. Once a model is constructed, it is used for generating forecasts. The test set observations are kept for verifying how accurate the fitted model performed in forecasting these values. If necessary, an inverse transformation is applied on the forecasted values to convert them in original scale. In order to judge the forecasting accuracy of a particular model or for evaluating and comparing different models, their relative performance on the test dataset is considered.
 
 Due to the fundamental importance of time series forecasting in many practical situations, proper care should be taken while selecting a particular model. For this reason, various performance measures are proposed in literature \[3, 7, 8, 9, 24, 27\] to estimate forecast accuracy and to compare different models. These are also known as performance metrics \[24\]. Each of these measures is a function of the actual and forecasted values of the time series.
 
@@ -286,7 +286,7 @@ This measure is defined as \[24\] $$ \displaystyle MFE = \frac{1}{n}\sum_{t=1}^{
 
 LULC data are records that documents to what extent a region is covered by wetlands, forests, agriculture, impervious surfaces, and other land and water forms. These water forms include open water or wetlands. Land use shows how people use landscape either for conservation, development, agriculture or mixed uses \[6, 7\]. Changes In land can be identified by analysing satellite imagery. However, land use cannot be identified from satellite imagery. Satellite imagery give us information that helps in understanding the present landscape. Furthermore, to see changes through time, different years are needed. With this information, we can assess decades of data as well as insight into the possible effects of these changes that has occured and make better decisions before they can cause great harm. According to \[10\], five different types of LULC pattern were classified barren lands such as Galamsey Site, agricultural lands, urban lands, quarries, and free water bodies, to detect the 25years LULC change in the western Nile delta of Egypt. Supervised maximum likelihood classification (MLC) method together with landsat images were used in Erdas Imagine software. The finding shows a significant change in barren land changing into agricultural land continuously from 1984 to 2009.
 
-Similarly, in \[1\] used the maximum likelihood algorithm (MLA) and Markov chain model (MCA) to study the LULC classification using ArcGIS and future prediction using Idiri respectively in Kathmandu city Nepal. Built-up, water body, forest area, open field and cultivated land classes classified. Results show built-up area significantly increased, and water body, forest area, open field and cultivated land decrease downward trend from 1976 to 2009. Furthermore, the Markov chain Analysis prediction for 2017 shows that in 2017 Urban area will increase to cover 72.24 \$\$\\%\$\$ of the total land in Kathmandu and cultivated land remains only 20.90 \$\$\\%\$\$. Waterbody and the open field will increase respectively by 0.59\$\$\\%\$\$, 0.19\$\$\\%\$\$ whereas forest land decrease by 0.47\$\$\\%\$\$.
+Similarly, in \[1\] used the maximum likelihood algorithm (MLA) and Markov chain model (MCA) to study the LULC classification using ArcGIS and future prediction using Idiri respectively in Kathmandu city Nepal. Built-up, water body, forest area, open field and cultivated land classes classified. Results show built-up area significantly increased, and water body, forest area, open field and cultivated land decrease downward trend from 1976 to 2009. Furthermore, the Markov chain Analysis prediction for 2017 shows that in 2017 Urban area will increase to cover 72.24 $$\%$$ of the total land in Kathmandu and cultivated land remains only 20.90$$\%$$. Waterbody and the open field will increase respectively by 0.59$$\%$$, 0.19$$\%$$ whereas forest land decrease by 0.47$$\%$$.
 
 Furthermore, in \[10\], They made used of the Maximum likelihood classification (MLC), Change detection and spatial matrix analysis to analyse land cover change of fifty-year period (1954 to 2004) in Avellino Italy. The result shows 4 LULC classes, with urban land use increasing rapidly affecting the cultivated land mostly, while woodland and grassland cover decrease was at a lower rate. Moreover, in \[11\] studied the LULC changes and structure in Dhaka metropolitan, Bangladesh in a period of 1975 to 2005. Maximum Likelihood Classification (MLC) and transition matrix method were used for LULC classification and pattern of LULC. The Result shows six classes in LULC of the water body,
 
@@ -294,11 +294,11 @@ vegetation, bare soil, cultivated land built-up and wetland/lowland. Also, a sig
 
 Also, \[12\] used Maximum Likelihood Classification and comparison method to study the LULC classification and change respectively from 1976 to 2003 in Tirupati, India. The results show 6 LULC classes, agricultural land, built-up, dense forest, plantation, water spread and other land, a significant increase in built-up area, plantation forests and other land, while a decrease on the part of the waterbody, dense forest and agricultural land was noticed.
 
-Moreover, in \[13\] studied the LULC change in Duzce plain Turkey. Supervised classification and the Corine land cover nomenclature methods used. The result shows 5 LULC classes as urban fabric, forest, heterogeneous agricultural land, inland wasteland and (Industrial, commercial, and transport) units with an accuracy assessment between 92.41 $$\%$$ and 97.3 $$\%$$\$\$ for LULC map 2010 and 1987 respectively. Also, a significant change in LULC was noticed with 11.2\$\$\\%\$\$ increase in agricultural area and 335 \$\$\\%\$\$ decrease of forest land.
+Moreover, in \[13\] studied the LULC change in Duzce plain Turkey. Supervised classification and the Corine land cover nomenclature methods used. The result shows 5 LULC classes as urban fabric, forest, heterogeneous agricultural land, inland wasteland and (Industrial, commercial, and transport) units with an accuracy assessment between 92.41 $$\%$$ and 97.3 $$\%$$ for LULC map 2010 and 1987 respectively. Also, a significant change in LULC was noticed with 11.2$$\%$$ increase in agricultural area and 335 $$\%$$ decrease of forest land.
 
 Also, a significant increase and a decrease of LULC were noticed between the years 1973, 1985, and 2000 within the classes.
 
-```{r}
+```{r,warning=FALSE}
 #| label: load-pkgs
 #| code-summary: "Packages"
 #| message: false
