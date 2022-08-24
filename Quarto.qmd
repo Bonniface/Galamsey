@@ -12,7 +12,7 @@ date: "`r Sys.Date()`"
 title-block-banner: true
 # title-block-style: plain
 institute: University of Energy and Natural Resouce,Sunyani,GH
- logo: "Latex/Presentation1.png"
+ # logo: "Latex/Presentation1.png"
 format: pdf
 toc: true
 toc-depth: 2
@@ -158,13 +158,7 @@ This concept is used to make trending and seasonal data stationary. Subtraction 
 
 ##### **Autoregressive models (AR):**
 
-AR work on a concept called lags which is defined as the forecast of a series is solely based on the past values in the series (Cryer, J.D., 1986). Formula for Autoregression AR(1): $\displaystyle y_{t} = \omega + \phi Y _{t-1}+ e_{t}$ is stationary when $ |\phi_{1}| < 1,$ with a constant mean $\displaystyle \mu = \frac{\omega}{1-\phi_{1}}$ and constant variance $\displaystyle \gamma_{o} = \frac{\sigma^{2}}{1-\phi_{1}^{2}}$
-        Where ; \quad   
-        $y_{t}$  = Target ,\quad
-        $\omega$ = Intercept,\quad
-        $\phi$ = Coefficient,\quad
-        $Y_{t-1}$=Lagged target,\quad
-        $e_{t}$ = Error\\
+AR work on a concept called lags which is defined as the forecast of a series is solely based on the past values in the series (Cryer, J.D., 1986). Formula for Autoregression AR(1): $\displaystyle y_{t} = \omega + \phi Y _{t-1}+ e_{t}$ is stationary when \$ \|\phi\_{1}\| \< 1,\$ with a constant mean $\displaystyle \mu = \frac{\omega}{1-\phi_{1}}$ and constant variance $\displaystyle \gamma_{o} = \frac{\sigma^{2}}{1-\phi_{1}^{2}}$ Where ; \quad    $y_{t}$ = Target ,\quad $\omega$ = Intercept,\quad $\phi$ = Coefficient,\quad $Y_{t-1}$=Lagged target,\quad $e_{t}$ = Error\\
 
 It depends only on one lag in the past and also called AR model of order one (Shibata, R., 1976). Autoregressive models are also known as long memory models as they must keep the memory of all the lags until its initial start point and must calculate their value. If there is any shock incident in the past which must have led to fluctuations in the data, it will have its effect on the present value which makes the model quite sensitive to shocks (Shibata, R., 1976).
 
@@ -188,7 +182,7 @@ The findings of both the paper were quite different but one cannot prove either 
 
 To determine a proper model for a given time series data, it is necessary to carry out the ACF and PACF analysis. These statistical measures reflect how the observations in a time series are related to each other. For modeling and forecasting purpose it is often useful to plot the ACF and PACF against consecutive time lags. These plots help in determining the order of AR and MA terms. For a time series ${x(t),t = 0,1, 2,...}$the Autocovariance \[21, 23\] at lag k is defined as:
 
-$\mu$ is the mean of the time series, i.e. $\mu = E\left[x_{t}\right]$. The autocovariance at lag zero i.e. $y_{0}$ is the variance of the time series. From the definition it is clear that the autocorrelation coefficient $ p_{k}$ is dimensionless and so is independent of the scale of measurement. Also, clearly $-1 \leq p\_{k}\leq 1$. Statisticians Box and Jenkins \[6\] termed $y_{k }$ as the theoretical Autocovariance Function (ACVF) and $p_{k}$ as the theoretical Autocorrelation Function (ACF).
+$\mu$ is the mean of the time series, i.e. $\mu = E\left[x_{t}\right]$. The autocovariance at lag zero i.e. $y_{0}$ is the variance of the time series. From the definition it is clear that the autocorrelation coefficient \$ p\_{k}\$ is dimensionless and so is independent of the scale of measurement. Also, clearly $-1 \leq p\_{k}\leq 1$. Statisticians Box and Jenkins \[6\] termed $y_{k }$ as the theoretical Autocovariance Function (ACVF) and $p_{k}$ as the theoretical Autocorrelation Function (ACF).
 
 Another measure, known as the Partial Autucorrelation Function (PACF) is used to measure the correlation between an observation k period ago and the current observation, after controlling for observations at intermediate lags (i.e. at lags \< k ) \[12\]. At lag 1, PACF(1) is same as ACF(1). The detailed formulae for calculating PACF are given in \[6, 23\].
 
@@ -317,132 +311,132 @@ Moreover, in \[13\] studied the LULC change in Duzce plain Turkey. Supervised cl
 Also, a significant increase and a decrease of LULC were noticed between the years 1973, 1985, and 2000 within the classes.
 
 ```{r}
-# #| label: load-pkgs
-# #| code-summary: "Packages"
-# #| message: false
-# 
-# library(openintro)  # for data
-# #library(tidyverse)  # for data wrangling and visualization
-# library(knitr)      # for tables
-# library(broom)      # for model summary
-# if(!require("pacman")){install.packages("pacman")}
-# pacman::p_load(char = c('rgee','reticulate','raster','tidyverse',
-#                 'dplyr','sf','mapview','mapeddit','caret','forcats','reticulate',
-#                 'rgee', 'remotes', 'magrittr', 'tigris', 'tibble', 'stars',                       'stars',
-#                 'st', 'lubridate', 'imputeTS', 'leaflet', 'classInt',                            'RColorBrewer',
-#                 'ggplot2', 'googledrive', 'geojsonio', 'ggpubr','cartogram'), 
-#                install = F, update = F, character.only = T)
+#| label: load-pkgs
+#| code-summary: "Packages"
+#| message: false
+
+library(openintro)  # for data
+#library(tidyverse)  # for data wrangling and visualization
+library(knitr)      # for tables
+library(broom)      # for model summary
+if(!require("pacman")){install.packages("pacman")}
+pacman::p_load(char = c('rgee','reticulate','raster','tidyverse',
+                'dplyr','sf','mapview','mapeddit','caret','forcats','reticulate',
+                'rgee', 'remotes', 'magrittr', 'tigris', 'tibble', 'stars',                       'stars',
+                'st', 'lubridate', 'imputeTS', 'leaflet', 'classInt',                            'RColorBrewer',
+                'ggplot2', 'googledrive', 'geojsonio', 'ggpubr','cartogram'),
+               install = F, update = F, character.only = T)
 ```
 
 ```{r,results='hide'}
-# library(rgee)
-# 
-# library(reticulate)
-# #ee_install() 
-# ee_check()
-# 
-# ee_Initialize("kalong",drive = TRUE) # initialize GEE, 
-# #this will have you log in to Google Drive
+library(rgee)
+
+library(reticulate)
+#ee_install()
+ee_check()
+
+ee_Initialize("kalong",drive = TRUE) # initialize GEE,
+#this will have you log in to Google Drive
 
 ```
 
 ```{r}
-# library('sf')
-# # Load shape file
-# 
-# #setwd("C:/Users/Guy/Documents/GitHub/Artisanal-Mining-In-Ghana-Galamsey/New Regions")
-# aoi <- read_sf('Ghana shp file/GHA/gadm41_GHA_1.shp')
-# aoi <- st_transform(aoi, st_crs(4326))
-# aoi.ee <- st_bbox(aoi) %>% 
-# st_as_sfc() %>% 
-# sf_as_ee() #Converts it to an Earth Engine Object
+library('sf')
+# Load shape file
+
+#setwd("C:/Users/Guy/Documents/GitHub/Artisanal-Mining-In-Ghana-Galamsey/New Regions")
+aoi <- read_sf('Ghana shp file/GHA/gadm41_GHA_1.shp')
+aoi <- st_transform(aoi, st_crs(4326))
+aoi.ee <- st_bbox(aoi) %>%
+st_as_sfc() %>%
+sf_as_ee() #Converts it to an Earth Engine Object
 
 
 ```
 
 ```{r}
-# getQABits <- function(image, qa) {
-#   # Convert binary (character) to decimal (little endian)
-#   qa <- sum(2^(which(rev(unlist(strsplit(as.character(qa), "")) == 1))-1))
-#   # Return a mask band image, giving the qa value.
-#   image$bitwiseAnd(qa)$lt(1)
-# }
-# 
-# mod.clean <- function(img) {
-#   # Extract the NDVI band
-#   ndvi_values <- img$select("EVI")
-#   # Extract the quality band
-#   ndvi_qa <- img$select("SummaryQA")
-#   # Select pixels to mask
-#   quality_mask <- getQABits(ndvi_qa, "11")
-#   # Mask pixels with value zero.
-#   
-#   #0.0001 is the MODIS Scale Factor
-#   ndvi_values$updateMask(quality_mask)$divide(ee$Image$constant(10000)) 
-# }
-# 
-# modis.evi <- ee$ImageCollection("MODIS/006/MOD13Q1"
-#                                 )$filter(ee$Filter$date('2000-01-01','2022-01-01'))$map(mod.clean)
+getQABits <- function(image, qa) {
+  # Convert binary (character) to decimal (little endian)
+  qa <- sum(2^(which(rev(unlist(strsplit(as.character(qa), "")) == 1))-1))
+  # Return a mask band image, giving the qa value.
+  image$bitwiseAnd(qa)$lt(1)
+}
+
+mod.clean <- function(img) {
+  # Extract the NDVI band
+  ndvi_values <- img$select("EVI")
+  # Extract the quality band
+  ndvi_qa <- img$select("SummaryQA")
+  # Select pixels to mask
+  quality_mask <- getQABits(ndvi_qa, "11")
+  # Mask pixels with value zero.
+
+  #0.0001 is the MODIS Scale Factor
+  ndvi_values$updateMask(quality_mask)$divide(ee$Image$constant(10000))
+}
+
+modis.evi <- ee$ImageCollection("MODIS/006/MOD13Q1"
+                                )$filter(ee$Filter$date('2000-01-01','2022-01-01'))$map(mod.clean)
 ```
 
 Now we will create a hexagonal grid over the study area
 
 ```{r}
-# library(tibble)
-# aoi.proj <- st_transform(aoi, st_crs(2392))
-# hex <- st_make_grid(x = aoi.proj, cellsize = 17280, square = FALSE) %>%
-# st_sf() %>%
-# rowid_to_column('hex_id')
-# hex <- hex[aoi.proj,]
-# plot(hex)
+library(tibble)
+aoi.proj <- st_transform(aoi, st_crs(2392))
+hex <- st_make_grid(x = aoi.proj, cellsize = 17280, square = FALSE) %>%
+st_sf() %>%
+rowid_to_column('hex_id')
+hex <- hex[aoi.proj,]
+plot(hex)
 ```
 
 Now we will use the grid created above to extract the mean EVI values within each cell for the years 2000-2020.
 
 ```{r,include=FALSE}
-# #This will take about 30 minutes
-# if(readline(prompt = "Hit enter to proceed or type 'no' to download the data from G-Drive. ") == "no"){
-# googledrive::drive_download(file =
-#                               googledrive::as_id("https://drive.google.com/drive/folders/1ZnCpYz38ezSU1XG7ixJ2sPg_DX7bO07J?usp=sharing"),overwrite = T)
-#   #https://drive.google.com/drive/folders/1ZnCpYz38ezSU1XG7ixJ2sPg_DX7bO07J?usp=sharing
-# evi.df <- read.csv("rgee_file_2d44527a3b0e_2022_07_28_15_40_52.csv")
-# evi.df <- evi.df[,3:ncol(evi.df)]
-# colnames(evi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(evi.df[, 2:ncol(evi.df)]), 2, 11), "_", "-")) #Convert dates to unambiguous format
-# } else {
-# #This will take about 30 minutes
-# paste0(system.time(expr = aoi.evi <- ee_extract(x = modis.evi, y = hex["hex_id"], sf = FALSE, scale = 250, fun = ee$Reducer$mean(), via = "drive", quiet = T))/60, " Minutes Elapsed. ")
-# evi.df <- as.data.frame(aoi.evi)
-# colnames(evi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(evi.df[, 2:ncol(evi.df)]), 2, 11), "_", "-"))
-# write.csv(x = evi.df, file = "~/rgee_file_2d44527a3b0e_2022_07_28_15_40_52.csv")}
+#This will take about 30 minutes
+if(readline(prompt = "Hit enter to proceed or type 'no' to download the data from G-Drive. ") == "no"){
+googledrive::drive_download(file =
+                              googledrive::as_id("https://drive.google.com/drive/folders/1ZnCpYz38ezSU1XG7ixJ2sPg_DX7bO07J?usp=sharing"),overwrite = T)
+  #https://drive.google.com/drive/folders/1ZnCpYz38ezSU1XG7ixJ2sPg_DX7bO07J?usp=sharing
+evi.df <- read.csv("rgee_file_2d44527a3b0e_2022_07_28_15_40_52.csv")
+evi.df <- evi.df[,3:ncol(evi.df)]
+colnames(evi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(evi.df[, 2:ncol(evi.df)]), 2, 11), "_", "-")) #Convert dates to unambiguous format
+} else {
+#This will take about 30 minutes
+paste0(system.time(expr = aoi.evi <- ee_extract(x = modis.evi, y = hex["hex_id"], sf = FALSE, scale = 250, fun = ee$Reducer$mean(), via = "drive", quiet = T))/60, " Minutes Elapsed. ")
+evi.df <- as.data.frame(aoi.evi)
+colnames(evi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(evi.df[, 2:ncol(evi.df)]), 2, 11), "_", "-"))
+write.csv(x = evi.df, file = "~/rgee_file_2d44527a3b0e_2022_07_28_15_40_52.csv")}
 ```
 
 Which we are going to perform a time series analysis on the data within each grid cell. But first, we will work through the procedure one step at a time.
 
 ```{r,include=FALSE}
-# #Create an empty list, this will be used to house the time series projections for each cell.
-# evi.hw.lst <- list() 
-# #Create an empty list, this will be used to house the time series decomposition for each cell.
-# evi.dcmp.lst <- list() 
-# #This data frame will hold the trend data
-# evi.trend <- data.frame(hex_id = evi.df$hex_id, na.cnt = NA, NA_Values = NA, Trend = NA, P_value = NA, R_Squared = NA, Standard_Error = NA, Trend_Strength = NA, Seasonal_Strength = NA)
-# Dates <- data.frame(date = seq(as.Date('2001-01-01'), as.Date('2019-11-01'), "month"))
-# 
-# Dates$month <- month(Dates$date)
-# Dates$year <- year(Dates$date)
-# i <- 1
+#Create an empty list, this will be used to house the time series projections for each cell.
+evi.hw.lst <- list()
+#Create an empty list, this will be used to house the time series decomposition for each cell.
+evi.dcmp.lst <- list()
+#This data frame will hold the trend data
+evi.trend <- data.frame(hex_id = evi.df$hex_id, na.cnt = NA, NA_Values = NA, Trend = NA, P_value = NA, R_Squared = NA, Standard_Error = NA, Trend_Strength = NA, Seasonal_Strength = NA)
+Dates <- data.frame(date = seq(as.Date('2001-01-01'), as.Date('2019-11-01'), "month"))
+
+Dates$month <- month(Dates$date)
+Dates$year <- year(Dates$date)
+i <- 1
 ```
 
 ```{r}
 
-# #converting the data to a transposed data frame
-# tsv <- data.frame(evi = t(evi.df[i, 2:ncol(evi.df)])) 
-# colnames(tsv) <- c("evi")
-# #write.csv(tsv,"Data/tsv.csv")
-# head(tsv) #let's take a look
-# # 
-# # : My Caption {tbl-letters}
-# # 
-# # See @tbl-letters.
+#converting the data to a transposed data frame
+tsv <- data.frame(evi = t(evi.df[i, 2:ncol(evi.df)]))
+colnames(tsv) <- c("evi")
+write.csv(tsv,"Data/tsv.csv")
+head(tsv) #let's take a look
+#
+# : My Caption {tbl-letters}
+#
+# See @tbl-letters.
 ```
 
 # CHAPTER THREE
@@ -472,63 +466,63 @@ The Analysis Of Variance (ANOVA) Method
 ### Assumptions
 
 ```{r}
-# #We want to get an idea of the number of entries with no EVI value
-# na.cnt <- length(tsv[is.na(tsv)]) 
-# evi.trend$na.cnt[i] <- na.cnt
-# td <- tsv %>% 
-#   mutate(month = month(as.Date(rownames(tsv))), year = year(as.Date(rownames(tsv)))) %>% 
-#   group_by(year, month) %>%
-#   summarise(mean_evi = mean(evi, na.rm = T), .groups = "keep") %>%
-#   as.data.frame()
-# head(td)
+#We want to get an idea of the number of entries with no EVI value
+na.cnt <- length(tsv[is.na(tsv)])
+evi.trend$na.cnt[i] <- na.cnt
+td <- tsv %>%
+  mutate(month = month(as.Date(rownames(tsv))), year = year(as.Date(rownames(tsv)))) %>%
+  group_by(year, month) %>%
+  summarise(mean_evi = mean(evi, na.rm = T), .groups = "keep") %>%
+  as.data.frame()
+head(td)
 ```
 
 That looks better! Unfortunately though, there are a number of dates which don't have any evi value at all, let's figure out which ones these are.
 
 ```{r, include=FALSE}
-# 
-# td$date <- as.Date(paste0(td$year, "-", td$month, "-01"))
-# dx <- Dates[!(Dates$date %in% td$date),]
+
+td$date <- as.Date(paste0(td$year, "-", td$month, "-01"))
+dx <- Dates[!(Dates$date %in% td$date),]
 ```
 
 ```{r}
-# dx$mean_evi <- NA
-# tdx <- rbind(td, dx) %>% 
-#   arrange(date)
-# write.csv(tdx,"Data/tdx.csv")
-# tdx <- read.csv("Data/tdx.csv")
-# head(tdx)
+dx$mean_evi <- NA
+tdx <- rbind(td, dx) %>%
+  arrange(date)
+write.csv(tdx,"Data/tdx.csv")
+tdx <- read.csv("Data/tdx.csv")
+head(tdx)
 ```
 
 ```{r}
-# na.cnt <- length(tdx[is.na(tdx)])
-# # Convert data to time series.
-# tdx <- ts(data = tdx$mean_evi, start = c(2001, 1), end = c(2019, 11), frequency = 12) 
-# plot(tdx)
+na.cnt <- length(tdx[is.na(tdx)])
+# Convert data to time series.
+tdx <- ts(data = tdx$mean_evi, start = c(2001, 1), end = c(2019, 11), frequency = 12)
+plot(tdx)
 ```
 
 ```{r}
-# library(imputeTS)
-# tdx <- if(na.cnt > 0){imputeTS::na_kalman(tdx, model = "auto.arima", smooth = T)} else {
-#     tdx
-# }
-# plot(tdx)
-# new_tdx <- write.csv(tdx,"Data/new_tdx.csv")
+library(imputeTS)
+tdx <- if(na.cnt > 0){imputeTS::na_kalman(tdx, model = "auto.arima", smooth = T)} else {
+    tdx
+}
+plot(tdx)
+new_tdx <- write.csv(tdx,"Data/new_tdx.csv")
 ```
 
 ```{r}
-# tdx.dcp <- stl(tdx, s.window = 'periodic')
-# plot(tdx.dcp)
+tdx.dcp <- stl(tdx, s.window = 'periodic')
+plot(tdx.dcp)
 ```
 
 ```{r,message=FALSE}
-# library(forecast)
-# Tt <- trendcycle(tdx.dcp)
-# St <- seasonal(tdx.dcp)
-# Rt <- remainder(tdx.dcp)
-# plot(Tt)
-# plot(St)
-# plot(Rt)
+library(forecast)
+Tt <- trendcycle(tdx.dcp)
+St <- seasonal(tdx.dcp)
+Rt <- remainder(tdx.dcp)
+plot(Tt)
+plot(St)
+plot(Rt)
 ```
 
 # 
@@ -538,40 +532,40 @@ When investigating a time series, one of the first things to check before buildi
 Here, we will look at a couple methods for checking stationarity. If the time series is provided with seasonality, a trend, or a change point in the mean or variance, then the influences need to be removed or accounted for. Augmented Dickey--Fuller (ADF) t-statistic test to find if the series has a unit root (a series with a trend line will have a unit root and result in a large p-value).
 
 ```{r,warning=FALSE,message=FALSE}
-# library(tseries)
-# adf.test(Rt)
-# adf.test(Tt)
-# adf.test(tdx)
+library(tseries)
+adf.test(Rt)
+adf.test(Tt)
+adf.test(tdx)
 ```
 
 #Autocorrelation Function (ACF) Identify if correlation at different time lags goes to 0
 
 ```{r}
-# plot.new()
-# frame()
-# # The Stationary Signal and ACF
-# plot(Rt,col= "red", main = "Stationary Signal")
-# acf(Rt, lag.max = length(Rt),
-#     xlab = "lag #", ylab = 'ACF', main = '')
-# 
-# #The Trend Signal anf ACF
-# 
-# plot(Tt,col= "red",main = "Trend Signal")
-# acf(Tt, lag.max = length(Tt),
-#     xlab = "lag#", ylab = "ACF", main = '')
+plot.new()
+frame()
+# The Stationary Signal and ACF
+plot(Rt,col= "red", main = "Stationary Signal")
+acf(Rt, lag.max = length(Rt),
+    xlab = "lag #", ylab = 'ACF', main = '')
+
+#The Trend Signal anf ACF
+
+plot(Tt,col= "red",main = "Trend Signal")
+acf(Tt, lag.max = length(Tt),
+    xlab = "lag#", ylab = "ACF", main = '')
 ```
 
 It is noteworthy that the stationary signal (top left) generates few significant lags that are larger than the ACF's confidence interval (blue dotted line, bottom left). In contrast, practically all delays in the time series with a trend (top right) surpass the ACF's confidence range (bottom right). Qualitatively, we can observe and infer from the ACFs that the signal on the left is steady (due to the lags that die out) whereas the signal on the right is not (since later lags exceed the confidence interval).
 
 ```{r}
-# tdx.ns <- data.frame(time = c(1:length(tdx)), trend = tdx - tdx.dcp$time.series[,1])
-# summary <- summary(lm(formula = trend ~ time, data = tdx.ns))
+tdx.ns <- data.frame(time = c(1:length(tdx)), trend = tdx - tdx.dcp$time.series[,1])
+summary <- summary(lm(formula = trend ~ time, data = tdx.ns))
 
 ```
 
 ```{r}
-# plot(tdx.ns)
-# abline(a = summary$coefficients[1,1], b = summary$coefficients[2,1], col = 'blue')
+plot(tdx.ns)
+abline(a = summary$coefficients[1,1], b = summary$coefficients[2,1], col = 'blue')
 ```
 
 ```{r}
@@ -583,20 +577,20 @@ It is noteworthy that the stationary signal (top left) generates few significant
 ```
 
 ```{r}
-# # Count of na values to dataframe
-# # Calculating Trend and Seasonal Strength
-# evi.trend$NA_Values[i] <- na.cnt 
-# evi.trend$Trend[i] <- summary$coefficients[2,1]
-# evi.trend$Trend_Strength[i] <- round(max(0,1-(var(Rt)/var(Tt+Rt))),1)
-# evi.trend$Seasonal_Strength[i] <- round(max(0,1-(var(Rt)/var(St+Rt))),1)
-# evi.trend$P_value[i] <- summary$coefficients[2,4]
-# evi.trend$R_Squared[i] <- summary$r.squared
-# evi.trend$Standard_Error[i] <- summary$sigma
-# evi.trend[i,]
+# Count of na values to dataframe
+# Calculating Trend and Seasonal Strength
+evi.trend$NA_Values[i] <- na.cnt
+evi.trend$Trend[i] <- summary$coefficients[2,1]
+evi.trend$Trend_Strength[i] <- round(max(0,1-(var(Rt)/var(Tt+Rt))),1)
+evi.trend$Seasonal_Strength[i] <- round(max(0,1-(var(Rt)/var(St+Rt))),1)
+evi.trend$P_value[i] <- summary$coefficients[2,4]
+evi.trend$R_Squared[i] <- summary$r.squared
+evi.trend$Standard_Error[i] <- summary$sigma
+evi.trend[i,]
 ```
 
 ```{r}
-# plot(evi.hw <- forecast::hw(y = tdx, h = 12, damped = T))
+plot(evi.hw <- forecast::hw(y = tdx, h = 12, damped = T))
 ```
 
 ```{r, eval=FALSE, include=FALSE}

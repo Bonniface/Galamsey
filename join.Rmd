@@ -5,31 +5,95 @@ output: html_notebook
 
 ```{r}
 Rain <-read.csv("Data/Rainfall.csv")
-Soil <- read.csv("Data/Soil Moisture.csv")
-NDVI <- read.csv("Data/eMODIS NDVI.csv")
 Evap <- read.csv("Data/Evaporative Stress.csv")
-Termp <- read.csv("Data/IMERG_D.csv")
 Percip <- read.csv("Data/Percip.csv")
-```
-
-```{r}
-library(lubridate)
-Dates <- data.frame(date = seq(as.Date('2000-01-01'), as.Date('2022-01-01'), "month"))
-Dates$month <- month(Dates$date)
-Dates$year <- year(Dates$date)
+tsvX <-read.csv("Data/tsv.csv")
 ```
 
 
-```{r}
-dim(Rain)
-dim(Soil)
-dim(NDVI)
-dim(Evap)
-dim(Termp)
-dim(Percip)
-```
+
 
 ```{r}
-# dplyr::full_join(Rain,Soil,NDVI,Evap,Termp,Percip,by = DateTime)  
+
+R <- Rain%>%full_join(Evap)
+P <-R%>%full_join(Percip)
+E <- P%>% full_join(tsvX)
+head(E)
+```
+
+
+
+
+
+```{r}
+
+for(i in 1:nrow(evi.df)){
+tsv <- data.frame(evi = t(evi.df[i, 2:ncol(evi.df)]))
+colnames(tsv) <- c("evi")
+na.cnt <- length(tsv[is.na(tsv)])
+evi.trend$na.cnt[i] <- na.cnt
+if(na.cnt < 263){
+td <- tsv %>%
+  mutate(month = month(as.Date(rownames(tsv))), year = year(as.Date(rownames(tsv)))) %>%
+  group_by(year, month) %>%
+  summarise(mean_evi = mean(evi, na.rm = T), .groups = "keep") %>%
+  as.data.frame()
+
+td$date <- as.Date(paste0(td$year, "-", td$month, "-01"))
+dx <- Dates[!(Dates$date %in% td$date),]
+
+dx$mean_evi <- NA
+
+tdx <- rbind(td, dx) %>%
+  arrange(date)
+
+na.cnt <- length(tdx[is.na(tdx)])
+evi.trend$na.cnt.2[i] <- na.cnt
+rm(td, dx)
+
+tdx <- ts(data = tdx$mean_evi, start = c(2000, 1), end = c(2022, 1), frequency = 12)
+tdx <- if(na.cnt > 0){imputeTS::na_kalman(tdx, model = "auto.arima", smooth = T)} else {
+    tdx
+}
+
+ #This will save our decomposition plots
+tdx.dcp <- stl(tdx, s.window = 'periodic')
+evi.dcmp[[i]] <- tdx.dcp
+png(filename = paste0(dir,"/decomp_plots/hw_", i,".png"), width = 1200, height = 650)
+plot(tdx.dcp)
+
+dev.off()
+tdx.ns <- data.frame(time = c(1:length(tdx)), trend = tdx - tdx.dcp$time.series[,1])
+Tt <- trendcycle(tdx.dcp)
+St <- seasonal(tdx.dcp)
+Rt <- remainder(tdx.dcp)
+
+#tslm
+trend.summ <- summary(lm(formula = trend ~ time, data = tdx.ns))
+evi.trend$trend[i] <- trend.summ$coefficients[2,1]
+
+#Trend Strength Calculation
+evi.trend$trnd.strngth[i] <- round(max(0,1 - (var(Rt)/var(Tt + Rt))), 1)
+evi.trend$seas.strngth[i] <- round(max(0,1 - (var(Rt)/var(St + Rt))), 1)
+
+evi.trend$p.val[i] <- trend.summ$coefficients[2,4]
+evi.trend$r2[i] <- trend.summ$r.squared
+evi.trend$std.er[i] <- trend.summ$sigma
+evi.hw <- forecast::hw(y = tdx, h = 12, damped = T)
+evi.hw.lst[[i]] <- evi.hw
+
+#This will save our projection plots
+png(filename = paste0(dir,"/hw_plots/hw_", i,".png"), width = 1200, height = 650)
+plot(evi.hw)
+dev.off()
+rm(evi.hw, trend.summ, tdx.ns, tdx.dcp, Tt, St, Rt, tdx, na.cnt)
+gc()
+} else {
+  evi.ts[[i]] <- NA
+    }
+  }
+}
+
+head(evi.trend) #Let's take a peak
 ```
 
