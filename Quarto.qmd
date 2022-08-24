@@ -1,14 +1,35 @@
 ---
-title: Segregate The Variability Climate Is Responsible For In Vegetation Loss Using  Time Series Analsis.
-author: 'Kalong Boniface And Fugah Seletey Mitchell '
+title: Segregate The Variability Climate Is Responsible For In Vegetation Loss
+subtitle: Quantifying The Status of Galamsey With Time Series Analsis
+author: 
+   - name: Kalong Boniface
+     email: kalongboniface97gmail.com
+     url: 
+     affiliation: University of Energy and Natural Resouce,Sunyani,GH
+   - name: Fugah Seletey Mitchell
+     affiliation: University of Energy and Natural Resouce,Sunyani,GH
 date: "`r Sys.Date()`"
+title-block-banner: true
+# title-block-style: plain
+institute: University of Energy and Natural Resouce,Sunyani,GH
+ # logo: "Latex/Presentation1.png"
 format: pdf
 toc: true
 toc-depth: 2
 toc-title: Table of Contents
 number-sections: true
-tbl-colwidths: [75,25]  
+# tbl-colwidths: [75,25]  
 editor: visual
+bibliography: references.bib
+citation: true
+cite-method: biblatex
+citecolor: blue
+reference-location: block
+link-citations: yes
+# template: quarterly-report.tex
+header-includes:
+  - \setmainfont{Times New Roman}
+csl: apa-single-spaced.csl
 ---
 
 # CHAPTER ONE
@@ -19,15 +40,15 @@ editor: visual
 
 The purpose of this paper is to establish an understanding in time series analysis on remotely sensed data. Which will introduced us to the fundamentals of time series modeling, including decomposition, autocorrelation and modeling historical changes in Galamsey Operation in Ghana, the Cause,Dangers and it's Environmental impact.
 
-Galamsey("gather them and sell"),(OwusuNimo2018) is the term given by local Ghanaian for illegal small-scale gold mining in Ghana (DavidYawDanquah2019). The major cause of Galamsey is unemployment among the youth in Ghana(Gracia2018). Young university graduates rarely find work and when they do it hardly sustains them. The result is that these youth go the extra mile to earn a living for themselves and their family.
+Galamsey also known as "gather them and sell",[@owusu-nimo2018] is the term given by local Ghanaian for illegal small-scale gold mining in Ghana . The major cause of Galamsey is unemployment among the youth in Ghana [@gracia2018]. Young university graduates rarely find work and when they do it hardly sustains them. The result is that these youth go the extra mile to earn a living for themselves and their family.
 
-Another factor is that lack of job security. On November 13, 2009 a collapse occurred in an illegal, privately owned mine in Dompoase, in the Ashanti Region of Ghana. At least 18 workers were killed, including 13 women, who worked as porters for the miners. Officials described the disaster as the worst mine collapse in Ghanaian history(News2009).
+Another factor is that lack of job security. On November 13, 2009 a collapse occurred in an illegal, privately owned mine in Dompoase, in the Ashanti Region of Ghana. At least 18 workers were killed, including 13 women, who worked as porters for the miners. Officials described the disaster as the worst mine collapse in Ghanaian history [@womendi2009] .
 
-Illegal mining causes damage to the land and water supply(Ansah2017). In March 2017, the Minister of Lands and Natural Resources, Mr. John Peter Amewu, gave the Galamsey operators/illegal miners a three-week ultimatum to stop their activities or be prepared to face the law(Allotey2017). The activities by Galamseyers have depleted Ghana's forest cover and they have caused water pollution, due to the crude and unregulated nature of the mining process(Gyekye2021).
+Illegal mining causes damage to the land and water supply [@ansah2017] . In March 2017, the Minister of Lands and Natural Resources, Mr. John Peter Amewu, gave the Galamsey operators/illegal miners a three-week ultimatum to stop their activities or be prepared to face the law [@allotey2017] . The activities by Galamseyers have depleted Ghana's forest cover and they have caused water pollution, due to the crude and unregulated nature of the mining process [@gyekye] .
 
 Under current Ghanaian constitution, it is illegal to operate as galamseyer.That is to dig on land granted to mining companies as concessions or licenses and any other land in search for gold. In some cases, Galamseyers are the first to discover and work extensive gold deposits before mining companies find out and take over. Galamseyers are the main indicator of the presence of gold in free metallic dust form or they process oxide or sulfide gold ore using liquid mercury.
 
-Between 20,000 to 50,000, including thousands from China are believed to be engaged in Galamsey in Ghana.But according to the Information Minister 200,000 and nearly 3 million people, recently are now into Galamsey operation and rely on it for their livelihoods(Burrows2017). Their operations are mostly in the southern part of Ghana where it is believe to have substantial reserves of gold deposits, usually within the area of large mining companies(Barenblitt2021). As a group, they are economically disad vantaged. Galamsey settlements are usually poorer than neighboring agricultural villages. They have high rates of accidents and are exposed to mercury poisoning from their crude processing methods. Many women are among the workers, acting mostly as porters for the miners.
+Between 20,000 to 50,000, including thousands from China are believed to be engaged in Galamsey in Ghana.But according to the Information Minister 200,000 and nearly 3 million people, recently are now into Galamsey operation and rely on it for their livelihoods [@goldgu2017 ]. Their operations are mostly in the southern part of Ghana where it is believe to have substantial reserves of gold deposits, usually within the area of large mining companies [@barenblitt2021] . As a group, they are economically disadvantaged. Galamsey settlements are usually poorer than neighboring agricultural villages. They have high rates of accidents and are exposed to mercury poisoning from their crude processing methods. Many women are among the workers, acting mostly as porters for the miners.
 
 ### Background of The Study
 
@@ -85,7 +106,7 @@ This literature review will follow narrative approach to gain insight into resea
 
 #### What is Time Series Analysis?
 
-Makridakis and hibon, in time series analysis researchers have conducted a competition named M-competition in 1987 (Makridakis, S., Hibon, M., Lusk, E. and Belhadjali, M., 1987), Where participants could submit their forecasting on 1001 time series data taken from demography, industry, and economics. There were four main findings from the competition were:
+Makridakis and hibon, in time series analysis researchers have conducted a competition named M-competition in 1987 , Where participants could submit their forecasting on 1001 time series data taken from demography, industry, and economics. There were four main findings from the competition were:
 
 -   Statistically sophisticated or complex methods do not necessarily provide more accurate forecasts than simpler ones.
 
@@ -97,7 +118,7 @@ Makridakis and hibon, in time series analysis researchers have conducted a compe
 
 The time series data is visualized and analyzed to find out mainly three things, trend, seasonality, and Heteroscedasticity.
 
-**Trend:** It can be defined as the observation of increasing or decreasing pattern over a period. According to Cryer, J.D., 1986. In a stationary time series, mean of the time series data must be constant in time and whereas in general time series the mean is arbitrary function of time.
+**Trend:** It can be defined as the observation of increasing or decreasing pattern over a period. In a stationary time series, mean of the time series data must be constant in time and whereas in general time series the mean is arbitrary function of time.
 
 Seasonality: It refers to a cyclic happening of events. A pattern which repeats itself after a period.
 
@@ -111,7 +132,7 @@ The selection of a proper model is extremely important as it reflects the underl
 
 In general models for time series data can have many forms and represent different stochastic processes. There are two widely used linear time series models in literature.
 
-*Autoregressive (AR)* \[6, 12, 23\] and *Moving Average (MA)* \[6, 23\] models. Combining these two, the Autoregressive Moving Average (ARMA) \[6, 12, 21, 23\] and *Autoregressive Integrated Moving Average (ARIMA)* \[6, 21, 23\] models have been proposed in literature. The *Autoregressive Fractionally Integrated Moving Average (ARFIMA)* \[9, 17\] model generalizes ARMA and ARIMA models. For seasonal time series forecasting, a variation of ARIMA. The *Seasonal Autoregressive Integrated Moving Average (SARIMA)* \[3, 6, 23\] model is used.
+*Autoregressive (AR)* and *Moving Average (MA)* models, combining these two, the Autoregressive Moving Average (ARMA) and *Autoregressive Integrated Moving Average (ARIMA)* models have been proposed in many literature. The *Autoregressive Fractionally Integrated Moving Average (ARFIMA)* model generalizes ARMA and ARIMA models. For seasonal time series forecasting, a variation of ARIMA. The *Seasonal Autoregressive Integrated Moving Average (SARIMA)* \] model is used.
 
 ARIMA model and its different variations are based on the famous Box-Jenkins principle \[6, 8,12, 23\] and so these are also broadly known as the Box-Jenkins models.
 
@@ -119,7 +140,7 @@ Linear models have drawn much attention due to their relative simplicity in unde
 
 ##### Exponential Smoothing Models:
 
-Time-series data relies on the assumption that the observation at a certain point of time depends on previous observations in time (Cryer, J.D., 1986). The previous observations are given weights as they contribute to the future prediction. The process of weighting is done using a notation called 'Theta' (Cryer, J.D., 1986). To find the best possible value for theta, we must perform sum of squared errors between the actual versus predicted value of the previous observation. Using this process, we can predict the next value but to predict more than one value this process does contribute much as the prediction as going to be same as the previous value.
+Time-series data relies on the assumption that the observation at a certain point of time depends on previous observations in time . The previous observations are given weights as they contribute to the future prediction. The process of weighting is done using a notation called 'Theta' (Cryer, J.D., 1986). To find the best possible value for theta, we must perform sum of squared errors between the actual versus predicted value of the previous observation. Using this process, we can predict the next value but to predict more than one value this process does contribute much as the prediction as going to be same as the previous value.
 
 To understand the methods and to evaluate different models, few concepts like *stationarity* and *differencing* must be understood. Both these concepts help in making the core concepts of the methods easy to interpret.
 
@@ -127,9 +148,9 @@ To understand the methods and to evaluate different models, few concepts like *s
 
 Stationarity alludes to an irregular process that creates a time-series which has mean, and distribution to be constant through time. Distribution only depends on time and not location in time (Manuca, R. and Savit, R., 1996). If the distribution is same over different time windows is strong stationarity and if only mean and variance are similar, then it is weak stationarity. Irrespective of strong or weak, stationarity helps build a class of models such Autoregression (AR), Moving Average (MA), ARIMA (Witt, A., Kurths, J. and Pikovsky, A., 1998).
 
-An MA(q) process is always stationary, irrespective of the values the MA parameters \[23\]. The conditions regarding stationarity and invertibility of AR and MA processes also hold for an ARMA process. An ARMA(p, q) process is stationary if all the roots of the characteristic equation $$ \phi(L) = 0 $$ lie outside the unit circle. Similarly, if all the roots of the lag equation
+An MA(q) process is always stationary, irrespective of the values the MA parameters \[23\]. The conditions regarding stationarity and invertibility of AR and MA processes also hold for an ARMA process. An ARMA(p, q) process is stationary if all the roots of the characteristic equation $\phi (L) = 0$ lie outside the unit circle. Similarly, if all the roots of the lag equation
 
-\$\$ \\theta (L) = 0 \$\$ lie outside the unit circle, then the ARMA(p, q) process is invertible and can be expressed as a pure AR process..
+$\theta (L) = 0$ lie outside the unit circle, then the ARMA(p, q) process is invertible and can be expressed as a pure AR process..
 
 ##### **Differencing:**
 
@@ -137,22 +158,13 @@ This concept is used to make trending and seasonal data stationary. Subtraction 
 
 ##### **Autoregressive models (AR):**
 
-AR work on a concept called lags which is defined as the forecast of a series is solely based on the past values in the series (Cryer, J.D., 1986). Formula for Autoregression AR(1): $$\displaystyle y_{t} = \omega + \phi Y _{t-1}+ e_{t}$$ is stationary when $$ |\phi_{1}| < 1,  $$ with a constant mean $$\displaystyle \mu = \frac{\omega}{1-\phi_{1}} $$ and constant variance $$ \displaystyle \gamma_{o} = \frac{\sigma^{2}}{1-\phi_{1}^{2}} $$
-
-        Where ;    
-        $$ y_{t} $$  = Target ,
-        $$ \omega $$ = Intercept,
-        $$ \phi$$ = Coefficient,
-        $$ Y _{t-1} $$=Lagged target,
-        $$ e_{t} $$ = Error
+AR work on a concept called lags which is defined as the forecast of a series is solely based on the past values in the series (Cryer, J.D., 1986). Formula for Autoregression AR(1): $\displaystyle y_{t} = \omega + \phi Y _{t-1}+ e_{t}$ is stationary when \$ \|\phi\_{1}\| \< 1,\$ with a constant mean $\displaystyle \mu = \frac{\omega}{1-\phi_{1}}$ and constant variance $\displaystyle \gamma_{o} = \frac{\sigma^{2}}{1-\phi_{1}^{2}}$ Where ; \quad    $y_{t}$ = Target ,\quad $\omega$ = Intercept,\quad $\phi$ = Coefficient,\quad $Y_{t-1}$=Lagged target,\quad $e_{t}$ = Error\\
 
 It depends only on one lag in the past and also called AR model of order one (Shibata, R., 1976). Autoregressive models are also known as long memory models as they must keep the memory of all the lags until its initial start point and must calculate their value. If there is any shock incident in the past which must have led to fluctuations in the data, it will have its effect on the present value which makes the model quite sensitive to shocks (Shibata, R., 1976).
 
 ##### **Moving Average (MA):**
 
-The moving average model forecasts a series based on the past error in the series called error lags. Hunter, J.S., Formula for moving average method is given as:
-
-$$y_{t} = \omega + \theta e _{t-1}+ e_{t}$$
+The moving average model forecasts a series based on the past error in the series called error lags. Hunter, J.S., Formula for moving average method is given as:$y_{t} = \omega + \theta e _{t-1}+ e_{t}$
 
 In (2), all the abbreviations are same to AR model formula except, = Previous error
 
@@ -168,9 +180,9 @@ The findings of both the paper were quite different but one cannot prove either 
 
 ##### **Autocorrelation and Partial Autocorrelation Functions (ACF and PACF)**
 
-To determine a proper model for a given time series data, it is necessary to carry out the ACF and PACF analysis. These statistical measures reflect how the observations in a time series are related to each other. For modeling and forecasting purpose it is often useful to plot the ACF and PACF against consecutive time lags. These plots help in determining the order of AR and MA terms. For a time series $$ {x(t),t = 0,1, 2,...} $$the Autocovariance \[21, 23\] at lag k is defined as:
+To determine a proper model for a given time series data, it is necessary to carry out the ACF and PACF analysis. These statistical measures reflect how the observations in a time series are related to each other. For modeling and forecasting purpose it is often useful to plot the ACF and PACF against consecutive time lags. These plots help in determining the order of AR and MA terms. For a time series ${x(t),t = 0,1, 2,...}$the Autocovariance \[21, 23\] at lag k is defined as:
 
-$$\mu$$ is the mean of the time series, i.e. $$ \mu = E\left[x_{t}\right]  $$. The autocovariance at lag zero i.e. $$ y_{0}$$ is the variance of the time series. From the definition it is clear that the autocorrelation coefficient $$ p_{k} $$ is dimensionless and so is independent of the scale of measurement. Also, clearly $$ -1 \leq p\_{k}\leq 1 $$. Statisticians Box and Jenkins \[6\] termed $$ y_{k }$$ as the theoretical Autocovariance Function (ACVF) and $$ p_{k} $$ as the theoretical Autocorrelation Function (ACF).
+$\mu$ is the mean of the time series, i.e. $\mu = E\left[x_{t}\right]$. The autocovariance at lag zero i.e. $y_{0}$ is the variance of the time series. From the definition it is clear that the autocorrelation coefficient \$ p\_{k}\$ is dimensionless and so is independent of the scale of measurement. Also, clearly $-1 \leq p\_{k}\leq 1$. Statisticians Box and Jenkins \[6\] termed $y_{k }$ as the theoretical Autocovariance Function (ACVF) and $p_{k}$ as the theoretical Autocorrelation Function (ACF).
 
 Another measure, known as the Partial Autucorrelation Function (PACF) is used to measure the correlation between an observation k period ago and the current observation, after controlling for observations at intermediate lags (i.e. at lags \< k ) \[12\]. At lag 1, PACF(1) is same as ACF(1). The detailed formulae for calculating PACF are given in \[6, 23\].
 
@@ -220,7 +232,7 @@ To understand ARIMA model, we need to understand ARMA model as this is just an e
 
 #### **Seasonal Autoregressive Integrated Moving Average (SARIMA):**
 
-SARIMA models were introduced to handle seasonality in the data. Seasonality is different from stationarity; however, seasonality can be handled using stationarity up to some extent, but seasonal correlations cannot be eliminated completely. SARIMA models are mathematically written as SARIMA$$(p,d,q)(P,D,Q)^{s}$$.
+SARIMA models were introduced to handle seasonality in the data. Seasonality is different from stationarity; however, seasonality can be handled using stationarity up to some extent, but seasonal correlations cannot be eliminated completely. SARIMA models are mathematically written as SARIMA$(p,d,q)(P,D,Q)^{s}$.
 
 Where;
 
@@ -270,23 +282,23 @@ Another important characteristic of SVM is that here the training process is equ
 
 #### Forecast Performance Measures
 
-While applying a particular model to some real or simulated time series, first the raw data is divided into two parts, viz. the Training Set and Test Set. The observations in the training set are used for constructing the desired model. Often a small subpart of the training set is kept for validation purpose and is known as the Validation Set. Sometimes a preprocessing is done by normalizing the data or taking logarithmic or other transforms. One such famous technique is the \[23\]. Once a model is constructed, it is used for generating forecasts. The test set observations are kept for verifying how accurate the fitted model performed in forecasting these values. If necessary, an inverse transformation is applied on the forecasted values to convert them in original scale. In order to judge the forecasting accuracy of a particular model or for evaluating and comparing different models, their relative performance on the test dataset is considered.
+While applying a particular model to some real or simulated time series, first the raw data is divided into two parts, viz. the Training Set and Test Set. The observations in the training set are used for constructing the desired model. Often a small subpart of the training set is kept for validation purpose and is known as the Validation Set. Sometimes a preprocessing is done by normalizing the data or taking logarithmic or other transforms. One such famous technique is the Box-Cox Transformation \[23\]. Once a model is constructed, it is used for generating forecasts. The test set observations are kept for verifying how accurate the fitted model performed in forecasting these values. If necessary, an inverse transformation is applied on the forecasted values to convert them in original scale. In order to judge the forecasting accuracy of a particular model or for evaluating and comparing different models, their relative performance on the test dataset is considered.
 
 Due to the fundamental importance of time series forecasting in many practical situations, proper care should be taken while selecting a particular model. For this reason, various performance measures are proposed in literature \[3, 7, 8, 9, 24, 27\] to estimate forecast accuracy and to compare different models. These are also known as performance metrics \[24\]. Each of these measures is a function of the actual and forecasted values of the time series.
 
 ##### Description of Various Forecast Performance Measures
 
-In each of the forthcoming definitions, $$ y_{t }$$ is the actual value, $$ f_{t} $$ is the forecasted value, $$ e_{t} = y_{t} - f_{t} $$ is the forecast error and n is the size of the test set. Also, $$ \displaystyle \bar{y} = \frac{1}{n}\sum_{t=1}^{n}y_{t}$$ is the test mean and $$\displaystyle \sigma^{2} = \frac{1}{n-1}\sum_{t=1}^{n}(y_{t}-\bar{y})^{2} $$is the test variance.
+In each of the forthcoming definitions, $y_{t }$ is the actual value, $f_{t}$ is the forecasted value, $e_{t} = y_{t} - f_{t}$ is the forecast error and n is the size of the test set. Also, $\displaystyle \bar{y} = \frac{1}{n}\sum_{t=1}^{n}y_{t}$ is the test mean and $\displaystyle \sigma^{2} = \frac{1}{n-1}\sum_{t=1}^{n}(y_{t}-\bar{y})^{2}$is the test variance.
 
 The Mean Forecast Error (MFE)
 
-This measure is defined as \[24\] $$ \displaystyle MFE = \frac{1}{n}\sum_{t=1}^{n}e_{t}$$ The properties of MFE are:
+This measure is defined as \[24\] $\displaystyle MFE = \frac{1}{n}\sum_{t=1}^{n}e_{t}$ The properties of MFE are:
 
 ### Empirical Review
 
 LULC data are records that documents to what extent a region is covered by wetlands, forests, agriculture, impervious surfaces, and other land and water forms. These water forms include open water or wetlands. Land use shows how people use landscape either for conservation, development, agriculture or mixed uses \[6, 7\]. Changes In land can be identified by analysing satellite imagery. However, land use cannot be identified from satellite imagery. Satellite imagery give us information that helps in understanding the present landscape. Furthermore, to see changes through time, different years are needed. With this information, we can assess decades of data as well as insight into the possible effects of these changes that has occured and make better decisions before they can cause great harm. According to \[10\], five different types of LULC pattern were classified barren lands such as Galamsey Site, agricultural lands, urban lands, quarries, and free water bodies, to detect the 25years LULC change in the western Nile delta of Egypt. Supervised maximum likelihood classification (MLC) method together with landsat images were used in Erdas Imagine software. The finding shows a significant change in barren land changing into agricultural land continuously from 1984 to 2009.
 
-Similarly, in \[1\] used the maximum likelihood algorithm (MLA) and Markov chain model (MCA) to study the LULC classification using ArcGIS and future prediction using Idiri respectively in Kathmandu city Nepal. Built-up, water body, forest area, open field and cultivated land classes classified. Results show built-up area significantly increased, and water body, forest area, open field and cultivated land decrease downward trend from 1976 to 2009. Furthermore, the Markov chain Analysis prediction for 2017 shows that in 2017 Urban area will increase to cover 72.24 $$\%$$ of the total land in Kathmandu and cultivated land remains only 20.90$$\%$$. Waterbody and the open field will increase respectively by 0.59$$\%$$, 0.19$$\%$$ whereas forest land decrease by 0.47$$\%$$.
+Similarly, in \[1\] used the maximum likelihood algorithm (MLA) and Markov chain model (MCA) to study the LULC classification using ArcGIS and future prediction using Idiri respectively in Kathmandu city Nepal. Built-up, water body, forest area, open field and cultivated land classes classified. Results show built-up area significantly increased, and water body, forest area, open field and cultivated land decrease downward trend from 1976 to 2009. Furthermore, the Markov chain Analysis prediction for 2017 shows that in 2017 Urban area will increase to cover 72.24 $\%$ of the total land in Kathmandu and cultivated land remains only 20.90$\%$. Waterbody and the open field will increase respectively by 0.59$\%$, 0.19$\%$ whereas forest land decrease by 0.47$\%$.
 
 Furthermore, in \[10\], They made used of the Maximum likelihood classification (MLC), Change detection and spatial matrix analysis to analyse land cover change of fifty-year period (1954 to 2004) in Avellino Italy. The result shows 4 LULC classes, with urban land use increasing rapidly affecting the cultivated land mostly, while woodland and grassland cover decrease was at a lower rate. Moreover, in \[11\] studied the LULC changes and structure in Dhaka metropolitan, Bangladesh in a period of 1975 to 2005. Maximum Likelihood Classification (MLC) and transition matrix method were used for LULC classification and pattern of LULC. The Result shows six classes in LULC of the water body,
 
@@ -294,11 +306,11 @@ vegetation, bare soil, cultivated land built-up and wetland/lowland. Also, a sig
 
 Also, \[12\] used Maximum Likelihood Classification and comparison method to study the LULC classification and change respectively from 1976 to 2003 in Tirupati, India. The results show 6 LULC classes, agricultural land, built-up, dense forest, plantation, water spread and other land, a significant increase in built-up area, plantation forests and other land, while a decrease on the part of the waterbody, dense forest and agricultural land was noticed.
 
-Moreover, in \[13\] studied the LULC change in Duzce plain Turkey. Supervised classification and the Corine land cover nomenclature methods used. The result shows 5 LULC classes as urban fabric, forest, heterogeneous agricultural land, inland wasteland and (Industrial, commercial, and transport) units with an accuracy assessment between 92.41 $$\%$$ and 97.3 $$\%$$ for LULC map 2010 and 1987 respectively. Also, a significant change in LULC was noticed with 11.2$$\%$$ increase in agricultural area and 335 $$\%$$ decrease of forest land.
+Moreover, in \[13\] studied the LULC change in Duzce plain Turkey. Supervised classification and the Corine land cover nomenclature methods used. The result shows 5 LULC classes as urban fabric, forest, heterogeneous agricultural land, inland wasteland and (Industrial, commercial, and transport) units with an accuracy assessment between 92.41$\%$ and 97.3$\%$ for LULC map 2010 and 1987 respectively. Also, a significant change in LULC was noticed with 11.2$\%$ increase in agricultural area and 335$\%$ decrease of forest land.
 
 Also, a significant increase and a decrease of LULC were noticed between the years 1973, 1985, and 2000 within the classes.
 
-```{r,warning=FALSE}
+```{r}
 #| label: load-pkgs
 #| code-summary: "Packages"
 #| message: false
@@ -312,7 +324,7 @@ pacman::p_load(char = c('rgee','reticulate','raster','tidyverse',
                 'dplyr','sf','mapview','mapeddit','caret','forcats','reticulate',
                 'rgee', 'remotes', 'magrittr', 'tigris', 'tibble', 'stars',                       'stars',
                 'st', 'lubridate', 'imputeTS', 'leaflet', 'classInt',                            'RColorBrewer',
-                'ggplot2', 'googledrive', 'geojsonio', 'ggpubr','cartogram'), 
+                'ggplot2', 'googledrive', 'geojsonio', 'ggpubr','cartogram'),
                install = F, update = F, character.only = T)
 ```
 
@@ -320,10 +332,10 @@ pacman::p_load(char = c('rgee','reticulate','raster','tidyverse',
 library(rgee)
 
 library(reticulate)
-#ee_install() 
+#ee_install()
 ee_check()
 
-ee_Initialize("kalong",drive = TRUE) # initialize GEE, 
+ee_Initialize("kalong",drive = TRUE) # initialize GEE,
 #this will have you log in to Google Drive
 
 ```
@@ -335,8 +347,8 @@ library('sf')
 #setwd("C:/Users/Guy/Documents/GitHub/Artisanal-Mining-In-Ghana-Galamsey/New Regions")
 aoi <- read_sf('Ghana shp file/GHA/gadm41_GHA_1.shp')
 aoi <- st_transform(aoi, st_crs(4326))
-aoi.ee <- st_bbox(aoi) %>% 
-st_as_sfc() %>% 
+aoi.ee <- st_bbox(aoi) %>%
+st_as_sfc() %>%
 sf_as_ee() #Converts it to an Earth Engine Object
 
 
@@ -358,9 +370,9 @@ mod.clean <- function(img) {
   # Select pixels to mask
   quality_mask <- getQABits(ndvi_qa, "11")
   # Mask pixels with value zero.
-  
+
   #0.0001 is the MODIS Scale Factor
-  ndvi_values$updateMask(quality_mask)$divide(ee$Image$constant(10000)) 
+  ndvi_values$updateMask(quality_mask)$divide(ee$Image$constant(10000))
 }
 
 modis.evi <- ee$ImageCollection("MODIS/006/MOD13Q1"
@@ -402,9 +414,9 @@ Which we are going to perform a time series analysis on the data within each gri
 
 ```{r,include=FALSE}
 #Create an empty list, this will be used to house the time series projections for each cell.
-evi.hw.lst <- list() 
+evi.hw.lst <- list()
 #Create an empty list, this will be used to house the time series decomposition for each cell.
-evi.dcmp.lst <- list() 
+evi.dcmp.lst <- list()
 #This data frame will hold the trend data
 evi.trend <- data.frame(hex_id = evi.df$hex_id, na.cnt = NA, NA_Values = NA, Trend = NA, P_value = NA, R_Squared = NA, Standard_Error = NA, Trend_Strength = NA, Seasonal_Strength = NA)
 Dates <- data.frame(date = seq(as.Date('2001-01-01'), as.Date('2019-11-01'), "month"))
@@ -417,13 +429,13 @@ i <- 1
 ```{r}
 
 #converting the data to a transposed data frame
-tsv <- data.frame(evi = t(evi.df[i, 2:ncol(evi.df)])) 
+tsv <- data.frame(evi = t(evi.df[i, 2:ncol(evi.df)]))
 colnames(tsv) <- c("evi")
-#write.csv(tsv,"Data/tsv.csv")
+write.csv(tsv,"Data/tsv.csv")
 head(tsv) #let's take a look
-# 
+#
 # : My Caption {tbl-letters}
-# 
+#
 # See @tbl-letters.
 ```
 
@@ -455,10 +467,10 @@ The Analysis Of Variance (ANOVA) Method
 
 ```{r}
 #We want to get an idea of the number of entries with no EVI value
-na.cnt <- length(tsv[is.na(tsv)]) 
+na.cnt <- length(tsv[is.na(tsv)])
 evi.trend$na.cnt[i] <- na.cnt
-td <- tsv %>% 
-  mutate(month = month(as.Date(rownames(tsv))), year = year(as.Date(rownames(tsv)))) %>% 
+td <- tsv %>%
+  mutate(month = month(as.Date(rownames(tsv))), year = year(as.Date(rownames(tsv)))) %>%
   group_by(year, month) %>%
   summarise(mean_evi = mean(evi, na.rm = T), .groups = "keep") %>%
   as.data.frame()
@@ -475,7 +487,7 @@ dx <- Dates[!(Dates$date %in% td$date),]
 
 ```{r}
 dx$mean_evi <- NA
-tdx <- rbind(td, dx) %>% 
+tdx <- rbind(td, dx) %>%
   arrange(date)
 write.csv(tdx,"Data/tdx.csv")
 tdx <- read.csv("Data/tdx.csv")
@@ -485,7 +497,7 @@ head(tdx)
 ```{r}
 na.cnt <- length(tdx[is.na(tdx)])
 # Convert data to time series.
-tdx <- ts(data = tdx$mean_evi, start = c(2001, 1), end = c(2019, 11), frequency = 12) 
+tdx <- ts(data = tdx$mean_evi, start = c(2001, 1), end = c(2019, 11), frequency = 12)
 plot(tdx)
 ```
 
@@ -567,7 +579,7 @@ abline(a = summary$coefficients[1,1], b = summary$coefficients[2,1], col = 'blue
 ```{r}
 # Count of na values to dataframe
 # Calculating Trend and Seasonal Strength
-evi.trend$NA_Values[i] <- na.cnt 
+evi.trend$NA_Values[i] <- na.cnt
 evi.trend$Trend[i] <- summary$coefficients[2,1]
 evi.trend$Trend_Strength[i] <- round(max(0,1-(var(Rt)/var(Tt+Rt))),1)
 evi.trend$Seasonal_Strength[i] <- round(max(0,1-(var(Rt)/var(St+Rt))),1)

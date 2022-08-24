@@ -1,0 +1,49 @@
+---
+title: "Segregate The Variability Climate Is Responsible For In Vegetation Loss Using  Time Series Analsis"
+subtitle: Quantifying The Status of Galamsey With Time Series Analsis
+author: 'Kalong Boniface And Fugah Seletey Mitchell '
+date: today
+format:  
+  beamer:
+    navigation: horizontal
+    # theme: Berline
+    header-includes: |
+      \titlegraphic{\includegraphics[width=0.4\paperwidth]{Latex\uenrlogo.png}}
+editor: visual
+bibliography: references.bib
+cite-method: biblatex
+link-citations: yes
+incremental: true
+---
+
+### INTRODUCTION
+
+The purpose of this paper is to establish an understanding of time series analysis on remotely sensed data. Which will introduced us to the fundamentals of time series modeling, including decomposition, autocorrelation and modeling historical changes in Galamsey Operation in Ghana, the Cause,Dangers and it's Environmental Impact. Galamsey also known as "gather them and sell" ( @owusu-nimo2018a ), is the term given by local Ghanaian for illegal small-scale gold mining in Ghana( @ferring2016 )
+
+------------------------------------------------------------------------
+
+### OUTLINE
+
+------------------------------------------------------------------------
+
+### ANATOMI OF THE PROJECT
+
+------------------------------------------------------------------------
+
+### DATA AND RESEARCH DESIGN
+
+------------------------------------------------------------------------
+
+### METHODOLOGY AND RESULT
+
+------------------------------------------------------------------------
+
+### ANALYSIS AND DESCUSSION
+
+------------------------------------------------------------------------
+
+### CONCLUSION
+
+------------------------------------------------------------------------
+
+### REFERENCES

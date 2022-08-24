@@ -12,244 +12,21 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tinytex)
 ```
 ### CHAPTER ONE
-### INTRODUCTION
 
-All thing change, but how we respond to change is our responsibility, to  fare it or embrasse it. Resisting change leads to one fiat. Our own extinction. Time is a smybole of freedom and peace
-          
-The purpose of this paper is to establish an understanding in time series analysis on remotely sensed data. Which will introduced us to the fundamentals of time series modeling, including decomposition, autocorrelation and modeling historical changes in Galamsey Operation in Ghana, the Cause,Dangers and it’s Environmental impact.
-Galamsey("gather them and sell"),(OwusuNimo2018) is the term given by local Ghanaian for illegal small-scale gold mining in Ghana (DavidYawDanquah2019). The major cause of Galamsey is unemployment among the youth in Ghana(Gracia2018). Young university graduates rarely find work and when they do it hardly sustains them. The result is that these youth go the extra mile to earn a living for themselves and their family.
-          
-Another factor is that lack of job security.
-          
-On November 13, 2009 a collapse occurred in an illegal, privately owned mine in Dompoase, in the Ashanti Region of Ghana. At least 18 workers were killed, including 13 women, who worked as porters for the miners. Officials described the disaster as the worst mine collapse in Ghanaian history(News2009).
-          
-Illegal mining causes damage to the land and water supply(Ansah2017). In March 2017, the Minister of Lands and Natural Resources, Mr. John Peter Amewu, gave the Galamsey operators/illegal miners a three-week ultimatum to stop their activities or be prepared to face the law(Allotey2017). The activities by Galamseyers have depleted Ghana’s forest cover and they have caused water pollution, due to the crude and unregulated nature of the mining process(Gyekye2021).
-          
-Under current Ghanaian constitution, it is illegal to operate as galamseyer.That is to dig on land granted to mining companies as concessions or licenses and any other land in search for gold. In some cases, Galamseyers are the first to discover and work extensive gold deposits before mining companies find out and take over. Galamseyers are the main indicator of the presence of gold in free metallic dust form or they process oxide or sulfide gold ore using liquid mercury.
-
-Between 20,000 to 50,000, including thousands from China are believed to be engaged in Galamsey in Ghana.But according to the Information Minister 200,000 and nearly 3 million people, recently are now into Galamsey operation and rely on it for their livelihoods(Burrows2017). Their operations are mostly in the southern part of Ghana where it is believe to have substantial reserves of gold deposits, usually within the area of large mining companies(Barenblitt2021). As a group, they are economically disad vantaged. Galamsey settlements are usually poorer than neighboring agricultural villages. They have high rates of accidents and are exposed to mercury poisoning from their crude processing methods. Many women are among the workers, acting mostly as porters for the miners.
-
-## Background of The Study
-          
-As Galamsey is considered an illegal activity, they operations are hidden to the eyes of the authorities.So locating them is quite tricky ,but with satellite imagery ,it now possible to locate their operating and put an end to it. One of the features of Google Earth Engine is the ability to access years of satellite imagery without needing to download, organize, store and process this information. For instance, within the Satellite image
-          
-          
-collection, now it possible to access imagery back to the 90’s, allowing us to look at areas of interest on the map to visualize and quantify how much things has changed over time. With Earth Engine, Google maintains the data and offers it’s computing power for processing.Users can now access hundreds of time series images and analyze changes across decades using GIS and R or other programming language to analyze these datasets.
-
-## Problem Statement
-
-The Footprint of Galamsey is Spreading at a very faster rate, causing vegetation loss.Other factors accounting to vegetation loss may largely include climate change,urban and exurban development, bush fires. But not much works or research has been done to tell the extent to which Galamsey causes vegetation loss. This research attempts to segregate the variability climate is responsible for in vegetation loss so as to attribute the residual variability to Galamsey and other related activities such as bush-fires etc.
-
-## Research  Question
-# Research Objectives
-The purpose is to establish an understanding in time series analysis on remotely sensed data. We will be introduced to the fundamentals of time series modeling, including decomposition, autocorrelation and modeling historical changes.
-          
--  Perform time series analysis on satellite derived vegetation indices
-            
- -  Estimate the extent to which Galamsey causes vegetation loss
-            
--  Dissociate or single out the variability climate is responsible for in vegetation loss
-          
-## Significance Of The  Study}
-## Scope of The  Study}
-           
-## Limitation Of  The Study }
-Time series modeling aims to build an explanatory model of the data without over fitting the problem set, to use as simple a model as possible while accounting for as much of the data as possible. When breaking down time series data into component parts, remote sensing data has additional limitations that make this more challenging. It is almost inevitable that you will not get this same level of precision from remote sensing data. Additionally, atmospheric conditions can skew the visual results, where the hue of the vegetation changes drastically from image to image due to atmospheric conditions (fog,ground moisture, cloud cover).
-
-## Organization  of  The  Study
-### CHAPTER  TWO
-### LITERATURE REVIEW
-## Theoretical Review
-
-This literature review will follow narrative approach to gain insight into research topic. A time series is a set of observations, each being recorded at a particular time and the collection of such observation is referred to as time series data. The data is analysed to extract statistical information, characteristics of the data and to predict the output. As the data might tend to follow a pattern in time series data, the Machine Learning model finds it difficult to predict appropriately hence time series analysis and its approaches have made it simpler for prediction. The methods used and results from those methods achieved by former researchers will be summarized including different methods on time series and comparing them with each other.
-        
-# What is Time Series Analysis?}
-        
-Makridakis and hibon, in time series analysis researchers have conducted a competition named M-competition in 1987 (Makridakis, S., Hibon, M., Lusk, E. and Belhadjali, M., 1987), Where participants could submit their forecasting on 1001 time series data taken from demography, industry, and economics. There were four main findings from the competition were:
-        
--   Statistically sophisticated or complex methods do not necessarily provide more accurate forecasts than simpler ones.
-
--   The relative ranking of the performance of the various methods varies according to the accuracy measure being used.
-
--   The accuracy when various methods are being combined outperformed, on average, the individual methods being combined and does very well in comparison to other methods.
-
--   The accuracy of the various methods depends upon the length of the forecasting horizon involved.
-        
-        
-The time series data is visualized and analyzed to find out mainly three things, trend, seasonality, and Heteroscedasticity. 
-        
-\textbf{Trend:} It can be defined as the observation of increasing or decreasing pattern over a period. According to Cryer, J.D., 1986. In a stationary time series, mean of the time series data must be constant in time and whereas in general time series the mean is arbitrary function of time.
-        
- \textbf{Seasonality:} It refers to a cyclic happening of events. A pattern which repeats itself after a period.
-        
-\textbf{Heteroscedasticity:} It is also known as level; it is defined as the non-constant variance from the mean calculated at different time periods.
-        
-Few methods do not perform well in forecasting if the data is seasonal, and few do not perform well with trends in the data. Hence trends, seasonality and heteroscedasticity must be considered to select the best statistical method in forecasting. 
-        
-# Time Series Forecasting Using Stochastic Models
-        
-The selection of a proper model is extremely important as it reflects the underlying structure of the series and this fitted model in turn is used for future forecasting. A time series model is said to be linear or non-linear depending on whether the current value of the series is a linear or non-linear function of past observations.  
-In general models for time series data can have many forms and represent different stochastic processes. There are two widely used linear time series models in literature. 
-
-\emph{Autoregressive (AR)} [6, 12, 23] and \emph{Moving Average (MA)} [6, 23] models. Combining these two, the \emph{Autoregressive Moving Average (ARMA)} [6, 12, 21, 23] and \emph{Autoregressive Integrated Moving Average (ARIMA)} [6, 21, 23] models have been proposed in literature. The Autoregressive Fractionally Integrated Moving Average (ARFIMA) [9, 17] model generalizes \textbf{ARMA} and \textbf{ARIMA} models. For seasonal time series forecasting, a variation of \textbf{ARIMA}. The \emph{Seasonal Autoregressive Integrated Moving Average (SARIMA)} [3, 6, 23] model is used. 
-\textbf{ARIMA} model and its different variations are based on the famous Box-Jenkins principle [6, 8,12, 23] and so these are also broadly known as the \textbf{Box-Jenkins models}.  
-
-Linear models have drawn much attention due to their relative simplicity in understanding and implementation. However many practical time series show non-linear patterns. For example, as mentioned by R. Parrelli in [28], non-linear models are appropriate for predicting volatility changes in economic and financial time series. Considering these facts, various non-linear models have been suggested in literature. Some of them are the famous Autoregressive \emph{Conditional Heteroskedasticity (ARCH)} [9, 28] model and its variations like \emph{Generalized ARCH (GARCH)} [9, 28],\emph{ Exponential Generalized ARCH (EGARCH)} [9] etc., the \emph{Threshold Autoregressive (TAR)} [8, 10] model, the \emph{Non-linear Autoregressive (NAR)} [7] model, the \emph{Non-linear Moving Average (NMA)} [28] model, All the methods consider either of trend, seasonality, or heteroscedasticity to predict the future output. Time series data must be decomposed based on the findings from data analysis. Based on the findings from analysis data must be broken into trend or seasonality.
-        
-\textbf{Exponential Smoothing Models:}
-Time-series data relies on the assumption that the observation at a certain point of time depends on previous observations in time (Cryer, J.D., 1986). The previous observations are given weights as they contribute to the future prediction. The process of weighting is done using a notation called \textbf{‘Theta’} (Cryer, J.D., 1986). To find the best possible value for theta, we must perform sum of squared errors between the actual versus predicted value of the previous observation. Using this process, we can predict the next value but to predict more than one value this process does contribute much as the prediction as going to be same as the previous value.
-
-        To understand the methods and to evaluate different models, few concepts like stationarity and differencing must be understood. Both these concepts help in making the core concepts of the methods easy to interpret. 
-        \textbf{Stationarity:}
-        Stationarity alludes to an irregular process that creates a time-series which has mean, and distribution to be constant through time. Distribution only depends on time and not location in time (Manuca, R. and Savit, R., 1996). If the distribution is same over different time windows is strong stationarity and if only mean and variance are similar, then it is weak stationarity. Irrespective of strong or weak, stationarity helps build a class of models such Autoregression (AR), Moving Average (MA), ARIMA (Witt, A., Kurths, J. and Pikovsky, A., 1998). 
-        
-        An MA(q) process is always stationary, irrespective of the values the MA parameters [23]. The conditions regarding stationarity and invertibility of AR and MA processes also hold for an ARMA process. An ARMA(p, q) process is stationary if all the roots of the characteristic equation $ \phi(L) = 0 $ lie outside the unit circle. Similarly, if all the roots of the lag equation 
-        $ \theta (L) = 0 $ lie outside the unit circle, then the ARMA(p, q) process is invertible and can be expressed as a pure AR process..
-        \textbf{Differencing:}
-        This concept is used to make trending and seasonal data stationary. Subtraction between current observation and previous observation is the process of differencing. It helps in making the mean constant (Dickey, D.A. and Pantula, S.G., 1987). 
-        \textbf{Autoregressive models (AR):}
-        \textbf{AR} work on a concept called lags which is defined as the forecast of a series is solely based on the past values in the series (Cryer, J.D., 1986). Formula for Autoregression AR(1):  $\displaystyle y_{t} = \omega + \phi Y _{t-1}+ e_{t}$ is stationary when $ |\phi_{1}| < 1,  $ with a constant mean $\displaystyle \mu = \frac{\omega}{1-\phi_{1}} $ and constant variance $ \displaystyle \gamma_{o} = \frac{\sigma^{2}}{1-\phi_{1}^{2}} $
-         
-        Where ; \quad   
-        $ y_{t}$  = Target ,\quad
-        $\omega$= Intercept,\quad
-        $\phi$= Coefficient,\quad
-        $Y _{t-1}$=Lagged target,\quad
-        $e_{t}$= Error
-        It depends only on one lag in the past and also called  \emph{AR model of order one} (Shibata, R., 1976). Autoregressive models are also known as long memory models as they must keep the memory of all the lags until its initial start point and must calculate their value. If there is any shock incident in the past which must have led to fluctuations in the data, it will have its effect on the present value which makes the model quite sensitive to shocks (Shibata, R., 1976). 
-        
-        
-        E.  \textbf{Moving Average (MA):}
-        The moving average model forecasts a series based on the past error in the series called error lags. Hunter, J.S., Formula for moving average method is given as:
-        $ y_{t} = \omega + \theta e _{t-1}+ e_{t}$
-        
-        In (2), all the abbreviations are same to AR model formula except,   = Previous error
-        There arises a question as this method uses the error for the previous value but when it reaches to the first point there will be no previous value, to overcome this the average of the series is considered as the value before the starting point. These are short memory models as the error in the past will not have much effect on the future value (Hunter, J.S., 1986).
-        
-        F.  \textbf{Comparing AR method with MA method}:
-        
-        Let focus on the two methods which were used in the early years of time series forecasting and compare the performance of each model on a particular task. Testing against general autoregressive and moving average error models where the regressors include lagged dependent variables. (Godfrey, L.G., 1978) In their paper have explained the order of the error process under the alternate hypothesis using lagrange multiplier test (Silvey, S.D., 1959). As per the tests the errors of both the models were similar, but the constraints were  different under which the tests were performed are also to be considered. As they have concluded in their paper stating that that the outcome of the model’s performance depends on the estimate chosen to be null hypothesis or alternate hypothesis.
-        
-        In addition, paper written by (Baltagi, B.H. and Li, Q., 1995), Demonstrates the comparison of AR and MA model using Burke, Godfrey, and Termayne test. To the error component model. They explained choosing of this test is because these are simple to implement as they only require within residual or OLS residual (Baltagi, B.H. and Li, Q., 1995). The outcome of the experiment was explained as when the test used within residual AR model performed well but had problems, if the test used OLS residual MA model performance was good. They have concluded stating that MA will performance much better when the parameters are changed.
-        
-        The findings of both the paper were quite different but one cannot prove either of the model to be better as the performance depends on the parameters used in the model. Each model is unique to its use case, and it depends on the user to choose accordingly based on the data.
-        
-        \textbf{Autocorrelation and Partial Autocorrelation Functions (ACF and PACF) }
-        To determine a proper model for a given time series data, it is necessary to carry out the ACF and PACF analysis. These statistical measures reflect how the observations in a time series are related to each other. For modeling and forecasting purpose it is often useful to plot the ACF and PACF against consecutive time lags. These plots help in determining the order of AR and MA terms. For a time series $ {x(t),t = 0,1, 2,...} $ the \emph{Autocovariance} [21, 23] at lag \emph{k} is defined as:
-        $\mu$ is the mean of the time series, i.e. $ \mu = E\left[x_{t}\right]  $. The autocovariance at lag zero i.e. $ y_{0} $ is the variance of the time series. From the definition it is clear that the autocorrelation coefficient $ p_{k} $ is dimensionless and so is independent of the scale of measurement. Also, clearly $ -1 \leq p_{k} \leq 1 $. Statisticians Box and Jenkins [6] termed $ y_{k} $ as the theoretical Autocovariance Function (ACVF) and $ p_{k} $ as the theoretical Autocorrelation Function (ACF). 
-        Another measure, known as the Partial Autucorrelation Function (PACF) is used to measure the correlation between an observation \emph{k} period ago and the current observation, after controlling for observations at intermediate lags (i.e. at lags < k ) [12]. At lag 1, PACF(1) is same as ACF(1). The detailed formulae for calculating PACF are given in [6, 23]. 
-        
-        
-        
-        Normally, the stochastic process governing a time series is unknown and so it is not possible to determine the actual or theoretical ACF and PACF values. Rather these values are to be estimated from the training data, i.e. the known time series at hand. The estimated ACF and PACF values from the training data are respectively termed as sample ACF and PACF [6, 23].  
-        As given in [23], the most appropriate sample estimate for the ACVF at lag k is  \textbf{ACF} plot is useful in determining the type of model to fit to a time series of length N. Since \textbf{ACF} is symmetrical about lag zero, it is only required to plot the sample \textbf{ACF} for positive lags, from lag one on-wards to a maximum lag of about \emph{N/4}. The sample \textbf{PACF} plot helps in identifying the maximum order of an AR process.
-        \textbf{Autoregressive Moving Average (ARMA) model:}
-        
-        ARMA model is a combination of AR and MA models. The equation of the AR model of order one, when it reaches to the starting point will have infinite moving average (Choi, B., 2012). In ARMA model p and q have to defined, where p = number of significant terms in ACF and q = number of significant terms in PACF.
-        
-        To determine the optimal value for p and q there are two ways:
-        
-        -   Plotting patterns in correlation
-        -   Automatic selection techniques
-        
-        \textbf{ Plotting patterns in correlation: }
-        
-        There are two functions used for plotting patterns in correlation:
-        \textbf{    Auto correlation factor (ACF):} It is the correlation between the observations at the current time stamp and observations at the previous time stamp (Hagan, M.T. and Behr, S.M., 1987). 
-        \textbf{    Partial auto correlation factor (PACF):} The correlation between the observations at two different time stamps, assuming both observations are correlated to the observations at another time stamp (Hagan, M.T. and Behr, S.M., 1987). 
-        
-        \textbf{ Automatic selection techniques: }
-        
-        There are three commonly used techniques for automatic selection of time series model:
-        \textbf{    Minimum info criteria (MINIC)}: This builds multiple combinations of models across a grid search of AR and MA terms. It then finds the model with lowest Bayesian information criteria (Stadnytska, T., Braun, S. and Werner, J., 2008). 
-        \textbf{b)  Squared canonical correlations (SCAN):} It looks at correlation matrix of the data, then it compares it with its lags. It then looks at the eigen values from the correlation matrix to find the combination of AR and MA probably having SCAN as 0. It finds the pair as the best where the convergence is quickest (Stadnytska, T., Braun, S. and Werner, J., 2008).
-        \textbf{c)  The extended sample auto correlation function (ESACF):} As it is known that AR and MA are related. Essentially it filters out the AR terms until only MA piece is left. This process is repeated until fewest AR terms are left and maximum MA terms (Stadnytska, T., Braun, S. and Werner, J., 2008).
-        It completely depends on the individual to choose from either of the methods helping them to find the optimal value of p and q for better performance of the model.
-        
-        H.  \textbf{Autoregressive Integrated Moving average (ARIMA):}
-        
-        To understand ARIMA model, we need to understand ARMA model as this is just an extension to ARMA model. Essentially, we need to make data stationary to feed it to a machine learning model. It is done by through differencing. ARIMA models are mathematically written as ARIMA(p,d,q), where p and q are same as ARMA model but d = number of first differences (Yu, G. and Zhang, C., 2004, May). 
-        
-        I.  \textbf{Seasonal Autoregressive Integrated Moving Average (SARIMA):}
-        
-        SARIMA models were introduced to handle seasonality in the data. Seasonality is different from stationarity; however, seasonality can be handled using stationarity up to some extent, but seasonal correlations cannot be eliminated completely. SARIMA models are mathematically written as SARIMA$(p,d,q)(P,D,Q)^{s}$.
-        Where;
-        
-        -   P = Number of seasonal AR terms.- D = Number of seasonal differences. - Q = Number of seasonal MA terms - s = Length of the season.
-        
-          Removing seasonality will help the model to perform better but getting rid of seasonality in data is a difficult task to do.
-        
-        J.  \textbf{Comparing ARIMA method with SARIMA method:}
-        
-        In comparison to ARIMA and SARIMA, (Valipour, M., 2015) investigated it on long-term runoff forecasting in the United States. The results have shown that SARIMA models have performed better than ARIMA model. However, it was seen that SARIMA models were very sensitive and a slight change in a parameter would result in poor performance of the model.
-        
-        (Wang, S., Li, C. and Lim, A., 2019) have used ARIMA and SARIMA models from the perspective of Linear System Analysis, Spectra Analysis and Digital Filtering. It was shown that ARIMA and SARIMA both have not performed well and  the researchers were forced to look beyond these models for better performance. They have mentioned that ARMA-SIN model was better but have also said it is relatively difficult to study and understand the concepts compared to ARIMA and SARIMA model.
-        
-        The findings from the (Valipour, M., 2015) have proven SARIMA to better however, their claim contradicts when it was to be compared with the findings of (Wang, S., Li, C. and Lim, A., 2019). The use of a particular method must be based on the data, after the analysis it is known if that the data has trend, they must choose ARIMA and if the data has seasonality, choosing SARIMA would be helpful. 
-        
-        #ADVANTAGES AND DISADVANTAGES OF TIME SERIES FORECASTING}
-        \textbf{Advantages of time series forecasting:}
-        
-        -   Time series forecasting is of high accuracy and simplicity.
-        -    It can be used to analyze how the changes associated with the data point picked correlate with changes in other variables during the same time span.
-        -   Statistical techniques have been developed to analyze time series in such a way that the factor that influences the fluctuation of the series may be identified and handled.
-        -   It can give good output with less variables. As regression models fail with less variables, time series models will work better and effectively.
-        
-\textbf{Disadvantages of time series forecasting:}
-        
-            -   Time series models can easily be overfitted, which lead to false results.
-            -   It works well with short term forecasting but does not work well with long term forecasting.
-            -   It is sensible to outliers, if the outliers are not handled properly then it could lead to wrong predictions.
-            -   The different elements that impact the fluctuations of a series cannot be fully adjusted by the time series analysis
-        
-
-        
-## Time Series Forecasting Using Support Vector Machines}
-# Concept of Support Vector Machines 
-Till now, we have studied about various stochastic and neural network methods for time series modeling and forecasting. Despite of their own strengths and weaknesses, these methods are quite successful in forecasting applications.  Recently, a new statistical learning theory, viz. the Support Vector Machine (SVM) has been receiving increasing attention for classification and forecasting [18, 24, 30, 31]. SVM was developed by Vapnik and his co-workers at the AT & T Bell laboratories in 1995 [24, 29, 33]. Initially SVMs were designed to solve pattern classification problems, such as optimal character recognition, face identification and text classification, etc. But soon they found wide applications in other domains, such as function approximation, regression estimation and time series prediction problems [24, 31, 34]. 
-Vapnik’s SVM technique is based on the Structural Risk Minimization (SRM) principle [24, 29, 30]. The objective of SVM is to find a decision rule with good generalization ability through selecting some particular subset of training data, called support vectors [29, 31, 33]. In this method, an optimal separating hyperplane is constructed, after non-linearly mapping the input space into a higher dimensional feature space. Thus, the quality and complexity of SVM solution does not depend directly on the input space [18, 19].  
-        Another important characteristic of SVM is that here the training process is equivalent to solving a linearly constrained quadratic programming problem. So, contrary to other networks’ training, the SVM solution is always unique and globally optimal. However a major disadvantage of SVM is that when the training size is large, it requires an enormous amount of computation which increases the time complexity of the solution [24].
-# Forecast Performance Measures 
-While applying a particular model to some real or simulated time series, first the raw data is divided into two parts, viz. the Training Set and Test Set. The observations in the training set are used for constructing the desired model. Often a         small subpart of the training set is kept for validation purpose and is known as the Validation Set. Sometimes a preprocessing is done by normalizing the data or taking logarithmic or other transforms. One such famous technique is the Box-Cox Transformation [23]. Once a model is constructed, it is used for generating forecasts. The test set observations are kept for verifying how accurate the fitted model performed in forecasting these values. If necessary, an inverse transformation is applied on the forecasted values to convert them in original scale. In order to judge the forecasting accuracy of a particular model or for evaluating and comparing different models, their relative performance on the test dataset is considered. 
-        Due to the fundamental importance of time series forecasting in many practical situations, proper care should be taken while selecting a particular model. For this reason, various performance measures are proposed in literature [3, 7, 8, 9, 24, 27] to estimate forecast accuracy and to compare different models. These are also known as performance metrics [24]. Each of these measures is a function of the actual and forecasted values of the time series. 
-        
-
-        
-\textbf{Description of Various Forecast Performance Measures} 
-In each of the forthcoming definitions, $ y_{t} $ is the actual value, $ f_{t} $ is the forecasted value, $ e_{t} = y_{t} - f_{t} $ is the forecast error and n is the size of the test set. Also, $ \displaystyle \bar{y} = \frac{1}{n}\sum_{t=1}^{n}y_{t} $ is the test mean and $\displaystyle \sigma^{2} = \frac{1}{n-1}\sum_{t=1}^{n}(y_{t}-\bar{y})^{2} $is the test variance.  
-        
-        
-        
-\textbf{The Mean Forecast Error (MFE) }
-This measure is defined as [24] $ \displaystyle MFE = \frac{1}{n}\sum_{t=1}^{n}e_{t} $ The properties of MFE are: 
-## Empirical Review}
-LULC data are records that documents to what extent a region is covered by wetlands, forests, agriculture, impervious surfaces, and other land and water forms. These water forms include open water  or wetlands. Land use shows how people use landscape either for conservation, development, agriculture or mixed uses [6, 7]. Changes In land can be identified by analysing satellite imagery. However, land use cannot be identified from satellite imagery. Satellite imagery give us  information that helps in understanding the present landscape. Furthermore, to see changes   through time, different years are needed. With this information, we can assess  decades of data as well as  insight into the possible effects of these changes that has occured and make better decisions before they can cause great harm. According to [10], five different types of LULC pattern were classified barren lands such as Galamsey Site, agricultural lands, urban lands, quarries, and free water bodies, to detect the 25years LULC change in the western Nile delta of Egypt. Supervised maximum likelihood classification (MLC)  method together with landsat images were used in Erdas Imagine software. The finding shows a significant change in barren land changing into agricultural land continuously  from 1984 to 2009.
-        
-Similarly, in [1] used the maximum likelihood algorithm (MLA) and Markov chain model (MCA) to study the \textbf{LULC} classification using \textbf{ArcGIS} and future prediction using Idiri respectively in    Kathmandu city Nepal. Built-up, water body, forest area, open field and cultivated land classes classified. Results show built-up area significantly increased, and water body, forest area, open   field and cultivated land decrease downward trend from 1976 to 2009. Furthermore, the Markov chain Analysis prediction for 2017 shows that in 2017 Urban area will increase to cover 72.24 $\%$ of  the total land in Kathmandu and cultivated land remains only    20.90 $\%$. Waterbody and the open field will increase respectively by 0.59$\%$, 0.19$\%$ whereas forest land decrease by 0.47$\%$. 
-        
-        Furthermore, in [10], They made used of the Maximum likelihood classification   (MLC), Change detection and spatial matrix analysis to analyse  land cover change of fifty-year period (1954 to 2004) in Avellino   Italy. The result shows 4 LULC classes, with urban land use increasing rapidly affecting the cultivated land mostly, while woodland and grassland cover decrease was at a lower rate.   Moreover, in [11] studied the LULC changes and structure in Dhaka metropolitan, Bangladesh in a period of 1975 to 2005. Maximum Likelihood Classification (MLC) and transition matrix   method were used for LULC classification and rate/ pattern of   LULC. The Result shows six classes in LULC of the water body,
-        vegetation, bare soil, cultivated land built-up and wetland/lowland.    Also, a significant increase in the built-up land, while cultivated land, vegetation and wetland decreased accordingly from 1975 to 2005.
-        
-        Also,  [12] used Maximum Likelihood Classification and comparison method to study the \textbf{LULC} classification and change respectively from 1976 to 2003 in Tirupati, India. The results show 6 \textbf{LULC} classes, agricultural land, built-up, dense forest, plantation, water spread and other land, a significant increase in built-up   area, plantation forests and other land, while a decrease on the part   of the waterbody, dense forest and agricultural land was noticed.
-        
-        Moreover, in [13] studied the \textbf{LULC} change in Duzce plain Turkey. Supervised classification and the Corine land cover nomenclature methods used. The result shows 5 \textbf{LULC} classes as urban  fabric, forest, heterogeneous agricultural land, inland wasteland   and (Industrial, commercial, and transport) units with an accuracy  assessment between 92.41 $\%$ and 97.3 $\%$ for \textbf{LULC} map 2010 and  1987 respectively. Also, a significant change in LULC was noticed with 11.2$\%$ increase in agricultural area and 335$\%$ decrease  of forest land.
-        Also, a significant increase and a decrease of \textbf{LULC} were noticed between the years 1973, 1985, and 2000 within the classes.
-        
-
-```{r, message=FALSE,results='hide'}
-
-#if(!require("pacman")){install.packages("pacman")}
-pacman::p_load(char = c('rgee','reticulate','raster','tidyverse',
-                'dplyr','sf','mapview','mapeddit','caret','forcats','reticulate',
-                'rgee', 'remotes', 'magrittr', 'tigris', 'tibble', 'stars', 'stars',
-                'st', 'lubridate', 'imputeTS', 'leaflet', 'classInt', 'RColorBrewer',
-                'ggplot2', 'googledrive', 'geojsonio', 'ggpubr','cartogram'), 
-               install = F, update = F, character.only = T)
+```{r, message=FALSE,results='hide',warning=FALSE}
+# 
+# #if(!require("pacman")){install.packages("pacman")}
+# pacman::p_load(char = c('rgee','reticulate','raster','tidyverse',
+#                 'dplyr','sf','mapview','mapeddit','caret','forcats','reticulate',
+#                 'rgee', 'remotes', 'magrittr', 'tigris', 'tibble', 'stars', 'stars',
+#                 'st', 'lubridate', 'imputeTS', 'leaflet', 'classInt', 'RColorBrewer',
+#                 'ggplot2', 'googledrive', 'geojsonio', 'ggpubr','cartogram'), 
+#                install = F, update = F, character.only = T)
 ```
 
 ```{r,results='hide'}
 library(rgee)
-
+library(sf)
 library(reticulate)
 #ee_install() 
 ee_check()
@@ -275,31 +52,6 @@ sf_as_ee() #Converts it to an Earth Engine Object
 ```
 
 
-
-```{r}
-getQABits <- function(image, qa) {
-  # Convert binary (character) to decimal (little endian)
-  qa <- sum(2^(which(rev(unlist(strsplit(as.character(qa), "")) == 1))-1))
-  # Return a mask band image, giving the qa value.
-  image$bitwiseAnd(qa)$lt(1)
-}
-
-mod.clean <- function(img) {
-  # Extract the NDVI band
-  ndvi_values <- img$select("EVI")
-  # Extract the quality band
-  ndvi_qa <- img$select("SummaryQA")
-  # Select pixels to mask
-  quality_mask <- getQABits(ndvi_qa, "11")
-  # Mask pixels with value zero.
-  
-  #0.0001 is the MODIS Scale Factor
-  ndvi_values$updateMask(quality_mask)$divide(ee$Image$constant(10000)) 
-}
-
-modis.evi <- ee$ImageCollection("MODIS/006/MOD13Q1"
-                                )$filter(ee$Filter                                               $date('2000-01-01','2022-01-01'))$map(mod.clean)
-```
 Now we will create a hexagonal grid over the study area
 ```{r}
 library(tibble)
@@ -310,18 +62,21 @@ rowid_to_column('hex_id')
 hex <- hex[aoi.proj,]
 plot(hex)
 ```
+
 ```{r}
 terraclimate <- ee$ImageCollection("IDAHO_EPSCOR/MACAv2_METDATA") %>%
   ee$ImageCollection$filterDate("2000-01-01", "2022-01-01") %>%
-  ee$ImageCollection$map(function(x) x$select("pr","tasmax","tasmin","huss")) %>% # Select only precipitation bands
+  ee$ImageCollection$map(function(x) x$select("pr")) %>% # Select only precipitation bands
   ee$ImageCollection$toBands() %>% # from imagecollection to image
   ee$Image$rename(sprintf("PP_%02d",1:12)) # rename the bands of an image
 ```
 
 ```{r}
-ee_nc_rain <- ee_extract(x = terraclimate, y = hex, sf = FALSE ,scale = 250)
-ee_nc_rain
+ee_nc_rain <- ee_extract(x = terraclimate, y = aoi.ee, sf = FALSE ,scale = 250)
+head(ee_nc_rain)
 ```
+
+
 ```{r}
 ee_nc_rain %>%
   pivot_longer(-NAME, names_to = "month", values_to = "pr") %>%
@@ -333,51 +88,11 @@ ee_nc_rain %>%
   theme_minimal()
 ```
 
-```{r}
-library(tibble)
-aoi.proj <- st_transform(aoi, st_crs(2392))
-hex <- st_make_grid(x = aoi.proj, cellsize = 17280, square = FALSE) %>%
-st_sf() %>%
-rowid_to_column('hex_id')
-hex <- hex[aoi.proj,]
-plot(hex)
-```
+
 
 Now we will use the grid created above to extract the mean EVI values within each cell for the years 2000-2020.
-```{r,include=FALSE}
-#This will take about 30 minutes
-if(readline(prompt = "Hit enter to proceed or type 'no' to download the data from G-Drive. ") == "no"){
-googledrive::drive_download(file =
-                              googledrive::as_id("https://drive.google.com/drive/folders/1ZnCpYz38ezSU1XG7ixJ2sPg_DX7bO07J?usp=sharing"),overwrite = T)
-  #https://drive.google.com/drive/folders/1ZnCpYz38ezSU1XG7ixJ2sPg_DX7bO07J?usp=sharing
-terraclimate.df <- read.csv("rgee_file_2d44527a3b0e_2022_07_28_15_40_52.csv")
-terraclimate.df <- terraclimate.df[,3:ncol(terraclimate.df)]
-colnames(terraclimate.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(terraclimate.df[, 2:ncol(terraclimate.df)]), 2, 11), "_", "-")) #Convert dates to unambiguous format
-} else {
-#This will take about 30 minutes
-paste0(system.time(expr = aoi.evi <- ee_extract(x = terraclimate, y = hex["hex_id"], sf = FALSE, scale = 250, fun = ee$Reducer$mean(), via = "drive", quiet = T))/60, " Minutes Elapsed. ")
-terraclimate.df <- as.data.frame(aoi.evi)
-colnames(terraclimate.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(terraclimate.df[, 2:ncol(terraclimate.df)]), 2, 11), "_", "-"))
-write.csv(x = terraclimate.df, file = "~/rgee_file_2d44527a3b0e_2022_07_28_15_40_52.csv")}
-```
 
-```{r}
-####################################################################################
-#This will take about 30 minutes
-if(readline(prompt = "Hit enter to proceed or type 'no' to download the data from G-Drive. ") == "no"){
-googledrive::drive_download(file =
-                              googledrive::as_id("https://drive.google.com/drive/folders/1ZnCpYz38ezSU1XG7ixJ2sPg_DX7bO07J?usp=sharing"),overwrite = T)
-  #https://drive.google.com/drive/folders/1ZnCpYz38ezSU1XG7ixJ2sPg_DX7bO07J?usp=sharing
-evi.df <- read.csv("rgee_file_2d44527a3b0e_2022_07_28_15_40_52.csv")
-evi.df <- evi.df[,3:ncol(evi.df)]
-colnames(evi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(evi.df[, 2:ncol(evi.df)]), 2, 11), "_", "-")) #Convert dates to unambiguous format
-} else {
-#This will take about 30 minutes
-paste0(system.time(expr = aoi.evi <- ee_extract(x = modis.evi, y = hex["hex_id"], sf = FALSE, scale = 250, fun = ee$Reducer$mean(), via = "drive", quiet = T))/60, " Minutes Elapsed. ")
-evi.df <- as.data.frame(aoi.evi)
-colnames(evi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(evi.df[, 2:ncol(evi.df)]), 2, 11), "_", "-"))
-write.csv(x = evi.df, file = "~/rgee_file_2d44527a3b0e_2022_07_28_15_40_52.csv")}
-```
+
 Which we are going to perform a time series analysis on the data within each grid cell. But first, we will work through the procedure one step at a time.
  
 ```{r,include=FALSE}
@@ -387,7 +102,7 @@ evi.hw.lst <- list()
 evi.dcmp.lst <- list() 
 #This data frame will hold the trend data
 evi.trend <- data.frame(hex_id = evi.df$hex_id, na.cnt = NA, NA_Values = NA, Trend = NA, P_value = NA, R_Squared = NA, Standard_Error = NA, Trend_Strength = NA, Seasonal_Strength = NA)
-Dates <- data.frame(date = seq(as.Date('2001-01-01'), as.Date('2019-11-01'), "month"))
+Dates <- data.frame(date = seq(as.Date('2001-01-01'), as.Date('2022-01-01'), "month"))
 
 Dates$month <- month(Dates$date)
 Dates$year <- year(Dates$date)
