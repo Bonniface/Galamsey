@@ -253,8 +253,6 @@ if(readline(prompt = "Hit enter to proceed or type 'no' to download the data fro
 googledrive::drive_download(file = googledrive::as_id("https://drive.google.com/drive/folders/1ZnCpYz38ezSU1XG7ixJ2sPg_DX7bO07J?usp=sharing"),overwrite = T)
 evi.trend <- read.csv("evi_trend.csv")
 } else {
-# dir.create(paste0(dir,"/decomp_plots"))
-# dir.create(paste0(dir,"/hw_plots"))
 
 for(i in 1:nrow(evi.df)){
 tsv <- data.frame(evi = t(evi.df[i, 2:ncol(evi.df)]))

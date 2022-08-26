@@ -3,27 +3,7 @@ title: "R Notebook"
 output: html_notebook
 ---
 
-```{r}
-Rain <-read.csv("Data/Rainfall.csv")
-Evap <- read.csv("Data/Evaporative Stress.csv")
-Percip <- read.csv("Data/Percip.csv")
-tsvX <-read.csv("Data/tsv.csv")
-```
-
-
-
-
-```{r}
-
-R <- Rain%>%full_join(Evap)
-P <-R%>%full_join(Percip)
-E <- P%>% full_join(tsvX)
-head(E)
-```
-
-
-
-
+  
 
 ```{r}
 
@@ -58,11 +38,9 @@ tdx <- if(na.cnt > 0){imputeTS::na_kalman(tdx, model = "auto.arima", smooth = T)
 
  #This will save our decomposition plots
 tdx.dcp <- stl(tdx, s.window = 'periodic')
-evi.dcmp[[i]] <- tdx.dcp
-png(filename = paste0(dir,"/decomp_plots/hw_", i,".png"), width = 1200, height = 650)
-plot(tdx.dcp)
 
-dev.off()
+
+# dev.off()
 tdx.ns <- data.frame(time = c(1:length(tdx)), trend = tdx - tdx.dcp$time.series[,1])
 Tt <- trendcycle(tdx.dcp)
 St <- seasonal(tdx.dcp)
@@ -82,10 +60,7 @@ evi.trend$std.er[i] <- trend.summ$sigma
 evi.hw <- forecast::hw(y = tdx, h = 12, damped = T)
 evi.hw.lst[[i]] <- evi.hw
 
-#This will save our projection plots
-png(filename = paste0(dir,"/hw_plots/hw_", i,".png"), width = 1200, height = 650)
-plot(evi.hw)
-dev.off()
+
 rm(evi.hw, trend.summ, tdx.ns, tdx.dcp, Tt, St, Rt, tdx, na.cnt)
 gc()
 } else {
