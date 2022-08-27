@@ -13,7 +13,7 @@ format:
       - top=30mm
       - left=30mm
   docx: default
-bibliography: references.bib
+# bibliography: references.bib
 ---
 
 ## Introduction
@@ -31,9 +31,9 @@ library(knitr)      # for tables
 library(broom)      # for model summary
 ```
 
-We present the results of exploratory data analysis in @sec-eda and the regression model in @sec-model.
+We present the results of exploratory data analysis in sec-eda and the regression model in sec-model.
 
-We're going to do this analysis using literate programming [@knuth1984].
+We're going to do this analysis using literate programming \[knuth1984\].
 
 ## Exploratory data analysis {#sec-eda}
 
@@ -41,7 +41,7 @@ The data contains `r nrow(duke_forest)` houses. As part of the exploratory analy
 
 ### Data visualization
 
-@fig-histogram shows two histograms displaying the distributions of `price` and `area` individually.
+fig-histogram shows two histograms displaying the distributions of `price` and `area` individually.
 
 ```{r}
 #| label: fig-histogram
@@ -61,7 +61,7 @@ ggplot(duke_forest, aes(x = area)) +
   labs(title = "Histogram of areas")
 ```
 
-@fig-scatterplot displays the relationship between these two variables in a scatterplot.
+fig-scatterplot displays the relationship between these two variables in a scatterplot.
 
 ```{r}
 #| label: fig-scatterplot
@@ -74,7 +74,7 @@ ggplot(duke_forest, aes(x = area, y = price)) +
 
 ### Summary statistics
 
-@tbl-stats displays basic summary statistics for these two variables.
+tbl-stats displays basic summary statistics for these two variables.
 
 ```{r}
 #| label: tbl-stats
@@ -93,13 +93,13 @@ duke_forest %>%
 
 ## Modeling {#sec-model}
 
-We can fit a simple linear regression model of the form shown in @eq-slr.
+We can fit a simple linear regression model of the form shown in eq-slr.
 
 $$
 price = \hat{\beta}_0 + \hat{\beta}_1 \times area + \epsilon
 $$ {#eq-slr}
 
-@tbl-lm shows the regression output for this model.
+tbl-lm shows the regression output for this model.
 
 ```{r}
 #| label: tbl-lm
