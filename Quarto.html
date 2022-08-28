@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Kalong Boniface">
+<meta name="author" content="Fugah Seletey Mitchell">
+<meta name="dcterms.date" content="2022-08-27">
+
+<title>Segregate The Variability Climate Is Responsible For In Vegetation Loss</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="Quarto_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Quarto_files/libs/quarto-html/quarto.js"></script>
+<script src="Quarto_files/libs/quarto-html/popper.min.js"></script>
+<script src="Quarto_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Quarto_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Quarto_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Quarto_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Quarto_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Quarto_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Quarto_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+<script src="Quarto_files/libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="Quarto_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+</head><body>\setmainfont{Times New Roman}
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+
+
+
+
+
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Segregate The Variability Climate Is Responsible For In Vegetation Loss</h1>
+            <p class="subtitle lead">Quantifying The Status of Galamsey With Time Series Analsis</p>
+                      </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      Kalong Boniface 
+    </div>
+      <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              
+            </p>
+        </div>
+        <div class="quarto-title-meta-contents">
+      Fugah Seletey Mitchell 
+    </div>
+      <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              
+            </p>
+        </div>
+      </div>
+
+  <div class="quarto-title-meta">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 27, 2022</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of Contents</h2>
+   
+  <ul>
+  <li><a href="#chapter-one" id="toc-chapter-one" class="nav-link active" data-scroll-target="#chapter-one"> <span class="header-section-number">1</span> CHAPTER ONE</a>
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"> <span class="header-section-number">1.1</span> INTRODUCTION</a>
+  <ul class="collapse">
+  <li><a href="#background-of-the-study" id="toc-background-of-the-study" class="nav-link" data-scroll-target="#background-of-the-study"> <span class="header-section-number">1.1.1</span> Background of The Study</a></li>
+  <li><a href="#problem-statement" id="toc-problem-statement" class="nav-link" data-scroll-target="#problem-statement"> <span class="header-section-number">1.1.2</span> Problem Statement</a></li>
+  <li><a href="#research-questions" id="toc-research-questions" class="nav-link" data-scroll-target="#research-questions"> <span class="header-section-number">1.1.3</span> Research Questions</a></li>
+  <li><a href="#research-objectives" id="toc-research-objectives" class="nav-link" data-scroll-target="#research-objectives"> <span class="header-section-number">1.1.4</span> Research Objectives</a></li>
+  <li><a href="#significance-of-the-study" id="toc-significance-of-the-study" class="nav-link" data-scroll-target="#significance-of-the-study"> <span class="header-section-number">1.1.5</span> Significance Of The Study</a></li>
+  <li><a href="#scope-of-the-study" id="toc-scope-of-the-study" class="nav-link" data-scroll-target="#scope-of-the-study"> <span class="header-section-number">1.1.6</span> Scope of The Study</a></li>
+  <li><a href="#limitation-of-the-study" id="toc-limitation-of-the-study" class="nav-link" data-scroll-target="#limitation-of-the-study"> <span class="header-section-number">1.1.7</span> Limitation Of The Study</a></li>
+  <li><a href="#organization-of-the-study" id="toc-organization-of-the-study" class="nav-link" data-scroll-target="#organization-of-the-study"> <span class="header-section-number">1.1.8</span> Organization of The Study</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#chapter-two" id="toc-chapter-two" class="nav-link" data-scroll-target="#chapter-two"> <span class="header-section-number">2</span> CHAPTER TWO</a>
+  <ul class="collapse">
+  <li><a href="#literature-review" id="toc-literature-review" class="nav-link" data-scroll-target="#literature-review"> <span class="header-section-number">2.1</span> LITERATURE REVIEW</a>
+  <ul class="collapse">
+  <li><a href="#theoretical-review" id="toc-theoretical-review" class="nav-link" data-scroll-target="#theoretical-review"> <span class="header-section-number">2.1.1</span> Theoretical Review</a>
+  <ul class="collapse">
+  <li><a href="#what-is-time-series-analysis" id="toc-what-is-time-series-analysis" class="nav-link" data-scroll-target="#what-is-time-series-analysis"> <span class="header-section-number">2.1.1.1</span> What is Time Series Analysis?</a></li>
+  <li><a href="#time-series-forecasting-using-stochastic-models" id="toc-time-series-forecasting-using-stochastic-models" class="nav-link" data-scroll-target="#time-series-forecasting-using-stochastic-models"> <span class="header-section-number">2.1.1.2</span> <strong>Time Series Forecasting Using Stochastic Models</strong></a>
+  <ul class="collapse">
+  <li><a href="#exponential-smoothing-models" id="toc-exponential-smoothing-models" class="nav-link" data-scroll-target="#exponential-smoothing-models"> <span class="header-section-number">2.1.1.2.1</span> Exponential Smoothing Models:</a></li>
+  <li><a href="#stationarity" id="toc-stationarity" class="nav-link" data-scroll-target="#stationarity"> <span class="header-section-number">2.1.1.2.2</span> <strong>Stationarity:</strong></a></li>
+  <li><a href="#differencing" id="toc-differencing" class="nav-link" data-scroll-target="#differencing"> <span class="header-section-number">2.1.1.2.3</span> <strong>Differencing:</strong></a></li>
+  <li><a href="#autoregressive-models-ar" id="toc-autoregressive-models-ar" class="nav-link" data-scroll-target="#autoregressive-models-ar"> <span class="header-section-number">2.1.1.2.4</span> <strong>Autoregressive models (AR):</strong></a></li>
+  <li><a href="#moving-average-ma" id="toc-moving-average-ma" class="nav-link" data-scroll-target="#moving-average-ma"> <span class="header-section-number">2.1.1.2.5</span> <strong>Moving Average (MA):</strong></a></li>
+  <li><a href="#comparing-ar-method-with-ma-method" id="toc-comparing-ar-method-with-ma-method" class="nav-link" data-scroll-target="#comparing-ar-method-with-ma-method"> <span class="header-section-number">2.1.1.2.6</span> <strong>Comparing AR method with MA method:</strong></a></li>
+  <li><a href="#autocorrelation-and-partial-autocorrelation-functions-acf-and-pacf" id="toc-autocorrelation-and-partial-autocorrelation-functions-acf-and-pacf" class="nav-link" data-scroll-target="#autocorrelation-and-partial-autocorrelation-functions-acf-and-pacf"> <span class="header-section-number">2.1.1.2.7</span> <strong>Autocorrelation and Partial Autocorrelation Functions (ACF and PACF)</strong></a></li>
+  <li><a href="#autoregressive-moving-average-arma-model" id="toc-autoregressive-moving-average-arma-model" class="nav-link" data-scroll-target="#autoregressive-moving-average-arma-model"> <span class="header-section-number">2.1.1.2.8</span> <strong>Autoregressive Moving Average (ARMA) model:</strong></a></li>
+  </ul></li>
+  <li><a href="#plotting-patterns-in-correlation" id="toc-plotting-patterns-in-correlation" class="nav-link" data-scroll-target="#plotting-patterns-in-correlation"> <span class="header-section-number">2.1.1.3</span> <strong>Plotting patterns in correlation:</strong></a>
+  <ul class="collapse">
+  <li><a href="#auto-correlation-factor-acf" id="toc-auto-correlation-factor-acf" class="nav-link" data-scroll-target="#auto-correlation-factor-acf"> <span class="header-section-number">2.1.1.3.1</span> <strong>Auto correlation factor (ACF):</strong></a></li>
+  <li><a href="#partial-auto-correlation-factor-pacf" id="toc-partial-auto-correlation-factor-pacf" class="nav-link" data-scroll-target="#partial-auto-correlation-factor-pacf"> <span class="header-section-number">2.1.1.3.2</span> <strong>Partial auto correlation factor (PACF):</strong></a></li>
+  </ul></li>
+  <li><a href="#automatic-selection-techniques" id="toc-automatic-selection-techniques" class="nav-link" data-scroll-target="#automatic-selection-techniques"> <span class="header-section-number">2.1.1.4</span> <strong>Automatic selection techniques:</strong></a>
+  <ul class="collapse">
+  <li><a href="#minimum-info-criteria-minic" id="toc-minimum-info-criteria-minic" class="nav-link" data-scroll-target="#minimum-info-criteria-minic"> <span class="header-section-number">2.1.1.4.1</span> <strong>Minimum info criteria (MINIC):</strong></a></li>
+  </ul></li>
+  <li><a href="#autoregressive-integrated-moving-average-arima" id="toc-autoregressive-integrated-moving-average-arima" class="nav-link" data-scroll-target="#autoregressive-integrated-moving-average-arima"> <span class="header-section-number">2.1.1.5</span> <strong>Autoregressive Integrated Moving average (ARIMA):</strong></a></li>
+  <li><a href="#seasonal-autoregressive-integrated-moving-average-sarima" id="toc-seasonal-autoregressive-integrated-moving-average-sarima" class="nav-link" data-scroll-target="#seasonal-autoregressive-integrated-moving-average-sarima"> <span class="header-section-number">2.1.1.6</span> <strong>Seasonal Autoregressive Integrated Moving Average (SARIMA):</strong></a></li>
+  <li><a href="#comparing-arima-method-with-sarima-method" id="toc-comparing-arima-method-with-sarima-method" class="nav-link" data-scroll-target="#comparing-arima-method-with-sarima-method"> <span class="header-section-number">2.1.1.7</span> <strong>Comparing ARIMA method with SARIMA method:</strong></a></li>
+  <li><a href="#advantages-and-disadvantages-of-time-series-forecasting" id="toc-advantages-and-disadvantages-of-time-series-forecasting" class="nav-link" data-scroll-target="#advantages-and-disadvantages-of-time-series-forecasting"> <span class="header-section-number">2.1.1.8</span> <span class="smallcaps"><strong>ADVANTAGES AND DISADVANTAGES OF TIME SERIES FORECASTING</strong></span></a></li>
+  <li><a href="#time-series-forecasting-using-support-vector-machines" id="toc-time-series-forecasting-using-support-vector-machines" class="nav-link" data-scroll-target="#time-series-forecasting-using-support-vector-machines"> <span class="header-section-number">2.1.1.9</span> <strong>Time Series Forecasting Using Support Vector Machines</strong></a>
+  <ul class="collapse">
+  <li><a href="#concept-of-support-vector-machines" id="toc-concept-of-support-vector-machines" class="nav-link" data-scroll-target="#concept-of-support-vector-machines"> <span class="header-section-number">2.1.1.9.1</span> <strong>Concept of Support Vector Machines</strong></a></li>
+  </ul></li>
+  <li><a href="#forecast-performance-measures" id="toc-forecast-performance-measures" class="nav-link" data-scroll-target="#forecast-performance-measures"> <span class="header-section-number">2.1.1.10</span> Forecast Performance Measures</a>
+  <ul class="collapse">
+  <li><a href="#description-of-various-forecast-performance-measures" id="toc-description-of-various-forecast-performance-measures" class="nav-link" data-scroll-target="#description-of-various-forecast-performance-measures"> <span class="header-section-number">2.1.1.10.1</span> Description of Various Forecast Performance Measures</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#empirical-review" id="toc-empirical-review" class="nav-link" data-scroll-target="#empirical-review"> <span class="header-section-number">2.1.2</span> Empirical Review</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#chapter-three" id="toc-chapter-three" class="nav-link" data-scroll-target="#chapter-three"> <span class="header-section-number">3</span> CHAPTER THREE</a>
+  <ul class="collapse">
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology"> <span class="header-section-number">3.1</span> METHODOLOGY</a></li>
+  <li><a href="#research-design" id="toc-research-design" class="nav-link" data-scroll-target="#research-design"> <span class="header-section-number">3.2</span> Research Design</a>
+  <ul class="collapse">
+  <li><a href="#data-representation" id="toc-data-representation" class="nav-link" data-scroll-target="#data-representation"> <span class="header-section-number">3.2.1</span> Data Representation</a>
+  <ul class="collapse">
+  <li><a href="#time-series-analysis" id="toc-time-series-analysis" class="nav-link" data-scroll-target="#time-series-analysis"> <span class="header-section-number">3.2.1.1</span> <strong>Time-series analysis</strong></a></li>
+  </ul></li>
+  <li><a href="#specification-of-the-model" id="toc-specification-of-the-model" class="nav-link" data-scroll-target="#specification-of-the-model"> <span class="header-section-number">3.2.2</span> Specification of the Model</a>
+  <ul class="collapse">
+  <li><a href="#acf-plot-analysis-for-sample-between-2000-and-2020" id="toc-acf-plot-analysis-for-sample-between-2000-and-2020" class="nav-link" data-scroll-target="#acf-plot-analysis-for-sample-between-2000-and-2020"> <span class="header-section-number">3.2.2.1</span> <strong>ACF Plot analysis for sample between 2000 and 2020:</strong></a></li>
+  <li><a href="#dickey-fuller-test-and-plot" id="toc-dickey-fuller-test-and-plot" class="nav-link" data-scroll-target="#dickey-fuller-test-and-plot"> <span class="header-section-number">3.2.2.2</span> <strong>Dickey-Fuller Test and Plot</strong></a></li>
+  </ul></li>
+  <li><a href="#modeling-and-parameter-estimation" id="toc-modeling-and-parameter-estimation" class="nav-link" data-scroll-target="#modeling-and-parameter-estimation"> <span class="header-section-number">3.2.3</span> <strong>Modeling and Parameter estimation</strong></a>
+  <ul class="collapse">
+  <li><a href="#residual-analysis" id="toc-residual-analysis" class="nav-link" data-scroll-target="#residual-analysis"> <span class="header-section-number">3.2.3.1</span> <strong>Residual Analysis</strong></a></li>
+  <li><a href="#residual-plot" id="toc-residual-plot" class="nav-link" data-scroll-target="#residual-plot"> <span class="header-section-number">3.2.3.2</span> <strong>Residual Plot</strong></a></li>
+  <li><a href="#acf-residual-plot" id="toc-acf-residual-plot" class="nav-link" data-scroll-target="#acf-residual-plot"> <span class="header-section-number">3.2.3.3</span> <strong>ACF Residual Plot</strong></a></li>
+  <li><a href="#shapiro-test" id="toc-shapiro-test" class="nav-link" data-scroll-target="#shapiro-test"> <span class="header-section-number">3.2.3.4</span> <strong>Shapiro Test</strong></a></li>
+  <li><a href="#ljung-box" id="toc-ljung-box" class="nav-link" data-scroll-target="#ljung-box"> <span class="header-section-number">3.2.3.5</span> <strong>Ljung-Box</strong></a></li>
+  </ul></li>
+  <li><a href="#the-analysis-of-variance-anova-method" id="toc-the-analysis-of-variance-anova-method" class="nav-link" data-scroll-target="#the-analysis-of-variance-anova-method"> <span class="header-section-number">3.2.4</span> The Analysis Of Variance (ANOVA) Method</a></li>
+  <li><a href="#the-empirical-theory-model" id="toc-the-empirical-theory-model" class="nav-link" data-scroll-target="#the-empirical-theory-model"> <span class="header-section-number">3.2.5</span> The Empirical * Theory model</a></li>
+  <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions"> <span class="header-section-number">3.2.6</span> Assumptions</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"> <span class="header-section-number">4</span> </a></li>
+  <li><a href="#chapter-five" id="toc-chapter-five" class="nav-link" data-scroll-target="#chapter-five"> <span class="header-section-number">5</span> CHAPTER FIVE</a>
+  <ul class="collapse">
+  <li><a href="#conclusions-and-recommendations" id="toc-conclusions-and-recommendations" class="nav-link" data-scroll-target="#conclusions-and-recommendations"> <span class="header-section-number">5.1</span> CONCLUSIONS AND RECOMMENDATIONS</a>
+  <ul class="collapse">
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">5.1.1</span> Summary</a></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions"> <span class="header-section-number">5.1.2</span> Conclusions</a></li>
+  <li><a href="#recommendations" id="toc-recommendations" class="nav-link" data-scroll-target="#recommendations"> <span class="header-section-number">5.1.3</span> Recommendations</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">5.2</span> References</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
+
+
+
+
+<section id="chapter-one" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> CHAPTER ONE</h1>
+<section id="introduction" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1.1</span> INTRODUCTION</h2>
+<!-- All thing change, but how we respond to change is our responsibility, to fare it or embrasse it. Resisting change leads to one fiat. Our own extinction. Time is a smybole of freedom and peace -->
+<p>The purpose of this paper is to establish an understanding in time series analysis on remotely sensed data. Which will introduced us to the fundamentals of time series modeling, including decomposition, autocorrelation and modeling historical changes in Galamsey Operation in Ghana, the Cause,Dangers and it’s Environmental impact.</p>
+<p>Galamsey also known as “gather them and sell”,<span class="citation" data-cites="owusu-nimo2018">[@owusu-nimo2018]</span> is the term given by local Ghanaian for illegal small-scale gold mining in Ghana . The major cause of Galamsey is unemployment among the youth in Ghana <span class="citation" data-cites="gracia2018">[@gracia2018]</span>. Young university graduates rarely find work and when they do it hardly sustains them. The result is that these youth go the extra mile to earn a living for themselves and their family.</p>
+<p>Another factor is that lack of job security. On November 13, 2009 a collapse occurred in an illegal, privately owned mine in Dompoase, in the Ashanti Region of Ghana. At least 18 workers were killed, including 13 women, who worked as porters for the miners. Officials described the disaster as the worst mine collapse in Ghanaian history <span class="citation" data-cites="womendi2009">[@womendi2009]</span> .</p>
+<p>Illegal mining causes damage to the land and water supply <span class="citation" data-cites="ansah2017">[@ansah2017]</span> . In March 2017, the Minister of Lands and Natural Resources, Mr.&nbsp;John Peter Amewu, gave the Galamsey operators/illegal miners a three-week ultimatum to stop their activities or be prepared to face the law <span class="citation" data-cites="allotey2017">[@allotey2017]</span> . The activities by Galamseyers have depleted Ghana’s forest cover and they have caused water pollution, due to the crude and unregulated nature of the mining process <span class="citation" data-cites="gyekye">[@gyekye]</span> .</p>
+<p>Under current Ghanaian constitution, it is illegal to operate as galamseyer.That is to dig on land granted to mining companies as concessions or licenses and any other land in search for gold. In some cases, Galamseyers are the first to discover and work extensive gold deposits before mining companies find out and take over. Galamseyers are the main indicator of the presence of gold in free metallic dust form or they process oxide or sulfide gold ore using liquid mercury.</p>
+<p>Between 20,000 to 50,000, including thousands from China are believed to be engaged in Galamsey in Ghana.But according to the Information Minister 200,000 and nearly 3 million people, recently are now into Galamsey operation and rely on it for their livelihoods <span class="citation" data-cites="goldgu2017">[@goldgu2017 ]</span>. Their operations are mostly in the southern part of Ghana where it is believe to have substantial reserves of gold deposits, usually within the area of large mining companies <span class="citation" data-cites="barenblitt2021">[@barenblitt2021]</span> . As a group, they are economically disadvantaged. Galamsey settlements are usually poorer than neighboring agricultural villages. They have high rates of accidents and are exposed to mercury poisoning from their crude processing methods. Many women are among the workers, acting mostly as porters for the miners.</p>
+<section id="background-of-the-study" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="background-of-the-study"><span class="header-section-number">1.1.1</span> Background of The Study</h3>
+<p>As Galamsey is considered an illegal activity, they operations are hidden to the eyes of the authorities.So locating them is quite tricky ,but with satellite imagery ,it now possible to locate their operating and put an end to it. One of the features of Google Earth Engine is the ability to access years of satellite imagery without needing to download, organize, store and process this information. For instance, within the Satellite image</p>
+<p>collection, now it possible to access imagery back to the 90’s, allowing us to look at areas of interest on the map to visualize and quantify how much things has changed over time. With Earth Engine, Google maintains the data and offers it’s computing power for processing.Users can now access hundreds of time series images and analyze changes across decades using GIS and R or other programming language to analyze these datasets.</p>
+</section>
+<section id="problem-statement" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="problem-statement"><span class="header-section-number">1.1.2</span> Problem Statement</h3>
+<p>The Footprint of Galamsey is Spreading at a very faster rate, causing vegetation loss.Other factors accounting to vegetation loss may largely include climate change,urban and exurban development, bush fires. But not much works or research has been done to tell the extent to which Galamsey causes vegetation loss. This research attempts to segregate the variability climate is responsible for in vegetation loss so as to attribute the residual variability to Galamsey and other related activities such as bush-fires etc.</p>
+</section>
+<section id="research-questions" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="research-questions"><span class="header-section-number">1.1.3</span> Research Questions</h3>
+<p>To address the challenge of the vegetation variability in this work, the following several statements were formed:</p>
+<ul>
+<li><p>Are there any changes in vegetation cause by Galamsey and Climate change in Ghana?</p></li>
+<li><p>Is there any relationship between vegetation and land surface temperature in Ghana?</p></li>
+</ul>
+</section>
+<section id="research-objectives" class="level3" data-number="1.1.4">
+<h3 data-number="1.1.4" class="anchored" data-anchor-id="research-objectives"><span class="header-section-number">1.1.4</span> Research Objectives</h3>
+<p>The purpose is to establish an understanding in time series analysis on remotely sensed data. We will be introduced to the fundamentals of time series modeling, including decomposition, autocorrelation and modeling historical changes.</p>
+<ul>
+<li><p>Perform time series analysis on satellite derived vegetation indices</p></li>
+<li><p>Estimate the extent to which Galamsey causes vegetation loss in Ghana.</p></li>
+<li><p>Dissociate or single out the variability climate is responsible for in vegetation loss</p></li>
+</ul>
+</section>
+<section id="significance-of-the-study" class="level3" data-number="1.1.5">
+<h3 data-number="1.1.5" class="anchored" data-anchor-id="significance-of-the-study"><span class="header-section-number">1.1.5</span> Significance Of The Study</h3>
+<p>There have been significant changes in vegetation cover in Ghana over the past 30 years, and these dynamics are related strongly to climatic factors such as temperature and other factors. In this study, we want to examine the effects of climatic change on Ghana’s vegetation during these thirty years.</p>
+<p>This study allows us to explore climatic differences and climate-related drivers. Additionally, it offers a chance to research how climatic variability affects the ecosystem and human health. By merging climate and vegetation variation utilizing NDVI, LST, and EVI data to understand the relationship between vegetation and climate change under tropical climate conditions, it closes research gaps in Ghana. This study explores historical and projected vegetation and climate data, by sector, impacts, key vulnerabilities and what adaptation measures can be taken. It also explores the overview for a general context of how climate change is affecting <strong>Ghana.</strong></p>
+</section>
+<section id="scope-of-the-study" class="level3" data-number="1.1.6">
+<h3 data-number="1.1.6" class="anchored" data-anchor-id="scope-of-the-study"><span class="header-section-number">1.1.6</span> Scope of The Study</h3>
+</section>
+<section id="limitation-of-the-study" class="level3" data-number="1.1.7">
+<h3 data-number="1.1.7" class="anchored" data-anchor-id="limitation-of-the-study"><span class="header-section-number">1.1.7</span> Limitation Of The Study</h3>
+<p>The goal of time series modeling is to employ the simplest model feasible to account for as much data as possible while still developing an explanatory model of the data that does not overfit the issue set.</p>
+<p>Remote sensing data has additional limits that make this more difficult when dividing time series data into component pieces. It is almost certain that data from distant sensing will not provide the same level of precision.</p>
+<p>Additionally, atmospheric factors can distort the visual findings, causing the vegetation’s color to shift dramatically from image to image as a result of atmospheric factors (fog, ground moisture, cloud cover).</p>
+</section>
+<section id="organization-of-the-study" class="level3" data-number="1.1.8">
+<h3 data-number="1.1.8" class="anchored" data-anchor-id="organization-of-the-study"><span class="header-section-number">1.1.8</span> Organization of The Study</h3>
+</section>
+</section>
+</section>
+<section id="chapter-two" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> CHAPTER TWO</h1>
+<section id="literature-review" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="literature-review"><span class="header-section-number">2.1</span> LITERATURE REVIEW</h2>
+<section id="theoretical-review" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="theoretical-review"><span class="header-section-number">2.1.1</span> Theoretical Review</h3>
+<p>This literature review will follow narrative approach to gain insight into research topic. A time series is a set of observations, each being recorded at a particular time and the collection of such observation is referred to as time series data. The data is analysed to extract statistical information, characteristics of the data and to predict the output. As the data might tend to follow a pattern in time series data, the Machine Learning model finds it difficult to predict appropriately hence time series analysis and its approaches have made it simpler for prediction. The methods used and results from those methods achieved by former researchers will be summarized including different methods on time series and comparing them with each other.</p>
+<section id="what-is-time-series-analysis" class="level4" data-number="2.1.1.1">
+<h4 data-number="2.1.1.1" class="anchored" data-anchor-id="what-is-time-series-analysis"><span class="header-section-number">2.1.1.1</span> What is Time Series Analysis?</h4>
+<p>Makridakis and hibon, in time series analysis researchers have conducted a competition named M-competition in 1987 , Where participants could submit their forecasting on 1001 time series data taken from demography, industry, and economics. There were four main findings from the competition were:</p>
+<ul>
+<li><p>Statistically sophisticated or complex methods do not necessarily provide more accurate forecasts than simpler ones.</p></li>
+<li><p>The relative ranking of the performance of the various methods varies according to the accuracy measure being used.</p></li>
+<li><p>The accuracy when various methods are being combined outperformed, on average, the individual methods being combined and does very well in comparison to other methods.</p></li>
+<li><p>The accuracy of the various methods depends upon the length of the forecasting horizon involved.</p></li>
+</ul>
+<p>The time series data is visualized and analyzed to find out mainly three things, trend, seasonality, and Heteroscedasticity.</p>
+<p><strong>Trend:</strong> It can be defined as the observation of increasing or decreasing pattern over a period. In a stationary time series, mean of the time series data must be constant in time and whereas in general time series the mean is arbitrary function of time.</p>
+<p>Seasonality: It refers to a cyclic happening of events. A pattern which repeats itself after a period.</p>
+<p><strong>Heteroscedasticity:</strong> It is also known as level; it is defined as the non-constant variance from the mean calculated at different time periods.</p>
+<p>Few methods do not perform well in forecasting if the data is seasonal, and few do not perform well with trends in the data. Hence trends, seasonality and heteroscedasticity must be considered to select the best statistical method in forecasting.</p>
+</section>
+<section id="time-series-forecasting-using-stochastic-models" class="level4" data-number="2.1.1.2">
+<h4 data-number="2.1.1.2" class="anchored" data-anchor-id="time-series-forecasting-using-stochastic-models"><span class="header-section-number">2.1.1.2</span> <strong>Time Series Forecasting Using Stochastic Models</strong></h4>
+<p>The selection of a proper model is extremely important as it reflects the underlying structure of the series and this fitted model in turn is used for future forecasting. A time series model is said to be linear or non-linear depending on whether the current value of the series is a linear or non-linear function of past observations.</p>
+<p>In general models for time series data can have many forms and represent different stochastic processes. There are two widely used linear time series models in literature.</p>
+<p><em>Autoregressive (AR)</em> and <em>Moving Average (MA)</em> models, combining these two, the Autoregressive Moving Average (ARMA) and <em>Autoregressive Integrated Moving Average (ARIMA)</em> models have been proposed in many literature. The <em>Autoregressive Fractionally Integrated Moving Average (ARFIMA)</em> model generalizes ARMA and ARIMA models. For seasonal time series forecasting, a variation of ARIMA. The <em>Seasonal Autoregressive Integrated Moving Average (SARIMA)</em> ] model is used.</p>
+<p>ARIMA model and its different variations are based on the famous Box-Jenkins principle [6, 8,12, 23] and so these are also broadly known as the Box-Jenkins models.</p>
+<p>Linear models have drawn much attention due to their relative simplicity in understanding and implementation. However many practical time series show non-linear patterns. For example, as mentioned by R. Parrelli in [28], non-linear models are appropriate for predicting volatility changes in economic and financial time series. Considering these facts, various non-linear models have been suggested in literature. Some of them are the famous Autoregressive Conditional Heteroskedasticity (ARCH) [9, 28] model and its variations like Generalized ARCH (GARCH) [9, 28], Exponential Generalized ARCH (EGARCH) [9] etc., the Threshold Autoregressive (TAR) [8, 10] model, the Non-linear Autoregressive (NAR) [7] model, the Non-linear Moving Average (NMA) [28] model, All the methods consider either of trend, seasonality, or heteroscedasticity to predict the future output. Time series data must be decomposed based on the findings from data analysis. Based on the findings from analysis data must be broken into trend or seasonality.</p>
+<section id="exponential-smoothing-models" class="level5" data-number="2.1.1.2.1">
+<h5 data-number="2.1.1.2.1" class="anchored" data-anchor-id="exponential-smoothing-models"><span class="header-section-number">2.1.1.2.1</span> Exponential Smoothing Models:</h5>
+<p>Time-series data relies on the assumption that the observation at a certain point of time depends on previous observations in time . The previous observations are given weights as they contribute to the future prediction. The process of weighting is done using a notation called ‘Theta’ (Cryer, J.D., 1986). To find the best possible value for theta, we must perform sum of squared errors between the actual versus predicted value of the previous observation. Using this process, we can predict the next value but to predict more than one value this process does contribute much as the prediction as going to be same as the previous value.</p>
+<p>To understand the methods and to evaluate different models, few concepts like <em>stationarity</em> and <em>differencing</em> must be understood. Both these concepts help in making the core concepts of the methods easy to interpret.</p>
+</section>
+<section id="stationarity" class="level5" data-number="2.1.1.2.2">
+<h5 data-number="2.1.1.2.2" class="anchored" data-anchor-id="stationarity"><span class="header-section-number">2.1.1.2.2</span> <strong>Stationarity:</strong></h5>
+<p>Stationarity alludes to an irregular process that creates a time-series which has mean, and distribution to be constant through time. Distribution only depends on time and not location in time (Manuca, R. and Savit, R., 1996). If the distribution is same over different time windows is strong stationarity and if only mean and variance are similar, then it is weak stationarity. Irrespective of strong or weak, stationarity helps build a class of models such Autoregression (AR), Moving Average (MA), ARIMA (Witt, A., Kurths, J. and Pikovsky, A., 1998).</p>
+<p>An MA(q) process is always stationary, irrespective of the values the MA parameters [23]. The conditions regarding stationarity and invertibility of AR and MA processes also hold for an ARMA process. An ARMA(p, q) process is stationary if all the roots of the characteristic equation <span class="math inline">\phi (L) = 0</span> lie outside the unit circle. Similarly, if all the roots of the lag equation</p>
+<p><span class="math inline">\theta (L) = 0</span> lie outside the unit circle, then the ARMA(p, q) process is invertible and can be expressed as a pure AR process..</p>
+</section>
+<section id="differencing" class="level5" data-number="2.1.1.2.3">
+<h5 data-number="2.1.1.2.3" class="anchored" data-anchor-id="differencing"><span class="header-section-number">2.1.1.2.3</span> <strong>Differencing:</strong></h5>
+<p>This concept is used to make trending and seasonal data stationary. Subtraction between current observation and previous observation is the process of differencing. It helps in making the mean constant (Dickey, D.A. and Pantula, S.G., 1987).</p>
+</section>
+<section id="autoregressive-models-ar" class="level5" data-number="2.1.1.2.4">
+<h5 data-number="2.1.1.2.4" class="anchored" data-anchor-id="autoregressive-models-ar"><span class="header-section-number">2.1.1.2.4</span> <strong>Autoregressive models (AR):</strong></h5>
+<p>AR work on a concept called lags which is defined as the forecast of a series is solely based on the past values in the series (Cryer, J.D., 1986). Formula for Autoregression AR(1): <span class="math inline">\displaystyle y_{t} = \omega + \phi Y _{t-1}+ e_{t}</span> is stationary when $|_{1}|&lt; 1$ with a constant mean <span class="math inline">\displaystyle \mu = \frac{\omega}{1-\phi_{1}}</span> and constant variance <span class="math inline">\displaystyle \gamma_{o} = \frac{\sigma^{2}}{1-\phi_{1}^{2}}</span> Where ; <span class="math inline">y_{t}</span> = Target , <span class="math inline">\omega</span> = Intercept, <span class="math inline">\phi</span> = Coefficient, <span class="math inline">Y_{t-1}</span>=Lagged target, <span class="math inline">e_{t}</span> = Error\</p>
+<p>It depends only on one lag in the past and also called AR model of order one (Shibata, R., 1976). Autoregressive models are also known as long memory models as they must keep the memory of all the lags until its initial start point and must calculate their value. If there is any shock incident in the past which must have led to fluctuations in the data, it will have its effect on the present value which makes the model quite sensitive to shocks (Shibata, R., 1976).</p>
+</section>
+<section id="moving-average-ma" class="level5" data-number="2.1.1.2.5">
+<h5 data-number="2.1.1.2.5" class="anchored" data-anchor-id="moving-average-ma"><span class="header-section-number">2.1.1.2.5</span> <strong>Moving Average (MA):</strong></h5>
+<p>The moving average model forecasts a series based on the past error in the series called error lags. Hunter, J.S., Formula for moving average method is given as: <span class="math inline">y_{t} = \omega + \theta e _{t-1}+ e_{t}</span></p>
+<p>In (2), all the abbreviations are same to AR model formula except, = Previous error</p>
+<p>There arises a question as this method uses the error for the previous value but when it reaches to the first point there will be no previous value, to overcome this the average of the series is considered as the value before the starting point. These are short memory models as the error in the past will not have much effect on the future value (Hunter, J.S., 1986).</p>
+</section>
+<section id="comparing-ar-method-with-ma-method" class="level5" data-number="2.1.1.2.6">
+<h5 data-number="2.1.1.2.6" class="anchored" data-anchor-id="comparing-ar-method-with-ma-method"><span class="header-section-number">2.1.1.2.6</span> <strong>Comparing AR method with MA method:</strong></h5>
+<p>Let focus on the two methods which were used in the early years of time series forecasting and compare the performance of each model on a particular task. Testing against general autoregressive and moving average error models where the regressors include lagged dependent variables. (Godfrey, L.G., 1978) In their paper have explained the order of the error process under the alternate hypothesis using lagrange multiplier test (Silvey, S.D., 1959). As per the tests the errors of both the models were similar, but the constraints were different under which the tests were performed are also to be considered. As they have concluded in their paper stating that that the outcome of the model’s performance depends on the estimate chosen to be null hypothesis or alternate hypothesis.</p>
+<p>In addition, paper written by (Baltagi, B.H. and Li, Q., 1995), Demonstrates the comparison of AR and MA model using Burke, Godfrey, and Termayne test. To the error component model. They explained choosing of this test is because these are simple to implement as they only require within residual or OLS residual (Baltagi, B.H. and Li, Q., 1995). The outcome of the experiment was explained as when the test used within residual AR model performed well but had problems, if the test used OLS residual MA model performance was good. They have concluded stating that MA will performance much better when the parameters are changed.</p>
+<p>The findings of both the paper were quite different but one cannot prove either of the model to be better as the performance depends on the parameters used in the model. Each model is unique to its use case, and it depends on the user to choose accordingly based on the data.</p>
+</section>
+<section id="autocorrelation-and-partial-autocorrelation-functions-acf-and-pacf" class="level5" data-number="2.1.1.2.7">
+<h5 data-number="2.1.1.2.7" class="anchored" data-anchor-id="autocorrelation-and-partial-autocorrelation-functions-acf-and-pacf"><span class="header-section-number">2.1.1.2.7</span> <strong>Autocorrelation and Partial Autocorrelation Functions (ACF and PACF)</strong></h5>
+<p>To determine a proper model for a given time series data, it is necessary to carry out the ACF and PACF analysis. These statistical measures reflect how the observations in a time series are related to each other. For modeling and forecasting purpose it is often useful to plot the ACF and PACF against consecutive time lags. These plots help in determining the order of AR and MA terms. For a time series <span class="math inline">{x(t),t = 0,1, 2,...}</span>the Autocovariance [21, 23] at lag k is defined as:</p>
+<p><span class="math inline">\mu</span> is the mean of the time series, i.e.&nbsp;<span class="math inline">\mu = E\left[x_{t}\right]</span>. The autocovariance at lag zero i.e.&nbsp;<span class="math inline">y_{0}</span> is the variance of the time series. From the definition it is clear that the autocorrelation coefficient $ p_{k}$ is dimensionless and so is independent of the scale of measurement. Also, clearly <span class="math inline">-1 \leq p\_{k}\leq 1</span>. Statisticians Box and Jenkins [6] termed <span class="math inline">y_{k }</span> as the theoretical Autocovariance Function (ACVF) and <span class="math inline">p_{k}</span> as the theoretical Autocorrelation Function (ACF).</p>
+<p>Another measure, known as the Partial Autucorrelation Function (PACF) is used to measure the correlation between an observation k period ago and the current observation, after controlling for observations at intermediate lags (i.e.&nbsp;at lags &lt; k ) [12]. At lag 1, PACF(1) is same as ACF(1). The detailed formulae for calculating PACF are given in [6, 23].</p>
+<p>Normally, the stochastic process governing a time series is unknown and so it is not possible to determine the actual or theoretical ACF and PACF values. Rather these values are to be estimated from the training data, i.e.&nbsp;the known time series at hand. The estimated ACF and PACF values from the training data are respectively termed as sample ACF and PACF [6, 23].</p>
+<p>As given in [23], the most appropriate sample estimate for the ACVF at lag k is ACF plot is useful in determining the type of model to fit to a time series of length N. Since ACF is symmetrical about lag zero, it is only required to plot the sample ACF for positive lags, from lag one on-wards to a maximum lag of about N/4. The sample PACF plot helps in identifying the maximum order of an AR process.</p>
+</section>
+<section id="autoregressive-moving-average-arma-model" class="level5" data-number="2.1.1.2.8">
+<h5 data-number="2.1.1.2.8" class="anchored" data-anchor-id="autoregressive-moving-average-arma-model"><span class="header-section-number">2.1.1.2.8</span> <strong>Autoregressive Moving Average (ARMA) model:</strong></h5>
+<p>ARMA model is a combination of AR and MA models. The equation of the AR model of order one, when it reaches to the starting point will have infinite moving average (Choi, B., 2012). In ARMA model p and q have to defined, where p = number of significant terms in ACF and q = number of significant terms in PACF.</p>
+<p>To determine the optimal value for p and q there are two ways:</p>
+<ul>
+<li><p>Plotting patterns in correlation</p></li>
+<li><p>Automatic selection techniques</p></li>
+</ul>
+</section>
+</section>
+<section id="plotting-patterns-in-correlation" class="level4" data-number="2.1.1.3">
+<h4 data-number="2.1.1.3" class="anchored" data-anchor-id="plotting-patterns-in-correlation"><span class="header-section-number">2.1.1.3</span> <strong>Plotting patterns in correlation:</strong></h4>
+<p>There are two functions used for plotting patterns in correlation:</p>
+<section id="auto-correlation-factor-acf" class="level5" data-number="2.1.1.3.1">
+<h5 data-number="2.1.1.3.1" class="anchored" data-anchor-id="auto-correlation-factor-acf"><span class="header-section-number">2.1.1.3.1</span> <strong>Auto correlation factor (ACF):</strong></h5>
+<p>It is the correlation between the observations at the current time stamp and observations at the previous time stamp (Hagan, M.T. and Behr, S.M., 1987).</p>
+</section>
+<section id="partial-auto-correlation-factor-pacf" class="level5" data-number="2.1.1.3.2">
+<h5 data-number="2.1.1.3.2" class="anchored" data-anchor-id="partial-auto-correlation-factor-pacf"><span class="header-section-number">2.1.1.3.2</span> <strong>Partial auto correlation factor (PACF):</strong></h5>
+<p>The correlation between the observations at two different time stamps, assuming both observations are correlated to the observations at another time stamp (Hagan, M.T. and Behr, S.M., 1987).</p>
+</section>
+</section>
+<section id="automatic-selection-techniques" class="level4" data-number="2.1.1.4">
+<h4 data-number="2.1.1.4" class="anchored" data-anchor-id="automatic-selection-techniques"><span class="header-section-number">2.1.1.4</span> <strong>Automatic selection techniques:</strong></h4>
+<p>There are three commonly used techniques for automatic selection of time series model:</p>
+<section id="minimum-info-criteria-minic" class="level5" data-number="2.1.1.4.1">
+<h5 data-number="2.1.1.4.1" class="anchored" data-anchor-id="minimum-info-criteria-minic"><span class="header-section-number">2.1.1.4.1</span> <strong>Minimum info criteria (MINIC):</strong></h5>
+<p>This builds multiple combinations of models across a grid search of AR and MA terms. It then finds the model with lowest Bayesian information criteria (Stadnytska, T., Braun, S. and Werner, J., 2008).</p>
+<ul>
+<li><p><strong>Squared canonical correlations (SCAN):</strong> It looks at correlation matrix of the data, then it compares it with its lags. It then looks at the eigen values from the correlation matrix to find the combination of AR and MA probably having SCAN as 0. It finds the pair as the best where the convergence is quickest (Stadnytska, T., Braun, S. and Werner, J., 2008).</p></li>
+<li><p><strong>The extended sample auto correlation function (ESACF):</strong> As it is known that AR and MA are related. Essentially it filters out the AR terms until only MA piece is left. This process is repeated until fewest AR terms are left and maximum MA terms (Stadnytska, T., Braun, S. and Werner, J., 2008).</p></li>
+</ul>
+<p>It completely depends on the individual to choose from either of the methods helping them to find the optimal value of p and q for better performance of the model.</p>
+</section>
+</section>
+<section id="autoregressive-integrated-moving-average-arima" class="level4" data-number="2.1.1.5">
+<h4 data-number="2.1.1.5" class="anchored" data-anchor-id="autoregressive-integrated-moving-average-arima"><span class="header-section-number">2.1.1.5</span> <strong>Autoregressive Integrated Moving average (ARIMA):</strong></h4>
+<p>To understand ARIMA model, we need to understand ARMA model as this is just an extension to ARMA model. Essentially, we need to make data stationary to feed it to a machine learning model. It is done by through differencing. ARIMA models are mathematically written as ARIMA(p,d,q), where p and q are same as ARMA model but d = number of first differences (Yu, G. and Zhang, C., 2004, May).</p>
+</section>
+<section id="seasonal-autoregressive-integrated-moving-average-sarima" class="level4" data-number="2.1.1.6">
+<h4 data-number="2.1.1.6" class="anchored" data-anchor-id="seasonal-autoregressive-integrated-moving-average-sarima"><span class="header-section-number">2.1.1.6</span> <strong>Seasonal Autoregressive Integrated Moving Average (SARIMA):</strong></h4>
+<p>SARIMA models were introduced to handle seasonality in the data. Seasonality is different from stationarity; however, seasonality can be handled using stationarity up to some extent, but seasonal correlations cannot be eliminated completely. SARIMA models are mathematically written as SARIMA<span class="math inline">(p,d,q)(P,D,Q)^{s}</span>.</p>
+<p>Where;</p>
+<p>P = Number of seasonal AR terms, D = Number of seasonal differences, Q = Number of seasonal MA terms, s = Length of the season.</p>
+<p>Removing seasonality will help the model to perform better but getting rid of seasonality in data is a difficult task to do.</p>
+</section>
+<section id="comparing-arima-method-with-sarima-method" class="level4" data-number="2.1.1.7">
+<h4 data-number="2.1.1.7" class="anchored" data-anchor-id="comparing-arima-method-with-sarima-method"><span class="header-section-number">2.1.1.7</span> <strong>Comparing ARIMA method with SARIMA method:</strong></h4>
+<p>In comparison to ARIMA and SARIMA, (Valipour, M., 2015) investigated it on long-term runoff forecasting in the United States. The results have shown that SARIMA models have performed better than ARIMA model. However, it was seen that SARIMA models were very sensitive and a slight change in a parameter would result in poor performance of the model.</p>
+<p>(Wang, S., Li, C. and Lim, A., 2019) have used ARIMA and SARIMA models from the perspective of Linear System Analysis, Spectra Analysis and Digital Filtering. It was shown that ARIMA and SARIMA both have not performed well and the researchers were forced to look beyond these models for better performance. They have mentioned that ARMA-SIN model was better but have also said it is relatively difficult to study and understand the concepts compared to ARIMA and SARIMA model.</p>
+<p>The findings from the (Valipour, M., 2015) have proven SARIMA to better however, their claim contradicts when it was to be compared with the findings of (Wang, S., Li, C. and Lim, A., 2019). The use of a particular method must be based on the data, after the analysis it is known if that the data has trend, they must choose ARIMA and if the data has seasonality, choosing SARIMA would be helpful.</p>
+</section>
+<section id="advantages-and-disadvantages-of-time-series-forecasting" class="level4" data-number="2.1.1.8">
+<h4 data-number="2.1.1.8" class="anchored" data-anchor-id="advantages-and-disadvantages-of-time-series-forecasting"><span class="header-section-number">2.1.1.8</span> <span class="smallcaps"><strong>ADVANTAGES AND DISADVANTAGES OF TIME SERIES FORECASTING</strong></span></h4>
+<p><strong>Advantages of time series forecasting:</strong></p>
+<ul>
+<li><p>Time series forecasting is of high accuracy and simplicity.</p></li>
+<li><p>It can be used to analyze how the changes associated with the data point picked correlate with changes in other variables during the same time span.</p></li>
+<li><p>Statistical techniques have been developed to analyze time series in such a way that the factor that influences the fluctuation of the series may be identified and handled.</p></li>
+<li><p>It can give good output with less variables. As regression models fail with less variables, time series models will work better and effectively.</p></li>
+</ul>
+<p><strong>Disadvantages of time series forecasting:</strong></p>
+<ul>
+<li><p>Time series models can easily be overfitted, which lead to false results.</p></li>
+<li><p>It works well with short term forecasting but does not work well with long term forecasting.</p></li>
+<li><p>It is sensible to outliers, if the outliers are not handled properly then it could lead to wrong predictions.</p></li>
+<li><p>The different elements that impact the fluctuations of a series cannot be fully adjusted by the time series analysis</p></li>
+</ul>
+</section>
+<section id="time-series-forecasting-using-support-vector-machines" class="level4" data-number="2.1.1.9">
+<h4 data-number="2.1.1.9" class="anchored" data-anchor-id="time-series-forecasting-using-support-vector-machines"><span class="header-section-number">2.1.1.9</span> <strong>Time Series Forecasting Using Support Vector Machines</strong></h4>
+<section id="concept-of-support-vector-machines" class="level5" data-number="2.1.1.9.1">
+<h5 data-number="2.1.1.9.1" class="anchored" data-anchor-id="concept-of-support-vector-machines"><span class="header-section-number">2.1.1.9.1</span> <strong>Concept of Support Vector Machines</strong></h5>
+<p>Till now, we have studied about various stochastic and neural network methods for time series modeling and forecasting. Despite of their own strengths and weaknesses, these methods are quite successful in forecasting applications. Recently, a new statistical learning theory, viz.&nbsp;the Support Vector Machine (SVM) has been receiving increasing attention for classification and forecasting [18, 24, 30, 31]. SVM was developed by Vapnik and his co-workers at the AT &amp; T Bell laboratories in 1995 [24, 29, 33]. Initially SVMs were designed to solve pattern classification problems, such as optimal character recognition, face identification and text classification, etc. But soon they found wide applications in other domains, such as function approximation, regression estimation and time series prediction problems [24, 31, 34].</p>
+<p>Vapnik’s SVM technique is based on the Structural Risk Minimization (SRM) principle [24, 29, 30]. The objective of SVM is to find a decision rule with good generalization ability through selecting some particular subset of training data, called support vectors [29, 31, 33]. In this method, an optimal separating hyperplane is constructed, after non-linearly mapping the input space into a higher dimensional feature space. Thus, the quality and complexity of SVM solution does not depend directly on the input space [18, 19].</p>
+<p>Another important characteristic of SVM is that here the training process is equivalent to solving a linearly constrained quadratic programming problem. So, contrary to other networks’ training, the SVM solution is always unique and globally optimal. However a major disadvantage of SVM is that when the training size is large, it requires an enormous amount of computation which increases the time complexity of the solution [24].</p>
+</section>
+</section>
+<section id="forecast-performance-measures" class="level4" data-number="2.1.1.10">
+<h4 data-number="2.1.1.10" class="anchored" data-anchor-id="forecast-performance-measures"><span class="header-section-number">2.1.1.10</span> Forecast Performance Measures</h4>
+<p>While applying a particular model to some real or simulated time series, first the raw data is divided into two parts, viz.&nbsp;the Training Set and Test Set. The observations in the training set are used for constructing the desired model. Often a small subpart of the training set is kept for validation purpose and is known as the Validation Set. Sometimes a preprocessing is done by normalizing the data or taking logarithmic or other transforms. One such famous technique is the Box-Cox Transformation [23]. Once a model is constructed, it is used for generating forecasts. The test set observations are kept for verifying how accurate the fitted model performed in forecasting these values. If necessary, an inverse transformation is applied on the forecasted values to convert them in original scale. In order to judge the forecasting accuracy of a particular model or for evaluating and comparing different models, their relative performance on the test dataset is considered.</p>
+<p>Due to the fundamental importance of time series forecasting in many practical situations, proper care should be taken while selecting a particular model. For this reason, various performance measures are proposed in literature [3, 7, 8, 9, 24, 27] to estimate forecast accuracy and to compare different models. These are also known as performance metrics [24]. Each of these measures is a function of the actual and forecasted values of the time series.</p>
+<section id="description-of-various-forecast-performance-measures" class="level5" data-number="2.1.1.10.1">
+<h5 data-number="2.1.1.10.1" class="anchored" data-anchor-id="description-of-various-forecast-performance-measures"><span class="header-section-number">2.1.1.10.1</span> Description of Various Forecast Performance Measures</h5>
+<p>In each of the forthcoming definitions, <span class="math inline">y_{t }</span> is the actual value, <span class="math inline">f_{t}</span> is the forecasted value, <span class="math inline">e_{t} = y_{t} - f_{t}</span> is the forecast error and n is the size of the test set. Also, <span class="math inline">\displaystyle \bar{y} = \frac{1}{n}\sum_{t=1}^{n}y_{t}</span> is the test mean and <span class="math inline">\displaystyle \sigma^{2} = \frac{1}{n-1}\sum_{t=1}^{n}(y_{t}-\bar{y})^{2}</span>is the test variance.</p>
+<p>The Mean Forecast Error (MFE)</p>
+<p>This measure is defined as [24] <span class="math inline">\displaystyle MFE = \frac{1}{n}\sum_{t=1}^{n}e_{t}</span> The properties of MFE are:</p>
+</section>
+</section>
+</section>
+<section id="empirical-review" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="empirical-review"><span class="header-section-number">2.1.2</span> Empirical Review</h3>
+<p>LULC data are records that documents to what extent a region is covered by wetlands, forests, agriculture, impervious surfaces, and other land and water forms. These water forms include open water or wetlands. Land use shows how people use landscape either for conservation, development, agriculture or mixed uses [6, 7]. Changes In land can be identified by analysing satellite imagery. However, land use cannot be identified from satellite imagery. Satellite imagery give us information that helps in understanding the present landscape. Furthermore, to see changes through time, different years are needed. With this information, we can assess decades of data as well as insight into the possible effects of these changes that has occured and make better decisions before they can cause great harm. According to [10], five different types of LULC pattern were classified barren lands such as Galamsey Site, agricultural lands, urban lands, quarries, and free water bodies, to detect the 25years LULC change in the western Nile delta of Egypt. Supervised maximum likelihood classification (MLC) method together with landsat images were used in Erdas Imagine software. The finding shows a significant change in barren land changing into agricultural land continuously from 1984 to 2009.</p>
+<p>Similarly, in [1] used the maximum likelihood algorithm (MLA) and Markov chain model (MCA) to study the LULC classification using ArcGIS and future prediction using Idiri respectively in Kathmandu city Nepal. Built-up, water body, forest area, open field and cultivated land classes classified. Results show built-up area significantly increased, and water body, forest area, open field and cultivated land decrease downward trend from 1976 to 2009. Furthermore, the Markov chain Analysis prediction for 2017 shows that in 2017 Urban area will increase to cover 72.24 <span class="math inline">\%</span> of the total land in Kathmandu and cultivated land remains only 20.90<span class="math inline">\%</span>. Waterbody and the open field will increase respectively by 0.59<span class="math inline">\%</span>, 0.19<span class="math inline">\%</span> whereas forest land decrease by 0.47<span class="math inline">\%</span>.</p>
+<p>Furthermore, in [10], They made used of the Maximum likelihood classification (MLC), Change detection and spatial matrix analysis to analyse land cover change of fifty-year period (1954 to 2004) in Avellino Italy. The result shows 4 LULC classes, with urban land use increasing rapidly affecting the cultivated land mostly, while woodland and grassland cover decrease was at a lower rate. Moreover, in [11] studied the LULC changes and structure in Dhaka metropolitan, Bangladesh in a period of 1975 to 2005. Maximum Likelihood Classification (MLC) and transition matrix method were used for LULC classification and pattern of LULC. The Result shows six classes in LULC of the water body,</p>
+<p>vegetation, bare soil, cultivated land built-up and wetland/lowland. Also, a significant increase in the built-up land, while cultivated land, vegetation and wetland decreased accordingly from 1975 to 2005.</p>
+<p>Also, [12] used Maximum Likelihood Classification and comparison method to study the LULC classification and change respectively from 1976 to 2003 in Tirupati, India. The results show 6 LULC classes, agricultural land, built-up, dense forest, plantation, water spread and other land, a significant increase in built-up area, plantation forests and other land, while a decrease on the part of the waterbody, dense forest and agricultural land was noticed.</p>
+<p>Moreover, in [13] studied the LULC change in Duzce plain Turkey. Supervised classification and the Corine land cover nomenclature methods used. The result shows 5 LULC classes as urban fabric, forest, heterogeneous agricultural land, inland wasteland and (Industrial, commercial, and transport) units with an accuracy assessment between 92.41<span class="math inline">\%</span> and 97.3<span class="math inline">\%</span> for LULC map 2010 and 1987 respectively. Also, a significant change in LULC was noticed with 11.2<span class="math inline">\%</span> increase in agricultural area and 335<span class="math inline">\%</span> decrease of forest land.</p>
+<p>Also, a significant increase and a decrease of LULC were noticed between the years 1973, 1985, and 2000 within the classes.</p>
+<div class="cell">
+<details>
+<summary>Packages</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openintro)  <span class="co"># for data</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)  <span class="co"># for data wrangling and visualization</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)      <span class="co"># for tables</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)      <span class="co"># for model summary</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(imputeTS)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pacman"</span>)){<span class="fu">install.packages</span>(<span class="st">"pacman"</span>)}</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(<span class="at">char =</span> <span class="fu">c</span>(<span class="st">'rgee'</span>,<span class="st">'reticulate'</span>,<span class="st">'raster'</span>,<span class="st">'tidyverse'</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                <span class="st">'dplyr'</span>,<span class="st">'sf'</span>,<span class="st">'mapview'</span>,<span class="st">'mapeddit'</span>,<span class="st">'caret'</span>,<span class="st">'forcats'</span>,<span class="st">'reticulate'</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                <span class="st">'rgee'</span>, <span class="st">'remotes'</span>, <span class="st">'magrittr'</span>, <span class="st">'tigris'</span>, <span class="st">'tibble'</span>, <span class="st">'stars'</span>,                       <span class="st">'stars'</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                <span class="st">'st'</span>, <span class="st">'lubridate'</span>, <span class="st">'imputeTS'</span>, <span class="st">'leaflet'</span>, <span class="st">'classInt'</span>,                            <span class="st">'RColorBrewer'</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                <span class="st">'ggplot2'</span>, <span class="st">'googledrive'</span>, <span class="st">'geojsonio'</span>, <span class="st">'ggpubr'</span>,<span class="st">'cartogram'</span>),</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">install =</span> F, <span class="at">update =</span> F, <span class="at">character.only =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rgee)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#ee_install()</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ee_check</span>()</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ee_Initialize</span>(<span class="st">"kalong"</span>,<span class="at">drive =</span> <span class="cn">TRUE</span>) <span class="co"># initialize GEE,</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#this will have you log in to Google Drive</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Now we will create a hexagonal grid over the study area</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>aoi.proj <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(aoi, <span class="fu">st_crs</span>(<span class="dv">2392</span>))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>hex <span class="ot">&lt;-</span> <span class="fu">st_make_grid</span>(<span class="at">x =</span> aoi.proj, <span class="at">cellsize =</span> <span class="dv">17280</span>, <span class="at">square =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">st_sf</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rowid_to_column</span>(<span class="st">'hex_id'</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>hex <span class="ot">&lt;-</span> hex[aoi.proj,]</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(hex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-histogram" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Quarto_files/figure-html/fig-histogram-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figure 1: Now we will use the grid created above to extract the mean EVI values within each cell for the years 2000-2020.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Which we are going to perform a time series analysis on the data within each grid cell. But first, we will work through the procedure one step at a time.</p>
+</section>
+</section>
+</section>
+<section id="chapter-three" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> CHAPTER THREE</h1>
+<section id="methodology" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="methodology"><span class="header-section-number">3.1</span> METHODOLOGY</h2>
+<p>Data from a time series is a set of observations made in a particular order over a period of time. There is a chance for correlation between observations because time series data points are gathered at close intervals. To help machine learning classifiers work with time series data, we provide several new tools. We first contend that local features or patterns in time series can be found and combined to address challenges involving time-series categorization. Then, a method to discover patterns that are helpful for classification is suggested. We combine these patterns to create computable categorization rules. In order to mask low-quality pixels, we will first collect Sentinel 2 data from Google Earth Engine in order to choose NDVI and EVI values.</p>
+<p>Instead of analyzing the imagery directly, we will summarize the mean NDVI and EVI values. This will shorten the analysis time while still providing an attractive and useful map. We will apply a smoothing strategy using an ARIMA function to fix the situation where some cells may not have NDVI and EVI for a particular month. Once NA values have been eliminated, the time series will be divided to eliminate seasonality before the normalized data is fitted using a linear model. We will go to classify our data on the map and map it after we have extracted the linear trend.</p>
+</section>
+<section id="research-design" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="research-design"><span class="header-section-number">3.2</span> Research Design</h2>
+<p>In this study, the submission used a quantitative approach. Instead of using subjective judgment, findings and conclusions heavily rely on the use of statistical methods and reliable time series models.</p>
+<section id="data-representation" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="data-representation"><span class="header-section-number">3.2.1</span> Data Representation</h3>
+<p>The Republic of Ghana, a nation in West Africa, will serve as the location for the experimental plots for this study. It shares borders with the Ivory Coast in the west, Burkina Faso in the north, and Togo in the east. It borders the Gulf of Guinea and the Atlantic Ocean to the south. Ghana’s total size is 238,535 km2 (92,099 sq mi), and it is made up of a variety of biomes, from tropical rainforests to coastal savannas. Ghana, which has a population of over 31 million, is the second-most populous nation in West Africa, behind Nigeria.Accra, the nation’s capital and largest city, as well as Kumasi, Tamale, and Sekondi-Takoradi, are other important cities.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(Description)<span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">booktabs =</span>  <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Date </th>
+   <th style="text-align:right;"> Rainfall </th>
+   <th style="text-align:right;"> Evaporation </th>
+   <th style="text-align:right;"> Precipitation </th>
+   <th style="text-align:right;"> mean_evi </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 2000-01-01 </td>
+   <td style="text-align:right;"> 0.4869522 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 5.437918 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 2000-01-02 </td>
+   <td style="text-align:right;"> 1.6640719 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 8.097965 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 2000-01-03 </td>
+   <td style="text-align:right;"> 0.4059545 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 7.663450 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 2000-01-04 </td>
+   <td style="text-align:right;"> 0.0001358 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 3.887136 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 2000-01-05 </td>
+   <td style="text-align:right;"> 0.2125085 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6.001542 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 2000-01-06 </td>
+   <td style="text-align:right;"> 0.4051066 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6.800775 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'psych' was built under R version 4.1.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'psych'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:raster':
+
+    distance</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:ggplot2':
+
+    %+%, alpha</code></pre>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">describe</span>(Description) <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">booktads =</span> <span class="cn">TRUE</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">latex_options =</span> <span class="st">"scale_down"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="tbl-stats" class="anchored">
+
+<table class="table" style="margin-left: auto; margin-right: auto;"><caption>Table 1:  Summary statistics for Climate Date and Vegetation Loss In Ghana </caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> vars </th>
+   <th style="text-align:right;"> n </th>
+   <th style="text-align:right;"> mean </th>
+   <th style="text-align:right;"> sd </th>
+   <th style="text-align:right;"> median </th>
+   <th style="text-align:right;"> trimmed </th>
+   <th style="text-align:right;"> mad </th>
+   <th style="text-align:right;"> min </th>
+   <th style="text-align:right;"> max </th>
+   <th style="text-align:right;"> range </th>
+   <th style="text-align:right;"> skew </th>
+   <th style="text-align:right;"> kurtosis </th>
+   <th style="text-align:right;"> se </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Date* </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 8037 </td>
+   <td style="text-align:right;"> 4019.0000000 </td>
+   <td style="text-align:right;"> 2320.2263898 </td>
+   <td style="text-align:right;"> 4019.000000 </td>
+   <td style="text-align:right;"> 4019.000000 </td>
+   <td style="text-align:right;"> 2978.543400 </td>
+   <td style="text-align:right;"> 1.000000 </td>
+   <td style="text-align:right;"> 8037.0000000 </td>
+   <td style="text-align:right;"> 8036.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> -1.2004479 </td>
+   <td style="text-align:right;"> 25.8811386 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Rainfall </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 8037 </td>
+   <td style="text-align:right;"> 3.2761494 </td>
+   <td style="text-align:right;"> 4.2500668 </td>
+   <td style="text-align:right;"> 1.713597 </td>
+   <td style="text-align:right;"> 2.426456 </td>
+   <td style="text-align:right;"> 2.407591 </td>
+   <td style="text-align:right;"> 0.000000 </td>
+   <td style="text-align:right;"> 44.1322861 </td>
+   <td style="text-align:right;"> 44.1322861 </td>
+   <td style="text-align:right;"> 2.3623607 </td>
+   <td style="text-align:right;"> 8.1283277 </td>
+   <td style="text-align:right;"> 0.0474077 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Evaporation </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 8037 </td>
+   <td style="text-align:right;"> 0.0051792 </td>
+   <td style="text-align:right;"> 0.2088923 </td>
+   <td style="text-align:right;"> 0.000000 </td>
+   <td style="text-align:right;"> 0.000000 </td>
+   <td style="text-align:right;"> 0.000000 </td>
+   <td style="text-align:right;"> -1.854569 </td>
+   <td style="text-align:right;"> 1.8765252 </td>
+   <td style="text-align:right;"> 3.7310938 </td>
+   <td style="text-align:right;"> -0.3509246 </td>
+   <td style="text-align:right;"> 18.8151792 </td>
+   <td style="text-align:right;"> 0.0023301 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Precipitation </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 8037 </td>
+   <td style="text-align:right;"> 32.7282211 </td>
+   <td style="text-align:right;"> 26.7246321 </td>
+   <td style="text-align:right;"> 28.527967 </td>
+   <td style="text-align:right;"> 30.118253 </td>
+   <td style="text-align:right;"> 30.142683 </td>
+   <td style="text-align:right;"> 0.000000 </td>
+   <td style="text-align:right;"> 134.6217651 </td>
+   <td style="text-align:right;"> 134.6217651 </td>
+   <td style="text-align:right;"> 0.7075780 </td>
+   <td style="text-align:right;"> -0.1987914 </td>
+   <td style="text-align:right;"> 0.2981019 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> mean_evi </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 8037 </td>
+   <td style="text-align:right;"> 0.0048827 </td>
+   <td style="text-align:right;"> 0.0487895 </td>
+   <td style="text-align:right;"> 0.000000 </td>
+   <td style="text-align:right;"> 0.000000 </td>
+   <td style="text-align:right;"> 0.000000 </td>
+   <td style="text-align:right;"> 0.000000 </td>
+   <td style="text-align:right;"> 0.6859372 </td>
+   <td style="text-align:right;"> 0.6859372 </td>
+   <td style="text-align:right;"> 10.2659577 </td>
+   <td style="text-align:right;"> 107.0026650 </td>
+   <td style="text-align:right;"> 0.0005442 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs.default</span>(DF,<span class="at">main =</span> <span class="st">"Corellation Between "</span>,<span class="at">bg =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"green"</span>, <span class="st">"blue"</span>),<span class="at">pch =</span> <span class="dv">21</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="Quarto_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<section id="time-series-analysis" class="level4" data-number="3.2.1.1">
+<h4 data-number="3.2.1.1" class="anchored" data-anchor-id="time-series-analysis"><span class="header-section-number">3.2.1.1</span> <strong>Time-series analysis</strong></h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<figure class="figure">
+<img src="Plots/Steps.png" title="Time-series analysis" class="img-fluid figure-img">
+</figure>
+<p></p><figcaption class="figure-caption">FlowChart</figcaption><p></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="specification-of-the-model" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="specification-of-the-model"><span class="header-section-number">3.2.2</span> Specification of the Model</h3>
+<p>Based on the above analysis we can form the SARMA model as, SARMA(,0,)X(,0,) Has no differentiation has been done we can mark it as zero. First part of multiplication is the Non-seasonal part with first parameter as PACF and second as ACF. Similarly its the same format for Seasonal part as well in SARMA model. From the above ACF, PACF analysis we can formulate the below models:<br>
+<strong>1.SARMA(2,0,3)X(1,0,2)</strong><br>
+<strong>2.SARMA(3,0,1)X(1,0,1)</strong></p>
+<p>This model cannot be used, because it has higher value than the previous SARMA model. Also has the seasonality pattern is not certain we can use GARCH model and test to see if the AIC value is better along with ARMA model as well by ignoring the seasonal part. GARCH model can be abbreviated as Generalized Auto-regressive conditional Heteroskedasticity models. However GARCH model is usually used to estimate value returns for stocks and so on, where trends is not known. We are using to test in our use-case to look at better AIC values. We are going to apply the seasonal ARMA-GARCH model using rugarch.</p>
+<p><br>
+As we already know that the data is stationary, we can go about finding the p and q values from ACF and PACF plots or use auto.arima() in R.</p>
+<p><strong>Discuss:</strong>As we are not differencing the model we can consider ARMA(2,0,3) has the best model. Which is the best and q value also found from the ACF and PACF plots.</p>
+<p><strong>GARCH</strong></p>
+<p><strong>Result of GARCH Model with Specifications:</strong><br>
+Shows the output of the GARCH model when ran on the dataset. Some of the observations we can see that and compare with the SARMA model. We can view various optimal parameters and their estimate and standard error as well. The LB test has values for p nothing less than 0.05 so we can say that null hypothesis is rejected and may assume correlation being present in the dataset. However LB test on Standardized squared residuals yield one of the p values closer to 0. The Arch LM tests has p values for lags 7 and 9 closer to zero. We can observe that the log-likelihood for SARMA is smaller than GARCH. Although, it is well noted that the higher the log-likelihood, the better the model. The GARCH model has higher log-likelihood when compared sarima but no much difference between their values. While the same is opposite for AIC value, where smaller the AIC value is the best model.</p>
+<p><strong>Residual Analysis</strong></p>
+<p><strong>Discuss:</strong>From the above time series plot we can conclude that, the trend within the year values for 1960,2016 and 2020 are similar. We can observe that during start of the year in January the unemployment rate increases and becomes constant during February, March and then decreases sharply post April. Then in mid of the year it increases to a certain level and attains constant until late/end of the year. Clearly we can see some pattern when we do time series plot within a single year. It can be concluded that unemployment rate is higher during winter months and decreased post April which is summer season. Thus the seasonal aspect can be clearly understood.</p>
+<section id="acf-plot-analysis-for-sample-between-2000-and-2020" class="level4" data-number="3.2.2.1">
+<h4 data-number="3.2.2.1" class="anchored" data-anchor-id="acf-plot-analysis-for-sample-between-2000-and-2020"><span class="header-section-number">3.2.2.1</span> <strong>ACF Plot analysis for sample between 2000 and 2020:</strong></h4>
+<p><strong>Discuss:</strong>Shows the initial ACF plot and we can see that before lag 25 almost all are significant and having no trend it needs to be differentiated before performing any analysis. Clearly the seasonality is visible even in the ACF plot.</p>
+<p><strong>PACF plot</strong></p>
+</section>
+<section id="dickey-fuller-test-and-plot" class="level4" data-number="3.2.2.2">
+<h4 data-number="3.2.2.2" class="anchored" data-anchor-id="dickey-fuller-test-and-plot"><span class="header-section-number">3.2.2.2</span> <strong>Dickey-Fuller Test and Plot</strong></h4>
+<p><strong>Discuss:</strong>The DF test confirms that it is stationary as p value &lt; 0.05 and thus can be used for further analysis.This is after doing double differentiation.</p>
+<p><br>
+</p>
+</section>
+</section>
+<section id="modeling-and-parameter-estimation" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="modeling-and-parameter-estimation"><span class="header-section-number">3.2.3</span> <strong>Modeling and Parameter estimation</strong></h3>
+<p>ARIMA(1,2,1) ARIMA(1,2,4) ARIMA(1,2,5) ARIMA(2,2,1) ARIMA(2,2,4) ARIMA(2,2,5)<br>
+<strong>1.ARIMA(1,2,1)</strong><br>
+<strong>2.ARIMA(1,2,4)</strong><br>
+<strong>3.ARIMA(1,2,5)</strong><br>
+<strong>4.ARIMA(2,2,1)</strong><br>
+<strong>5.ARIMA(2,2,4)</strong><br>
+<strong>6.ARIMA(2,2,5)</strong><br>
+Where the ARIMA (PACF, Num_Diffrentation, ACF) model have the below format for the parameters. Coefficients for various models:</p>
+<p><strong>Discuss:</strong>Based on the different models, we can see that ARIMA(2,2,5) had the least AIC value, sigma^2 being the least therefore is the best model for given time series. Find the below time series plot for the residuals.</p>
+<p><br>
+</p>
+<section id="residual-analysis" class="level4" data-number="3.2.3.1">
+<h4 data-number="3.2.3.1" class="anchored" data-anchor-id="residual-analysis"><span class="header-section-number">3.2.3.1</span> <strong>Residual Analysis</strong></h4>
+<p><br>
+</p>
+</section>
+<section id="residual-plot" class="level4" data-number="3.2.3.2">
+<h4 data-number="3.2.3.2" class="anchored" data-anchor-id="residual-plot"><span class="header-section-number">3.2.3.2</span> <strong>Residual Plot</strong></h4>
+<p><strong>Discuss:</strong>Residual plot tells the points that are left after fitting the model. We can see that most points are closer to the line except at the middle of the plot. Now lets plot the ACF of residuals for the model to further understand its behavior.</p>
+<p><br>
+</p>
+</section>
+<section id="acf-residual-plot" class="level4" data-number="3.2.3.3">
+<h4 data-number="3.2.3.3" class="anchored" data-anchor-id="acf-residual-plot"><span class="header-section-number">3.2.3.3</span> <strong>ACF Residual Plot</strong></h4>
+<p><strong>Discuss:</strong>From the plot for ACF of residuals, we can clearly see that there is no statistically significant correlation for the data and every point is within the confidence interval.</p>
+<p><br>
+</p>
+<p><strong>Discuss:</strong>From the histogram we can see that, it slightly follow normal distribution if we ignore the outliers. But the plot is slightly right skewed in nature. For more understanding we need to perform quantile-quantile plot for the analysis.</p>
+<p><br>
+</p>
+<p><strong>Discuss:</strong>From the qqplot for the residuals we can say that, most of the points lie on the reference line, however they are few points towards the tail part of the plots that deviate slightly. QQ plot gives a better visual of the residuals how the sample quantiles are related to the theoretical quantiles. There are few tests which can be performed, to check the normality of the residuals one such is Shapiro test.</p>
+<p><br>
+</p>
+</section>
+<section id="shapiro-test" class="level4" data-number="3.2.3.4">
+<h4 data-number="3.2.3.4" class="anchored" data-anchor-id="shapiro-test"><span class="header-section-number">3.2.3.4</span> <strong>Shapiro Test</strong></h4>
+<p><strong>Discuss:</strong>The above figure shows the results of Shapiro-wilk test for the residuals of the model. If the value of p is equal to or less than 0.05, then the hypothesis of normality will be rejected by the Shapiro test. Here the p value is less than 0.05 so we can say that the residuals follow normal distribution.</p>
+<p><br>
+</p>
+</section>
+<section id="ljung-box" class="level4" data-number="3.2.3.5">
+<h4 data-number="3.2.3.5" class="anchored" data-anchor-id="ljung-box"><span class="header-section-number">3.2.3.5</span> <strong>Ljung-Box</strong></h4>
+<p><strong>Discuss:</strong>Ljung-Box test is next performed on the models to test the randomness of the data over the lags at the bigger perspective.The null hypothesis for LB test is that residuals are independently distributed if p values is less than 0.05. Based on that we can see that, independence has been captured by the data for the following model.</p>
+<p><br>
+</p>
+<p><strong>Time-series Forecasting</strong></p>
+<p><strong>Discuss:</strong>The plot shows the forecasting to plot for the next 20 values which is shown by the blue region.</p>
+<p><br>
+</p>
+</section>
+</section>
+<section id="the-analysis-of-variance-anova-method" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="the-analysis-of-variance-anova-method"><span class="header-section-number">3.2.4</span> The Analysis Of Variance (ANOVA) Method</h3>
+</section>
+<section id="the-empirical-theory-model" class="level3" data-number="3.2.5">
+<h3 data-number="3.2.5" class="anchored" data-anchor-id="the-empirical-theory-model"><span class="header-section-number">3.2.5</span> The Empirical * Theory model</h3>
+</section>
+<section id="assumptions" class="level3" data-number="3.2.6">
+<h3 data-number="3.2.6" class="anchored" data-anchor-id="assumptions"><span class="header-section-number">3.2.6</span> Assumptions</h3>
+<p>That looks better! Unfortunately though, there are a number of dates which don’t have any evi value at all, let’s figure out which ones these are.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert data to time series.</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>tdx <span class="ot">&lt;-</span> <span class="fu">ts</span>(<span class="at">data =</span> tdx<span class="sc">$</span>mean_evi, <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">2001</span>, <span class="dv">1</span>), <span class="at">end =</span> <span class="fu">c</span>(<span class="dv">2019</span>, <span class="dv">11</span>), <span class="at">frequency =</span> <span class="dv">12</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(tdx)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="Quarto_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(imputeTS)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>tdx <span class="ot">&lt;-</span> <span class="cf">if</span>(na.cnt <span class="sc">&gt;</span> <span class="dv">0</span>){imputeTS<span class="sc">::</span><span class="fu">na_kalman</span>(tdx, <span class="at">model =</span> <span class="st">"auto.arima"</span>, <span class="at">smooth =</span> T)} <span class="cf">else</span> {</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    tdx</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(tdx)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="Quarto_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># new_tdx &lt;- write.csv(tdx,"Data/new_tdx.csv")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>tdx.dcp <span class="ot">&lt;-</span> <span class="fu">stl</span>(tdx, <span class="at">s.window =</span> <span class="st">'periodic'</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(tdx.dcp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="Quarto_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forecast)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'forecast' was built under R version 4.1.3</code></pre>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>Tt <span class="ot">&lt;-</span> <span class="fu">trendcycle</span>(tdx.dcp)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>St <span class="ot">&lt;-</span> <span class="fu">seasonal</span>(tdx.dcp)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>Rt <span class="ot">&lt;-</span> <span class="fu">remainder</span>(tdx.dcp)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Tt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="Quarto_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(St)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="Quarto_files/figure-html/unnamed-chunk-17-2.png" class="img-fluid" width="672"></p>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Rt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="Quarto_files/figure-html/unnamed-chunk-17-3.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="section" class="level1 page-columns page-full" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> </h1>
+<p>When investigating a time series, one of the first things to check before building an ARIMA model is to check that the series is stationary. That is, it needs to be determined that the time series is constant in mean and variance are constant and not dependent on time.</p>
+<p>Here, we will look at a couple methods for checking stationarity. If the time series is provided with seasonality, a trend, or a change point in the mean or variance, then the influences need to be removed or accounted for. Augmented Dickey–Fuller (ADF) t-statistic test to find if the series has a unit root (a series with a trend line will have a unit root and result in a large p-value).</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tseries)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">adf.test</span>(Rt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Augmented Dickey-Fuller Test
+
+data:  Rt
+Dickey-Fuller = -8.639, Lag order = 6, p-value = 0.01
+alternative hypothesis: stationary</code></pre>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">adf.test</span>(Tt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Augmented Dickey-Fuller Test
+
+data:  Tt
+Dickey-Fuller = -3.4545, Lag order = 6, p-value = 0.04798
+alternative hypothesis: stationary</code></pre>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">adf.test</span>(tdx)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Augmented Dickey-Fuller Test
+
+data:  tdx
+Dickey-Fuller = -8.2685, Lag order = 6, p-value = 0.01
+alternative hypothesis: stationary</code></pre>
+</div>
+</div>
+<p><u><strong>Autocorrelation Function (ACF) Identify if correlation at different time lags goes to 0</strong></u></p>
+<div class="page-columns page-full">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The Stationary Signal and ACF</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Rt,<span class="at">col=</span> <span class="st">"red"</span>, <span class="at">main =</span> <span class="st">"Stationary Signal"</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">acf</span>(Rt, <span class="at">lag.max =</span> <span class="fu">length</span>(Rt),</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">"lag"</span>, <span class="at">ylab =</span> <span class="st">'ACF'</span>, <span class="at">main =</span> <span class="st">''</span>)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="co">#The Trend Signal anf ACF</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Tt,<span class="at">col=</span> <span class="st">"red"</span>,<span class="at">main =</span> <span class="st">"Trend Signal"</span>)</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="fu">acf</span>(Tt, <span class="at">lag.max =</span> <span class="fu">length</span>(Tt),</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">"lag"</span>, <span class="at">ylab =</span> <span class="st">"ACF"</span>, <span class="at">main =</span> <span class="st">''</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="fig-ACF" class="cell column-page-right quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-ACF-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Quarto_files/figure-html/fig-ACF-1.png" class="img-fluid figure-img" data-ref-parent="fig-ACF" width="672"></p>
+<p></p><figcaption class="figure-caption">(a) Stationary Signal</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-ACF-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Quarto_files/figure-html/fig-ACF-2.png" class="img-fluid figure-img" data-ref-parent="fig-ACF" width="672"></p>
+<p></p><figcaption class="figure-caption">(b) Trend Signal</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-ACF-3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Quarto_files/figure-html/fig-ACF-3.png" class="img-fluid figure-img" data-ref-parent="fig-ACF" width="672"></p>
+<p></p><figcaption class="figure-caption">(c) Stationary Signal</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-ACF-4" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Quarto_files/figure-html/fig-ACF-4.png" class="img-fluid figure-img" data-ref-parent="fig-ACF" width="672"></p>
+<p></p><figcaption class="figure-caption">(d) Trend Signal</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure 2: The Stationary Signal and ACF</figcaption><p></p>
+</figure>
+</div>
+</div>
+<p>It is noteworthy that the stationary signal (top left) generates few significant lags that are larger than the ACF’s confidence interval (blue dotted line, bottom left). In contrast, practically all delays in the time series with a trend (top right) surpass the ACF’s confidence range (bottom right). Qualitatively, we can observe and infer from the ACFs that the signal on the left is steady (due to the lags that die out) whereas the signal on the right is not (since later lags exceed the confidence interval).</p>
+<div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Linear regression model for predicting EVI from Time"</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>tdx.ns <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">time =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(tdx)), <span class="at">trend =</span> tdx <span class="sc">-</span> tdx.dcp<span class="sc">$</span>time.series[,<span class="dv">1</span>])</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>summary <span class="ot">&lt;-</span> <span class="fu">summary</span>(<span class="fu">lm</span>(<span class="at">formula =</span> trend <span class="sc">~</span> time, <span class="at">data =</span> tdx.ns))</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>summary <span class="sc">%&gt;%</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-lm" class="cell tbl-parent quarto-layout-panel anchored">
+<div class="panel-caption table-caption">
+<p><strong>?(caption)</strong></p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> term </th>
+   <th style="text-align:right;"> estimate </th>
+   <th style="text-align:right;"> std.error </th>
+   <th style="text-align:right;"> statistic </th>
+   <th style="text-align:right;"> p.value </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> (Intercept) </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0.01 </td>
+   <td style="text-align:right;"> 90.64 </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> time </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> -2.78 </td>
+   <td style="text-align:right;"> 0.01 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(tdx.ns)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">a =</span> summary<span class="sc">$</span>coefficients[<span class="dv">1</span>,<span class="dv">1</span>], <span class="at">b =</span> summary<span class="sc">$</span>coefficients[<span class="dv">2</span>,<span class="dv">1</span>], <span class="at">col =</span> <span class="st">'blue'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="Quarto_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # Count of na values to dataframe</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co"># # Calculating Trend and Seasonal Strength</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co"># evi.trend$NA_Values[i] &lt;- na.cnt</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># evi.trend$Trend[i] &lt;- summary$coefficients[2,1]</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="co"># evi.trend$Trend_Strength[i] &lt;- round(max(0,1-(var(Rt)/var(Tt+Rt))),1)</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="co"># evi.trend$Seasonal_Strength[i] &lt;- round(max(0,1-(var(Rt)/var(St+Rt))),1)</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="co"># evi.trend$P_value[i] &lt;- summary$coefficients[2,4]</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="co"># evi.trend$R_Squared[i] &lt;- summary$r.squared</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="co"># evi.trend$Standard_Error[i] &lt;- summary$sigma</span></span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="co"># evi.trend[i,]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggdensity</span>(tdx,<span class="at">fill =</span> <span class="st">"#0073C2FF"</span>,<span class="at">color =</span><span class="st">"#0073C2FF"</span>,<span class="at">add =</span> <span class="st">"mean"</span>,<span class="at">rug =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Don't know how to automatically pick scale for object of type ts. Defaulting to continuous.</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="Quarto_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(evi.hw <span class="ot">&lt;-</span> forecast<span class="sc">::</span><span class="fu">hw</span>(<span class="at">y =</span> tdx, <span class="at">h =</span> <span class="dv">12</span>, <span class="at">damped =</span> T))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="Quarto_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="chapter-five" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> CHAPTER FIVE</h1>
+<section id="conclusions-and-recommendations" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="conclusions-and-recommendations"><span class="header-section-number">5.1</span> CONCLUSIONS AND RECOMMENDATIONS</h2>
+<section id="summary" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">5.1.1</span> Summary</h3>
+<p>Broadly speaking, in this study we have presented a state-of-the-art of the following popular time series forecasting models with their salient features:</p>
+<ul>
+<li>The Box-Jenkins or ARIMA models for linear time series forecasting.</li>
+<li>Some non-linear stochastic models, such as NMA, ARCH.</li>
+<li>SVM based forecasting models; LS-SVM and DLS-SVM.</li>
+</ul>
+</section>
+<section id="conclusions" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="conclusions"><span class="header-section-number">5.1.2</span> Conclusions</h3>
+<p>It has been seen that, the proper selection of the model orders (in case of ARIMA), the number of input, hidden, output and the constant hyper-parameters (in case of SVM) is extremely crucial for successful forecasting. We have discussed the two important functions. AIC and BIC, which are frequently used for ARIMA model selection.</p>
+<p>We have considered a few important performance measures for evaluating the accuracy of forecasting models. It has been understood that for obtaining a reasonable knowledge about the overall forecasting error, more than one measure should be used in practice. The last chapter contains the forecasting results of our experiments, performed on six real time series datasets. Our satisfactory understanding about the considered forecasting models and their successful implementation can be observed form the five performance measures and the forecast diagrams, we obtained for each of the six datasets. However in some cases, significant deviation can be seen among the original observations and our forecast values. In such cases, we can suggest that a suitable data preprocessing, other than those we have used in our work may improve the forecast performances.</p>
+</section>
+<section id="recommendations" class="level3" data-number="5.1.3">
+<h3 data-number="5.1.3" class="anchored" data-anchor-id="recommendations"><span class="header-section-number">5.1.3</span> Recommendations</h3>
+<p>Time series forecasting is a fast growing area of research and as such provides many scope for future works. One of them is the Combining Approach, i.e.&nbsp;to combine a number of different and dissimilar methods to improve forecast accuracy. A lot of works have been done towards this direction and various combining methods have been proposed in literature [8, 14, 15, 16]. Together with other analysis in time series forecasting, we have thought to find an efficient combining model, in future if possible. With the aim of further studies in time series modeling and forecasting</p>
+</section>
+</section>
+<section id="references" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="references"><span class="header-section-number">5.2</span> References</h2>
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{boniface,
+  author = {Kalong Boniface and Fugah Seletey Mitchell},
+  title = {Segregate {The} {Variability} {Climate} {Is} {Responsible}
+    {For} {In} {Vegetation} {Loss}},
+  date = {},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-boniface" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+Kalong Boniface, and Fugah Seletey Mitchell. n.d. <span>“Segregate The
+Variability Climate Is Responsible For In Vegetation Loss.”</span>
+</div></div></section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

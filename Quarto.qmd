@@ -44,7 +44,7 @@ link-citations: yes
 # template: quarterly-report.tex
 header-includes:
   - \setmainfont{Times New Roman}
-csl: apa-single-spaced.csl
+# csl: apa-single-spaced.csl
 ---
 
 # CHAPTER ONE
@@ -173,7 +173,7 @@ This concept is used to make trending and seasonal data stationary. Subtraction 
 
 ##### **Autoregressive models (AR):**
 
-AR work on a concept called lags which is defined as the forecast of a series is solely based on the past values in the series (Cryer, J.D., 1986). Formula for Autoregression AR(1): $\displaystyle y_{t} = \omega + \phi Y _{t-1}+ e_{t}$ is stationary when \$ \| \phi\_{1} \|\< 1\$ with a constant mean $\displaystyle \mu = \frac{\omega}{1-\phi_{1}}$ and constant variance $\displaystyle \gamma_{o} = \frac{\sigma^{2}}{1-\phi_{1}^{2}}$ Where ; $y_{t}$ = Target , $\omega$ = Intercept, $\phi$ = Coefficient, $Y_{t-1}$=Lagged target, $e_{t}$ = Error\\
+AR work on a concept called lags which is defined as the forecast of a series is solely based on the past values in the series (Cryer, J.D., 1986). Formula for Autoregression AR(1): $\displaystyle y_{t} = \omega + \phi Y _{t-1}+ e_{t}$ is stationary when \$\|\phi\_{1}\|\< 1\$ with a constant mean $\displaystyle \mu = \frac{\omega}{1-\phi_{1}}$ and constant variance $\displaystyle \gamma_{o} = \frac{\sigma^{2}}{1-\phi_{1}^{2}}$ Where ; $y_{t}$ = Target , $\omega$ = Intercept, $\phi$ = Coefficient, $Y_{t-1}$=Lagged target, $e_{t}$ = Error\\
 
 It depends only on one lag in the past and also called AR model of order one (Shibata, R., 1976). Autoregressive models are also known as long memory models as they must keep the memory of all the lags until its initial start point and must calculate their value. If there is any shock incident in the past which must have led to fluctuations in the data, it will have its effect on the present value which makes the model quite sensitive to shocks (Shibata, R., 1976).
 
@@ -325,7 +325,7 @@ Moreover, in \[13\] studied the LULC change in Duzce plain Turkey. Supervised cl
 
 Also, a significant increase and a decrease of LULC were noticed between the years 1973, 1985, and 2000 within the classes.
 
-```{r,warning=FALSE,message=FALSE}
+```{r,warning=FALSE,message=FALSE,include=FALSE}
 #| label: load-pkgs
 #| code-summary: "Packages"
 #| message: false
@@ -334,6 +334,13 @@ library(openintro)  # for data
 library(tidyverse)  # for data wrangling and visualization
 library(knitr)      # for tables
 library(broom)      # for model summary
+library(imputeTS)
+library(dplyr)
+library(kableExtra)
+library(forecast)
+library(psych)
+library(viridis)
+library(ggridges)
 if(!require("pacman")){install.packages("pacman")}
 pacman::p_load(char = c('rgee','reticulate','raster','tidyverse',
                 'dplyr','sf','mapview','mapeddit','caret','forcats','reticulate',
@@ -397,7 +404,9 @@ modis.evi <- ee$ImageCollection("MODIS/006/MOD13Q1"
 Now we will create a hexagonal grid over the study area
 
 ```{r}
-library(tibble)
+#| label: fig-histogram
+#| fig-cap: "Now we will use the grid created above to extract the mean EVI values within each cell for the years 2000-2020."
+
 aoi.proj <- st_transform(aoi, st_crs(2392))
 hex <- st_make_grid(x = aoi.proj, cellsize = 17280, square = FALSE) %>%
 st_sf() %>%
@@ -406,9 +415,7 @@ hex <- hex[aoi.proj,]
 plot(hex)
 ```
 
-Now we will use the grid created above to extract the mean EVI values within each cell for the years 2000-2020.
-
-```{r,include=FALSE,f}
+```{r,include=FALSE}
 #This will take about 30 minutes
 if(readline(prompt = "Hit enter to proceed or type 'no' to download the data from G-Drive. ") == "no"){
 googledrive::drive_download(file =
@@ -475,7 +482,7 @@ In this study, the submission used a quantitative approach. Instead of using sub
 
 The Republic of Ghana, a nation in West Africa, will serve as the location for the experimental plots for this study. It shares borders with the Ivory Coast in the west, Burkina Faso in the north, and Togo in the east. It borders the Gulf of Guinea and the Atlantic Ocean to the south. Ghana's total size is 238,535 km2 (92,099 sq mi), and it is made up of a variety of biomes, from tropical rainforests to coastal savannas. Ghana, which has a population of over 31 million, is the second-most populous nation in West Africa, behind Nigeria.Accra, the nation's capital and largest city, as well as Kumasi, Tamale, and Sekondi-Takoradi, are other important cities.
 
-```{r}
+```{r,include=FALSE,warning=FALSE,message=FALSE}
 td <- tsv %>%
   mutate(month = month(as.Date(rownames(tsv))), year = year(as.Date(rownames(tsv)))) %>%
   group_by(year, month) %>%
@@ -486,10 +493,10 @@ td$date <- as.Date(paste0(td$year, "-", td$month, "-01"))
 dx <- Dates[!(Dates$date %in% td$date),]
 
 
-# dx$mean_evi <- NA
-# tdx <- rbind(td, dx) %>%
-#   arrange(date)
-# write.csv(tdx,"Data/tdx.csv")
+dx$mean_evi <- NA
+Time_Series <- rbind(td, dx) %>%
+  arrange(date)
+write.csv(Time_Series,"Data/Time_Series.csv")
 
 
 tdx <- read.csv("Data/tdx.csv")%>%rename(Date = date)
@@ -507,226 +514,112 @@ DataFrame <- Rain_Evap_Percip%>% full_join(tdx)
 ```
 
 ```{r,include=FALSE}
-#| label: tbl-Data Frame
-#| tbl-cap: "Data Frame for Climate Change and Vegetation Index In Ghana"
-library(imputeTS)
-Description <-DataFrame%>%select(Date,Rainfall,Evaporation,Precipitation,mean_evi)
- if(length(Description[is.na(Description)]) > 0){imputeTS::na_kalman(Description, model = "auto.arima", smooth = T)} else {
+Description <-DataFrame%>%
+      dplyr::select(Date,Rainfall,Evaporation,Precipitation,mean_evi)
+ 
+Description <- if(length(Description[is.na(Description)]) > 0){imputeTS::na_kalman(Description, model = "auto.arima", smooth = T)} else {
     Description
  }
-
+DF <-Description%>%
+      dplyr::select(Rainfall,Evaporation,Precipitation,mean_evi)
 ```
 
 ```{r}
-head(Description)%>%
-  kable(booktabs =  TRUE)
+Yearly <- Description%>%
+          separate(Date,into = c("Year","Month","Day"),sep = "-")%>%
+          group_by(Year)%>%
+          summarise_each(funs(mean),Rainfall,Evaporation,Precipitation,mean_evi)
+
+Monthly <- Description%>%
+          separate(Date,into = c("Year","Month","Day"),sep = "-")%>%
+           mutate(Month = month.abb[as.numeric(Month)])%>%
+          group_by(Month)%>%
+          summarise_each(funs(mean),Rainfall,Evaporation,Precipitation,mean_evi)
+          
+head(Yearly)%>%
+  kable(booktads = TRUE)
 ```
 
-```{r}
-# library(kableExtra)
+```{r,include=FALSE,message=FALSE,warning=FALSE}
 #| label: tbl-stats
 #| tbl-cap: "Summary statistics for Climate Date and Vegetation Loss In Ghana"
-library(psych)
+
 describe(Description) %>%
-  kable(
+  kable(booktads = TRUE)%>%
+  kable_styling(latex_options = "scale_down")
+```
+
+```{r,include=FALSE}
+# ggplot(lincoln_weather, aes(x = `Mean Temperature [F]`, y = `Month`, fill = ..x..)) +
+#   geom_density_ridges_gradient(scale = 3, rel_min_height = 0.01, gradient_lwd = 1.) +
+#   scale_x_continuous(expand = c(0.01, 0)) +
+#   scale_y_discrete(expand = c(0.01, 0)) +
+#   scale_fill_viridis(name = "Temp. [F]", option = "C") +
+#   labs(title = 'Temperatures in Lincoln NE',
+#        subtitle = 'Mean temperatures (Fahrenheit) by month for 2016\nData: Original CSV from the Weather Underground') +
+#   theme_ridges(font_size = 13, grid = TRUE) + theme(axis.title.y = element_blank())
 ```
 
 ```{r}
-
+pairs.default(DF,main = "Corellation Between ",bg = c("red", "green", "blue"),pch = 21)
 ```
 
-```{)}
+```{r, include=FALSE}
+na.cnt <- length(Time_Series[is.na(Time_Series)])
+
 ```
 
 ```{r}
-pairs.default(Description,main = "Corellation Between ",bg = c("red", "green", "blue"),pch = 21)
+boxplot(Yearly)
 ```
 
-#### **Time-series analysis**
-
-![FlowChart](Plots/Steps.png "Time-series analysis"){fig-align="center"}
-
-### Specification of the Model
-
-Based on the above analysis we can form the SARMA model as, SARMA(,0,)X(,0,) Has no differentiation has been done we can mark it as zero. First part of multiplication is the Non-seasonal part with first parameter as PACF and second as ACF. Similarly its the same format for Seasonal part as well in SARMA model. From the above ACF, PACF analysis we can formulate the below models:\
-**1.SARMA(2,0,3)X(1,0,2)**\
-**2.SARMA(3,0,1)X(1,0,1)**
-
-This model cannot be used, because it has higher value than the previous SARMA model. Also has the seasonality pattern is not certain we can use GARCH model and test to see if the AIC value is better along with ARMA model as well by ignoring the seasonal part. GARCH model can be abbreviated as Generalized Auto-regressive conditional Heteroskedasticity models. However GARCH model is usually used to estimate value returns for stocks and so on, where trends is not known. We are using to test in our use-case to look at better AIC values. We are going to apply the seasonal ARMA-GARCH model using rugarch.
-
-**Steps to perform ARMA-GARCH?** **\[Click Here\]**👇
-
-1.  Check if the dataset is stationary or not like any other model.
-
-2.  Identify the p and q order using ARIMA.
-
-3.  To incorporate seasonality. Fourier terms are added.
-
-4.  Check AIC values, Residuals and LB test and so on.
-
-\
-As we already know that the data is stationary, we can go about finding the p and q values from ACF and PACF plots or use auto.arima() in R.
-
-\
-
-\
-
-**Discuss:**As we are not differencing the model we can consider ARMA(2,0,3) has the best model. Which is the best and q value also found from the ACF and PACF plots.
-
-\
-
-**GARCH**
-
-\
-
-**Result of GARCH Model with Specifications:**\
-Shows the output of the GARCH model when ran on the dataset. Some of the observations we can see that and compare with the SARMA model. We can view various optimal parameters and their estimate and standard error as well. The LB test has values for p nothing less than 0.05 so we can say that null hypothesis is rejected and may assume correlation being present in the dataset. However LB test on Standardized squared residuals yield one of the p values closer to 0. The Arch LM tests has p values for lags 7 and 9 closer to zero. We can observe that the log-likelihood for SARMA is smaller than GARCH. Although, it is well noted that the higher the log-likelihood, the better the model. The GARCH model has higher log-likelihood when compared sarima but no much difference between their values. While the same is opposite for AIC value, where smaller the AIC value is the best model.\
-
-#### **Residual Analysis**
-
-**Discuss:**From the above time series plot we can conclude that, the trend within the year values for 1960,2016 and 2020 are similar. We can observe that during start of the year in January the unemployment rate increases and becomes constant during February, March and then decreases sharply post April. Then in mid of the year it increases to a certain level and attains constant until late/end of the year. Clearly we can see some pattern when we do time series plot within a single year. It can be concluded that unemployment rate is higher during winter months and decreased post April which is summer season. Thus the seasonal aspect can be clearly understood.
-
-\
-
-#### **ACF Plot analysis for sample between 2016 and 2020:**
-
-**Discuss:**Shows the initial ACF plot and we can see that before lag 25 almost all are significant and having no trend it needs to be differentiated before performing any analysis. Clearly the seasonality is visible even in the ACF plot.
-
-\
-
-#### **PACF plot**
-
-\
-
-#### **Dickey-Fuller Test and Plot**
-
-**Discuss:**The DF test confirms that it is stationary as p value \< 0.05 and thus can be used for further analysis.This is after doing double differentiation.
-
-\
-
-### **Modeling and Parameter estimation**
-
-ARIMA(1,2,1) ARIMA(1,2,4) ARIMA(1,2,5) ARIMA(2,2,1) ARIMA(2,2,4) ARIMA(2,2,5)\
-**1.ARIMA(1,2,1)**\
-**2.ARIMA(1,2,4)**\
-**3.ARIMA(1,2,5)**\
-**4.ARIMA(2,2,1)**\
-**5.ARIMA(2,2,4)**\
-**6.ARIMA(2,2,5)**\
-Where the ARIMA (PACF, Num_Diffrentation, ACF) model have the below format for the parameters. Coefficients for various models:
-
-**Discuss:**Based on the different models, we can see that ARIMA(2,2,5) had the least AIC value, sigma\^2 being the least therefore is the best model for given time series. Find the below time series plot for the residuals.
-
-\
-
-#### **Residual Analysis**
-
-\
-
-#### **Residual Plot**
-
-**Discuss:**Residual plot tells the points that are left after fitting the model. We can see that most points are closer to the line except at the middle of the plot. Now lets plot the ACF of residuals for the model to further understand its behavior.
-
-\
-
-#### **ACF Residual Plot**
-
-**Discuss:**From the plot for ACF of residuals, we can clearly see that there is no statistically significant correlation for the data and every point is within the confidence interval.
-
-\
-
-**Discuss:**From the histogram we can see that, it slightly follow normal distribution if we ignore the outliers. But the plot is slightly right skewed in nature. For more understanding we need to perform quantile-quantile plot for the analysis.
-
-\
-
-**Discuss:**From the qqplot for the residuals we can say that, most of the points lie on the reference line, however they are few points towards the tail part of the plots that deviate slightly. QQ plot gives a better visual of the residuals how the sample quantiles are related to the theoretical quantiles. There are few tests which can be performed, to check the normality of the residuals one such is Shapiro test.
-
-\
-
-#### **Shapiro Test**
-
-**Discuss:**The above figure shows the results of Shapiro-wilk test for the residuals of the model. If the value of p is equal to or less than 0.05, then the hypothesis of normality will be rejected by the Shapiro test. Here the p value is less than 0.05 so we can say that the residuals follow normal distribution.
-
-\
-
-#### **Ljung-Box**
-
-**Discuss:**Ljung-Box test is next performed on the models to test the randomness of the data over the lags at the bigger perspective.The null hypothesis for LB test is that residuals are independently distributed if p values is less than 0.05. Based on that we can see that, independence has been captured by the data for the following model.
-
-\
-
-**Time-series Forecasting**
-
-**Discuss:**The plot shows the forecasting to plot for the next 20 values which is shown by the blue region.
-
-\
+# CHAPTER FOUR
 
 ### The Analysis Of Variance (ANOVA) Method
 
-### The Empirical \* Theory model
-
 ### Assumptions
 
-```{r}
+#### **Time-series analysis**
 
-```
+#### [**Steps involved in Box-Jenkins approach**]{.underline}
 
-That looks better! Unfortunately though, there are a number of dates which don't have any evi value at all, let's figure out which ones these are.
-
-```{r, include=FALSE}
-na.cnt <- length(tdx[is.na(tdx)])
-
-```
+![FlowChart](Plots/Steps.png "METHADOLOGY Steps involved in Box-Jenkins approach"){fig-align="center"}
 
 ```{r}
-
+#| label: fig-Time Series And Decompostion
+#| fig-cap: "Time Series And Decompostion"
+#| fig-subcap:
+#|   - "Stationary Signal"
+#|   - "Decompostion Of The Series" 
+#| layout-ncol: 2
+#| column: page-right
 # Convert data to time series.
-tdx <- ts(data = tdx$mean_evi, start = c(2001, 1), end = c(2019, 11), frequency = 12)
-plot(tdx)
-```
+Time_Series <- ts(data = Time_Series$mean_evi, start = c(2001, 1), end = c(2019, 11), frequency = 12)
+plot(Time_Series)
 
-```{r}
-library(imputeTS)
-tdx <- if(na.cnt > 0){imputeTS::na_kalman(tdx, model = "auto.arima", smooth = T)} else {
-    tdx
+
+Time_Series <- if(na.cnt > 0){imputeTS::na_kalman(Time_Series, model = "auto.arima", smooth = T)} else {
+    Time_Series
 }
-plot(tdx)
-# new_tdx <- write.csv(tdx,"Data/new_tdx.csv")
-```
+plot(Time_Series)
 
-```{r}
-tdx.dcp <- stl(tdx, s.window = 'periodic')
+
+tdx.dcp <- stl(Time_Series, s.window = 'periodic')
 plot(tdx.dcp)
-```
 
-```{r,message=FALSE}
-library(forecast)
 Tt <- trendcycle(tdx.dcp)
 St <- seasonal(tdx.dcp)
 Rt <- remainder(tdx.dcp)
-plot(Tt)
-plot(St)
+# plot(Tt)
+# plot(St)
 plot(Rt)
 ```
 
-# 
-
-When investigating a time series, one of the first things to check before building an ARIMA model is to check that the series is stationary. That is, it needs to be determined that the time series is constant in mean and variance are constant and not dependent on time.
-
-Here, we will look at a couple methods for checking stationarity. If the time series is provided with seasonality, a trend, or a change point in the mean or variance, then the influences need to be removed or accounted for. Augmented Dickey--Fuller (ADF) t-statistic test to find if the series has a unit root (a series with a trend line will have a unit root and result in a large p-value).
-
-```{r,warning=FALSE,message=FALSE}
-library(tseries)
-adf.test(Rt)
-adf.test(Tt)
-adf.test(tdx)
-```
-
-[**Autocorrelation Function (ACF) Identify if correlation at different time lags goes to 0**]{.underline}
+Before building an ARIMA model we checked that if the series is stationary. That is, we needed to be determined that the time series is constant in mean and variance are constant and not dependent on time.Here, we look at a couple of methods for checking stationarity. If the time series is provided with seasonarity, a trend, or a change point in the mean or variance, then the influences need to be removed or accounted for. Augmented Dickey--Fuller (ADF) t-statistic test to find if the series has a unit root (a series with a trend line will have a unit root and result in a large p-value).
 
 ```{r}
 #| label: fig-ACF
-#| fig-cap: "The Stationary Signal and ACF"
+#| fig-cap: "ACF Plot and PACF plot analysis for sample between 2000 and 2020:"
 #| fig-subcap:
 #|   - "Stationary Signal"
 #|   - "Trend Signal" 
@@ -744,17 +637,77 @@ acf(Tt, lag.max = length(Tt),
     xlab = "lag", ylab = "ACF", main = '')
 ```
 
-It is noteworthy that the stationary signal (top left) generates few significant lags that are larger than the ACF's confidence interval (blue dotted line, bottom left). In contrast, practically all delays in the time series with a trend (top right) surpass the ACF's confidence range (bottom right). Qualitatively, we can observe and infer from the ACFs that the signal on the left is steady (due to the lags that die out) whereas the signal on the right is not (since later lags exceed the confidence interval).
+**Discuss:**Shows the initial ACF plot and we can see that before lag 25 almost all are significant and having no trend it needs to be differentiated before performing any analysis. Clearly the seasonality is visible even in the ACF plot.
+
+**Dickey-Fuller Test and Plot**
+
+```{r,warning=FALSE,message=FALSE}
+adf.test(Tt)
+```
+
+**Discuss:**The DF test confirms that it is stationary as p value \< 0.05 and thus can be used for further analysis.This is after doing double differentiation.It is noteworthy that the stationary signal (top left) generates few significant lags that are larger than the ACF's confidence interval (blue dotted line, bottom left). In contrast, practically all delays in the time series with a trend (top right) surpass the ACF's confidence range (bottom right). Qualitatively, we can observe and infer from the ACFs that the signal on the left is steady (due to the lags that die out) whereas the signal on the right is not (since later lags exceed the confidence interval).
+
+###  Specification of the Model
+
+We can create the SARMA model as SARMA(,0,)X(0) based on the previous study  
+
+If there hasn't been any differentiation, we can label it as zero. With the first parameter being PACF and the second being ACF, the first component of multiplication is the non-seasonal part.
+
+The SARMA model's seasonal component follows a similar approach. Since this model has a larger value than the prior SARMA model, it cannot be used. We can utilize the GARCH model and test to see whether the AIC value is better along with the ARMA model as well by omitting the seasonal element as the seasonality pattern is not guaranteed. Generalized Auto-Regressive Conditional Heteroskedasticity models, or GARCH models, can be abbreviated. The GARCH model is commonly used, to estimate value returns for stocks and other financial instruments where trends are unknown. In order to improved the AIC values, we are testing in our case study. Utilizing rugarch, we'll apply the seasonal ARMA-GARCH model.\
+Since the data is stationary, we go about finding the p and q values from ACF and PACF plots or use auto.arima() in R.
+
+```{r}
+auto.arima(Time_Series)
+```
+
+**Discuss:**As we are not differencing the model we can consider ARMA(2,0,3) has the best model. Which is the best *p* and *q* value also found from the ACF and PACF plots.
+
+**Residual Analysis**
+
+**Discuss:**From the above time series plot we can conclude that, the trend within the year values for 1960,2016 and 2020 are similar. We can observe that during start of the year in January the unemployment rate increases and becomes constant during February, March and then decreases sharply post April. Then in mid of the year it increases to a certain level and attains constant until late/end of the year. Clearly we can see some pattern when we do time series plot within a single year. It can be concluded that unemployment rate is higher during winter months and decreased post April which is summer season. Thus the seasonal aspect can be clearly understood.\
+
+### **Modeling and Parameter estimation**
+
+\
+Where the **ARIMA (PACF, Num_Diffrentation, ACF)** model have the below format for the parameters. Coefficients for various models:
+
+**Discuss:**Based on the different models, we can see that ARIMA(2,2,5) had the least AIC value, sigma\^2 being the least therefore is the best model for given time series. Find the below time series plot for the residuals.
+
+#### **Residual Analysis**
+
+#### **Residual Plot**
+
+**Discuss:**Residual plot tells the points that are left after fitting the model. We can see that most points are closer to the line except at the middle of the plot. Now lets plot the ACF of residuals for the model to further understand its behavior.
+
+#### **ACF Residual Plot**
+
+**Discuss:**From the plot for ACF of residuals, we can clearly see that there is no statistically significant correlation for the data and every point is within the confidence interval.
+
+**Discuss:**From the histogram we can see that, it slightly follow normal distribution if we ignore the outliers. But the plot is slightly right skewed in nature. For more understanding we need to perform quantile-quantile plot for the analysis.
+
+**Discuss:**From the qqplot for the residuals we can say that, most of the points lie on the reference line, however they are few points towards the tail part of the plots that deviate slightly. QQ plot gives a better visual of the residuals how the sample quantiles are related to the theoretical quantiles. There are few tests which can be performed, to check the normality of the residuals one such is Shapiro test.
+
+#### **Shapiro Test**
+
+**Discuss:**The above figure shows the results of Shapiro-wilk test for the residuals of the model. If the value of p is equal to or less than 0.05, then the hypothesis of normality will be rejected by the Shapiro test. Here the p value is less than 0.05 so we can say that the residuals follow normal distribution.
+
+#### **Ljung-Box**
+
+**Discuss:**Ljung-Box test is next performed on the models to test the randomness of the data over the lags at the bigger perspective.The null hypothesis for LB test is that residuals are independently distributed if p values is less than 0.05. Based on that we can see that, independence has been captured by the data for the following model.
+
+**Time-series Forecasting**
+
+**Discuss:**The plot shows the forecasting to plot for the next 20 values which is shown by the blue region.
 
 ```{r}
 #| label: tbl-lm
 
 #| tbl-cap: "Linear regression model for predicting EVI from Time"
-tdx.ns <- data.frame(time = c(1:length(tdx)), trend = tdx - tdx.dcp$time.series[,1])
+tdx.ns <- data.frame(time = c(1:length(Time_Series)), trend = tdx - tdx.dcp$time.series[,1])
 summary <- summary(lm(formula = trend ~ time, data = tdx.ns))
 summary %>%
   tidy() %>%
-  kable(digits = c(0, 0, 2, 2, 2))
+  kable()
 ```
 
 ```{r}
@@ -775,12 +728,12 @@ abline(a = summary$coefficients[1,1], b = summary$coefficients[2,1], col = 'blue
 # evi.trend[i,]
 ```
 
-```{r}
-plot(evi.hw <- forecast::hw(y = tdx, h = 12, damped = T))
-```
-
 ```{r,warning=FALSE}
 ggdensity(tdx,fill = "#0073C2FF",color ="#0073C2FF",add = "mean",rug = TRUE)
+```
+
+```{r}
+plot(evi.hw <- forecast::hw(y = tdx, h = 12, damped = T))
 ```
 
 # CHAPTER FIVE
