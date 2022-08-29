@@ -23,8 +23,10 @@ highlight-style: pygments
 format:
   html: 
     code-fold: true
+    code-overflow: wrap
     html-math-method: katex
   pdf:
+    code-background: true
     geometry: 
       - top=30mm
       - left=30mm
@@ -121,7 +123,9 @@ This literature review will follow narrative approach to gain insight into resea
 
 #### What is Time Series Analysis?
 
-Makridakis and hibon, in time series analysis researchers have conducted a competition named M-competition in 1987 , Where participants could submit their forecasting on 1001 time series data taken from demography, industry, and economics. There were four main findings from the competition were:
+A time series in mathematics is a collection of data points that have been listed, graphed, or indexed according to time. is a series of photos taken at successive, evenly spaced intervals of time. Time series are utilized in many areas of applied research that use temporal data, including statistics, signal processing, pattern identification, econometrics, mathematical finance, weather forecasting, and earthquake prediction. Time series analysis refers to techniques for deriving useful statistics and other aspects of time series data through analysis. Time series forecasting is the process of using a model to forecast future values based on values that have already been observed. Regression analysis is frequently used to assess correlations between one or more different time series, however this method of analysis is not without its limitations.
+
+In 1987[@confiden], Makridakis and Hibon, time series analysis experts, held the M-Competition, where participants may submit their forecasts on 1001 time series data drawn from economics, industry, and demographics. The competition revealed four key findings, including:
 
 -   Statistically sophisticated or complex methods do not necessarily provide more accurate forecasts than simpler ones.
 
@@ -133,13 +137,13 @@ Makridakis and hibon, in time series analysis researchers have conducted a compe
 
 The time series data is visualized and analyzed to find out mainly three things, trend, seasonality, and Heteroscedasticity.
 
-**Trend:** It can be defined as the observation of increasing or decreasing pattern over a period. In a stationary time series, mean of the time series data must be constant in time and whereas in general time series the mean is arbitrary function of time.
+**Trend:** It can be characterized as the observation of a rising or escalating pattern throughout time. While in normal time series the mean is an arbitrary function of time, in stationary time series the mean of the data must be constant across time.
 
-Seasonality: It refers to a cyclic happening of events. A pattern which repeats itself after a period.
+**Seasonality:** This term describes a cycle of events. a pattern that, after some time, keeps happening.
 
-**Heteroscedasticity:** It is also known as level; it is defined as the non-constant variance from the mean calculated at different time periods.
+**Heteroscedasticity:** It is also referred to as level, and it is described as the non-constant variance from the mean computed over time.
 
-Few methods do not perform well in forecasting if the data is seasonal, and few do not perform well with trends in the data. Hence trends, seasonality and heteroscedasticity must be considered to select the best statistical method in forecasting.
+Few approaches do not perform well when trends are present in the data, and even fewer do not perform well when the data is seasonal. In order to choose the optimal statistical method for forecasting, trends, seasonality, and heteroscedasticity must be taken into account.
 
 #### **Time Series Forecasting Using Stochastic Models**
 
@@ -205,7 +209,7 @@ Normally, the stochastic process governing a time series is unknown and so it is
 
 As given in \[23\], the most appropriate sample estimate for the ACVF at lag k is ACF plot is useful in determining the type of model to fit to a time series of length N. Since ACF is symmetrical about lag zero, it is only required to plot the sample ACF for positive lags, from lag one on-wards to a maximum lag of about N/4. The sample PACF plot helps in identifying the maximum order of an AR process.
 
-##### **Autoregressive Moving Average (ARMA) model:**
+#### **Autoregressive Moving Average (ARMA) model:**
 
 ARMA model is a combination of AR and MA models. The equation of the AR model of order one, when it reaches to the starting point will have infinite moving average (Choi, B., 2012). In ARMA model p and q have to defined, where p = number of significant terms in ACF and q = number of significant terms in PACF.
 
@@ -215,35 +219,33 @@ To determine the optimal value for p and q there are two ways:
 
 -   Automatic selection techniques
 
-#### **Plotting patterns in correlation:**
+##### **Plotting patterns in correlation:**
 
-There are two functions used for plotting patterns in correlation:
-
-##### **Auto correlation factor (ACF):**
+###### **Auto correlation factor (ACF):**
 
 It is the correlation between the observations at the current time stamp and observations at the previous time stamp (Hagan, M.T. and Behr, S.M., 1987).
 
-##### **Partial auto correlation factor (PACF):**
+###### **Partial auto correlation factor (PACF):**
 
 The correlation between the observations at two different time stamps, assuming both observations are correlated to the observations at another time stamp (Hagan, M.T. and Behr, S.M., 1987).
 
-#### **Automatic selection techniques:**
+##### **Automatic selection techniques:**
 
 There are three commonly used techniques for automatic selection of time series model:
 
-##### **Minimum info criteria (MINIC):**
+###### 
 
-This builds multiple combinations of models across a grid search of AR and MA terms. It then finds the model with lowest Bayesian information criteria (Stadnytska, T., Braun, S. and Werner, J., 2008).
+-   *Minimum info criteria (MINIC):*This builds multiple combinations of models across a grid search of AR and MA terms. It then finds the model with lowest Bayesian information criteria (Stadnytska, T., Braun, S. and Werner, J., 2008).
 
--   **Squared canonical correlations (SCAN):** It looks at correlation matrix of the data, then it compares it with its lags. It then looks at the eigen values from the correlation matrix to find the combination of AR and MA probably having SCAN as 0. It finds the pair as the best where the convergence is quickest (Stadnytska, T., Braun, S. and Werner, J., 2008).
+-   *Squared canonical correlations (SCAN):* It looks at correlation matrix of the data, then it compares it with its lags. It then looks at the eigen values from the correlation matrix to find the combination of AR and MA probably having SCAN as 0. It finds the pair as the best where the convergence is quickest (Stadnytska, T., Braun, S. and Werner, J., 2008).
 
--   **The extended sample auto correlation function (ESACF):** As it is known that AR and MA are related. Essentially it filters out the AR terms until only MA piece is left. This process is repeated until fewest AR terms are left and maximum MA terms (Stadnytska, T., Braun, S. and Werner, J., 2008).
+-   *The extended sample auto correlation function (ESACF):* As it is known that AR and MA are related. Essentially it filters out the AR terms until only MA piece is left. This process is repeated until fewest AR terms are left and maximum MA terms (Stadnytska, T., Braun, S. and Werner, J., 2008).
 
-It completely depends on the individual to choose from either of the methods helping them to find the optimal value of p and q for better performance of the model.
+    It completely depends on the individual to choose from either of the methods helping them to find the optimal value of p and q for better performance of the model.
 
 #### **Autoregressive Integrated Moving average (ARIMA):**
 
-To understand ARIMA model, we need to understand ARMA model as this is just an extension to ARMA model. Essentially, we need to make data stationary to feed it to a machine learning model. It is done by through differencing. ARIMA models are mathematically written as ARIMA(p,d,q), where p and q are same as ARMA model but d = number of first differences (Yu, G. and Zhang, C., 2004, May).
+To understand ARIMA model, we need to understand ARMA model as this is just an extension to ARMA model. Essentially, we need to make data stationary to feed it to a machine learning model. It is done by through differencing. ARIMA models are mathematically written as ***ARIMA(p,d,q)***, where p and q are same as ARMA model but ***d*** = number of first differences (Yu, G. and Zhang, C., 2004, May).
 
 #### **Seasonal Autoregressive Integrated Moving Average (SARIMA):**
 
@@ -326,144 +328,126 @@ Moreover, in \[13\] studied the LULC change in Duzce plain Turkey. Supervised cl
 Also, a significant increase and a decrease of LULC were noticed between the years 1973, 1985, and 2000 within the classes.
 
 ```{r,warning=FALSE,message=FALSE,include=FALSE}
-#| label: load-pkgs
-#| code-summary: "Packages"
-#| message: false
-
-library(openintro)  # for data
-library(tidyverse)  # for data wrangling and visualization
-library(knitr)      # for tables
-library(broom)      # for model summary
-library(imputeTS)
-library(dplyr)
-library(kableExtra)
-library(forecast)
-library(psych)
-library(viridis)
-library(ggridges)
-if(!require("pacman")){install.packages("pacman")}
-pacman::p_load(char = c('rgee','reticulate','raster','tidyverse',
-                'dplyr','sf','mapview','mapeddit','caret','forcats','reticulate',
-                'rgee', 'remotes', 'magrittr', 'tigris', 'tibble', 'stars',                       'stars',
-                'st', 'lubridate', 'imputeTS', 'leaflet', 'classInt',                            'RColorBrewer',
-                'ggplot2', 'googledrive', 'geojsonio', 'ggpubr','cartogram'),
-               install = F, update = F, character.only = T)
+# #| label: load-pkgs
+# #| code-summary: "Packages"
+# #| message: false
+# 
+# library(openintro)  # for data
+# library(tidyverse)  # for data wrangling and visualization
+# library(knitr)      # for tables
+# library(broom)      # for model summary
+# library(imputeTS)
+# library(dplyr)
+# library(kableExtra)
+# library(forecast)
+# library(psych)
+# library(viridis)
+# library(ggridges)
+# if(!require("pacman")){install.packages("pacman")}
+# pacman::p_load(char = c('rgee','reticulate','raster','tidyverse',
+#                 'dplyr','sf','mapview','mapeddit','caret','forcats','reticulate',
+#                 'rgee', 'remotes', 'magrittr', 'tigris', 'tibble', 'stars',                       'stars',
+#                 'st', 'lubridate', 'imputeTS', 'leaflet', 'classInt',                            'RColorBrewer',
+#                 'ggplot2', 'googledrive', 'geojsonio', 'ggpubr','cartogram'),
+#                install = F, update = F, character.only = T)
 ```
 
 ```{r,results='hide'}
-library(rgee)
-
-library(reticulate)
-#ee_install()
-ee_check()
-
-ee_Initialize("kalong",drive = TRUE) # initialize GEE,
-#this will have you log in to Google Drive
-
-```
-
-```{r,include=FALSE}
-library('sf')
-# Load shape file
-
-#setwd("C:/Users/Guy/Documents/GitHub/Artisanal-Mining-In-Ghana-Galamsey/New Regions")
-aoi <- read_sf('Ghana shp file/GHA/gadm41_GHA_1.shp')
-aoi <- st_transform(aoi, st_crs(4326))
-aoi.ee <- st_bbox(aoi) %>%
-st_as_sfc() %>%
-sf_as_ee() #Converts it to an Earth Engine Object
-
+# library(rgee)
+# 
+# library(reticulate)
+# #ee_install()
+# ee_check()
+# 
+# ee_Initialize("kalong",drive = TRUE) # initialize GEE,
+# #this will have you log in to Google Drive
 
 ```
 
 ```{r,include=FALSE}
-getQABits <- function(image, qa) {
-  # Convert binary (character) to decimal (little endian)
-  qa <- sum(2^(which(rev(unlist(strsplit(as.character(qa), "")) == 1))-1))
-  # Return a mask band image, giving the qa value.
-  image$bitwiseAnd(qa)$lt(1)
-}
+# library('sf')
+# # Load shape file
+# 
+# #setwd("C:/Users/Guy/Documents/GitHub/Artisanal-Mining-In-Ghana-Galamsey/New Regions")
+# aoi <- read_sf('Ghana shp file/GHA/gadm41_GHA_1.shp')
+# aoi <- st_transform(aoi, st_crs(4326))
+# aoi.ee <- st_bbox(aoi) %>%
+# st_as_sfc() %>%
+# sf_as_ee() #Converts it to an Earth Engine Object
 
-mod.clean <- function(img) {
-  # Extract the NDVI band
-  ndvi_values <- img$select("EVI")
-  # Extract the quality band
-  ndvi_qa <- img$select("SummaryQA")
-  # Select pixels to mask
-  quality_mask <- getQABits(ndvi_qa, "11")
-  # Mask pixels with value zero.
 
-  #0.0001 is the MODIS Scale Factor
-  ndvi_values$updateMask(quality_mask)$divide(ee$Image$constant(10000))
-}
+```
 
-modis.evi <- ee$ImageCollection("MODIS/006/MOD13Q1"
-                                )$filter(ee$Filter$date('2000-01-01','2022-01-01'))$map(mod.clean)
+```{r,include=FALSE}
+# getQABits <- function(image, qa) {
+#   # Convert binary (character) to decimal (little endian)
+#   qa <- sum(2^(which(rev(unlist(strsplit(as.character(qa), "")) == 1))-1))
+#   # Return a mask band image, giving the qa value.
+#   image$bitwiseAnd(qa)$lt(1)
+# }
+# 
+# mod.clean <- function(img) {
+#   # Extract the NDVI band
+#   ndvi_values <- img$select("EVI")
+#   # Extract the quality band
+#   ndvi_qa <- img$select("SummaryQA")
+#   # Select pixels to mask
+#   quality_mask <- getQABits(ndvi_qa, "11")
+#   # Mask pixels with value zero.
+# 
+#   #0.0001 is the MODIS Scale Factor
+#   ndvi_values$updateMask(quality_mask)$divide(ee$Image$constant(10000))
+# }
+# 
+# modis.evi <- ee$ImageCollection("MODIS/006/MOD13Q1"
+#                                 )$filter(ee$Filter$date('2000-01-01','2022-01-01'))$map(mod.clean)
 ```
 
 Now we will create a hexagonal grid over the study area
 
 ```{r}
-#| label: fig-histogram
-#| fig-cap: "Now we will use the grid created above to extract the mean EVI values within each cell for the years 2000-2020."
-
-aoi.proj <- st_transform(aoi, st_crs(2392))
-hex <- st_make_grid(x = aoi.proj, cellsize = 17280, square = FALSE) %>%
-st_sf() %>%
-rowid_to_column('hex_id')
-hex <- hex[aoi.proj,]
-plot(hex)
+# #| label: fig-histogram
+# #| fig-cap: "Now we will use the grid created above to extract the mean EVI values within each cell for the years 2000-2020."
+# 
+# aoi.proj <- st_transform(aoi, st_crs(2392))
+# hex <- st_make_grid(x = aoi.proj, cellsize = 17280, square = FALSE) %>%
+# st_sf() %>%
+# rowid_to_column('hex_id')
+# hex <- hex[aoi.proj,]
+# plot(hex)
 ```
 
-```{r,include=FALSE}
-#This will take about 30 minutes
-if(readline(prompt = "Hit enter to proceed or type 'no' to download the data from G-Drive. ") == "no"){
-googledrive::drive_download(file =
-                              googledrive::as_id("https://drive.google.com/drive/folders/1ZnCpYz38ezSU1XG7ixJ2sPg_DX7bO07J?usp=sharing"),overwrite = T)
-  #https://drive.google.com/drive/folders/1ZnCpYz38ezSU1XG7ixJ2sPg_DX7bO07J?usp=sharing
-evi.df <- read.csv("rgee_file_2d44527a3b0e_2022_07_28_15_40_52.csv")
-evi.df <- evi.df[,3:ncol(evi.df)]
-colnames(evi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(evi.df[, 2:ncol(evi.df)]), 2, 11), "_", "-")) #Convert dates to unambiguous format
-} else {
-#This will take about 30 minutes
-paste0(system.time(expr = aoi.evi <- ee_extract(x = modis.evi, y = hex["hex_id"], sf = FALSE, scale = 250, fun = ee$Reducer$mean(), via = "drive", quiet = T))/60, " Minutes Elapsed. ")
-evi.df <- as.data.frame(aoi.evi)
-colnames(evi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(evi.df[, 2:ncol(evi.df)]), 2, 11), "_", "-"))
-write.csv(x = evi.df, file = "~/rgee_file_2d44527a3b0e_2022_07_28_15_40_52.csv")}
-```
+`{# {r,include=FALSE} # #This will take about 30 minutes # if(readline(prompt = "Hit enter to proceed or type 'no' to download the data from G-Drive. ") == "no"){ # googledrive::drive_download(file = #                               googledrive::as_id("https://drive.google.com/drive/folders/1ZnCpYz38ezSU1XG7ixJ2sPg_DX7bO07J?usp=sharing"),overwrite = T) #   #https://drive.google.com/drive/folders/1ZnCpYz38ezSU1XG7ixJ2sPg_DX7bO07J?usp=sharing # evi.df <- read.csv("rgee_file_2d44527a3b0e_2022_07_28_15_40_52.csv") # evi.df <- evi.df[,3:ncol(evi.df)] # colnames(evi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(evi.df[, 2:ncol(evi.df)]), 2, 11), "_", "-")) #Convert dates to unambiguous format # } else { # #This will take about 30 minutes # paste0(system.time(expr = aoi.evi <- ee_extract(x = modis.evi, y = hex["hex_id"], sf = FALSE, scale = 250, fun = ee$Reducer$mean(), via = "drive", quiet = T))/60, " Minutes Elapsed. ") # evi.df <- as.data.frame(aoi.evi) # colnames(evi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(evi.df[, 2:ncol(evi.df)]), 2, 11), "_", "-")) # write.csv(x = evi.df, file = "~/rgee_file_2d44527a3b0e_2022_07_28_15_40_52.csv")}`
 
 Which we are going to perform a time series analysis on the data within each grid cell. But first, we will work through the procedure one step at a time.
 
 ```{r,include=FALSE}
-#Create an empty list, this will be used to house the time series projections for each cell.
-evi.hw.lst <- list()
-#Create an empty list, this will be used to house the time series decomposition for each cell.
-evi.dcmp.lst <- list()
-#This data frame will hold the trend data
-evi.trend <- data.frame(hex_id = evi.df$hex_id, na.cnt = NA, NA_Values = NA, Trend = NA, P_value = NA, R_Squared = NA, Standard_Error = NA, Trend_Strength = NA, Seasonal_Strength = NA)
-Dates <- data.frame(date = seq(as.Date('2001-01-01'), as.Date('2022-01-01'), "month"))
-
-Dates$month <- month(Dates$date)
-Dates$year <- year(Dates$date)
-i <- 1
-
+# #Create an empty list, this will be used to house the time series projections for each cell.
+# evi.hw.lst <- list()
+# #Create an empty list, this will be used to house the time series decomposition for each cell.
+# evi.dcmp.lst <- list()
+# #This data frame will hold the trend data
+# evi.trend <- data.frame(hex_id = evi.df$hex_id, na.cnt = NA, NA_Values = NA, Trend = NA, P_value = NA, R_Squared = NA, Standard_Error = NA, Trend_Strength = NA, Seasonal_Strength = NA)
+# Dates <- data.frame(date = seq(as.Date('2001-01-01'), as.Date('2022-01-01'), "month"))
+# 
+# Dates$month <- month(Dates$date)
+# Dates$year <- year(Dates$date)
+# i <- 1
+# 
 
 ```
 
 ```{r,include=FALSE}
+# 
+# #converting the data to a transposed data frame
+# tsv <- data.frame(evi = t(evi.df[i, 2:ncol(evi.df)]))
+# colnames(tsv) <- c("evi")
+# write.csv(tsv,"Data/tsv.csv")
+# #let's take a look
+# #We want to get an idea of the number of entries with no EVI value
+# na.cnt <- length(tsv[is.na(tsv)])
+# evi.trend$na.cnt[i] <- na.cnt
 
-#converting the data to a transposed data frame
-tsv <- data.frame(evi = t(evi.df[i, 2:ncol(evi.df)]))
-colnames(tsv) <- c("evi")
-write.csv(tsv,"Data/tsv.csv")
-#let's take a look
-#We want to get an idea of the number of entries with no EVI value
-na.cnt <- length(tsv[is.na(tsv)])
-evi.trend$na.cnt[i] <- na.cnt
-#
-# : My Caption {tbl-letters}
-#
-# See @tbl-letters.
 ```
 
 # CHAPTER THREE
@@ -482,71 +466,75 @@ In this study, the submission used a quantitative approach. Instead of using sub
 
 The Republic of Ghana, a nation in West Africa, will serve as the location for the experimental plots for this study. It shares borders with the Ivory Coast in the west, Burkina Faso in the north, and Togo in the east. It borders the Gulf of Guinea and the Atlantic Ocean to the south. Ghana's total size is 238,535 km2 (92,099 sq mi), and it is made up of a variety of biomes, from tropical rainforests to coastal savannas. Ghana, which has a population of over 31 million, is the second-most populous nation in West Africa, behind Nigeria.Accra, the nation's capital and largest city, as well as Kumasi, Tamale, and Sekondi-Takoradi, are other important cities.
 
+### Assumptions
+
 ```{r,include=FALSE,warning=FALSE,message=FALSE}
-td <- tsv %>%
-  mutate(month = month(as.Date(rownames(tsv))), year = year(as.Date(rownames(tsv)))) %>%
-  group_by(year, month) %>%
-  summarise(mean_evi = mean(evi, na.rm = T), .groups = "keep") %>%
-  as.data.frame()
-
-td$date <- as.Date(paste0(td$year, "-", td$month, "-01"))
-dx <- Dates[!(Dates$date %in% td$date),]
-
-
-dx$mean_evi <- NA
-Time_Series <- rbind(td, dx) %>%
-  arrange(date)
-write.csv(Time_Series,"Data/Time_Series.csv")
-
-
-tdx <- read.csv("Data/tdx.csv")%>%rename(Date = date)
-Rain <-read.csv("Data/Rainfall.csv")
-Evap <- read.csv("Data/Evaporative Stress.csv")%>%rename(Evaporation = Evaporative)
-Percip <- read.csv("Data/Percip.csv")%>%rename(Precipitation = Precip)
-
-
-Rain_Evap <- Rain%>%full_join(Evap)
-Rain_Evap_Percip <-Rain_Evap%>%full_join(Percip)
-
-DataFrame <- Rain_Evap_Percip%>% full_join(tdx)
-
+# td <- tsv %>%
+#   mutate(month = month(as.Date(rownames(tsv))), year = year(as.Date(rownames(tsv)))) %>%
+#   group_by(year, month) %>%
+#   summarise(mean_evi = mean(evi, na.rm = T), .groups = "keep") %>%
+#   as.data.frame()
+# 
+# td$date <- as.Date(paste0(td$year, "-", td$month, "-01"))
+# dx <- Dates[!(Dates$date %in% td$date),]
+# 
+# 
+# dx$mean_evi <- NA
+# Time_Series <- rbind(td, dx) %>%
+#   arrange(date)
+# write.csv(Time_Series,"Data/Time_Series.csv")
+# 
+# 
+# tdx <- read.csv("Data/tdx.csv")%>%rename(Date = date)
+# Rain <-read.csv("Data/Rainfall.csv")
+# Evap <- read.csv("Data/Evaporative Stress.csv")%>%rename(Evaporation = Evaporative)
+# Percip <- read.csv("Data/Percip.csv")%>%rename(Precipitation = Precip)
+# 
+# 
+# Rain_Evap <- Rain%>%full_join(Evap)
+# Rain_Evap_Percip <-Rain_Evap%>%full_join(Percip)
+# 
+# DataFrame <- Rain_Evap_Percip%>% full_join(tdx)
+# 
 
 ```
 
 ```{r,include=FALSE}
-Description <-DataFrame%>%
-      dplyr::select(Date,Rainfall,Evaporation,Precipitation,mean_evi)
- 
-Description <- if(length(Description[is.na(Description)]) > 0){imputeTS::na_kalman(Description, model = "auto.arima", smooth = T)} else {
-    Description
- }
-DF <-Description%>%
-      dplyr::select(Rainfall,Evaporation,Precipitation,mean_evi)
+# Description <-DataFrame%>%
+#       dplyr::select(Date,Rainfall,Evaporation,Precipitation,mean_evi)
+#  
+# Description <- if(length(Description[is.na(Description)]) > 0){imputeTS::na_kalman(Description, model = "auto.arima", smooth = T)} else {
+#     Description
+#  }
+# DF <-Description%>%
+#       dplyr::select(Rainfall,Evaporation,Precipitation,mean_evi)
 ```
 
-```{r}
-Yearly <- Description%>%
-          separate(Date,into = c("Year","Month","Day"),sep = "-")%>%
-          group_by(Year)%>%
-          summarise_each(funs(mean),Rainfall,Evaporation,Precipitation,mean_evi)
+### Explortory Data Analysis (Summary statistics)
 
-Monthly <- Description%>%
-          separate(Date,into = c("Year","Month","Day"),sep = "-")%>%
-           mutate(Month = month.abb[as.numeric(Month)])%>%
-          group_by(Month)%>%
-          summarise_each(funs(mean),Rainfall,Evaporation,Precipitation,mean_evi)
-          
-head(Yearly)%>%
-  kable(booktads = TRUE)
+```{r}
+# Yearly <- Description%>%
+#           separate(Date,into = c("Year","Month","Day"),sep = "-")%>%
+#           group_by(Year)%>%
+#           summarise_each(funs(mean),Rainfall,Evaporation,Precipitation,mean_evi)
+# 
+# Monthly <- Description%>%
+#           separate(Date,into = c("Year","Month","Day"),sep = "-")%>%
+#            mutate(Month = month.abb[as.numeric(Month)])%>%
+#           group_by(Month)%>%
+#           summarise_each(funs(mean),Rainfall,Evaporation,Precipitation,mean_evi)
+#           
+# head(Yearly)%>%
+#   kable(booktads = TRUE)
 ```
 
 ```{r,include=FALSE,message=FALSE,warning=FALSE}
-#| label: tbl-stats
-#| tbl-cap: "Summary statistics for Climate Date and Vegetation Loss In Ghana"
-
-describe(Description) %>%
-  kable(booktads = TRUE)%>%
-  kable_styling(latex_options = "scale_down")
+# #| label: tbl-stats
+# #| tbl-cap: "Summary statistics for Climate Date and Vegetation Loss In Ghana"
+# 
+# describe(Description) %>%
+#   kable(booktads = TRUE)%>%
+#   kable_styling(latex_options = "scale_down")
 ```
 
 ```{r,include=FALSE}
@@ -561,93 +549,87 @@ describe(Description) %>%
 ```
 
 ```{r}
-pairs.default(DF,main = "Corellation Between ",bg = c("red", "green", "blue"),pch = 21)
+# pairs.default(DF,main = "Corellation Between ",bg = c("red", "green", "blue"),pch = 21)
 ```
 
 ```{r, include=FALSE}
-na.cnt <- length(Time_Series[is.na(Time_Series)])
+# na.cnt <- length(Time_Series[is.na(Time_Series)])
 
 ```
 
-```{r}
-boxplot(Yearly)
-```
+### Non-Parametric Analysis
 
-# CHAPTER FOUR
-
-### The Analysis Of Variance (ANOVA) Method
-
-### Assumptions
-
-#### **Time-series analysis**
+### **Time-series analysis**
 
 #### [**Steps involved in Box-Jenkins approach**]{.underline}
 
-![FlowChart](Plots/Steps.png "METHADOLOGY Steps involved in Box-Jenkins approach"){fig-align="center"}
+![FlowChart](Plots/Steps.png "METHADOLOGY Steps involved in Box-Jenkins approach"){alt="FlowChart" fig-align="center"}
+
+# CHAPTER FOUR
+
+### Analysis and Finding
 
 ```{r}
-#| label: fig-Time Series And Decompostion
-#| fig-cap: "Time Series And Decompostion"
-#| fig-subcap:
-#|   - "Stationary Signal"
-#|   - "Decompostion Of The Series" 
-#| layout-ncol: 2
-#| column: page-right
-# Convert data to time series.
-Time_Series <- ts(data = Time_Series$mean_evi, start = c(2001, 1), end = c(2019, 11), frequency = 12)
-plot(Time_Series)
-
-
-Time_Series <- if(na.cnt > 0){imputeTS::na_kalman(Time_Series, model = "auto.arima", smooth = T)} else {
-    Time_Series
-}
-plot(Time_Series)
-
-
-tdx.dcp <- stl(Time_Series, s.window = 'periodic')
-plot(tdx.dcp)
-
-Tt <- trendcycle(tdx.dcp)
-St <- seasonal(tdx.dcp)
-Rt <- remainder(tdx.dcp)
-# plot(Tt)
-# plot(St)
-plot(Rt)
+# #| label: fig-Time Series And Decompostion
+# #| fig-cap: "Time Series And Decompostion"
+# #| fig-subcap:
+# #|   - "Stationary Signal"
+# #|   - "Decompostion Of The Series" 
+# #| layout-ncol: 2
+# #| column: page-right
+# # Convert data to time series.
+# Time_Series <- ts(data = Time_Series$mean_evi, start = c(2001, 1), end = c(2019, 11), frequency = 12)
+# plot(Time_Series)
+# 
+# 
+# Time_Series <- if(na.cnt > 0){imputeTS::na_kalman(Time_Series, model = "auto.arima", smooth = T)} else {
+#     Time_Series
+# }
+# plot(Time_Series)
+# 
+# 
+# tdx.dcp <- stl(Time_Series, s.window = 'periodic')
+# plot(tdx.dcp)
+# 
+# Tt <- trendcycle(tdx.dcp)
+# St <- seasonal(tdx.dcp)
+# Rt <- remainder(tdx.dcp)
+# # plot(Tt)
+# # plot(St)
+# plot(Rt)
 ```
 
 Before building an ARIMA model we checked that if the series is stationary. That is, we needed to be determined that the time series is constant in mean and variance are constant and not dependent on time.Here, we look at a couple of methods for checking stationarity. If the time series is provided with seasonarity, a trend, or a change point in the mean or variance, then the influences need to be removed or accounted for. Augmented Dickey--Fuller (ADF) t-statistic test to find if the series has a unit root (a series with a trend line will have a unit root and result in a large p-value).
 
 ```{r}
-#| label: fig-ACF
-#| fig-cap: "ACF Plot and PACF plot analysis for sample between 2000 and 2020:"
-#| fig-subcap:
-#|   - "Stationary Signal"
-#|   - "Trend Signal" 
-#| layout-ncol: 2
-#| column: page-right
-# The Stationary Signal and ACF
-plot(Rt,col= "red", main = "Stationary Signal")
-acf(Rt, lag.max = length(Rt),
-    xlab = "lag", ylab = 'ACF', main = '')
-
-#The Trend Signal anf ACF
-
-plot(Tt,col= "red",main = "Trend Signal")
-acf(Tt, lag.max = length(Tt),
-    xlab = "lag", ylab = "ACF", main = '')
+# #| label: fig-ACF
+# #| fig-cap: "ACF Plot and PACF plot analysis for sample between 2000 and 2020:"
+# #| fig-subcap:
+# #|   - "Stationary Signal"
+# #|   - "Trend Signal" 
+# #| layout-ncol: 2
+# #| column: page-right
+# # The Stationary Signal and ACF
+# plot(Rt,col= "red", main = "Stationary Signal")
+# acf(Rt, lag.max = length(Rt),
+#     xlab = "lag", ylab = 'ACF', main = '')
+# 
+# #The Trend Signal anf ACF
+# 
+# plot(Tt,col= "red",main = "Trend Signal")
+# acf(Tt, lag.max = length(Tt),
+#     xlab = "lag", ylab = "ACF", main = '')
 ```
 
 **Discuss:**Shows the initial ACF plot and we can see that before lag 25 almost all are significant and having no trend it needs to be differentiated before performing any analysis. Clearly the seasonality is visible even in the ACF plot.
 
 **Dickey-Fuller Test and Plot**
 
-```{r,warning=FALSE,message=FALSE}
-adf.test(Tt)
-```
+`{# {r,warning=FALSE,message=FALSE} # adf.test(Tt)`
 
 **Discuss:**The DF test confirms that it is stationary as p value \< 0.05 and thus can be used for further analysis.This is after doing double differentiation.It is noteworthy that the stationary signal (top left) generates few significant lags that are larger than the ACF's confidence interval (blue dotted line, bottom left). In contrast, practically all delays in the time series with a trend (top right) surpass the ACF's confidence range (bottom right). Qualitatively, we can observe and infer from the ACFs that the signal on the left is steady (due to the lags that die out) whereas the signal on the right is not (since later lags exceed the confidence interval).
 
-###  Specification of the Model
+### Specification of the Model
 
 We can create the SARMA model as SARMA(,0,)X(0) based on the previous study  
 
@@ -657,7 +639,7 @@ The SARMA model's seasonal component follows a similar approach. Since this mode
 Since the data is stationary, we go about finding the p and q values from ACF and PACF plots or use auto.arima() in R.
 
 ```{r}
-auto.arima(Time_Series)
+# auto.arima(Time_Series)
 ```
 
 **Discuss:**As we are not differencing the model we can consider ARMA(2,0,3) has the best model. Which is the best *p* and *q* value also found from the ACF and PACF plots.
@@ -700,19 +682,19 @@ Where the **ARIMA (PACF, Num_Diffrentation, ACF)** model have the below format f
 **Discuss:**The plot shows the forecasting to plot for the next 20 values which is shown by the blue region.
 
 ```{r}
-#| label: tbl-lm
-
-#| tbl-cap: "Linear regression model for predicting EVI from Time"
-tdx.ns <- data.frame(time = c(1:length(Time_Series)), trend = tdx - tdx.dcp$time.series[,1])
-summary <- summary(lm(formula = trend ~ time, data = tdx.ns))
-summary %>%
-  tidy() %>%
-  kable()
+# #| label: tbl-lm
+# 
+# #| tbl-cap: "Linear regression model for predicting EVI from Time"
+# tdx.ns <- data.frame(time = c(1:length(Time_Series)), trend = tdx - tdx.dcp$time.series[,1])
+# summary <- summary(lm(formula = trend ~ time, data = tdx.ns))
+# summary %>%
+#   tidy() %>%
+#   kable()
 ```
 
 ```{r}
-plot(tdx.ns)
-abline(a = summary$coefficients[1,1], b = summary$coefficients[2,1], col = 'blue')
+# plot(tdx.ns)
+# abline(a = summary$coefficients[1,1], b = summary$coefficients[2,1], col = 'blue')
 ```
 
 ```{r}
@@ -729,11 +711,11 @@ abline(a = summary$coefficients[1,1], b = summary$coefficients[2,1], col = 'blue
 ```
 
 ```{r,warning=FALSE}
-ggdensity(tdx,fill = "#0073C2FF",color ="#0073C2FF",add = "mean",rug = TRUE)
+# ggdensity(tdx,fill = "#0073C2FF",color ="#0073C2FF",add = "mean",rug = TRUE)
 ```
 
 ```{r}
-plot(evi.hw <- forecast::hw(y = tdx, h = 12, damped = T))
+# plot(evi.hw <- forecast::hw(y = tdx, h = 12, damped = T))
 ```
 
 # CHAPTER FIVE
