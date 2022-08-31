@@ -1,0 +1,45 @@
+project:
+  type: book
+  output-dir: _book
+  preview:
+    port: 4200
+    browser: true
+book:
+   title: Segregate The Variability Climate Is Responsible For In Vegetation Loss
+   subtitle: Quantifying The Status of Galamsey With Time Series Analsis
+   author: Kalong Boniface
+        # email: kalongboniface97gmail.com
+        # affiliation:
+        #     -name: University of Energy and Natural Resouce,Sunyani,GH
+        #     department: Department of Mathematics
+       # - name: Fugah Seletey Mitchell
+       #      email: Mitchell@jy.fi
+       #      affiliation:
+       #               -name: University of Energy and Natural Resouce,Sunyani,GH
+       #                department: Department of Mathematics
+
+date: "`r Sys.Date()`"
+chapters:
+  - index.qmd
+  - chapter 1.qmd
+  - chapter 2.qmd
+  - chapter 3.qmd
+  - chapter 4.qmd
+  - chapter 5.qmd
+  - references.qmd
+
+bibliography: references.bib
+toc: true
+toc-depth: 5
+format:
+  pdf:
+    documentclass: scrreprt
+    include-in-header: 
+      text: |
+        \usepackage{makeidx}
+        \makeindex
+    include-after-body: 
+      text: |
+        \printindex
+
+

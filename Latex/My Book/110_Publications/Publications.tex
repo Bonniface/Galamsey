@@ -1,0 +1,30 @@
+
+\defbibheading{subbibliography}{\section{#1}}
+\defbibfilter{booksandchapters}{%
+( type=book or type=incollection )
+}
+\defbibfilter{papers}{%
+ ( type=article or type=unpublished )
+}
+\defbibfilter{conferences}{%
+ ( type=inproceedings )
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RE]{\bfseries Publications}
+\fancyhead[LO]{\bfseries Publications}
+\fancyhead[LE,RO]{\thepage}
+
+\begin{refsection}[110_Publications/pub.bib]
+\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{}}
+\renewcommand{\chaptername}{Chapter}
+\renewcommand{\thesection}{\arabic{section}}
+\setcounter{section}{0}
+
+\chapter*{Publications}
+\addcontentsline{toc}{chapter}{Publications}
+\nocite{*}
+\printbibliography[heading={subbibliography},title={Journal Articles},filter={papers}]
+\printbibliography[heading={subbibliography},title={Conference Proceedings},filter={conferences}]
+\end{refsection}

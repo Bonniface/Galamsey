@@ -1,0 +1,34 @@
+\documentclass[multi=minipage, border=5]{standalone}
+
+\usepackage{graphicx}
+
+% Packages to make hindi in headers
+\usepackage{polyglossia} % Automatically loads fontspec package
+% \usepackage[main=british, french, german, latin, hindi]{babel}
+\setmainlanguage{english}
+\setotherlanguages{hindi,latin}
+\newfontfamily\hindifont{Noto Serif Devanagari}[Script=Devanagari]
+
+\begin{document}
+\raggedright
+\begin{minipage}{350bp}
+\begin{minipage}{0.14\textwidth}
+    {\centering \includegraphics[width=\linewidth, scale=1]{iitbbs.png}}
+\end{minipage}%
+\hfill
+\begin{minipage}{0.85\textwidth}
+    \textbf{\footnotesize
+    \texthindi{यांत्रिकी विज्ञान विद्यापीठ}
+    / School of Mechanical Sciences\\
+    \texthindi{भारतीय प्रौद्योगिकी संस्थान भुवनेश्वर}
+    / Indian Institute of Technology Bhubaneswar\\
+    \texthindi{जटनी-752050}
+    / Jatni–752050,
+    \texthindi{खोर्धा}
+    / Khordha,
+    \texthindi{ओड़िशा, भारत}
+    / Odisha, India
+    }
+\end{minipage}
+\end{minipage}
+\end{document}

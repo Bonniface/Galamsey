@@ -1,0 +1,250 @@
+\documentclass[12pt,a4paper,twoside,openright]{report}
+
+%%%%%%% Import packages %%%%%%%
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{epstopdf,amsfonts,array,multirow,amsmath,tabularx,setspace,amssymb,enumerate,csquotes}
+	
+% \usepackage{url}
+% \usepackage{bbm}
+% \usepackage{eufrak}
+% \usepackage{marvosym}
+% \usepackage{moderncvcompatibility}
+
+%% packages with settings
+% Inline listing package
+% \usepackage[inline]{enumitem}
+
+% Page geometry
+\usepackage{geometry}
+\setlength{\evensidemargin}{0.0cm}
+\setlength{\oddsidemargin}{1.27cm}
+\setlength{\topmargin}{-1.27cm}
+\setlength{\headheight}{32pt}
+\setlength{\headsep}{1em} %% Setting for gap in header and main body%%
+\setlength{\textheight}{24.0cm}
+%\setlength{\textwidth}{14.65cm}
+\setlength{\footskip}{1.5cm}
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{1em}
+
+% Set line spacing to 1.25 because
+% with 12pt font, 1.5 spacing is too large
+\setstretch{1.25}
+
+\usepackage{fancyhdr}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{relsize}
+\usepackage{bigints}
+
+% Packages for table of contents
+\setcounter{tocdepth}{3}
+
+\usepackage[nottoc]{tocbibind}
+\usepackage[titles,subfigure]{tocloft}
+
+\makeatletter
+\newlength{\@chapterlength} % Original Magic Value - RMR
+\setlength{\@chapterlength}{1.5em} % This code adds space for \@chapapp for toc entries
+\newcommand\@chapterheadsmark{1}
+\ifnum \@chapterheadsmark = 1
+\settowidth{\@chapterlength}{\@chapapp}
+\addtolength{\@chapterlength}{3.8em} % Space between toc labels and values
+\fi
+% \def\l@chapter{\pagebreak[3]\vskip 1em plus 1pt \@dottedtocline{0}{0em}{1.5em}}
+% \def\l@chapter{\pagebreak[3]\vskip 1em plus 1pt \@dottedtocline{0}{0em}{\@chapterlength}}
+
+\def\l@section{\@dottedtocline{1}{\@chapterlength}{2.3em}}
+
+\newlength{\@subsectionlength}
+\setlength{\@subsectionlength}{\@chapterlength}
+\addtolength{\@subsectionlength}{2.3em}
+\def\l@subsection{\@dottedtocline{2}{\@subsectionlength}{3.2em}}
+
+\newlength{\@subsubsectionlength}
+\setlength{\@subsubsectionlength}{\@chapterlength}
+\addtolength{\@subsubsectionlength}{5.5em}
+\def\l@subsubsection{\@dottedtocline{3}{\@subsubsectionlength}{4.1em}}
+
+\newlength{\@paragraphlength}
+\setlength{\@paragraphlength}{\@chapterlength}
+\addtolength{\@paragraphlength}{8.5em}
+\def\l@paragraph{\@dottedtocline{4}{\@paragraphlength}{5em}}
+
+\newlength{\@subparagraphlength}
+\setlength{\@subparagraphlength}{\@chapterlength}
+\addtolength{\@subparagraphlength}{10.5em}
+\def\l@subparagraph{\@dottedtocline{5}{\@subparagraph}{6em}}
+\makeatother
+
+\renewcommand\cftchappresnum{\chaptername~}
+\newlength\mylength
+\settowidth\mylength{\cftchappresnum\cftchapaftersnum\qquad}
+\addtolength\cftchapnumwidth{\mylength}
+
+\usepackage[acronym,nomain,toc]{glossaries}
+\makeglossaries
+\usepackage[intoc]{nomencl}
+\makenomenclature
+\renewcommand{\nomname}{List of Symbols}
+\usepackage[toc,page]{appendix}
+
+% Packages for floats like figures and tables
+\usepackage{float}
+\usepackage{caption}
+% \usepackage[center]{caption}
+% \usepackage{longtable}
+% \usepackage{subfig}
+\usepackage{subfigure}
+% \usepackage{subcaption}
+% \usepackage[chapter]{algorithm}
+\usepackage{algpseudocode}
+% \usepackage{algorithmic}
+
+\usepackage[base]{babel}
+\usepackage{lipsum,blindtext} % just to generate text for the example
+
+\usepackage{color}   %May be necessary if you want to color links
+
+\usepackage{datetime}
+\newdateformat{thisdate}{%
+	\twodigit{\THEDAY}}
+\newdateformat{thismonthdigit}{%
+	\twodigit{\THEMONTH}}
+\newdateformat{thismonth}{%
+	\monthname[\THEMONTH]}
+\newdateformat{thisyear}{%
+	\THEYEAR}
+
+% \usepackage{cite}
+% \usepackage{notoccite}
+\usepackage[backend=biber, style=ieee, sorting=none, defernumbers=true]{biblatex}
+\addbibresource{bibliography.bib}
+
+% Hyperref should be the last package to be loaded
+\usepackage{hyperref}
+% \hypersetup{
+% 	breaklinks=true,
+%     colorlinks=true, %set true if you want colored links
+%     linktoc=all,     %set to all if you want both sections and subsections linked
+%     linkcolor=black,  %choose some color if you want links to stand out
+%     citecolor=black,
+%     urlcolor=black
+% }
+
+\hypersetup{linktoc=all, colorlinks=true, linkcolor=blue, citecolor=teal, urlcolor=red}
+
+
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\sinc}{sinc}
+\DeclareMathOperator*{\argmin}{arg\;min}
+\DeclareMathOperator*{\argmax}{arg\;max}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{prop}{Proposition}
+%-------------------------------------------------------------------
+
+%\flushbottom
+%--------------------------------------------------------------------------
+\raggedbottom                               % (Remove Unnecessary space b/w paragraphs)
+%--------------------------------------------------------------------------
+\begin{document}
+
+% --------- Title and abstract etc in the front matter ----------- %
+\pagenumbering{gobble}
+\input{00_Cover/cover_page}
+
+%%%%%%%%%%%% Front Matter %%%%%%%%%%%%
+\pagenumbering{roman}
+\include{01_Dedication/Dedication}
+\include{02_Approval/Approval}
+\include{03_Certificate/Certificate}
+\include{04_Declaration/Declaration}
+\include{05_Acknowledgement/Acknowledgment}
+ 
+%%%%%%%%%%%% Abstract %%%%%%%%%%%%
+\setstretch{2}  % double spacing
+\input{06_Abstract/Abstract}
+
+%%%%%% List of Abbreviations %%%%%%
+\input{07_Abbreviations/Abbreviations}
+
+%%%%%% List of Symbols %%%%%%
+\input{08_Symbols/symbols}
+
+%%%%%% Table of Contents %%%%%%
+%%%%%%% To create 1.5 spacing in contents
+\setstretch{1.5}
+
+\input{09_Contents/Contents}
+
+\pagenumbering{arabic}
+%%%%%%%% To create double spacing in chapters
+\setstretch{2}
+
+% Fancy header
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\thesection~#1}{}}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername~\thechapter~-~#1}{}}
+\fancyhf{}
+\fancyhead[RE]{\leftmark}
+\fancyhead[LO]{\rightmark}
+\fancyhead[LE,RO]{\thepage}
+
+%%%%%% Chapters %%%%%%
+%% Remove any command starting with "\lipsum"
+%% from the chapter text. They are used to generate
+%% junk test paragraphs
+
+\input{10_Chapter_1/Introduction}
+\newpage
+%\newpage\null\newpage
+\input{20_Chapter_2/Literature_review}
+\newpage
+%\newpage\null\newpage
+\input{30_Chapter_3/chapter_3}
+\newpage
+%\newpage\null\newpage
+\input{40_Chapter_4/chapter_4}
+\newpage
+%\newpage\null\newpage
+\input{50_Chapter_5/chapter_5}
+\newpage
+%\newpage\null\newpage
+\input{60_Conclusion/Conclusion}
+\newpage
+
+%%%%%% Appendices %%%%%%
+\appendix
+\renewcommand{\chaptername}{Appendix}
+\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{\chaptername~}}
+\input{100_Appendices/appendix_0}
+\input{100_Appendices/appendix_1}
+\newpage
+% \null\newpage
+
+\setstretch{1}
+
+%%%%%% Publications %%%%%%
+\input{110_Publications/Publications}
+\clearpage
+
+%%%%%% Bibliography %%%%%%
+% \bibliographystyle{IEEEtran}
+% \bibliography{IEEEabrv,bibliography}
+\renewcommand{\bibname}{References}
+\printbibliography[heading=bibintoc]
+% Comment the following line if you don't want to print
+% all the citations in the bibliography file
+\nocite{*}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RE]{\bfseries \bibname}
+\fancyhead[LO]{\bfseries \bibname}
+\fancyhead[LE,RO]{\thepage}
+
+\end{document}

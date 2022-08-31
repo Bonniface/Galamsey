@@ -1,0 +1,48 @@
+%%%%%%%%%% To rename Table of Contents
+\renewcommand{\contentsname}{Table of Contents}
+% \renewcommand{\contentsname}{Contents}
+%%%%%%%%%%
+\tableofcontents
+\addcontentsline{toc}{chapter}{\contentsname}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO,RE]{\contentsname}
+\fancyhead[LE,RO]{\thepage}
+
+%%%%%% List of Figures %%%%%%
+\listoffigures
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO,RE]{List of Figures}
+\fancyhead[LE,RO]{\thepage}
+
+% %%%%%% List of Algorithms %%%%%%
+% \chapter*{}
+% \addcontentsline{toc}{chapter}{List of Algorithms}
+% \listofalgorithms
+% \newpage
+
+
+%%%%%% List of Tables %%%%%%
+\listoftables
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO,RE]{List of Tables}
+\fancyhead[LE,RO]{\thepage}
+% \newpage\null\newpage
+
+%%%%%% Print List of Abbreviations %%%%%%
+\printglossary[type=\acronymtype, title=Abbreviations, toctitle=List of Abbreviations]
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO,RE]{List of Abbreviations}
+\fancyhead[LE,RO]{\thepage}
+
+%%%%%% Print List of Symbols %%%%%%
+\printnomenclature
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO,RE]{List of Symbols}
+\fancyhead[LE,RO]{\thepage}
+
+\clearpage

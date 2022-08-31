@@ -1,0 +1,21 @@
+# CHAPTER FIVE
+
+## CONCLUSIONS AND RECOMMENDATIONS
+
+### Summary
+
+Broadly speaking, in this study we have presented a state-of-the-art of the following popular time series forecasting models with their salient features:
+
+-   The Box-Jenkins or ARIMA models for linear time series forecasting.
+-   Some non-linear stochastic models, such as NMA, ARCH.
+-   SVM based forecasting models; LS-SVM and DLS-SVM.
+
+### Conclusions
+
+It has been seen that, the proper selection of the model orders (in case of ARIMA), the number of input, hidden, output and the constant hyper-parameters (in case of SVM) is extremely crucial for successful forecasting. We have discussed the two important functions. AIC and BIC, which are frequently used for ARIMA model selection.
+
+We have considered a few important performance measures for evaluating the accuracy of forecasting models. It has been understood that for obtaining a reasonable knowledge about the overall forecasting error, more than one measure should be used in practice. The last chapter contains the forecasting results of our experiments, performed on six real time series datasets. Our satisfactory understanding about the considered forecasting models and their successful implementation can be observed form the five performance measures and the forecast diagrams, we obtained for each of the six datasets. However in some cases, significant deviation can be seen among the original observations and our forecast values. In such cases, we can suggest that a suitable data preprocessing, other than those we have used in our work may improve the forecast performances.
+
+### Recommendations
+
+Time series forecasting is a fast growing area of research and as such provides many scope for future works. One of them is the Combining Approach, i.e. to combine a number of different and dissimilar methods to improve forecast accuracy. A lot of works have been done towards this direction and various combining methods have been proposed in literature \[8, 14, 15, 16\]. Together with other analysis in time series forecasting, we have thought to find an efficient combining model, in future if possible. With the aim of further studies in time series modeling and forecasting
