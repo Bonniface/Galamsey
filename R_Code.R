@@ -92,101 +92,53 @@ hex <- hex[aoi.proj,]
 
 {#This will take about 30 minutes # 
 aoi.ndvi <- ee_extract(x = modis.ndvi, y = hex["hex_id"], sf = FALSE, scale = 250, fun = ee$Reducer$mean(), via = "drive", quiet = T)
+colnames(aoi.ndvi) <- c('hex_id', stringr::str_replace_all(substr(colnames(aoi.ndvi[, 2:ncol(aoi.ndvi)]), 2, 11), "_", "-"))
 }
   
-
-
-{#This will take about 30 minutes # 
-  if(readline(prompt = "Hit enter to proceed or type 'no' to download the data from G-Drive. ") == "no"){ googledrive::drive_download(file =                               googledrive::as_id("https://drive.google.com/drive/folders/1ZnCpYz38ezSU1XG7ixJ2sPg_DX7bO07J?usp=sharing"),overwrite = T) 
-    
-    ndvi.df <- read.csv("rgee_file_2d44527a3b0e_2022_07_28_15_40_52.csv")  
-    ndvi.df <- ndvi.df[,3:ncol(ndvi.df)] # 
-    colnames(ndvi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(ndvi.df[, 2:ncol(ndvi.df)]), 2, 11), "_", "-")) #Convert dates to unambiguous format # 
-  } else {paste0(system.time(expr = aoi.ndvi <- ee_extract(x = modis.ndvi, y = hex["hex_id"], sf = FALSE, scale = 250, fun = ee$Reducer$mean(), via = "drive", quiet = T))/60, " Minutes Elapsed. ")
-    evi.df <- as.data.frame(aoi.ndvi) 
-    
-    colnames(ndvi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(ndvi.df[, 2:ncol(ndvi.df)]), 2, 11), "_", "-"))
-    write.csv(x = ndvi.df, file = "~/rgee_file_2d44527a3b0e_2022_07_28_15_40_52.csv")}
+{ aoi.evi <- ee_extract(x = modis.evi, y = hex["hex_id"], sf = FALSE, scale = 250, fun = ee$Reducer$mean(), via = "drive", quiet = T)
+colnames(aoi.evi) <- c('hex_id', stringr::str_replace_all(substr(colnames(aoi.evi [, 2:ncol(aoi.evi )]), 2, 11), "_", "-"))
+}
   
-  #Create an empty list, this will be used to house the time series projections for each cell.
-  evi.hw.lst <- list()
-  #Create an empty list, this will be used to house the time series decomposition for each cell.
-  evi.dcmp.lst <- list()
-  #This data frame will hold the trend data
-  evi.trend <- data.frame(hex_id = ndvi.df$hex_id, na.cnt = NA, NA_Values = NA, Trend = NA, P_value = NA, R_Squared = NA, Standard_Error = NA, Trend_Strength = NA, Seasonal_Strength = NA)
-  Dates <- data.frame(date = seq(as.Date('2001-01-01'), as.Date('2022-01-01'), "month"))
+{EVI <- aoi.evi%>%
+    pivot_longer(-hex_id,names_to = "Date",values_to = "EVI")%>%
+    separate(Date,into = c("year","month","day"),sep = "-")%>%
+    select(hex_id,year,month,EVI)}
+{
+  #converting the data to a transposed data frame
+NDVI  <- data.frame(ndvi = t(aoi.ndvi[i, 2:ncol(aoi.ndvi)]))
+    
+EVI <- data.frame(ndvi = t(aoi.evi[i, 2:ncol(aoi.evi)]))
+ }
+    
+{Vegetation <- NDVI %>% full_join(EVI,by ="hex_id")
+  Vegetation%>%
+    mutate(month = month(as.Date(rownames(Vegetation))), year = year(as.Date(rownames(Vegetation)))) %>%
+    group_by(year, month) %>%
+    summarise(mean_evi = mean(evi, na.rm = T), .groups = "keep") %>%
+    as.data.frame()}
+
+
+{
+  Dates <- data.frame(date = seq(as.Date('2001-01-01'), as.Date('2022-01-01'),"month"))
   
   Dates$month <- month(Dates$date)
   Dates$year <- year(Dates$date)
-  i <- 1}
-{#This will take about 30 minutes # 
-  if(readline(prompt = "Hit enter to proceed or type 'no' to download the data from G-Drive. ") == "no"){ googledrive::drive_download(file =                               googledrive::as_id("https://drive.google.com/drive/folders/1ZnCpYz38ezSU1XG7ixJ2sPg_DX7bO07J?usp=sharing"),overwrite = T) 
-    
-    evi.df <- read.csv("rgee_file_2d44527a3b0e_2022_07_28_15_40_52.csv")  
-    evi.df <- evi.df[,3:ncol(evi.df)] # 
-    colnames(evi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(evi.df[, 2:ncol(evi.df)]), 2, 11), "_", "-")) #Convert dates to unambiguous format # 
-  } else {paste0(system.time(expr = aoi.evi <- ee_extract(x = modis.evi, y = hex["hex_id"], sf = FALSE, scale = 250, fun = ee$Reducer$mean(), via = "drive", quiet = T))/60, " Minutes Elapsed. ")
-    evi.df <- as.data.frame(aoi.evi) 
-    
-    colnames(evi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(evi.df[, 2:ncol(evi.df)]), 2, 11), "_", "-"))
-    write.csv(x = evi.df, file = "~/rgee_file_2d44527a3b0e_2022_07_28_15_40_52.csv")}
-  
-  #Create an empty list, this will be used to house the time series projections for each cell.
-  evi.hw.lst <- list()
-  #Create an empty list, this will be used to house the time series decomposition for each cell.
-  evi.dcmp.lst <- list()
-  #This data frame will hold the trend data
-  evi.trend <- data.frame(hex_id = evi.df$hex_id, na.cnt = NA, NA_Values = NA, Trend = NA, P_value = NA, R_Squared = NA, Standard_Error = NA, Trend_Strength = NA, Seasonal_Strength = NA)
-  Dates <- data.frame(date = seq(as.Date('2001-01-01'), as.Date('2022-01-01'), "month"))
-  
-  Dates$month <- month(Dates$date)
-  Dates$year <- year(Dates$date)
-  i <- 1}
+  i <- 1
+  }
 
 
-{#converting the data to a transposed data frame
-  tsv <- data.frame(evi = t(evi.df[i, 2:ncol(evi.df)]))
-  colnames(tsv) <- c("evi")
-  write.csv(tsv,"Data/tsv.csv")
-  #let's take a look
-  #We want to get an idea of the number of entries with no EVI value
-  na.cnt <- length(tsv[is.na(tsv)])
-  evi.trend$na.cnt[i] <- na.cnt
-  
-  td <- tsv %>%
-    mutate(month =month(as.Date(rownames(tsv))),year =year(as.Date(rownames(tsv))))%>%
+{
+  NDVI <- NDVI %>%
+    mutate(month =month(as.Date(rownames(NDVI))),year =year(as.Date(rownames(NDVI))))%>%
     group_by(year, month) %>%
     summarise(mean_evi = mean(evi, na.rm = T), .groups = "keep") %>%
     as.data.frame()
   
-  td$date <- as.Date(paste0(td$year, "-", td$month, "-01"))
-  dx <- Dates[!(Dates$date %in% td$date),]
+  NDVI$date <- as.Date(paste0(NDVI$year, "-", NDVI$month, "-01"))
+  dx <- Dates[!(Dates$date %in% NDVI$date),]
   
   
   dx$mean_evi <- NA
-  Time_Series <- rbind(td, dx) %>%
+  NDVI <- rbind(NDVI, dx) %>%
     arrange(date)
-  write.csv(Time_Series,"Data/Time_Series.csv")}
-{#converting the data to a transposed data frame
-  tsv <- data.frame(evi = t(evi.df[i, 2:ncol(evi.df)]))
-  colnames(tsv) <- c("evi")
-  write.csv(tsv,"Data/tsv.csv")
-  #let's take a look
-  #We want to get an idea of the number of entries with no EVI value
-  na.cnt <- length(tsv[is.na(tsv)])
-  evi.trend$na.cnt[i] <- na.cnt
-  
-  td <- tsv %>%
-    mutate(month =month(as.Date(rownames(tsv))),year =year(as.Date(rownames(tsv))))%>%
-    group_by(year, month) %>%
-    summarise(mean_evi = mean(evi, na.rm = T), .groups = "keep") %>%
-    as.data.frame()
-  
-  td$date <- as.Date(paste0(td$year, "-", td$month, "-01"))
-  dx <- Dates[!(Dates$date %in% td$date),]
-  
-  
-  dx$mean_evi <- NA
-  Time_Series <- rbind(td, dx) %>%
-    arrange(date)
-  write.csv(Time_Series,"Data/Time_Series.csv")}
+  }

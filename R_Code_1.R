@@ -51,6 +51,8 @@ ee_Initialize("kalong",drive = TRUE) # initialize GEE,
     ee$ImageCollection$toBands()}
 # Extract monthly precipitation values from the Terraclimate ImageCollection through ee_extract. ee_extract works similar to raster::extract, you just need to define: the ImageCollection object (x), the geometry (y), and a function to summarize the values (fun).
 
+Pr<-ee_extract(x = Precipitation, y = hex["hex_id"], sf = FALSE, scale = 250, fun = ee$Reducer$mean(), via = "drive", quiet = T)
+
 Precipitation  <- ee_extract(x = Precipitation , y = aoi.ee, sf = FALSE)
 MinimumTemperature  <- ee_extract(x = MinimumTemperature , y = aoi.ee, sf = FALSE)
 MaximumTemperature  <- ee_extract(x = MaximumTemperature , y = aoi.ee, sf = FALSE)
