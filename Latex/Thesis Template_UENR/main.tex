@@ -1,0 +1,178 @@
+\documentclass[12pt,a4paper]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathptmx}
+\usepackage{mathpazo}
+\usepackage{aligned-overset}
+\usepackage{mathrsfs}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage[left=3.75cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage[section]{placeins}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{dfn}{Definition}[section]
+\newtheorem{note}{Note}[section]
+\usepackage{titlesec}
+\usepackage[style = apa, backend = biber, natbib = true]{biblatex}
+\addbibresource{references.bib}
+\usepackage{fancyhdr}
+\pagestyle{fancy} % Turn on the style
+\fancyhf{} % Start with clearing everything in the header and footer
+% Set the right side of the footer to be the page number
+\fancyfoot[R]{\thepage}
+
+% Redefine plain style, which is used for titlepage and chapter beginnings
+% From https://tex.stackexchange.com/a/30230/828
+\fancypagestyle{plain}{%
+	\renewcommand{\headrulewidth}{0pt}%
+	\fancyhf{}%
+	\fancyfoot[R]{\thepage}%
+}
+\usepackage{xcolor}
+\makeatletter
+%\renewcommand{\@makechapterhead}[]{%
+%	\vspace*{20 pt}%
+%	{\setlength{\parindent}{0pt} \raggedright\centring\bf \bfseries\normalfont{\thechapter\ #1\par\nobreak\vspace{20 pt}}}}
+\makeatother
+\titleformat{\section}{\bfseries\normalfont\centering\bf}{\thesection}{0em}{}
+\begin{document}
+	\pagestyle{plain}
+	\openup 1 em
+	\begin{titlepage}
+		\pagenumbering{roman}
+		%\addcontentsline{toc}{section}{Title Page}
+		\begin{center}
+			
+			\begin{figure}[h]
+				\begin{center}
+					\includegraphics[width=0.30\linewidth, height=.20\textheight]{images/logo2}
+				\end{center}
+			\end{figure}
+			
+			{\normalfont{\textbf{UNIVERSITY OF ENERGY AND NATURAL RESOURCES, SUNYANI}}}\\
+			\vspace{1.7cm}
+			{\normalfont \textbf{PROJECT TOPIC IN CAPS}}
+			
+			
+			\vspace{2.7cm}
+			
+			{\normalfont {\textbf{SURNAME, FIRST NAMES}}}
+			\vspace{1.7cm}
+			
+			
+			\begin{center}
+				{\normalfont \textbf{DEPARTMENT OF MATHEMATICS AND STATISTIC}\\
+					\textbf{SCHOOL OF SCIENCE}}\\
+				\vspace{5.3cm}
+				
+				
+				{\normalfont \textbf{JUNE 2019}}
+			\end{center}
+			
+		\end{center}
+		
+		\vfill
+	\end{titlepage}
+	\pagenumbering{roman}
+	\begin{titlepage}
+		\begin{center}
+			{\normalfont \textbf{PROJECT TOPIC IN CAPS}}
+			
+			\vspace{3.7cm}
+			{\normalfont {by}}\\
+			\vspace{1cm}
+			{\normalfont {Name - exams number\\ B.Sc. (Program) Location}}
+			\vspace{1.7cm}
+			
+			
+			\begin{center}
+				{\normalfont A Thesis submitted to the Department of Mathematics and Statistics, School of Science, University of Energy and Natural Resources, Sunyani in partial fulfillment of the requirements for the degree of Bachelor of Science in Mathematics }\\
+				\vspace{2cm}	
+				{\normalfont JUNE 2019}
+			\end{center}
+			
+		\end{center}
+		
+		\vfill
+	\end{titlepage}	
+	\newpage
+	{\section*{DECLARATION AND CERTIFICATION}
+	\addcontentsline{toc}{section}{CERTIFICATION}
+	personal declaration here...
+	\\
+		Candidate's Signature:	................................. \hspace\fill 
+		Date: .................................	 \\
+	\begin{center}\textbf{\normalfont \textbf{Supervisor's Certification}}\end{center}
+	This study was carried out under the supervisory committee of (Names of all Supervisors) in accordance with the guidelines on supervisions of graduate studies.\\\\
+	Major Supervisor's Name and Qualifications \\
+	\\
+	Signature:	................................. \hspace\fill 
+	Date: .................................	 \\
+	\begin{center}\textbf{\normalfont \textbf{Co-Supervisor's Certification}}\end{center}
+	Co-Supervisor's Name and Qualifications\\
+	\\
+	Signature:	................................. \hspace\fill 
+	Date: .................................	 \\
+	\newline\\
+	Co-Supervisor's Name and Qualifications\\
+	\\
+	Signature:	................................. \hspace\fill 
+	Date: .................................	 \\
+	
+	
+	\newpage
+	\section*{\textbf{ABSTRACT}}
+	\addcontentsline{toc}{section}{ABSTRACT}
+	Write your abstract here 
+	\newpage	
+	\begin{center}\section*{DEDICATION}\end{center}
+	\addcontentsline{toc}{section}{DEDICATION}
+	
+	Write dedication here   
+	\newpage	
+	\begin{center}\section*{ACKNOWLEDGMENTS}\end{center}
+	\addcontentsline{toc}{section}{ACKNOWLEDGMENTS}
+	
+	Write Acknowledgment here
+	
+	\newpage
+	\tableofcontents
+	\addcontentsline{toc}{section}{TABLE OF CONTENTS}
+	\newpage
+	\listoftables
+	\addcontentsline{toc}{section}{LIST OF TABLES}
+	\newpage
+	\listoffigures
+	\addcontentsline{toc}{section}{LIST OF FIGURES}
+	
+%	\renewcommand{\@makechapter}[]{%
+%	\vspace*{20 pt}%
+%	{\setlength{\parindent}{0pt} \raggedright \centering \bf \bfseries\normalfont{\thechapter \#1\par\nobreak\vspace{20 pt}}}}
+%\pagebreak
+	\makeatother
+	\titleformat{\chapter}{\bfseries\centering\normalfont\bf}{}{1em}{}
+	\titleformat{\section}{\bfseries\normalfont\bf}{\thesection}{1em}{}
+	
+	\newpage
+	\pagenumbering{arabic}
+	\include{Chapters/Chapter1}%including chapters as standalone files
+	\include{Chapters/Chapter2} 
+	\include{Chapters/Chapter3}
+	\include{Chapters/Chapter4} 
+	\include{Chapters/Chapter5} 
+
+	
+	
+	\printbibliography% displays the references cited.
+	
+	\appendix
+	\addcontentsline{toc}{chapter}{APPENDICES}
+	\chapter{Appendix Chapter}
+	\chapter{Appendix B Chapter}
+	
+	
+\end{document}

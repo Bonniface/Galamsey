@@ -1,0 +1,11 @@
+[0] Config.pm:304> INFO - This is Biber 2.14
+[0] Config.pm:307> INFO - Logfile is 'main.blg'
+[157] biber-MSWIN32:322> INFO - === 
+[186] Biber.pm:415> INFO - Reading 'main.bcf'
+[430] Biber.pm:943> INFO - Found 9 citekeys in bib section 0
+[466] Biber.pm:4256> INFO - Processing section 0
+[467] Utils.pm:75> INFO - Globbing data source 'references.bib'
+[488] Utils.pm:91> INFO - Globbed data source 'references.bib' to references.bib
+[505] Biber.pm:4455> INFO - Looking for bibtex format file 'references.bib' for section 0
+[1301] Utils.pm:320> ERROR - Cannot find 'references.bib'!
+[1301] Biber.pm:132> INFO - ERRORS: 1

@@ -1,18 +1,21 @@
 ---
 title: Segregate The Variability Climate Is Responsible For In Vegetation Loss
 subtitle: Quantifying The Status of Galamsey With Time Series Analsis
-author: 
-   - name: Kalong Boniface
-     email: kalongboniface97gmail.com
-     url: 
-     affiliation: 
-            -name: University of Energy and Natural Resouce,Sunyani,GH
-            department: Department of Mathematics
-   - name: Fugah Seletey Mitchell
-     email: Mitchell@jy.fi
-     affiliation:
-           -name: University of Energy and Natural Resouce,Sunyani,GH
-           department: Department of Mathematics
+author:
+  - name: Kalong Boniface
+    affiliations:
+      - id: cmu
+        name: University of Energy and Natural Resouce
+        city: Sunyani
+        state: GH
+      
+  - name: Fugah Seletey Mitchell
+    affiliations:
+      - ref: cmu
+      - name: University of Energy and Natural Resouce
+        city: Sunyani
+        state: GH
+
 cover: images/logo.png
 date: "`r Sys.Date()`"
 title-block-banner: true
@@ -55,7 +58,9 @@ header-includes:
 
 <!-- All thing change, but how we respond to change is our responsibility, to fare it or embrasse it. Resisting change leads to one fiat. Our own extinction. Time is a smybole of freedom and peace -->
 
-The purpose of this paper is to establish an understanding in time series analysis on remotely sensed data. Which will introduced us to the fundamentals of time series modeling, including decomposition, autocorrelation and modeling historical changes in Galamsey Operation in Ghana, the Cause,Dangers and it's Environmental impact.
+One would anticipate that the majority of emerging nations, which are still in the early stages of economic development and growth, would have a high forest cover and little deforestation. This, however, has not been the case. Ghana is a lower-middle-income nation that is still working toward middle-income classification. However, it has already begun to see a deforestation rate that is comparable to that of middle-income countries. The rapid population expansion, clearing of feild for Galamsey operation,increased domestic need for wood for things like fuel, furniture,  construction, and timber exports have all contributed to this trend, Bush fires in the 1980s, climate change, and lax law enforcement have all had an impact.
+
+The purpose of this paper is to establish an understanding in time series analysis on remotely sensed data. Which will introduced us to the fundamentals of time series modeling, including decomposition, autocorrelation and modeling historical changes in **Vegetation Loss** in Ghana as a result of **Galamsey Operation** and the **Variability Climate Is Responsible For**, the Cause, Dangers and it's Environmental impact.
 
 Galamsey also known as "gather them and sell",[@owusu-nimo2018] is the term given by local Ghanaian for illegal small-scale gold mining in Ghana . The major cause of Galamsey is unemployment among the youth in Ghana [@gracia2018]. Young university graduates rarely find work and when they do it hardly sustains them. The result is that these youth go the extra mile to earn a living for themselves and their family.
 
@@ -69,13 +74,11 @@ Between 20,000 to 50,000, including thousands from China are believed to be enga
 
 ### Background of The Study
 
-As Galamsey is considered an illegal activity, they operations are hidden to the eyes of the authorities.So locating them is quite tricky ,but with satellite imagery ,it now possible to locate their operating and put an end to it. One of the features of Google Earth Engine is the ability to access years of satellite imagery without needing to download, organize, store and process this information. For instance, within the Satellite image
-
-collection, now it possible to access imagery back to the 90's, allowing us to look at areas of interest on the map to visualize and quantify how much things has changed over time. With Earth Engine, Google maintains the data and offers it's computing power for processing.Users can now access hundreds of time series images and analyze changes across decades using GIS and R or other programming language to analyze these datasets.
+As Galamsey is considered an illegal activity, they operations are hidden to the eyes of the authorities.So locating them is quite tricky ,but with satellite imagery ,it now possible to locate their operating and put an end to it. One of the features of Google Earth Engine is the ability to access years of satellite imagery without needing to download, organize, store and process this information. For instance, within the Satellite image collection, now it possible to access imagery back to the 90's, allowing us to look at areas of interest on the map to visualize and quantify how much things has changed over time. With Earth Engine, Google maintains the data and offers it's computing power for processing.Users can now access hundreds of time series images and analyze changes across decades using GIS and R or other programming language to analyze these dataset.
 
 ### Problem Statement
 
-The Footprint of Galamsey is Spreading at a very faster rate, causing vegetation loss.Other factors accounting to vegetation loss may largely include climate change,urban and exurban development, bush fires. But not much works or research has been done to tell the extent to which Galamsey causes vegetation loss. This research attempts to segregate the variability climate is responsible for in vegetation loss so as to attribute the residual variability to Galamsey and other related activities such as bush-fires etc.
+The Footprint of Galamsey is Spreading at a very faster rate, causing vegetation loss.Other factors accounting to vegetation loss may largely include climate change,urban and exurban development, bush fires. But not much works or research has been done to tell the extent to which Galamsey causes vegetation loss and the **Variability Climate Change Is Responsible For**. This research attempts to segregate the variability climate is responsible for in vegetation loss so as to attribute the residual variability to Galamsey and other related activities such as bush-fires etc.
 
 ### Research Questions
 
@@ -105,7 +108,7 @@ This study allows us to explore climatic differences and climate-related drivers
 
 ### Limitation Of The Study
 
-The goal of time series modeling is to employ the simplest model feasible to account for as much data as possible while still developing an explanatory model of the data that does not overfit the issue set.
+The goal of time series modeling is to employ the simplest model feasible to account for as much data as possible while still developing an explanatory model of the data that does not over-fit the issue set.
 
 Remote sensing data has additional limits that make this more difficult when dividing time series data into component pieces. It is almost certain that data from distant sensing will not provide the same level of precision.
 
@@ -117,9 +120,23 @@ Additionally, atmospheric factors can distort the visual findings, causing the v
 
 ## LITERATURE REVIEW
 
+The distribution of plant species, the richness and composition of plant communities, the structure of the vegetation (such as biomass and leaf area), and how the ecosystem uses water, nutrients, and carbon are all predicted to change as a result of climate change. These plant responses to climate change will be the outcome of numerous lower-level plant reactions, such as adjustments in net plant carbon uptake, adjustments in plant water usage, adjustments in plant growth and biomass allocation, competitive interactions, and reactions to disturbances. It is challenging to predict prospective plant reactions to future climatic changes based only on theory or on laboratory and field studies due to the complexity of climatic impacts on vegetation and the length of time it takes for the responses to become obvious.
+
+To project vegetation responses to changing climates, computer simulation models that integrate theory and experimental results are frequently used, and the following are some studies that have been done previously where we reclassifies the drivers into human activity, and climate change for an empirical review and None Parametric Test followed by Time Series Analysis for the theoretical review .
+
+### Empirical Review
+
+According to studies, there is now significant change in vegetation on the earth than there was thirty years ago, and it is distributed differently.
+
+More than half of the changes they found are attributed to the consequences of a warmer climate, with people only being responsible for about a third. Perhaps surprisingly, they are unable to definitively link approximately 10% of the changes to either the climate or us.[@alex2013]
+
+Several models and hypotheses have been established in the environmental literature to explain the relationship between human behavior, and environmental (forest)  deforestation or depletion. Recent environmental and energy economics literature focuses on the energy consumption choices made by businesses and people in developing countries [@gertler2016]. Africa's energy supply is made mainly of fuel wood and charcoal to a degree of about 58%. [@specht2015]. Before other demands for forest goods like furniture and paper, the need for fuel wood for cooking and heating is frequently identified as the main driver of deforestation.
+
+The causes of tropical forest decline are unclear, according to [@defries2010]. However, scientists were able to pinpoint the two primary causes of deforestation in the 21st century using information from satellite-based estimations in 41 different countries. The authors found a favorable association between forest loss and increases in urban population as well as agricultural exports using two methods of regression analysis. The same proof, however, was not discovered in the case of the increase in rural population. This suggests that forest loss is unavoidable in regions with high levels of human activity.
+
 ### Theoretical Review
 
-This literature review will follow narrative approach to gain insight into research topic. A time series is a set of observations, each being recorded at a particular time and the collection of such observation is referred to as time series data. The data is analysed to extract statistical information, characteristics of the data and to predict the output. As the data might tend to follow a pattern in time series data, the Machine Learning model finds it difficult to predict appropriately hence time series analysis and its approaches have made it simpler for prediction. The methods used and results from those methods achieved by former researchers will be summarized including different methods on time series and comparing them with each other.
+This study review, will follow narrative approach to gain insight into research topics. A time series is a set of observations, each being recorded at a particular time and the collection of such observation is referred to as time series data. The data is analysed to extract statistical information, characteristics of the data and to predict the output. As the data might tend to follow a pattern in time series data, the Machine Learning model finds it difficult to predict appropriately hence time series analysis and its approaches have made it simpler for prediction.
 
 #### What is Time Series Analysis?
 
@@ -153,13 +170,13 @@ In general models for time series data can have many forms and represent differe
 
 *Autoregressive (AR)* and *Moving Average (MA)* models, combining these two, the Autoregressive Moving Average (ARMA) and *Autoregressive Integrated Moving Average (ARIMA)* models have been proposed in many literature. The *Autoregressive Fractionally Integrated Moving Average (ARFIMA)* model generalizes ARMA and ARIMA models. For seasonal time series forecasting, a variation of ARIMA. The *Seasonal Autoregressive Integrated Moving Average (SARIMA)* \] model is used.
 
-ARIMA model and its different variations are based on the famous Box-Jenkins principle \[6, 8,12, 23\] and so these are also broadly known as the Box-Jenkins models.
+ARIMA model and its different variations are based on the famous Box-Jenkins principle [@hipel1994] and so these are also broadly known as the Box-Jenkins models.
 
-Linear models have drawn much attention due to their relative simplicity in understanding and implementation. However many practical time series show non-linear patterns. For example, as mentioned by R. Parrelli in \[28\], non-linear models are appropriate for predicting volatility changes in economic and financial time series. Considering these facts, various non-linear models have been suggested in literature. Some of them are the famous Autoregressive Conditional Heteroskedasticity (ARCH) \[9, 28\] model and its variations like Generalized ARCH (GARCH) \[9, 28\], Exponential Generalized ARCH (EGARCH) \[9\] etc., the Threshold Autoregressive (TAR) \[8, 10\] model, the Non-linear Autoregressive (NAR) \[7\] model, the Non-linear Moving Average (NMA) \[28\] model, All the methods consider either of trend, seasonality, or heteroscedasticity to predict the future output. Time series data must be decomposed based on the findings from data analysis. Based on the findings from analysis data must be broken into trend or seasonality.
+Linear models have drawn much attention due to their relative simplicity in understanding and implementation. However many practical time series show non-linear patterns. For example, as mentioned by R. Parrelli in , non-linear models are appropriate for predicting volatility changes in economic and financial time series. Considering these facts, various non-linear models have been suggested in literature. Some of them are the famous Autoregressive Conditional Heteroskedasticity (ARCH) model and its variations like Generalized ARCH (GARCH) , Exponential Generalized ARCH (EGARCH) etc., the Threshold Autoregressive (TAR) model, the Non-linear Autoregressive (NAR) model, the Non-linear Moving Average (NMA) model, All the methods consider either of trend, seasonality, or heteroscedasticity to predict the future output. Time series data must be decomposed based on the findings from data analysis. Based on the findings from analysis data must be broken into trend or seasonality.[@zhang1998]
 
 ##### Exponential Smoothing Models:
 
-Time-series data relies on the assumption that the observation at a certain point of time depends on previous observations in time . The previous observations are given weights as they contribute to the future prediction. The process of weighting is done using a notation called 'Theta' (Cryer, J.D., 1986). To find the best possible value for theta, we must perform sum of squared errors between the actual versus predicted value of the previous observation. Using this process, we can predict the next value but to predict more than one value this process does contribute much as the prediction as going to be same as the previous value.
+Time-series data relies on the assumption that the observation at a certain point of time depends on previous observations in time . The previous observations are given weights as they contribute to the future prediction. The process of weighting is done using a notation called '**Theta**'. To find the best possible value for theta, we must perform sum of squared errors between the actual versus predicted value of the previous observation. Using this process, we can predict the next value but to predict more than one value this process does contribute much as the prediction as going to be same as the previous value.
 
 To understand the methods and to evaluate different models, few concepts like *stationarity* and *differencing* must be understood. Both these concepts help in making the core concepts of the methods easy to interpret.
 
@@ -259,11 +276,11 @@ Removing seasonality will help the model to perform better but getting rid of se
 
 #### **Comparing ARIMA method with SARIMA method:**
 
-In comparison to ARIMA and SARIMA, (Valipour, M., 2015) investigated it on long-term runoff forecasting in the United States. The results have shown that SARIMA models have performed better than ARIMA model. However, it was seen that SARIMA models were very sensitive and a slight change in a parameter would result in poor performance of the model.
+@library2015 investigated it on long-term runoff forecasting in the United States in contrast to ARIMA and SARIMA. The outcomes demonstrated that SARIMA models outperformed ARIMA models. However, it was discovered that SARIMA models were extremely sensitive, and even a small change in a parameter would have a negative impact on the model's performance. ARIMA and SARIMA models have been applied by (Wang, S., Li, C., and Lim, 2019) from the perspectives of Linear System Analysis, Spectra Analysis, and Digital Filtering. The researchers were obliged to go outside of these models for greater performance after it was established that ARIMA and SARIMA both had poor performance.Although they claimed the ARMA-SIN model was superior to the ARIMA and SARIMA models, they also acknowledged that it was more challenging to study and comprehend the ideas.
 
-(Wang, S., Li, C. and Lim, A., 2019) have used ARIMA and SARIMA models from the perspective of Linear System Analysis, Spectra Analysis and Digital Filtering. It was shown that ARIMA and SARIMA both have not performed well and the researchers were forced to look beyond these models for better performance. They have mentioned that ARMA-SIN model was better but have also said it is relatively difficult to study and understand the concepts compared to ARIMA and SARIMA model.
+The results of @library2015 have demonstrated that SARIMA is superior; however, their assertion is incongruent when it is contrasted with the results of (Wang, S., Li, C. and Lim, A., 2019).
 
-The findings from the (Valipour, M., 2015) have proven SARIMA to better however, their claim contradicts when it was to be compared with the findings of (Wang, S., Li, C. and Lim, A., 2019). The use of a particular method must be based on the data, after the analysis it is known if that the data has trend, they must choose ARIMA and if the data has seasonality, choosing SARIMA would be helpful.
+The choice of a particular approach must be based on the data; following analysis, it is known whether the data have a trend, in which case ARIMA must be used, or whether they are seasonal, in which case SARIMA would be beneficial.
 
 #### [**ADVANTAGES AND DISADVANTAGES OF TIME SERIES FORECASTING**]{.smallcaps}
 
@@ -287,45 +304,83 @@ The findings from the (Valipour, M., 2015) have proven SARIMA to better however,
 
 -   The different elements that impact the fluctuations of a series cannot be fully adjusted by the time series analysis
 
-#### **Time Series Forecasting Using Support Vector Machines**
-
-##### **Concept of Support Vector Machines**
-
-Till now, we have studied about various stochastic and neural network methods for time series modeling and forecasting. Despite of their own strengths and weaknesses, these methods are quite successful in forecasting applications. Recently, a new statistical learning theory, viz. the Support Vector Machine (SVM) has been receiving increasing attention for classification and forecasting \[18, 24, 30, 31\]. SVM was developed by Vapnik and his co-workers at the AT & T Bell laboratories in 1995 \[24, 29, 33\]. Initially SVMs were designed to solve pattern classification problems, such as optimal character recognition, face identification and text classification, etc. But soon they found wide applications in other domains, such as function approximation, regression estimation and time series prediction problems \[24, 31, 34\].
-
-Vapnik's SVM technique is based on the Structural Risk Minimization (SRM) principle \[24, 29, 30\]. The objective of SVM is to find a decision rule with good generalization ability through selecting some particular subset of training data, called support vectors \[29, 31, 33\]. In this method, an optimal separating hyperplane is constructed, after non-linearly mapping the input space into a higher dimensional feature space. Thus, the quality and complexity of SVM solution does not depend directly on the input space \[18, 19\].
-
-Another important characteristic of SVM is that here the training process is equivalent to solving a linearly constrained quadratic programming problem. So, contrary to other networks' training, the SVM solution is always unique and globally optimal. However a major disadvantage of SVM is that when the training size is large, it requires an enormous amount of computation which increases the time complexity of the solution \[24\].
-
 #### Forecast Performance Measures
 
-While applying a particular model to some real or simulated time series, first the raw data is divided into two parts, viz. the Training Set and Test Set. The observations in the training set are used for constructing the desired model. Often a small subpart of the training set is kept for validation purpose and is known as the Validation Set. Sometimes a preprocessing is done by normalizing the data or taking logarithmic or other transforms. One such famous technique is the Box-Cox Transformation \[23\]. Once a model is constructed, it is used for generating forecasts. The test set observations are kept for verifying how accurate the fitted model performed in forecasting these values. If necessary, an inverse transformation is applied on the forecasted values to convert them in original scale. In order to judge the forecasting accuracy of a particular model or for evaluating and comparing different models, their relative performance on the test dataset is considered.
+While applying a particular model to some real or simulated time series, first the raw data is divided into two parts (**Training Set and Test Set**). The observations in the training set are used for constructing the desired model. Often a small sub-part of the training set is kept for validation purpose and is known as the **Validation Set**. Sometimes a preprocessing is done by normalizing the data or taking logarithmic or other transforms. One such famous technique is the Box-Cox Transformation \[23\]. Once a model is constructed, it is used for generating forecasts. The test set observations are kept for verifying how accurate the fitted model performed in forecasting these values. If necessary, an inverse transformation is applied on the forecast values to convert them in original scale. In order to judge the forecasting accuracy of a particular model or for evaluating and comparing different models, their relative performance on the test dataset is considered.
 
-Due to the fundamental importance of time series forecasting in many practical situations, proper care should be taken while selecting a particular model. For this reason, various performance measures are proposed in literature \[3, 7, 8, 9, 24, 27\] to estimate forecast accuracy and to compare different models. These are also known as performance metrics \[24\]. Each of these measures is a function of the actual and forecasted values of the time series.
+Due to the fundamental importance of time series forecasting in many practical situations, proper care should be taken while selecting a particular model. For this reason, various performance measures are proposed in literature \[3, 7, 8, 9, 24, 27\] to estimate forecast accuracy and to compare different models. These are also known as performance metrics \[24\]. Each of these measures is a function of the actual and forecast values of the time series.
 
 ##### Description of Various Forecast Performance Measures
 
-In each of the forthcoming definitions, $y_{t }$ is the actual value, $f_{t}$ is the forecasted value, $e_{t} = y_{t} - f_{t}$ is the forecast error and n is the size of the test set. Also, $\displaystyle \bar{y} = \frac{1}{n}\sum_{t=1}^{n}y_{t}$ is the test mean and $\displaystyle \sigma^{2} = \frac{1}{n-1}\sum_{t=1}^{n}(y_{t}-\bar{y})^{2}$is the test variance.
+In each of the forthcoming definitions, $y_{t }$ is the actual value, $f_{t}$ is the forecaste value, $e_{t} = y_{t} - f_{t}$ is the forecast error and n is the size of the test set. Also, $\displaystyle \bar{y} = \frac{1}{n}\sum_{t=1}^{n}y_{t}$ is the test mean and $\displaystyle \sigma^{2} = \frac{1}{n-1}\sum_{t=1}^{n}(y_{t}-\bar{y})^{2}$is the test variance.
 
-The Mean Forecast Error (MFE)
+###### **The Mean Forecast Error** $\displaystyle MFE = \frac{1}{n}\sum_{t=1}^{n}e_{t}$
 
-This measure is defined as \[24\] $\displaystyle MFE = \frac{1}{n}\sum_{t=1}^{n}e_{t}$ The properties of MFE are:
+• It is a measure of the average deviation of forecasted values from actual ones.
 
-### Empirical Review
+• It shows the direction of error and thus also termed as the Forecast Bias.
 
-LULC data are records that documents to what extent a region is covered by wetlands, forests, agriculture, impervious surfaces, and other land and water forms. These water forms include open water or wetlands. Land use shows how people use landscape either for conservation, development, agriculture or mixed uses \[6, 7\]. Changes In land can be identified by analysing satellite imagery. However, land use cannot be identified from satellite imagery. Satellite imagery give us information that helps in understanding the present landscape. Furthermore, to see changes through time, different years are needed. With this information, we can assess decades of data as well as insight into the possible effects of these changes that has occured and make better decisions before they can cause great harm. According to \[10\], five different types of LULC pattern were classified barren lands such as Galamsey Site, agricultural lands, urban lands, quarries, and free water bodies, to detect the 25years LULC change in the western Nile delta of Egypt. Supervised maximum likelihood classification (MLC) method together with landsat images were used in Erdas Imagine software. The finding shows a significant change in barren land changing into agricultural land continuously from 1984 to 2009.
+• In MFE, the effects of positive and negative errors cancel out and there is no way to
 
-Similarly, in \[1\] used the maximum likelihood algorithm (MLA) and Markov chain model (MCA) to study the LULC classification using ArcGIS and future prediction using Idiri respectively in Kathmandu city Nepal. Built-up, water body, forest area, open field and cultivated land classes classified. Results show built-up area significantly increased, and water body, forest area, open field and cultivated land decrease downward trend from 1976 to 2009. Furthermore, the Markov chain Analysis prediction for 2017 shows that in 2017 Urban area will increase to cover 72.24 $\%$ of the total land in Kathmandu and cultivated land remains only 20.90$\%$. Waterbody and the open field will increase respectively by 0.59$\%$, 0.19$\%$ whereas forest land decrease by 0.47$\%$.
+know their exact amount.
 
-Furthermore, in \[10\], They made used of the Maximum likelihood classification (MLC), Change detection and spatial matrix analysis to analyse land cover change of fifty-year period (1954 to 2004) in Avellino Italy. The result shows 4 LULC classes, with urban land use increasing rapidly affecting the cultivated land mostly, while woodland and grassland cover decrease was at a lower rate. Moreover, in \[11\] studied the LULC changes and structure in Dhaka metropolitan, Bangladesh in a period of 1975 to 2005. Maximum Likelihood Classification (MLC) and transition matrix method were used for LULC classification and pattern of LULC. The Result shows six classes in LULC of the water body,
+• A zero MFE does not mean that forecasts are perfect, i.e. contain no error; rather it only
 
-vegetation, bare soil, cultivated land built-up and wetland/lowland. Also, a significant increase in the built-up land, while cultivated land, vegetation and wetland decreased accordingly from 1975 to 2005.
+indicates that forecasts are on proper target.
 
-Also, \[12\] used Maximum Likelihood Classification and comparison method to study the LULC classification and change respectively from 1976 to 2003 in Tirupati, India. The results show 6 LULC classes, agricultural land, built-up, dense forest, plantation, water spread and other land, a significant increase in built-up area, plantation forests and other land, while a decrease on the part of the waterbody, dense forest and agricultural land was noticed.
+• MFE does not panelize extreme errors.
 
-Moreover, in \[13\] studied the LULC change in Duzce plain Turkey. Supervised classification and the Corine land cover nomenclature methods used. The result shows 5 LULC classes as urban fabric, forest, heterogeneous agricultural land, inland wasteland and (Industrial, commercial, and transport) units with an accuracy assessment between 92.41$\%$ and 97.3$\%$ for LULC map 2010 and 1987 respectively. Also, a significant change in LULC was noticed with 11.2$\%$ increase in agricultural area and 335$\%$ decrease of forest land.
+• It depends on the scale of measurement and also affected by data transformations.
 
-Also, a significant increase and a decrease of LULC were noticed between the years 1973, 1985, and 2000 within the classes.
+• For a good forecast, i.e. to have a minimum bias, it is desirable that the MFE is as close
+
+to zero as possible.
+
+###### The Mean Absolute Error $\displaystyle MAE = \frac{1}{n}\sum_{t=1}^{n}|e_{t}|$
+
+-   It measures the average absolute deviation of forecasted values from original ones.
+
+<!-- -->
+
+    • It is also termed as the Mean Absolute Deviation (MAD).
+
+    • It shows the magnitude of overall error, occurred due to forecasting.
+
+    • In MAE, the effects of positive and negative errors do not cancel out.
+
+    • Unlike MFE, MAE does not provide any idea about the direction of errors.
+
+    • For a good forecast, the obtained MAE should be as small as possible.
+
+    • Like MFE, MAE also depends on the scale of measurement and data transformations.
+
+    • Extreme forecast errors are not panelized by MAE.
+
+###### The Mean Squared Error $\displaystyle MSE = \frac{1}{n}\sum_{t=1}^{n}e^{2}_{t}$
+
+-   It is a measure of average squared deviation of forecast values.
+
+-   As here the opposite signed errors do not offset one another, MSE gives an overall idea of the error occurred during forecasting.
+
+-   It panelizes extreme errors occurred while forecasting.
+
+-   MSE emphasizes the fact that the total forecast error is in fact much affected by large
+
+-   individual errors, i.e. large errors are much expensive than small errors.
+
+-   MSE does not provide any idea about the direction of overall error.
+
+-   MSE is sensitive to the change of scale and data transformations.
+
+-   Although MSE is a good measure of overall forecast error, but it is not as intuitive and
+
+-   easily interpretable as the other measures discussed before.
+
+    ###### The Root Mean Squared Error $\displaystyle RMSE = \sqrt{MSE} = \sqrt {\frac{1}{n}\sum_{t=1}^{n}e^{2}_{t}}$
+
+    RMSE is nothing but the square root of calculated MSE.
+
+    All the properties of MSE hold for RMSE as well.
 
 ```{r,warning=FALSE,message=FALSE,include=FALSE}
 #| label: load-pkgs
@@ -462,7 +517,7 @@ evi.trend$na.cnt[i] <- na.cnt
 
 ## METHODOLOGY
 
-Data from a time series is a set of observations made in a particular order over a period of time. There is a chance for correlation between observations because time series data points are gathered at close intervals. To help machine learning classifiers work with time series data, we provide several new tools. We first contend that local features or patterns in time series can be found and combined to address challenges involving time-series categorization. Then, a method to discover patterns that are helpful for classification is suggested. We combine these patterns to create computable categorization rules. In order to mask low-quality pixels, we will first collect Sentinel 2 data from Google Earth Engine in order to choose NDVI and EVI values.
+Data from a time series is a set of observations made in a particular order over a period of time. There is a chance for correlation between observations because time series data points are gathered at close intervals. To help machine learning classifiers work with time series data, we provide several new tools. We first contend that local features or patterns in time series can be found and combined to address challenges involving time-series categorization. Then, a method to discover patterns that are helpful for classification is suggested. We combine these patterns to create computable categorization rules. In order to mask low-quality pixels, we will first collect data from Google Earth Engine in order to choose NDVI, EVI values and Climate Change data.
 
 Instead of analyzing the imagery directly, we will summarize the mean NDVI and EVI values. This will shorten the analysis time while still providing an attractive and useful map. We will apply a smoothing strategy using an ARIMA function to fix the situation where some cells may not have NDVI and EVI for a particular month. Once NA values have been eliminated, the time series will be divided to eliminate seasonality before the normalized data is fitted using a linear model. We will go to classify our data on the map and map it after we have extracted the linear trend.
 

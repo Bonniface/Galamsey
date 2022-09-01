@@ -99,10 +99,10 @@ colnames(aoi.ndvi) <- c('hex_id', stringr::str_replace_all(substr(colnames(aoi.n
 colnames(aoi.evi) <- c('hex_id', stringr::str_replace_all(substr(colnames(aoi.evi [, 2:ncol(aoi.evi )]), 2, 11), "_", "-"))
 }
   
-{EVI <- aoi.evi%>%
-    pivot_longer(-hex_id,names_to = "Date",values_to = "EVI")%>%
-    separate(Date,into = c("year","month","day"),sep = "-")%>%
-    select(hex_id,year,month,EVI)}
+# {EVI <- aoi.evi%>%
+#     pivot_longer(-hex_id,names_to = "Date",values_to = "EVI")%>%
+#     separate(Date,into = c("year","month","day"),sep = "-")%>%
+#     select(hex_id,year,month,EVI)}
 {
   #converting the data to a transposed data frame
 NDVI  <- data.frame(ndvi = t(aoi.ndvi[i, 2:ncol(aoi.ndvi)]))
@@ -110,12 +110,12 @@ NDVI  <- data.frame(ndvi = t(aoi.ndvi[i, 2:ncol(aoi.ndvi)]))
 EVI <- data.frame(ndvi = t(aoi.evi[i, 2:ncol(aoi.evi)]))
  }
     
-{Vegetation <- NDVI %>% full_join(EVI,by ="hex_id")
-  Vegetation%>%
-    mutate(month = month(as.Date(rownames(Vegetation))), year = year(as.Date(rownames(Vegetation)))) %>%
-    group_by(year, month) %>%
-    summarise(mean_evi = mean(evi, na.rm = T), .groups = "keep") %>%
-    as.data.frame()}
+# {Vegetation <- NDVI %>% full_join(EVI,by ="hex_id")
+#   Vegetation%>%
+#     mutate(month = month(as.Date(rownames(Vegetation))), year = year(as.Date(rownames(Vegetation)))) %>%
+#     group_by(year, month) %>%
+#     summarise(mean_evi = mean(evi, na.rm = T), .groups = "keep") %>%
+#     as.data.frame()}
 
 
 {
