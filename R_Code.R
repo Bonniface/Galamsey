@@ -99,46 +99,83 @@ colnames(aoi.ndvi) <- c('hex_id', stringr::str_replace_all(substr(colnames(aoi.n
 colnames(aoi.evi) <- c('hex_id', stringr::str_replace_all(substr(colnames(aoi.evi [, 2:ncol(aoi.evi )]), 2, 11), "_", "-"))
 }
   
-# {EVI <- aoi.evi%>%
+{
+  # EVI <- aoi.evi%>%
 #     pivot_longer(-hex_id,names_to = "Date",values_to = "EVI")%>%
 #     separate(Date,into = c("year","month","day"),sep = "-")%>%
 #     select(hex_id,year,month,EVI)}
-{
-  #converting the data to a transposed data frame
-NDVI  <- data.frame(ndvi = t(aoi.ndvi[i, 2:ncol(aoi.ndvi)]))
-    
-EVI <- data.frame(ndvi = t(aoi.evi[i, 2:ncol(aoi.evi)]))
- }
+
     
 # {Vegetation <- NDVI %>% full_join(EVI,by ="hex_id")
 #   Vegetation%>%
 #     mutate(month = month(as.Date(rownames(Vegetation))), year = year(as.Date(rownames(Vegetation)))) %>%
 #     group_by(year, month) %>%
 #     summarise(mean_evi = mean(evi, na.rm = T), .groups = "keep") %>%
-#     as.data.frame()}
+#     as.data.frame()
+}
 
 
 {
-  Dates <- data.frame(date = seq(as.Date('2001-01-01'), as.Date('2022-01-01'),"month"))
+  Dates <- data.frame(date = seq(as.Date('2000-01-01'), as.Date('2022-01-01'),"month"))
   
   Dates$month <- month(Dates$date)
   Dates$year <- year(Dates$date)
-  i <- 1
+  i = 1
   }
+
+{
+  #converting the data to a transposed data frame
+  NDVI <- data.frame(ndvi = t(aoi.ndvi[i, 2:ncol(aoi.ndvi)]))
+  
+  EVI <- data.frame(ndvi = t(aoi.evi[i, 2:ncol(aoi.evi)]))
+}
+colnames(NDVI) <- c("NDVI")
+colnames(EVI) <- c("EVI")
+{
+  # write.csv(NDVI,"Data/NDVI.csv")
+  # write.csv(EVI,"Data/EVI.csv")
+}
+
+{
+  ndvi.trend <- data.frame(hex_id = aoi.ndvi$hex_id, na.NDVI = NA, NA_Values = NA, Trend = NA, P_value = NA, R_Squared = NA, Standard_Error = NA, Trend_Strength = NA, Seasonal_Strength = NA)
+  evi.trend <- data.frame(hex_id = aoi.evi$hex_id, na.EVI = NA, NA_Values = NA, Trend = NA, P_value = NA, R_Squared = NA, Standard_Error = NA, Trend_Strength = NA, Seasonal_Strength = NA)
+  
+  
+  na.NDVI <- length(NDVI[is.na(NDVI)])
+  ndvi.trend$na.NDVI[i] <- na.NDVI
+  
+  na.EVI <- length(EVI[is.na(EVI)])
+  evi.trend$na.EVI[i] <- na.EVI
+}
 
 
 {
-  NDVI <- NDVI %>%
-    mutate(month =month(as.Date(rownames(NDVI))),year =year(as.Date(rownames(NDVI))))%>%
+  # NDVI <- NDVI %>%
+  #   mutate(month =month(as.Date(rownames(NDVI))),year =year(as.Date(rownames(NDVI))))%>%
+  #   group_by(year, month) %>%
+  #   summarise(NDVI = mean(NDVI, na.rm = T), .groups = "keep") %>%
+  #   as.data.frame()
+  # 
+  #  NDVI$date <- as.Date(paste0(NDVI$year, "-", NDVI$month, "-01"))
+  # dx <- Dates[!(Dates$date %in% NDVI$date),]
+  # 
+  # 
+  # dx$NDVI <- NA
+  # NDVI <- rbind(NDVI, dx) %>%
+  #   arrange(date)
+}
+{
+  EVI <- EVI %>%
+    mutate(month =month(as.Date(rownames(EVI))),year =year(as.Date(rownames(EVI))))%>%
     group_by(year, month) %>%
-    summarise(mean_evi = mean(evi, na.rm = T), .groups = "keep") %>%
+    summarise(EVI = mean(EVI, na.rm = T), .groups = "keep") %>%
     as.data.frame()
   
-  NDVI$date <- as.Date(paste0(NDVI$year, "-", NDVI$month, "-01"))
-  dx <- Dates[!(Dates$date %in% NDVI$date),]
+  EVI$date <- as.Date(paste0(EVI$year, "-", EVI$month, "-01"))
+  dx <- Dates[!(Dates$date %in% EVI$date),]
   
   
-  dx$mean_evi <- NA
-  NDVI <- rbind(NDVI, dx) %>%
+  dx$EVI <- NA
+  EVI <- rbind(EVI, dx) %>%
     arrange(date)
-  }
+}

@@ -109,7 +109,7 @@ library(reticulate)
 library(dplyr)
 library(geojsonio)
 
-ee_install()
+# ee_install()
 ```
 
 Now we need to set up our Python and Google Earth Engine API, if you don't already have a GEE account, make sure to sign up here: <https://earthengine.google.com/signup/>. You will be prompted to log in when you initialize your GEE session.
@@ -160,9 +160,8 @@ Now we will download a shapefile for the boundary of Clackamas County, OR. Feel 
 
 ```{r, warning=FALSE, message=FALSE}
 library('sf')
-
-# Load shapefile
-cc <- read_sf('ghana_location.shp')
+cc <- tigris::counties(state = 'Oregon') %>%
+subset(NAME == 'Clackamas')
 cc <- st_transform(cc, st_crs(4326))
 cc.ee <- st_bbox(cc) %>% 
 st_as_sfc() %>% 
@@ -496,4 +495,109 @@ map
 
 ```{r}
 ee_clean_credentials()
+```
+
+```{r,results='hide'}
+library(rgee)
+
+library(reticulate)
+#ee_install()
+ee_check()
+
+ee_Initialize("kalong",drive = TRUE) # initialize GEE,
+#this will have you log in to Google Drive
+
+```
+
+```{r,include=FALSE}
+#Load shape file
+aoi <- read_sf('Ghana shp file/GHA/gadm41_GHA_1.shp')
+aoi <- st_transform(aoi, st_crs(4326))
+aoi.ee <- st_bbox(aoi) %>%
+st_as_sfc() %>%
+sf_as_ee() #Converts it to an Earth Engine Object
+```
+
+```{r,include=FALSE}
+getQABits <- function(image, qa) {
+  # Convert binary (character) to decimal (little endian)
+  qa <- sum(2^(which(rev(unlist(strsplit(as.character(qa), "")) == 1))-1))
+  # Return a mask band image, giving the qa value.
+  image$bitwiseAnd(qa)$lt(1)
+}
+
+mod.clean <- function(img) {
+  # Extract the NDVI band
+  ndvi_values <- img$select("EVI")
+  # Extract the quality band
+  ndvi_qa <- img$select("SummaryQA")
+  # Select pixels to mask
+  quality_mask <- getQABits(ndvi_qa, "11")
+  # Mask pixels with value zero.
+
+  #0.0001 is the MODIS Scale Factor
+  ndvi_values$updateMask(quality_mask)$divide(ee$Image$constant(10000))
+}
+
+modis.evi <- ee$ImageCollection("MODIS/006/MOD13Q1"
+                                )$filter(ee$Filter$date('2000-01-01','2022-01-01'))$map(mod.clean)
+```
+
+Now we will create a hexagonal grid over the study area
+
+```{r}
+#| label: fig-AOI
+#| fig-cap: "Now we will use the grid created above to extract the mean EVI values within each cell for the years 2000-2020."
+
+aoi.proj <- st_transform(aoi, st_crs(2392))
+hex <- st_make_grid(x = aoi.proj, cellsize = 17280, square = FALSE) %>%
+st_sf() %>%
+rowid_to_column('hex_id')
+hex <- hex[aoi.proj,]
+plot(hex)
+```
+
+```{r,include=FALSE}
+#This will take about 30 minutes # 
+if(readline(prompt = "Hit enter to proceed or type 'no' to download the data from G-Drive. ") == "no"){ googledrive::drive_download(file =                               googledrive::as_id("https://drive.google.com/drive/folders/1ZnCpYz38ezSU1XG7ixJ2sPg_DX7bO07J?usp=sharing"),overwrite = T) 
+  
+evi.df <- read.csv("rgee_file_2d44527a3b0e_2022_07_28_15_40_52.csv")  
+evi.df <- evi.df[,3:ncol(evi.df)] # 
+colnames(evi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(evi.df[, 2:ncol(evi.df)]), 2, 11), "_", "-")) #Convert dates to unambiguous format # 
+} else {paste0(system.time(expr = aoi.evi <- ee_extract(x = modis.evi, y = hex["hex_id"], sf = FALSE, scale = 250, fun = ee$Reducer$mean(), via = "drive", quiet = T))/60, " Minutes Elapsed. ")
+evi.df <- as.data.frame(aoi.evi) 
+
+colnames(evi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(evi.df[, 2:ncol(evi.df)]), 2, 11), "_", "-"))
+write.csv(x = evi.df, file = "~/rgee_file_2d44527a3b0e_2022_07_28_15_40_52.csv")}
+```
+
+Which we are going to perform a time series analysis on the data within each grid cell. But first, we will work through the procedure one step at a time.
+
+```{r,include=FALSE}
+#Create an empty list, this will be used to house the time series projections for each cell.
+evi.hw.lst <- list()
+#Create an empty list, this will be used to house the time series decomposition for each cell.
+evi.dcmp.lst <- list()
+#This data frame will hold the trend data
+evi.trend <- data.frame(hex_id = evi.df$hex_id, na.cnt = NA, NA_Values = NA, Trend = NA, P_value = NA, R_Squared = NA, Standard_Error = NA, Trend_Strength = NA, Seasonal_Strength = NA)
+Dates <- data.frame(date = seq(as.Date('2000-01-01'), as.Date('2022-01-01'), "month"))
+
+Dates$month <- month(Dates$date)
+Dates$year <- year(Dates$date)
+i <- 1
+
+
+```
+
+```{r,include=FALSE}
+
+#converting the data to a transposed data frame
+tsv <- data.frame(evi = t(evi.df[i, 2:ncol(evi.df)]))
+colnames(tsv) <- c("evi")
+write.csv(tsv,"Data/tsv.csv")
+#let's take a look
+#We want to get an idea of the number of entries with no EVI value
+na.cnt <- length(tsv[is.na(tsv)])
+evi.trend$na.cnt[i] <- na.cnt
+
 ```

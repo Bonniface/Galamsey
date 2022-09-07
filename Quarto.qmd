@@ -1,76 +1,80 @@
 ---
-title: Segregate The Variability Climate Is Responsible For In Vegetation Loss
+title: THE VARAIBILITY CLIMATE CHANGE IS FESPONSIBLE FOR IN VEGETATION LOSS IN GHANA
 subtitle: Quantifying The Status of Galamsey With Time Series Analsis
+date: "`r Sys.Date()`"
 author:
-  - name: Kalong Boniface
+  - name:  Kalong Boniface
     affiliations:
-      - id: cmu
-        name: University of Energy and Natural Resouce
-        city: Sunyani
-        state: GH
-      
+      - name: Minnesota Department of Natural Resources
+        address: 500 Lafayette Road Saint Paul, MN 55155
+      - name: University of Energy and Natural Resouce
+        department: Department of Mathematics
   - name: Fugah Seletey Mitchell
     affiliations:
-      - ref: cmu
       - name: University of Energy and Natural Resouce
-        city: Sunyani
-        state: GH
-
-cover: images/logo.png
-date: "`r Sys.Date()`"
-title-block-banner: true
-# title-block-style: plain
-institute: University of Energy and Natural Resouce,Sunyani,GH
- # logo: "Latex/Presentation1.png"
-highlight-style: pygments
+        address: Družstevní 666, Vikýřovice, Czechia
+  - name: Matti Meikäläinen
+    email: matti@jy.fi
+    affiliations:
+      - name: University of Kemijärvi
+        department: Department of Biological and Environmental Science
+        address: Kylmäniementie 79, 98120, KEMIJÄRVI, Finland
+cover: uenrlogo.png
+editor: source
 format:
-  html: 
-    code-fold: true
-    code-overflow: wrap
-    html-math-method: katex
   pdf:
-    code-background: true
-    geometry: 
-      - top=30mm
-      - left=30mm
-  docx: default
-toc: true
-toc-depth: 5
-toc-title: Table of Contents
-number-sections: true
-# tbl-colwidths: [75,25]  
-editor: visual
+    documentclass: scrbook
+    classoption: ["onepage", "openany"]
+    number-sections: true
+    template-partials:
+      - "before-body.tex"
+      - "_titlepage.tex" 
+      - "graphics.tex"
+    include-in-header: 
+      - "in-header.tex"
+    toc: true
+    lof: true
+    lot: true
+    toc-depth: 3
+    toc-title: Table of Contents
+    code-block-bg: lightgray
+    titlepage-geometry: 
+      - top=3in
+      - bottom=1in
+      - right=1in
+      - left=1in
+    title-bg-image: "uenrlogo.png"
+    title-bg-location: "UL"
+    title-bg-size: 0.5
+highlight-style: pygments
 bibliography: references.bib
 citation: true
-cite-method: biblatex
+# cite-method: biblatex
 citecolor: blue
 reference-location: block
 link-citations: yes
-# template: quarterly-report.tex
-header-includes:
-  - \setmainfont{Times New Roman}
-# csl: apa-single-spaced.csl
+tbl-colwidths: auto
+tbl-cap-location: top
+df-print: kable
 ---
 
 # CHAPTER ONE
 
 ## INTRODUCTION
 
-<!-- All thing change, but how we respond to change is our responsibility, to fare it or embrasse it. Resisting change leads to one fiat. Our own extinction. Time is a smybole of freedom and peace -->
-
-One would anticipate that the majority of emerging nations, which are still in the early stages of economic development and growth, would have a high forest cover and little deforestation. This, however, has not been the case. Ghana is a lower-middle-income nation that is still working toward middle-income classification. However, it has already begun to see a deforestation rate that is comparable to that of middle-income countries. The rapid population expansion, clearing of feild for Galamsey operation,increased domestic need for wood for things like fuel, furniture,  construction, and timber exports have all contributed to this trend, Bush fires in the 1980s, climate change, and lax law enforcement have all had an impact.
+One would anticipate that the majority of emerging nations, which are still in the early stages of economic development and growth, would have a high forest cover and little deforestation. This, however, has not been the case. Ghana is a lower-middle-income nation that is still working toward middle-income classification. However, it has already begun to see a deforestation rate that is comparable to that of middle-income countries. The rapid population expansion, clearing of feild for Galamsey operation,increased domestic need for wood for things like fuel, furniture, construction, and timber exports have all contributed to this trend, Bush fires in the 1980s, climate change, and lax law enforcement have all had an impact.
 
 The purpose of this paper is to establish an understanding in time series analysis on remotely sensed data. Which will introduced us to the fundamentals of time series modeling, including decomposition, autocorrelation and modeling historical changes in **Vegetation Loss** in Ghana as a result of **Galamsey Operation** and the **Variability Climate Is Responsible For**, the Cause, Dangers and it's Environmental impact.
 
-Galamsey also known as "gather them and sell",[@owusu-nimo2018] is the term given by local Ghanaian for illegal small-scale gold mining in Ghana . The major cause of Galamsey is unemployment among the youth in Ghana [@gracia2018]. Young university graduates rarely find work and when they do it hardly sustains them. The result is that these youth go the extra mile to earn a living for themselves and their family.
+Galamsey also known as "*gather them and sell*",@owusu-nimo2018 is the term given by local Ghanaian for illegal small-scale gold mining in Ghana . The major cause of Galamsey is unemployment among the youth in Ghana @gracia2018 . Young university graduates rarely find work and when they do it hardly sustains them. The result is that these youth go the extra mile to earn a living for themselves and their family.
 
-Another factor is that lack of job security. On November 13, 2009 a collapse occurred in an illegal, privately owned mine in Dompoase, in the Ashanti Region of Ghana. At least 18 workers were killed, including 13 women, who worked as porters for the miners. Officials described the disaster as the worst mine collapse in Ghanaian history [@womendi2009] .
+Another factor is that lack of job security. On November 13, 2009 a collapse occurred in an illegal, privately owned mine in Dompoase, in the Ashanti Region of Ghana. At least 18 workers were killed, including 13 women, who worked as porters for the miners. Officials described the disaster as the worst mine collapse in Ghanaian history @womendi2009 .
 
-Illegal mining causes damage to the land and water supply [@ansah2017] . In March 2017, the Minister of Lands and Natural Resources, Mr. John Peter Amewu, gave the Galamsey operators/illegal miners a three-week ultimatum to stop their activities or be prepared to face the law [@allotey2017] . The activities by Galamseyers have depleted Ghana's forest cover and they have caused water pollution, due to the crude and unregulated nature of the mining process [@gyekye] .
+Illegal mining causes damage to the land and water supplym (@ansah2017 ) . In March 2017, the Minister of Lands and Natural Resources, Mr. John Peter Amewu, gave the Galamsey operators/illegal miners a three-week ultimatum to stop their activities or be prepared to face the law @allotey2017 . The activities by Galamseyers have depleted Ghana's forest cover and they have caused water pollution, due to the crude and unregulated nature of the mining process @gyekye .
 
 Under current Ghanaian constitution, it is illegal to operate as galamseyer.That is to dig on land granted to mining companies as concessions or licenses and any other land in search for gold. In some cases, Galamseyers are the first to discover and work extensive gold deposits before mining companies find out and take over. Galamseyers are the main indicator of the presence of gold in free metallic dust form or they process oxide or sulfide gold ore using liquid mercury.
 
-Between 20,000 to 50,000, including thousands from China are believed to be engaged in Galamsey in Ghana.But according to the Information Minister 200,000 and nearly 3 million people, recently are now into Galamsey operation and rely on it for their livelihoods [@goldgu2017 ]. Their operations are mostly in the southern part of Ghana where it is believe to have substantial reserves of gold deposits, usually within the area of large mining companies [@barenblitt2021] . As a group, they are economically disadvantaged. Galamsey settlements are usually poorer than neighboring agricultural villages. They have high rates of accidents and are exposed to mercury poisoning from their crude processing methods. Many women are among the workers, acting mostly as porters for the miners.
+Between 20,000 to 50,000, including thousands from China are believed to be engaged in Galamsey in Ghana.But according to the Information Minister 200,000 and nearly 3 million people, recently are now into Galamsey operation and rely on it for their livelihoods @goldgu2017 . Their operations are mostly in the southern part of Ghana where it is believe to have substantial reserves of gold deposits, usually within the area of large mining companies @barenblitt2021 . As a group, they are economically disadvantaged. Galamsey settlements are usually poorer than neighboring agricultural villages. They have high rates of accidents and are exposed to mercury poisoning from their crude processing methods. Many women are among the workers, acting mostly as porters for the miners.
 
 ### Background of The Study
 
@@ -126,13 +130,13 @@ To project vegetation responses to changing climates, computer simulation models
 
 ### Empirical Review
 
-According to studies, there is now significant change in vegetation on the earth than there was thirty years ago, and it is distributed differently.
+According to studies, there is now significant change in vegetation on the earth than there was thirty years ago, and it is distributed differently.
 
-More than half of the changes they found are attributed to the consequences of a warmer climate, with people only being responsible for about a third. Perhaps surprisingly, they are unable to definitively link approximately 10% of the changes to either the climate or us.[@alex2013]
+More than half of the changes they found are attributed to the consequences of a warmer climate, with people only being responsible for about a third. Perhaps surprisingly, they are unable to definitively link approximately 10% of the changes to either the climate or us.\@alex2013
 
-Several models and hypotheses have been established in the environmental literature to explain the relationship between human behavior, and environmental (forest)  deforestation or depletion. Recent environmental and energy economics literature focuses on the energy consumption choices made by businesses and people in developing countries [@gertler2016]. Africa's energy supply is made mainly of fuel wood and charcoal to a degree of about 58%. [@specht2015]. Before other demands for forest goods like furniture and paper, the need for fuel wood for cooking and heating is frequently identified as the main driver of deforestation.
+Several models and hypotheses have been established in the environmental literature to explain the relationship between human behaviour, and environmental (forest) deforestation or depletion. Recent environmental and energy economics literature focuses on the energy consumption choices made by businesses and people in developing countries @gertler2016 . Africa's energy supply is made mainly of fuel wood and charcoal to a degree of about 58%. @specht2015 . Before other demands for forest goods like furniture and paper, the need for fuel wood for cooking and heating is frequently identified as the main driver of deforestation.
 
-The causes of tropical forest decline are unclear, according to [@defries2010]. However, scientists were able to pinpoint the two primary causes of deforestation in the 21st century using information from satellite-based estimations in 41 different countries. The authors found a favorable association between forest loss and increases in urban population as well as agricultural exports using two methods of regression analysis. The same proof, however, was not discovered in the case of the increase in rural population. This suggests that forest loss is unavoidable in regions with high levels of human activity.
+The causes of tropical forest decline are unclear, according to @defries2010 . However, scientists were able to pinpoint the two primary causes of deforestation in the 21st century using information from satellite-based estimations in 41 different countries. The authors found a favorable association between forest loss and increases in urban population as well as agricultural exports using two methods of regression analysis. The same proof, however, was not discovered in the case of the increase in rural population. This suggests that forest loss is unavoidable in regions with high levels of human activity.
 
 ### Theoretical Review
 
@@ -142,7 +146,7 @@ This study review, will follow narrative approach to gain insight into research 
 
 A time series in mathematics is a collection of data points that have been listed, graphed, or indexed according to time. is a series of photos taken at successive, evenly spaced intervals of time. Time series are utilized in many areas of applied research that use temporal data, including statistics, signal processing, pattern identification, econometrics, mathematical finance, weather forecasting, and earthquake prediction. Time series analysis refers to techniques for deriving useful statistics and other aspects of time series data through analysis. Time series forecasting is the process of using a model to forecast future values based on values that have already been observed. Regression analysis is frequently used to assess correlations between one or more different time series, however this method of analysis is not without its limitations.
 
-In 1987[@confiden], Makridakis and Hibon, time series analysis experts, held the M-Competition, where participants may submit their forecasts on 1001 time series data drawn from economics, industry, and demographics. The competition revealed four key findings, including:
+In 1987 @confiden , Makridakis and Hibon, time series analysis experts, held the M-Competition, where participants may submit their forecasts on 1001 time series data drawn from economics, industry, and demographics. The competition revealed four key findings, including:
 
 -   Statistically sophisticated or complex methods do not necessarily provide more accurate forecasts than simpler ones.
 
@@ -170,9 +174,9 @@ In general models for time series data can have many forms and represent differe
 
 *Autoregressive (AR)* and *Moving Average (MA)* models, combining these two, the Autoregressive Moving Average (ARMA) and *Autoregressive Integrated Moving Average (ARIMA)* models have been proposed in many literature. The *Autoregressive Fractionally Integrated Moving Average (ARFIMA)* model generalizes ARMA and ARIMA models. For seasonal time series forecasting, a variation of ARIMA. The *Seasonal Autoregressive Integrated Moving Average (SARIMA)* \] model is used.
 
-ARIMA model and its different variations are based on the famous Box-Jenkins principle [@hipel1994] and so these are also broadly known as the Box-Jenkins models.
+ARIMA model and its different variations are based on the famous Box-Jenkins principle @hipel1994 and so these are also broadly known as the Box-Jenkins models.
 
-Linear models have drawn much attention due to their relative simplicity in understanding and implementation. However many practical time series show non-linear patterns. For example, as mentioned by R. Parrelli in , non-linear models are appropriate for predicting volatility changes in economic and financial time series. Considering these facts, various non-linear models have been suggested in literature. Some of them are the famous Autoregressive Conditional Heteroskedasticity (ARCH) model and its variations like Generalized ARCH (GARCH) , Exponential Generalized ARCH (EGARCH) etc., the Threshold Autoregressive (TAR) model, the Non-linear Autoregressive (NAR) model, the Non-linear Moving Average (NMA) model, All the methods consider either of trend, seasonality, or heteroscedasticity to predict the future output. Time series data must be decomposed based on the findings from data analysis. Based on the findings from analysis data must be broken into trend or seasonality.[@zhang1998]
+Linear models have drawn much attention due to their relative simplicity in understanding and implementation. However many practical time series show non-linear patterns. For example, as mentioned by R. Parrelli in , non-linear models are appropriate for predicting volatility changes in economic and financial time series. Considering these facts, various non-linear models have been suggested in literature. Some of them are the famous Autoregressive Conditional Heteroskedasticity (ARCH) model and its variations like Generalized ARCH (GARCH) , Exponential Generalized ARCH (EGARCH) etc., the Threshold Autoregressive (TAR) model, the Non-linear Autoregressive (NAR) model, the Non-linear Moving Average (NMA) model, All the methods consider either of trend, seasonality, or heteroscedasticity to predict the future output. Time series data must be decomposed based on the findings from data analysis. Based on the findings from analysis data must be broken into trend or seasonality. @zhang1998
 
 ##### Exponential Smoothing Models:
 
@@ -338,23 +342,21 @@ to zero as possible.
 
 ###### The Mean Absolute Error $\displaystyle MAE = \frac{1}{n}\sum_{t=1}^{n}|e_{t}|$
 
--   It measures the average absolute deviation of forecasted values from original ones.
+-   It measures the average absolute deviation of forecast values from original ones.
 
-<!-- -->
+-It is also termed as the Mean Absolute Deviation (MAD).
 
-    • It is also termed as the Mean Absolute Deviation (MAD).
+-   It shows the magnitude of overall error, occurred due to forecasting.
 
-    • It shows the magnitude of overall error, occurred due to forecasting.
+-   In MAE, the effects of positive and negative errors do not cancel out.
 
-    • In MAE, the effects of positive and negative errors do not cancel out.
+-   Unlike MFE, MAE does not provide any idea about the direction of errors.
 
-    • Unlike MFE, MAE does not provide any idea about the direction of errors.
+-   For a good forecast, the obtained MAE should be as small as possible.
 
-    • For a good forecast, the obtained MAE should be as small as possible.
+-   Like MFE, MAE also depends on the scale of measurement and data transformations.
 
-    • Like MFE, MAE also depends on the scale of measurement and data transformations.
-
-    • Extreme forecast errors are not panelized by MAE.
+-   Extreme forecast errors are not panelized by MAE.
 
 ###### The Mean Squared Error $\displaystyle MSE = \frac{1}{n}\sum_{t=1}^{n}e^{2}_{t}$
 
@@ -408,111 +410,6 @@ library(lubridate)
 #                install = F, update = F, character.only = T)
 ```
 
-```{r,results='hide'}
-library(rgee)
-
-library(reticulate)
-#ee_install()
-ee_check()
-
-ee_Initialize("kalong",drive = TRUE) # initialize GEE,
-#this will have you log in to Google Drive
-
-```
-
-```{r,include=FALSE}
-#Load shape file
-aoi <- read_sf('Ghana shp file/GHA/gadm41_GHA_1.shp')
-aoi <- st_transform(aoi, st_crs(4326))
-aoi.ee <- st_bbox(aoi) %>%
-st_as_sfc() %>%
-sf_as_ee() #Converts it to an Earth Engine Object
-```
-
-```{r,include=FALSE}
-getQABits <- function(image, qa) {
-  # Convert binary (character) to decimal (little endian)
-  qa <- sum(2^(which(rev(unlist(strsplit(as.character(qa), "")) == 1))-1))
-  # Return a mask band image, giving the qa value.
-  image$bitwiseAnd(qa)$lt(1)
-}
-
-mod.clean <- function(img) {
-  # Extract the NDVI band
-  ndvi_values <- img$select("EVI")
-  # Extract the quality band
-  ndvi_qa <- img$select("SummaryQA")
-  # Select pixels to mask
-  quality_mask <- getQABits(ndvi_qa, "11")
-  # Mask pixels with value zero.
-
-  #0.0001 is the MODIS Scale Factor
-  ndvi_values$updateMask(quality_mask)$divide(ee$Image$constant(10000))
-}
-
-modis.evi <- ee$ImageCollection("MODIS/006/MOD13Q1"
-                                )$filter(ee$Filter$date('2000-01-01','2022-01-01'))$map(mod.clean)
-```
-
-Now we will create a hexagonal grid over the study area
-
-```{r}
-#| label: fig-AOI
-#| fig-cap: "Now we will use the grid created above to extract the mean EVI values within each cell for the years 2000-2020."
-
-aoi.proj <- st_transform(aoi, st_crs(2392))
-hex <- st_make_grid(x = aoi.proj, cellsize = 17280, square = FALSE) %>%
-st_sf() %>%
-rowid_to_column('hex_id')
-hex <- hex[aoi.proj,]
-plot(hex)
-```
-
-```{r,include=FALSE}
-#This will take about 30 minutes # 
-if(readline(prompt = "Hit enter to proceed or type 'no' to download the data from G-Drive. ") == "no"){ googledrive::drive_download(file =                               googledrive::as_id("https://drive.google.com/drive/folders/1ZnCpYz38ezSU1XG7ixJ2sPg_DX7bO07J?usp=sharing"),overwrite = T) 
-  
-evi.df <- read.csv("rgee_file_2d44527a3b0e_2022_07_28_15_40_52.csv")  
-evi.df <- evi.df[,3:ncol(evi.df)] # 
-colnames(evi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(evi.df[, 2:ncol(evi.df)]), 2, 11), "_", "-")) #Convert dates to unambiguous format # 
-} else {paste0(system.time(expr = aoi.evi <- ee_extract(x = modis.evi, y = hex["hex_id"], sf = FALSE, scale = 250, fun = ee$Reducer$mean(), via = "drive", quiet = T))/60, " Minutes Elapsed. ")
-evi.df <- as.data.frame(aoi.evi) 
-
-colnames(evi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(evi.df[, 2:ncol(evi.df)]), 2, 11), "_", "-"))
-write.csv(x = evi.df, file = "~/rgee_file_2d44527a3b0e_2022_07_28_15_40_52.csv")}
-```
-
-Which we are going to perform a time series analysis on the data within each grid cell. But first, we will work through the procedure one step at a time.
-
-```{r,include=FALSE}
-#Create an empty list, this will be used to house the time series projections for each cell.
-evi.hw.lst <- list()
-#Create an empty list, this will be used to house the time series decomposition for each cell.
-evi.dcmp.lst <- list()
-#This data frame will hold the trend data
-evi.trend <- data.frame(hex_id = evi.df$hex_id, na.cnt = NA, NA_Values = NA, Trend = NA, P_value = NA, R_Squared = NA, Standard_Error = NA, Trend_Strength = NA, Seasonal_Strength = NA)
-Dates <- data.frame(date = seq(as.Date('2001-01-01'), as.Date('2022-01-01'), "month"))
-
-Dates$month <- month(Dates$date)
-Dates$year <- year(Dates$date)
-i <- 1
-
-
-```
-
-```{r,include=FALSE}
-
-#converting the data to a transposed data frame
-tsv <- data.frame(evi = t(evi.df[i, 2:ncol(evi.df)]))
-colnames(tsv) <- c("evi")
-write.csv(tsv,"Data/tsv.csv")
-#let's take a look
-#We want to get an idea of the number of entries with no EVI value
-na.cnt <- length(tsv[is.na(tsv)])
-evi.trend$na.cnt[i] <- na.cnt
-
-```
-
 # CHAPTER THREE
 
 ## METHODOLOGY
@@ -531,91 +428,70 @@ The Republic of Ghana, a nation in West Africa, will serve as the location for t
 
 ### Assumptions
 
-```{r,include=FALSE,warning=FALSE,message=FALSE}
-td <- tsv %>%
-  mutate(month = month(as.Date(rownames(tsv))), year = year(as.Date(rownames(tsv)))) %>%
-  group_by(year, month) %>%
-  summarise(mean_evi = mean(evi, na.rm = T), .groups = "keep") %>%
-  as.data.frame()
+```{r,warning=FALSE,message=FALSE}
+# | label: tbl-Data Frame
+# | tbl-cap: "Collected from Google Earth Engine"
+Data_Frame <- read.csv("Data/Time_Series.csv")
+Time_Serie <- read.csv("Data/Time_Series.csv")%>%
+  select(year,NDVI,EVI,Precipitation,MinTemperature,MaxTemperature)%>%
+  group_by(year)%>%
+  summarise_each(funs(median))
 
-td$date <- as.Date(paste0(td$year, "-", td$month, "-01"))
-dx <- Dates[!(Dates$date %in% td$date),]
-
-
-dx$mean_evi <- NA
-Time_Series <- rbind(td, dx) %>%
-  arrange(date)
-write.csv(Time_Series,"Data/Time_Series.csv")
-
-
-tdx <- read.csv("Data/tdx.csv")%>%rename(Date = date)
-Rain <-read.csv("Data/Rainfall.csv")
-Evap <- read.csv("Data/Evaporative Stress.csv")%>%rename(Evaporation = Evaporative)
-Percip <- read.csv("Data/Percip.csv")%>%rename(Precipitation = Precip)
-
-
-Rain_Evap <- Rain%>%full_join(Evap)
-Rain_Evap_Percip <-Rain_Evap%>%full_join(Percip)
-
-DataFrame <- Rain_Evap_Percip%>% full_join(tdx)
-
+kable(Time_Serie,longtable = T, booktabs = T)%>%
+add_header_above(c(" ","Vegetation Indices" = 2,"Climate Change"= 3))%>%
+  kable_styling(latex_options = c("repeat_header"))
 
 ```
 
-```{r,include=FALSE}
-Description <-DataFrame%>%
-      dplyr::select(Date,Rainfall,Evaporation,Precipitation,mean_evi)
+### Exploratory Data Analysis (Summary statistics)
 
-DF <-Description%>%
-      dplyr::select(Rainfall,Evaporation,Precipitation,mean_evi)
+```{r,message=FALSE,warning=FALSE}
+#| label: tbl-Summar Statistics
+#| tbl-cap: "Summary statistics for Climate Date and Vegetation Loss In Ghana"
+Describe <- describe(Time_Serie%>%select(-year))
+kable(Describe,longtable = T, booktabs = T)%>%
+  kable_styling(latex_options = "scale_down")
+
 ```
-
-### Explortory Data Analysis (Summary statistics)
 
 ```{r,warning=FALSE}
- Yearly <- Description%>%
-          separate(Date,into = c("Year","Month","Day"),sep = "-")%>%
-          group_by(Year)%>%
-          summarise_each(funs(median),Rainfall,Evaporation,Precipitation,mean_evi)
 
-Monthly <- Description%>%
-          separate(Date,into = c("Year","Month","Day"),sep = "-")%>%
-           mutate(Month = month.abb[as.numeric(Month)])%>%
-          group_by(Month)%>%
-          summarise_each(funs(mean),Rainfall,Evaporation,Precipitation,mean_evi)
+mpg_list <- split(Time_Serie$EVI,Time_Serie$Precipitation)
+disp_list <- split(Time_Serie$NDVI,Time_Serie$Precipitation )
+inline_plot <- data.frame(year = c(2002, 2010, 2018), mpg_box = "", mpg_hist = "",
+mpg_line1 = "", mpg_line2 = "",
+mpg_points1 = "", mpg_points2 = "", mpg_poly = "")
 
-df <-head(Yearly)
-df%>%
-  kable(booktads = TRUE,align = "lccrr")
-```
+inline_plot %>%
+kbl(booktabs = TRUE) %>%
+kable_paper(full_width = FALSE) %>%
+column_spec(2, image = spec_boxplot(mpg_list)) %>%
+column_spec(3, image = spec_hist(mpg_list)) %>%
+column_spec(4, image = spec_plot(mpg_list, same_lim = TRUE)) %>%
+column_spec(5, image = spec_plot(mpg_list, same_lim = FALSE)) %>%
+column_spec(6, image = spec_plot(mpg_list, type = "p")) %>%
+column_spec(7, image = spec_plot(mpg_list, disp_list, type = "p")) %>%
+column_spec(8, image = spec_plot(mpg_list, polymin = 5))
 
-```{r,include=FALSE,message=FALSE,warning=FALSE}
-#| label: tbl-stats
-#| tbl-cap: "Summary statistics for Climate Date and Vegetation Loss In Ghana"
-Describe <- describe(Description)
-Describe%>%
-  kable(booktads = TRUE)%>%
-  kable_styling(latex_options = "scale_down",font_size = 8)
-```
-
-```{r,include=FALSE}
-# ggplot(lincoln_weather, aes(x = `Mean Temperature [F]`, y = `Month`, fill = ..x..)) +
-#   geom_density_ridges_gradient(scale = 3, rel_min_height = 0.01, gradient_lwd = 1.) +
-#   scale_x_continuous(expand = c(0.01, 0)) +
-#   scale_y_discrete(expand = c(0.01, 0)) +
-#   scale_fill_viridis(name = "Temp. [F]", option = "C") +
-#   labs(title = 'Temperatures in Lincoln NE',
-#        subtitle = 'Mean temperatures (Fahrenheit) by month for 2016\nData: Original CSV from the Weather Underground') +
-#   theme_ridges(font_size = 13, grid = TRUE) + theme(axis.title.y = element_blank())
 ```
 
 ```{r}
-pairs.default(DF,main = "Corellation Between ",bg = c("red", "green", "blue"),pch = 21)
+#| label: fig-Pairs Plot
+#| fig-cap: "Correlation Between The Variables"
+pairs(Time_Serie,bg = c("red", "green", "blue"),pch = 21)
 ```
 
-```{r, include=FALSE}
-na.cnt <- length(Time_Series[is.na(Time_Series)])
+```{r}
+summary(lm(EVI~Precipitation+MinTemperature+MaxTemperature,Time_Serie))
 
+```
+
+```{r}
+#| label: tbl-Analysis of Variance Table
+#| tbl-cap: "ANOVA Table for Climate Date and Vegetation Loss In Ghana"
+lm<-lm(EVI~ Precipitation + MinTemperature +MaxTemperature,Time_Serie)
+kable(anova(lm),booktab = T) %>%
+  kable_styling(latex_options = c("repeat_header"))
 ```
 
 ### Non-Parametric Analysis
@@ -630,33 +506,19 @@ na.cnt <- length(Time_Series[is.na(Time_Series)])
 
 ### Analysis and Finding
 
-```{r}
+```{r,include=FALSE}
 #| label: fig-Time Series And Decompostion
 #| fig-cap: "Time Series And Decompostion"
-#| fig-subcap:
-#|   - "Stationary Signal"
-#|   - "Decompostion Of The Series"
-#| layout-ncol: 2
-#| column: page-right
+
 # Convert data to time series.
-Time_Series <- ts(data = Time_Series$mean_evi, start = c(2001, 1), end = c(2019, 11), frequency = 12)
+Time_Series <- ts(data = Time_Serie$EVI, start = c(2001, 1), end = c(2019, 11), frequency = 12)
 plot(Time_Series)
-
-
-Time_Series <- if(na.cnt > 0){imputeTS::na_kalman(Time_Series, model = "auto.arima", smooth = T)} else {
-    Time_Series
-}
 plot(Time_Series)
-
-
 tdx.dcp <- stl(Time_Series, s.window = 'periodic')
 plot(tdx.dcp)
-
 Tt <- trendcycle(tdx.dcp)
 St <- seasonal(tdx.dcp)
 Rt <- remainder(tdx.dcp)
-# plot(Tt)
-# plot(St)
 plot(Rt)
 ```
 
@@ -744,20 +606,8 @@ plot(tdx.ns)
 abline(a = summary$coefficients[1,1], b = summary$coefficients[2,1], col = 'blue')
 ```
 
-```{r,include=FALSE}
-# # Count of na values to dataframe
-# # Calculating Trend and Seasonal Strength
-# evi.trend$NA_Values[i] <- na.cnt
-# evi.trend$Trend[i] <- summary$coefficients[2,1]
-# evi.trend$Trend_Strength[i] <- round(max(0,1-(var(Rt)/var(Tt+Rt))),1)
-# evi.trend$Seasonal_Strength[i] <- round(max(0,1-(var(Rt)/var(St+Rt))),1)
-# evi.trend$P_value[i] <- summary$coefficients[2,4]
-# evi.trend$R_Squared[i] <- summary$r.squared
-# evi.trend$Standard_Error[i] <- summary$sigma
-# evi.trend[i,]
-```
-
-```{r,warning=FALSE}
+```{r,warning=FALSE,include=FALSE}
+library(ggpubr)
 ggdensity(Time_Series,fill = "#0073C2FF",color ="#0073C2FF",add = "mean",rug = TRUE)
 ```
 
@@ -787,4 +637,4 @@ We have considered a few important performance measures for evaluating the accur
 
 Time series forecasting is a fast growing area of research and as such provides many scope for future works. One of them is the Combining Approach, i.e. to combine a number of different and dissimilar methods to improve forecast accuracy. A lot of works have been done towards this direction and various combining methods have been proposed in literature \[8, 14, 15, 16\]. Together with other analysis in time series forecasting, we have thought to find an efficient combining model, in future if possible. With the aim of further studies in time series modeling and forecasting
 
-## References
+# References

@@ -84,6 +84,19 @@ ClimateChange <- Precipitation%>%full_join(MinimumTemperature)%>%full_join(Maxim
   write.csv(Precipitation,"Data/Precipitation.csv")
   write.csv(MinimumTemperature,"Data/MinTemperature.csv")
   write.csv(MaximumTemperature,"Data/MaxTemperature.csv")}
+{
+  Climate <- read.csv("Data/ClimateChange.csv")
+  NDVI <- read.csv("Data/NDvI.csv")%>%separate(Date, into = c("month","day","year"),sep ="/")
+  EVI <- read.csv("Data/EVI.csv")%>%separate(Date, into = c("month","day","year"),sep ="/")
+  
+  Vegetation <- NDVI%>%  full_join(EVI)
+  Climate$year <- as.character(Climate$year)
+  # Climate$month <- as.character(Climate$month)
+  df <- Vegetation%>%select(-day)%>%full_join(Climate, by =  "year")
+  df <-df%>%select(-month.x)%>%filter(year > 2000)%>%rename(month = month.y)
+   write.csv(df,"Data/Time_Series.csv")
+   
+}
 
 
   # ggplot(aes(x = month, y = pr, group = NAME, color = pr)) +
