@@ -3,26 +3,15 @@ title: THE VARAIBILITY CLIMATE CHANGE IS FESPONSIBLE FOR IN VEGETATION LOSS IN G
 subtitle: Quantifying The Status of Galamsey With Time Series Analsis
 date: "`r Sys.Date()`"
 author:
-  - name:  Kalong Boniface
-    affiliations:
-      - name: Minnesota Department of Natural Resources
-        address: 500 Lafayette Road Saint Paul, MN 55155
-      - name: University of Energy and Natural Resouce
-        department: Department of Mathematics
+  - name:Kalong Boniface
   - name: Fugah Seletey Mitchell
-    affiliations:
-      - name: University of Energy and Natural Resouce
-        address: Družstevní 666, Vikýřovice, Czechia
-  - name: Matti Meikäläinen
-    email: matti@jy.fi
-    affiliations:
-      - name: University of Kemijärvi
-        department: Department of Biological and Environmental Science
-        address: Kylmäniementie 79, 98120, KEMIJÄRVI, Finland
-cover: uenrlogo.png
+university: UNIVERSITY OF ENERGY AND NATURAL RESOURCES, SUNYANI
+university-logo: Images/Presentation1.pdf
+university-logo-width: 5cm
 editor: source
 format:
   pdf:
+    # template: templates/template.tex
     documentclass: scrbook
     classoption: ["onepage", "openany"]
     number-sections: true
@@ -43,9 +32,6 @@ format:
       - bottom=1in
       - right=1in
       - left=1in
-    title-bg-image: "uenrlogo.png"
-    title-bg-location: "UL"
-    title-bg-size: 0.5
 highlight-style: pygments
 bibliography: references.bib
 citation: true
@@ -56,6 +42,18 @@ link-citations: yes
 tbl-colwidths: auto
 tbl-cap-location: top
 df-print: kable
+dedication: For 
+acknowledgements: |
+  `r paste(readLines("front-and-back-matter/_acknowledgements.qmd"), collapse = '\n  ')`
+show-acknowledgements-in-toc: true
+abstract-heading: "Abstract"
+abstract: |
+  `r paste(readLines("front-and-back-matter/_abstract.qmd"), collapse = "\n  ")`
+show-abstract-in-toc: true
+# add a second abstract with abstract-second-heading: "Abstract two", and abstract-second: "My abstract"
+abbreviations: front-and-back-matter/_abbreviations.qmd
+abbreviations-width: 3.2cm
+abbreviations-heading: List of Abbreviations        
 ---
 
 # CHAPTER ONE
@@ -454,24 +452,24 @@ kable(Describe,longtable = T, booktabs = T)%>%
 
 ```
 
-```{r,warning=FALSE}
+```{r,warning=FALSE,include=FALSE}
 
-mpg_list <- split(Time_Serie$EVI,Time_Serie$Precipitation)
-disp_list <- split(Time_Serie$NDVI,Time_Serie$Precipitation )
-inline_plot <- data.frame(year = c(2002, 2010, 2018), mpg_box = "", mpg_hist = "",
-mpg_line1 = "", mpg_line2 = "",
-mpg_points1 = "", mpg_points2 = "", mpg_poly = "")
-
-inline_plot %>%
-kbl(booktabs = TRUE) %>%
-kable_paper(full_width = FALSE) %>%
-column_spec(2, image = spec_boxplot(mpg_list)) %>%
-column_spec(3, image = spec_hist(mpg_list)) %>%
-column_spec(4, image = spec_plot(mpg_list, same_lim = TRUE)) %>%
-column_spec(5, image = spec_plot(mpg_list, same_lim = FALSE)) %>%
-column_spec(6, image = spec_plot(mpg_list, type = "p")) %>%
-column_spec(7, image = spec_plot(mpg_list, disp_list, type = "p")) %>%
-column_spec(8, image = spec_plot(mpg_list, polymin = 5))
+# mpg_list <- split(Time_Serie$EVI,Time_Serie$Precipitation)
+# disp_list <- split(Time_Serie$NDVI,Time_Serie$Precipitation )
+# inline_plot <- data.frame(year = c(2002, 2010, 2018),
+#     mpg_box = "",mpg_hist = "",mpg_line1 = "", mpg_line2 = "",
+#            mpg_points1 = "", mpg_points2 = "", mpg_poly = "")
+# 
+# inline_plot %>%
+# kbl(booktabs = TRUE) %>%
+# kable_paper(full_width = FALSE) %>%
+# column_spec(2, image = spec_boxplot(mpg_list)) %>%
+# column_spec(3, image = spec_hist(mpg_list)) %>%
+# column_spec(4, image = spec_plot(mpg_list, same_lim = TRUE)) %>%
+# column_spec(5, image = spec_plot(mpg_list, same_lim = FALSE)) %>%
+# column_spec(6, image = spec_plot(mpg_list, type = "p")) %>%
+# column_spec(7, image = spec_plot(mpg_list, disp_list, type = "p")) %>%
+# column_spec(8, image = spec_plot(mpg_list, polymin = 5))
 
 ```
 
