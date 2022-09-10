@@ -10,6 +10,7 @@
 \usepackage{aligned-overset}
 \usepackage{mathrsfs}
 \usepackage{makeidx}
+\usepackage{times}
 \usepackage{graphicx}
 \usepackage[left=3.75cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
 \usepackage[section]{placeins}
@@ -34,9 +35,116 @@
 }
 \usepackage{xcolor}
 \makeatletter
-%\renewcommand{\@makechapterhead}[]{%
-%	\vspace*{20 pt}%
-%	{\setlength{\parindent}{0pt} \raggedright\centring\bf \bfseries\normalfont{\thechapter\ #1\par\nobreak\vspace{20 pt}}}}
+
+
+%%%%%%% PAGE HEADERS AND FOOTERS %%%%%%%%%
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+\fancyhf{} % clear the header and footers
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter. #1}{\thechapter. #1}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection. #1}} 
+\renewcommand{\headrulewidth}{0pt}
+
+$if(running-header)$
+\fancy$running-header-foot-or-head$[$running-header-position-leftmark$]{\emph{\leftmark}} 
+\fancy$running-header-foot-or-head$[$running-header-position-rightmark$]{\emph{\rightmark}} 
+$endif$
+
+% % UL page number position 
+% \fancy$ordinary-page-number-foot-or-head$[$ordinary-page-number-position$]{\emph{\thepage}} %regular pages
+% \fancypagestyle{plain}{\fancyhf{}\fancy$chapter-page-number-foot-or-head$[$chapter-page-number-position$]{\emph{\thepage}}} %chapter pages
+
+
+%%%%% SELECT YOUR DRAFT OPTIONS
+% This adds a "DRAFT" footer to every normal page.  (The first page of each chapter is not a "normal" page.)
+$if(draft-mark)$
+\fancy$draft-mark-foot-or-head$[$draft-mark-position$]{\emph{DRAFT Printed on \today}}
+$endif$
+
+% IP feb 2021: option to include line numbers in PDF
+$if(includeline-num)$
+\usepackage{lineno}
+\linenumbers
+$endif$
+
+% for line wrapping in code blocks
+$if(line-wrapping-in-code)$
+\usepackage{fancyvrb}
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines=true, breakanywhere=true, commandchars=\\\{\}}
+$endif$
+
+% This highlights (in blue) corrections marked with (for words) \mccorrect{blah} or (for whole
+% paragraphs) \begin{mccorrection} . . . \end{mccorrection}.  This can be useful for sending a PDF of
+% your corrected thesis to your examiners for review.  Turn it off, and the blue disappears.
+$if(corrections)$
+\correctionstrue
+$endif$
+
+
+%%%%% BIBLIOGRAPHY SETUP
+% Note that your bibliography will require some tweaking depending on your department, preferred format, etc.
+% If you've not used LaTeX before, I recommend reading a little about biblatex/biber and getting started with it.
+% If you're already a LaTeX pro and are used to natbib or something, modify as necessary.
+% Either way, you'll have to choose and configure an appropriate bibliography format...
+
+% this enables pandoc citations
+$if(csl-refs)$
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{$refs-space-between-entries$}
+  \setlength{\baselineskip}{$refs-line-spacing$}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+$endif$
+
+$if(use-biblatex)$
+\usepackage[$bib-latex-options$]{biblatex}
+
+$for(bibliography)$
+\addbibresource{$bibliography$}
+$endfor$
+
+% This makes the bibliography left-aligned (not 'justified') and slightly smaller font.
+\renewcommand*{\bibfont}{\raggedright\small}
+
+$endif$
+
+$if(use-natbib)$
+\usepackage{natbib}
+\setcitestyle{$natbib-citation-style$}
+\bibliographystyle{$natbib-bibliography-style$}
+\addto\captionsenglish{%
+  \renewcommand{\bibname}{}
+  \renewcommand{\bibsection}{}
+}
+
+% This makes the bibliography left-aligned (not 'justified') and slightly smaller font.
+\renewcommand*{\bibfont}{\raggedright\small}
+
+$endif$
+
+
+
 \makeatother
 \titleformat{\section}{\bfseries\normalfont\centering\bf}{\thesection}{0em}{}
 \begin{document}
@@ -49,18 +157,18 @@
 			
 			\begin{figure}[h]
 				\begin{center}
-					\includegraphics[width=0.30\linewidth, height=.20\textheight]{images/logo2}
+					\includegraphics[width=0.30\linewidth, height=.20\textheight]{uenrlogo.png}
 				\end{center}
 			\end{figure}
 			
 			{\normalfont{\textbf{UNIVERSITY OF ENERGY AND NATURAL RESOURCES, SUNYANI}}}\\
 			\vspace{1.7cm}
-			{\normalfont \textbf{PROJECT TOPIC IN CAPS}}
+			{\normalfont \title{$title$}}
 			
 			
 			\vspace{2.7cm}
 			
-			{\normalfont {\textbf{SURNAME, FIRST NAMES}}}
+			{\normalfont {\author{$author$}}}
 			\vspace{1.7cm}
 			
 			
@@ -80,19 +188,19 @@
 	\pagenumbering{roman}
 	\begin{titlepage}
 		\begin{center}
-			{\normalfont \textbf{PROJECT TOPIC IN CAPS}}
+			{\normalfont \title{$title$}}
 			
 			\vspace{3.7cm}
 			{\normalfont {by}}\\
 			\vspace{1cm}
-			{\normalfont {Name - exams number\\ B.Sc. (Program) Location}}
+			{\normalfont {Kalong Boniface - UEB3603118\\ B.Sc. Actuarial Science Location}}
 			\vspace{1.7cm}
 			
 			
 			\begin{center}
 				{\normalfont A Thesis submitted to the Department of Mathematics and Statistics, School of Science, University of Energy and Natural Resources, Sunyani in partial fulfillment of the requirements for the degree of Bachelor of Science in Mathematics }\\
 				\vspace{2cm}	
-				{\normalfont JUNE 2019}
+				{\normalfont \date{$date$}
 			\end{center}
 			
 		\end{center}
@@ -122,8 +230,6 @@
 	\\
 	Signature:	................................. \hspace\fill 
 	Date: .................................	 \\
-	
-	
 	\newpage
 	\section*{\textbf{ABSTRACT}}
 	\addcontentsline{toc}{section}{ABSTRACT}
@@ -139,5 +245,23 @@
 	
 	Write Acknowledgment here
 	
+	\newpage
 	
+
+
+	$body$
+	
+%%%%% REFERENCES
+$if(use-biblatex)$
+\setlength{\baselineskip}{0pt} % JEM: Single-space References
+
+% we are setting the title for the references section in front-and-back-matter/99-references_heading.Rmd
+{\renewcommand*\MakeUppercase[1]{#1}%
+\printbibliography[heading=none]}
+
+$endif$
+
+$if(use-natbib)$
+\bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
+$endif$
 \end{document}

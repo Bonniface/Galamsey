@@ -1,18 +1,18 @@
 ---
-title: THE VARAIBILITY CLIMATE CHANGE IS FESPONSIBLE FOR IN VEGETATION LOSS IN GHANA
+editor: visual
+title: THE VARIABILITY CLIMATE CHANGE IS RESPONSIBLE FOR IN VEGETATION LOSS IN GHANA
 subtitle: Quantifying The Status of Galamsey With Time Series Analsis
 date: "`r Sys.Date()`"
 author:
-  - name:Kalong Boniface
+  - name: Kalong Boniface
   - name: Fugah Seletey Mitchell
 university: UNIVERSITY OF ENERGY AND NATURAL RESOURCES, SUNYANI
-university-logo: Images/Presentation1.pdf
+university-logo: Images/uenrlogo.png
 university-logo-width: 5cm
-editor: source
 format:
   pdf:
-    # template: templates/template.tex
-    documentclass: scrbook
+    template: templates/templatex.tex
+    documentclass: report
     classoption: ["onepage", "openany"]
     number-sections: true
     template-partials:
@@ -27,6 +27,7 @@ format:
     toc-depth: 3
     toc-title: Table of Contents
     code-block-bg: lightgray
+    geometry: left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm
     titlepage-geometry: 
       - top=3in
       - bottom=1in
@@ -35,34 +36,21 @@ format:
 highlight-style: pygments
 bibliography: references.bib
 citation: true
-# cite-method: biblatex
 citecolor: blue
 reference-location: block
 link-citations: yes
 tbl-colwidths: auto
 tbl-cap-location: top
 df-print: kable
-dedication: For 
-acknowledgements: |
-  `r paste(readLines("front-and-back-matter/_acknowledgements.qmd"), collapse = '\n  ')`
-show-acknowledgements-in-toc: true
-abstract-heading: "Abstract"
-abstract: |
-  `r paste(readLines("front-and-back-matter/_abstract.qmd"), collapse = "\n  ")`
-show-abstract-in-toc: true
-# add a second abstract with abstract-second-heading: "Abstract two", and abstract-second: "My abstract"
-abbreviations: front-and-back-matter/_abbreviations.qmd
-abbreviations-width: 3.2cm
-abbreviations-heading: List of Abbreviations        
 ---
 
 # CHAPTER ONE
 
 ## INTRODUCTION
 
-One would anticipate that the majority of emerging nations, which are still in the early stages of economic development and growth, would have a high forest cover and little deforestation. This, however, has not been the case. Ghana is a lower-middle-income nation that is still working toward middle-income classification. However, it has already begun to see a deforestation rate that is comparable to that of middle-income countries. The rapid population expansion, clearing of feild for Galamsey operation,increased domestic need for wood for things like fuel, furniture, construction, and timber exports have all contributed to this trend, Bush fires in the 1980s, climate change, and lax law enforcement have all had an impact.
+One would anticipate that the majority of emerging nations, which are still in the early stages of economic development and growth, would have a high forest cover and little deforestation. This, however, has not been the case. Ghana is a lower-middle-income nation that is still working toward middle-income classification. However, it has already begun to see a deforestation rate that is comparable to that of middle-income countries. The rapid population expansion, clearing of field for Galamsey operation,increased domestic need for wood for things like fuel, furniture, construction, and timber exports have all contributed to this trend, Bush fires in the 1980s, climate change, and lax law enforcement have all had an impact.
 
-The purpose of this paper is to establish an understanding in time series analysis on remotely sensed data. Which will introduced us to the fundamentals of time series modeling, including decomposition, autocorrelation and modeling historical changes in **Vegetation Loss** in Ghana as a result of **Galamsey Operation** and the **Variability Climate Is Responsible For**, the Cause, Dangers and it's Environmental impact.
+The purpose of this paper is to establish an understanding in time series analysis on remotely sensed data. Which will introduced us to the fundamentals of time series modelling, including decomposition, autocorrelation and modelling historical changes in **Vegetation Loss** in Ghana as a result of **Galamsey Operation** and the **Variability Climate Is Responsible For**, the Cause, Dangers and it's Environmental impact.
 
 Galamsey also known as "*gather them and sell*",@owusu-nimo2018 is the term given by local Ghanaian for illegal small-scale gold mining in Ghana . The major cause of Galamsey is unemployment among the youth in Ghana @gracia2018 . Young university graduates rarely find work and when they do it hardly sustains them. The result is that these youth go the extra mile to earn a living for themselves and their family.
 
@@ -74,7 +62,7 @@ Under current Ghanaian constitution, it is illegal to operate as galamseyer.That
 
 Between 20,000 to 50,000, including thousands from China are believed to be engaged in Galamsey in Ghana.But according to the Information Minister 200,000 and nearly 3 million people, recently are now into Galamsey operation and rely on it for their livelihoods @goldgu2017 . Their operations are mostly in the southern part of Ghana where it is believe to have substantial reserves of gold deposits, usually within the area of large mining companies @barenblitt2021 . As a group, they are economically disadvantaged. Galamsey settlements are usually poorer than neighboring agricultural villages. They have high rates of accidents and are exposed to mercury poisoning from their crude processing methods. Many women are among the workers, acting mostly as porters for the miners.
 
-### Background of The Study
+## Background of The Study
 
 As Galamsey is considered an illegal activity, they operations are hidden to the eyes of the authorities.So locating them is quite tricky ,but with satellite imagery ,it now possible to locate their operating and put an end to it. One of the features of Google Earth Engine is the ability to access years of satellite imagery without needing to download, organize, store and process this information. For instance, within the Satellite image collection, now it possible to access imagery back to the 90's, allowing us to look at areas of interest on the map to visualize and quantify how much things has changed over time. With Earth Engine, Google maintains the data and offers it's computing power for processing.Users can now access hundreds of time series images and analyze changes across decades using GIS and R or other programming language to analyze these dataset.
 
@@ -140,7 +128,7 @@ The causes of tropical forest decline are unclear, according to @defries2010 . H
 
 This study review, will follow narrative approach to gain insight into research topics. A time series is a set of observations, each being recorded at a particular time and the collection of such observation is referred to as time series data. The data is analysed to extract statistical information, characteristics of the data and to predict the output. As the data might tend to follow a pattern in time series data, the Machine Learning model finds it difficult to predict appropriately hence time series analysis and its approaches have made it simpler for prediction.
 
-#### What is Time Series Analysis?
+**What is Time Series Analysis?**
 
 A time series in mathematics is a collection of data points that have been listed, graphed, or indexed according to time. is a series of photos taken at successive, evenly spaced intervals of time. Time series are utilized in many areas of applied research that use temporal data, including statistics, signal processing, pattern identification, econometrics, mathematical finance, weather forecasting, and earthquake prediction. Time series analysis refers to techniques for deriving useful statistics and other aspects of time series data through analysis. Time series forecasting is the process of using a model to forecast future values based on values that have already been observed. Regression analysis is frequently used to assess correlations between one or more different time series, however this method of analysis is not without its limitations.
 
@@ -164,7 +152,7 @@ The time series data is visualized and analyzed to find out mainly three things,
 
 Few approaches do not perform well when trends are present in the data, and even fewer do not perform well when the data is seasonal. In order to choose the optimal statistical method for forecasting, trends, seasonality, and heteroscedasticity must be taken into account.
 
-#### **Time Series Forecasting Using Stochastic Models**
+**Time Series Forecasting Using Stochastic Models**
 
 The selection of a proper model is extremely important as it reflects the underlying structure of the series and this fitted model in turn is used for future forecasting. A time series model is said to be linear or non-linear depending on whether the current value of the series is a linear or non-linear function of past observations.
 
@@ -176,13 +164,13 @@ ARIMA model and its different variations are based on the famous Box-Jenkins pri
 
 Linear models have drawn much attention due to their relative simplicity in understanding and implementation. However many practical time series show non-linear patterns. For example, as mentioned by R. Parrelli in , non-linear models are appropriate for predicting volatility changes in economic and financial time series. Considering these facts, various non-linear models have been suggested in literature. Some of them are the famous Autoregressive Conditional Heteroskedasticity (ARCH) model and its variations like Generalized ARCH (GARCH) , Exponential Generalized ARCH (EGARCH) etc., the Threshold Autoregressive (TAR) model, the Non-linear Autoregressive (NAR) model, the Non-linear Moving Average (NMA) model, All the methods consider either of trend, seasonality, or heteroscedasticity to predict the future output. Time series data must be decomposed based on the findings from data analysis. Based on the findings from analysis data must be broken into trend or seasonality. @zhang1998
 
-##### Exponential Smoothing Models:
+**Exponential Smoothing Models:**
 
 Time-series data relies on the assumption that the observation at a certain point of time depends on previous observations in time . The previous observations are given weights as they contribute to the future prediction. The process of weighting is done using a notation called '**Theta**'. To find the best possible value for theta, we must perform sum of squared errors between the actual versus predicted value of the previous observation. Using this process, we can predict the next value but to predict more than one value this process does contribute much as the prediction as going to be same as the previous value.
 
 To understand the methods and to evaluate different models, few concepts like *stationarity* and *differencing* must be understood. Both these concepts help in making the core concepts of the methods easy to interpret.
 
-##### **Stationarity:**
+**Stationarity:**
 
 Stationarity alludes to an irregular process that creates a time-series which has mean, and distribution to be constant through time. Distribution only depends on time and not location in time (Manuca, R. and Savit, R., 1996). If the distribution is same over different time windows is strong stationarity and if only mean and variance are similar, then it is weak stationarity. Irrespective of strong or weak, stationarity helps build a class of models such Autoregression (AR), Moving Average (MA), ARIMA (Witt, A., Kurths, J. and Pikovsky, A., 1998).
 
@@ -190,17 +178,17 @@ An MA(q) process is always stationary, irrespective of the values the MA paramet
 
 $\theta (L) = 0$ lie outside the unit circle, then the ARMA(p, q) process is invertible and can be expressed as a pure AR process..
 
-##### **Differencing:**
+**Differencing:**
 
 This concept is used to make trending and seasonal data stationary. Subtraction between current observation and previous observation is the process of differencing. It helps in making the mean constant (Dickey, D.A. and Pantula, S.G., 1987).
 
-##### **Autoregressive models (AR):**
+**Autoregressive models (AR):**
 
 AR work on a concept called lags which is defined as the forecast of a series is solely based on the past values in the series (Cryer, J.D., 1986). Formula for Autoregression AR(1): $\displaystyle y_{t} = \omega + \phi Y _{t-1}+ e_{t}$ is stationary when \$\|\phi\_{1}\|\< 1\$ with a constant mean $\displaystyle \mu = \frac{\omega}{1-\phi_{1}}$ and constant variance $\displaystyle \gamma_{o} = \frac{\sigma^{2}}{1-\phi_{1}^{2}}$ Where ; $y_{t}$ = Target , $\omega$ = Intercept, $\phi$ = Coefficient, $Y_{t-1}$=Lagged target, $e_{t}$ = Error\\
 
 It depends only on one lag in the past and also called AR model of order one (Shibata, R., 1976). Autoregressive models are also known as long memory models as they must keep the memory of all the lags until its initial start point and must calculate their value. If there is any shock incident in the past which must have led to fluctuations in the data, it will have its effect on the present value which makes the model quite sensitive to shocks (Shibata, R., 1976).
 
-##### **Moving Average (MA):**
+**Moving Average (MA):**
 
 The moving average model forecasts a series based on the past error in the series called error lags. Hunter, J.S., Formula for moving average method is given as: $y_{t} = \omega + \theta e _{t-1}+ e_{t}$
 
@@ -208,7 +196,7 @@ In (2), all the abbreviations are same to AR model formula except, = Previous er
 
 There arises a question as this method uses the error for the previous value but when it reaches to the first point there will be no previous value, to overcome this the average of the series is considered as the value before the starting point. These are short memory models as the error in the past will not have much effect on the future value (Hunter, J.S., 1986).
 
-##### **Comparing AR method with MA method:**
+**Comparing AR method with MA method:**
 
 Let focus on the two methods which were used in the early years of time series forecasting and compare the performance of each model on a particular task. Testing against general autoregressive and moving average error models where the regressors include lagged dependent variables. (Godfrey, L.G., 1978) In their paper have explained the order of the error process under the alternate hypothesis using lagrange multiplier test (Silvey, S.D., 1959). As per the tests the errors of both the models were similar, but the constraints were different under which the tests were performed are also to be considered. As they have concluded in their paper stating that that the outcome of the model's performance depends on the estimate chosen to be null hypothesis or alternate hypothesis.
 
@@ -216,7 +204,7 @@ In addition, paper written by (Baltagi, B.H. and Li, Q., 1995), Demonstrates the
 
 The findings of both the paper were quite different but one cannot prove either of the model to be better as the performance depends on the parameters used in the model. Each model is unique to its use case, and it depends on the user to choose accordingly based on the data.
 
-##### **Autocorrelation and Partial Autocorrelation Functions (ACF and PACF)**
+**Autocorrelation and Partial Autocorrelation Functions (ACF and PACF)**
 
 To determine a proper model for a given time series data, it is necessary to carry out the ACF and PACF analysis. These statistical measures reflect how the observations in a time series are related to each other. For modeling and forecasting purpose it is often useful to plot the ACF and PACF against consecutive time lags. These plots help in determining the order of AR and MA terms. For a time series ${x(t),t = 0,1, 2,...}$the Autocovariance \[21, 23\] at lag k is defined as:
 
@@ -228,7 +216,7 @@ Normally, the stochastic process governing a time series is unknown and so it is
 
 As given in \[23\], the most appropriate sample estimate for the ACVF at lag k is ACF plot is useful in determining the type of model to fit to a time series of length N. Since ACF is symmetrical about lag zero, it is only required to plot the sample ACF for positive lags, from lag one on-wards to a maximum lag of about N/4. The sample PACF plot helps in identifying the maximum order of an AR process.
 
-#### **Autoregressive Moving Average (ARMA) model:**
+**Autoregressive Moving Average (ARMA) model:**
 
 ARMA model is a combination of AR and MA models. The equation of the AR model of order one, when it reaches to the starting point will have infinite moving average (Choi, B., 2012). In ARMA model p and q have to defined, where p = number of significant terms in ACF and q = number of significant terms in PACF.
 
@@ -238,17 +226,17 @@ To determine the optimal value for p and q there are two ways:
 
 -   Automatic selection techniques
 
-##### **Plotting patterns in correlation:**
+**Plotting patterns in correlation:**
 
-###### **Auto correlation factor (ACF):**
+[Auto correlation factor (ACF):]{.underline}
 
 It is the correlation between the observations at the current time stamp and observations at the previous time stamp (Hagan, M.T. and Behr, S.M., 1987).
 
-###### **Partial auto correlation factor (PACF):**
+[Partial auto correlation factor (PACF):]{.underline}
 
 The correlation between the observations at two different time stamps, assuming both observations are correlated to the observations at another time stamp (Hagan, M.T. and Behr, S.M., 1987).
 
-##### **Automatic selection techniques:**
+[Automatic selection techniques:]{.underline}
 
 There are three commonly used techniques for automatic selection of time series model:
 
@@ -262,11 +250,11 @@ There are three commonly used techniques for automatic selection of time series 
 
     It completely depends on the individual to choose from either of the methods helping them to find the optimal value of p and q for better performance of the model.
 
-#### **Autoregressive Integrated Moving average (ARIMA):**
+**Autoregressive Integrated Moving average (ARIMA):**
 
 To understand ARIMA model, we need to understand ARMA model as this is just an extension to ARMA model. Essentially, we need to make data stationary to feed it to a machine learning model. It is done by through differencing. ARIMA models are mathematically written as ***ARIMA(p,d,q)***, where p and q are same as ARMA model but ***d*** = number of first differences (Yu, G. and Zhang, C., 2004, May).
 
-#### **Seasonal Autoregressive Integrated Moving Average (SARIMA):**
+**Seasonal Autoregressive Integrated Moving Average (SARIMA):**
 
 SARIMA models were introduced to handle seasonality in the data. Seasonality is different from stationarity; however, seasonality can be handled using stationarity up to some extent, but seasonal correlations cannot be eliminated completely. SARIMA models are mathematically written as SARIMA$(p,d,q)(P,D,Q)^{s}$.
 
@@ -276,7 +264,7 @@ P = Number of seasonal AR terms, D = Number of seasonal differences, Q = Number 
 
 Removing seasonality will help the model to perform better but getting rid of seasonality in data is a difficult task to do.
 
-#### **Comparing ARIMA method with SARIMA method:**
+**Comparing ARIMA method with SARIMA method:**
 
 @library2015 investigated it on long-term runoff forecasting in the United States in contrast to ARIMA and SARIMA. The outcomes demonstrated that SARIMA models outperformed ARIMA models. However, it was discovered that SARIMA models were extremely sensitive, and even a small change in a parameter would have a negative impact on the model's performance. ARIMA and SARIMA models have been applied by (Wang, S., Li, C., and Lim, 2019) from the perspectives of Linear System Analysis, Spectra Analysis, and Digital Filtering. The researchers were obliged to go outside of these models for greater performance after it was established that ARIMA and SARIMA both had poor performance.Although they claimed the ARMA-SIN model was superior to the ARIMA and SARIMA models, they also acknowledged that it was more challenging to study and comprehend the ideas.
 
@@ -284,7 +272,7 @@ The results of @library2015 have demonstrated that SARIMA is superior; however, 
 
 The choice of a particular approach must be based on the data; following analysis, it is known whether the data have a trend, in which case ARIMA must be used, or whether they are seasonal, in which case SARIMA would be beneficial.
 
-#### [**ADVANTAGES AND DISADVANTAGES OF TIME SERIES FORECASTING**]{.smallcaps}
+[[**ADVANTAGES AND DISADVANTAGES OF TIME SERIES FORECASTING**]{.underline}]{.smallcaps}
 
 **Advantages of time series forecasting:**
 
@@ -306,19 +294,19 @@ The choice of a particular approach must be based on the data; following analysi
 
 -   The different elements that impact the fluctuations of a series cannot be fully adjusted by the time series analysis
 
-#### Forecast Performance Measures
+**Forecast Performance Measures**
 
 While applying a particular model to some real or simulated time series, first the raw data is divided into two parts (**Training Set and Test Set**). The observations in the training set are used for constructing the desired model. Often a small sub-part of the training set is kept for validation purpose and is known as the **Validation Set**. Sometimes a preprocessing is done by normalizing the data or taking logarithmic or other transforms. One such famous technique is the Box-Cox Transformation \[23\]. Once a model is constructed, it is used for generating forecasts. The test set observations are kept for verifying how accurate the fitted model performed in forecasting these values. If necessary, an inverse transformation is applied on the forecast values to convert them in original scale. In order to judge the forecasting accuracy of a particular model or for evaluating and comparing different models, their relative performance on the test dataset is considered.
 
 Due to the fundamental importance of time series forecasting in many practical situations, proper care should be taken while selecting a particular model. For this reason, various performance measures are proposed in literature \[3, 7, 8, 9, 24, 27\] to estimate forecast accuracy and to compare different models. These are also known as performance metrics \[24\]. Each of these measures is a function of the actual and forecast values of the time series.
 
-##### Description of Various Forecast Performance Measures
+**Description of Various Forecast Performance Measures**
 
-In each of the forthcoming definitions, $y_{t }$ is the actual value, $f_{t}$ is the forecaste value, $e_{t} = y_{t} - f_{t}$ is the forecast error and n is the size of the test set. Also, $\displaystyle \bar{y} = \frac{1}{n}\sum_{t=1}^{n}y_{t}$ is the test mean and $\displaystyle \sigma^{2} = \frac{1}{n-1}\sum_{t=1}^{n}(y_{t}-\bar{y})^{2}$is the test variance.
+In each of the forthcoming definitions, $y_{t }$ is the actual value, $f_{t}$ is the forecast value, $e_{t} = y_{t} - f_{t}$ is the forecast error and n is the size of the test set. Also, $\displaystyle \bar{y} = \frac{1}{n}\sum_{t=1}^{n}y_{t}$ is the test mean and $\displaystyle \sigma^{2} = \frac{1}{n-1}\sum_{t=1}^{n}(y_{t}-\bar{y})^{2}$is the test variance.
 
-###### **The Mean Forecast Error** $\displaystyle MFE = \frac{1}{n}\sum_{t=1}^{n}e_{t}$
+**The Mean Forecast Error** $\displaystyle MFE = \frac{1}{n}\sum_{t=1}^{n}e_{t}$
 
-• It is a measure of the average deviation of forecasted values from actual ones.
+• It is a measure of the average deviation of forecast values from actual ones.
 
 • It shows the direction of error and thus also termed as the Forecast Bias.
 
@@ -330,7 +318,7 @@ know their exact amount.
 
 indicates that forecasts are on proper target.
 
-• MFE does not panelize extreme errors.
+• MFE does not panellize extreme errors.
 
 • It depends on the scale of measurement and also affected by data transformations.
 
@@ -338,7 +326,7 @@ indicates that forecasts are on proper target.
 
 to zero as possible.
 
-###### The Mean Absolute Error $\displaystyle MAE = \frac{1}{n}\sum_{t=1}^{n}|e_{t}|$
+The Mean Absolute Error $\displaystyle MAE = \frac{1}{n}\sum_{t=1}^{n}|e_{t}|$
 
 -   It measures the average absolute deviation of forecast values from original ones.
 
@@ -356,7 +344,7 @@ to zero as possible.
 
 -   Extreme forecast errors are not panelized by MAE.
 
-###### The Mean Squared Error $\displaystyle MSE = \frac{1}{n}\sum_{t=1}^{n}e^{2}_{t}$
+The Mean Squared Error $\displaystyle MSE = \frac{1}{n}\sum_{t=1}^{n}e^{2}_{t}$
 
 -   It is a measure of average squared deviation of forecast values.
 
@@ -376,7 +364,7 @@ to zero as possible.
 
 -   easily interpretable as the other measures discussed before.
 
-    ###### The Root Mean Squared Error $\displaystyle RMSE = \sqrt{MSE} = \sqrt {\frac{1}{n}\sum_{t=1}^{n}e^{2}_{t}}$
+    The Root Mean Squared Error $\displaystyle RMSE = \sqrt{MSE} = \sqrt {\frac{1}{n}\sum_{t=1}^{n}e^{2}_{t}}$
 
     RMSE is nothing but the square root of calculated MSE.
 
@@ -496,13 +484,13 @@ kable(anova(lm),booktab = T) %>%
 
 ### **Time-series analysis**
 
-#### [**Steps involved in Box-Jenkins approach**]{.underline}
+[**Steps involved in Box-Jenkins approach**]{.underline}
 
-![FlowChart](Plots/Steps.png "METHADOLOGY Steps involved in Box-Jenkins approach"){alt="FlowChart" fig-align="center"}
+![FlowChart](Images/Steps.png "METHADOLOGY Steps involved in Box-Jenkins approach"){alt="FlowChart" fig-align="center"}
 
 # CHAPTER FOUR
 
-### Analysis and Finding
+## Analysis and Finding
 
 ```{r,include=FALSE}
 #| label: fig-Time Series And Decompostion
@@ -554,7 +542,7 @@ tseries::adf.test(Tt)
 
 ### Specification of the Model
 
-We can create the SARMA model as SARMA(,0,)X(0) based on the previous study  
+We can create the SARMA model as SARMA(0,0,0) based on the previous study  
 
 If there hasn't been any differentiation, we can label it as zero. With the first parameter being PACF and the second being ACF, the first component of multiplication is the non-seasonal part.
 
@@ -578,13 +566,13 @@ Where the **ARIMA (PACF, Num_Diffrentation, ACF)** model have the below format f
 
 **Discuss:**Based on the different models, we can see that ARIMA(2,2,5) had the least AIC value, sigma\^2 being the least therefore is the best model for given time series. Find the below time series plot for the residuals.
 
-#### **Residual Analysis**
+**Residual Analysis**
 
-#### **Residual Plot**
+**Residual Plot**
 
-#### **Shapiro Test**
+**Shapiro Test**
 
-#### **Ljung-Box**
+**Ljung-Box**
 
 **Time-series Forecasting**
 
@@ -592,7 +580,6 @@ Where the **ARIMA (PACF, Num_Diffrentation, ACF)** model have the below format f
 
 ```{r}
 #| label: tbl-lm
-
 #| tbl-cap: "Linear regression model for predicting EVI from Time"
 tdx.ns <- data.frame(time = c(1:length(Time_Series)), trend = Time_Series - tdx.dcp$time.series[,1])
 summary <- summary(lm(formula = trend ~ time, data = tdx.ns))

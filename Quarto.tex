@@ -1,117 +1,76 @@
-% Options for packages loaded elsewhere
-\PassOptionsToPackage{unicode}{hyperref}
-\PassOptionsToPackage{hyphens}{url}
-\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
-%
-\documentclass[
-  onepage,
-  openany]{scrbook}
-
-\usepackage{amsmath,amssymb}
-\usepackage{lmodern}
-\usepackage{iftex}
-\ifPDFTeX
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provide euro and other symbols
-\else % if luatex or xetex
-  \usepackage{unicode-math}
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
-% Use upquote if available, for straight quotes in verbatim environments
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-\IfFileExists{microtype.sty}{% use microtype if available
-  \usepackage[]{microtype}
-  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
-}{}
-\makeatletter
-\@ifundefined{KOMAClassName}{% if non-KOMA class
-  \IfFileExists{parskip.sty}{%
-    \usepackage{parskip}
-  }{% else
-    \setlength{\parindent}{0pt}
-    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
-}{% if KOMA class
-  \KOMAoptions{parskip=half}}
-\makeatother
-\usepackage{xcolor}
-\usepackage[normalem]{ulem}
-\setlength{\emergencystretch}{3em} % prevent overfull lines
-\setcounter{secnumdepth}{5}
-% Make \paragraph and \subparagraph free-standing
-\ifx\paragraph\undefined\else
-  \let\oldparagraph\paragraph
-  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
-\fi
-\ifx\subparagraph\undefined\else
-  \let\oldsubparagraph\subparagraph
-  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
-\fi
-
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\newenvironment{Shaded}{}{}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{#1}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
-
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
-\usepackage{calc} % for calculating minipage widths
-% Correct order of tables after \paragraph or \subparagraph
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
-\makeatother
-% Allow footnotes in longtable head/foot
-\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
-\makesavenoteenv{longtable}
+\documentclass[12pt,a4paper]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathptmx}
+\usepackage{mathpazo}
+\usepackage{aligned-overset}
+\usepackage{mathrsfs}
+\usepackage{makeidx}
+\usepackage{times}
 \usepackage{graphicx}
+\usepackage[left=3.75cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage[section]{placeins}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{dfn}{Definition}[section]
+\newtheorem{note}{Note}[section]
+\usepackage{titlesec}
+\usepackage[style = apa, backend = biber, natbib = true]{biblatex}
+\addbibresource{references.bib}
+\usepackage{fancyhdr}
+\pagestyle{fancy} % Turn on the style
+\fancyhf{} % Start with clearing everything in the header and footer
+% Set the right side of the footer to be the page number
+\fancyfoot[R]{\thepage}
+
+% Redefine plain style, which is used for titlepage and chapter beginnings
+% From https://tex.stackexchange.com/a/30230/828
+\fancypagestyle{plain}{%
+	\renewcommand{\headrulewidth}{0pt}%
+	\fancyhf{}%
+	\fancyfoot[R]{\thepage}%
+}
+\usepackage{xcolor}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-% Set default figure placement to htbp
-\makeatletter
-\def\fps@figure{htbp}
-\makeatother
+
+
+%%%%%%% PAGE HEADERS AND FOOTERS %%%%%%%%%
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+\fancyhf{} % clear the header and footers
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter. #1}{\thechapter. #1}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection. #1}} 
+\renewcommand{\headrulewidth}{0pt}
+
+
+% % UL page number position 
+% \fancy[]{\emph{\thepage}} %regular pages
+% \fancypagestyle{plain}{\fancyhf{}\fancy[]{\emph{\thepage}}} %chapter pages
+
+
+%%%%% SELECT YOUR DRAFT OPTIONS
+% This adds a "DRAFT" footer to every normal page.  (The first page of each chapter is not a "normal" page.)
+
+% IP feb 2021: option to include line numbers in PDF
+
+% for line wrapping in code blocks
+
+% This highlights (in blue) corrections marked with (for words) \mccorrect{blah} or (for whole
+% paragraphs) \begin{mccorrection} . . . \end{mccorrection}.  This can be useful for sending a PDF of
+% your corrected thesis to your examiners for review.  Turn it off, and the blue disappears.
+
+
+%%%%% BIBLIOGRAPHY SETUP
+% Note that your bibliography will require some tweaking depending on your department, preferred format, etc.
+% If you've not used LaTeX before, I recommend reading a little about biblatex/biber and getting started with it.
+% If you're already a LaTeX pro and are used to natbib or something, modify as necessary.
+% Either way, you'll have to choose and configure an appropriate bibliography format...
+
+% this enables pandoc citations
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
@@ -127,7 +86,8 @@
   \def\par{\hangindent=\cslhangindent\oldpar}
   \fi
   % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
+  \setlength{\parskip}{}
+  \setlength{\baselineskip}{}
  }%
  {}
 \usepackage{calc}
@@ -136,121 +96,117 @@
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
-\usepackage{booktabs}
-\usepackage{longtable}
-\usepackage{array}
-\usepackage{multirow}
-\usepackage{wrapfig}
-\usepackage{float}
-\usepackage{colortbl}
-\usepackage{pdflscape}
-\usepackage{tabu}
-\usepackage{threeparttable}
-\usepackage{threeparttablex}
-\usepackage[normalem]{ulem}
-\usepackage{makecell}
-\usepackage{xcolor}
-\makeatletter
-\makeatother
-\makeatletter
-\makeatother
-\makeatletter
-\@ifpackageloaded{caption}{}{\usepackage{caption}}
-\AtBeginDocument{%
-\ifdefined\contentsname
-  \renewcommand*\contentsname{Table of contents}
-\else
-  \newcommand\contentsname{Table of contents}
-\fi
-\ifdefined\listfigurename
-  \renewcommand*\listfigurename{List of Figures}
-\else
-  \newcommand\listfigurename{List of Figures}
-\fi
-\ifdefined\listtablename
-  \renewcommand*\listtablename{List of Tables}
-\else
-  \newcommand\listtablename{List of Tables}
-\fi
-\ifdefined\figurename
-  \renewcommand*\figurename{Figure}
-\else
-  \newcommand\figurename{Figure}
-\fi
-\ifdefined\tablename
-  \renewcommand*\tablename{Table}
-\else
-  \newcommand\tablename{Table}
-\fi
-}
-\@ifpackageloaded{float}{}{\usepackage{float}}
-\floatstyle{ruled}
-\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
-\floatname{codelisting}{Listing}
-\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
-\makeatother
-\makeatletter
-\@ifpackageloaded{caption}{}{\usepackage{caption}}
-\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
-\makeatother
-\makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
-\makeatother
-\makeatletter
-\@ifundefined{shadecolor}{\definecolor{shadecolor}{named}{lightgray}}
-\makeatother
-\makeatletter
-\@ifpackageloaded{sidenotes}{}{\usepackage{sidenotes}}
-\@ifpackageloaded{marginnote}{}{\usepackage{marginnote}}
-\makeatother
-\makeatletter
-\makeatother
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
-\hypersetup{
-  pdftitle={THE VARAIBILITY CLIMATE CHANGE IS FESPONSIBLE FOR IN VEGETATION LOSS IN GHANA},
-  pdfauthor={name:Kalong Boniface; Fugah Seletey Mitchell},
-  colorlinks=true,
-  linkcolor={Maroon},
-  filecolor={Maroon},
-  citecolor={blue},
-  urlcolor={Blue},
-  pdfcreator={LaTeX via pandoc}}
 
-\title{THE VARAIBILITY CLIMATE CHANGE IS FESPONSIBLE FOR IN VEGETATION
-LOSS IN GHANA}
-\usepackage{etoolbox}
-\makeatletter
-\providecommand{\subtitle}[1]{% add subtitle to \maketitle
-  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
-}
-\makeatother
-\subtitle{Quantifying The Status of Galamsey With Time Series Analsis}
-\author{name:Kalong Boniface \and Fugah Seletey Mitchell}
-\date{\texttt{r\ Sys.Date()}}
 
+
+
+\makeatother
+\titleformat{\section}{\bfseries\normalfont\centering\bf}{\thesection}{0em}{}
 \begin{document}
-\frontmatter
-\maketitle
-\begin{abstract}
-\texttt{r\ paste(readLines("front-and-back-matter/\_abstract.qmd"),\ collapse\ =\ "\textbackslash{}n\ \ ")}
-\end{abstract}
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, breakable, colback={shadecolor}, enhanced, frame hidden]}{\end{tcolorbox}}\fi
+	\pagestyle{plain}
+	\openup 1 em
+	\begin{titlepage}
+		\pagenumbering{roman}
+		%\addcontentsline{toc}{section}{Title Page}
+		\begin{center}
+			
+			\begin{figure}[h]
+				\begin{center}
+					\includegraphics[width=0.30\linewidth, height=.20\textheight]{uenrlogo.png}
+				\end{center}
+			\end{figure}
+			
+			{\normalfont{\textbf{UNIVERSITY OF ENERGY AND NATURAL RESOURCES, SUNYANI}}}\\
+			\vspace{1.7cm}
+			{\normalfont \title{THE VARIABILITY CLIMATE CHANGE IS RESPONSIBLE FOR IN
+VEGETATION LOSS IN GHANA}}
+			
+			
+			\vspace{2.7cm}
+			
+			{\normalfont {\author{Kalong BonifaceFugah Seletey Mitchell}}}
+			\vspace{1.7cm}
+			
+			
+			\begin{center}
+				{\normalfont \textbf{DEPARTMENT OF MATHEMATICS AND STATISTIC}\\
+					\textbf{SCHOOL OF SCIENCE}}\\
+				\vspace{5.3cm}
+				
+				
+				{\normalfont \textbf{JUNE 2019}}
+			\end{center}
+			
+		\end{center}
+		
+		\vfill
+	\end{titlepage}
+	\pagenumbering{roman}
+	\begin{titlepage}
+		\begin{center}
+			{\normalfont \title{THE VARIABILITY CLIMATE CHANGE IS RESPONSIBLE FOR IN
+VEGETATION LOSS IN GHANA}}
+			
+			\vspace{3.7cm}
+			{\normalfont {by}}\\
+			\vspace{1cm}
+			{\normalfont {Kalong Boniface - UEB3603118\\ B.Sc. Actuarial Science Location}}
+			\vspace{1.7cm}
+			
+			
+			\begin{center}
+				{\normalfont A Thesis submitted to the Department of Mathematics and Statistics, School of Science, University of Energy and Natural Resources, Sunyani in partial fulfillment of the requirements for the degree of Bachelor of Science in Mathematics }\\
+				\vspace{2cm}	
+				{\normalfont \date{2022-09-10}
+			\end{center}
+			
+		\end{center}
+		
+		\vfill
+	\end{titlepage}	
+	\newpage
+	{\section*{DECLARATION AND CERTIFICATION}
+	\addcontentsline{toc}{section}{CERTIFICATION}
+	personal declaration here...
+	\\
+		Candidate's Signature:	................................. \hspace\fill 
+		Date: .................................	 \\
+	\begin{center}\textbf{\normalfont \textbf{Supervisor's Certification}}\end{center}
+	This study was carried out under the supervisory committee of (Names of all Supervisors) in accordance with the guidelines on supervisions of graduate studies.\\\\
+	Major Supervisor's Name and Qualifications \\
+	\\
+	Signature:	................................. \hspace\fill 
+	Date: .................................	 \\
+	\begin{center}\textbf{\normalfont \textbf{Co-Supervisor's Certification}}\end{center}
+	Co-Supervisor's Name and Qualifications\\
+	\\
+	Signature:	................................. \hspace\fill 
+	Date: .................................	 \\
+	\newline\\
+	Co-Supervisor's Name and Qualifications\\
+	\\
+	Signature:	................................. \hspace\fill 
+	Date: .................................	 \\
+	\newpage
+	\section*{\textbf{ABSTRACT}}
+	\addcontentsline{toc}{section}{ABSTRACT}
+	Write your abstract here 
+	\newpage	
+	\begin{center}\section*{DEDICATION}\end{center}
+	\addcontentsline{toc}{section}{DEDICATION}
+	
+	Write dedication here   
+	\newpage	
+	\begin{center}\section*{ACKNOWLEDGMENTS}\end{center}
+	\addcontentsline{toc}{section}{ACKNOWLEDGMENTS}
+	
+	Write Acknowledgment here
+	
+	\newpage
+	
 
-\renewcommand*\contentsname{Table of Contents}
-{
-\hypersetup{linkcolor=}
-\setcounter{tocdepth}{2}
-\tableofcontents
-}
-\listoffigures
-\listoftables
-\mainmatter
-\hypertarget{chapter-one}{%
+
+	\hypertarget{chapter-one}{%
 \chapter{CHAPTER ONE}\label{chapter-one}}
 
 \hypertarget{introduction}{%
@@ -263,15 +219,15 @@ been the case. Ghana is a lower-middle-income nation that is still
 working toward middle-income classification. However, it has already
 begun to see a deforestation rate that is comparable to that of
 middle-income countries. The rapid population expansion, clearing of
-feild for Galamsey operation,increased domestic need for wood for things
+field for Galamsey operation,increased domestic need for wood for things
 like fuel, furniture, construction, and timber exports have all
 contributed to this trend, Bush fires in the 1980s, climate change, and
 lax law enforcement have all had an impact.
 
 The purpose of this paper is to establish an understanding in time
 series analysis on remotely sensed data. Which will introduced us to the
-fundamentals of time series modeling, including decomposition,
-autocorrelation and modeling historical changes in \textbf{Vegetation
+fundamentals of time series modelling, including decomposition,
+autocorrelation and modelling historical changes in \textbf{Vegetation
 Loss} in Ghana as a result of \textbf{Galamsey Operation} and the
 \textbf{Variability Climate Is Responsible For}, the Cause, Dangers and
 it's Environmental impact.
@@ -294,7 +250,7 @@ Ghana Mine Collapse''} (\protect\hyperlink{ref-womendi2009}{2009}) .
 
 Illegal mining causes damage to the land and water supplym (Ansah
 (\protect\hyperlink{ref-ansah2017}{2017}) ) . In March 2017, the
-Minister of Lands and Natural Resources, Mr. John Peter Amewu, gave the
+Minister of Lands and Natural Resources, Mr.~John Peter Amewu, gave the
 Galamsey operators/illegal miners a three-week ultimatum to stop their
 activities or be prepared to face the law Allotey
 (\protect\hyperlink{ref-allotey2017}{2017}) . The activities by
@@ -327,7 +283,7 @@ Many women are among the workers, acting mostly as porters for the
 miners.
 
 \hypertarget{background-of-the-study}{%
-\subsection{Background of The Study}\label{background-of-the-study}}
+\section{Background of The Study}\label{background-of-the-study}}
 
 As Galamsey is considered an illegal activity, they operations are
 hidden to the eyes of the authorities.So locating them is quite tricky
@@ -506,9 +462,7 @@ the Machine Learning model finds it difficult to predict appropriately
 hence time series analysis and its approaches have made it simpler for
 prediction.
 
-\hypertarget{what-is-time-series-analysis}{%
-\subsubsection{What is Time Series
-Analysis?}\label{what-is-time-series-analysis}}
+\textbf{What is Time Series Analysis?}
 
 A time series in mathematics is a collection of data points that have
 been listed, graphed, or indexed according to time. is a series of
@@ -567,10 +521,7 @@ and even fewer do not perform well when the data is seasonal. In order
 to choose the optimal statistical method for forecasting, trends,
 seasonality, and heteroscedasticity must be taken into account.
 
-\hypertarget{time-series-forecasting-using-stochastic-models}{%
-\subsubsection{\texorpdfstring{\textbf{Time Series Forecasting Using
-Stochastic
-Models}}{Time Series Forecasting Using Stochastic Models}}\label{time-series-forecasting-using-stochastic-models}}
+\textbf{Time Series Forecasting Using Stochastic Models}
 
 The selection of a proper model is extremely important as it reflects
 the underlying structure of the series and this fitted model in turn is
@@ -613,9 +564,7 @@ Based on the findings from analysis data must be broken into trend or
 seasonality. Zhang, Eddy Patuwo, and Y. Hu
 (\protect\hyperlink{ref-zhang1998}{1998})
 
-\hypertarget{exponential-smoothing-models}{%
-\paragraph{Exponential Smoothing
-Models:}\label{exponential-smoothing-models}}
+\textbf{Exponential Smoothing Models:}
 
 Time-series data relies on the assumption that the observation at a
 certain point of time depends on previous observations in time . The
@@ -632,8 +581,7 @@ like \emph{stationarity} and \emph{differencing} must be understood.
 Both these concepts help in making the core concepts of the methods easy
 to interpret.
 
-\hypertarget{stationarity}{%
-\paragraph{\texorpdfstring{\textbf{Stationarity:}}{Stationarity:}}\label{stationarity}}
+\textbf{Stationarity:}
 
 Stationarity alludes to an irregular process that creates a time-series
 which has mean, and distribution to be constant through time.
@@ -655,17 +603,14 @@ the roots of the lag equation
 \(\theta (L) = 0\) lie outside the unit circle, then the ARMA(p, q)
 process is invertible and can be expressed as a pure AR process..
 
-\hypertarget{differencing}{%
-\paragraph{\texorpdfstring{\textbf{Differencing:}}{Differencing:}}\label{differencing}}
+\textbf{Differencing:}
 
 This concept is used to make trending and seasonal data stationary.
 Subtraction between current observation and previous observation is the
 process of differencing. It helps in making the mean constant (Dickey,
 D.A. and Pantula, S.G., 1987).
 
-\hypertarget{autoregressive-models-ar}{%
-\paragraph{\texorpdfstring{\textbf{Autoregressive models
-(AR):}}{Autoregressive models (AR):}}\label{autoregressive-models-ar}}
+\textbf{Autoregressive models (AR):}
 
 AR work on a concept called lags which is defined as the forecast of a
 series is solely based on the past values in the series (Cryer, J.D.,
@@ -685,9 +630,7 @@ shock incident in the past which must have led to fluctuations in the
 data, it will have its effect on the present value which makes the model
 quite sensitive to shocks (Shibata, R., 1976).
 
-\hypertarget{moving-average-ma}{%
-\paragraph{\texorpdfstring{\textbf{Moving Average
-(MA):}}{Moving Average (MA):}}\label{moving-average-ma}}
+\textbf{Moving Average (MA):}
 
 The moving average model forecasts a series based on the past error in
 the series called error lags. Hunter, J.S., Formula for moving average
@@ -703,9 +646,7 @@ value before the starting point. These are short memory models as the
 error in the past will not have much effect on the future value (Hunter,
 J.S., 1986).
 
-\hypertarget{comparing-ar-method-with-ma-method}{%
-\paragraph{\texorpdfstring{\textbf{Comparing AR method with MA
-method:}}{Comparing AR method with MA method:}}\label{comparing-ar-method-with-ma-method}}
+\textbf{Comparing AR method with MA method:}
 
 Let focus on the two methods which were used in the early years of time
 series forecasting and compare the performance of each model on a
@@ -735,10 +676,8 @@ either of the model to be better as the performance depends on the
 parameters used in the model. Each model is unique to its use case, and
 it depends on the user to choose accordingly based on the data.
 
-\hypertarget{autocorrelation-and-partial-autocorrelation-functions-acf-and-pacf}{%
-\paragraph{\texorpdfstring{\textbf{Autocorrelation and Partial
-Autocorrelation Functions (ACF and
-PACF)}}{Autocorrelation and Partial Autocorrelation Functions (ACF and PACF)}}\label{autocorrelation-and-partial-autocorrelation-functions-acf-and-pacf}}
+\textbf{Autocorrelation and Partial Autocorrelation Functions (ACF and
+PACF)}
 
 To determine a proper model for a given time series data, it is
 necessary to carry out the ACF and PACF analysis. These statistical
@@ -749,10 +688,10 @@ determining the order of AR and MA terms. For a time series
 \({x(t),t = 0,1, 2,...}\)the Autocovariance {[}21, 23{]} at lag k is
 defined as:
 
-\(\mu\) is the mean of the time series, i.e.
-\(\mu = E\left[x_{t}\right]\). The autocovariance at lag zero i.e.
-\(y_{0}\) is the variance of the time series. From the definition it is
-clear that the autocorrelation coefficient \$ p\_\{k\}\$ is
+\(\mu\) is the mean of the time series,
+i.e.~\(\mu = E\left[x_{t}\right]\). The autocovariance at lag zero
+i.e.~\(y_{0}\) is the variance of the time series. From the definition
+it is clear that the autocorrelation coefficient \$ p\_\{k\}\$ is
 dimensionless and so is independent of the scale of measurement. Also,
 clearly \(-1 \leq p\_{k}\leq 1\). Statisticians Box and Jenkins {[}6{]}
 termed \(y_{k }\) as the theoretical Autocovariance Function (ACVF) and
@@ -761,14 +700,14 @@ termed \(y_{k }\) as the theoretical Autocovariance Function (ACVF) and
 Another measure, known as the Partial Autucorrelation Function (PACF) is
 used to measure the correlation between an observation k period ago and
 the current observation, after controlling for observations at
-intermediate lags (i.e. at lags \textless{} k ) {[}12{]}. At lag 1,
+intermediate lags (i.e.~at lags \textless{} k ) {[}12{]}. At lag 1,
 PACF(1) is same as ACF(1). The detailed formulae for calculating PACF
 are given in {[}6, 23{]}.
 
 Normally, the stochastic process governing a time series is unknown and
 so it is not possible to determine the actual or theoretical ACF and
 PACF values. Rather these values are to be estimated from the training
-data, i.e. the known time series at hand. The estimated ACF and PACF
+data, i.e.~the known time series at hand. The estimated ACF and PACF
 values from the training data are respectively termed as sample ACF and
 PACF {[}6, 23{]}.
 
@@ -779,10 +718,7 @@ it is only required to plot the sample ACF for positive lags, from lag
 one on-wards to a maximum lag of about N/4. The sample PACF plot helps
 in identifying the maximum order of an AR process.
 
-\hypertarget{autoregressive-moving-average-arma-model}{%
-\subsubsection{\texorpdfstring{\textbf{Autoregressive Moving Average
-(ARMA)
-model:}}{Autoregressive Moving Average (ARMA) model:}}\label{autoregressive-moving-average-arma-model}}
+\textbf{Autoregressive Moving Average (ARMA) model:}
 
 ARMA model is a combination of AR and MA models. The equation of the AR
 model of order one, when it reaches to the starting point will have
@@ -799,29 +735,21 @@ To determine the optimal value for p and q there are two ways:
   Automatic selection techniques
 \end{itemize}
 
-\hypertarget{plotting-patterns-in-correlation}{%
-\paragraph{\texorpdfstring{\textbf{Plotting patterns in
-correlation:}}{Plotting patterns in correlation:}}\label{plotting-patterns-in-correlation}}
+\textbf{Plotting patterns in correlation:}
 
-\hypertarget{auto-correlation-factor-acf}{%
-\subparagraph{\texorpdfstring{\textbf{Auto correlation factor
-(ACF):}}{Auto correlation factor (ACF):}}\label{auto-correlation-factor-acf}}
+\uline{Auto correlation factor (ACF):}
 
 It is the correlation between the observations at the current time stamp
 and observations at the previous time stamp (Hagan, M.T. and Behr, S.M.,
 1987).
 
-\hypertarget{partial-auto-correlation-factor-pacf}{%
-\subparagraph{\texorpdfstring{\textbf{Partial auto correlation factor
-(PACF):}}{Partial auto correlation factor (PACF):}}\label{partial-auto-correlation-factor-pacf}}
+\uline{Partial auto correlation factor (PACF):}
 
 The correlation between the observations at two different time stamps,
 assuming both observations are correlated to the observations at another
 time stamp (Hagan, M.T. and Behr, S.M., 1987).
 
-\hypertarget{automatic-selection-techniques}{%
-\paragraph{\texorpdfstring{\textbf{Automatic selection
-techniques:}}{Automatic selection techniques:}}\label{automatic-selection-techniques}}
+\uline{Automatic selection techniques:}
 
 There are three commonly used techniques for automatic selection of time
 series model:
@@ -854,10 +782,7 @@ series model:
   performance of the model.
 \end{itemize}
 
-\hypertarget{autoregressive-integrated-moving-average-arima}{%
-\subsubsection{\texorpdfstring{\textbf{Autoregressive Integrated Moving
-average
-(ARIMA):}}{Autoregressive Integrated Moving average (ARIMA):}}\label{autoregressive-integrated-moving-average-arima}}
+\textbf{Autoregressive Integrated Moving average (ARIMA):}
 
 To understand ARIMA model, we need to understand ARMA model as this is
 just an extension to ARMA model. Essentially, we need to make data
@@ -867,10 +792,7 @@ differencing. ARIMA models are mathematically written as
 \textbf{\emph{d}} = number of first differences (Yu, G. and Zhang, C.,
 2004, May).
 
-\hypertarget{seasonal-autoregressive-integrated-moving-average-sarima}{%
-\subsubsection{\texorpdfstring{\textbf{Seasonal Autoregressive
-Integrated Moving Average
-(SARIMA):}}{Seasonal Autoregressive Integrated Moving Average (SARIMA):}}\label{seasonal-autoregressive-integrated-moving-average-sarima}}
+\textbf{Seasonal Autoregressive Integrated Moving Average (SARIMA):}
 
 SARIMA models were introduced to handle seasonality in the data.
 Seasonality is different from stationarity; however, seasonality can be
@@ -886,10 +808,7 @@ Number of seasonal MA terms, s = Length of the season.
 Removing seasonality will help the model to perform better but getting
 rid of seasonality in data is a difficult task to do.
 
-\hypertarget{comparing-arima-method-with-sarima-method}{%
-\subsubsection{\texorpdfstring{\textbf{Comparing ARIMA method with
-SARIMA
-method:}}{Comparing ARIMA method with SARIMA method:}}\label{comparing-arima-method-with-sarima-method}}
+\textbf{Comparing ARIMA method with SARIMA method:}
 
 Library and Valipour (\protect\hyperlink{ref-library2015}{2015})
 investigated it on long-term runoff forecasting in the United States in
@@ -916,10 +835,8 @@ analysis, it is known whether the data have a trend, in which case ARIMA
 must be used, or whether they are seasonal, in which case SARIMA would
 be beneficial.
 
-\hypertarget{advantages-and-disadvantages-of-time-series-forecasting}{%
-\subsubsection{\texorpdfstring{\textsc{\textbf{ADVANTAGES AND
-DISADVANTAGES OF TIME SERIES
-FORECASTING}}}{ADVANTAGES AND DISADVANTAGES OF TIME SERIES FORECASTING}}\label{advantages-and-disadvantages-of-time-series-forecasting}}
+\textsc{\uline{\textbf{ADVANTAGES AND DISADVANTAGES OF TIME SERIES
+FORECASTING}}}
 
 \textbf{Advantages of time series forecasting:}
 
@@ -957,9 +874,7 @@ FORECASTING}}}{ADVANTAGES AND DISADVANTAGES OF TIME SERIES FORECASTING}}\label{a
   be fully adjusted by the time series analysis
 \end{itemize}
 
-\hypertarget{forecast-performance-measures}{%
-\subsubsection{Forecast Performance
-Measures}\label{forecast-performance-measures}}
+\textbf{Forecast Performance Measures}
 
 While applying a particular model to some real or simulated time series,
 first the raw data is divided into two parts (\textbf{Training Set and
@@ -985,23 +900,20 @@ accuracy and to compare different models. These are also known as
 performance metrics {[}24{]}. Each of these measures is a function of
 the actual and forecast values of the time series.
 
-\hypertarget{description-of-various-forecast-performance-measures}{%
-\paragraph{Description of Various Forecast Performance
-Measures}\label{description-of-various-forecast-performance-measures}}
+\textbf{Description of Various Forecast Performance Measures}
 
 In each of the forthcoming definitions, \(y_{t }\) is the actual value,
-\(f_{t}\) is the forecaste value, \(e_{t} = y_{t} - f_{t}\) is the
+\(f_{t}\) is the forecast value, \(e_{t} = y_{t} - f_{t}\) is the
 forecast error and n is the size of the test set. Also,
 \(\displaystyle \bar{y} = \frac{1}{n}\sum_{t=1}^{n}y_{t}\) is the test
 mean and
 \(\displaystyle \sigma^{2} = \frac{1}{n-1}\sum_{t=1}^{n}(y_{t}-\bar{y})^{2}\)is
 the test variance.
 
-\hypertarget{the-mean-forecast-error-displaystyle-mfe-frac1nsum_t1ne_t}{%
-\subparagraph{\texorpdfstring{\textbf{The Mean Forecast Error}
-\(\displaystyle MFE = \frac{1}{n}\sum_{t=1}^{n}e_{t}\)}{The Mean Forecast Error \textbackslash displaystyle MFE = \textbackslash frac\{1\}\{n\}\textbackslash sum\_\{t=1\}\^{}\{n\}e\_\{t\}}}\label{the-mean-forecast-error-displaystyle-mfe-frac1nsum_t1ne_t}}
+\textbf{The Mean Forecast Error}
+\(\displaystyle MFE = \frac{1}{n}\sum_{t=1}^{n}e_{t}\)
 
-• It is a measure of the average deviation of forecasted values from
+• It is a measure of the average deviation of forecast values from
 actual ones.
 
 • It shows the direction of error and thus also termed as the Forecast
@@ -1012,24 +924,23 @@ there is no way to
 
 know their exact amount.
 
-• A zero MFE does not mean that forecasts are perfect, i.e. contain no
+• A zero MFE does not mean that forecasts are perfect, i.e.~contain no
 error; rather it only
 
 indicates that forecasts are on proper target.
 
-• MFE does not panelize extreme errors.
+• MFE does not panellize extreme errors.
 
 • It depends on the scale of measurement and also affected by data
 transformations.
 
-• For a good forecast, i.e. to have a minimum bias, it is desirable that
+• For a good forecast, i.e.~to have a minimum bias, it is desirable that
 the MFE is as close
 
 to zero as possible.
 
-\hypertarget{the-mean-absolute-error-displaystyle-mae-frac1nsum_t1ne_t}{%
-\subparagraph{\texorpdfstring{The Mean Absolute Error
-\(\displaystyle MAE = \frac{1}{n}\sum_{t=1}^{n}|e_{t}|\)}{The Mean Absolute Error \textbackslash displaystyle MAE = \textbackslash frac\{1\}\{n\}\textbackslash sum\_\{t=1\}\^{}\{n\}\textbar e\_\{t\}\textbar{}}}\label{the-mean-absolute-error-displaystyle-mae-frac1nsum_t1ne_t}}
+The Mean Absolute Error
+\(\displaystyle MAE = \frac{1}{n}\sum_{t=1}^{n}|e_{t}|\)
 
 \begin{itemize}
 \tightlist
@@ -1057,9 +968,8 @@ to zero as possible.
   Extreme forecast errors are not panelized by MAE.
 \end{itemize}
 
-\hypertarget{the-mean-squared-error-displaystyle-mse-frac1nsum_t1ne2_t}{%
-\subparagraph{\texorpdfstring{The Mean Squared Error
-\(\displaystyle MSE = \frac{1}{n}\sum_{t=1}^{n}e^{2}_{t}\)}{The Mean Squared Error \textbackslash displaystyle MSE = \textbackslash frac\{1\}\{n\}\textbackslash sum\_\{t=1\}\^{}\{n\}e\^{}\{2\}\_\{t\}}}\label{the-mean-squared-error-displaystyle-mse-frac1nsum_t1ne2_t}}
+The Mean Squared Error
+\(\displaystyle MSE = \frac{1}{n}\sum_{t=1}^{n}e^{2}_{t}\)
 
 \begin{itemize}
 \item
@@ -1073,7 +983,7 @@ to zero as possible.
   MSE emphasizes the fact that the total forecast error is in fact much
   affected by large
 \item
-  individual errors, i.e. large errors are much expensive than small
+  individual errors, i.e.~large errors are much expensive than small
   errors.
 \item
   MSE does not provide any idea about the direction of overall error.
@@ -1085,9 +995,8 @@ to zero as possible.
 \item
   easily interpretable as the other measures discussed before.
 
-  \hypertarget{the-root-mean-squared-error-displaystyle-rmse-sqrtmse-sqrt-frac1nsum_t1ne2_t}{%
-  \subparagraph{\texorpdfstring{The Root Mean Squared Error
-  \(\displaystyle RMSE = \sqrt{MSE} = \sqrt {\frac{1}{n}\sum_{t=1}^{n}e^{2}_{t}}\)}{The Root Mean Squared Error \textbackslash displaystyle RMSE = \textbackslash sqrt\{MSE\} = \textbackslash sqrt \{\textbackslash frac\{1\}\{n\}\textbackslash sum\_\{t=1\}\^{}\{n\}e\^{}\{2\}\_\{t\}\}}}\label{the-root-mean-squared-error-displaystyle-rmse-sqrtmse-sqrt-frac1nsum_t1ne2_t}}
+  The Root Mean Squared Error
+  \(\displaystyle RMSE = \sqrt{MSE} = \sqrt {\frac{1}{n}\sum_{t=1}^{n}e^{2}_{t}}\)
 
   RMSE is nothing but the square root of calculated MSE.
 
@@ -1308,14 +1217,11 @@ Residuals & 17 & 0.0609334 & 0.0035843 & NA & NA\\
 \subsection{\texorpdfstring{\textbf{Time-series
 analysis}}{Time-series analysis}}\label{time-series-analysis}}
 
-\hypertarget{steps-involved-in-box-jenkins-approach}{%
-\subsubsection{\texorpdfstring{\uline{\textbf{Steps involved in
-Box-Jenkins
-approach}}}{Steps involved in Box-Jenkins approach}}\label{steps-involved-in-box-jenkins-approach}}
+\uline{\textbf{Steps involved in Box-Jenkins approach}}
 
 \begin{figure}
 
-{\centering \includegraphics{Plots/Steps.png}
+{\centering \includegraphics{Images/Steps.png}
 
 }
 
@@ -1327,7 +1233,7 @@ approach}}}{Steps involved in Box-Jenkins approach}}\label{steps-involved-in-box
 \chapter{CHAPTER FOUR}\label{chapter-four}}
 
 \hypertarget{analysis-and-finding}{%
-\subsection{Analysis and Finding}\label{analysis-and-finding}}
+\section{Analysis and Finding}\label{analysis-and-finding}}
 
 Before building an ARIMA model we checked that if the series is
 stationary. That is, we needed to be determined that the time series is
@@ -1458,7 +1364,7 @@ observe and infer from the ACFs that the signal on the left is steady
 \subsection{Specification of the
 Model}\label{specification-of-the-model}}
 
-We can create the SARMA model as SARMA(,0,)X(0)~based on the previous
+We can create the SARMA model as SARMA(0,0,0)~based on the previous
 study ~
 
 If there hasn't been any differentiation, we can label it as zero. With
@@ -1528,20 +1434,13 @@ ARIMA(2,2,5) had the least AIC value, sigma\^{}2 being the least
 therefore is the best model for given time series. Find the below time
 series plot for the residuals.
 
-\hypertarget{residual-analysis}{%
-\subsubsection{\texorpdfstring{\textbf{Residual
-Analysis}}{Residual Analysis}}\label{residual-analysis}}
+\textbf{Residual Analysis}
 
-\hypertarget{residual-plot}{%
-\subsubsection{\texorpdfstring{\textbf{Residual
-Plot}}{Residual Plot}}\label{residual-plot}}
+\textbf{Residual Plot}
 
-\hypertarget{shapiro-test}{%
-\subsubsection{\texorpdfstring{\textbf{Shapiro
-Test}}{Shapiro Test}}\label{shapiro-test}}
+\textbf{Shapiro Test}
 
-\hypertarget{ljung-box}{%
-\subsubsection{\texorpdfstring{\textbf{Ljung-Box}}{Ljung-Box}}\label{ljung-box}}
+\textbf{Ljung-Box}
 
 \textbf{Time-series Forecasting}
 
@@ -1550,7 +1449,6 @@ values which is shown by the blue region.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\#| tbl{-}cap: "Linear regression model for predicting EVI from Time"}
 \NormalTok{tdx.ns }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{time =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(Time\_Series)), }\AttributeTok{trend =}\NormalTok{ Time\_Series }\SpecialCharTok{{-}}\NormalTok{ tdx.dcp}\SpecialCharTok{$}\NormalTok{time.series[,}\DecValTok{1}\NormalTok{])}
 \NormalTok{summary }\OtherTok{\textless{}{-}} \FunctionTok{summary}\NormalTok{(}\FunctionTok{lm}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ trend }\SpecialCharTok{\textasciitilde{}}\NormalTok{ time, }\AttributeTok{data =}\NormalTok{ tdx.ns))}
 \NormalTok{summary}
@@ -1671,7 +1569,7 @@ forecast performances.
 
 Time series forecasting is a fast growing area of research and as such
 provides many scope for future works. One of them is the Combining
-Approach, i.e. to combine a number of different and dissimilar methods
+Approach, i.e.~to combine a number of different and dissimilar methods
 to improve forecast accuracy. A lot of works have been done towards this
 direction and various combining methods have been proposed in literature
 {[}8, 14, 15, 16{]}. Together with other analysis in time series
@@ -1768,8 +1666,7 @@ with Artificial Neural Networks:: The State of the Art.''}
 \url{https://doi.org/10.1016/S0169-2070(97)00044-7}.
 
 \end{CSLReferences}
-
-
-\backmatter
+	
+%%%%% REFERENCES
 
 \end{document}
