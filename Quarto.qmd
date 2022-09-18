@@ -11,7 +11,7 @@ university-logo: Images/uenrlogo.png
 university-logo-width: 5cm
 format:
   pdf:
-    template: templates/templatex.tex
+    # template: templates/templatex.tex
     documentclass: report
     classoption: ["onepage", "openany"]
     number-sections: true
@@ -598,6 +598,77 @@ ggdensity(Time_Series,fill = "#0073C2FF",color ="#0073C2FF",add = "mean",rug = T
 
 ```{r}
 plot(evi.hw <- forecast::hw(y = Time_Series, h = 12, damped = T))
+```
+
+VAR
+
+```{r,warning=FALSE}
+require(tidyverse)
+require(tidymodels)
+require(data.table)
+require(tidyposterior)
+require(tsibble)  #tsibble for time series based on tidy principles
+require(fable)  #for forecasting based on tidy principles
+require(ggfortify)  #for plotting timeseries
+require(forecast)  #for forecast function
+require(tseries)
+require(chron)
+require(lubridate)
+require(directlabels)
+require(zoo)
+require(lmtest)
+require(TTR)  #for smoothing the time series
+require(MTS)
+require(vars)
+require(fUnitRoots)
+require(lattice)
+require(grid)
+```
+
+```{r}
+# Conerting the Data into time series data
+ Var_ts <- ts(
+   Time_Serie
+ )
+ head(Var_ts)
+```
+
+```{r}
+plot(Var_ts)
+```
+
+```{r}
+theme_set(theme_bw())
+autoplot(Var_ts) +
+  ggtitle("Time Series Plot of the `Var_ts' Time-Series") +
+  theme(plot.title = element_text(hjust = 0.5)) #for centering the text
+```
+
+```{r}
+plot.ts(Var_ts)
+```
+
+```{r}
+
+# Lag order identification
+#We will use two different functions, from two different packages to identify the lag order for the VAR model. Both functions are quite similar to each other but differ in the output they produce. vars::VAR is a more powerful and convinient function to identify the correct lag order. 
+vars::VARselect(Var_ts, 
+          type = "none", #type of deterministic regressors to include. We use none becasue the time series was made stationary using differencing above. 
+          lag.max = 10) #highest lag order
+```
+
+```{r}
+# Creating a VAR model with vars
+var.a <- vars::VAR(Var_ts,
+                   lag.max = 1, #highest lag order for lag length selection according to the choosen ic
+                   ic = "AIC", #information criterion
+                   type = "none") #type of deterministic regressors to include
+summary(var.a)
+
+```
+
+```{r}
+
 ```
 
 # CHAPTER FIVE
