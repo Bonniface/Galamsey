@@ -1,6 +1,7 @@
 library(rgee)
-
+library(sf)
 library(reticulate)
+library(tibble)
 #ee_install()
 ee_check()
 
@@ -9,7 +10,7 @@ ee_Initialize("kalong",drive = TRUE) # initialize GEE,
 
 
 #Load shape file
-aoi <- read_sf('Ghana shp file/GHA/gadm41_GHA_1.shp')
+aoi <- read_sf('Ghana shp file/ROI/new_roi.shp')
 aoi <- st_transform(aoi, st_crs(4326))
 aoi.ee <- st_bbox(aoi) %>%
   st_as_sfc() %>%
@@ -20,3 +21,5 @@ hex <- st_make_grid(x = aoi.proj, cellsize = 17280, square = FALSE) %>%
   st_sf() %>%
   rowid_to_column('hex_id')
 hex <- hex[aoi.proj,]
+plot(hex)
+

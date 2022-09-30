@@ -1,17 +1,4 @@
----
-title: "ENSC-520 rgee Case Study"
-author: "Anthony Holmes"
-date: "`r Sys.Date()`"
-output: html_notebook
----
 
-```{r include=FALSE}
-knitr::opts_chunk$set(cache = TRUE)
-```
-
-
-
-```{r, results=FALSE, warning=FALSE,message=FALSE}
 
 library(purrr)
 library(leaflet)
@@ -22,30 +9,18 @@ library(googledrive)
 library(forecast)
 library(lubridate)
 library(magrittr)
-library(tidyverse)
+library(rgee)
+library(reticulate)
+library(dplyr)
 library(geojsonio)
 
-library(rgee)
-
-library(reticulate)
-```
-```{r}
-ee_check()
-
-ee_Initialize("kalong",drive = TRUE) # initialize GEE,
-#this will have you log in to Google Drive
-```
-```{r}
-cc <- read_sf('Ghana shp file/ROI/new_roi.shp')
-aoi <- st_transform(cc, st_crs(4326))
+ee_Initialize()
+#Load shape file
+aoi <- read_sf('Ghana shp file/ROI/new_roi.shp')
+aoi <- st_transform(aoi, st_crs(4326))
 aoi.ee <- st_bbox(aoi) %>%
   st_as_sfc() %>%
   sf_as_ee() #Converts it to an Earth Engine Object
-```
-`
-
-
-```{r}
 getQABits <- function(image, qa) {
   # Convert binary (character) to decimal (little endian)
   qa <- sum(2^(which(rev(unlist(strsplit(as.character(qa), "")) == 1))-1))
@@ -63,67 +38,40 @@ mod.clean <- function(img) {
   # Mask pixels with value zero.
   ndvi_values$updateMask(quality_mask)$divide(ee$Image$constant(10000)) #0.0001 is the MODIS Scale Factor
 }
-Date <- Sys.Date()
 
-modis.evi <- ee$ImageCollection("MODIS/006/MOD13Q1")$filter(ee$Filter$date('2000-01-01',rdate_to_eedate(Date)))$map(mod.clean)
-```
+modis.evi <- ee$ImageCollection("MODIS/006/MOD13Q1")$filter(ee$Filter$date('2000-01-01', '2022-01-01'))$map(mod.clean)
 
-
-```{r}
 cc.proj <- st_transform(cc, st_crs(2992))
-hex <- st_make_grid(x = cc.proj, cellsize = 17080, square = FALSE) %>%
-st_sf() %>%
-rowid_to_column('hex_id')
+hex <- st_make_grid(x = cc.proj, cellsize = 5280, square = FALSE) %>%
+  st_sf() %>%
+  rowid_to_column('hex_id')
 hex <- hex[cc.proj,]
 plot(hex)
-```
-```{r, eval = FALSE}
-{
-cc.evi <- ee_extract(x = modis.evi, y = hex["hex_id"], sf = FALSE, scale = 250, fun = ee$Reducer$mean(), via = "drive", quiet = T)
-evi.df <- as.data.frame(cc.evi)
-write.csv(x = evi.df, file = "Data/rgeedf.csv")
-}
 
-evi.df <-read.csv("Data/rgeedf.csv")
-colnames(evi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(evi.df[, 2:ncol(evi.df)]), 2, 11), "_", "-"))
-```
+#This will take about 30 minutes
+if(readline(prompt = "This will take 30 minutes. Hit enter to proceed or type 'no' to download the data from G-Drive. ") == "no"){
+  googledrive::drive_download(file = googledrive::as_id("https://drive.google.com/file/d/1lwOE59c_sL3LsVIA98yGL5OK0DOmiSnz/view?usp=sharing"), overwrite = T)
+  evi.df <- read.csv("rgee_file_2d1847c110d_2022_07_05_21_30_05.csv")
+  evi.df <- evi.df[,3:ncol(evi.df)]
+  colnames(evi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(evi.df[, 2:ncol(evi.df)]), 2, 11), "_", "-")) #Convert dates to unambiguous format
+} else {
+  #This will take about 30 minutes
+  paste0(system.time(expr = cc.evi <- ee_extract(x = modis.evi, y = hex["hex_id"], sf = FALSE, scale = 250, fun = ee$Reducer$mean(), via = "drive", quiet = T))/60, " Minutes Elapsed. ")
+  evi.df <- as.data.frame(cc.evi)
+  colnames(evi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames(evi.df[, 2:ncol(evi.df)]), 2, 11), "_", "-"))
+  write.csv(x = evi.df, file = "~/rgee_file_2d1847c110d_2022_07_05_21_30_05   .csv")}
 
-
-
-```{r}
-{
-  evi.hw.lst <- list() #Create an empty list, this will be used to house the time series projections for each cell. 
+evi.hw.lst <- list() #Create an empty list, this will be used to house the time series projections for each cell. 
 evi.dcmp.lst <- list() #Create an empty list, this will be used to house the time series decomposition for each cell.
-evi.df<-evi.df[,-2]
 evi.trend <- data.frame(hex_id = evi.df$hex_id, na.cnt = NA, na.cnt.2 = NA, trend = NA, p.val = NA, r2 = NA, std.er = NA, trnd.strngth = NA, seas.strngth = NA) #This data frame will hold the trend data
-Dates <- data.frame(date = seq(as.Date('2000-01-01'), Date, "month"))
+Dates <- data.frame(date = seq(as.Date('2001-01-01'), as.Date('2019-11-01'), "month"))
 Dates$month <- month(Dates$date)
 Dates$year <- year(Dates$date)
 i <- 1
-}
 tsv <- data.frame(evi = t(evi.df[i, 2:ncol(evi.df)])) #converting the data to a transposed data frame
 colnames(tsv) <- c("evi")
-# 
-# write.csv(tsv,"Data/tsv.csv")
-# tsv <- read.csv("Data/tsv.csv")
-# tsv<-tsv[!(tsv$X=="ex-id"),]
-# tsv$X <- as.Date(tsv$X,tryFormats = c("%Y-%m-%d", "%Y/%m/%d"))
-
 head(tsv) #let's take a look
-```
 
-
-```{r}
-# na.cnt <- length(tsv[is.na(tsv)])
-# #We want to get an idea of the number of entries with no EVI value
-# evi.trend$na.cnt[i] <- na.cnt
-# td <- tsv %>%
-#   separate(X,into = c("year","month","day"),sep = "-")%>%
-#   group_by(year, month) %>%
-#   summarise(mean_evi = mean(evi, na.rm = T), .groups = "keep") %>%
-#   # mutate(month = month(as.Date(tsv$month)), year = year(as.Date(tsv$year))) %>%
-#   as.data.frame()
-# head(td)
 na.cnt <- length(tsv[is.na(tsv)]) #We want to get an idea of the number of entries with no EVI value
 evi.trend$na.cnt[i] <- na.cnt
 td <- tsv %>% 
@@ -132,42 +80,28 @@ td <- tsv %>%
   summarise(mean_evi = mean(evi, na.rm = T), .groups = "keep") %>%
   as.data.frame()
 head(td)
-```
 
-
-
-```{r}
 td$date <- as.Date(paste0(td$year, "-", td$month, "-01"))
 dx <- Dates[!(Dates$date %in% td$date),]
 dx
-```
 
-
-
-```{r}
 dx$mean_evi <- NA
 tdx <- rbind(td, dx) %>% 
   arrange(date)
 na.cnt <- length(tdx[is.na(tdx)])
 evi.trend$na.cnt.2[i] <- na.cnt #add count of na values to dataframe
 rm(td, dx) #remove data we're no longer using, this is a good rule of thumb, especially when working with larger datasets.
-tdx <- ts(data = tdx$mean_evi, start = c(2000, 1), end = c(2022, 01), frequency = 12) #convert data to time series.
+tdx <- ts(data = tdx$mean_evi, start = c(2001, 1), end = c(2019, 11), frequency = 12) #convert data to time series.
 plot(tdx)
-```
 
-
-```{r}
 tdx <- if(na.cnt > 0){imputeTS::na_kalman(tdx, model = "auto.arima", smooth = T)} else {
     tdx
 }
 plot(tdx)
-```
 
-```{r}
 tdx.dcp <- stl(tdx, s.window = 'periodic')
 plot(tdx.dcp)
-```
-```{r}
+
 tdx.ns <- data.frame(time = c(1:length(tdx)), trend = tdx - tdx.dcp$time.series[,1])
 Tt <- trendcycle(tdx.dcp)
 St <- seasonal(tdx.dcp)
@@ -175,8 +109,7 @@ Rt <- remainder(tdx.dcp)
 trend.summ <- summary(lm(formula = trend ~ time, data = tdx.ns)) #tslm
 plot(tdx.ns)
 abline(a = trend.summ$coefficients[1,1], b = trend.summ$coefficients[2,1], col='red')
-```
-```{r}
+
 evi.trend$trend[i] <- trend.summ$coefficients[2,1]
 evi.trend$trnd.strngth[i] <- round(max(0,1 - (var(Rt)/var(Tt + Rt))), 1) #Trend Strength Calculation <https://towardsdatascience.com/rainfall-time-series-analysis-and-forecasting-87a29316494e>
 evi.trend$seas.strngth[i] <- round(max(0,1 - (var(Rt)/var(St + Rt))), 1) #Seasonal Strength Calculation
@@ -184,19 +117,18 @@ evi.trend$p.val[i] <- trend.summ$coefficients[2,4]
 evi.trend$r2[i] <- trend.summ$r.squared
 evi.trend$std.er[i] <- trend.summ$sigma
 evi.trend[i,]
-```
 
 
 
-```{r}
 plot(evi.hw <- forecast::hw(y = tdx, h = 12, damped = T))
-```
 
 
-```{r, eval=FALSE}
-
-evi.trend <- read.csv("Data/rgeedf.csv")
-
+if(readline(prompt = "This could take 50+ mins. Hit enter to proceed or type 'no' to download the data from G-Drive. ") == "no"){
+googledrive::drive_download(file = googledrive::as_id("https://drive.google.com/file/d/1nEIBmVZj4FHFdlAxuU5krxFACHfvLe3z/view?usp=sharing"), overwrite = T)
+evi.trend <- read.csv("evi_trend.csv")
+} else {
+dir.create(paste0(dir,"/decomp_plots"))
+dir.create(paste0(dir,"/hw_plots"))
 for(i in 1:nrow(evi.df)){
 tsv <- data.frame(evi = t(evi.df[i, 2:ncol(evi.df)])) 
 colnames(tsv) <- c("evi")
@@ -204,7 +136,7 @@ na.cnt <- length(tsv[is.na(tsv)])
 evi.trend$na.cnt[i] <- na.cnt
 if(na.cnt < 263){
 td <- tsv %>% 
-  mutate(month = month(as.Date(rownames(tsv))), year = year(as.Date(rownames(tsv)))) %>%
+  mutate(month = month(as.Date(rownames(tsv))), year = year(as.Date(rownames(tsv)))) %>% 
   group_by(year, month) %>%
   summarise(mean_evi = mean(evi, na.rm = T), .groups = "keep") %>%
   as.data.frame()
@@ -220,10 +152,9 @@ tdx <- ts(data = tdx$mean_evi, start = c(2001, 1), end = c(2019, 11), frequency 
 tdx <- if(na.cnt > 0){imputeTS::na_kalman(tdx, model = "auto.arima", smooth = T)} else {
     tdx
 }
-
 tdx.dcp <- stl(tdx, s.window = 'periodic')
-evi.dcmp.lst[[i]] <- tdx.dcp
- #This will save our decomposition plots
+evi.dcmp[[i]] <- tdx.dcp
+png(filename = paste0(dir,"/decomp_plots/hw_", i,".png"), width = 1200, height = 650) #This will save our decomposition plots
 plot(tdx.dcp)
 dev.off()
 tdx.ns <- data.frame(time = c(1:length(tdx)), trend = tdx - tdx.dcp$time.series[,1])
@@ -232,53 +163,38 @@ St <- seasonal(tdx.dcp)
 Rt <- remainder(tdx.dcp)
 trend.summ <- summary(lm(formula = trend ~ time, data = tdx.ns)) #tslm
 evi.trend$trend[i] <- trend.summ$coefficients[2,1]
-evi.trend$trnd.strngth[i] <- round(max(0,1 - (var(Rt)/var(Tt + Rt))), 1) 
-
+evi.trend$trnd.strngth[i] <- round(max(0,1 - (var(Rt)/var(Tt + Rt))), 1) #Trend Strength Calculation <https://towardsdatascience.com/rainfall-time-series-analysis-and-forecasting-87a29316494e>
 evi.trend$seas.strngth[i] <- round(max(0,1 - (var(Rt)/var(St + Rt))), 1) #Seasonal Strength Calculation
 evi.trend$p.val[i] <- trend.summ$coefficients[2,4]
 evi.trend$r2[i] <- trend.summ$r.squared
 evi.trend$std.er[i] <- trend.summ$sigma
 evi.hw <- forecast::hw(y = tdx, h = 12, damped = T)
 evi.hw.lst[[i]] <- evi.hw
-# plot(evi.hw)
-# dev.off()
-# rm(evi.hw, trend.summ, tdx.ns, tdx.dcp, Tt, St, Rt, tdx, na.cnt)
-# gc()
+png(filename = paste0(dir,"/hw_plots/hw_", i,".png"), width = 1200, height = 650) #This will save our projection plots
+plot(evi.hw)
+dev.off()
+rm(evi.hw, trend.summ, tdx.ns, tdx.dcp, Tt, St, Rt, tdx, na.cnt)
+gc()
 } else {
   evi.ts[[i]] <- NA
     }
   }
-
+}
 
 head(evi.trend) #Let's take a peak
-```
 
-And plot a density plot showing the spread of trend values in county
-
-```{r}
 library(ggdensity)
 ggdensity(evi.trend, x = "trend", 
           fill = "#0073C2FF", 
           color = "#0073C2FF",
           add = "mean", 
           rug = TRUE)
-```
-```{r}
-evi.trend$system.index <- cc.evi[,1]
-# evi.trend <-evi.trend%>%rename(hex_id= system.index)
-# hex_trend <- hex %>%
-#   right_join(evi.trend, by = 'hex_id', keep = F) %>%
-#   replace(is.na(.), 0)
-# hex_trend <- st_transform(hex_trend, st_crs(17080))
+
 hex_trend <- hex %>%
   left_join(evi.trend, by = 'hex_id', keep = F) %>%
   replace(is.na(.), 0)
 hex_trend <- st_transform(hex_trend, st_crs(4326))
-```
 
-**create a Leaflet Web Map!**
-
-```{r}
 library(classInt)
 trend_brks <- classIntervals(hex_trend$trend, n=11, style = "fisher")
 colorscheme <- RColorBrewer::brewer.pal(n = 11, 'RdYlGn')
@@ -286,14 +202,12 @@ palette_sds <- leaflet::colorBin(colorscheme, domain = hex_trend$trend, bins=tre
 
 pop <- paste0("<b> Hex ID: </b>",hex_trend$hex_id,"<br><b>NA Count: </b>",hex_trend$na.cnt+hex_trend$na.cnt.2,"<br><b>Trend: </b>",format(round(hex_trend$trend, 4), scientific = FALSE),"<br><b> P-Value: </b>",round(hex_trend$p.val, 4),"<br><b>R2: </b>",round(hex_trend$r2, 4),"<br><b>Std Err: </b>",round(hex_trend$std.er, 4),"<br><b>Trend Strength: </b>",round(hex_trend$trnd.strngth, 2),"<br><b>Seasonal Strength: </b>",round(hex_trend$seas.strngth, 4),"<br>")
 #Here we're creating a popup for our interactive map.
-```
 
-```{r}
 library(leaflet)
 library(dplyr)
 map <- hex_trend %>%
   leaflet() %>%
-  setView(5.99,-1.97, 9) %>%
+  setView(-122.2207, 45.1879, 9) %>%
   addProviderTiles("Esri.WorldTopoMap", group = "Topo Map") %>%
   addProviderTiles("Esri.WorldImagery", group = "Imagery", 
                    options = providerTileOptions(opacity = 0.7)) %>%
@@ -305,13 +219,13 @@ map <- hex_trend %>%
     color='white', 
     group = "Hexbins", 
     highlightOptions = highlightOptions(
-       color = "white",
-       weight = 2,
-       bringToFront = TRUE),
-       popup = pop,
+      color = "white",
+      weight = 2,
+      bringToFront = TRUE),
+    popup = pop,
     popupOptions = popupOptions(
-       maxHeight = 250, 
-       maxWidth = 250)) %>%
+      maxHeight = 250, 
+      maxWidth = 250)) %>%
   addLegend(
     title = "Trend: lm(EVI ~ Month)",
     pal = palette_sds,
@@ -320,11 +234,9 @@ map <- hex_trend %>%
     labFormat = labelFormat(
       digits = 5)) %>%
   addLayersControl(
-       baseGroups = c("Topo Map", "Imagery"),
-       overlayGroups = c("Hexbins"),
-       options = layersControlOptions(collapsed = FALSE)) %>%
+    baseGroups = c("Topo Map", "Imagery"),
+    overlayGroups = c("Hexbins"),
+    options = layersControlOptions(collapsed = FALSE)) %>%
   addScaleBar(position='bottomleft')
-    
-map
-```
 
+map
