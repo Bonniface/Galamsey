@@ -49,7 +49,7 @@ hex <- hex[cc.proj,]
 plot(hex)
 
 #This will take about 30 minutes
-if(readline(prompt = "This will take 30 minutes. Hit enter to proceed or type 'no' to download the data from G-Drive. ") == "no"){
+if(readline(prompt = " Hit enter to proceed or type 'no' to download the data from G-Drive. ") == "no"){
   googledrive::drive_download(file = googledrive::as_id("https://drive.google.com/file/d/1lwOE59c_sL3LsVIA98yGL5OK0DOmiSnz/view?usp=sharing"), overwrite = T)
   evi.df <- read.csv("rgee_file_2d1847c110d_2022_07_05_21_30_05.csv")
   evi.df <- evi.df[,3:ncol(evi.df)]

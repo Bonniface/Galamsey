@@ -265,11 +265,7 @@ ggdensity(evi.trend, x = "trend",
 ```
 ```{r}
 evi.trend$system.index <- cc.evi[,1]
-# evi.trend <-evi.trend%>%rename(hex_id= system.index)
-# hex_trend <- hex %>%
-#   right_join(evi.trend, by = 'hex_id', keep = F) %>%
-#   replace(is.na(.), 0)
-# hex_trend <- st_transform(hex_trend, st_crs(17080))
+
 hex_trend <- hex %>%
   left_join(evi.trend, by = 'hex_id', keep = F) %>%
   replace(is.na(.), 0)
