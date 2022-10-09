@@ -1,0 +1,147 @@
+---
+title: "CleanData"
+author: "Boni"
+date: "2022-10-03"
+output: html_document
+---
+```{r}
+library(tidyverse)
+library(lubridate)
+```
+
+```{r}
+Precipitation <- read.csv("Data/Precipitation.csv")
+MinimumTemperature <- read.csv("Data/MinimumTemperature.csv")
+MaximumTemperature <- read.csv("Data/MaximumTemperature.csv")
+Evapotranspiration <- read.csv("Data/Evapotranspiration.csv")
+Humidity           <- read.csv("Data/Humidity.csv")
+Drought            <- read.csv("Data/Drought.csv")
+head(Precipitation)
+head(MinimumTemperature)
+head(MaximumTemperature)
+head(Evapotranspiration)
+head(Humidity)
+head(Drought)
+```
+```{r}
+{Precipitation <- Precipitation%>%
+    pivot_longer(starts_with("X20"),names_to =  c("y","Date"),names_pattern = "(.)(.+)",values_to = "Precipitation")%>%
+    separate(Date,into = c("Date","precipitation"),sep = "_")%>% 
+    separate(Date, into = c('year', 'day'), sep = -2, convert = TRUE)%>%
+    separate(year, into = c('year', 'month'), sep = -2, convert = TRUE)%>%
+    select(year,month,Precipitation)%>%
+    group_by(year,month)%>%
+    summarize(Precipitation = mean(Precipitation))
+}
+head(Precipitation)
+```
+
+
+```{r}
+MiniTemperature<-  MinimumTemperature%>%
+  pivot_longer(starts_with("X20"),names_to =  c("Y","Date"),names_pattern = "(.)(.+)",values_to ="MiniTemperature")%>%
+  separate(Date,into = c("Date","tmmn"),sep = "_")%>%
+  separate(Date, into = c("year","month"),sep = -2, convert = TRUE)%>%
+    select(year,month,MiniTemperature)
+head(MiniTemperature)
+```
+```{r}
+MaxTemperature<-  MaximumTemperature%>%
+  pivot_longer(starts_with("X20"),names_to =  c("Y","Date"),names_pattern = "(.)(.+)",values_to ="MaxTemperature")%>%
+  separate(Date,into = c("Date","tmmx"),sep = "_")%>%
+  separate(Date, into = c("year","month"),sep = -2, convert = TRUE)%>%
+    select(year,month,MaxTemperature)
+head(MaxTemperature)
+```
+```{r}
+Evapotranspiration<-  Evapotranspiration%>%
+  pivot_longer(starts_with("X20"),names_to =  c("Y","Date"),names_pattern = "(.)(.+)",values_to ="Evapotranspiration")%>%
+  separate(Date,into = c("Date","Evap_tavg"),sep = "_")%>%
+  separate(Date, into = c("year","month"),sep = -2, convert = TRUE)%>%
+    select(year,month,Evapotranspiration)
+head(Evapotranspiration)
+```
+```{r}
+Humidity<-  Humidity%>%
+  pivot_longer(starts_with("X20"),names_to =  c("Y","Date"),names_pattern = "(.)(.+)",values_to ="Humidity")%>%
+  separate(Date,into = c("Date","Qair_f_tavg"),sep = "_")%>%
+  separate(Date, into = c("year","month"),sep = -2, convert = TRUE)%>%
+    select(year,month,Humidity)
+head(Humidity)
+```
+```{r}
+Drought<-  Drought%>%
+  pivot_longer(starts_with("X20"),names_to =  c("Y","Date"),names_pattern = "(.)(.+)",values_to ="Drought")%>%
+  separate(Date,into = c("Date","pdsi"),sep = "_")%>%
+  separate(Date, into = c("year","month"),sep = -2, convert = TRUE)%>%
+    select(year,month,Drought)
+head(Drought)
+```
+```{r}
+dim(Precipitation)
+dim(MiniTemperature)
+dim(MaxTemperature)
+dim(Evapotranspiration)
+dim(Humidity)
+dim(Drought)
+```
+```{r,warning=FALSE,message=FALSE}
+Temperature <- MiniTemperature%>%full_join(MaxTemperature)
+Rainfall<- Evapotranspiration%>%full_join(Humidity)
+Precip_and_Rainfall<-Precipitation%>%full_join(Rainfall)
+Drought_and_Temp <- Drought%>%full_join(Temperature)
+ClimateData <- Precip_and_Rainfall%>%full_join(Drought_and_Temp)
+head(ClimateData)
+```
+
+```{r}
+# Save the Data
+write.csv(ClimateData,"Data/ClimateData.csv")
+# {write.csv(ClimateChange,"Data/ClimateChange.csv")
+#   write.csv(Precipitation,"Data/Precipitation.csv")
+#   write.csv(MinimumTemperature,"Data/MinTemperature.csv")
+#   write.csv(MaximumTemperature,"Data/MaxTemperature.csv")}
+# {
+#   Climate <- read.csv("Data/ClimateChange.csv")
+#   NDVI <- read.csv("Data/NDvI.csv")%>%separate(Date, into = c("month","day","year"),sep ="/")
+#   EVI <- read.csv("Data/EVI.csv")%>%separate(Date, into = c("month","day","year"),sep ="/")
+#   
+#   Vegetation <- NDVI%>%  full_join(EVI)
+#   Climate$year <- as.character(Climate$year)
+#   # Climate$month <- as.character(Climate$month)
+#   df <- Vegetation%>%select(-day)%>%full_join(Climate, by =  "year")
+#   df <-df%>%select(-month.x)%>%filter(year > 2000)%>%rename(month = month.y)
+#    write.csv(df,"Data/Time_Series.csv")
+#    
+# }
+```
+
+```{r}
+df <-read.csv("Data/rgeedf.csv")
+colnames(df) <- c('hex_id', stringr::str_replace_all(substr(colnames(df[, 2:ncol(df)]), 2, 11), "_", "-"))
+head(df)
+```
+```{r}
+df <- df[,-2]
+head(df)
+```
+```{r}
+Dates <- data.frame(date = seq(as.Date('2000-01-01'), Date, "month"))
+Dates$month <- month(Dates$date)
+Dates$year <- year(Dates$date)
+```
+```{r}
+df<- data.frame(evi = t(df[1, 2:ncol(df)])) #converting the data to a transposed data frame
+colnames(df) <- c("ndvi")
+head(df)
+
+```
+```{r}
+Df <- read.csv("Data/NDVI.csv")
+Data <- Df%>%full_join(ClimateData)
+Data<- Data%>%filter(year <= 2021)
+write.csv(Data,"Data/Data.csv")
+tail(Df)
+str(Data)
+```
+

@@ -1,0 +1,124 @@
+\documentclass[11pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usetheme{Madrid}
+\bibliographystyle{apalike}
+%\usepackage[style=apa, backend=biber, natbib=true]{biblatex}
+%\addbibresource{References.bib}
+%\bibliography{document}
+\begin{document}
+	\author[Group Nine]{KALONG BONIFACE \\
+		   FUGAH SELETEY MITCHELL\\
+		  			  SUPERVISER: MR JUSTIES AMAYOR KESSI	}  
+\title[Proposal]{HE VARIABILITY CLIMATE CHANGE IS RESPONSIBLE FOR IN VEGETATION LOSS IN GHANA}
+	\subtitle{Quantifying The Status of Galamsey With Time Series Analsis}
+	\logo{\includegraphics[scale=0.1]{images/logo2}}
+	\institute[UENR]{Department of Mathematics and Statistics\\University Of Energy and Natural Resource,Sunyani}
+	\date{\today}
+	%\subject{Proposal}
+	%\setbeamercovered{transparent}
+	%\setbeamertemplate{navigation symbols}{}
+	\begin{frame}
+		\maketitle
+	\end{frame}
+	\begin{frame}
+		\frametitle{Outline Of Presentation}
+		\begin{itemize}
+			\item Introduction
+			\item Problem Statement
+			\item Objective
+			\item Methodology
+			\item Reference
+		\end{itemize}
+	\end{frame}
+	\begin{frame}
+		\frametitle{INTRODUCTION}
+		\begin{block}{}
+		Insurance has been of great help to businesses, health, vehicles and all aspects of life as a whole. The relief that insurance claims provides is one that can save lives. Based on premiums paid, claim amount may differ which may or may not absolutely solve all the clients’ problems arising as a result of the covered loss. But there are other factors that can influence premiums and hence affect claims.
+		An insurance claim is a formal request for payment made by someone to their policy provider. A claim is made after an incident occurs that's covered by the policy. Payment from a claim is usually used to replace or repair property or pay for health care costs related to an injury. \\
+       \end{block}
+	\end{frame}
+     \begin{frame}
+     	\frametitle{Introduction Con't}
+     	\begin{block}{}
+     		According to Yau et al, in the general insurance industry, modelling claim frequency distribution is one of the important tasks for ratemaking.	Modelling claims data taking into account all factors that can affect the size of a claims is of essence in insurance. It ensures that right premiums are calculated and charged given different characteristics of potential policyholders. 
+     	\end{block}
+     
+     \end{frame}
+\begin{frame}
+	
+	\begin{block}{PROBLEM STATEMENT}
+		
+		In premium calculations, characteristics of drivers such as their age, educational level and other covariates as well some characteristics of the car they use are essential in adjusting premiums for the next year.\\
+		\vspace{20pt} 
+		According to \emph{Soltés et al}, the general linear model combines the analyses of variance and regression and makes it possible to measure the influence of categorical factors on an response variable.\\
+		\vspace{20pt} 
+		Generalised linear model has been extensively used in looking at how some covariates affect claim sizes. However, this model does not taken into account situations where there are repeated measures. 
+		
+	
+	\end{block}
+\end{frame}
+\begin{frame}
+	\begin{block}{OBJECTIVE}
+The specific objective of the study are to study the following:
+\begin{itemize}
+\item Fit probabilistic distribution to claim size data
+\item Identify driver and vehicle characteristics that can influence size of claim
+\item Measure how driver and vehicle characteristics affect claim size
+\end{itemize}
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Methodology}	
+	\begin{block}{Generalized Linear Mixed models Formular}
+%		Generalized Linear Mixed models represent a class of regression models for several types of dependent variables where the linear predictor includes only fixed effects. Incorporation of random effects into GLMs yields the class of models known as Generalized Linear Mixed Models (GLMMs). Random effects are typically included for analysis of clustered and/or longitudinal data to account for the correlation of the data. GLMMs are especially useful for analysts of correlated non-normal data, and the term GLMMs often refers to models for these kinds of data.
+Generalized linear mixed model is an extension to the GLM in which the linear predictor contains random effects in addition to the usual effects. 
+	GLMM's are generally defined such that, conditioned on the random \emph{u},the dependent variable is distributed according to the exponential family with its expectation related to the linear predictor $X\beta + Zu$ via  the link function g:\\
+				\begin{center}
+						$g(E(y|u)) = X\beta + Zu$
+				\end{center}
+Where; 
+\begin{itemize}
+	\item   \emph{X} and \emph{$beta$} are the fixed effects design matrix and fixed effects respectively.\\
+	\item   \emph{Z} and \emph{u} are the random effects design matrix and random effects respectively.\\ 
+\end{itemize}
+	\end{block}
+\end{frame}
+\begin{frame}
+	\begin{block}{Methodology Cont'}
+		\begin{itemize}
+		\item[*] The GLM is a special case of hierarchical GLM in which the random effects are normally distributed.
+	\end{itemize}
+\textbf{Exponential Family}\\
+
+It is of the form 
+$f(y) = c(y,\phi)exp{\frac{y\theta - a(\theta)}{\phi}}$\\
+where;\\
+\begin{itemize}
+	\item  $\theta$ and $\phi$ are parameters. The parameters $\theta$ is called the canonical parameter and  $\phi$ the dispersion parameter.  \\
+\item   The choice of \emph{a(t)} and $c(y,\phi)$ determine the actual probability function such as the binomial, normal, gamma, etc .\\ 
+\end{itemize}
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Data}
+	\begin{itemize}
+		\item \textbf{Data source:}Secondary Data\\
+		\item \textbf{Dependent Variable:}Claim Amount\\
+		\item \textbf{Independent Variable:}Age of driver, fuel type, education level of the driver, manufacturing year, exposure.\\
+		
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{References}
+	\begin{thebibliography}{9}
+		\bibitem{Hawkins1973}Šoltés, E., Zelinová, S., $\&$ Bilíková, M. (2019). General linear model: An effective tool for analysis of claim severity in motor third party liability insurance. STATISTICS, 13,
+		\bibitem{citekey}Yau, K., Yip, K., $\&$ Yuen, H. K. (2003). Modelling repeated insurance claim frequency data using the generalized linear mixed model. Journal of Applied Statistics, 30(8), 857-865,	
+		\bibitem{Jiang}Jiang, J., $\&$ Nguyen, T. (2007). Linear and generalized linear mixed models and their applications (Vol. 1). New York: Springer.
+	\end{thebibliography}
+\end{frame}
+
+
+\end{document}
