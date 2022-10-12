@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.1)  9 OCT 2022 16:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.1)  11 OCT 2022 20:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -680,11 +680,7 @@ LaTeX Font Info:    Trying to load font information for T1+ptm on input line 46
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 (index.aux (Chapters/Chapter1.aux) (Chapters/Chapter2.aux)
-(Chapters/Chapter3.aux) (Chapters/Chapter4.aux
-
-LaTeX Warning: Label `Optimal lag' multiply defined.
-
-) (Chapters/Chapter5.aux))
+(Chapters/Chapter3.aux) (Chapters/Chapter4.aux) (Chapters/Chapter5.aux))
 \openout1 = `index.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
@@ -916,27 +912,27 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 2.
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-[7])
+[7] [8])
 \tf@toc=\write4
 \openout4 = `index.toc'.
 
- [8] (index.lot)
+ [9] [10
+
+] (index.lot)
 \tf@lot=\write5
 \openout5 = `index.lot'.
 
- [9
-
-] [10
+ [11] [12
 
 ] (index.lof)
 \tf@lof=\write6
 \openout6 = `index.lof'.
 
- [11] [1]
+ [13] [1]
 \openout2 = `Chapters/Chapter1.aux'.
 
- (Chapters/Chapter1.tex
-[2
+
+(Chapters/Chapter1.tex [2
 
 
 ]
@@ -1050,105 +1046,120 @@ Underfull \hbox (badness 10000) in alignment at lines 180--180
  (Chapters/Chapter4.tex
 Chapter 4.
 
+Underfull \hbox (badness 10000) in alignment at lines 24--24
+[][] 
+ []
+
+
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 14.
+               Default added (so using `tbp') on input line 30.
 
 
-Underfull \hbox (badness 10000) in alignment at lines 31--31
+Underfull \hbox (badness 10000) in alignment at lines 47--47
 [][][][][][][] 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 33.
+               Default added (so using `tbp') on input line 49.
 
 [17
 
 
 
 
-]
-<images/Rplot11.png, id=105, 604.50844pt x 328.97906pt>
-File: images/Rplot11.png Graphic file (type png)
-<use images/Rplot11.png>
-Package pdftex.def Info: images/Rplot11.png  used on input line 54.
-(pdftex.def)             Requested size: 362.48677pt x 197.26848pt.
- [18]
+] [18]
+<images/Correlation.png, id=115, 618.05907pt x 445.665pt>
+File: images/Correlation.png Graphic file (type png)
+<use images/Correlation.png>
+Package pdftex.def Info: images/Correlation.png  used on input line 70.
+(pdftex.def)             Requested size: 466.0533pt x 336.0704pt.
+ [19 <./images/Correlation.png (PNG copy)>]
 
-LaTeX Warning: Citation 'dickey1979distribution' on page 19 undefined on input 
-line 81.
+LaTeX Warning: Citation 'dickey1979distribution' on page 20 undefined on input 
+line 103.
+
+
+LaTeX Warning: Reference `(ADF) unit root test' on page 20 undefined on input l
+ine 103.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 83.
+               Default added (so using `tbp') on input line 105.
 
 
-Underfull \hbox (badness 10000) in alignment at lines 114--114
+Underfull \hbox (badness 10000) in alignment at lines 136--136
 [][][][][][][] 
  []
 
-[19 <./images/Rplot11.png (PNG copy)>] [20]
+[20] [21]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 118.
+               Default added (so using `tbp') on input line 140.
 
 
-Underfull \hbox (badness 10000) in alignment at lines 139--139
+Underfull \hbox (badness 10000) in alignment at lines 161--161
 [][][][][] 
  []
 
-<images/Rplot20.png, id=116, 391.4625pt x 328.97906pt>
-File: images/Rplot20.png Graphic file (type png)
-<use images/Rplot20.png>
-Package pdftex.def Info: images/Rplot20.png  used on input line 143.
-(pdftex.def)             Requested size: 362.48677pt x 304.64221pt.
+<images/TimeSeries.png, id=125, 618.05907pt x 445.665pt>
+File: images/TimeSeries.png Graphic file (type png)
+<use images/TimeSeries.png>
+Package pdftex.def Info: images/TimeSeries.png  used on input line 165.
+(pdftex.def)             Requested size: 466.0533pt x 336.0704pt.
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 148.
+               Default added (so using `tbp') on input line 169.
 
 
-Underfull \hbox (badness 10000) in alignment at lines 167--167
+Underfull \hbox (badness 10000) in alignment at lines 191--191
 [][][][][] 
  []
 
-<images/impose.png, id=117, 963.6pt x 542.025pt>
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 193.
+
+
+Underfull \hbox (badness 10000) in alignment at lines 212--212
+[][][][][] 
+ []
+
+<images/impose.png, id=126, 963.6pt x 542.025pt>
 File: images/impose.png Graphic file (type png)
 <use images/impose.png>
-Package pdftex.def Info: images/impose.png  used on input line 172.
-(pdftex.def)             Requested size: 362.48677pt x 203.8957pt.
-<images/Rplot12.png, id=118, 391.4625pt x 328.97906pt>
-File: images/Rplot12.png Graphic file (type png)
-<use images/Rplot12.png>
-Package pdftex.def Info: images/Rplot12.png  used on input line 178.
-(pdftex.def)             Requested size: 362.48677pt x 304.64221pt.
-[21] [22 <./images/Rplot20.png> <./images/impose.png>]) [23 <./images/Rplot12.p
-ng>]
+Package pdftex.def Info: images/impose.png  used on input line 217.
+(pdftex.def)             Requested size: 517.84052pt x 291.2914pt.
+<images/fevd.png, id=127, 1056.94875pt x 647.41875pt>
+File: images/fevd.png Graphic file (type png)
+<use images/fevd.png>
+Package pdftex.def Info: images/fevd.png  used on input line 225.
+(pdftex.def)             Requested size: 466.0533pt x 285.46773pt.
+[22] [23 <./images/TimeSeries.png>] [24] [25 <./images/impose.png> <./images/fe
+vd.png>]) [26]
 \openout2 = `Chapters/Chapter5.aux'.
 
- (Chapters/Chapter5.tex [24
-
-
-
-
-]
+ (Chapters/Chapter5.tex
 Chapter 5.
-) [25] [26
+) [27
 
 
 
-]
+
+] [28]
 Appendix A.
-[27] [28
+[29
+
+
+
+] [30
 
 ]
 Appendix B.
-[29] (index.aux (Chapters/Chapter1.aux) (Chapters/Chapter2.aux)
+[31] (index.aux (Chapters/Chapter1.aux) (Chapters/Chapter2.aux)
 (Chapters/Chapter3.aux) (Chapters/Chapter4.aux) (Chapters/Chapter5.aux))
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
 
 
 Package biblatex Warning: Please (re)run Biber on the file:
@@ -1160,13 +1171,13 @@ Package logreq Info: Writing requests to 'index.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 15460 strings out of 478582
- 283669 string characters out of 2845289
- 1101881 words of memory out of 3000000
- 33349 multiletter control sequences out of 15000+600000
+ 15469 strings out of 478582
+ 283855 string characters out of 2845289
+ 1101890 words of memory out of 3000000
+ 33358 multiletter control sequences out of 15000+600000
  510461 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,16n,70p,1155b,5033s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 56i,16n,70p,1169b,5033s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/Guy/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/U
 sers/Guy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pf
 b><C:/Users/Guy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
@@ -1180,9 +1191,9 @@ type1/urw/palatino/uplr8a.pfb><C:/Users/Guy/AppData/Local/Programs/MiKTeX/fonts
 ts/type1/urw/times/utmb8a.pfb><C:/Users/Guy/AppData/Local/Programs/MiKTeX/fonts
 /type1/urw/times/utmr8a.pfb><C:/Users/Guy/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on index.pdf (41 pages, 535226 bytes).
+Output written on index.pdf (45 pages, 547677 bytes).
 PDF statistics:
- 198 PDF objects out of 1000 (max. 8388607)
+ 211 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

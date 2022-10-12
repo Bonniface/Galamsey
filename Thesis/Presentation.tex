@@ -3,6 +3,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usetheme{Madrid}
+\usepackage{tabularx}
+\usepackage{booktabs}
 \bibliographystyle{apalike}
 %\usepackage[style=apa, backend=biber, natbib=true]{biblatex}
 %\addbibresource{references.bib}
@@ -114,7 +116,7 @@ The goal of time series modeling is to employ the simplest model feasible to acc
 \begin{frame}
 	\frametitle{Data}
 		
-The Satellite (MOD13) provide consistent,and spatial time series comparisons of global vegetation conditions that can be used to monitor the Earth’s  photosynthetic vegetation activity in support of  \textbf{change detection}, and biophysical interpretations.For this analysis, we will be using the MOD13Q1 V6 product which contains the Enhanced Vegetation Index (EVI). Calculated as: and ;
+The Satellite (MOD13) provide consistent,and spatial time series comparisons of global vegetation conditions that can be used to monitor the Earth’s  photosynthetic vegetation activity in support of  \textbf{change detection}, and biophysical interpretations.For this analysis, we will be using the MOD13Q1 V6 product which contains the Enhanced Vegetation Index (EVI).
 	% TODO: \usepackage{graphicx} required
 	\begin{figure}
 		\centering
@@ -127,11 +129,26 @@ The Satellite (MOD13) provide consistent,and spatial time series comparisons of 
 
 \begin{frame}
 	\frametitle{Data}
+% TODO: \usepackage{graphicx} required
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/EVI}
+	\caption{}
+	\label{fig:evi}
+\end{figure}
+
+	
+NIR, Red, and Blue are the surface reflectances that have been fully or partially adjusted for Rayleigh scattering and ozone absorption due to the atmosphere; C1 and C2 are the coefficients of the aerosol resistance term (which uses the blue band to correct for aerosol influences in the red band); L is the canopy background adjustment for correcting the nonlinear, differential NIR and red radiant transfer through a canopy; and G is a gain or scaling factor. The MODIS EVI algorithm's chosen coefficients are L=1, C1=6, C2=7.5, and G=2.5.
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Data}
 	% TODO: \usepackage{graphicx} required
 	\begin{figure}
 		\centering
 		\includegraphics[width=0.7\linewidth]{images/DataExtraction}
-		\caption{}
+		\caption{Data Extraction from Google Earth Engine}
 		\label{fig:dataextraction}
 	\end{figure}
 	
@@ -147,11 +164,22 @@ we will first collect data from Google Earth Engine in order to choose  EVI valu
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\linewidth]{images/Rplot}
-	\caption{}
+	\caption{Creating Hex cell(Polygons) on the Study Area}
 	\label{fig:rplot}
 \end{figure}
+\end{frame}
 
-
+\begin{frame}
+	\begin{block}{Methodology Cont'}
+		% TODO: \usepackage{graphicx} required
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{images/Methodology}
+			\caption{Flow Chart to Galamsey Detection}
+			\label{fig:methodology}
+		\end{figure}
+		
+	\end{block}
 \end{frame}
 \begin{frame}
 	\begin{block}{Methodology Cont'}
@@ -161,26 +189,102 @@ we will first collect data from Google Earth Engine in order to choose  EVI valu
 		\item[*] Then, a method to discover patterns that are helpful for classification is suggested.
 		\item[*] combine these patterns to create computable categorization rules. 
 	\end{itemize}
-\textbf{Exponential Family}\\
+\textbf{vector autoregression (VAR) }\\
 
 It is of the form 
-$f(y) = c(y,\phi)exp{\frac{y\theta - a(\theta)}{\phi}}$\\
+$y_{t} = A_{1}y_{t-1} + A_{2}y_{t-2} +\cdot+A_{p}y_{t-p}+ CD_{t} + \mu $\\
 where;\\
 \begin{itemize}
-	\item  $\theta$ and $\phi$ are parameters. The parameters $\theta$ is called the canonical parameter and  $\phi$ the dispersion parameter.  \\
-\item   The choice of \emph{a(t)} and $c(y,\phi)$ determine the actual probability function such as the binomial, normal, gamma, etc .\\ 
+	\item  $ y_{t} = \left( y_{1t},y_{2t},...,y_{kt}\right)'$ is a vector of K observable endogenous variables \\
+\item    For the purposes of this study, yt = $(EVI_{t}, Temperature_{t}, Rain_{}, Precipitation_{t},Drought_{t},Evaporation_{t})'$
 \end{itemize}
+ where EVI denotes the value of vegetation conditions  each month
 	\end{block}
 \end{frame}
+\begin{frame}
+	\frametitle{explanation}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\item Augmented Dickey Fuller unit root test
+				\item Lag Selection using information Criteria (AIC,HQ,SC,FPE)
+				\item Causality Test (Granger Causality)
+				\item Impose Analysis
+				\item Decomposition of Variance (FEVD)
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}  %%<--- here
+					% TODO: \usepackage{graphicx} required
+					\begin{center}
+						\includegraphics[width=0.7\linewidth]{images/Accuracy}
+					\end{center}
+		\end{column}
+	\end{columns}
+\end{frame}
+\begin{frame}{Result}
+% TODO: \usepackage{graphicx} required
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/TimeSeries}
+	\caption{}
+	\label{fig:timeseries}
+\end{figure}
+\end{frame}
+\begin{frame}{Result Causality}
+	\begin{table}[]
+		\label{Optimal lag}
+		\caption{Granger causality tests.}
+		\centering
+		\small
+		\addtolength{\tabcolsep}{-4pt}
+		\begin{tabularx}{\textwidth}{@{}lllll@{}}
+			\hline
+			Cause variable &Null hypothesis& F-value& p-value& Decision\\
+			\hline\hline
+			Precipitation	& does not Granger-cause EVI &2.1563  & 0.01464  & Reject the null hypothesis  \\
+			\hline
+			Evaporation	& does not Granger-cause EVI & 1.5398 & 0.1112 &Fail to Reject the null hypothesis  \\
+			\hline
+			TempMin	&  does not Granger-cause EVI&3.0049  & 0.0006276 &Reject the null hypothesis  \\
+			\hline
+			TempMax	& does not Granger-cause EVI&2.7462  & 0.001685 &Reject the null hypothesis  \\
+			\hline
+			Drought	& does not Granger-cause EVI & 0.9235 & 0.5241 &Fail to Reject the null hypothesis \\
+			\hline
+		\end{tabularx}
+	\end{table}
+\end{frame}
+\begin{frame}{Result}
+	% TODO: \usepackage{graphicx} required
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\linewidth]{images/impose}
+		\caption{}
+		\label{fig:impose}
+	\end{figure}
+	
+\end{frame}
 
-%\begin{frame}
-%	\frametitle{References}
-%	\begin{thebibliography}{9}
-%		\bibitem{Hawkins1973}Šoltés, E., Zelinová, S., $\&$ Bilíková, M. (2019). General linear model: An effective tool for analysis of claim severity in motor third party liability insurance. STATISTICS, 13,
-%		\bibitem{citekey}Yau, K., Yip, K., $\&$ Yuen, H. K. (2003). Modelling repeated insurance claim frequency data using the generalized linear mixed model. Journal of Applied Statistics, 30(8), 857-865,	
-%		\bibitem{Jiang}Jiang, J., $\&$ Nguyen, T. (2007). Linear and generalized linear mixed models and their applications (Vol. 1). New York: Springer.
-%	\end{thebibliography}
-%\end{frame}
+\begin{frame}{Result}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\linewidth]{images/fevd}
+		\caption{}
+		\label{fig:fevd}
+	\end{figure}
+\end{frame}
+\begin{frame}{Discussion}
+	The Granger and immediate causality tests reveal that only three climate factors have an impact on malaria. The impulse response analyses show that the ninth, third, and tenth months, respectively, had the strongest favorable effects of maximum temperature, relative humidity, and rainfall on malaria. With less than 20\% of the variability in the trend of EVI being explained by historical innovations in Climate Change, the decomposition of predicted variance shows varied degrees of EVI dependence on climatic variables. Policymakers can utilize the study's findings to assist them develop policies by understanding how climatic variability affects the incidence of EVI in the Study Area.
+
+\end{frame}
+\begin{frame}
+	\frametitle{References}
+	\begin{thebibliography}{9}
+		\bibitem{Hawkins1973}Šoltés, E., Zelinová, S., $\&$ Bilíková, M. (2019). General linear model: An effective tool for analysis of claim severity in motor third party liability insurance. STATISTICS, 13,
+		\bibitem{citekey}Yau, K., Yip, K., $\&$ Yuen, H. K. (2003). Modelling repeated insurance claim frequency data using the generalized linear mixed model. Journal of Applied Statistics, 30(8), 857-865,	
+		\bibitem{Jiang}Jiang, J., $\&$ Nguyen, T. (2007). Linear and generalized linear mixed models and their applications (Vol. 1). New York: Springer.
+	\end{thebibliography}
+\end{frame}
 
 
 \end{document}

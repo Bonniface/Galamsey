@@ -3,9 +3,9 @@
 \contentsline {section}{ABSTRACT}{iii}{}%
 \contentsline {section}{DEDICATION}{iv}{}%
 \contentsline {section}{ACKNOWLEDGMENTS}{v}{}%
-\contentsline {section}{TABLE OF CONTENTS}{viii}{}%
-\contentsline {section}{LIST OF TABLES}{ix}{}%
-\contentsline {section}{LIST OF FIGURES}{xi}{}%
+\contentsline {section}{TABLE OF CONTENTS}{ix}{}%
+\contentsline {section}{LIST OF TABLES}{xi}{}%
+\contentsline {section}{LIST OF FIGURES}{xiii}{}%
 \contentsline {chapter}{\numberline {1}CHAPTER ONE\\1.0 INTRODUCTION}{3}{}%
 \contentsline {section}{\numberline {1.1}Introduction}{3}{}%
 \contentsline {section}{\numberline {1.2}Background of The Study}{4}{}%
@@ -30,15 +30,18 @@
 \contentsline {chapter}{\numberline {4}CHAPTER FOUR\\4.0 DATA ANALYSIS AND RESULTS}{17}{}%
 \contentsline {section}{\numberline {4.1}Introduction}{17}{}%
 \contentsline {subsection}{\numberline {4.1.1}Preliminary Results}{17}{}%
-\contentsline {subsection}{\numberline {4.1.2}Selection of Variables}{18}{}%
-\contentsline {subsection}{\numberline {4.1.3}Multicollinearity}{19}{}%
-\contentsline {subsection}{\numberline {4.1.4}Stationarity and Differencing}{19}{}%
-\contentsline {section}{\numberline {4.2}VAR Estimation}{20}{}%
-\contentsline {section}{\numberline {4.3}Forecast for EVI}{23}{}%
-\contentsline {section}{\numberline {4.4}Prediction accuracy}{23}{}%
-\contentsline {chapter}{\numberline {5}CHAPTER FIVE\\5.0 CONCLUSION \& RECOMMENDATIONS}{25}{}%
-\contentsline {section}{\numberline {5.1}Introduction}{25}{}%
-\contentsline {section}{\numberline {5.2}Conclusion}{25}{}%
-\contentsline {chapter}{APPENDICES}{26}{}%
-\contentsline {chapter}{\numberline {A}Appendix Chapter}{27}{}%
-\contentsline {chapter}{\numberline {B}Appendix B Chapter}{29}{}%
+\contentsline {subsection}{\numberline {4.1.2}Variable \& Parameter Definition}{17}{}%
+\contentsline {subsection}{\numberline {4.1.3}Selection of Variables}{19}{}%
+\contentsline {subsection}{\numberline {4.1.4}Multicollinearity}{19}{}%
+\contentsline {subsection}{\numberline {4.1.5}Stationarity and Differencing}{20}{}%
+\contentsline {section}{\numberline {4.2}VAR Estimation}{22}{}%
+\contentsline {subsection}{\numberline {4.2.1} Decomposition of Variance}{22}{}%
+\contentsline {subsection}{\numberline {4.2.2}Forecast for EVI}{22}{}%
+\contentsline {subsection}{\numberline {4.2.3}Prediction accuracy}{26}{}%
+\contentsline {chapter}{\numberline {5}CHAPTER FIVE\\5.0 CONCLUSION \& RECOMMENDATIONS}{27}{}%
+\contentsline {section}{\numberline {5.1}Introduction}{27}{}%
+\contentsline {section}{\numberline {5.2}Conclusion}{27}{}%
+\contentsline {section}{\numberline {5.3}RECOMMENDATIONS}{27}{}%
+\contentsline {chapter}{APPENDICES}{29}{}%
+\contentsline {chapter}{\numberline {A}Appendix Chapter}{29}{}%
+\contentsline {chapter}{\numberline {B}Appendix B Chapter}{31}{}%

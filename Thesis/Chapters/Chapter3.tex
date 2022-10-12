@@ -44,21 +44,21 @@ Model of vector autoregression. In econometrics, the Sims' vector autoregression
 \begin{equation}
 	y_{t} = A_{1}y_{t-1} + A_{2}y_{t-2} +\cdot+A_{p}y_{t-p}+ CD_{t} + \mu 
 \end{equation}
-Where $ y_{t} = \left( y_{1t},y_{2t},...,y_{kt}\right)'$ is a vector of K observable endogenous variables. For the purposes of this study, yt = $(EVI_{t}, Temperature_{t}, Rain_{}, Precipitation_{t},Drought_{t},Evaporation_{t})'$ where EVI denotes the value of vegetation conditions  each month, Temperature for both TMax and TMin, Rain denotes the amount of precipitation (mm), and Drought denotes the relative drought (\%). All deterministic variables, including constants, linear trends, and seasonal dummy variables, are contained in $D_{t}$. An unobservable zero-mean white noise process in K dimensions, $\mu_{t}$ has a positive definite covariance matrix $E(\mu_{t},\mu_{t}^{'}) = \sum_{\mu}$. We  apply different limits on the parameter matrices $A_{i}$ and C, which are of an appropriate dimension.
+Where $ y_{t} = \left( y_{1t},y_{2t},...,y_{kt}\right)'$ is a vector of K observable endogenous variables. For the purposes of this study, yt = $(EVI_{t}, Temperature_{t}, Rain_{}, Precipitation_{t},Drought_{t},Evaporation_{t})'$ where EVI denotes the value of vegetation conditions  each month, Temperature for both TMax and TMin, Rain denotes the amount of precipitation (mm), and Drought denotes the relative drought (\%). All deterministic variables, including constants, linear trends, and seasonal dummy variables, are contained in $CD_{t}$. An unobservable zero-mean white noise process in K dimensions, $\mu_{t}$ has a positive definite covariance matrix $E(\mu_{t},\mu_{t}^{'}) = \sum_{\mu}$. We  apply different limits on the parameter matrices $A_{i}$ and C, which are of an appropriate dimension.
 Generalized least squares is used to estimate the model's parameters.
 
 \textbf{Augmented Dickey Fuller Test.} For stationarity, the Augmented Dickey Fuller \textbf{(ADF)} test is a unit root test. The alternative hypothesis varies slightly depending on the equation used, whereas the null hypothesis for the ADF test is that there is a unit root. The time series is steady, which is the most straightforward alternate theory. In time series analysis, unit roots can lead to unexpected outcomes.
 \begin{align}        \Delta y_t &=  \color{red}\gamma y_{t-1} + \underbrace{\sum_{i=2}^{p} \beta_i \Delta y_{t-i+1}}_\text{control for serial correlation} + \epsilon_t  \\ \rightarrow (\tau1&)\quad H_0 : \color{red} {\gamma = 0} \\\\       \Delta y_t &=  \color{red}{\gamma} y_{t-1}  + \underbrace{\color{blue}{a_0}}_\text{constant} + \sum_{i=2}^{p} \beta_i \Delta y_{t-i+1} + \epsilon_t   \\ \rightarrow (\phi1&)\quad H_0 : \color{red} {\gamma = 0} \quad\&\quad\color{blue}{a_0 = 0}  \\\ \rightarrow (\tau2&)\quad H_0 : \color{red} {\gamma = 0}  \\\       \Delta y_t &=  \color{red}{\gamma} y_{t-1}  + \color{blue}{a_0}  + \underbrace{\color{green}{a_2} t}_{trend} + \sum_{i=2}^{p} \beta_i \Delta y_{t-i+1}  + \epsilon_t \\ \rightarrow (\phi2&)\quad H_0 : \color{red} {\gamma = 0} \quad\&\quad \color{blue}{a_0 = 0} \quad\&\quad \color{green}{a_2 = 0} \\ \rightarrow (\phi3&)\quad H_0 : \color{red} {\gamma = 0} \quad\&\quad\color{blue}{a_0 = 0}  \\ \rightarrow (\tau3&)\quad H_0 : \color{red} {\gamma = 0}    
  \end{align}
 
-\textbf{Optimal Lag Length Selection Criteria.} \textbf{OLS} is used to estimate each of the system's individual equations. One of the following Information Criteria is minimized to determine the best lag order that is choosing optimal lag  to reduce residual correlation
+\textbf{Optimal Lag Length Selection Criteria (OLS)}  is used to estimate each of the system's individual equations. One of the following Information Criteria is minimized to determine the best lag order that is choosing optimal lag  to reduce residual correlation
 \begin{center}
 		\begin{tabular}{ll}
 			\multicolumn{1}{c}{}Criteria &  Formular \\ \midrule
-			AIC (n)  & = log det $ \displaystyle\left(\sum _{\mu}(n)\right)+ \frac{2}{T}nK^{2}$\\
-			HQ(n)    & = log det  $ \displaystyle\left(\sum _{\mu}(n)\right)+ \frac{2logT}{T}nK^{2}$\\
-			SC(n)    & = log det  $ \displaystyle\left(\sum _{\mu}(n)\right)+ \frac{logT}{T}nK^{2}$\\
-			FPE(n)   & =          $\displaystyle \left(\frac{T + n^{*}}{T - n^{*}}\right)$det $\displaystyle \left(\sum_{\mu}(n)\right)$\\ \bottomrule
+			Akaike Information Criterion,AIC (n)  & = log det $ \displaystyle\left(\sum _{\mu}(n)\right)+ \frac{2}{T}nK^{2}$\\
+			Hannan-Quinn criterion,HQ(n)    & = log det  $ \displaystyle\left(\sum _{\mu}(n)\right)+ \frac{2logT}{T}nK^{2}$\\
+			Schwarz Criterion,SC(n)    & = log det  $ \displaystyle\left(\sum _{\mu}(n)\right)+ \frac{logT}{T}nK^{2}$\\
+			Final Prediction Error criterion,FPE(n)   & =          $\displaystyle \left(\frac{T + n^{*}}{T - n^{*}}\right)$det $\displaystyle \left(\sum_{\mu}(n)\right)$\\ \bottomrule
 		\end{tabular}
 \end{center}
 where $ \displaystyle \sum_{\mu} (n)$ is the estimated by $T^{-1}\sum_{t=1}^{T}$
