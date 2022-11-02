@@ -2791,40 +2791,56 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">Owusu-Nimo2018</bcf:citekey>
+    <bcf:citekey order="1">Mantey2017</bcf:citekey>
     <bcf:citekey order="2">Gracia2018</bcf:citekey>
-    <bcf:citekey order="3">womendi2009</bcf:citekey>
+    <bcf:citekey order="3">BBCNews2009</bcf:citekey>
     <bcf:citekey order="4">Ansah2017</bcf:citekey>
     <bcf:citekey order="5">Allotey2017</bcf:citekey>
-    <bcf:citekey order="6">gyekye</bcf:citekey>
+    <bcf:citekey order="6">Gyekye</bcf:citekey>
     <bcf:citekey order="7">goldgu2017</bcf:citekey>
     <bcf:citekey order="8">Barenblitt2021</bcf:citekey>
     <bcf:citekey order="9">alex2013</bcf:citekey>
     <bcf:citekey order="10">gertler2016</bcf:citekey>
     <bcf:citekey order="11">specht2015</bcf:citekey>
     <bcf:citekey order="12">defries2010</bcf:citekey>
-    <bcf:citekey order="13">hipel1994</bcf:citekey>
-    <bcf:citekey order="14">sims1980macroeconomics</bcf:citekey>
-    <bcf:citekey order="15">granger1969investigating</bcf:citekey>
-    <bcf:citekey order="16">lutkepohl2005new</bcf:citekey>
-    <bcf:citekey order="17">dickey1979distribution</bcf:citekey>
-    <bcf:citekey order="18">Owusu-Nimo2018</bcf:citekey>
-    <bcf:citekey order="19">Gracia2018</bcf:citekey>
-    <bcf:citekey order="20">womendi2009</bcf:citekey>
-    <bcf:citekey order="21">Ansah2017</bcf:citekey>
-    <bcf:citekey order="22">Allotey2017</bcf:citekey>
-    <bcf:citekey order="23">gyekye</bcf:citekey>
-    <bcf:citekey order="24">goldgu2017</bcf:citekey>
-    <bcf:citekey order="25">Barenblitt2021</bcf:citekey>
-    <bcf:citekey order="26">alex2013</bcf:citekey>
-    <bcf:citekey order="27">gertler2016</bcf:citekey>
-    <bcf:citekey order="28">specht2015</bcf:citekey>
-    <bcf:citekey order="29">defries2010</bcf:citekey>
-    <bcf:citekey order="30">hipel1994</bcf:citekey>
-    <bcf:citekey order="31">sims1980macroeconomics</bcf:citekey>
-    <bcf:citekey order="32">granger1969investigating</bcf:citekey>
-    <bcf:citekey order="33">lutkepohl2005new</bcf:citekey>
-    <bcf:citekey order="34">dickey1979distribution</bcf:citekey>
+    <bcf:citekey order="13">sohngen1998comparison</bcf:citekey>
+    <bcf:citekey order="14">malhi2008climate</bcf:citekey>
+    <bcf:citekey order="15">sitch2008evaluation</bcf:citekey>
+    <bcf:citekey order="16">kattge2011try</bcf:citekey>
+    <bcf:citekey order="17">mortsch2006impact</bcf:citekey>
+    <bcf:citekey order="18">rudel2010forest</bcf:citekey>
+    <bcf:citekey order="19">hipel1994</bcf:citekey>
+    <bcf:citekey order="20">sims1980macroeconomics</bcf:citekey>
+    <bcf:citekey order="21">phillips1988testing</bcf:citekey>
+    <bcf:citekey order="22">granger1969investigating</bcf:citekey>
+    <bcf:citekey order="23">lutkepohl2005new</bcf:citekey>
+    <bcf:citekey order="24">dickey1979distribution</bcf:citekey>
+    <bcf:citekey order="25">box1975intervention</bcf:citekey>
+    <bcf:citekey order="26">Mantey2017</bcf:citekey>
+    <bcf:citekey order="27">Gracia2018</bcf:citekey>
+    <bcf:citekey order="28">BBCNews2009</bcf:citekey>
+    <bcf:citekey order="29">Ansah2017</bcf:citekey>
+    <bcf:citekey order="30">Allotey2017</bcf:citekey>
+    <bcf:citekey order="31">Gyekye</bcf:citekey>
+    <bcf:citekey order="32">goldgu2017</bcf:citekey>
+    <bcf:citekey order="33">Barenblitt2021</bcf:citekey>
+    <bcf:citekey order="34">alex2013</bcf:citekey>
+    <bcf:citekey order="35">gertler2016</bcf:citekey>
+    <bcf:citekey order="36">specht2015</bcf:citekey>
+    <bcf:citekey order="37">defries2010</bcf:citekey>
+    <bcf:citekey order="38">sohngen1998comparison</bcf:citekey>
+    <bcf:citekey order="39">malhi2008climate</bcf:citekey>
+    <bcf:citekey order="40">sitch2008evaluation</bcf:citekey>
+    <bcf:citekey order="41">kattge2011try</bcf:citekey>
+    <bcf:citekey order="42">mortsch2006impact</bcf:citekey>
+    <bcf:citekey order="43">rudel2010forest</bcf:citekey>
+    <bcf:citekey order="44">hipel1994</bcf:citekey>
+    <bcf:citekey order="45">sims1980macroeconomics</bcf:citekey>
+    <bcf:citekey order="46">phillips1988testing</bcf:citekey>
+    <bcf:citekey order="47">granger1969investigating</bcf:citekey>
+    <bcf:citekey order="48">lutkepohl2005new</bcf:citekey>
+    <bcf:citekey order="49">dickey1979distribution</bcf:citekey>
+    <bcf:citekey order="50">box1975intervention</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">
@@ -2867,4 +2883,13 @@
     </bcf:sort>
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
+  <bcf:datalist section="0"
+                name="apa/global//global/global"
+                type="entry"
+                sortingtemplatename="apa"
+                sortingnamekeytemplatename="global"
+                labelprefix=""
+                uniquenametemplatename="global"
+                labelalphanametemplatename="global">
+  </bcf:datalist>
 </bcf:controlfile>

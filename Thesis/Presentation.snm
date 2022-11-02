@@ -1,9 +1,8 @@
-\beamer@slide {fig:classification}{11}
-\beamer@slide {fig:evi}{12}
-\beamer@slide {fig:dataextraction}{13}
-\beamer@slide {fig:rplot}{14}
-\beamer@slide {fig:methodology}{15}
-\beamer@slide {fig:timeseries}{18}
-\beamer@slide {Optimal lag}{19}
-\beamer@slide {fig:impose}{20}
-\beamer@slide {fig:fevd}{21}
+\beamer@slide {fig:classification}{5}
+\beamer@slide {fig:dataextraction}{7}
+\beamer@slide {fig:map}{8}
+\beamer@slide {fig:timeseries}{11}
+\beamer@slide {label:Optimal lag}{12}
+\beamer@slide {fig:fevd-and-forecast}{13}
+\beamer@slide {table:Prediction}{14}
+\beamer@slide {label: Accuracy}{15}

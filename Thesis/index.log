@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.1)  11 OCT 2022 20:01
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2022.8.11)  29 OCT 2022 14:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -11,15 +11,15 @@ Document Class: book 2021/10/04 v1.4n Standard LaTeX document class
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/base\bk12.clo
 File: bk12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count185
-\c@chapter=\count186
-\c@section=\count187
-\c@subsection=\count188
-\c@subsubsection=\count189
-\c@paragraph=\count190
-\c@subparagraph=\count191
-\c@figure=\count192
-\c@table=\count193
+\c@part=\count181
+\c@chapter=\count182
+\c@section=\count183
+\c@subsection=\count184
+\c@subsubsection=\count185
+\c@paragraph=\count186
+\c@subparagraph=\count187
+\c@figure=\count188
+\c@table=\count189
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
@@ -28,19 +28,28 @@ File: bk12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks16
 \inpenc@posthook=\toks17
-)
-(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+) (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
-)
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
+2.
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2022/02/26 3.73 The Babel package
-\babel@savecnt=\count194
+\babel@savecnt=\count190
 \U@D=\dimen139
 \l@unhyphenated=\language79
 
-(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/generic/babel\xebabel.def
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def))
 \bbl@readstream=\read2
-\bbl@dirlevel=\count195
+\bbl@dirlevel=\count191
 
 *************************************
 * Local config file bblopts.cfg used
@@ -77,13 +86,13 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2021/08/26 v2.02 operator names
 )
-\inf@bad=\count196
+\inf@bad=\count192
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count197
-\leftroot@=\count198
+\uproot@=\count193
+\leftroot@=\count194
 LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count199
-\DOTSCASE@=\count266
+\classnum@=\count195
+\DOTSCASE@=\count196
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -92,15 +101,15 @@ LaTeX Info: Redefining \cdots on input line 620.
 \big@size=\dimen142
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count267
-\c@MaxMatrixCols=\count268
+\macc@depth=\count197
+\c@MaxMatrixCols=\count198
 \dotsspace@=\muskip16
-\c@parentequation=\count269
-\dspbrk@lvl=\count270
+\c@parentequation=\count199
+\dspbrk@lvl=\count266
 \tag@help=\toks19
-\row@=\count271
-\column@=\count272
-\maxfields@=\count273
+\row@=\count267
+\column@=\count268
+\maxfields@=\count269
 \andhelp@=\toks20
 \eqnshift@=\dimen143
 \alignsep@=\dimen144
@@ -125,6 +134,21 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 )
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/acronym\acronym.sty
+Package: acronym 2020/04/17 v1.47 Support for acronyms (Tobias Oetiker)
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/bigfoot\suffix.sty
+Package: suffix 2006/07/15 1.5a Variant command support
+)
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/xstring\xstring.sty
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/generic/xstring\xstring.tex
+\integerpart=\count270
+\decimalpart=\count271
+)
+Package: xstring 2021/07/21 v1.84 String manipulations (CT)
+)
+\AC@clearlist=\toks23
 )
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\mathptmx.sty
 Package: mathptmx 2020/03/25 PSNFSS-v9.3 Times w/ Math, improved (SPQR, WaS) 
@@ -171,11 +195,18 @@ verset.sty
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
 Package: expl3 2022-02-24 L3 programming layer (loader) 
 
-(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdfte
-x.def
-File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count274
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-xetex
+.def
+File: l3backend-xetex.def 2022-02-07 L3 backend support: XeTeX
+ ()
+\c__kernel_sys_dvipdfmx_version_int=\count272
+\l__color_backend_stack_int=\count273
+\g__color_backend_stack_int=\count274
+\g__graphics_track_int=\count275
 \l__pdf_internal_box=\box52
+\g__pdf_backend_object_int=\count276
+\g__pdf_backend_annotation_int=\count277
+\g__pdf_backend_link_int=\count278
 ))
 Package: aligned-overset 2018/04/04 v0.1.0 aligned overset and underset
 
@@ -188,25 +219,25 @@ Package: mathtools 2022/02/07 v1.28a mathematical typesetting tools
 
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks23
+\KV@toks@=\toks24
 )
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count275
-\calc@Bcount=\count276
+\calc@Acount=\count279
+\calc@Bcount=\count280
 \calc@Adimen=\dimen149
 \calc@Bdimen=\dimen150
 \calc@Askip=\skip52
 \calc@Bskip=\skip53
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count277
+\calc@Ccount=\count281
 \calc@Cskip=\skip54
 )
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count278
+\g_MT_multlinerow_int=\count282
 \l_MT_multwidth_dim=\dimen151
 \origjot=\skip55
 \l_MT_shortvdotswithinadjustabove_dim=\dimen152
@@ -240,9 +271,9 @@ Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 107.
- (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
-File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+Package graphics Info: Driver file: xetex.def on input line 107.
+ (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\xetex.def
+File: xetex.def 2021/03/18 v5.0k Graphics/color driver for xetex
 ))
 \Gin@req@height=\dimen159
 \Gin@req@width=\dimen160
@@ -258,12 +289,12 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen168
 \cmidrulekern=\dimen169
 \defaultaddspace=\dimen170
-\@cmidla=\count279
-\@cmidlb=\count280
+\@cmidla=\count283
+\@cmidlb=\count284
 \@aboverulesep=\dimen171
 \@belowrulesep=\dimen172
-\@thisruleclass=\count281
-\@lastruleclass=\count282
+\@thisruleclass=\count285
+\@lastruleclass=\count286
 \@thisrulewidth=\dimen173
 ) (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
@@ -276,7 +307,7 @@ Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
 \col@sep=\dimen174
 \ar@mcellbox=\box56
 \extrarowheight=\dimen175
-\NC@list=\toks24
+\NC@list=\toks25
 \extratabsurround=\skip56
 \backup@length=\skip57
 \ar@cellbox=\box57
@@ -286,8 +317,8 @@ Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
 \TX@old@col=\dimen178
 \TX@target=\dimen179
 \TX@delta=\dimen180
-\TX@cols=\count283
-\TX@ftn=\toks25
+\TX@cols=\count287
+\TX@ftn=\toks26
 )
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\times.sty
 Package: times 2020/03/25 PSNFSS-v9.3 (SPQR) 
@@ -301,9 +332,9 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 ))
-\Gm@cnth=\count284
-\Gm@cntv=\count285
-\c@Gm@tempcnt=\count286
+\Gm@cnth=\count288
+\Gm@cntv=\count289
+\c@Gm@tempcnt=\count290
 \Gm@bindingoffset=\dimen181
 \Gm@wd@mp=\dimen182
 \Gm@odd@mp=\dimen183
@@ -312,15 +343,15 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 \Gm@layoutheight=\dimen186
 \Gm@layouthoffset=\dimen187
 \Gm@layoutvoffset=\dimen188
-\Gm@dimlist=\toks26
+\Gm@dimlist=\toks27
 
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/placeins\placeins.sty
 Package: placeins 2005/04/18  v 2.2
 )
-\c@theorem=\count287
-\c@dfn=\count288
-\c@note=\count289
+\c@theorem=\count291
+\c@dfn=\count292
+\c@note=\count293
 
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
@@ -329,7 +360,7 @@ Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \aftertitleunit=\skip59
 \ttl@plus=\dimen189
 \ttl@minus=\dimen190
-\ttl@toksa=\toks27
+\ttl@toksa=\toks28
 \titlewidth=\dimen191
 \titlewidthlast=\dimen192
 \titlewidthfirst=\dimen193
@@ -349,10 +380,10 @@ Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
+Package pdftexcmds Info: \pdfdraftmode not found.
 ) (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count290
+\etb@tempcnta=\count294
 )
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
@@ -361,7 +392,7 @@ Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )) (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count291
+\lrq@indent=\count295
 
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
@@ -373,48 +404,48 @@ Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-\c@tabx@nest=\count292
-\c@listtotal=\count293
-\c@listcount=\count294
-\c@liststart=\count295
-\c@liststop=\count296
-\c@citecount=\count297
-\c@citetotal=\count298
-\c@multicitecount=\count299
-\c@multicitetotal=\count300
-\c@instcount=\count301
-\c@maxnames=\count302
-\c@minnames=\count303
-\c@maxitems=\count304
-\c@minitems=\count305
-\c@citecounter=\count306
-\c@maxcitecounter=\count307
-\c@savedcitecounter=\count308
-\c@uniquelist=\count309
-\c@uniquename=\count310
-\c@refsection=\count311
-\c@refsegment=\count312
-\c@maxextratitle=\count313
-\c@maxextratitleyear=\count314
-\c@maxextraname=\count315
-\c@maxextradate=\count316
-\c@maxextraalpha=\count317
-\c@abbrvpenalty=\count318
-\c@highnamepenalty=\count319
-\c@lownamepenalty=\count320
-\c@maxparens=\count321
-\c@parenlevel=\count322
-\blx@tempcnta=\count323
-\blx@tempcntb=\count324
-\blx@tempcntc=\count325
-\c@blx@maxsection=\count326
-\c@blx@maxsegment@0=\count327
-\blx@notetype=\count328
-\blx@parenlevel@text=\count329
-\blx@parenlevel@foot=\count330
-\c@blx@sectionciteorder@0=\count331
-\blx@entrysetcounter=\count332
-\blx@biblioinstance=\count333
+\c@tabx@nest=\count296
+\c@listtotal=\count297
+\c@listcount=\count298
+\c@liststart=\count299
+\c@liststop=\count300
+\c@citecount=\count301
+\c@citetotal=\count302
+\c@multicitecount=\count303
+\c@multicitetotal=\count304
+\c@instcount=\count305
+\c@maxnames=\count306
+\c@minnames=\count307
+\c@maxitems=\count308
+\c@minitems=\count309
+\c@citecounter=\count310
+\c@maxcitecounter=\count311
+\c@savedcitecounter=\count312
+\c@uniquelist=\count313
+\c@uniquename=\count314
+\c@refsection=\count315
+\c@refsegment=\count316
+\c@maxextratitle=\count317
+\c@maxextratitleyear=\count318
+\c@maxextraname=\count319
+\c@maxextradate=\count320
+\c@maxextraalpha=\count321
+\c@abbrvpenalty=\count322
+\c@highnamepenalty=\count323
+\c@lownamepenalty=\count324
+\c@maxparens=\count325
+\c@parenlevel=\count326
+\blx@tempcnta=\count327
+\blx@tempcntb=\count328
+\blx@tempcntc=\count329
+\c@blx@maxsection=\count330
+\c@blx@maxsegment@0=\count331
+\blx@notetype=\count332
+\blx@parenlevel@text=\count333
+\blx@parenlevel@foot=\count334
+\c@blx@sectionciteorder@0=\count335
+\blx@entrysetcounter=\count336
+\blx@biblioinstance=\count337
 \labelnumberwidth=\skip60
 \labelalphawidth=\skip61
 \biblabelsep=\skip62
@@ -426,9 +457,9 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 \blx@bcfin=\read3
 \blx@bcfout=\write3
 \blx@langwohyphens=\language80
-\c@mincomprange=\count334
-\c@maxcomprange=\count335
-\c@mincompwidth=\count336
+\c@mincomprange=\count338
+\c@maxcomprange=\count339
+\c@mincompwidth=\count340
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -443,84 +474,84 @@ File: apa.dbx 2021/12/24 v9.15 APA biblatex style data model
 )
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count337
-\c@savedafterword=\count338
-\c@annotator=\count339
-\c@savedannotator=\count340
-\c@author=\count341
-\c@savedauthor=\count342
-\c@bookauthor=\count343
-\c@savedbookauthor=\count344
-\c@commentator=\count345
-\c@savedcommentator=\count346
-\c@editor=\count347
-\c@savededitor=\count348
-\c@editora=\count349
-\c@savededitora=\count350
-\c@editorb=\count351
-\c@savededitorb=\count352
-\c@editorc=\count353
-\c@savededitorc=\count354
-\c@foreword=\count355
-\c@savedforeword=\count356
-\c@holder=\count357
-\c@savedholder=\count358
-\c@introduction=\count359
-\c@savedintroduction=\count360
-\c@namea=\count361
-\c@savednamea=\count362
-\c@nameb=\count363
-\c@savednameb=\count364
-\c@namec=\count365
-\c@savednamec=\count366
-\c@translator=\count367
-\c@savedtranslator=\count368
-\c@shortauthor=\count369
-\c@savedshortauthor=\count370
-\c@shorteditor=\count371
-\c@savedshorteditor=\count372
-\c@narrator=\count373
-\c@savednarrator=\count374
-\c@execproducer=\count375
-\c@savedexecproducer=\count376
-\c@execdirector=\count377
-\c@savedexecdirector=\count378
-\c@with=\count379
-\c@savedwith=\count380
-\c@labelname=\count381
-\c@savedlabelname=\count382
-\c@institution=\count383
-\c@savedinstitution=\count384
-\c@lista=\count385
-\c@savedlista=\count386
-\c@listb=\count387
-\c@savedlistb=\count388
-\c@listc=\count389
-\c@savedlistc=\count390
-\c@listd=\count391
-\c@savedlistd=\count392
-\c@liste=\count393
-\c@savedliste=\count394
-\c@listf=\count395
-\c@savedlistf=\count396
-\c@location=\count397
-\c@savedlocation=\count398
-\c@organization=\count399
-\c@savedorganization=\count400
-\c@origlocation=\count401
-\c@savedoriglocation=\count402
-\c@origpublisher=\count403
-\c@savedorigpublisher=\count404
-\c@publisher=\count405
-\c@savedpublisher=\count406
-\c@language=\count407
-\c@savedlanguage=\count408
-\c@origlanguage=\count409
-\c@savedoriglanguage=\count410
-\c@citation=\count411
-\c@savedcitation=\count412
-\c@pageref=\count413
-\c@savedpageref=\count414
+\c@afterword=\count341
+\c@savedafterword=\count342
+\c@annotator=\count343
+\c@savedannotator=\count344
+\c@author=\count345
+\c@savedauthor=\count346
+\c@bookauthor=\count347
+\c@savedbookauthor=\count348
+\c@commentator=\count349
+\c@savedcommentator=\count350
+\c@editor=\count351
+\c@savededitor=\count352
+\c@editora=\count353
+\c@savededitora=\count354
+\c@editorb=\count355
+\c@savededitorb=\count356
+\c@editorc=\count357
+\c@savededitorc=\count358
+\c@foreword=\count359
+\c@savedforeword=\count360
+\c@holder=\count361
+\c@savedholder=\count362
+\c@introduction=\count363
+\c@savedintroduction=\count364
+\c@namea=\count365
+\c@savednamea=\count366
+\c@nameb=\count367
+\c@savednameb=\count368
+\c@namec=\count369
+\c@savednamec=\count370
+\c@translator=\count371
+\c@savedtranslator=\count372
+\c@shortauthor=\count373
+\c@savedshortauthor=\count374
+\c@shorteditor=\count375
+\c@savedshorteditor=\count376
+\c@narrator=\count377
+\c@savednarrator=\count378
+\c@execproducer=\count379
+\c@savedexecproducer=\count380
+\c@execdirector=\count381
+\c@savedexecdirector=\count382
+\c@with=\count383
+\c@savedwith=\count384
+\c@labelname=\count385
+\c@savedlabelname=\count386
+\c@institution=\count387
+\c@savedinstitution=\count388
+\c@lista=\count389
+\c@savedlista=\count390
+\c@listb=\count391
+\c@savedlistb=\count392
+\c@listc=\count393
+\c@savedlistc=\count394
+\c@listd=\count395
+\c@savedlistd=\count396
+\c@liste=\count397
+\c@savedliste=\count398
+\c@listf=\count399
+\c@savedlistf=\count400
+\c@location=\count401
+\c@savedlocation=\count402
+\c@organization=\count403
+\c@savedorganization=\count404
+\c@origlocation=\count405
+\c@savedoriglocation=\count406
+\c@origpublisher=\count407
+\c@savedorigpublisher=\count408
+\c@publisher=\count409
+\c@savedpublisher=\count410
+\c@language=\count411
+\c@savedlanguage=\count412
+\c@origlanguage=\count413
+\c@savedoriglanguage=\count414
+\c@citation=\count415
+\c@savedcitation=\count416
+\c@pageref=\count417
+\c@savedpageref=\count418
 \shorthandwidth=\skip68
 \shortjournalwidth=\skip69
 \shortserieswidth=\skip70
@@ -535,9 +566,12 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \localshorttitlewidth=\skip79
 \localshortauthorwidth=\skip80
 \localshorteditorwidth=\skip81
+Package biblatex Info: Trying to load enhanced support for Unicode engines...
+Package biblatex Info: ... file 'blx-unicode.def' found.
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-unicode.def)
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
-
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.def
 File: blx-compat.def 2022/02/02 v3.17 biblatex compatibility (PK/MW)
 )
@@ -546,19 +580,19 @@ Package biblatex Info: ... file 'biblatex.def' found.
 
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2022/02/02 v3.17 biblatex compatibility (PK/MW)
-\c@textcitecount=\count415
-\c@textcitetotal=\count416
-\c@textcitemaxnames=\count417
-\c@biburlbigbreakpenalty=\count418
-\c@biburlbreakpenalty=\count419
-\c@biburlnumpenalty=\count420
-\c@biburlucpenalty=\count421
-\c@biburllcpenalty=\count422
+\c@textcitecount=\count419
+\c@textcitetotal=\count420
+\c@textcitemaxnames=\count421
+\c@biburlbigbreakpenalty=\count422
+\c@biburlbreakpenalty=\count423
+\c@biburlnumpenalty=\count424
+\c@biburlucpenalty=\count425
+\c@biburllcpenalty=\count426
 \biburlbigskip=\muskip18
 \biburlnumskip=\muskip19
 \biburlucskip=\muskip20
 \biburllcskip=\muskip21
-\c@smartand=\count423
+\c@smartand=\count427
 )
 Package biblatex Info: Trying to load natbib compatibility...
 Package biblatex Info: ... file 'blx-natbib.def' found.
@@ -578,8 +612,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.bbx
 File: standard.bbx 2022/02/02 v3.17 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count424
-\c@bbx:relatedtotal=\count425
+\c@bbx:relatedcount=\count428
+\c@bbx:relatedtotal=\count429
 )
 Package biblatex Info: Delimiter 'nameyeardelim' in context 'bib' already defin
 ed, overwriting.
@@ -627,7 +661,8 @@ Package biblatex Info: ... file 'biblatex.cfg' found.
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cfg
 File: biblatex.cfg 
 )
-Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: XeTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Document encoding is UTF8 ....
 Package biblatex Info: ... and expl3
 (biblatex)             2022-02-24 L3 programming layer (loader) 
@@ -657,9 +692,8 @@ Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: pdftex.def on input line 227.
+Package xcolor Info: Driver file: xetex.def on input line 227.
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
 Package xcolor Info: Model `RGB' extended on input line 1368.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
 Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
@@ -668,76 +702,328 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
 )
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/ppl/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/zplm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/zplm/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/zplm/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/ppl/b/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/zplm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/zplm/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/zplm/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/zplm/b/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/ppl/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/zplm/b/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/ppl/b/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/unicode-math\unicode-math
+.sty
+Package: unicode-math 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLaTeX
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/unicode-math\unicode-math
+-xetex.sty
+Package: unicode-math-xetex 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLa
+TeX
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l3key
+s2e.sty
+Package: l3keys2e 2022-01-12 LaTeX2e option processing using LaTeX3 keys
+)
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.sty
+Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec-xetex.s
+ty
+Package: fontspec-xetex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTe
+X
+\l__fontspec_script_int=\count430
+\l__fontspec_language_int=\count431
+\l__fontspec_strnum_int=\count432
+\l__fontspec_tmp_int=\count433
+\l__fontspec_tmpa_int=\count434
+\l__fontspec_tmpb_int=\count435
+\l__fontspec_tmpc_int=\count436
+\l__fontspec_em_int=\count437
+\l__fontspec_emdef_int=\count438
+\l__fontspec_strong_int=\count439
+\l__fontspec_strongdef_int=\count440
+\l__fontspec_tmpa_dim=\dimen194
+\l__fontspec_tmpb_dim=\dimen195
+\l__fontspec_tmpc_dim=\dimen196
+ (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.cfg)))
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/base\fix-cm.sty
+Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
+))
+\g__um_fam_int=\count441
+\g__um_fonts_used_int=\count442
+\l__um_primecount_int=\count443
+\g__um_primekern_muskip=\muskip22
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/unicode-math\unicode-math
+-table.tex)))
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/upquote\upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+))
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.sty
+Package: microtype 2022/03/14 v3.0d Micro-typographical refinements (RS)
+\MT@toks=\toks29
+\MT@tempbox=\box59
+\MT@count=\count444
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1027.
+LaTeX Info: Redefining \leftprotrusion on input line 1028.
+LaTeX Info: Redefining \rightprotrusion on input line 1036.
+LaTeX Info: Redefining \textls on input line 1195.
+\MT@outer@kern=\dimen197
+LaTeX Info: Redefining \textmicrotypecontext on input line 1781.
+\MT@listname@count=\count445
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype-xetex
+.def
+File: microtype-xetex.def 2022/03/14 v3.0d Definitions specific to xetex (RS)
+LaTeX Info: Redefining \lsstyle on input line 236.
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.cfg
+File: microtype.cfg 2022/03/14 v3.0d microtype main configuration file (RS)
+)) (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/parskip\parskip.sty
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
+)
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/framed\framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip91
+\fb@frw=\dimen198
+\fb@frh=\dimen199
+\FrameRule=\dimen256
+\FrameSep=\dimen257
+)
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
+Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
+\LTleft=\skip92
+\LTright=\skip93
+\LTpre=\skip94
+\LTpost=\skip95
+\LTchunksize=\count446
+\LTcapwidth=\dimen258
+\LT@head=\box60
+\LT@firsthead=\box61
+\LT@foot=\box62
+\LT@lastfoot=\box63
+\LT@gbox=\box64
+\LT@cols=\count447
+\LT@rows=\count448
+\c@LT@tables=\count449
+\c@LT@chunks=\count450
+\LT@p@ftn=\toks30
+)
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/footnotehyper\footnotehyp
+er.sty
+Package: footnotehyper 2021/08/13 v1.1e hyperref aware footnote.sty (JFB)
+\FNH@notes=\box65
+\FNH@width=\dimen259
+\FNH@toks=\toks31
+)
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bookmark.sty
+Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2022-02-21 v7.00n Hypertext links for LaTeX
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefineke
+ys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmacro.s
+ty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+\@linkdim=\dimen260
+\Hy@linkcounter=\count451
+\Hy@pagecounter=\count452
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2022-02-21 v7.00n Hyperref: PDFDocEncoding definition (HO)
+)
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count453
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2022-02-21 v7.00n Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Option `unicode' set `true' on input line 4018.
+Package hyperref Info: Hyper figures OFF on input line 4137.
+Package hyperref Info: Link nesting OFF on input line 4142.
+Package hyperref Info: Hyper index ON on input line 4145.
+Package hyperref Info: Plain pages OFF on input line 4152.
+Package hyperref Info: Backreferencing OFF on input line 4157.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4390.
+\c@Hy@tempcnt=\count454
+LaTeX Info: Redefining \url on input line 4749.
+\XeTeXLinkMargin=\dimen261
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.s
+ty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count455
+\Field@Width=\dimen262
+\Fld@charsize=\dimen263
+Package hyperref Info: Hyper figures OFF on input line 6027.
+Package hyperref Info: Link nesting OFF on input line 6032.
+Package hyperref Info: Hyper index ON on input line 6035.
+Package hyperref Info: backreferencing OFF on input line 6042.
+Package hyperref Info: Link coloring OFF on input line 6047.
+Package hyperref Info: Link coloring with OCG OFF on input line 6052.
+Package hyperref Info: PDF/A mode OFF on input line 6057.
+LaTeX Info: Redefining \ref on input line 6097.
+LaTeX Info: Redefining \pageref on input line 6101.
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count456
+\c@Item=\count457
+\c@Hfootnote=\count458
+)
+Package hyperref Info: Driver (autodetected): hxetex.
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hxetex.def
+File: hxetex.def 2022-02-21 v7.00n Hyperref driver for XeTeX
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\pdfm@box=\box66
+\c@Hy@AnnotLevel=\count459
+\HyField@AnnotCount=\count460
+\Fld@listcount=\count461
+\c@bookmark@seq@number=\count462
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilec
+heck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquecou
+nter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip96
+)
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bkm-dvipdfm.def
+File: bkm-dvipdfm.def 2020-11-06 v1.29 bookmark driver for dvipdfm (HO)
+\BKM@id=\count463
+)) (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/xurl\xurl.sty
+Package: xurl 2022/01/09 v 0.10 modify URL breaks
+
+xurl: Set penalties for biblatex
+)
 
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count426
-\@quotereset=\count427
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 46
-.
-(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1ptm.fd
-File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
-)
+\@quotelevel=\count464
+\@quotereset=\count465
 (index.aux (Chapters/Chapter1.aux) (Chapters/Chapter2.aux)
 (Chapters/Chapter3.aux) (Chapters/Chapter4.aux) (Chapters/Chapter5.aux))
 \openout1 = `index.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 150.
+LaTeX Font Info:    ... okay on input line 150.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 150.
+LaTeX Font Info:    ... okay on input line 150.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 150.
+LaTeX Font Info:    ... okay on input line 150.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 150.
+LaTeX Font Info:    ... okay on input line 150.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 150.
+LaTeX Font Info:    ... okay on input line 150.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 150.
+LaTeX Font Info:    ... okay on input line 150.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 150.
+LaTeX Font Info:    ... okay on input line 150.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 150.
+LaTeX Font Info:    ... okay on input line 150.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 150.
+LaTeX Font Info:    ... okay on input line 150.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 150.
+LaTeX Font Info:    ... okay on input line 150.
 
-(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count428
-\scratchdimen=\dimen194
-\scratchbox=\box59
-\nofMPsegments=\count429
-\nofMParguments=\count430
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count431
-\MPscratchDim=\dimen195
-\MPnumerator=\count432
-\makeMPintoPDFobject=\count433
-\everyMPtoPDFconversion=\toks29
-)
-(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-bas
-e.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-
-(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
-))
 *geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
+*geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
+* driver: xetex
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: twoside 
-* h-part:(L,W,R)=(39.83368pt, 517.84052pt, 39.83368pt)
-* v-part:(T,H,B)=(22.76228pt, 771.06952pt, 51.21504pt)
+* h-part:(L,W,R)=(106.69783pt, 419.67816pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=517.84052pt
-* \textheight=771.06952pt
-* \oddsidemargin=-32.43631pt
-* \evensidemargin=-32.43631pt
-* \topmargin=-81.3815pt
+* \textwidth=419.67816pt
+* \textheight=702.78308pt
+* \oddsidemargin=34.42784pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-33.0119pt
 * \headheight=12.0pt
 * \headsep=19.8738pt
 * \topskip=12.0pt
@@ -783,140 +1069,480 @@ Package biblatex Info: ... file 'english.lbx' found.
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\english.lbx
 File: english.lbx 2022/02/02 v3.17 biblatex localization (PK/MW)
 ))))
-Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: XeTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
 \openout3 = `index.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'index.bbl' found.
- (index.bbl)
-Package biblatex Info: Reference section=0 on input line 46.
-Package biblatex Info: Reference segment=0 on input line 46.
-<images/logo2.jpg, id=1, 645.41125pt x 616.3025pt>
-File: images/logo2.jpg Graphic file (type jpg)
-<use images/logo2.jpg>
-Package pdftex.def Info: images/logo2.jpg  used on input line 56.
-(pdftex.def)             Requested size: 155.34503pt x 154.2069pt.
+ (index.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                alex2013
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                defries2010
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                gertler2016
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                goldgu2017
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                hipel1994
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                specht2015
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
+Package biblatex Info: Reference section=0 on input line 150.
+Package biblatex Info: Reference segment=0 on input line 150.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 150.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 150.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 150.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 150.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 150.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 150.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 150.
+
+Package fontspec Info: latinmodern-math scale = 0.9999970497384594.
+
+
+Package fontspec Info: latinmodern-math scale = 0.9999970497384594.
+
+
+Package fontspec Info: latinmodern-math scale = 0.9999970497384594.
+
+
+Package fontspec Info: Font family 'latinmodern-math.otf(0)' created for font
+(fontspec)             'latinmodern-math.otf' with options
+(fontspec)             [Scale=MatchLowercase,BoldItalicFont={},ItalicFont={},Sm
+allCapsFont={},Script=Math,BoldFont={latinmodern-math.otf}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[0.9999970497384594]"[latinmodern-math.otf]/OT:scri
+pt=math;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[0.9999970497384594]"[latinmodern-math.otf]/OT:scri
+pt=math;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
+(Font)              scaled to size 12.0pt on input line 150.
+
+Package fontspec Info: latinmodern-math scale = 0.9999970497384594.
+
+
+Package fontspec Info: latinmodern-math scale = 0.9999970497384594.
+
+
+Package fontspec Info: latinmodern-math scale = 0.9999970497384594.
+
+
+Package fontspec Info: latinmodern-math scale = 0.9999970497384594.
+
+
+Package fontspec Info: latinmodern-math scale = 0.9999970497384594.
+
+
+Package fontspec Info: Font family 'latinmodern-math.otf(1)' created for font
+(fontspec)             'latinmodern-math.otf' with options
+(fontspec)             [Scale=MatchLowercase,BoldItalicFont={},ItalicFont={},Sm
+allCapsFont={},Script=Math,SizeFeatures={{Size=10.2-},{Size=7.2-10.2,Font=latin
+modern-math.otf,Style=MathScript},{Size=-7.2,Font=latinmodern-math.otf,Style=Ma
+thScriptScript}},BoldFont={latinmodern-math.otf}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <10.2->s*[0.9999970497384594]"[latinmodern-math.otf]/OT:
+script=math;language=dflt;"<7.2-10.2>s*[0.9999970497384594]"[latinmodern-math.o
+tf]/OT:script=math;language=dflt;+ssty=0;"<-7.2>s*[0.9999970497384594]"[latinmo
+dern-math.otf]/OT:script=math;language=dflt;+ssty=1;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[0.9999970497384594]"[latinmodern-math.otf]/OT:scri
+pt=math;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 12.0pt on input line 150.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `normal' on input line 150.
+
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
+ line 150.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `bold' on input line 150.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
+t line 150.
+
+Package fontspec Info: latinmodern-math scale = 0.9999970497384594.
+
+
+Package fontspec Info: latinmodern-math scale = 1.000097049443433.
+
+
+Package fontspec Info: latinmodern-math scale = 0.9999970497384594.
+
+
+Package fontspec Info: latinmodern-math scale = 1.000097049443433.
+
+
+Package fontspec Info: latinmodern-math scale = 0.9999970497384594.
+
+
+Package fontspec Info: latinmodern-math scale = 1.000097049443433.
+
+
+Package fontspec Info: latinmodern-math scale = 0.9999970497384594.
+
+
+Package fontspec Info: latinmodern-math scale = 1.000097049443433.
+
+
+Package fontspec Info: latinmodern-math scale = 0.9999970497384594.
+
+
+Package fontspec Info: latinmodern-math scale = 1.000097049443433.
+
+
+Package fontspec Info: Font family 'latinmodern-math.otf(2)' created for font
+(fontspec)             'latinmodern-math.otf' with options
+(fontspec)             [Scale=MatchLowercase,BoldItalicFont={},ItalicFont={},Sm
+allCapsFont={},Script=Math,SizeFeatures={{Size=10.2-},{Size=7.2-10.2,Font=latin
+modern-math.otf,Style=MathScript},{Size=-7.2,Font=latinmodern-math.otf,Style=Ma
+thScriptScript}},BoldFont={latinmodern-math.otf},ScaleAgain=1.0001,FontAdjustme
+nt={\fontdimen
+(fontspec)             8\font =8.124pt\relax \fontdimen 9\font =4.728pt\relax
+(fontspec)             \fontdimen 10\font =5.328pt\relax \fontdimen 11\font
+(fontspec)             =8.232pt\relax \fontdimen 12\font =4.14pt\relax
+(fontspec)             \fontdimen 13\font =4.356pt\relax \fontdimen 14\font
+(fontspec)             =4.356pt\relax \fontdimen 15\font =3.468pt\relax
+(fontspec)             \fontdimen 16\font =2.964pt\relax \fontdimen 17\font
+(fontspec)             =2.964pt\relax \fontdimen 18\font =3.0pt\relax
+(fontspec)             \fontdimen 19\font =2.4pt\relax \fontdimen 22\font
+(fontspec)             =3.0pt\relax \fontdimen 20\font =0pt\relax \fontdimen
+(fontspec)             21\font =0pt\relax }].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <10.2->s*[1.000097049443433]"[latinmodern-math.otf]/OT:s
+cript=math;language=dflt;"<7.2-10.2>s*[1.000097049443433]"[latinmodern-math.otf
+]/OT:script=math;language=dflt;+ssty=0;"<-7.2>s*[1.000097049443433]"[latinmoder
+n-math.otf]/OT:script=math;language=dflt;+ssty=1;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 8\font =8.124pt\relax \fontdimen 9\font
+(fontspec)             =4.728pt\relax \fontdimen 10\font =5.328pt\relax
+(fontspec)             \fontdimen 11\font =8.232pt\relax \fontdimen 12\font
+(fontspec)             =4.14pt\relax \fontdimen 13\font =4.356pt\relax
+(fontspec)             \fontdimen 14\font =4.356pt\relax \fontdimen 15\font
+(fontspec)             =3.468pt\relax \fontdimen 16\font =2.964pt\relax
+(fontspec)             \fontdimen 17\font =2.964pt\relax \fontdimen 18\font
+(fontspec)             =3.0pt\relax \fontdimen 19\font =2.4pt\relax \fontdimen
+(fontspec)             22\font =3.0pt\relax \fontdimen 20\font =0pt\relax
+(fontspec)             \fontdimen 21\font =0pt\relax 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1.000097049443433]"[latinmodern-math.otf]/OT:scrip
+t=math;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 8\font =8.124pt\relax \fontdimen 9\font
+(fontspec)             =4.728pt\relax \fontdimen 10\font =5.328pt\relax
+(fontspec)             \fontdimen 11\font =8.232pt\relax \fontdimen 12\font
+(fontspec)             =4.14pt\relax \fontdimen 13\font =4.356pt\relax
+(fontspec)             \fontdimen 14\font =4.356pt\relax \fontdimen 15\font
+(fontspec)             =3.468pt\relax \fontdimen 16\font =2.964pt\relax
+(fontspec)             \fontdimen 17\font =2.964pt\relax \fontdimen 18\font
+(fontspec)             =3.0pt\relax \fontdimen 19\font =2.4pt\relax \fontdimen
+(fontspec)             22\font =3.0pt\relax \fontdimen 20\font =0pt\relax
+(fontspec)             \fontdimen 21\font =0pt\relax 
+
+LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
+(Font)              `symbols' in the math version `normal' on input line 150.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
+t line 150.
+LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
+(Font)              `symbols' in the math version `bold' on input line 150.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
+t line 150.
+
+Package fontspec Info: latinmodern-math scale = 0.9999970497384594.
+
+
+Package fontspec Info: latinmodern-math scale = 0.9998970500334856.
+
+
+Package fontspec Info: latinmodern-math scale = 0.9999970497384594.
+
+
+Package fontspec Info: latinmodern-math scale = 0.9998970500334856.
+
+
+Package fontspec Info: latinmodern-math scale = 0.9999970497384594.
+
+
+Package fontspec Info: latinmodern-math scale = 0.9998970500334856.
+
+
+Package fontspec Info: latinmodern-math scale = 0.9999970497384594.
+
+
+Package fontspec Info: latinmodern-math scale = 0.9998970500334856.
+
+
+Package fontspec Info: latinmodern-math scale = 0.9999970497384594.
+
+
+Package fontspec Info: latinmodern-math scale = 0.9998970500334856.
+
+
+Package fontspec Info: Font family 'latinmodern-math.otf(3)' created for font
+(fontspec)             'latinmodern-math.otf' with options
+(fontspec)             [Scale=MatchLowercase,BoldItalicFont={},ItalicFont={},Sm
+allCapsFont={},Script=Math,SizeFeatures={{Size=10.2-},{Size=7.2-10.2,Font=latin
+modern-math.otf,Style=MathScript},{Size=-7.2,Font=latinmodern-math.otf,Style=Ma
+thScriptScript}},BoldFont={latinmodern-math.otf},ScaleAgain=0.9999,FontAdjustme
+nt={\fontdimen
+(fontspec)             8\font =0.48pt\relax \fontdimen 9\font =2.4pt\relax
+(fontspec)             \fontdimen 10\font =2.004pt\relax \fontdimen 11\font
+(fontspec)             =1.332pt\relax \fontdimen 12\font =7.2pt\relax
+(fontspec)             \fontdimen 13\font =0pt\relax }].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <10.2->s*[0.9998970500334856]"[latinmodern-math.otf]/OT:
+script=math;language=dflt;"<7.2-10.2>s*[0.9998970500334856]"[latinmodern-math.o
+tf]/OT:script=math;language=dflt;+ssty=0;"<-7.2>s*[0.9998970500334856]"[latinmo
+dern-math.otf]/OT:script=math;language=dflt;+ssty=1;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 8\font =0.48pt\relax \fontdimen 9\font
+(fontspec)             =2.4pt\relax \fontdimen 10\font =2.004pt\relax
+(fontspec)             \fontdimen 11\font =1.332pt\relax \fontdimen 12\font
+(fontspec)             =7.2pt\relax \fontdimen 13\font =0pt\relax 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[0.9998970500334856]"[latinmodern-math.otf]/OT:scri
+pt=math;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 8\font =0.48pt\relax \fontdimen 9\font
+(fontspec)             =2.4pt\relax \fontdimen 10\font =2.004pt\relax
+(fontspec)             \fontdimen 11\font =1.332pt\relax \fontdimen 12\font
+(fontspec)             =7.2pt\relax \fontdimen 13\font =0pt\relax 
+
+LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
+(Font)              `largesymbols' in the math version `normal' on input line 1
+50.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
+t line 150.
+LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
+(Font)              `largesymbols' in the math version `bold' on input line 150
+.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
+t line 150.
+
+
+Package unicode-math Warning: Using \overbracket and \underbracket from
+(unicode-math)                `mathtools' package.
+(unicode-math)                 
+(unicode-math)                 Use \Uoverbracket and \Uunderbracket for
+(unicode-math)                original `unicode-math' definition.
+
+
+Package unicode-math Warning: I'm going to overwrite the following commands
+(unicode-math)                from the `mathtools' package: 
+(unicode-math)                 
+(unicode-math)                     \dblcolon, \coloneqq, \Coloneqq, \eqqcolon.
+(unicode-math)                
+(unicode-math)                 
+(unicode-math)                 Note that since I won't overwrite the other
+(unicode-math)                colon-like commands, using them will lead to
+(unicode-math)                inconsistencies.
+
+LaTeX Info: Redefining \microtypecontext on input line 150.
+Package microtype Info: Applying patch `item' on input line 150.
+Package microtype Info: Applying patch `toc' on input line 150.
+Package microtype Info: Applying patch `eqnum' on input line 150.
+Package microtype Info: Applying patch `footnote' on input line 150.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using protrusion set `basicmath'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of spacing.
+Package microtype Info: No adjustment of kerning.
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-LatinModernR
+oman.cfg
+File: mt-LatinModernRoman.cfg 2021/02/21 v1.1 microtype config. file: Latin Mod
+ern Roman (RS)
+)
+Package hyperref Info: Link coloring OFF on input line 150.
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitle
+string.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count466
+)
+LaTeX Info: Redefining \ref on input line 150.
+LaTeX Info: Redefining \pageref on input line 150.
+LaTeX Info: Redefining \nameref on input line 150.
+File: images/logo2.jpg Graphic file (type bmp)
+<images/logo2.jpg>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [1
 
 
-{C:/Users/Guy/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./images/logo2
-.jpg>] [1
+]
+[2] [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 110--115
+Underfull \hbox (badness 10000) in paragraph at lines 214--221
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--121
+Underfull \hbox (badness 10000) in paragraph at lines 222--223
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 116--121
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 116--121
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 122--131
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 122--131
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 122--131
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 122--131
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 122--131
-
- []
-
-[2] [3] [4] [5] [6
-
-] (index.toc
-LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 2
-.
-
-(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ppl.fd
-File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 8.4pt on input line 225.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 6.0pt on input line 225.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
+25.
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+zplm on input line 
-2.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 12.0011pt on input line 225.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 8.40076pt on input line 225.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 6.00055pt on input line 225.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 11.99872pt on input line 225.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 8.3991pt on input line 225.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 5.99936pt on input line 225.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 12.50409pt on input line 225.
 
-(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omlzplm.fd
-File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
-)
-LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 
-2.
-
-(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omszplm.fd
-File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
-)
-LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 
-2.
-
-(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omxzplm.fd
-File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 2.
+(Font)              scaled to size 8.75285pt on input line 225.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 2.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 2.
+(Font)              scaled to size 6.25204pt on input line 225.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 2.
+(Font)              scaled to size 12.50409pt on input line 225.
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 2.
+(Font)              scaled to size 8.75285pt on input line 225.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 2.
+(Font)              scaled to size 6.25204pt on input line 225.
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 2
-.
+25.
 
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 225.
+
+(C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-ptm.cfg
+File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 225.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 225.
 LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 
-2.
+225.
 
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 2.
-
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 22
+5.
 
 (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-[7] [8])
+[2] [3] [4] [5] [6
+
+] (index.toc [7]
+Underfull \vbox (badness 2735) has occurred while \output is active []
+
+ [8])
 \tf@toc=\write4
 \openout4 = `index.toc'.
 
- [9] [10
+
+[9] [10
 
 ] (index.lot)
 \tf@lot=\write5
@@ -928,272 +1554,1147 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 \tf@lof=\write6
 \openout6 = `index.lof'.
 
- [13] [1]
+ [13]
+
+LaTeX Warning: Hyper reference `acro:AR' on page xiv undefined on input line 28
+1.
+
+
+LaTeX Warning: Hyper reference `acro:AR' on page xiv undefined on input line 28
+1.
+
+
+LaTeX Warning: Hyper reference `acro:MA' on page xiv undefined on input line 28
+2.
+
+
+LaTeX Warning: Hyper reference `acro:MA' on page xiv undefined on input line 28
+2.
+
+
+LaTeX Warning: Hyper reference `acro:ARMA ' on page xiv undefined on input line
+ 283.
+
+
+LaTeX Warning: Hyper reference `acro:ARMA ' on page xiv undefined on input line
+ 283.
+
+
+LaTeX Warning: Hyper reference `acro:ARIMA' on page xiv undefined on input line
+ 284.
+
+
+LaTeX Warning: Hyper reference `acro:ARIMA' on page xiv undefined on input line
+ 284.
+
+
+LaTeX Warning: Hyper reference `acro:AFIMA ' on page xiv undefined on input lin
+e 285.
+
+
+LaTeX Warning: Hyper reference `acro:AFIMA ' on page xiv undefined on input lin
+e 285.
+
+
+LaTeX Warning: Hyper reference `acro:VAR' on page xiv undefined on input line 2
+86.
+
+
+LaTeX Warning: Hyper reference `acro:VAR' on page xiv undefined on input line 2
+86.
+
+
+LaTeX Warning: Hyper reference `acro:EVI' on page xiv undefined on input line 2
+87.
+
+
+LaTeX Warning: Hyper reference `acro:EVI' on page xiv undefined on input line 2
+87.
+
+
+LaTeX Warning: Hyper reference `acro:TMin and TMax' on page xiv undefined on in
+put line 288.
+
+
+LaTeX Warning: Hyper reference `acro:TMin and TMax' on page xiv undefined on in
+put line 288.
+
+
+LaTeX Warning: Hyper reference `acro:ADF' on page xiv undefined on input line 2
+89.
+
+
+LaTeX Warning: Hyper reference `acro:ADF' on page xiv undefined on input line 2
+89.
+
+
+LaTeX Warning: Hyper reference `acro:OLS' on page xiv undefined on input line 2
+90.
+
+
+LaTeX Warning: Hyper reference `acro:OLS' on page xiv undefined on input line 2
+90.
+
+
+LaTeX Warning: Hyper reference `acro:AIC' on page xiv undefined on input line 2
+91.
+
+
+LaTeX Warning: Hyper reference `acro:AIC' on page xiv undefined on input line 2
+91.
+
+
+LaTeX Warning: Hyper reference `acro:HQ' on page xiv undefined on input line 29
+2.
+
+
+LaTeX Warning: Hyper reference `acro:HQ' on page xiv undefined on input line 29
+2.
+
+
+LaTeX Warning: Hyper reference `acro:SC' on page xiv undefined on input line 29
+3.
+
+
+LaTeX Warning: Hyper reference `acro:SC' on page xiv undefined on input line 29
+3.
+
+
+LaTeX Warning: Hyper reference `acro:FPE' on page xiv undefined on input line 2
+94.
+
+
+LaTeX Warning: Hyper reference `acro:FPE' on page xiv undefined on input line 2
+94.
+
+
+LaTeX Warning: Hyper reference `acro:FEVD' on page xiv undefined on input line 
+295.
+
+
+LaTeX Warning: Hyper reference `acro:FEVD' on page xiv undefined on input line 
+295.
+
+[14] [1]
 \openout2 = `Chapters/Chapter1.aux'.
 
-
-(Chapters/Chapter1.tex [2
+ (Chapters/Chapter1.tex [2
 
 
 ]
-Chapter 1.
 
-LaTeX Warning: Citation 'Owusu-Nimo2018' on page 3 undefined on input line 13.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 3.
 
-
-LaTeX Warning: Citation 'Gracia2018' on page 3 undefined on input line 13.
-
-
-LaTeX Warning: Citation 'womendi2009' on page 3 undefined on input line 15.
-
-
-LaTeX Warning: Citation 'Ansah2017' on page 3 undefined on input line 17.
-
-
-LaTeX Warning: Citation 'Allotey2017' on page 3 undefined on input line 17.
-
-
-LaTeX Warning: Citation 'gyekye' on page 3 undefined on input line 17.
-
-
-Underfull \vbox (badness 1831) has occurred while \output is active []
-
- [3]
+[3]
 
 LaTeX Warning: Citation 'goldgu2017' on page 4 undefined on input line 21.
 
 
-LaTeX Warning: Citation 'Barenblitt2021' on page 4 undefined on input line 21.
+Underfull \vbox (badness 3343) has occurred while \output is active []
 
-[4]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
-8.
- (C:\Users\Guy\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
-[5]) [6]
+ [4]
+[5] [6]) [7] [8]
 \openout2 = `Chapters/Chapter2.aux'.
 
  (Chapters/Chapter2.tex
-Chapter 2.
 
-LaTeX Warning: Citation 'alex2013' on page 7 undefined on input line 21.
-
-
-LaTeX Warning: Citation 'gertler2016' on page 7 undefined on input line 25.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 3.
 
 
-LaTeX Warning: Citation 'specht2015' on page 7 undefined on input line 26.
+LaTeX Warning: Citation 'alex2013' on page 9 undefined on input line 20.
 
 
-LaTeX Warning: Citation 'defries2010' on page 7 undefined on input line 30.
+LaTeX Warning: Citation 'gertler2016' on page 9 undefined on input line 23.
 
 
-Underfull \vbox (badness 2726) has occurred while \output is active []
-
- [7
+LaTeX Warning: Citation 'specht2015' on page 9 undefined on input line 24.
 
 
+LaTeX Warning: Citation 'defries2010' on page 9 undefined on input line 28.
 
-
-])
-[8]
-\openout2 = `Chapters/Chapter3.aux'.
-
- (Chapters/Chapter3.tex
-Chapter 3.
 [9
 
 
 
 
-] [10]
-
-LaTeX Warning: Citation 'hipel1994' on page 11 undefined on input line 41.
-
-
-LaTeX Warning: Citation 'sims1980macroeconomics' on page 11 undefined on input 
-line 43.
-
-
+]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11]
-Underfull \vbox (badness 1831) has occurred while \output is active []
+ [10])
+[11]
+\openout2 = `Chapters/Chapter3.aux'.
 
- [12]
-
-LaTeX Warning: Citation 'granger1969investigating' on page 13 undefined on inpu
-t line 68.
+ (Chapters/Chapter3.tex [12
 
 
-LaTeX Warning: Citation 'lutkepohl2005new' on page 13 undefined on input line 8
-4.
 
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 3.
+
+File: images/StudyArea.png Graphic file (type bmp)
+<images/StudyArea.png>
 [13] [14] [15]
 
+LaTeX Warning: Citation 'hipel1994' on page 16 undefined on input line 42.
+
+[16]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18]
+[19] [20] [21]
+Underfull \vbox (badness 2426) has occurred while \output is active []
+
+ [22]
+
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 173.
+               Default added (so using `tbp') on input line 178.
 
 
-Underfull \hbox (badness 10000) in alignment at lines 180--180
+Overfull \hbox (50.01988pt too wide) in alignment at lines 189--189
 [][][][] 
  []
 
-) [16]
+) [23]
 \openout2 = `Chapters/Chapter4.aux'.
 
- (Chapters/Chapter4.tex
-Chapter 4.
+ (Chapters/Chapter4.tex [24
 
-Underfull \hbox (badness 10000) in alignment at lines 24--24
+
+
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 3.
+
+
+Package hyperref Warning: Suppressing empty link on input line 8.
+
+[25]
+
+Package hyperref Warning: Suppressing empty link on input line 10.
+
+
+Overfull \hbox (106.77393pt too wide) in alignment at lines 26--26
 [][] 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 30.
+               Default added (so using `tbp') on input line 35.
 
 
-Underfull \hbox (badness 10000) in alignment at lines 47--47
+Overfull \hbox (89.33797pt too wide) in alignment at lines 52--52
 [][][][][][][] 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 49.
-
-[17
+               Default added (so using `tbp') on input line 54.
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+[]|\TU/lmr/m/n/12 1.682e-
+ []
 
 
-] [18]
-<images/Correlation.png, id=115, 618.05907pt x 445.665pt>
-File: images/Correlation.png Graphic file (type png)
-<use images/Correlation.png>
-Package pdftex.def Info: images/Correlation.png  used on input line 70.
-(pdftex.def)             Requested size: 466.0533pt x 336.0704pt.
- [19 <./images/Correlation.png (PNG copy)>]
-
-LaTeX Warning: Citation 'dickey1979distribution' on page 20 undefined on input 
-line 103.
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+[]|\TU/lmr/m/n/12 3.595e-
+ []
 
 
-LaTeX Warning: Reference `(ADF) unit root test' on page 20 undefined on input l
-ine 103.
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+[]|\TU/lmr/m/n/12 4.215e-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+[]|\TU/lmr/m/n/12 4.033e-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+[]|\TU/lmr/m/n/12 4.560e-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+[]|\TU/lmr/m/n/12 5.432e-
+ []
+
+File: images/Map.png Graphic file (type bmp)
+<images/Map.png>
+[26]
+File: images/Correlation.png Graphic file (type bmp)
+<images/Correlation.png>
+
+
+Package hyperref Warning: Suppressing empty link on input line 86.
+
+[27] [28]
+Overfull \hbox (1.6179pt too wide) in paragraph at lines 94--106
+ [][] 
+ []
+
+
+Package hyperref Warning: Suppressing empty link on input line 110.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 105.
+               Default added (so using `tbp') on input line 112.
 
 
-Underfull \hbox (badness 10000) in alignment at lines 136--136
+Overfull \hbox (71.18195pt too wide) in alignment at lines 143--143
 [][][][][][][] 
  []
 
-[20] [21]
+[29]
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 140.
-
-
-Underfull \hbox (badness 10000) in alignment at lines 161--161
-[][][][][] 
- []
-
-<images/TimeSeries.png, id=125, 618.05907pt x 445.665pt>
-File: images/TimeSeries.png Graphic file (type png)
-<use images/TimeSeries.png>
-Package pdftex.def Info: images/TimeSeries.png  used on input line 165.
-(pdftex.def)             Requested size: 466.0533pt x 336.0704pt.
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 169.
-
-
-Underfull \hbox (badness 10000) in alignment at lines 191--191
-[][][][][] 
- []
+Package hyperref Warning: Suppressing empty link on input line 145.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 193.
+               Default added (so using `tbp') on input line 147.
 
 
-Underfull \hbox (badness 10000) in alignment at lines 212--212
+Overfull \hbox (48.61792pt too wide) in alignment at lines 168--168
 [][][][][] 
  []
 
-<images/impose.png, id=126, 963.6pt x 542.025pt>
-File: images/impose.png Graphic file (type png)
-<use images/impose.png>
-Package pdftex.def Info: images/impose.png  used on input line 217.
-(pdftex.def)             Requested size: 517.84052pt x 291.2914pt.
-<images/fevd.png, id=127, 1056.94875pt x 647.41875pt>
-File: images/fevd.png Graphic file (type png)
-<use images/fevd.png>
-Package pdftex.def Info: images/fevd.png  used on input line 225.
-(pdftex.def)             Requested size: 466.0533pt x 285.46773pt.
-[22] [23 <./images/TimeSeries.png>] [24] [25 <./images/impose.png> <./images/fe
-vd.png>]) [26]
+File: images/TimeSeries.png Graphic file (type bmp)
+<images/TimeSeries.png>
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 176.
+
+
+Overfull \hbox (83.06993pt too wide) in alignment at lines 198--198
+[][][][][] 
+ []
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 200.
+
+
+Overfull \hbox (132.21394pt too wide) in alignment at lines 220--220
+[][][][][] 
+ []
+
+[30] [31]
+File: images/impose.png Graphic file (type bmp)
+<images/impose.png>
+File: images/fevd.png Graphic file (type bmp)
+<images/fevd.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [32]
+
+Package hyperref Warning: Suppressing empty link on input line 238.
+
+
+Package hyperref Warning: Suppressing empty link on input line 240.
+
+[33]
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 10.95pt on input line 248.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 8.0pt on input line 248.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 10.95099pt on input line 248.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 8.00073pt on input line 248.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 10.94882pt on input line 248.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 7.99915pt on input line 248.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 11.40997pt on input line 248.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 8.33606pt on input line 248.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 11.40997pt on input line 248.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 8.33606pt on input line 248.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 248.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 248.
+ [34]) [35] [36]
 \openout2 = `Chapters/Chapter5.aux'.
 
  (Chapters/Chapter5.tex
-Chapter 5.
-) [27
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 1.
+
+[37
 
 
 
 
-] [28]
-Appendix A.
-[29
+]) [38] [39
 
 
-
-] [30
 
 ]
-Appendix B.
-[31] (index.aux (Chapters/Chapter1.aux) (Chapters/Chapter2.aux)
+
+Package biblatex Warning: No driver for entry type 'web_page'.
+(biblatex)                Using fallback driver on input line 316.
+
+[40] [41] [42
+
+] [43]
+Overfull \hbox (12.92183pt too wide) in paragraph at lines 390--390
+[]\TU/lmtt/m/n/12 ee$ImageCollection$filterDate("2000-01-01", rdate_to_eedate(D
+ate)) %>%[] 
+ []
+
+
+Overfull \hbox (31.46179pt too wide) in paragraph at lines 390--390
+[]\TU/lmtt/m/n/12 MinimumTemperature <- ee$ImageCollection("IDAHO_EPSCOR/TERRAC
+LIMATE") %>%[] 
+ []
+
+
+Overfull \hbox (12.92183pt too wide) in paragraph at lines 390--390
+[]\TU/lmtt/m/n/12 ee$ImageCollection$filterDate("2000-01-01", rdate_to_eedate(D
+ate)) %>%[] 
+ []
+
+
+Overfull \hbox (31.46179pt too wide) in paragraph at lines 390--390
+[]\TU/lmtt/m/n/12 MaximumTemperature <- ee$ImageCollection("IDAHO_EPSCOR/TERRAC
+LIMATE") %>%[] 
+ []
+
+
+Overfull \hbox (12.92183pt too wide) in paragraph at lines 390--390
+[]\TU/lmtt/m/n/12 ee$ImageCollection$filterDate("2000-01-01", rdate_to_eedate(D
+ate)) %>%[] 
+ []
+
+
+Overfull \hbox (56.1818pt too wide) in paragraph at lines 390--390
+[]\TU/lmtt/m/n/12 Evapotranspiration <- ee$ImageCollection("NASA/FLDAS/NOAH01/C
+/GL/M/V001") %>%[] 
+ []
+
+
+Overfull \hbox (12.92183pt too wide) in paragraph at lines 390--390
+[]\TU/lmtt/m/n/12 ee$ImageCollection$filterDate("2000-01-01", rdate_to_eedate(D
+ate)) %>%[] 
+ []
+
+
+Overfull \hbox (12.92183pt too wide) in paragraph at lines 390--390
+[]\TU/lmtt/m/n/12 ee$ImageCollection$filterDate("2000-01-01", rdate_to_eedate(D
+ate)) %>%[] 
+ []
+
+
+Overfull \hbox (12.92183pt too wide) in paragraph at lines 390--390
+[]\TU/lmtt/m/n/12 ee$ImageCollection$filterDate("2000-01-01", rdate_to_eedate(D
+ate)) %>%[] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 391
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [44]
+Overfull \hbox (37.64162pt too wide) in paragraph at lines 424--424
+[]         \TU/lmtt/m/n/12 Precipitation       <- ee_extract(x = Precipitation 
+, y = aoi.ee,[] 
+ []
+
+
+Overfull \hbox (25.28166pt too wide) in paragraph at lines 424--424
+[]         \TU/lmtt/m/n/12 sf = FALSE,scale = 250, fun = ee$Reducer$mean(), via
+ = "drive",[] 
+ []
+
+
+Overfull \hbox (6.74165pt too wide) in paragraph at lines 424--424
+[]         \TU/lmtt/m/n/12 y = aoi.ee, sf = FALSE,scale = 250, fun = ee$Reducer
+$mean(),[] 
+ []
+
+
+Overfull \hbox (6.74165pt too wide) in paragraph at lines 424--424
+[]         \TU/lmtt/m/n/12 y = aoi.ee, sf = FALSE,scale = 250, fun = ee$Reducer
+$mean(),[] 
+ []
+
+
+Overfull \hbox (6.74165pt too wide) in paragraph at lines 424--424
+[]         \TU/lmtt/m/n/12 y = aoi.ee, sf = FALSE,scale = 250, fun = ee$Reducer
+$mean(),[] 
+ []
+
+
+Overfull \hbox (6.7416pt too wide) in paragraph at lines 424--424
+[]         \TU/lmtt/m/n/12 Humidity            <- ee_extract(x = Humidity , y =
+ aoi.ee,[] 
+ []
+
+
+Overfull \hbox (25.28165pt too wide) in paragraph at lines 424--424
+[]         \TU/lmtt/m/n/12 sf = FALSE, scale = 250,fun = ee$Reducer$mean(), via
+ = "drive",[] 
+ []
+
+
+Overfull \hbox (0.56157pt too wide) in paragraph at lines 424--424
+[]         \TU/lmtt/m/n/12 Drought             <- ee_extract(x = Drought , y = 
+aoi.ee,[] 
+ []
+
+
+Overfull \hbox (25.28165pt too wide) in paragraph at lines 424--424
+[]         \TU/lmtt/m/n/12 sf = FALSE, scale = 250,fun = ee$Reducer$mean(), via
+ = "drive",[] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 425
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [45]
+Underfull \vbox (badness 10000) detected at line 438
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [46]
+Overfull \hbox (12.92168pt too wide) in paragraph at lines 462--462
+[]\TU/lmtt/m/n/12 separate(Date, into = c([]year[], []month[]), sep = -2, conve
+rt = TRUE)%>%[] 
+ []
+
+
+Overfull \hbox (12.92168pt too wide) in paragraph at lines 462--462
+[]\TU/lmtt/m/n/12 separate(Date, into = c([]year[], []month[]), sep = -2, conve
+rt = TRUE)%>%[] 
+ []
+
+
+Overfull \hbox (12.92168pt too wide) in paragraph at lines 462--462
+[]\TU/lmtt/m/n/12 separate(Date, into = c([]year[], []month[]), sep = -2, conve
+rt = TRUE)%>%[] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 463
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [47]
+[48]
+Overfull \hbox (25.2818pt too wide) in paragraph at lines 725--725
+[]\TU/lmtt/m/n/12 qa <- sum(2^(which(rev(unlist(strsplit(as.character(qa), ""))
+ == 1))-1))[] 
+ []
+
+
+Overfull \hbox (6.74185pt too wide) in paragraph at lines 725--725
+[]\TU/lmtt/m/n/12 ndvi_values$updateMask(quality_mask)$divide(ee$Image$constant
+(10000))[] 
+ []
+
+
+Overfull \hbox (12.90979pt too wide) in paragraph at lines 725--725
+[]\TU/lmtt/m/n/12 modis.evi <- ee$ImageCollection("MODIS/006/MOD13Q1")$filter(e
+e$Filter$[] 
+ []
+
+
+Overfull \hbox (12.9217pt too wide) in paragraph at lines 725--725
+[]\TU/lmtt/m/n/12 hex <- st_make_grid(x = cc.proj, cellsize = 17080, square = F
+ALSE) %>%[] 
+ []
+
+
+Overfull \hbox (68.54166pt too wide) in paragraph at lines 725--725
+[]\TU/lmtt/m/n/12 cc.evi <- ee_extract(x = modis.evi, y = hex["hex_id"], sf = F
+ALSE, scale = 250,[] 
+ []
+
+
+Overfull \hbox (25.28178pt too wide) in paragraph at lines 725--725
+[]\TU/lmtt/m/n/12 colnames(evi.df) <- c([]hex_id[], stringr::str_replace_all(su
+bstr(colnames[] 
+ []
+
+
+Overfull \hbox (43.8217pt too wide) in paragraph at lines 725--725
+[]\TU/lmtt/m/n/12 evi.trend <- data.frame(hex_id = evi.df$hex_id, na.cnt = NA, 
+na.cnt.2 = NA,[] 
+ []
+
+
+Overfull \hbox (6.74174pt too wide) in paragraph at lines 725--725
+[]\TU/lmtt/m/n/12 Dates <- data.frame(date = seq(as.Date([]2000-01-01[]), Date,
+ "month"))[] 
+ []
+
+
+Overfull \hbox (111.80177pt too wide) in paragraph at lines 725--725
+[]\TU/lmtt/m/n/12 mutate(month = month(as.Date(rownames(tsv))), year = year(as.
+Date(rownames(tsv)))) %>%[] 
+ []
+
+
+Overfull \hbox (105.62167pt too wide) in paragraph at lines 725--725
+[]\TU/lmtt/m/n/12 tdx <- ts(data = tdx$mean_evi, start = c(2000, 1), end = c(20
+22, 01), frequency = 12)[] 
+ []
+
+
+Overfull \hbox (80.90172pt too wide) in paragraph at lines 725--725
+[]\TU/lmtt/m/n/12 tdx <- if(na.cnt > 0){imputeTS::na_kalman(tdx, model = "auto.
+arima", smooth = T)}[] 
+ []
+
+
+Overfull \hbox (99.44174pt too wide) in paragraph at lines 725--725
+[]\TU/lmtt/m/n/12 tdx.ns <- data.frame(time = c(1:length(tdx)), trend = tdx - t
+dx.dcp$time.series[,1])[] 
+ []
+
+
+Overfull \hbox (12.92172pt too wide) in paragraph at lines 725--725
+[]\TU/lmtt/m/n/12 trend.summ <- summary(lm(formula = trend ~ time, data = tdx.n
+s)) #tslm[] 
+ []
+
+
+Overfull \hbox (105.62177pt too wide) in paragraph at lines 725--725
+[]\TU/lmtt/m/n/12 abline(a = trend.summ$coefficients[1,1], b = trend.summ$coeff
+icients[2,1], col=[]red[])[] 
+ []
+
+
+Overfull \hbox (25.28175pt too wide) in paragraph at lines 725--725
+[]\TU/lmtt/m/n/12 evi.trend$trnd.strngth[i] <- round(max(0,1 - (var(Rt)/var(Tt 
++ Rt))), 1)[] 
+ []
+
+
+Overfull \hbox (25.28175pt too wide) in paragraph at lines 725--725
+[]\TU/lmtt/m/n/12 evi.trend$seas.strngth[i] <- round(max(0,1 - (var(Rt)/var(St 
++ Rt))), 1)[] 
+ []
+
+
+Overfull \hbox (111.80177pt too wide) in paragraph at lines 725--725
+[]\TU/lmtt/m/n/12 mutate(month = month(as.Date(rownames(tsv))), year = year(as.
+Date(rownames(tsv)))) %>%[] 
+ []
+
+
+Overfull \hbox (105.60968pt too wide) in paragraph at lines 725--725
+[]\TU/lmtt/m/n/12 tdx <- ts(data = tdx$mean_evi, start = c(2001, 1), end = c(20
+19, 11), frequency = 12)[] 
+ []
+
+
+Overfull \hbox (80.90172pt too wide) in paragraph at lines 725--725
+[]\TU/lmtt/m/n/12 tdx <- if(na.cnt > 0){imputeTS::na_kalman(tdx, model = "auto.
+arima", smooth = T)}[] 
+ []
+
+
+Overfull \hbox (99.44174pt too wide) in paragraph at lines 725--725
+[]\TU/lmtt/m/n/12 tdx.ns <- data.frame(time = c(1:length(tdx)), trend = tdx - t
+dx.dcp$time.series[,1])[] 
+ []
+
+
+Overfull \hbox (12.92172pt too wide) in paragraph at lines 725--725
+[]\TU/lmtt/m/n/12 trend.summ <- summary(lm(formula = trend ~ time, data = tdx.n
+s)) #tslm[] 
+ []
+
+
+Overfull \hbox (25.28175pt too wide) in paragraph at lines 725--725
+[]\TU/lmtt/m/n/12 evi.trend$trnd.strngth[i] <- round(max(0,1 - (var(Rt)/var(Tt 
++ Rt))), 1)[] 
+ []
+
+
+Overfull \hbox (25.28175pt too wide) in paragraph at lines 725--725
+[]\TU/lmtt/m/n/12 evi.trend$seas.strngth[i] <- round(max(0,1 - (var(Rt)/var(St 
++ Rt))), 1)[] 
+ []
+
+
+Overfull \hbox (6.74174pt too wide) in paragraph at lines 725--725
+[]\TU/lmtt/m/n/12 trend_brks <- classIntervals(hex_trend$trend, n=11, style = "
+fisher")[] 
+ []
+
+
+Overfull \hbox (19.10178pt too wide) in paragraph at lines 725--725
+[]\TU/lmtt/m/n/12 palette_sds <- leaflet::colorBin(colorscheme, domain = hex_tr
+end$trend,[] 
+ []
+
+
+Overfull \hbox (62.36176pt too wide) in paragraph at lines 725--725
+[] \TU/lmtt/m/n/12 format(round(hex_trend$trend, 4), scientific = FALSE),"<br><
+b> P-Value:</b>",[] 
+ []
+
+
+Overfull \hbox (0.5618pt too wide) in paragraph at lines 725--725
+[] \TU/lmtt/m/n/12 round(hex_trend$p.val, 4),"<br><b>R2: </b>",round(hex_trend$
+r2, 4),[] 
+ []
+
+
+Overfull \hbox (74.7218pt too wide) in paragraph at lines 725--725
+[] \TU/lmtt/m/n/12 "<br><b>Std Err: </b>",round(hex_trend$std.er, 4),"<br><b>Tr
+end Strength:</b>",[] 
+ []
+
+
+Underfull \vbox (badness 1320) detected at line 726
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [49
+
+]
+Underfull \vbox (badness 10000) detected at line 726
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 726
+ []
+
+[50]
+Underfull \vbox (badness 10000) detected at line 726
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 726
+ []
+
+[51]
+Underfull \vbox (badness 10000) detected at line 726
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 726
+ []
+
+[52]
+Underfull \vbox (badness 10000) detected at line 726
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 726
+ []
+
+[53]
+Underfull \vbox (badness 10000) detected at line 726
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 726
+ []
+
+[54]
+Underfull \vbox (badness 10000) detected at line 726
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 726
+ []
+
+[55]
+Underfull \vbox (badness 10000) detected at line 726
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 726
+ []
+
+[56]
+Underfull \vbox (badness 10000) detected at line 726
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 726
+ []
+
+[57]
+Underfull \vbox (badness 10000) detected at line 726
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 726
+ []
+
+[58]
+Overfull \hbox (87.08183pt too wide) in paragraph at lines 750--750
+[]\TU/lmtt/m/n/12 colnames(DATA)<- c("Date","EVI","Precipitation","Evapiration"
+,"TempMin","TempMax",[] 
+ []
+
+
+Overfull \hbox (93.26184pt too wide) in paragraph at lines 765--765
+[]\TU/lmtt/m/n/12 non_collinear_vars(DATA,TempMin,TempMax,Evapiration,Precipita
+tion,Humidity,Drought,[] 
+ []
+
+
+Overfull \hbox (56.18178pt too wide) in paragraph at lines 765--765
+[]\TU/lmtt/m/n/12 dplyr::select(Date,Drought, TempMin, Precipitation, TempMax, 
+Evapiration,EVI)
+ []
+
+[59]
+Overfull \hbox (62.36174pt too wide) in paragraph at lines 815--815
+[]\TU/lmtt/m/n/12 Precipitation = ur.df(DATA$Precipitation, type=[]none[], sele
+ctlags = c("AIC")),[] 
+ []
+
+
+Overfull \hbox (37.64175pt too wide) in paragraph at lines 815--815
+[]\TU/lmtt/m/n/12 Evapiration = ur.df(DATA$Evapiration, type=[]none[], selectla
+gs = c("AIC")),[] 
+ []
+
+
+Overfull \hbox (68.54173pt too wide) in paragraph at lines 815--815
+[]\TU/lmtt/m/n/12 Precipitation = ur.df(DATA$Precipitation, type=[]drift[], sel
+ectlags = c("AIC")),[] 
+ []
+
+
+Overfull \hbox (43.82175pt too wide) in paragraph at lines 815--815
+[]\TU/lmtt/m/n/12 Evapiration = ur.df(DATA$Evapiration, type=[]drift[], selectl
+ags = c("AIC")),[] 
+ []
+
+
+Overfull \hbox (68.54173pt too wide) in paragraph at lines 815--815
+[]\TU/lmtt/m/n/12 Precipitation = ur.df(DATA$Precipitation, type=[]trend[], sel
+ectlags = c("AIC")),[] 
+ []
+
+
+Overfull \hbox (43.82175pt too wide) in paragraph at lines 815--815
+[]\TU/lmtt/m/n/12 Evapiration = ur.df(DATA$Evapiration, type=[]trend[], selectl
+ags = c("AIC")),[] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 816
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [60]
+[61]
+Overfull \hbox (50.00174pt too wide) in paragraph at lines 881--881
+[]\TU/lmtt/m/n/12 Precipitation = ur.df(df$Precipitation, type=[]none[], select
+lags = c("AIC")),[] 
+ []
+
+
+Overfull \hbox (25.28175pt too wide) in paragraph at lines 881--881
+[]\TU/lmtt/m/n/12 Evapiration = ur.df(df$Evapiration, type=[]none[], selectlags
+ = c("AIC")),[] 
+ []
+
+
+Overfull \hbox (56.18173pt too wide) in paragraph at lines 881--881
+[]\TU/lmtt/m/n/12 Precipitation = ur.df(df$Precipitation, type=[]drift[], selec
+tlags = c("AIC")),[] 
+ []
+
+
+Overfull \hbox (31.46175pt too wide) in paragraph at lines 881--881
+[]\TU/lmtt/m/n/12 Evapiration = ur.df(df$Evapiration, type=[]drift[], selectlag
+s = c("AIC")),[] 
+ []
+
+
+Overfull \hbox (56.18173pt too wide) in paragraph at lines 881--881
+[]\TU/lmtt/m/n/12 Precipitation = ur.df(df$Precipitation, type=[]trend[], selec
+tlags = c("AIC")),[] 
+ []
+
+
+Overfull \hbox (31.46175pt too wide) in paragraph at lines 881--881
+[]\TU/lmtt/m/n/12 Evapiration = ur.df(df$Evapiration, type=[]trend[], selectlag
+s = c("AIC")),[] 
+ []
+
+
+Underfull \vbox (badness 2205) detected at line 882
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [62]
+Underfull \vbox (badness 1728) has occurred while \output is active []
+
+ [63]
+Overfull \hbox (62.36183pt too wide) in paragraph at lines 933--933
+[]\TU/lmtt/m/n/12 cbind(t(df.adf.trend$Precipitation@teststat), df.adf.trend$Pr
+ecipitation@cval)[] 
+ []
+
+
+Overfull \hbox (37.64182pt too wide) in paragraph at lines 933--933
+[]\TU/lmtt/m/n/12 cbind(t(df.adf.trend$Evapiration@teststat), df.adf.trend$Evap
+iration@cval)[] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 934
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [64]
+Overfull \hbox (68.54167pt too wide) in paragraph at lines 953--953
+[]\TU/lmtt/m/n/12 EVI <- ts(data = df$EVI, start = c(2000, 1), end = c(2022, 01
+), frequency = 12)[] 
+ []
+
+
+Overfull \hbox (192.14166pt too wide) in paragraph at lines 953--953
+[]\TU/lmtt/m/n/12 Precipitation <- ts(data = df$Precipitation, start = c(2000, 
+1), end = c(2022, 01), frequency = 12)[] 
+ []
+
+
+Overfull \hbox (167.42168pt too wide) in paragraph at lines 953--953
+[]\TU/lmtt/m/n/12 Evapiration <- ts(data = df$Evapiration, start = c(2000, 1), 
+end = c(2022, 01), frequency = 12)[] 
+ []
+
+
+Overfull \hbox (117.98166pt too wide) in paragraph at lines 953--953
+[]\TU/lmtt/m/n/12 TempMin <- ts(data = df$TempMin, start = c(2000, 1), end = c(
+2022, 01), frequency = 12)[] 
+ []
+
+
+Overfull \hbox (117.98166pt too wide) in paragraph at lines 953--953
+[]\TU/lmtt/m/n/12 TempMax <- ts(data = df$TempMax, start = c(2000, 1), end = c(
+2022, 01), frequency = 12)[] 
+ []
+
+
+Overfull \hbox (117.98166pt too wide) in paragraph at lines 953--953
+[]\TU/lmtt/m/n/12 Drought <- ts(data = df$Drought, start = c(2000, 1), end = c(
+2022, 01), frequency = 12)[] 
+ []
+
+
+Overfull \hbox (43.82182pt too wide) in paragraph at lines 953--953
+[]\TU/lmtt/m/n/12 TimeSeries1 <- cbind(EVI,Precipitation,Evapiration,TempMin,Te
+mpMax,Drought)[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [65]
+Overfull \hbox (80.90167pt too wide) in paragraph at lines 967--967
+[]\TU/lmtt/m/n/12 EVI <- ts(data = DATA$EVI, start = c(2000, 1), end = c(2022, 
+01), frequency = 12)[] 
+ []
+
+
+Overfull \hbox (105.62169pt too wide) in paragraph at lines 967--967
+[]\TU/lmtt/m/n/12 Precipitation <- ts(data = DATA$Precipitation, start = c(2000
+, 1), end = c(2022, 01),[] 
+ []
+
+
+Overfull \hbox (80.9017pt too wide) in paragraph at lines 967--967
+[]\TU/lmtt/m/n/12 Evapiration <- ts(data = DATA$Evapiration, start = c(2000, 1)
+, end = c(2022, 01),[] 
+ []
+
+
+Overfull \hbox (130.34166pt too wide) in paragraph at lines 967--967
+[]\TU/lmtt/m/n/12 TempMin <- ts(data = DATA$TempMin, start = c(2000, 1), end = 
+c(2022, 01), frequency = 12)[] 
+ []
+
+
+Overfull \hbox (130.34166pt too wide) in paragraph at lines 967--967
+[]\TU/lmtt/m/n/12 TempMax <- ts(data = DATA$TempMax, start = c(2000, 1), end = 
+c(2022, 01), frequency = 12)[] 
+ []
+
+
+Overfull \hbox (130.34166pt too wide) in paragraph at lines 967--967
+[]\TU/lmtt/m/n/12 Drought <- ts(data = DATA$Drought, start = c(2000, 1), end = 
+c(2022, 01), frequency = 12)[] 
+ []
+
+
+Overfull \hbox (37.64182pt too wide) in paragraph at lines 967--967
+[]\TU/lmtt/m/n/12 TimeSeries <- cbind(EVI,Precipitation,Evapiration,TempMin,Tem
+pMax,Drought)[] 
+ []
+
+
+Underfull \vbox (badness 2961) detected at line 979
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [66]
+Overfull \hbox (99.44174pt too wide) in paragraph at lines 993--993
+[]\TU/lmtt/m/n/12 LagSelection <-VARselect(TimeSeries,type = "const", lag.max =
+ 12) #highest lag order[] 
+ []
+
+
+Overfull \hbox (93.26181pt too wide) in paragraph at lines 993--993
+[]\TU/lmtt/m/n/12 kable(t(LagSelection$criteria))%>%kable_styling(latex_options
+ = c("repeat_header"))[] 
+ []
+
+
+Overfull \hbox (99.44182pt too wide) in paragraph at lines 993--993
+[]\TU/lmtt/m/n/12 kable(t(LagSelection1$criteria))%>%kable_styling(latex_option
+s = c("repeat_header"))[] 
+ []
+
+
+Overfull \hbox (117.98169pt too wide) in paragraph at lines 1003--1003
+[]\TU/lmtt/m/n/12 Model <- VAR(TimeSeries,p= 8,lag.max = 12,season = NULL,  exo
+gen = NULL,type = "const")[] 
+ []
+
+
+Overfull \hbox (136.5217pt too wide) in paragraph at lines 1011--1011
+[]\TU/lmtt/m/n/12 Model1 <- VAR(TimeSeries1,p= 10,lag.max = 12,season = NULL,  
+exogen = NULL,type = "const")[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [67]
+Overfull \hbox (0.5618pt too wide) in paragraph at lines 1038--1038
+[]\TU/lmtt/m/n/12 colnames(TimeSeries1) <-c("EVI","Prep","Evap","TMin","TMax","
+Drght")[] 
+ []
+
+
+Overfull \hbox (136.5217pt too wide) in paragraph at lines 1038--1038
+[]\TU/lmtt/m/n/12 Model2 <- VAR(TimeSeries1,p= 10,lag.max = 12,season = NULL,  
+exogen = NULL,type = "const")[] 
+ []
+
+
+Overfull \hbox (68.5417pt too wide) in paragraph at lines 1113--1113
+[]\TU/lmtt/m/n/12 plot.varfevd  <-function (x, plot.type = c("multiple", "singl
+e"), names = NULL,[] 
+ []
+
+
+Overfull \hbox (25.28171pt too wide) in paragraph at lines 1113--1113
+[]\TU/lmtt/m/n/12 legend = NULL, names.arg = NULL, nc, mar = par("mar"), oma = 
+par("oma"),[] 
+ []
+
+
+Overfull \hbox (19.10178pt too wide) in paragraph at lines 1113--1113
+[]\TU/lmtt/m/n/12 warning("\nInvalid variable name(s) supplied, using first var
+iable.\n")[] 
+ []
+
+
+Overfull \hbox (31.46175pt too wide) in paragraph at lines 1113--1113
+[]\TU/lmtt/m/n/12 ifelse(is.null(main), main <- paste("FEVD for", names), main 
+<- rep(main,[] 
+ []
+
+
+Overfull \hbox (12.92175pt too wide) in paragraph at lines 1113--1113
+[]\TU/lmtt/m/n/12 ifelse(is.null(ylab), ylab <- rep("Percentage", nv), ylab <- 
+rep(ylab,[] 
+ []
+
+[68]
+Underfull \vbox (badness 10000) detected at line 1114
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1114
+ []
+
+[69]
+Underfull \vbox (badness 10000) detected at line 1114
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1114
+ []
+
+[70]
+Overfull \hbox (31.44977pt too wide) in paragraph at lines 1123--1123
+[]\TU/lmtt/m/n/12 plot.varfevd(fevd(Model2, n.ahead = 10 ),plot.type = "multipl
+e", col=1:6)[] 
+ []
+
+
+Overfull \vbox (0.69289pt too high) detected at line 1144
+ []
+
+[71] [72] (index.aux (Chapters/Chapter1.aux) (Chapters/Chapter2.aux)
 (Chapters/Chapter3.aux) (Chapters/Chapter4.aux) (Chapters/Chapter5.aux))
 
 LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                index
-(biblatex)                and rerun LaTeX afterwards.
 
 Package logreq Info: Writing requests to 'index.run.xml'.
 \openout1 = `index.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 15469 strings out of 478582
- 283855 string characters out of 2845289
- 1101890 words of memory out of 3000000
- 33358 multiletter control sequences out of 15000+600000
- 510461 words of font info for 97 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 56i,16n,70p,1169b,5033s stack positions out of 10000i,1000n,20000p,200000b,80000s
-{C:/Users/Guy/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/U
-sers/Guy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pf
-b><C:/Users/Guy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-mi10.pfb><C:/Users/Guy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
-s/cm/cmr10.pfb><C:/Users/Guy/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb><C:/Users/Guy/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/mathpazo/fplmr.pfb><C:/Users/Guy/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/mathpazo/fplmri.pfb><C:/Users/Guy/AppData/Local/Programs/MiKTeX/fonts/
-type1/urw/palatino/uplr8a.pfb><C:/Users/Guy/AppData/Local/Programs/MiKTeX/fonts
-/type1/urw/palatino/uplri8a.pfb><C:/Users/Guy/AppData/Local/Programs/MiKTeX/fon
-ts/type1/urw/times/utmb8a.pfb><C:/Users/Guy/AppData/Local/Programs/MiKTeX/fonts
-/type1/urw/times/utmr8a.pfb><C:/Users/Guy/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/urw/times/utmri8a.pfb>
-Output written on index.pdf (45 pages, 547677 bytes).
-PDF statistics:
- 211 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 30172 strings out of 410967
+ 564180 string characters out of 2824159
+ 1517787 words of memory out of 3000000
+ 50458 multiletter control sequences out of 15000+600000
+ 485861 words of font info for 93 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 86i,16n,121p,1388b,5235s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
+Output written on index.pdf (88 pages).

@@ -90,7 +90,7 @@ plot(hex)
 ```
 ```{r, eval = FALSE}
 {
-# cc.evi <- ee_extract(x = modis.evi, y = hex["hex_id"], sf = FALSE, scale = 250, fun = ee$Reducer$mean(), via = "drive", quiet = T)
+# cc.evi <- ee_extract(x = modis.evi, y = hex["hex_id"], sf = FALSE, scale = 250, fun = ee$Reducer$mean(), via = "drive", quiet =   T)
 # evi.df <- as.data.frame(cc.evi)
 # write.csv(x = evi.df, file = "Data/rgeedf.csv")
 }
@@ -423,7 +423,8 @@ vis_dat(DATA)
 
 ```
 ```{r}
-df<- DATA%>%select(-Date)
+df<- DATA%>%
+ dplyr::select(-Date)
 # 1st differenced data
 # df <- as.data.frame(diff(as.matrix(DATA), lag = 1))
 #========================================================
@@ -431,69 +432,100 @@ df<- DATA%>%select(-Date)
 #========================================================
  
 adf.none  <- list(
-    EVI = ur.df(DATA$EVI, type='none', selectlags = c("BIC")),
-    Precipitation = ur.df(DATA$Precipitation, type='none', selectlags = c("BIC")),
-    Evapiration = ur.df(DATA$Evapiration, type='none', selectlags = c("BIC")),
-    TempMin = ur.df(DATA$TempMin, type='none', selectlags = c("BIC")),
-    TempMax = ur.df(DATA$TempMax, type='none', selectlags = c("BIC")),
-    Drought = ur.df(DATA$Drought, type='none', selectlags = c("BIC"))
+    EVI = ur.df(DATA$EVI, type='none', selectlags = c("AIC")),
+    Precipitation = ur.df(DATA$Precipitation, type='none', selectlags = c("AIC")),
+    Evapiration = ur.df(DATA$Evapiration, type='none', selectlags = c("AIC")),
+    TempMin = ur.df(DATA$TempMin, type='none', selectlags = c("AIC")),
+    TempMax = ur.df(DATA$TempMax, type='none', selectlags = c("AIC")),
+    Drought = ur.df(DATA$Drought, type='none', selectlags = c("AIC"))
     )
 adf.drift  <- list(
-    EVI = ur.df(DATA$EVI, type='drift', selectlags = c("BIC")),
-    Precipitation = ur.df(DATA$Precipitation, type='drift', selectlags = c("BIC")),
-    Evapiration = ur.df(DATA$Evapiration, type='drift', selectlags = c("BIC")),
-    TempMin = ur.df(DATA$TempMin, type='drift', selectlags = c("BIC")),
-    TempMax = ur.df(DATA$TempMax, type='drift', selectlags = c("BIC")),
-    Drought = ur.df(DATA$Drought, type='drift', selectlags = c("BIC"))
+    EVI = ur.df(DATA$EVI, type='drift', selectlags = c("AIC")),
+    Precipitation = ur.df(DATA$Precipitation, type='drift', selectlags = c("AIC")),
+    Evapiration = ur.df(DATA$Evapiration, type='drift', selectlags = c("AIC")),
+    TempMin = ur.df(DATA$TempMin, type='drift', selectlags = c("AIC")),
+    TempMax = ur.df(DATA$TempMax, type='drift', selectlags = c("AIC")),
+    Drought = ur.df(DATA$Drought, type='drift', selectlags = c("AIC"))
     )
 adf.trend  <- list(
-    EVI = ur.df(DATA$EVI, type='trend', selectlags = c("BIC")),
-    Precipitation = ur.df(DATA$Precipitation, type='trend', selectlags = c("BIC")),
-    Evapiration = ur.df(DATA$Evapiration, type='trend', selectlags = c("BIC")),
-    TempMin = ur.df(DATA$TempMin, type='trend', selectlags = c("BIC")),
-    TempMax = ur.df(DATA$TempMax, type='trend', selectlags = c("BIC")),
-    Drought = ur.df(DATA$Drought, type='trend', selectlags = c("BIC"))
+    EVI = ur.df(DATA$EVI, type='trend', selectlags = c("AIC")),
+    Precipitation = ur.df(DATA$Precipitation, type='trend', selectlags = c("AIC")),
+    Evapiration = ur.df(DATA$Evapiration, type='trend', selectlags = c("AIC")),
+    TempMin = ur.df(DATA$TempMin, type='trend', selectlags = c("AIC")),
+    TempMax = ur.df(DATA$TempMax, type='trend', selectlags = c("AIC")),
+    Drought = ur.df(DATA$Drought, type='trend', selectlags = c("AIC"))
     )
-
 ```
 
+
 ```{r}
+summary(adf.none$EVI)
+summary(adf.none$Precipitation)
+summary(adf.none$Evapiration)
+summary(adf.none$TempMin)
+summary(adf.none$TempMax)
+summary(adf.none$Drought)
+```
+
+
+```{r}
+summary(adf.trend$EVI)
+summary(adf.trend$Precipitation)
+summary(adf.trend$Evapiration)
+summary(adf.trend$TempMin)
+summary(adf.trend$TempMax)
+summary(adf.trend$Drought)
+```
+
+
+```{r}
+summary(adf.drift$EVI)
+summary(adf.drift$Precipitation)
+summary(adf.drift$Evapiration)
+summary(adf.drift$TempMin)
+summary(adf.drift$TempMin)
+summary(adf.drift$Drought)
+```
+
 # 1st differenced data
+```{r}
 df <- as.data.frame(diff(as.matrix(DATA[,-1]), lag = 1))
 df.adf.none  <- list(
-    EVI = ur.df(df$EVI, type='none', selectlags = c("BIC")),
-    Precipitation = ur.df(df$Precipitation, type='none', selectlags = c("BIC")),
-    Evapiration = ur.df(df$Evapiration, type='none', selectlags = c("BIC")),
-    TempMin = ur.df(df$TempMin, type='none', selectlags = c("BIC")),
-    TempMax = ur.df(df$TempMax, type='none', selectlags = c("BIC")),
-    Drought = ur.df(df$Drought, type='none', selectlags = c("BIC"))
+    EVI = ur.df(df$EVI, type='none', selectlags = c("AIC")),
+    Precipitation = ur.df(df$Precipitation, type='none', selectlags = c("AIC")),
+    Evapiration = ur.df(df$Evapiration, type='none', selectlags = c("AIC")),
+    TempMin = ur.df(df$TempMin, type='none', selectlags = c("AIC")),
+    TempMax = ur.df(df$TempMax, type='none', selectlags = c("AIC")),
+    Drought = ur.df(df$Drought, type='none', selectlags = c("AIC"))
     )
 df.adf.drift  <- list(
-    EVI = ur.df(df$EVI, type='drift', selectlags = c("BIC")),
-    Precipitation = ur.df(df$Precipitation, type='drift', selectlags = c("BIC")),
-    Evapiration = ur.df(df$Evapiration, type='drift', selectlags = c("BIC")),
-    TempMin = ur.df(df$TempMin, type='drift', selectlags = c("BIC")),
-    TempMax = ur.df(df$TempMax, type='drift', selectlags = c("BIC")),
-    Drought = ur.df(df$Drought, type='drift', selectlags = c("BIC"))
+    EVI = ur.df(df$EVI, type='drift', selectlags = c("AIC")),
+    Precipitation = ur.df(df$Precipitation, type='drift', selectlags = c("AIC")),
+    Evapiration = ur.df(df$Evapiration, type='drift', selectlags = c("AIC")),
+    TempMin = ur.df(df$TempMin, type='drift', selectlags = c("AIC")),
+    TempMax = ur.df(df$TempMax, type='drift', selectlags = c("AIC")),
+    Drought = ur.df(df$Drought, type='drift', selectlags = c("AIC"))
     )
 df.adf.trend  <- list(
-    EVI = ur.df(df$EVI, type='trend', selectlags = c("BIC")),
-    Precipitation = ur.df(df$Precipitation, type='trend', selectlags = c("BIC")),
-    Evapiration = ur.df(df$Evapiration, type='trend', selectlags = c("BIC")),
-    TempMin = ur.df(df$TempMin, type='trend', selectlags = c("BIC")),
-    TempMax = ur.df(df$TempMax, type='trend', selectlags = c("BIC")),
-    Drought = ur.df(df$Drought, type='trend', selectlags = c("BIC"))
+    EVI = ur.df(df$EVI, type='trend', selectlags = c("AIC")),
+    Precipitation = ur.df(df$Precipitation, type='trend', selectlags = c("AIC")),
+    Evapiration = ur.df(df$Evapiration, type='trend', selectlags = c("AIC")),
+    TempMin = ur.df(df$TempMin, type='trend', selectlags = c("AIC")),
+    TempMax = ur.df(df$TempMax, type='trend', selectlags = c("AIC")),
+    Drought = ur.df(df$Drought, type='trend', selectlags = c("AIC"))
     )
 ```
 The ADF result for LRM variable from the above R code is generated as follows
 
 ```{r}
-summary(adf.trend)
-summary(df.adf.trend)
+summary(adf.trend$EVI)
+summary(df.adf.trend$Precipitation)
+summary(df.adf.trend$Evapiration)
+summary(df.adf.trend$TempMin)
+summary(df.adf.trend$TempMax)
+summary(df.adf.trend$Drought)
 ```
-```{r}
-adf.trend$EVI
-```
+
 Interpretation of ADF test follow the general-to-specific approach. As such, three regression models are applied sequentially.
 ```{r}
 #========================================================
@@ -502,22 +534,22 @@ Interpretation of ADF test follow the general-to-specific approach. As such, thr
 #========================================================
  
 print("Level Variable with Trend")
-cbind(t(adf.trend$EVI@teststat), adf.trend$EVI@cval)
+cbind(t(df.adf.trend$EVI@teststat), df.adf.trend$EVI@cval)
 
 print("Level Variable with Trend")
-cbind(t(adf.trend$Precipitation@teststat), adf.trend$Precipitation@cval)
+cbind(t(df.adf.trend$Precipitation@teststat), df.adf.trend$Precipitation@cval)
 
 print("Level Variable with Trend")
-cbind(t(adf.trend$Evapiration@teststat), adf.trend$Evapiration@cval)
+cbind(t(df.adf.trend$Evapiration@teststat), df.adf.trend$Evapiration@cval)
 
 print("Level Variable with Trend")
-cbind(t(adf.trend$TempMin@teststat), adf.trend$TempMin@cval)
+cbind(t(df.adf.trend$TempMin@teststat), df.adf.trend$TempMin@cval)
 
 print("Level Variable with Trend")
-cbind(t(adf.trend$TempMax@teststat), adf.trend$TempMax@cval)
+cbind(t(df.adf.trend$TempMax@teststat),df.adf.trend$TempMax@cval)
 
 print("Level Variable with Trend")
-cbind(t(adf.trend$Drought@teststat), adf.trend$Drought@cval)
+cbind(t(df.adf.trend$Drought@teststat), df.adf.trend$Drought@cval)
 ```
 
 
@@ -562,6 +594,17 @@ tau1 is significant : unit root(X)
 Finally, we can conclude that logarithm of real income contains a unit root and can be stationay time series by differencing the first order. Now that this transformed variable contains no unit root, it can be included in VAR or VECM model.
 
 In this process, the alphanumeric names of test statistics are a little confusing but when we refer the above three specifications of regression equations, the meanings of names of test statistics are clear.
+```{r}
+EVI <- ts(data = df$EVI, start = c(2000, 1), end = c(2022, 01), frequency = 12)
+Precipitation <- ts(data = df$Precipitation, start = c(2000, 1), end = c(2022, 01), frequency = 12)
+Evapiration <- ts(data = df$Evapiration, start = c(2000, 1), end = c(2022, 01), frequency = 12)
+TempMin <- ts(data = df$TempMin, start = c(2000, 1), end = c(2022, 01), frequency = 12)
+TempMax <- ts(data = df$TempMax, start = c(2000, 1), end = c(2022, 01), frequency = 12)
+Drought <- ts(data = df$Drought, start = c(2000, 1), end = c(2022, 01), frequency = 12)
+TimeSeries1 <- cbind(EVI,Precipitation,Evapiration,TempMin,TempMax,Drought)
+plot(TimeSeries1)
+```
+
 # Time Series using  VAR
 ```{r}
 EVI <- ts(data = DATA$EVI, start = c(2000, 1), end = c(2022, 01), frequency = 12)
@@ -573,31 +616,7 @@ Drought <- ts(data = DATA$Drought, start = c(2000, 1), end = c(2022, 01), freque
 TimeSeries <- cbind(EVI,Precipitation,Evapiration,TempMin,TempMax,Drought)
 ```
 
-```{r}
 
-{
-Matrix <- diag(6)
-Matrix[2,1]<- NA
-Matrix[3,1]<- NA
-Matrix[4,1]<- NA
-Matrix[5,1]<- NA
-Matrix[6,1]<- NA
-Matrix[3,2]<- NA
-Matrix[4,2]<- NA
-Matrix[5,2]<- NA
-Matrix[6,2]<- NA
-Matrix[4,3]<- NA
-Matrix[5,3]<- NA
-Matrix[6,]<- NA
-Matrix[5,4]<- NA
-Matrix[6,4]<- NA
-Matrix[6,5]<- NA
-}
-```
-
-```{r}
-
-```
 
 ```{r}
 library(TSstudio)
@@ -615,30 +634,52 @@ LagSelection <-VARselect(TimeSeries,
 LagSelection$selection
 kable(t(LagSelection$criteria))%>%kable_styling(latex_options = c("repeat_header"))                #information criterion
 ```
+```{r}
+LagSelection1 <-VARselect(TimeSeries1, 
+          type = "const", #type of deterministic regressors to include. We use none becasue the time series was made stationary using differencing above. 
+          lag.max = 12) #highest lag order
+LagSelection1$selection
+kable(t(LagSelection1$criteria))%>%kable_styling(latex_options = c("repeat_header"))                #information criterion
+```
 
 
 # Estemating Models
 ```{r}
 # Creating a VAR model with vars
-Model1 <- VAR(TimeSeries,p= 8,lag.max = 12,season = NULL,  exogen = NULL,type = "const")
+Model <- VAR(TimeSeries,p= 8,lag.max = 12,season = NULL,  exogen = NULL,type = "const")
+
+summary(Model)
+```
+```{r}
+# Creating a VAR model with vars
+Model1 <- VAR(TimeSeries1,p= 10,lag.max = 12,season = NULL,  exogen = NULL,type = "const")
+
+summary(Model1)
 ```
 
 ```{r}
+predict(Model, n.ahead = 12, ci = 0.95)
+```
+```{r}
 predict(Model1, n.ahead = 12, ci = 0.95)
 ```
+
 forecast is a generic function for forecasting from time series or time series models. The function invokes particular methods which depend on the class of the first argument.
 ```{r}
 forecast(Model1)
 plot(forecast(Model1))
 ```
 ```{r}
-accuracy(forecast(Model1),d=1, D= 1)
+accuracy(forecast(Model),d=10, D= 1)
+```
+```{r}
+accuracy(forecast(Model1),d=10, D= 1)
 ```
 
 ```{r}
 library(vars)
-colnames(TimeSeries) <-c("EVI","Prep","Evap","TMin","TMax","Drght")
-Model2 <- VAR(TimeSeries,p= 8,lag.max = 12,season = NULL,  exogen = NULL,type = "const")
+colnames(TimeSeries1) <-c("EVI","Prep","Evap","TMin","TMax","Drght")
+Model2 <- VAR(TimeSeries1,p= 10,lag.max = 12,season = NULL,  exogen = NULL,type = "const")
 ```
 
 ```{r}
@@ -725,110 +766,32 @@ layout(matrix(1:6,ncol=1))
 plot.varfevd(fevd(Model2, n.ahead = 10 ),plot.type = "multiple", col=1:6)
 ```
 
-```{r}
-fevd <- fevd(Model1)
-plot(fevd$EVI)
 
-```
 
 
 
 # Impuse Repones Analysis
 ```{r}
-plot(irf(Model1,impulse = "EVI",response = "EVI"))
-plot(irf(Model1,impulse = "EVI",response = "Precipitation"))
-plot(irf(Model1,impulse = "EVI",response = "Evapiration"))
-plot(irf(Model1,impulse = "EVI",response = "TempMin"))
-plot(irf(Model1,impulse = "EVI",response = "TempMax"))
-plot(irf(Model1,impulse = "EVI",response = "Drought"))
-```
-```{r}
-grangertest(EVI~Precipitation, order = 12)
-grangertest(EVI~TempMin, order = 12)
-grangertest(EVI~TempMax, order = 12)
-grangertest(EVI~Evapiration, order = 12)
-grangertest(EVI~Drought, order = 12)
-```
-
-
-```{r}
-data <- DATA%>%select(Date,Drought, TempMin, Precipitation, TempMax, Evapiration,EVI)
-# Make a tsibble for modeling
-to_model <- data %>% 
-  mutate(dates = yearmonth(paste0(Date, "-01"))) %>% 
-  as_tibble() %>% 
-  as_tsibble()
+plot(irf(Model,impulse = "EVI",response = "EVI"))
+plot(irf(Model,impulse = "EVI",response = "Prep"))
+plot(irf(Model,impulse = "EVI",response = "Evap"))
+plot(irf(Model,impulse = "EVI",response = "TMin"))
+plot(irf(Model,impulse = "EVI",response = "TMax"))
+plot(irf(Model,impulse = "EVI",response = "Drght"))
 ```
 
 ```{r}
-# train_test_split <- 0.65
-# 
-# training <- to_model %>% 
-#   slice(1:I(nrow(to_model) 
-#             ))
-# 
-# test <- to_model %>% 
-#   slice(I(nrow(to_model) * train_test_split + 1):I(nrow(to_model) + 1))
-
-
+grangertest(EVI~Precipitation, order = 12, data = TimeSeries1)
+grangertest(EVI~TempMin, order = 12, data = TimeSeries1)
+grangertest(EVI~TempMax, order = 12, data = TimeSeries1)
+grangertest(EVI~Evapiration, order = 12, data = TimeSeries1)
+grangertest(EVI~Drought, order = 12, data = TimeSeries1)
 ```
-
 ```{r}
-# Split into training and test sets ---------------------------------------
-
-library(rsample)
-Split <- initial_time_split(to_model,prop = 0.7,lag=12)
-train <- training(Split)
-test <- testing(Split)
-# Get the split date for the bias-free test set
-split_date <- min(test$dates) + 120
+plot(forecast(Model1))
 ```
 
 
-```{r}
-# Train models ------------------------------------------------------------
-
-# Different formulas for arima and rest of the models
-
-
-f_mc <- as.formula("EVI~Drought+ TempMin+ Precipitation+ TempMax+ Evapiration")
-
-# Train six models plus make a combination
-models <- train %>% 
-  model(ARIMA = ARIMA(f_mc, stepwise = FALSE),
-        nnetar = NNETAR(f_mc),
-        VAR = VAR(f_mc),
-        Prophet = prophet(f_mc),
-        ETS = ETS(EVI),
-        TSLM = TSLM(EVI~Drought+ TempMin+ Precipitation+ TempMax+ Evapiration+
-                      trend() + season())) %>% 
-  mutate(Combination = (ARIMA + nnetar + VAR + Prophet + TSLM) / 5)
-```
-
-```{r}
-models
-```
-
-```{r}
-# Plot the models ---------------------------------------------------------
-
-# Make forecasts
-fcasts <- models %>% forecast(test)
-
-# Calculate accuracies for the test set
-# rbind training set to get MASE calculations
-accuracies <- fcasts %>% accuracy(rbind(training,
-                                        test %>% filter(dates >= split_date)))
-
-# Calculate R-squareds, NA if near-zero variance
-accuracies <- accuracies %>% 
-  inner_join(fcasts %>% 
-               as_tibble() %>% 
-               group_by(.model) %>% 
-               summarise(rsq = ifelse(sd(tenyear) > 0.01,
-                                      cor(tenyear, test$tenyear)^2,
-                                      NA)))
-```
 
 
 

@@ -1,47 +1,53 @@
 \babel@toc {english}{}\relax 
-\contentsline {section}{CERTIFICATION}{ii}{}%
-\contentsline {section}{ABSTRACT}{iii}{}%
-\contentsline {section}{DEDICATION}{iv}{}%
-\contentsline {section}{ACKNOWLEDGMENTS}{v}{}%
-\contentsline {section}{TABLE OF CONTENTS}{ix}{}%
-\contentsline {section}{LIST OF TABLES}{xi}{}%
-\contentsline {section}{LIST OF FIGURES}{xiii}{}%
-\contentsline {chapter}{\numberline {1}CHAPTER ONE\\1.0 INTRODUCTION}{3}{}%
-\contentsline {section}{\numberline {1.1}Introduction}{3}{}%
-\contentsline {section}{\numberline {1.2}Background of The Study}{4}{}%
-\contentsline {section}{\numberline {1.3}Problem Statement}{5}{}%
-\contentsline {section}{\numberline {1.4}Research Questions}{5}{}%
-\contentsline {section}{\numberline {1.5}Research Objectives}{5}{}%
-\contentsline {section}{\numberline {1.6}Significance Of The Study}{5}{}%
-\contentsline {section}{\numberline {1.7}Limitation Of The Study}{6}{}%
-\contentsline {chapter}{\numberline {2}CHAPTER TWO\\2.0 LITERATURE REVIEW}{7}{}%
-\contentsline {section}{\numberline {2.1}Introduction}{7}{}%
-\contentsline {chapter}{\numberline {3}CHAPTER THREE\\3.0 METHODOLOGY}{9}{}%
-\contentsline {section}{\numberline {3.1}Introduction}{9}{}%
-\contentsline {section}{\numberline {3.2}Study Area}{9}{}%
-\contentsline {section}{\numberline {3.3}DATA }{9}{}%
-\contentsline {subsection}{\numberline {3.3.1}Data Description and Inspection}{10}{}%
-\contentsline {subsection}{\numberline {3.3.2}Time Series Forecasting Using Stochastic Models}{10}{}%
-\contentsline {section}{\numberline {3.4}Structural Analysis}{13}{}%
-\contentsline {subsection}{\numberline {3.4.1}Causality Analysis}{13}{}%
-\contentsline {section}{\numberline {3.5} Forecast Error Variance Decomposition}{14}{}%
-\contentsline {section}{\numberline {3.6}Forecast Performance Measures}{14}{}%
-\contentsline {subsection}{\numberline {3.6.1}Description of Various Forecast Performance Measures}{16}{}%
-\contentsline {chapter}{\numberline {4}CHAPTER FOUR\\4.0 DATA ANALYSIS AND RESULTS}{17}{}%
-\contentsline {section}{\numberline {4.1}Introduction}{17}{}%
-\contentsline {subsection}{\numberline {4.1.1}Preliminary Results}{17}{}%
-\contentsline {subsection}{\numberline {4.1.2}Variable \& Parameter Definition}{17}{}%
-\contentsline {subsection}{\numberline {4.1.3}Selection of Variables}{19}{}%
-\contentsline {subsection}{\numberline {4.1.4}Multicollinearity}{19}{}%
-\contentsline {subsection}{\numberline {4.1.5}Stationarity and Differencing}{20}{}%
-\contentsline {section}{\numberline {4.2}VAR Estimation}{22}{}%
-\contentsline {subsection}{\numberline {4.2.1} Decomposition of Variance}{22}{}%
-\contentsline {subsection}{\numberline {4.2.2}Forecast for EVI}{22}{}%
-\contentsline {subsection}{\numberline {4.2.3}Prediction accuracy}{26}{}%
-\contentsline {chapter}{\numberline {5}CHAPTER FIVE\\5.0 CONCLUSION \& RECOMMENDATIONS}{27}{}%
-\contentsline {section}{\numberline {5.1}Introduction}{27}{}%
-\contentsline {section}{\numberline {5.2}Conclusion}{27}{}%
-\contentsline {section}{\numberline {5.3}RECOMMENDATIONS}{27}{}%
-\contentsline {chapter}{APPENDICES}{29}{}%
-\contentsline {chapter}{\numberline {A}Appendix Chapter}{29}{}%
-\contentsline {chapter}{\numberline {B}Appendix B Chapter}{31}{}%
+\contentsline {section}{CERTIFICATION}{ii}{Doc-Start}%
+\contentsline {section}{ABSTRACT}{iii}{Doc-Start}%
+\contentsline {section}{DEDICATION}{iv}{Doc-Start}%
+\contentsline {section}{ACKNOWLEDGMENTS}{v}{Doc-Start}%
+\contentsline {section}{TABLE OF CONTENTS}{ix}{chapter*.1}%
+\contentsline {section}{LIST OF TABLES}{xi}{chapter*.2}%
+\contentsline {section}{LIST OF FIGURES}{xiii}{chapter*.3}%
+\contentsline {section}{LIST OF ABBREVIATION}{xiv}{chapter*.3}%
+\contentsline {chapter}{CHAPTER ONE\\1.0 INTRODUCTION}{3}{chapter*.4}%
+\contentsline {section}{Introduction}{3}{section*.5}%
+\contentsline {section}{Background of The Study}{5}{section*.6}%
+\contentsline {section}{Problem Statement}{5}{section*.7}%
+\contentsline {section}{Research Questions}{6}{section*.8}%
+\contentsline {section}{Research Objectives}{6}{section*.9}%
+\contentsline {paragraph}{hosonuma2012assessment}{6}{paragraph*.10}%
+\contentsline {section}{Significance Of The Study}{7}{section*.11}%
+\contentsline {section}{Limitation Of The Study}{7}{section*.12}%
+\contentsline {chapter}{CHAPTER TWO\\2.0 LITERATURE REVIEW}{9}{chapter*.13}%
+\contentsline {section}{Introduction}{9}{section*.14}%
+\contentsline {chapter}{CHAPTER THREE\\3.0 METHODOLOGY}{13}{chapter*.15}%
+\contentsline {section}{Introduction}{13}{section*.16}%
+\contentsline {section}{Study Area}{13}{section*.17}%
+\contentsline {section}{DATA }{14}{section*.18}%
+\contentsline {subsection}{Data Description and Inspection}{14}{subsection*.19}%
+\contentsline {subsection}{Time Series Forecasting Using Stochastic Models}{15}{subsection*.20}%
+\contentsline {section}{Structural Analysis}{19}{section*.21}%
+\contentsline {subsection}{Causality Analysis}{19}{subsection*.22}%
+\contentsline {section}{ Forecast Error Variance Decomposition}{21}{section*.23}%
+\contentsline {section}{Forecast Performance Measures}{21}{section*.24}%
+\contentsline {subsection}{Description of Various Forecast Performance Measures}{22}{subsection*.25}%
+\contentsline {chapter}{CHAPTER FOUR\\4.0 DATA ANALYSIS AND RESULTS}{25}{chapter*.26}%
+\contentsline {section}{Introduction}{25}{section*.27}%
+\contentsline {subsection}{Preliminary Results}{25}{subsection*.28}%
+\contentsline {subsection}{Variable \& Parameter Definition}{26}{subsection*.29}%
+\contentsline {subsection}{Selection of Variables}{26}{subsection*.30}%
+\contentsline {subsection}{Multicollinearity}{27}{subsection*.31}%
+\contentsline {subsection}{Stationarity and Differencing}{29}{subsection*.32}%
+\contentsline {section}{VAR Estimation}{30}{section*.33}%
+\contentsline {section}{Impulse Response Analysis}{32}{section*.34}%
+\contentsline {subsection}{ Decomposition of Variance}{33}{subsection*.35}%
+\contentsline {subsection}{Forecast for EVI}{33}{subsection*.36}%
+\contentsline {subsection}{Prediction Accuracy}{34}{subsection*.37}%
+\contentsline {section}{ Discussion}{35}{section*.38}%
+\contentsline {chapter}{CHAPTER FIVE\\5.0 CONCLUSION \& RECOMMENDATIONS}{37}{chapter*.39}%
+\contentsline {section}{Introduction}{37}{section*.40}%
+\contentsline {section}{Conclusion}{37}{section*.41}%
+\contentsline {section}{RECOMMENDATIONS}{38}{section*.42}%
+\contentsline {chapter}{APPENDICES}{41}{chapter*.43}%
+\contentsline {chapter}{Appendix Chapter 1}{43}{appendix*.44}%
+\contentsline {section}{Data Extraction Using R code From Google Earth Engine}{43}{section*.45}%
+\contentsline {chapter}{Appendix Chapter 2}{49}{appendix*.46}%
+\contentsline {section}{VAR}{59}{section*.47}%

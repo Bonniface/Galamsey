@@ -2,15 +2,17 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {1}{\ignorespaces Various Forecast Performance Measures}}{23}{table.0.1}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Variable Definition.}}{18}{}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Data Collected from 2000-2022 on Google Earth Engine }}{18}{}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Summary statistics for Climate Date and Vegetation Loss In Ghana}}{18}{}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces Best Variance Inflation Factor}}{20}{}%
-\contentsline {table}{\numberline {4.5}{\ignorespaces Augmented Dickey Fuller (ADF) unit root test }}{21}{}%
-\contentsline {table}{\numberline {4.6}{\ignorespaces Optimal lag length selection}}{23}{}%
-\contentsline {table}{\numberline {4.7}{\ignorespaces EVI forecast for the next 12 month.}}{24}{}%
-\contentsline {table}{\numberline {4.8}{\ignorespaces Granger causality tests.}}{24}{}%
+\contentsline {table}{\numberline {2}{\ignorespaces Variable Definition.}}{26}{table.0.2}%
+\contentsline {table}{\numberline {3}{\ignorespaces Data Collected from 2000-2022 on Google Earth Engine }}{27}{table.0.3}%
+\contentsline {table}{\numberline {4}{\ignorespaces Summary statistics for Climate Date and Vegetation Loss In Ghana}}{27}{table.0.4}%
+\contentsline {table}{\numberline {5}{\ignorespaces Best Variance Inflation Factor}}{29}{table.0.5}%
+\contentsline {table}{\numberline {6}{\ignorespaces Augmented Dickey Fuller (ADF) unit root test }}{30}{table.0.6}%
+\contentsline {table}{\numberline {7}{\ignorespaces Optimal lag length selection}}{31}{table.0.7}%
+\contentsline {table}{\numberline {8}{\ignorespaces EVI forecast for the next 12 month.}}{32}{table.0.8}%
+\contentsline {table}{\numberline {9}{\ignorespaces Granger causality tests.}}{32}{table.0.9}%
+\contentsline {table}{\numberline {10}{\ignorespaces Forecast Accuracy on EVI Training set}}{34}{table.0.10}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
