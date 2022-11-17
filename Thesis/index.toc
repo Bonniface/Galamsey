@@ -38,7 +38,7 @@
 \contentsline {subsection}{Stationarity and Differencing}{29}{subsection*.32}%
 \contentsline {section}{VAR Estimation}{30}{section*.33}%
 \contentsline {section}{Impulse Response Analysis}{32}{section*.34}%
-\contentsline {subsection}{ Decomposition of Variance}{33}{subsection*.35}%
+\contentsline {subsection}{ Decomposition of Variance}{32}{subsection*.35}%
 \contentsline {subsection}{Forecast for EVI}{33}{subsection*.36}%
 \contentsline {subsection}{Prediction Accuracy}{34}{subsection*.37}%
 \contentsline {section}{ Discussion}{35}{section*.38}%
