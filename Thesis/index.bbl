@@ -18,6 +18,885 @@
 
 
 \refsection{0}
+  \datalist[entry]{apa/apasortcite//global/global}
+    \entry{Allotey2017}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a8c3f3e4c839d58b469652f0ccf4cd2d}{%
+           family={Allotey},
+           familyi={A\bibinitperiod},
+           given={Godwin\bibnamedelima Akweiteh},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a8c3f3e4c839d58b469652f0ccf4cd2d}
+      \strng{fullhash}{a8c3f3e4c839d58b469652f0ccf4cd2d}
+      \strng{bibnamehash}{a8c3f3e4c839d58b469652f0ccf4cd2d}
+      \strng{authorbibnamehash}{a8c3f3e4c839d58b469652f0ccf4cd2d}
+      \strng{authornamehash}{a8c3f3e4c839d58b469652f0ccf4cd2d}
+      \strng{authorfullhash}{a8c3f3e4c839d58b469652f0ccf4cd2d}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Ghana News}
+      \field{month}{3}
+      \field{title}{Stop galamsey in 3 weeks or face the law - Amewu}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb http://citifmonline.com/2017/03/29/stop-galamsey-in-3-weeks-or-face-the-law-amewu/
+      \endverb
+      \verb{url}
+      \verb http://citifmonline.com/2017/03/29/stop-galamsey-in-3-weeks-or-face-the-law-amewu/
+      \endverb
+    \endentry
+    \entry{Ansah2017}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3bb033a95e0c1df0b8c20f2f3307d2ca}{%
+           family={Ansah},
+           familyi={A\bibinitperiod},
+           given={Marian\bibnamedelima Efe},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{3bb033a95e0c1df0b8c20f2f3307d2ca}
+      \strng{fullhash}{3bb033a95e0c1df0b8c20f2f3307d2ca}
+      \strng{bibnamehash}{3bb033a95e0c1df0b8c20f2f3307d2ca}
+      \strng{authorbibnamehash}{3bb033a95e0c1df0b8c20f2f3307d2ca}
+      \strng{authornamehash}{3bb033a95e0c1df0b8c20f2f3307d2ca}
+      \strng{authorfullhash}{3bb033a95e0c1df0b8c20f2f3307d2ca}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Ghana News}
+      \field{month}{3}
+      \field{title}{Galamsey, pollution destroying water bodies in Ghana - Water Company}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb http://www.leakxgh.com/2017/05/galamsey-pollution-destroying-water.html
+      \endverb
+      \verb{url}
+      \verb http://www.leakxgh.com/2017/05/galamsey-pollution-destroying-water.html
+      \endverb
+    \endentry
+    \entry{Barenblitt2021}{article}{}
+      \name{author}{11}{}{%
+        {{un=0,uniquepart=base,hash=c35312a82f2e47f79d38d549ef2a4e8f}{%
+           family={Barenblitt},
+           familyi={B\bibinitperiod},
+           given={Abigail},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=62f48fb6c712d7cba46c1f2a8fe981f5}{%
+           family={Payton},
+           familyi={P\bibinitperiod},
+           given={Amanda},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a4a0c1d1417075d57146378f3b346fb6}{%
+           family={Lagomasino},
+           familyi={L\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2cafe8b6f325fc57c71d3b57b5e92345}{%
+           family={Fatoyinbo},
+           familyi={F\bibinitperiod},
+           given={Lola},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8dab71e1d26a58bb2faf955aef565825}{%
+           family={Asare},
+           familyi={A\bibinitperiod},
+           given={Kofi},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=136148d431d40fec52d5d007a96ab982}{%
+           family={Aidoo},
+           familyi={A\bibinitperiod},
+           given={Kenneth},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c3ec95672c21a642ed1ace9909381074}{%
+           family={Pigott},
+           familyi={P\bibinitperiod},
+           given={Hugo},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2bc58ae1748a6a2baf71abd52630f8f6}{%
+           family={Som},
+           familyi={S\bibinitperiod},
+           given={Charles\bibnamedelima Kofi},
+           giveni={C\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c39cc6569fceea8abea5f5acb2e39e41}{%
+           family={Smeets},
+           familyi={S\bibinitperiod},
+           given={Laurent},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b0ba479720ac37be9b5c7f4e1192416a}{%
+           family={Seidu},
+           familyi={S\bibinitperiod},
+           given={Omar},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3494fc05e8c37a7e6f17e41d92a191ce}{%
+           family={Wood},
+           familyi={W\bibinitperiod},
+           given={Danielle},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier B.V.}%
+      }
+      \strng{namehash}{d251ca168d9507c6b80ed3c7313edf9c}
+      \strng{fullhash}{214467b0c83a291ec66d112526257f92}
+      \strng{bibnamehash}{214467b0c83a291ec66d112526257f92}
+      \strng{authorbibnamehash}{214467b0c83a291ec66d112526257f92}
+      \strng{authornamehash}{d251ca168d9507c6b80ed3c7313edf9c}
+      \strng{authorfullhash}{214467b0c83a291ec66d112526257f92}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{18791026}
+      \field{journaltitle}{Science of the Total Environment}
+      \field{month}{8}
+      \field{title}{The large footprint of small-scale artisanal gold mining in Ghana}
+      \field{volume}{781}
+      \field{year}{2021}
+      \verb{doi}
+      \verb 10.1016/j.scitotenv.2021.146644
+      \endverb
+      \keyw{Extent mapping,Galamsey,Google Earth Engine,Landsat,NDVI}
+    \endentry
+    \entry{box1975intervention}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=d30289ba50f0f7219fb405bc35b8b71c}{%
+           family={Box},
+           familyi={B\bibinitperiod},
+           given={George\bibnamedelima EP},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=81dfd3ac316168702348e2dd87227592}{%
+           family={Tiao},
+           familyi={T\bibinitperiod},
+           given={George\bibnamedelima C},
+           giveni={G\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{5b9afd9d0c297bc1d0e97a99b6b68e07}
+      \strng{fullhash}{5b9afd9d0c297bc1d0e97a99b6b68e07}
+      \strng{bibnamehash}{5b9afd9d0c297bc1d0e97a99b6b68e07}
+      \strng{authorbibnamehash}{5b9afd9d0c297bc1d0e97a99b6b68e07}
+      \strng{authornamehash}{5b9afd9d0c297bc1d0e97a99b6b68e07}
+      \strng{authorfullhash}{5b9afd9d0c297bc1d0e97a99b6b68e07}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the American Statistical association}
+      \field{number}{349}
+      \field{title}{Intervention analysis with applications to economic and environmental problems}
+      \field{volume}{70}
+      \field{year}{1975}
+      \field{pages}{70\bibrangedash 79}
+      \range{pages}{10}
+    \endentry
+    \entry{dickey1979distribution}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=f71b803d01236b0fcd2bb3e25e740864}{%
+           family={Dickey},
+           familyi={D\bibinitperiod},
+           given={David\bibnamedelima A},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c387dbcd083b0685a01bb3f63c78387a}{%
+           family={Fuller},
+           familyi={F\bibinitperiod},
+           given={Wayne\bibnamedelima A},
+           giveni={W\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{bcf86ed68621816d8a6e135ace8b77cc}
+      \strng{fullhash}{bcf86ed68621816d8a6e135ace8b77cc}
+      \strng{bibnamehash}{bcf86ed68621816d8a6e135ace8b77cc}
+      \strng{authorbibnamehash}{bcf86ed68621816d8a6e135ace8b77cc}
+      \strng{authornamehash}{bcf86ed68621816d8a6e135ace8b77cc}
+      \strng{authorfullhash}{bcf86ed68621816d8a6e135ace8b77cc}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the American statistical association}
+      \field{number}{366a}
+      \field{title}{Distribution of the estimators for autoregressive time series with a unit root}
+      \field{volume}{74}
+      \field{year}{1979}
+      \field{pages}{427\bibrangedash 431}
+      \range{pages}{5}
+    \endentry
+    \entry{Gracia2018}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=86269b6ed9fe80c8fee835c87dee1b26}{%
+           family={Gracia},
+           familyi={G\bibinitperiod},
+           given={Zindzy},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{86269b6ed9fe80c8fee835c87dee1b26}
+      \strng{fullhash}{86269b6ed9fe80c8fee835c87dee1b26}
+      \strng{bibnamehash}{86269b6ed9fe80c8fee835c87dee1b26}
+      \strng{authorbibnamehash}{86269b6ed9fe80c8fee835c87dee1b26}
+      \strng{authornamehash}{86269b6ed9fe80c8fee835c87dee1b26}
+      \strng{authorfullhash}{86269b6ed9fe80c8fee835c87dee1b26}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Yen.com.gh - Ghana news.}
+      \field{month}{1}
+      \field{title}{Causes and effects of galamsey in Ghana}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://yen.com.gh/104844-causes-effects-galamsey-ghana.html
+      \endverb
+      \verb{url}
+      \verb https://yen.com.gh/104844-causes-effects-galamsey-ghana.html
+      \endverb
+    \endentry
+    \entry{granger1969investigating}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=d97fcd65b851bd0d341ce547227991a3}{%
+           family={Granger},
+           familyi={G\bibinitperiod},
+           given={Clive\bibnamedelima WJ},
+           giveni={C\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {JSTOR}%
+      }
+      \strng{namehash}{d97fcd65b851bd0d341ce547227991a3}
+      \strng{fullhash}{d97fcd65b851bd0d341ce547227991a3}
+      \strng{bibnamehash}{d97fcd65b851bd0d341ce547227991a3}
+      \strng{authorbibnamehash}{d97fcd65b851bd0d341ce547227991a3}
+      \strng{authornamehash}{d97fcd65b851bd0d341ce547227991a3}
+      \strng{authorfullhash}{d97fcd65b851bd0d341ce547227991a3}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Econometrica: journal of the Econometric Society}
+      \field{title}{Investigating causal relations by econometric models and cross-spectral methods}
+      \field{year}{1969}
+      \field{pages}{424\bibrangedash 438}
+      \range{pages}{15}
+    \endentry
+    \entry{Gyekye}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=6c0db129b9ce2c6fe925e3a40e0b0efa}{%
+           family={Gyekye},
+           familyi={G\bibinitperiod},
+           given={Joyce},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{6c0db129b9ce2c6fe925e3a40e0b0efa}
+      \strng{fullhash}{6c0db129b9ce2c6fe925e3a40e0b0efa}
+      \strng{bibnamehash}{6c0db129b9ce2c6fe925e3a40e0b0efa}
+      \strng{authorbibnamehash}{6c0db129b9ce2c6fe925e3a40e0b0efa}
+      \strng{authornamehash}{6c0db129b9ce2c6fe925e3a40e0b0efa}
+      \strng{authorfullhash}{6c0db129b9ce2c6fe925e3a40e0b0efa}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Ghana Broadcasting Corporation}
+      \field{title}{MD of Ghana Water Company Limited says fight against galamsey is being lost}
+      \verb{urlraw}
+      \verb http://www.gbcghana.com/1.11923484
+      \endverb
+      \verb{url}
+      \verb http://www.gbcghana.com/1.11923484
+      \endverb
+    \endentry
+    \entry{kattge2011try}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{un=0,uniquepart=base,hash=91470a33f0779997f5b5934a52abc273}{%
+           family={Kattge},
+           familyi={K\bibinitperiod},
+           given={Jens},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=87c1651da4ae3250bb0714fe0faab78d}{%
+           family={Diaz},
+           familyi={D\bibinitperiod},
+           given={Sandra},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=677db54ef11e52aff5462cb3e4de80a0}{%
+           family={Lavorel},
+           familyi={L\bibinitperiod},
+           given={Sandra},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1106379cbd54fef6c38861c6151dc187}{%
+           family={Prentice},
+           familyi={P\bibinitperiod},
+           given={I\bibnamedelima Colin},
+           giveni={I\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1618cf83318feef61cc7d12f9423b6a7}{%
+           family={Leadley},
+           familyi={L\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=238a8f7fc16402f342d501bd6901e52f}{%
+           family={Bönisch},
+           familyi={B\bibinitperiod},
+           given={Gerhard},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=adce00945e25fd9866396dce1da9fb57}{%
+           family={Garnier},
+           familyi={G\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b7f0fb86b43bc1563488fea1037940e5}{%
+           family={Westoby},
+           familyi={W\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f5663ddcf21163d3fd082f7716d2c403}{%
+           family={Reich},
+           familyi={R\bibinitperiod},
+           given={Peter\bibnamedelima B},
+           giveni={P\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7925bb01bbd474fc1fbe6eeee2816287}{%
+           family={Wright},
+           familyi={W\bibinitperiod},
+           given={Ian\bibnamedelima J},
+           giveni={I\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{e79707c236d714486fe7d5f9af314345}
+      \strng{fullhash}{358be89f1bb5c8939643cb5c1e7b56af}
+      \strng{bibnamehash}{358be89f1bb5c8939643cb5c1e7b56af}
+      \strng{authorbibnamehash}{358be89f1bb5c8939643cb5c1e7b56af}
+      \strng{authornamehash}{e79707c236d714486fe7d5f9af314345}
+      \strng{authorfullhash}{358be89f1bb5c8939643cb5c1e7b56af}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Global change biology}
+      \field{number}{9}
+      \field{title}{TRY--a global database of plant traits}
+      \field{volume}{17}
+      \field{year}{2011}
+      \field{pages}{2905\bibrangedash 2935}
+      \range{pages}{31}
+    \endentry
+    \entry{lutkepohl2005new}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=d400c31862099db9f37a97b35e10814d}{%
+           family={Lütkepohl},
+           familyi={L\bibinitperiod},
+           given={Helmut},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Science \& Business Media}%
+      }
+      \strng{namehash}{d400c31862099db9f37a97b35e10814d}
+      \strng{fullhash}{d400c31862099db9f37a97b35e10814d}
+      \strng{bibnamehash}{d400c31862099db9f37a97b35e10814d}
+      \strng{authorbibnamehash}{d400c31862099db9f37a97b35e10814d}
+      \strng{authornamehash}{d400c31862099db9f37a97b35e10814d}
+      \strng{authorfullhash}{d400c31862099db9f37a97b35e10814d}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{New introduction to multiple time series analysis}
+      \field{year}{2005}
+    \endentry
+    \entry{malhi2008climate}{article}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=28fa4f6dd42b76f92c7bdb39c1dca545}{%
+           family={Malhi},
+           familyi={M\bibinitperiod},
+           given={Yadvinder},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8302ee779a2ca8c8643e964994bb6f69}{%
+           family={Roberts},
+           familyi={R\bibinitperiod},
+           given={J\bibnamedelima Timmons},
+           giveni={J\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0652f57bef7e73502134ba0a9490674a}{%
+           family={Betts},
+           familyi={B\bibinitperiod},
+           given={Richard\bibnamedelima A},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c2ef21f9ec2f285c11d47e4b554a4d37}{%
+           family={Killeen},
+           familyi={K\bibinitperiod},
+           given={Timothy\bibnamedelima J},
+           giveni={T\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ad971e4aa31a90493036e10682e21feb}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Wenhong},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a9337920b7121d690e3d561d65a911bc}{%
+           family={Nobre},
+           familyi={N\bibinitperiod},
+           given={Carlos\bibnamedelima A},
+           giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {American Association for the Advancement of Science}%
+      }
+      \strng{namehash}{c99e64b77ab3e3361f4bb290f2931ec6}
+      \strng{fullhash}{365063b264da9276fbf070a282760d80}
+      \strng{bibnamehash}{365063b264da9276fbf070a282760d80}
+      \strng{authorbibnamehash}{365063b264da9276fbf070a282760d80}
+      \strng{authornamehash}{c99e64b77ab3e3361f4bb290f2931ec6}
+      \strng{authorfullhash}{365063b264da9276fbf070a282760d80}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{science}
+      \field{number}{5860}
+      \field{title}{Climate change, deforestation, and the fate of the Amazon}
+      \field{volume}{319}
+      \field{year}{2008}
+      \field{pages}{169\bibrangedash 172}
+      \range{pages}{4}
+    \endentry
+    \entry{Mantey2017}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=834fd94e5ba41d1b3c5a2396b006c04a}{%
+           family={Mantey},
+           familyi={M\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=71a18e3cc1bfa44fcde0cac35b883062}{%
+           family={Owusu-Nimo},
+           familyi={O\bibinithyphendelim N\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=03ef4f41a3c7cea6a7a18a9df5504945}{%
+           family={Nyarko},
+           familyi={N\bibinitperiod},
+           given={K.\bibnamedelimi B.},
+           giveni={K\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d7a3b27d9dbe1a6c6018faa55003bc52}{%
+           family={Aubynn},
+           familyi={A\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2e5f8103431d8c09428efa8abe50ab6c}
+      \strng{fullhash}{c830bbbda6ef403d95fc5f985f6ab511}
+      \strng{bibnamehash}{c830bbbda6ef403d95fc5f985f6ab511}
+      \strng{authorbibnamehash}{c830bbbda6ef403d95fc5f985f6ab511}
+      \strng{authornamehash}{2e5f8103431d8c09428efa8abe50ab6c}
+      \strng{authorfullhash}{c830bbbda6ef403d95fc5f985f6ab511}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{2251-8592}
+      \field{issue}{1}
+      \field{journaltitle}{Journal of Mining and Environment}
+      \field{month}{1}
+      \field{title}{Operational dynamics of “Galamsey” within eleven selected districts of western region of Ghana}
+      \field{volume}{8}
+      \field{year}{2017}
+      \field{pages}{11\bibrangedash 34}
+      \range{pages}{24}
+      \verb{doi}
+      \verb 10.22044/jme.2016.627
+      \endverb
+      \verb{urlraw}
+      \verb http://jme.shahroodut.ac.ir/article_627.html
+      \endverb
+      \verb{url}
+      \verb http://jme.shahroodut.ac.ir/article_627.html
+      \endverb
+    \endentry
+    \entry{mortsch2006impact}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=034cdf7740c9300a2c4563ff767c4a3d}{%
+           family={Mortsch},
+           familyi={M\bibinitperiod},
+           given={LD},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{2}{%
+        {Taylor}%
+        {Francis Boca Ratón, FL, USA}%
+      }
+      \strng{namehash}{034cdf7740c9300a2c4563ff767c4a3d}
+      \strng{fullhash}{034cdf7740c9300a2c4563ff767c4a3d}
+      \strng{bibnamehash}{034cdf7740c9300a2c4563ff767c4a3d}
+      \strng{authorbibnamehash}{034cdf7740c9300a2c4563ff767c4a3d}
+      \strng{authornamehash}{034cdf7740c9300a2c4563ff767c4a3d}
+      \strng{authorfullhash}{034cdf7740c9300a2c4563ff767c4a3d}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Climate change and managed ecosystems}
+      \field{title}{Impact of climate change on agriculture, forestry and wetlands}
+      \field{year}{2006}
+      \field{pages}{45\bibrangedash 67}
+      \range{pages}{23}
+    \endentry
+    \entry{BBCNews2009}{web_page}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b3f2dbd9edcdea0a5c4fda9ae732b555}{%
+           family={News},
+           familyi={N\bibinitperiod},
+           given={BBC},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b3f2dbd9edcdea0a5c4fda9ae732b555}
+      \strng{fullhash}{b3f2dbd9edcdea0a5c4fda9ae732b555}
+      \strng{bibnamehash}{b3f2dbd9edcdea0a5c4fda9ae732b555}
+      \strng{authorbibnamehash}{b3f2dbd9edcdea0a5c4fda9ae732b555}
+      \strng{authornamehash}{b3f2dbd9edcdea0a5c4fda9ae732b555}
+      \strng{authorfullhash}{b3f2dbd9edcdea0a5c4fda9ae732b555}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{BBC News - Women die in Ghana mine collapse}
+      \verb{urlraw}
+      \verb http://news.bbc.co.uk/2/hi/africa/8356343.stm
+      \endverb
+      \verb{url}
+      \verb http://news.bbc.co.uk/2/hi/africa/8356343.stm
+      \endverb
+    \endentry
+    \entry{phillips1988testing}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=10ed28fafaff02f63917d3120eec9502}{%
+           family={Phillips},
+           familyi={P\bibinitperiod},
+           given={Peter\bibnamedelima CB},
+           giveni={P\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=59c1c7b3feccde623cd486dbd1fcc6fb}{%
+           family={Perron},
+           familyi={P\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{f15d1fdf4339186c3a5838e857992628}
+      \strng{fullhash}{f15d1fdf4339186c3a5838e857992628}
+      \strng{bibnamehash}{f15d1fdf4339186c3a5838e857992628}
+      \strng{authorbibnamehash}{f15d1fdf4339186c3a5838e857992628}
+      \strng{authornamehash}{f15d1fdf4339186c3a5838e857992628}
+      \strng{authorfullhash}{f15d1fdf4339186c3a5838e857992628}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Biometrika}
+      \field{number}{2}
+      \field{title}{Testing for a unit root in time series regression}
+      \field{volume}{75}
+      \field{year}{1988}
+      \field{pages}{335\bibrangedash 346}
+      \range{pages}{12}
+    \endentry
+    \entry{rudel2010forest}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=bc36740a646db6ec10db2d8710ea1177}{%
+           family={Rudel},
+           familyi={R\bibinitperiod},
+           given={Thomas\bibnamedelima K},
+           giveni={T\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4a0b1af029a3ee6d5b5ef5a3710564fd}{%
+           family={Schneider},
+           familyi={S\bibinitperiod},
+           given={Laura},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0d5d0ea34c92e98930815e43141e5a66}{%
+           family={Uriarte},
+           familyi={U\bibinitperiod},
+           given={Maria},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{9bb7e3f8f442e0d2afe89308143f0957}
+      \strng{fullhash}{a42ab0c824ebfa140599915fa58f736b}
+      \strng{bibnamehash}{a42ab0c824ebfa140599915fa58f736b}
+      \strng{authorbibnamehash}{a42ab0c824ebfa140599915fa58f736b}
+      \strng{authornamehash}{9bb7e3f8f442e0d2afe89308143f0957}
+      \strng{authorfullhash}{a42ab0c824ebfa140599915fa58f736b}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Land use policy}
+      \field{number}{2}
+      \field{title}{Forest transitions: An introduction}
+      \field{volume}{27}
+      \field{year}{2010}
+      \field{pages}{95\bibrangedash 97}
+      \range{pages}{3}
+    \endentry
+    \entry{sims1980macroeconomics}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=6ea5ed711258737020e21f785822b8e5}{%
+           family={Sims},
+           familyi={S\bibinitperiod},
+           given={Christopher\bibnamedelima A},
+           giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {JSTOR}%
+      }
+      \strng{namehash}{6ea5ed711258737020e21f785822b8e5}
+      \strng{fullhash}{6ea5ed711258737020e21f785822b8e5}
+      \strng{bibnamehash}{6ea5ed711258737020e21f785822b8e5}
+      \strng{authorbibnamehash}{6ea5ed711258737020e21f785822b8e5}
+      \strng{authornamehash}{6ea5ed711258737020e21f785822b8e5}
+      \strng{authorfullhash}{6ea5ed711258737020e21f785822b8e5}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Econometrica: journal of the Econometric Society}
+      \field{title}{Macroeconomics and reality}
+      \field{year}{1980}
+      \field{pages}{1\bibrangedash 48}
+      \range{pages}{48}
+    \endentry
+    \entry{sitch2008evaluation}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{un=0,uniquepart=base,hash=9b49b30513bc1b9bcbdf370cf26da98e}{%
+           family={Sitch},
+           familyi={S\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=28f4eae8dbb1f9150e334dc619cc0845}{%
+           family={Huntingford},
+           familyi={H\bibinitperiod},
+           given={C},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8a1d8af1a7746dfbbcad1d15db840bcc}{%
+           family={Gedney},
+           familyi={G\bibinitperiod},
+           given={N},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9bcb681cbce28eed1e2ffbd5edb3e84d}{%
+           family={Levy},
+           familyi={L\bibinitperiod},
+           given={PE},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e15ee682b17bfe92ae3fa4f700378360}{%
+           family={Lomas},
+           familyi={L\bibinitperiod},
+           given={M},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b5b04c79ff01661f3cd251c50790afbe}{%
+           family={Piao},
+           familyi={P\bibinitperiod},
+           given={SL},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f9e0de5f34d9c119e510e8c14b5cef17}{%
+           family={Betts},
+           familyi={B\bibinitperiod},
+           given={R},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=46695a9cce22263a75958c70c15fd381}{%
+           family={Ciais},
+           familyi={C\bibinitperiod},
+           given={P},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a384bd84d45e80a955d18867658a45a7}{%
+           family={Cox},
+           familyi={C\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=66feb2d8fa41855d6e9f4e63a10edf92}{%
+           family={Friedlingstein},
+           familyi={F\bibinitperiod},
+           given={P},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{533ea8df6b9dfcdf235bda0ccdaf4c7f}
+      \strng{fullhash}{701cce9c72f11622763f9de8f2ea265a}
+      \strng{bibnamehash}{701cce9c72f11622763f9de8f2ea265a}
+      \strng{authorbibnamehash}{701cce9c72f11622763f9de8f2ea265a}
+      \strng{authornamehash}{533ea8df6b9dfcdf235bda0ccdaf4c7f}
+      \strng{authorfullhash}{701cce9c72f11622763f9de8f2ea265a}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Global change biology}
+      \field{number}{9}
+      \field{title}{Evaluation of the terrestrial carbon cycle, future plant geography and climate-carbon cycle feedbacks using five Dynamic Global Vegetation Models (DGVMs)}
+      \field{volume}{14}
+      \field{year}{2008}
+      \field{pages}{2015\bibrangedash 2039}
+      \range{pages}{25}
+    \endentry
+    \entry{sohngen1998comparison}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=63a74eeef1a26914487925ad69db43db}{%
+           family={Sohngen},
+           familyi={S\bibinitperiod},
+           given={Brent},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7c35707934a37e6744f6ca63c88b9d76}{%
+           family={Sedjo},
+           familyi={S\bibinitperiod},
+           given={Roger},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{d2e78b9b5077ad7a301dc7b4d8f84c52}
+      \strng{fullhash}{d2e78b9b5077ad7a301dc7b4d8f84c52}
+      \strng{bibnamehash}{d2e78b9b5077ad7a301dc7b4d8f84c52}
+      \strng{authorbibnamehash}{d2e78b9b5077ad7a301dc7b4d8f84c52}
+      \strng{authornamehash}{d2e78b9b5077ad7a301dc7b4d8f84c52}
+      \strng{authorfullhash}{d2e78b9b5077ad7a301dc7b4d8f84c52}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Forest Science}
+      \field{number}{1}
+      \field{title}{A comparison of timber market models: Static simulation and optimal control approaches}
+      \field{volume}{44}
+      \field{year}{1998}
+      \field{pages}{24\bibrangedash 36}
+      \range{pages}{13}
+    \endentry
+  \enddatalist
   \datalist[entry]{apa/global//global/global}
     \entry{Allotey2017}{article}{}
       \name{author}{1}{}{%

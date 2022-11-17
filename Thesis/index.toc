@@ -9,45 +9,45 @@
 \contentsline {section}{LIST OF ABBREVIATION}{xiv}{chapter*.3}%
 \contentsline {chapter}{CHAPTER ONE\\1.0 INTRODUCTION}{3}{chapter*.4}%
 \contentsline {section}{Introduction}{3}{section*.5}%
-\contentsline {section}{Background of The Study}{5}{section*.6}%
+\contentsline {section}{Background of The Study}{4}{section*.6}%
 \contentsline {section}{Problem Statement}{5}{section*.7}%
-\contentsline {section}{Research Questions}{6}{section*.8}%
-\contentsline {section}{Research Objectives}{6}{section*.9}%
-\contentsline {paragraph}{hosonuma2012assessment}{6}{paragraph*.10}%
-\contentsline {section}{Significance Of The Study}{7}{section*.11}%
-\contentsline {section}{Limitation Of The Study}{7}{section*.12}%
-\contentsline {chapter}{CHAPTER TWO\\2.0 LITERATURE REVIEW}{9}{chapter*.13}%
-\contentsline {section}{Introduction}{9}{section*.14}%
-\contentsline {chapter}{CHAPTER THREE\\3.0 METHODOLOGY}{13}{chapter*.15}%
-\contentsline {section}{Introduction}{13}{section*.16}%
-\contentsline {section}{Study Area}{13}{section*.17}%
-\contentsline {section}{DATA }{14}{section*.18}%
-\contentsline {subsection}{Data Description and Inspection}{14}{subsection*.19}%
-\contentsline {subsection}{Time Series Forecasting Using Stochastic Models}{15}{subsection*.20}%
-\contentsline {section}{Structural Analysis}{19}{section*.21}%
-\contentsline {subsection}{Causality Analysis}{19}{subsection*.22}%
-\contentsline {section}{ Forecast Error Variance Decomposition}{21}{section*.23}%
-\contentsline {section}{Forecast Performance Measures}{21}{section*.24}%
-\contentsline {subsection}{Description of Various Forecast Performance Measures}{22}{subsection*.25}%
-\contentsline {chapter}{CHAPTER FOUR\\4.0 DATA ANALYSIS AND RESULTS}{25}{chapter*.26}%
-\contentsline {section}{Introduction}{25}{section*.27}%
-\contentsline {subsection}{Preliminary Results}{25}{subsection*.28}%
-\contentsline {subsection}{Variable \& Parameter Definition}{26}{subsection*.29}%
-\contentsline {subsection}{Selection of Variables}{26}{subsection*.30}%
-\contentsline {subsection}{Multicollinearity}{27}{subsection*.31}%
-\contentsline {subsection}{Stationarity and Differencing}{29}{subsection*.32}%
-\contentsline {section}{VAR Estimation}{30}{section*.33}%
-\contentsline {section}{Impulse Response Analysis}{32}{section*.34}%
-\contentsline {subsection}{ Decomposition of Variance}{32}{subsection*.35}%
-\contentsline {subsection}{Forecast for EVI}{33}{subsection*.36}%
-\contentsline {subsection}{Prediction Accuracy}{34}{subsection*.37}%
-\contentsline {section}{ Discussion}{35}{section*.38}%
-\contentsline {chapter}{CHAPTER FIVE\\5.0 CONCLUSION \& RECOMMENDATIONS}{37}{chapter*.39}%
-\contentsline {section}{Introduction}{37}{section*.40}%
-\contentsline {section}{Conclusion}{37}{section*.41}%
-\contentsline {section}{RECOMMENDATIONS}{38}{section*.42}%
-\contentsline {chapter}{APPENDICES}{41}{chapter*.43}%
-\contentsline {chapter}{Appendix Chapter 1}{43}{appendix*.44}%
-\contentsline {section}{Data Extraction Using R code From Google Earth Engine}{43}{section*.45}%
-\contentsline {chapter}{Appendix Chapter 2}{49}{appendix*.46}%
-\contentsline {section}{VAR}{59}{section*.47}%
+\contentsline {section}{Research Questions}{5}{section*.8}%
+\contentsline {section}{Research Objectives}{5}{section*.9}%
+\contentsline {paragraph}{hosonuma2012assessment}{5}{paragraph*.10}%
+\contentsline {section}{Significance Of The Study}{6}{section*.11}%
+\contentsline {section}{Limitation Of The Study}{6}{section*.12}%
+\contentsline {chapter}{CHAPTER TWO\\2.0 LITERATURE REVIEW}{7}{chapter*.13}%
+\contentsline {section}{Introduction}{7}{section*.14}%
+\contentsline {chapter}{CHAPTER THREE\\3.0 METHODOLOGY}{11}{chapter*.15}%
+\contentsline {section}{Introduction}{11}{section*.16}%
+\contentsline {section}{Study Area}{11}{section*.17}%
+\contentsline {section}{DATA }{12}{section*.18}%
+\contentsline {subsection}{Data Description and Inspection}{12}{subsection*.19}%
+\contentsline {subsection}{Time Series Forecasting Using Stochastic Models}{13}{subsection*.20}%
+\contentsline {section}{Structural Analysis}{16}{section*.21}%
+\contentsline {subsection}{Causality Analysis}{16}{subsection*.22}%
+\contentsline {section}{ Forecast Error Variance Decomposition}{17}{section*.23}%
+\contentsline {section}{Forecast Performance Measures}{17}{section*.24}%
+\contentsline {subsection}{Description of Various Forecast Performance Measures}{18}{subsection*.25}%
+\contentsline {chapter}{CHAPTER FOUR\\4.0 DATA ANALYSIS AND RESULTS}{21}{chapter*.26}%
+\contentsline {section}{Introduction}{21}{section*.27}%
+\contentsline {subsection}{Preliminary Results}{21}{subsection*.28}%
+\contentsline {subsection}{Variable \& Parameter Definition}{21}{subsection*.29}%
+\contentsline {subsection}{Selection of Variables}{21}{subsection*.30}%
+\contentsline {subsection}{Multicollinearity}{24}{subsection*.31}%
+\contentsline {subsection}{Stationarity and Differencing}{25}{subsection*.32}%
+\contentsline {section}{VAR Estimation}{26}{section*.33}%
+\contentsline {section}{Impulse Response Analysis}{28}{section*.34}%
+\contentsline {subsection}{ Decomposition of Variance}{28}{subsection*.35}%
+\contentsline {subsection}{Forecast for EVI}{29}{subsection*.36}%
+\contentsline {subsection}{Prediction Accuracy}{29}{subsection*.37}%
+\contentsline {section}{ Discussion}{30}{section*.38}%
+\contentsline {chapter}{CHAPTER FIVE\\5.0 CONCLUSION \& RECOMMENDATIONS}{33}{chapter*.39}%
+\contentsline {section}{Introduction}{33}{section*.40}%
+\contentsline {section}{Conclusion}{33}{section*.41}%
+\contentsline {section}{RECOMMENDATIONS}{34}{section*.42}%
+\contentsline {chapter}{APPENDICES}{36}{chapter*.43}%
+\contentsline {chapter}{Appendix Chapter 1}{37}{appendix*.44}%
+\contentsline {section}{Data Extraction Using R code From Google Earth Engine}{37}{section*.45}%
+\contentsline {chapter}{Appendix Chapter 2}{43}{appendix*.46}%
+\contentsline {section}{VAR}{52}{section*.47}%
