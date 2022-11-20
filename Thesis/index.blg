@@ -1,0 +1,26 @@
+[0] Config.pm:306> INFO - This is Biber 2.18
+[1] Config.pm:309> INFO - Logfile is 'index.blg'
+[447] biber-MSWIN64:340> INFO - === 
+[549] Biber.pm:418> INFO - Reading 'index.bcf'
+[899] Biber.pm:978> INFO - Found 25 citekeys in bib section 0
+[973] Biber.pm:4401> INFO - Processing section 0
+[1008] Biber.pm:4592> INFO - Looking for bibtex file 'references.bib' for section 0
+[1390] bibtex.pm:1713> INFO - LaTeX decoding ...
+[1966] bibtex.pm:1518> INFO - Found BibTeX data source 'references.bib'
+[2467] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[2467] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[2467] Biber.pm:4221> INFO - Sorting list 'apa/apasortcite//global/global' of type 'entry' with template 'apa' and locale 'en-US'
+[2467] Biber.pm:4227> INFO - No sort tailoring available for locale 'en-US'
+[2614] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[2614] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[2614] Biber.pm:4221> INFO - Sorting list 'apa/global//global/global' of type 'entry' with template 'apa' and locale 'en-US'
+[2614] Biber.pm:4227> INFO - No sort tailoring available for locale 'en-US'
+[2696] bbl.pm:654> INFO - Writing 'index.bbl' with encoding 'UTF-8'
+[2769] bbl.pm:757> INFO - Output to index.bbl
+[2770] Biber.pm:130> WARN - I didn't find a database entry for 'goldgu2017' (section 0)
+[2770] Biber.pm:130> WARN - I didn't find a database entry for 'alex2013' (section 0)
+[2771] Biber.pm:130> WARN - I didn't find a database entry for 'gertler2016' (section 0)
+[2771] Biber.pm:130> WARN - I didn't find a database entry for 'specht2015' (section 0)
+[2771] Biber.pm:130> WARN - I didn't find a database entry for 'defries2010' (section 0)
+[2771] Biber.pm:130> WARN - I didn't find a database entry for 'hipel1994' (section 0)
+[2772] Biber.pm:132> INFO - WARNINGS: 6

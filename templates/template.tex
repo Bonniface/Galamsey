@@ -382,19 +382,9 @@ $endif$
 
 $endif$
 
-$if(abstract-second)$
 
-$if(show-abstract-in-toc)$
-\addcontentsline{toc}{chapter}{$abstract-second-heading$}
-\renewcommand{\numberstyleabstract}{plain}
-$endif$
 
-\renewcommand{\abstractsecondtitle}{$abstract-second-heading$}
-\begin{abstractsecond}
-	$abstract-second$
-\end{abstractsecond}
 
-$endif$
 
 %%%%% MINI TABLES
 % This lays the groundwork for per-chapter, mini tables of contents.  Comment the following line

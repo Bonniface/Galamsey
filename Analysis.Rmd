@@ -1,0 +1,257 @@
+---
+title: "Anlysis"
+author: "Boni"
+date: "2022-10-01"
+output: html_document
+---
+
+```{r,warning=FALSE,message=FALSE,include=FALSE}
+#| label: load-pkgs
+#| code-summary: "Packages"
+#| message: false
+
+library(openintro)  # for data
+library(tidyverse)  # for data wrangling and visualization
+require(tidymodels)
+library(knitr)      # for tables
+library(broom)      # for model summary
+library(kableExtra)
+library(viridis)
+library(ggridges)
+library(tibble)
+library(lubridate)
+require(data.table)
+require(tidyposterior)
+require(tsibble)  #tsibble for time series based on tidy principles
+require(fable)  #for forecasting based on tidy principles
+require(ggfortify)  #for plotting timeseries
+require(forecast)  #for forecast function
+require(tseries)
+require(TTR)  #for smoothing the time series
+library(imputeTS)
+require(chron)
+require(directlabels)
+require(zoo)
+require(lmtest)
+require(MTS)
+require(vars)
+require(fUnitRoots)
+require(lattice)
+require(grid)
+# if(!require("pacman")){install.packages("pacman")}
+# pacman::p_load(char = c('rgee','reticulate','raster','tidyverse',
+#                 'dplyr','sf','forcats','reticulate',
+#                 'rgee', 'tibble', 'st', 'lubridate', 'imputeTS','leaflet', 'ggplot2'),
+#                install = F, update = F, character.only = T)
+```
+
+## METHODOLOGY
+
+Data from a time series is a set of observations made in a particular order over a period of time. There is a chance for correlation between observations because time series data points are gathered at close intervals. To help machine learning classifiers work with time series data, we provide several new tools. We first contend that local features or patterns in time series can be found and combined to address challenges involving time-series categorization. Then, a method to discover patterns that are helpful for classification is suggested. We combine these patterns to create computable categorization rules. In order to mask low-quality pixels, we will first collect data from Google Earth Engine in order to choose NDVI, EVI values and Climate Change data.
+
+Instead of analyzing the imagery directly, we will summarize the mean NDVI and EVI values. This will shorten the analysis time while still providing an attractive and useful map. We will apply a smoothing strategy using an ARIMA function to fix the situation where some cells may not have NDVI and EVI for a particular month. Once NA values have been eliminated, the time series will be divided to eliminate seasonality before the normalized data is fitted using a linear model. We will go to classify our data on the map and map it after we have extracted the linear trend.
+
+## Research Design
+
+In this study, the submission used a quantitative approach. Instead of using subjective judgment, findings and conclusions heavily rely on the use of statistical methods and reliable time series models.
+
+### Data Representation
+
+The Republic of Ghana, a nation in West Africa, will serve as the location for the experimental plots for this study. It shares borders with the Ivory Coast in the west, Burkina Faso in the north, and Togo in the east. It borders the Gulf of Guinea and the Atlantic Ocean to the south. Ghana's total size is 238,535 km2 (92,099 sq mi), and it is made up of a variety of biomes, from tropical rainforests to coastal savannas. Ghana, which has a population of over 31 million, is the second-most populous nation in West Africa, behind Nigeria.Accra, the nation's capital and largest city, as well as Kumasi, Tamale, and Sekondi-Takoradi, are other important cities.
+
+```{r,warning=FALSE,message=FALSE}
+# | label: tbl-Data Frame
+# | tbl-cap: "Collected from Google Earth Engine"
+Data_Frame <- read.csv("Data/Time_Series.csv")
+Time_Serie <- read.csv("Data/Time_Series.csv")%>%
+dplyr::select(year,NDVI,EVI,Precipitation,MinTemperature,MaxTemperature)%>%
+  group_by(year)%>%
+  summarise_each(funs(median))
+
+kable(Time_Serie,longtable = T, booktabs = T)%>%
+add_header_above(c(" ","Vegetation Indices" = 2,"Climate Change"= 3))%>%
+  kable_styling(latex_options = c("repeat_header"))
+
+```
+
+### Exploratory Data Analysis (Summary statistics)
+
+```{r,message=FALSE,warning=FALSE}
+#| label: tbl-Summar Statistics
+#| tbl-cap: "Summary statistics for Climate Date and Vegetation Loss In Ghana"
+Describe <-Time_Serie%>%
+  dplyr::select(-year)
+
+kable(summary(Describe ),longtable = T, booktabs = T)%>%
+  kable_styling(latex_options = "scale_down")
+
+```
+
+```{r}
+#| label: fig-Pairs Plot
+#| fig-cap: "Correlation Between The Variables"
+pairs(Time_Serie,bg = c("red", "green", "blue"),pch = 21)
+```
+
+```{r}
+summary(lm(EVI~tiPrecipitation+MinTemperature+MaxTemperature,Time_Serie))
+
+```
+
+```{r}
+#| label: tbl-Analysis of Variance Table
+#| tbl-cap: "ANOVA Table for Climate Date and Vegetation Loss In Ghana"
+lm<-lm(EVI~ Precipitation + MinTemperature +MaxTemperature,Time_Serie)
+kable(anova(lm),booktab = T) %>%
+  kable_styling(latex_options = c("repeat_header"))
+```
+
+```{r,include=FALSE}
+#| label: fig-Time Series And Decompostion
+#| fig-cap: "Time Series And Decompostion"
+
+# Convert data to time series.
+Time_Series <- ts(data = Time_Serie$EVI, start = c(2001, 1), end = c(2019, 11), frequency = 12)
+plot(Time_Series)
+plot(Time_Series)
+tdx.dcp <- stl(Time_Series, s.window = 'periodic')
+plot(tdx.dcp)
+Tt <- trendcycle(tdx.dcp)
+St <- seasonal(tdx.dcp)
+Rt <- remainder(tdx.dcp)
+plot(Rt)
+```
+
+Before building an ARIMA model we checked that if the series is stationary. That is, we needed to be determined that the time series is constant in mean and variance are constant and not dependent on time.Here, we look at a couple of methods for checking stationarity. If the time series is provided with seasonarity, a trend, or a change point in the mean or variance, then the influences need to be removed or accounted for. Augmented Dickey--Fuller (ADF) t-statistic test to find if the series has a unit root (a series with a trend line will have a unit root and result in a large p-value).
+
+```{r}
+#| label: fig-ACF
+#| fig-cap: "ACF Plot and PACF plot analysis for sample between 2000 and 2020:"
+#| fig-subcap:
+#|   - "Stationary Signal"
+#|   - "Trend Signal"
+#| layout-ncol: 2
+#| column: page-right
+# The Stationary Signal and ACF
+plot(Rt,col= "red", main = "Stationary Signal")
+acf(Rt, lag.max = length(Rt),
+    xlab = "lag", ylab = 'ACF', main = '')
+
+#The Trend Signal anf ACF
+
+plot(Tt,col= "red",main = "Trend Signal")
+acf(Tt, lag.max = length(Tt),
+    xlab = "lag", ylab = "ACF", main = '')
+```
+
+**Discuss:**Shows the initial ACF plot and we can see that before lag 25 almost all are significant and having no trend it needs to be differentiated before performing any analysis. Clearly the seasonality is visible even in the ACF plot.
+
+**Dickey-Fuller Test and Plot**
+
+```{r,warning=FALSE,message=FALSE}
+tseries::adf.test(Tt)
+```
+
+**Discuss:**The DF test confirms that it is stationary as p value \< 0.05 and thus can be used for further analysis.This is after doing double differentiation.It is noteworthy that the stationary signal (top left) generates few significant lags that are larger than the ACF's confidence interval (blue dotted line, bottom left). In contrast, practically all delays in the time series with a trend (top right) surpass the ACF's confidence range (bottom right). Qualitatively, we can observe and infer from the ACFs that the signal on the left is steady (due to the lags that die out) whereas the signal on the right is not (since later lags exceed the confidence interval).
+
+### Specification of the Model
+
+We can create the SARMA model as SARMA(0,0,0) based on the previous study  
+
+If there hasn't been any differentiation, we can label it as zero. With the first parameter being PACF and the second being ACF, the first component of multiplication is the non-seasonal part.
+
+
+Since the data is stationary, we go about finding the p and q values from ACF and PACF plots or use auto.arima() in R.
+
+```{r}
+auto.arima(Time_Series)
+```
+
+**Discuss:**As we are not differencing the model we can consider ARMA(2,0,3) has the best model. Which is the best *p* and *q* value also found from the ACF and PACF plots.
+
+**Residual Analysis**
+
+**Discuss:**From the above time series plot we can conclude that, the trend within the year values for 1960,2016 and 2020 are similar. We can observe that during start of the year in January the unemployment rate increases and becomes constant during February, March and then decreases sharply post April. Then in mid of the year it increases to a certain level and attains constant until late/end of the year. Clearly we can see some pattern when we do time series plot within a single year. It can be concluded that unemployment rate is higher during winter months and decreased post April which is summer season. Thus the seasonal aspect can be clearly understood.\
+
+### **Modeling and Parameter estimation**
+
+\
+Where the **ARIMA (PACF, Num_Diffrentation, ACF)** model have the below format for the parameters. Coefficients for various models:
+
+**Discuss:**Based on the different models, we can see that ARIMA(2,2,5) had the least AIC value, sigma\^2 being the least therefore is the best model for given time series. Find the below time series plot for the residuals.
+
+
+
+**Discuss:**The plot shows the forecasting to plot for the next 20 values which is shown by the blue region.
+
+```{r}
+#| label: tbl-lm
+#| tbl-cap: "Linear regression model for predicting EVI from Time"
+tdx.ns <- data.frame(time = c(1:length(Time_Series)), trend = Time_Series - tdx.dcp$time.series[,1])
+summary <- summary(lm(formula = trend ~ time, data = tdx.ns))
+summary
+```
+
+```{r}
+plot(tdx.ns)
+abline(a = summary$coefficients[1,1], b = summary$coefficients[2,1], col = 'blue')
+```
+
+```{r,warning=FALSE,include=FALSE}
+library(ggpubr)
+ggdensity(Time_Series,fill = "#0073C2FF",color ="#0073C2FF",add = "mean",rug = TRUE)
+```
+
+```{r}
+plot(evi.hw <- forecast::hw(y = Time_Series, h = 12, damped = T))
+```
+
+# VAR
+
+
+```{r}
+# Conerting the Data into time series data
+ Var_ts <- ts(
+   Time_Serie
+ )
+ head(Var_ts)
+```
+
+```{r}
+plot(Var_ts)
+```
+
+```{r}
+theme_set(theme_bw())
+autoplot(Var_ts) +
+  ggtitle("Time Series Plot of the `Var_ts' Time-Series") +
+  theme(plot.title = element_text(hjust = 0.5)) #for centering the text
+```
+
+```{r}
+plot.ts(Var_ts)
+```
+
+```{r}
+
+# Lag order identification
+#We will use two different functions, from two different packages to identify the lag order for the VAR model. Both functions are quite similar to each other but differ in the output they produce. vars::VAR is a more powerful and convinient function to identify the correct lag order. 
+vars::VARselect(Var_ts, 
+          type = "none", #type of deterministic regressors to include. We use none becasue the time series was made stationary using differencing above. 
+          lag.max = 10) #highest lag order
+```
+
+```{r}
+# Creating a VAR model with vars
+var.a <- vars::VAR(Var_ts,
+                   lag.max = 1, #highest lag order for lag length selection according to the choosen ic
+                   ic = "AIC", #information criterion
+                   type = "none") #type of deterministic regressors to include
+summary(var.a)
+
+```
+
+```{r}
+vars::causality(var.a)
+plot(vars::fevd(var.a))
+```

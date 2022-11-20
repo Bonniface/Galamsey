@@ -1,0 +1,1157 @@
+\documentclass[12pt,a4paper]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{acronym}
+\usepackage{mathptmx}
+\usepackage{mathpazo}
+\usepackage{aligned-overset}
+\usepackage{mathrsfs}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{lscape}
+\usepackage{tabularx}%left=3.75cm, right=2.5cm, top=2.5cm, bottom=2.5cm
+\usepackage{times}%left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm
+\usepackage[left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm]{geometry}
+\usepackage[section]{placeins}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{dfn}{Definition}[section]
+\newtheorem{note}{Note}[section]
+\usepackage{titlesec}
+\usepackage[style = apa, backend = biber, natbib = true]{biblatex}
+\addbibresource{references.bib}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy} % Turn on the style
+\fancyhf{} % Start with clearing everything in the header and footer
+% Set the right side of the footer to be the page number
+\fancyfoot[R]{\thepage}
+
+% Redefine plain style, which is used for titlepage and chapter beginnings
+% From https://tex.stackexchange.com/a/30230/828
+%\fancypagestyle{plain}{%
+%	\renewcommand{\headrulewidth}{0pt}%
+%	\fancyhf{}%
+%	\fancyfoot[R]{\thepage}%
+%}
+\usepackage{xcolor}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+\usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+\usepackage{unicode-math}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+	\usepackage[]{microtype}
+	\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+	\IfFileExists{parskip.sty}{%
+		\usepackage{parskip}
+	}{% else
+		\setlength{\parindent}{0pt}
+		\setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+	\KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+%\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+\usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+%\renewcommand{\@makechapterhead}[]{%
+	%	\vspace*{20 pt}%
+	%	{\setlength{\parindent}{0pt} \raggedright\centring\bf \bfseries\normalfont{\thechapter\ #1\par\nobreak\vspace{20 pt}}}}
+\makeatother
+\titleformat{\section}{\bfseries\normalfont\centering\bf}{\thesection}{0em}{}
+\begin{document}
+	\pagestyle{plain}
+	\openup 1 em
+	\begin{titlepage}
+		\pagenumbering{roman}
+		%\addcontentsline{toc}{section}{Title Page}
+		\begin{center}
+			
+			\begin{figure}[h]
+				\begin{center}
+					\includegraphics[width=0.30\linewidth, height=.20\textheight]{images/logo2}
+				\end{center}
+			\end{figure}
+			
+			{\normalfont{\textbf{UNIVERSITY OF ENERGY AND NATURAL RESOURCES, SUNYANI}}}\\
+			\vspace{1.7cm}
+			{\normalfont \textbf{THE VARIABILITY CLIMATE CHANGE IS RESPONSIBLE FOR IN GHANA}}
+			
+			
+			\vspace{2.7cm}
+			
+			{\normalfont {\textbf{KALONG BONIFACE}}}\\
+			{\normalfont {\textbf{FUGAH SELETEY MITCHELL}}}
+			\vspace{1.7cm}
+			
+			
+			\begin{center}
+				{\normalfont \textbf{DEPARTMENT OF MATHEMATICS AND STATISTIC}\\
+					\textbf{SCHOOL OF SCIENCE}}\\
+				\vspace{5.3cm}
+				
+				
+				{\normalfont \textbf{\date{\today}}}
+			\end{center}
+			
+		\end{center}
+		
+		\vfill
+	\end{titlepage}
+	\pagenumbering{roman}
+	\begin{titlepage}
+		\begin{center}
+			{\normalfont \textbf{THE VARIABILITY CLIMATE CHANGE IS RESPONSIBLE FOR IN GHANA}}
+			
+			\vspace{3.7cm}
+			{\normalfont {by}}\\
+			\vspace{1cm}
+			{\normalfont {KALONG BONIFACE\hspace\fill  UEB3603118	 \\
+					FUGAH SELETEY MITCHELL \hspace\fill UEB3602818 \\ B.Sc. Actuarial Science}}
+			\vspace{1.7cm}
+			
+			\begin{center}
+				{\normalfont A Thesis submitted to the Department of Mathematics and Statistics, School of Science, University of Energy and Natural Resources, Sunyani in partial fulfillment of the requirements for the degree of Bachelor of Science in Actuarial Science }\\
+				\vspace{2cm}	
+				{\normalfont \date{\today}}
+			\end{center}
+			
+		\end{center}
+		
+		\vfill
+	\end{titlepage}	
+	\newpage
+	{\section*{DECLARATION AND CERTIFICATION}}
+	\addcontentsline{toc}{section}{CERTIFICATION}
+	We hereby Certified that the thesis entitled “\textbf{THE VARIABILITY CLIMATE CHANGE IS RESPONSIBLE FOR IN  GHANA}”, submitted by
+	{\normalfont {\textbf{Kalong Boniface}}} and {\normalfont {\textbf{Fugah Seletey Mitchell}}} to the \textbf{DEPARTMENT} , for the award of  Bachelor’s degree has been accepted by the external examiners and that we have successfully defended the thesis  held today.This dissertation is the result of our own independent investigation and research, we now announce. We are solely liable for any errors in this work even if it has not been submitted anyplace as a long essay or thesis with the intent of awarding a degree.
+	\\
+%	Kalong Boniface:	................................. \hspace\fill 
+%	Date: .................................	 \\
+%	Fugah Seletey Mitchell:	................................. \hspace\fill 
+%	Date: .................................	 \\
+	\begin{center}\textbf{\normalfont \textbf{Supervisor's Certification}}\end{center}
+	This study was carried out under the supervisory committee  in accordance with the guidelines on supervisions of graduate studies.\\
+
+	\begin{center}
+	\begin{tabular}{lcc}
+		\underline{KALONG BONIFACE} &\quad\quad\quad \ldots\ldots\ldots\ldots\ldots\ldots\ldots &\quad\quad\quad \ldots\ldots\ldots\ldots\ldots\ldots \\
+		Student &\quad\quad\quad Signature &\quad\quad\quad Date \\
+		& & \\
+		& & \\
+		& & \\
+		\underline{FUGAH SELETEY MITCHELL} &\quad\quad\quad \ldots\ldots\ldots\ldots\ldots\ldots\ldots &\quad\quad\quad \ldots\ldots\ldots\ldots\ldots\ldots \\
+		Student &\quad\quad\quad Signature &\quad\quad\quad Date \\
+		& & \\
+		& & \\
+		& & \\
+		Certified by: & &\\
+		\underline{MR. JUSTICE AMENYOR KEESIE} &\quad\quad\quad \ldots\ldots\ldots\ldots\ldots\ldots\ldots &\quad\quad\quad \ldots\ldots\ldots\ldots\ldots\ldots \\
+		Supervisor &\quad\quad\quad Signature &\quad\quad\quad Date \\
+		& & \\
+		& & \\
+		& & \\
+		Certified by: & &\\
+		\underline{DR. ELVIS KWABENA DONKOH} &\quad\quad\quad \ldots\ldots\ldots\ldots\ldots\ldots\ldots &\quad\quad\quad \ldots\ldots\ldots\ldots\ldots\ldots \\
+		Head of Department &\quad\quad\quad Signature &\quad\quad\quad Date
+	\end{tabular}
+\end{center}
+	
+	
+	\newpage
+	\section*{\textbf{ABSTRACT}}
+	\addcontentsline{toc}{section}{ABSTRACT}
+%	All thing change, but how we respond to change is our responsibility, to fare it or embrasse it. Resisting change leads to one fiat. Our own extinction. Time is a smybole of freedom and peace
+	In addition to the environmental damage that illicit mining causes, hundreds of young men have died after becoming trapped in unlawful mining holes while looking for minerals.
+	
+	This study aimed to quantify, map,  analyse vegetation cover distributions and changes across southern part of Ghana,and to model the effect of climatic variability on vegetation and using vector autoregression (VAR) models and if possible assign the residual errors to galamsey. Monthly weather information for 2000 (precipitation, relative drought,evaporation, both maximum and minimum temperature).
+	Data on climatic variables and information on EVI were obtain from the Google Earth Engine from 2000 to 2021 time period. The Granger and immediate causality tests' findings indicated that all factors influence the spread of EVI. The results of the impulse response analyses showed that the months of September, March, and October, respectively, saw the strongest favorable effects of maximum temperature, drought, and precipitation on EVI. As much as 12.65\% of the predicted variance shows a different degree of EVI dependence on climatic variables.
+	The decomposition of forecast variance indicates a small varying degree of EVI dependence on the climatic variables, with as high as 12.65\% of the variability	in the trend of EVI which has been explained by past innovations in maximum temperature alone. This is quite significant and therefore, policy-makers should not ignore temperature when formulating policies to address vegetation loss
+	
+%	 A high degree of variance in vegetation cover for individual dates is explained by HQI at the neighborhood level, although minimal covariability between absolute or relative vegetation cover change and HQI for 2000 was observed.
+	\newpage	
+	\begin{center}\section*{DEDICATION}\end{center}
+	\addcontentsline{toc}{section}{DEDICATION}
+This study is devoted wholeheartedly to our dear parents, who have served as our source of motivation and strength when we had considered giving up. They also continuously support us financially, emotionally, spiritually, morally, and emotionally.
+To all of our brothers, sisters, family members, mentors, friends, and classmates who offered words of wisdom and motivation to complete our study.
+We also dedicate this work to the All-Powerful God. We are grateful for your direction, fortitude, mental power, protection, abilities, and for providing us with a long and healthy life. We present all of these to you.  
+	\newpage	
+	\begin{center}\section*{ACKNOWLEDGMENTS}\end{center}
+	\addcontentsline{toc}{section}{ACKNOWLEDGMENTS}
+	
+	First and foremost, we give praise to the Lord, the Almighty, for his direction, power, and wisdom. Next, we sincerely appreciate our supervisor, Mr. Justice Amenyo Kessie, for his constant support, encouragement, and the time he spent reading this research paper, critiquing it as necessary, explaining the criticism for our understanding, and offering immensely helpful suggestions and recommendations on how to structure this work.
+	
+	\newpage
+	\tableofcontents
+	\addcontentsline{toc}{section}{TABLE OF CONTENTS}
+	\newpage
+	\listoftables
+	\addcontentsline{toc}{section}{LIST OF TABLES}
+	\newpage
+	\listoffigures
+	\addcontentsline{toc}{section}{LIST OF FIGURES}
+	\newpage
+	\addcontentsline{toc}{section}{LIST OF ABBREVIATION}
+	\section*{List of Abbreviation}
+	\begin{acronym}
+		\acro{AR}{Autoregression}  
+		\acro{MA}{Moving Average}  
+		\acro{ARMA }{Autoregresive Moving Average } 
+		\acro{ARIMA}{Autoregressive Integrated Moving Average}  
+		\acro{AFIMA }{Autoregressive Fractionally Integrated Moving Average} 
+		\acro{VAR}{Vector Autoregression Model}
+		\acro{EVI}{Enhance Vegetation Index}
+		\acro{TMin and TMax}{Minimum and Maximum Temperature}
+		\acro{ADF}{Augmented Dickey Fuller}
+		\acro{OLS}{Optimal Lag Length Selection Criteria}
+		\acro{AIC}{	Akaike Information Criterion}
+		\acro{HQ}{Hannan-Quinn criterion}
+		\acro{SC}{Schwarz Criterion}
+		\acro{FPE}{Final Prediction Error criterion}
+		\acro{FEVD}{Forecast Error Variance Decomposition}
+	\end{acronym}
+
+	%\renewcommand{\@makechapter}[]{%
+		%	\vspace*{20 pt}%
+		%	{\setlength{\parindent}{0pt} \raggedright \centering \bf \bfseries\normalfont{\thechapter \#1\par\nobreak\vspace{20 pt}}}}
+	%\pagebreak
+	\makeatother
+	\titleformat{\chapter}{\bfseries\centering\normalfont\bf}{}{1em}{}
+	\titleformat{\section}{\bfseries\normalfont\bf}{\thesection}{1em}{}
+	
+	\newpage
+	\pagenumbering{arabic}
+	\begin{flushleft}
+		\include{Chapters/Chapter1}%including chapters as standalone files
+		\include{Chapters/Chapter2} 
+		\include{Chapters/Chapter3}
+		\include{Chapters/Chapter4} 
+		\include{Chapters/Chapter5}
+	\end{flushleft} 	
+
+	\printbibliography % displays the references cited.
+	
+	\appendix
+	
+	\addcontentsline{toc}{chapter}{APPENDICES}
+	\chapter{Appendix Chapter 1}
+	\section{Data Extraction Using R code From Google Earth Engine}
+			\begin{shaded}
+				\begin{verbatim}
+				library(tidyverse)  # for data wrangling and visualization
+				library('sf')
+				library(tibble)
+				library(lubridate)						
+				library(rgee)			
+				library(reticulate)
+				ee_install()
+				ee_check()
+				
+				ee_Initialize("kalong",drive = TRUE) # initialize GEE,
+				#this will have you log in to Google Drive
+				\end{verbatim}
+			\end{shaded}
+				
+			Load shape file
+			\begin{shaded}
+				\begin{verbatim}
+					{
+						aoi <- read_sf('Ghana shp file/ROI/new_roi.shp')
+						aoi <- st_transform(aoi, st_crs(4326))
+						aoi.ee <- st_bbox(aoi) %>%
+						st_as_sfc() %>%
+						sf_as_ee() #Converts it to an Earth Engine Obj
+					}			
+					
+					Date <- Sys.Date()
+				\end{verbatim}
+			\end{shaded}
+			Map each image from 2000 to extract the monthly Climatic Data from the
+			 Terraclimate dataset and rename the bands of the image
+			
+			\begin{shaded}
+				\begin{verbatim}
+					{
+						Precipitation  <- ee$ImageCollection("UCSB-CHG/CHIRPS/DAILY") %>%
+						ee$ImageCollection$filterDate("2000-01-01", rdate_to_eedate(Date)) %>%
+						ee$ImageCollection$map(function(x) x$select("precipitation")) %>% 
+						ee$ImageCollection$toBands() # from imagecollection to image
+						
+					}
+					{
+						MinimumTemperature <- ee$ImageCollection("IDAHO_EPSCOR/TERRACLIMATE") %>%
+						ee$ImageCollection$filterDate("2000-01-01", rdate_to_eedate(Date)) %>%
+						ee$ImageCollection$map(function(x) x$select("tmmn")) %>% 
+						ee$ImageCollection$toBands()}
+					{
+						MaximumTemperature <- ee$ImageCollection("IDAHO_EPSCOR/TERRACLIMATE") %>%
+						ee$ImageCollection$filterDate("2000-01-01", rdate_to_eedate(Date)) %>%
+						ee$ImageCollection$map(function(x) x$select("tmmx")) %>% 
+						ee$ImageCollection$toBands()}
+					{
+						Evapotranspiration <- ee$ImageCollection("NASA/FLDAS/NOAH01/C/GL/M/V001") %>%
+						ee$ImageCollection$filterDate("2000-01-01", rdate_to_eedate(Date)) %>%
+						ee$ImageCollection$map(function(x) x$select("Evap_tavg")) %>% 
+						ee$ImageCollection$toBands()}
+					{
+						Humidity <- ee$ImageCollection("NASA/FLDAS/NOAH01/C/GL/M/V001") %>%
+						ee$ImageCollection$filterDate("2000-01-01", rdate_to_eedate(Date)) %>%
+						ee$ImageCollection$map(function(x) x$select("Qair_f_tavg")) %>% 
+						ee$ImageCollection$toBands()}
+					{
+						Drought <- ee$ImageCollection("IDAHO_EPSCOR/TERRACLIMATE") %>%
+						ee$ImageCollection$filterDate("2000-01-01", rdate_to_eedate(Date)) %>%
+						ee$ImageCollection$map(function(x) x$select("pdsi")) %>% 
+						ee$ImageCollection$toBands()}
+				\end{verbatim}
+			\end{shaded}			
+			Extract monthly precipitation values from the Terraclimate ImageCollection
+			 through $ ee_extract $. $ ee_extract $ works similar to $ raster::extract $, 
+			 you just need to define: the ImageCollection object (x), the geometry (y),
+			 and a function to summarize the values (fun).	  
+        \begin{shaded}
+        	\begin{verbatim}
+        		{
+        			Precipitation       <- ee_extract(x = Precipitation , y = aoi.ee,
+        			sf = FALSE,scale = 250, fun = ee$Reducer$mean(), via = "drive",
+        			quiet = T)
+        			
+        			MinimumTemperature  <- ee_extract(x = MinimumTemperature , 
+        			y = aoi.ee, sf = FALSE,scale = 250, fun = ee$Reducer$mean(),
+        		 via = "drive", quiet = T)
+        			
+        			MaximumTemperature  <- ee_extract(x = MaximumTemperature ,
+        			y = aoi.ee, sf = FALSE,scale = 250, fun = ee$Reducer$mean(),
+        			via = "drive", quiet = T)
+        			
+        			Evapotranspiration  <- ee_extract(x = Evapotranspiration ,
+        			y = aoi.ee, sf = FALSE,scale = 250, fun = ee$Reducer$mean(),
+        			via = "drive", quiet = T)
+        			
+        			Humidity            <- ee_extract(x = Humidity , y = aoi.ee,
+        			sf = FALSE, scale = 250,fun = ee$Reducer$mean(), via = "drive",
+        			quiet = T)
+        			
+        			Drought             <- ee_extract(x = Drought , y = aoi.ee, 
+        			sf = FALSE, scale = 250,fun = ee$Reducer$mean(), via = "drive",
+        			 quiet = T)
+        		}
+        		
+        	\end{verbatim}
+        \end{shaded}
+    Save the Data to an excell file 
+		\begin{shaded}
+			\begin{verbatim}
+				{
+					write.csv(Precipitation,"Data/Precipitation.csv")
+					write.csv(MinimumTemperature,"Data/MinimumTemperature.csv")
+					write.csv(MaximumTemperature,"Data/MaximumTemperature.csv")
+					write.csv(Evapotranspiration,"Data/Evapotranspiration.csv")
+					write.csv(Humidity,"Data/Humidity.csv")
+					write.csv(Drought,"Data/Drought.csv")
+				}
+			\end{verbatim}
+		\end{shaded}
+		Tidy the Data
+		\begin{shaded}
+			\begin{verbatim}
+				{
+					Precipitation <- Precipitation%>%
+					pivot_longer(starts_with("X20"),names_to =  c("X","Date"),
+					names_pattern = "(.)(.+)",values_to = "Precipitation")%>%
+					separate(Date,into = c("Date","Pr"),sep = "_")%>% 
+					separate(Date, into = c('year', 'month'), sep = -2, convert = TRUE)%>%
+					select(year,month,Precipitation)}
+				{
+					MinimumTemperature <- MinimumTemperature%>%
+					pivot_longer(starts_with("X20"),names_to =  c("X","Date"),
+					names_pattern = "(.)(.+)",values_to = "MinTemperature")%>%
+					separate(Date,into = c("Date","tmmn"),sep = "_")%>% 
+					separate(Date, into = c('year', 'month'), sep = -2, convert = TRUE)%>%
+					select(year,month,MinTemperature)}
+				{MaximumTemperature <- MaximumTemperature%>%
+					pivot_longer(starts_with("X20"),names_to =  c("X","Date"),
+					names_pattern = "(.)(.+)",values_to = "MaxTemperature")%>%
+					separate(Date,into = c("Date","tmmx"),sep = "_")%>% 
+					separate(Date, into = c('year', 'month'), sep = -2, convert = TRUE)%>%
+					select(year,month,MaxTemperature)}
+			\end{verbatim}
+		\end{shaded}
+	\chapter{Appendix  Chapter 2}
+	\begin{shaded}
+		\begin{verbatim}
+			getQABits <- function(image, qa) {
+				# Convert binary (character) to decimal (little endian)
+				qa <- sum(2^(which(rev(unlist(strsplit(as.character(qa), "")) == 1))-1))
+				# Return a mask band image, giving the qa value.
+				image$bitwiseAnd(qa)$lt(1)
+			}	mod.clean <- function(img) {
+				# Extract the NDVI band
+				ndvi_values <- img$select("NDVI")
+				# Extract the quality band
+				ndvi_qa <- img$select("SummaryQA")
+				# Select pixels to mask
+				quality_mask <- getQABits(ndvi_qa, "11")
+				# Mask pixels with value zero.
+				ndvi_values$updateMask(quality_mask)$divide(ee$Image$constant(10000))
+				#0.0001 is the MODIS Scale Factor
+			}
+		   Date <- Sys.Date()			
+			modis.evi <- ee$ImageCollection("MODIS/006/MOD13Q1")$filter(ee$Filter$
+			date('2000-01-01',rdate_to_eedate(Date)))$map(mod.clean)			
+			
+			cc.proj <- st_transform(cc, st_crs(2992))
+			hex <- st_make_grid(x = cc.proj, cellsize = 17080, square = FALSE) %>%
+			st_sf() %>%
+			rowid_to_column('hex_id')
+			hex <- hex[cc.proj,]
+			plot(hex)			
+			{
+			cc.evi <- ee_extract(x = modis.evi, y = hex["hex_id"], sf = FALSE, scale = 250,
+			 fun = ee$Reducer$mean(), via = "drive", quiet = T)
+				evi.df <- as.data.frame(cc.evi)
+				write.csv(x = evi.df, file = "Data/rgeedf.csv")
+			}
+			
+			cc.evi = evi.df <-read.csv("Data/rgeedf.csv")
+			colnames(evi.df) <- c('hex_id', stringr::str_replace_all(substr(colnames
+			 (evi.df[, 2:ncol(evi.df)]), 2, 11), "_", "-"))				
+			{
+				evi.hw.lst <- list() 
+				#Create an empty list, this will be used to house the time series
+				 projections for each cell. 
+				evi.dcmp.lst <- list() 
+				#Create an empty list, this will be used to house the time series
+				 decomposition for each cell.
+				evi.df<-evi.df[,-2]
+				evi.trend <- data.frame(hex_id = evi.df$hex_id, na.cnt = NA, na.cnt.2 = NA,
+				 trend = NA, p.val = NA, r2 = NA, std.er = NA, trnd.strngth = NA,
+				  seas.strngth = NA) 
+				#This data frame will hold the trend data
+				Dates <- data.frame(date = seq(as.Date('2000-01-01'), Date, "month"))
+				Dates$month <- month(Dates$date)
+				Dates$year <- year(Dates$date)
+				i <- 1
+			}
+			tsv <- data.frame(evi = t(evi.df[i, 2:ncol(evi.df)])) 
+			#converting the data to a transposed data frame
+			colnames(tsv) <- c("evi")
+			
+			head(tsv) #let's take a look			
+			
+			na.cnt <- length(tsv[is.na(tsv)])
+			 #We want to get an idea of the number of entries with no EVI value
+			evi.trend$na.cnt[i] <- na.cnt
+			td <- tsv %>% 
+			mutate(month = month(as.Date(rownames(tsv))), year = year(as.Date(rownames(tsv)))) %>% 
+			group_by(year, month) %>%
+			summarise(mean_evi = mean(evi, na.rm = T), .groups = "keep") %>%
+			as.data.frame()
+			head(td)			
+			
+			td$date <- as.Date(paste0(td$year, "-", td$month, "-01"))
+			dx <- Dates[!(Dates$date %in% td$date),]
+			dx			
+			
+			dx$mean_evi <- NA
+			tdx <- rbind(td, dx) %>% 
+			arrange(date)
+			head(tdx)
+			write.csv(tdx,"Data/NDVI.csv")
+			na.cnt <- length(tdx[is.na(tdx)])
+			evi.trend$na.cnt.2[i] <- na.cnt 
+			#add count of na values to dataframe
+			rm(td, dx)
+			 #remove data we're no longer using, this is a good rule of thumb,
+			 especially when working with larger datasets.
+			tdx <- ts(data = tdx$mean_evi, start = c(2000, 1), end = c(2022, 01), frequency = 12)
+			 #convert data to time series.
+			plot(tdx,pch = 16, 
+			xlab = "Time", ylab = "EVI ", col = "#2E9FDF")			
+			
+			tdx <- if(na.cnt > 0){imputeTS::na_kalman(tdx, model = "auto.arima", smooth = T)}
+			 else {
+				tdx
+			}
+			plot(tdx,pch = 16, frame = FALSE,
+			xlab = "Time", ylab = "EVI ", col = "#2E9FDF")			
+			
+			tdx.dcp <- stl(tdx, s.window = 'periodic')
+			plot(tdx.dcp,pch = 16, frame = FALSE, col = "#2E9FDF")			
+			
+			Tt <- trendcycle(tdx.dcp)
+			St <- seasonal(tdx.dcp)
+			Rt <- remainder(tdx.dcp)
+			plot(Rt)
+			plot(Tt)
+			plot(St)			
+			
+			# The Stationary Signal and ACF
+			plot(Rt,col= "red", main = "Stationary Signal")
+			acf(Rt, lag.max = length(Rt),
+			xlab = "lag", ylab = 'ACF', main = '')
+			
+			#The Trend Signal anf ACF
+			
+			plot(Tt,col= "red",main = "Trend Signal")
+			acf(Tt, lag.max = length(Tt),
+			xlab = "lag", ylab = "ACF", main = '')			
+			
+			tseries::adf.test(tdx)		
+			
+			tdx.ns <- data.frame(time = c(1:length(tdx)), trend = tdx - tdx.dcp$time.series[,1])
+			Tt <- trendcycle(tdx.dcp)
+			St <- seasonal(tdx.dcp)
+			Rt <- remainder(tdx.dcp)
+			trend.summ <- summary(lm(formula = trend ~ time, data = tdx.ns)) #tslm
+			plot(tdx.ns,pch = 16, 
+			xlab = "Time", ylab = "Trend ", col = "#2E9FDF")
+			abline(a = trend.summ$coefficients[1,1], b = trend.summ$coefficients[2,1], col='red')
+			
+			
+			evi.trend$trend[i] <- trend.summ$coefficients[2,1]
+			evi.trend$trnd.strngth[i] <- round(max(0,1 - (var(Rt)/var(Tt + Rt))), 1) 
+			#Trend Strength Calculation 
+			evi.trend$seas.strngth[i] <- round(max(0,1 - (var(Rt)/var(St + Rt))), 1)
+			#Seasonal Strength Calculation
+			evi.trend$p.val[i] <- trend.summ$coefficients[2,4]
+			evi.trend$r2[i] <- trend.summ$r.squared
+			evi.trend$std.er[i] <- trend.summ$sigma
+			evi.trend[i,]		
+			
+			plot(evi.hw <- forecast::hw(y = tdx, h = 12, damped = T))
+			
+			evi.trend <- read.csv("Data/rgeedf.csv")
+			
+			for(i in 1:nrow(evi.df)){
+				tsv <- data.frame(evi = t(evi.df[i, 2:ncol(evi.df)])) 
+				colnames(tsv) <- c("evi")
+				na.cnt <- length(tsv[is.na(tsv)])
+				evi.trend$na.cnt[i] <- na.cnt
+				if(na.cnt < 263){
+					td <- tsv %>% 
+					mutate(month = month(as.Date(rownames(tsv))), year = year(as.Date(rownames(tsv)))) %>%
+					group_by(year, month) %>%
+					summarise(mean_evi = mean(evi, na.rm = T), .groups = "keep") %>%
+					as.data.frame()
+					td$date <- as.Date(paste0(td$year, "-", td$month, "-01"))
+					dx <- Dates[!(Dates$date %in% td$date),]
+					dx$mean_evi <- NA
+					tdx <- rbind(td, dx) %>% 
+					arrange(date)
+					na.cnt <- length(tdx[is.na(tdx)])
+					evi.trend$na.cnt.2[i] <- na.cnt
+					rm(td, dx)
+					tdx <- ts(data = tdx$mean_evi, start = c(2001, 1), end = c(2019, 11), frequency = 12)
+					tdx <- if(na.cnt > 0){imputeTS::na_kalman(tdx, model = "auto.arima", smooth = T)}
+					 else {
+						tdx
+					}					
+					tdx.dcp <- stl(tdx, s.window = 'periodic')
+					evi.dcmp.lst[[i]] <- tdx.dcp
+					#This will save our decomposition plots
+					plot(tdx.dcp)
+					dev.off()
+					tdx.ns <- data.frame(time = c(1:length(tdx)), trend = tdx - tdx.dcp$time.series[,1])
+					Tt <- trendcycle(tdx.dcp)
+					St <- seasonal(tdx.dcp)
+					Rt <- remainder(tdx.dcp)
+					trend.summ <- summary(lm(formula = trend ~ time, data = tdx.ns)) #tslm
+					evi.trend$trend[i] <- trend.summ$coefficients[2,1]
+					evi.trend$trnd.strngth[i] <- round(max(0,1 - (var(Rt)/var(Tt + Rt))), 1) 
+					
+					evi.trend$seas.strngth[i] <- round(max(0,1 - (var(Rt)/var(St + Rt))), 1)
+					 #Seasonal Strength Calculation
+					evi.trend$p.val[i] <- trend.summ$coefficients[2,4]
+					evi.trend$r2[i] <- trend.summ$r.squared
+					evi.trend$std.er[i] <- trend.summ$sigma
+					evi.hw <- forecast::hw(y = tdx, h = 12, damped = T)
+					evi.hw.lst[[i]] <- evi.hw
+					# plot(evi.hw)\
+					# rm(evi.hw, trend.summ, tdx.ns, tdx.dcp, Tt, St, Rt, tdx, na.cnt)
+				} else {
+					evi.ts[[i]] <- NA
+				}
+			}			
+			head(evi.trend) #Let's take a peak			
+			
+			evi.trend$system.index <- cc.evi[,1]
+			hex_trend <- hex %>%
+			left_join(evi.trend, by = 'hex_id', keep = F) %>%
+			replace(is.na(.), 0)
+			hex_trend <- st_transform(hex_trend, st_crs(4326))	
+			
+			**create a Leaflet Web Map!**			
+			
+			library(classInt)
+			trend_brks <- classIntervals(hex_trend$trend, n=11, style = "fisher")
+			colorscheme <- RColorBrewer::brewer.pal(n = 11, 'RdYlGn')
+			palette_sds <- leaflet::colorBin(colorscheme, domain = hex_trend$trend, 
+			bins=trend_brks$brks, na.color = "#ffffff", pretty = T)
+			
+			pop <- paste0(
+			"<b> Hex ID: </b>",hex_trend$hex_id,"<br><b>NA Count:</b>",
+			 hex_trend$na.cnt+hex_trend$na.cnt.2,"<br><b>Trend: </b>",
+			 format(round(hex_trend$trend, 4), scientific = FALSE),"<br><b> P-Value:</b>",
+			 round(hex_trend$p.val, 4),"<br><b>R2: </b>",round(hex_trend$r2, 4),
+			 "<br><b>Std Err: </b>",round(hex_trend$std.er, 4),"<br><b>Trend Strength:</b>",
+			 round(hex_trend$trnd.strngth, 2),"<br><b>Seasonal Strength:</b>",
+			  round(hex_trend$seas.strngth, 4),"<br>"
+			  )
+			#Here we're creating a popup for our interactive map.			
+			
+			library(leaflet)
+			library(dplyr)
+			map <- hex_trend %>%
+			leaflet() %>%
+			setView(5.96475,-1.782181, 9) %>%
+			addProviderTiles("Esri.WorldTopoMap", group = "Topo Map") %>%
+			addProviderTiles("Esri.WorldImagery", group = "Imagery", 
+			options = providerTileOptions(opacity = 0.7)) %>%
+			addPolygons(
+			fillColor = ~palette_sds(hex_trend$trend),
+			fillOpacity = hex_trend$trnd.strngth,
+			opacity = 0.5,
+			weight = 0.1,
+			color='white', 
+			group = "Hexbins", 
+			highlightOptions = highlightOptions(
+			color = "white",
+			weight = 2,
+			bringToFront = TRUE),
+			popup = pop,
+			popupOptions = popupOptions(
+			maxHeight = 250, 
+			maxWidth = 250)) %>%
+			addLegend(
+			title = "Trend: lm(EVI ~ Month)",
+			pal = palette_sds,
+			values = hex_trend$trend,
+			opacity = 0.7,
+			labFormat = labelFormat(
+			digits = 5)) %>%
+			addLayersControl(
+			baseGroups = c("Topo Map", "Imagery"),
+			overlayGroups = c("Hexbins"),
+			options = layersControlOptions(collapsed = FALSE)) %>%
+			addScaleBar(position='bottomleft')
+			
+			map
+			
+		\end{verbatim}
+	\end{shaded}
+	\section{VAR}
+	
+			Import Data
+			\begin{shaded}
+				\begin{verbatim}
+			DATA <- read.csv("Data/Data.csv")%>%
+			dplyr::select(date,mean_evi,Precipitation,Evapotranspiration,
+			MiniTemperature,MaxTemperature,Humidity,Drought)
+			head(DATA)
+			# Check Missing Values
+			
+			visdat::vis_dat(DATA)
+			skimr::skim_tee(DATA)
+			summary(DATA)
+				\end{verbatim}
+		\end{shaded}
+	
+				\begin{shaded}
+				\begin{verbatim}
+			# Correlation			
+			colnames(DATA)<- c("Date","EVI","Precipitation","Evapiration","TempMin","TempMax",
+			                  "Humidity","Drought")
+			plot(corr_coef(DATA))
+				\end{verbatim}
+		\end{shaded}
+	
+				\begin{shaded}
+				\begin{verbatim}
+			# Select a set of predictors with minimal multicollinearity			
+			non_collinear_vars(DATA,TempMin,TempMax,Evapiration,Precipitation,Humidity,Drought,
+			                    max_vif =3)
+			
+			# Removed correlated variable			
+			DATA <- DATA%>%
+			dplyr::select(Date,Drought, TempMin, Precipitation, TempMax, Evapiration,EVI)			
+			colnames(DATA)
+			head(DATA)
+			
+				\end{verbatim}
+	     	\end{shaded}
+	Input Missing Values 
+				\begin{shaded}
+				\begin{verbatim}
+			DATA$EVI <- if(is.na(DATA$EVI) > 0){imputeTS::na_kalman(DATA$EVI, 
+				model = "auto.arima",smooth = T)} else {
+				DATA$EVI
+			}
+			head(DATA)
+		 	
+				\end{verbatim}
+		       \end{shaded}
+	
+			Check if Impute worked
+				\begin{shaded}
+				\begin{verbatim}
+			vis_dat(DATA)
+			df<- DATA%>%
+			dplyr::select(-Date)
+			# 1st differenced data
+			# df <- as.data.frame(diff(as.matrix(DATA), lag = 1))
+			#========================================================
+			# Summary of ADF test of level variables
+			#========================================================
+			
+			adf.none  <- list(
+			EVI = ur.df(DATA$EVI, type='none', selectlags = c("AIC")),
+			Precipitation = ur.df(DATA$Precipitation, type='none', selectlags = c("AIC")),
+			Evapiration = ur.df(DATA$Evapiration, type='none', selectlags = c("AIC")),
+			TempMin = ur.df(DATA$TempMin, type='none', selectlags = c("AIC")),
+			TempMax = ur.df(DATA$TempMax, type='none', selectlags = c("AIC")),
+			Drought = ur.df(DATA$Drought, type='none', selectlags = c("AIC"))
+			)
+			adf.drift  <- list(
+			EVI = ur.df(DATA$EVI, type='drift', selectlags = c("AIC")),
+			Precipitation = ur.df(DATA$Precipitation, type='drift', selectlags = c("AIC")),
+			Evapiration = ur.df(DATA$Evapiration, type='drift', selectlags = c("AIC")),
+			TempMin = ur.df(DATA$TempMin, type='drift', selectlags = c("AIC")),
+			TempMax = ur.df(DATA$TempMax, type='drift', selectlags = c("AIC")),
+			Drought = ur.df(DATA$Drought, type='drift', selectlags = c("AIC"))
+			)
+			adf.trend  <- list(
+			EVI = ur.df(DATA$EVI, type='trend', selectlags = c("AIC")),
+			Precipitation = ur.df(DATA$Precipitation, type='trend', selectlags = c("AIC")),
+			Evapiration = ur.df(DATA$Evapiration, type='trend', selectlags = c("AIC")),
+			TempMin = ur.df(DATA$TempMin, type='trend', selectlags = c("AIC")),
+			TempMax = ur.df(DATA$TempMax, type='trend', selectlags = c("AIC")),
+			Drought = ur.df(DATA$Drought, type='trend', selectlags = c("AIC"))
+			)
+				\end{verbatim}
+		\end{shaded}
+	
+				\begin{shaded}
+				\begin{verbatim}			
+			summary(adf.none$EVI)
+			summary(adf.none$Precipitation)
+			summary(adf.none$Evapiration)
+			summary(adf.none$TempMin)
+			summary(adf.none$TempMax)
+			summary(adf.none$Drought)
+			
+				\end{verbatim}
+		\end{shaded}
+	
+			
+				\begin{shaded}
+				\begin{verbatim}
+			summary(adf.trend$EVI)
+			summary(adf.trend$Precipitation)
+			summary(adf.trend$Evapiration)
+			summary(adf.trend$TempMin)
+			summary(adf.trend$TempMax)
+			summary(adf.trend$Drought)			
+				\end{verbatim}
+		\end{shaded}
+
+			
+				\begin{shaded}
+				\begin{verbatim}
+			summary(adf.drift$EVI)
+			summary(adf.drift$Precipitation)
+			summary(adf.drift$Evapiration)
+			summary(adf.drift$TempMin)
+			summary(adf.drift$TempMin)
+			summary(adf.drift$Drought)
+				\end{verbatim}
+		\end{shaded}			
+			1st differenced data
+				\begin{shaded}
+				\begin{verbatim}
+			df <- as.data.frame(diff(as.matrix(DATA[,-1]), lag = 1))
+			df.adf.none  <- list(
+			EVI = ur.df(df$EVI, type='none', selectlags = c("AIC")),
+			Precipitation = ur.df(df$Precipitation, type='none', selectlags = c("AIC")),
+			Evapiration = ur.df(df$Evapiration, type='none', selectlags = c("AIC")),
+			TempMin = ur.df(df$TempMin, type='none', selectlags = c("AIC")),
+			TempMax = ur.df(df$TempMax, type='none', selectlags = c("AIC")),
+			Drought = ur.df(df$Drought, type='none', selectlags = c("AIC"))
+			)
+			df.adf.drift  <- list(
+			EVI = ur.df(df$EVI, type='drift', selectlags = c("AIC")),
+			Precipitation = ur.df(df$Precipitation, type='drift', selectlags = c("AIC")),
+			Evapiration = ur.df(df$Evapiration, type='drift', selectlags = c("AIC")),
+			TempMin = ur.df(df$TempMin, type='drift', selectlags = c("AIC")),
+			TempMax = ur.df(df$TempMax, type='drift', selectlags = c("AIC")),
+			Drought = ur.df(df$Drought, type='drift', selectlags = c("AIC"))
+			)
+			df.adf.trend  <- list(
+			EVI = ur.df(df$EVI, type='trend', selectlags = c("AIC")),
+			Precipitation = ur.df(df$Precipitation, type='trend', selectlags = c("AIC")),
+			Evapiration = ur.df(df$Evapiration, type='trend', selectlags = c("AIC")),
+			TempMin = ur.df(df$TempMin, type='trend', selectlags = c("AIC")),
+			TempMax = ur.df(df$TempMax, type='trend', selectlags = c("AIC")),
+			Drought = ur.df(df$Drought, type='trend', selectlags = c("AIC"))
+			)
+				\end{verbatim}
+		\end{shaded}
+	
+			The ADF result for our variable from the above R code is generated as follows
+			
+				\begin{shaded}
+				\begin{verbatim}
+			summary(adf.trend$EVI)
+			summary(df.adf.trend$Precipitation)
+			summary(df.adf.trend$Evapiration)
+			summary(df.adf.trend$TempMin)
+			summary(df.adf.trend$TempMax)
+			summary(df.adf.trend$Drought)
+			
+				\end{verbatim}
+		\end{shaded}
+	
+			Interpretation of ADF test follow the general-to-specific approach. As such, three regression models are applied sequentially.
+				\begin{shaded}
+				\begin{verbatim}
+			#========================================================
+			# General-to-Specific Investigation
+			# The case of EVI variable
+			#========================================================
+			
+			print("Level Variable with Trend")
+			cbind(t(df.adf.trend$EVI@teststat), df.adf.trend$EVI@cval)
+			
+			print("Level Variable with Trend")
+			cbind(t(df.adf.trend$Precipitation@teststat), df.adf.trend$Precipitation@cval)
+			
+			print("Level Variable with Trend")
+			cbind(t(df.adf.trend$Evapiration@teststat), df.adf.trend$Evapiration@cval)
+			
+			print("Level Variable with Trend")
+			cbind(t(df.adf.trend$TempMin@teststat), df.adf.trend$TempMin@cval)
+			
+			print("Level Variable with Trend")
+			cbind(t(df.adf.trend$TempMax@teststat),df.adf.trend$TempMax@cval)
+			
+			print("Level Variable with Trend")
+			cbind(t(df.adf.trend$Drought@teststat), df.adf.trend$Drought@cval)
+			
+			print("1st Diff. Variable with Drift and Trend")
+			cbind(t(df.adf.trend$EVI@teststat), df.adf.trend$EVI@cval)
+			
+			print("1st Diff. Variable with Drift")
+			cbind(t(df.adf.drift$EVI@teststat), df.adf.drift$EVI@cval)
+			
+			print("1st Diff. Variable with None")
+			cbind(t(df.adf.none$EVI@teststat), df.adf.none$EVI@cval)
+			
+				\end{verbatim}
+		\end{shaded}
+	
+			Finally, we can conclude that logarithm of real income contains a unit root and 
+			can be stationay time series by differencing the first order. Now that this transformed
+			 variable contains no unit root, it can be included in VAR or VECM model.
+			
+			In this process, the alphanumeric names of test statistics are a little confusing but 
+			when we refer the above three specifications of regression equations, the meanings of 
+			names of test statistics are clear.
+				\begin{shaded}
+				\begin{verbatim}
+			EVI <- ts(data = df$EVI, start = c(2000, 1), end = c(2022, 01), frequency = 12)
+			Precipitation <- ts(data = df$Precipitation, start = c(2000, 1), end = c(2022, 01), frequency = 12)
+			Evapiration <- ts(data = df$Evapiration, start = c(2000, 1), end = c(2022, 01), frequency = 12)
+			TempMin <- ts(data = df$TempMin, start = c(2000, 1), end = c(2022, 01), frequency = 12)
+			TempMax <- ts(data = df$TempMax, start = c(2000, 1), end = c(2022, 01), frequency = 12)
+			Drought <- ts(data = df$Drought, start = c(2000, 1), end = c(2022, 01), frequency = 12)
+			TimeSeries1 <- cbind(EVI,Precipitation,Evapiration,TempMin,TempMax,Drought)
+			plot(TimeSeries1)
+				\end{verbatim}
+		\end{shaded}
+	Time Series using  VAR
+				\begin{shaded}
+				\begin{verbatim}
+			EVI <- ts(data = DATA$EVI, start = c(2000, 1), end = c(2022, 01), frequency = 12)
+			Precipitation <- ts(data = DATA$Precipitation, start = c(2000, 1), end = c(2022, 01),
+			frequency = 12)
+			Evapiration <- ts(data = DATA$Evapiration, start = c(2000, 1), end = c(2022, 01), 
+			frequency = 12)
+			TempMin <- ts(data = DATA$TempMin, start = c(2000, 1), end = c(2022, 01), frequency = 12)
+			TempMax <- ts(data = DATA$TempMax, start = c(2000, 1), end = c(2022, 01), frequency = 12)
+			Drought <- ts(data = DATA$Drought, start = c(2000, 1), end = c(2022, 01), frequency = 12)
+			TimeSeries <- cbind(EVI,Precipitation,Evapiration,TempMin,TempMax,Drought)
+				\end{verbatim}
+		\end{shaded}
+	
+				\begin{shaded}
+				\begin{verbatim}
+			library(TSstudio)
+			ts_plot(EVI)
+			ts_plot(Evapiration)
+			ts_plot(Drought)
+			plot(TimeSeries)
+			
+				\end{verbatim}
+		\end{shaded}
+	 Lag Selection \\
+	Type of deterministic Regressors to include. We use none because the time series was made stationary using differencing above.
+				\begin{shaded}
+				\begin{verbatim}
+			LagSelection <-VARselect(TimeSeries,type = "const", lag.max = 12) #highest lag order
+			LagSelection$selection
+			kable(t(LagSelection$criteria))%>%kable_styling(latex_options = c("repeat_header"))                
+			
+			LagSelection1 <-VARselect(TimeSeries1, 
+			type = "const",  
+			lag.max = 12) #highest lag order
+			LagSelection1$selection
+			kable(t(LagSelection1$criteria))%>%kable_styling(latex_options = c("repeat_header")) 
+				\end{verbatim}
+		\end{shaded}
+	
+			 Estimating Models
+			 
+				\begin{shaded}
+				\begin{verbatim}
+			# Creating a VAR model with vars
+			Model <- VAR(TimeSeries,p= 8,lag.max = 12,season = NULL,  exogen = NULL,type = "const")
+			summary(Model)
+				\end{verbatim}
+		\end{shaded}
+	
+				\begin{shaded}
+				\begin{verbatim}
+			# Creating a VAR model with vars
+			Model1 <- VAR(TimeSeries1,p= 10,lag.max = 12,season = NULL,  exogen = NULL,type = "const")
+			summary(Model1)
+				\end{verbatim}
+		\end{shaded}
+	
+				\begin{shaded}
+				\begin{verbatim}
+			predict(Model1, n.ahead = 12, ci = 0.95)
+				\end{verbatim}
+		\end{shaded}
+			forecast is a generic function for forecasting from time series or time series models. The function invokes particular methods which depend on the class of the first argument.
+			\begin{shaded}
+				\begin{verbatim}
+			forecast(Model1)
+			plot(forecast(Model1))
+				\end{verbatim}
+		     \end{shaded}
+	
+				\begin{shaded}
+				\begin{verbatim}
+			accuracy(forecast(Model1),d=10, D= 1)
+				\end{verbatim}
+		      \end{shaded}
+	
+				\begin{shaded}
+				\begin{verbatim}
+			library(vars)
+			colnames(TimeSeries1) <-c("EVI","Prep","Evap","TMin","TMax","Drght")
+			Model2 <- VAR(TimeSeries1,p= 10,lag.max = 12,season = NULL,  exogen = NULL,type = "const")
+				\end{verbatim}
+		\end{shaded}
+		
+				\begin{shaded}
+				\begin{verbatim}
+			plot.varfevd  <-function (x, plot.type = c("multiple", "single"), names = NULL,
+			main = NULL, col = NULL, ylim = NULL, ylab = NULL, xlab = NULL,
+			legend = NULL, names.arg = NULL, nc, mar = par("mar"), oma = par("oma"),
+			addbars = 1, ...)
+			{
+				K <- length(x)
+				ynames <- names(x)
+				plot.type <- match.arg(plot.type)
+				if (is.null(names)) {
+					names <- ynames
+				}
+				else {names <- as.character(names)
+					if (!(all(names %in% ynames))) {
+						warning("\nInvalid variable name(s) supplied, using first variable.\n")
+						names <- ynames[1]
+					}
+				}
+				nv <- length(names)
+				#    op <- par(no.readonly = TRUE)
+				ifelse(is.null(main), main <- paste("FEVD for", names), main <- rep(main,
+				nv)[1:nv])
+				ifelse(is.null(col), col <- gray.colors(K), col <- rep(col,
+				K)[1:K])
+				ifelse(is.null(ylab), ylab <- rep("Percentage", nv), ylab <- rep(ylab,
+				nv)[1:nv])
+				ifelse(is.null(xlab), xlab <- rep("Horizon", nv), xlab <- rep(xlab,
+				nv)[1:nv])
+				ifelse(is.null(ylim), ylim <- c(0, 1), ylim <- ylim)
+				ifelse(is.null(legend), legend <- ynames, legend <- legend)
+				if (is.null(names.arg))
+				names.arg <- c(paste(1:nrow(x[[1]])), rep(NA, addbars))
+				plotfevd <- function(x, main, col, ylab, xlab, names.arg,
+				ylim, ...) {
+					addbars <- as.integer(addbars)
+					if (addbars > 0) {
+						hmat <- matrix(0, nrow = K, ncol = addbars)
+						xvalue <- cbind(t(x), hmat)
+						barplot(xvalue, main = main, col = col, ylab = ylab,
+						xlab = xlab, names.arg = names.arg, ylim = ylim,
+						legend.text = legend, ...)
+						abline(h = 0)
+					}
+					else {xvalue <- t(x)
+						barplot(xvalue, main = main, col = col, ylab = ylab,
+						xlab = xlab, names.arg = names.arg, ylim = ylim,
+						...)
+						abline(h = 0)
+					}
+				}
+				if (plot.type == "single") {
+					for (i in 1:nv) {
+						plotfevd(x = x[[names[i]]], main = main[i], col = col,
+						ylab = ylab[i], xlab = xlab[i], names.arg = names.arg,
+						ylim = ylim, ...)
+					}
+				}
+				else if (plot.type == "multiple") {
+					if (missing(nc)) {
+						nc <- ifelse(nv > 4, 2, 1)
+					}
+					nr <- ceiling(nv/nc)
+					par(mfcol = c(nr, nc), mar = mar, oma = oma)
+					for (i in 1:nv) {
+						plotfevd(x = x[[names[i]]], main = main[i], col = col,
+						ylab = ylab[i], xlab = xlab[i], names.arg = names.arg,
+						ylim = ylim, ...)
+					}
+				}
+				#    on.exit(par(op))
+			}
+				\end{verbatim}
+		\end{shaded}
+	
+			\begin{shaded}
+				\begin{verbatim}
+			
+			win.graph(width=13,height=8)
+			layout(matrix(1:6,ncol=1))
+			plot.varfevd(fevd(Model2, n.ahead = 10 ),plot.type = "multiple", col=1:6)
+			
+				\end{verbatim}
+		\end{shaded}
+			 Impulse Responds Analysis
+				\begin{shaded}
+				\begin{verbatim}
+			plot(irf(Model2,impulse = "EVI",response = "EVI"))
+			plot(irf(Model2,impulse = "EVI",response = "Prep"))
+			plot(irf(Model2,impulse = "EVI",response = "Evap"))
+			plot(irf(Model2,impulse = "EVI",response = "TMin"))
+			plot(irf(Model2,impulse = "EVI",response = "TMax"))
+			plot(irf(Model2,impulse = "EVI",response = "Drght"))
+			\end{verbatim}
+	    \end{shaded}	
+		\begin{shaded}
+				\begin{verbatim}
+			grangertest(EVI~Precipitation, order = 12, data = TimeSeries1)
+			grangertest(EVI~TempMin, order = 12, data = TimeSeries1)
+			grangertest(EVI~TempMax, order = 12, data = TimeSeries1)
+			grangertest(EVI~Evapiration, order = 12, data = TimeSeries1)
+			grangertest(EVI~Drought, order = 12, data = TimeSeries1)
+				\end{verbatim}
+		\end{shaded}
+	
+		\begin{shaded}
+				\begin{verbatim}
+			plot(forecast(Model1))
+				\end{verbatim}
+		\end{shaded}
+			
+	
+\end{document}
