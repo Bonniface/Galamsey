@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.11.4)  17 NOV 2022 13:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.11.4)  21 NOV 2022 01:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1037,15 +1037,15 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: twoside 
-* h-part:(L,W,R)=(39.83368pt, 517.84052pt, 39.83368pt)
-* v-part:(T,H,B)=(22.76228pt, 771.06952pt, 51.21504pt)
+* h-part:(L,W,R)=(72.2698pt, 452.96826pt, 72.2698pt)
+* v-part:(T,H,B)=(72.2698pt, 700.50723pt, 72.2698pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=517.84052pt
-* \textheight=771.06952pt
-* \oddsidemargin=-32.43631pt
-* \evensidemargin=-32.43631pt
-* \topmargin=-81.3815pt
+* \textwidth=452.96826pt
+* \textheight=700.50723pt
+* \oddsidemargin=-0.00018pt
+* \evensidemargin=-0.00018pt
+* \topmargin=-31.87398pt
 * \headheight=12.0pt
 * \headsep=19.8738pt
 * \topskip=12.0pt
@@ -1173,7 +1173,7 @@ Package hyperref Info: Link coloring OFF on input line 150.
 File: images/logo2.jpg Graphic file (type jpg)
 <use images/logo2.jpg>
 Package pdftex.def Info: images/logo2.jpg  used on input line 160.
-(pdftex.def)             Requested size: 155.34503pt x 148.33879pt.
+(pdftex.def)             Requested size: 135.88504pt x 129.75648pt.
  [1
 
 
@@ -1270,13 +1270,21 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 22
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
+Overfull \hbox (49.06232pt too wide) in paragraph at lines 225--246
+ [] 
+ []
+
 [2] [3] [4] [5] [6
 
-] (index.toc [7] [8])
+] (index.toc [7]
+Underfull \vbox (badness 5475) has occurred while \output is active []
+
+ [8])
 \tf@toc=\write4
 \openout4 = `index.toc'.
 
- [9] [10
+
+[9] [10
 
 ] (index.lot)
 \tf@lot=\write5
@@ -1284,8 +1292,7 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
  [11] [12
 
-]
-(index.lof)
+] (index.lof)
 \tf@lof=\write6
 \openout6 = `index.lof'.
 
@@ -1431,39 +1438,42 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
  (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-[5]) [6]
+[5] [6]) [7]
 \openout2 = `Chapters/Chapter2.aux'.
 
- (Chapters/Chapter2.tex
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 3.
-
-
-LaTeX Warning: Citation 'alex2013' on page 7 undefined on input line 20.
-
-
-LaTeX Warning: Citation 'gertler2016' on page 7 undefined on input line 23.
-
-
-LaTeX Warning: Citation 'specht2015' on page 7 undefined on input line 24.
-
-
-LaTeX Warning: Citation 'defries2010' on page 7 undefined on input line 28.
-
-[7
+ (Chapters/Chapter2.tex [8
 
 
 
 
 ]
-Underfull \vbox (badness 1365) has occurred while \output is active []
 
- [8])
-[9]
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 3.
+
+
+LaTeX Warning: Citation 'alex2013' on page 9 undefined on input line 20.
+
+
+LaTeX Warning: Citation 'gertler2016' on page 9 undefined on input line 23.
+
+
+LaTeX Warning: Citation 'specht2015' on page 9 undefined on input line 24.
+
+
+LaTeX Warning: Citation 'defries2010' on page 9 undefined on input line 28.
+
+
+Underfull \vbox (badness 1215) has occurred while \output is active []
+
+ [9]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10])
+[11]
 \openout2 = `Chapters/Chapter3.aux'.
 
- (Chapters/Chapter3.tex [10
+ (Chapters/Chapter3.tex [12
 
 
 
@@ -1473,38 +1483,32 @@ Underfull \vbox (badness 1365) has occurred while \output is active []
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\\' on input line 3.
 
-<images/StudyArea.png, id=287, 844.8363pt x 597.432pt>
+<images/StudyArea.png, id=295, 844.8363pt x 597.432pt>
 File: images/StudyArea.png Graphic file (type png)
 <use images/StudyArea.png>
 Package pdftex.def Info: images/StudyArea.png  used on input line 15.
-(pdftex.def)             Requested size: 466.05365pt x 329.57315pt.
-[11] [12 <./images/StudyArea.png>]
+(pdftex.def)             Requested size: 407.66965pt x 288.28648pt.
+[13] [14 <./images/StudyArea.png>] [15]
 
-LaTeX Warning: Citation 'hipel1994' on page 13 undefined on input line 42.
+LaTeX Warning: Citation 'hipel1994' on page 16 undefined on input line 42.
 
-[13]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[16] [17] [18] [19] [20]
+Underfull \vbox (badness 3815) has occurred while \output is active []
 
- [14]
-[15] [16] [17] [18]
+ [21]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 178.
 
 
-Underfull \hbox (badness 10000) in alignment at lines 189--189
+Overfull \hbox (2.99118pt too wide) in alignment at lines 189--189
 [][][][] 
  []
 
-) [19]
+) [22]
 \openout2 = `Chapters/Chapter4.aux'.
 
- (Chapters/Chapter4.tex [20
-
-
-
-
-]
+ (Chapters/Chapter4.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\\' on input line 3.
@@ -1516,133 +1520,124 @@ Package hyperref Warning: Suppressing empty link on input line 8.
 Package hyperref Warning: Suppressing empty link on input line 10.
 
 
-Overfull \hbox (8.56448pt too wide) in alignment at lines 26--26
+Underfull \hbox (badness 10000) in alignment at lines 26--26
 [][] 
  []
 
-[21]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23
+
+
+
+
+]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 35.
 
 
-Underfull \hbox (badness 10000) in alignment at lines 52--52
+Overfull \hbox (2.24954pt too wide) in alignment at lines 54--54
 [][][][][][][] 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 54.
+               Default added (so using `tbp') on input line 56.
 
-<images/Map.png, id=375, 1025.33063pt x 496.10344pt>
+<images/Map.png, id=384, 1025.33063pt x 496.10344pt>
 File: images/Map.png Graphic file (type png)
 <use images/Map.png>
-Package pdftex.def Info: images/Map.png  used on input line 71.
-(pdftex.def)             Requested size: 466.05681pt x 225.5003pt.
-<images/Correlation.png, id=377, 618.05907pt x 445.665pt>
+Package pdftex.def Info: images/Map.png  used on input line 74.
+(pdftex.def)             Requested size: 407.66867pt x 197.24937pt.
+[24]
+<images/Correlation.png, id=390, 618.05907pt x 445.665pt>
 File: images/Correlation.png Graphic file (type png)
 <use images/Correlation.png>
-Package pdftex.def Info: images/Correlation.png  used on input line 80.
-(pdftex.def)             Requested size: 466.07062pt x 336.0704pt.
-[22] [23 <./images/Map.png>]
+Package pdftex.def Info: images/Correlation.png  used on input line 83.
+(pdftex.def)             Requested size: 407.68448pt x 293.9698pt.
 
-Package hyperref Warning: Suppressing empty link on input line 86.
+Underfull \vbox (badness 3029) has occurred while \output is active []
 
+ [25 <./images/Map.png>]
 
-Package hyperref Warning: Suppressing empty link on input line 110.
+Package hyperref Warning: Suppressing empty link on input line 89.
+
+[26 <./images/Correlation.png (PNG copy)>]
+
+Package hyperref Warning: Suppressing empty link on input line 113.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 112.
+               Default added (so using `tbp') on input line 115.
 
 
-Underfull \hbox (badness 10000) in alignment at lines 143--143
+Underfull \hbox (badness 10000) in alignment at lines 147--147
 [][][][][][][] 
  []
 
-[24 <./images/Correlation.png (PNG copy)>] [25]
+[27]
 
-Package hyperref Warning: Suppressing empty link on input line 145.
+Package hyperref Warning: Suppressing empty link on input line 149.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 147.
+               Default added (so using `tbp') on input line 151.
 
 
-Underfull \hbox (badness 10000) in alignment at lines 168--168
+Overfull \hbox (15.17882pt too wide) in alignment at lines 172--172
 [][][][][] 
  []
 
-<images/TimeSeries.png, id=398, 618.05907pt x 445.665pt>
+<images/TimeSeries.png, id=407, 618.05907pt x 445.665pt>
 File: images/TimeSeries.png Graphic file (type png)
 <use images/TimeSeries.png>
-Package pdftex.def Info: images/TimeSeries.png  used on input line 172.
-(pdftex.def)             Requested size: 466.07062pt x 336.0704pt.
+Package pdftex.def Info: images/TimeSeries.png  used on input line 176.
+(pdftex.def)             Requested size: 407.68448pt x 293.9698pt.
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 176.
+               Default added (so using `tbp') on input line 180.
 
 
-Underfull \hbox (badness 10000) in alignment at lines 198--198
+Overfull \hbox (9.6115pt too wide) in alignment at lines 202--202
 [][][][][] 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 200.
+               Default added (so using `tbp') on input line 204.
 
 
-Overfull \hbox (34.0131pt too wide) in alignment at lines 220--220
+Overfull \hbox (18.32433pt too wide) in alignment at lines 224--224
 [][][][][] 
  []
 
-[26] [27 <./images/TimeSeries.png>]
-<images/impose.png, id=409, 963.6pt x 542.025pt>
+[28] [29 <./images/TimeSeries.png>]
+<images/impose.png, id=419, 963.6pt x 542.025pt>
 File: images/impose.png Graphic file (type png)
 <use images/impose.png>
-Package pdftex.def Info: images/impose.png  used on input line 226.
-(pdftex.def)             Requested size: 517.8514pt x 291.2914pt.
-<images/fevd.png, id=411, 1056.94875pt x 647.41875pt>
+Package pdftex.def Info: images/impose.png  used on input line 230.
+(pdftex.def)             Requested size: 452.96558pt x 254.79314pt.
+<images/fevd.png, id=421, 1056.94875pt x 647.41875pt>
 File: images/fevd.png Graphic file (type png)
 <use images/fevd.png>
-Package pdftex.def Info: images/fevd.png  used on input line 234.
-(pdftex.def)             Requested size: 466.04268pt x 285.46773pt.
- [28]
+Package pdftex.def Info: images/fevd.png  used on input line 238.
+(pdftex.def)             Requested size: 407.66034pt x 249.70647pt.
+ [30]
 
-Package hyperref Warning: Suppressing empty link on input line 238.
+Package hyperref Warning: Suppressing empty link on input line 242.
 
 
-Package hyperref Warning: Suppressing empty link on input line 240.
+Package hyperref Warning: Suppressing empty link on input line 244.
 
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 248.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 248.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 248.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 248.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 248.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 248.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 248.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 248.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 248.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 248.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 248.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 248.
-[29 <./images/impose.png>] [30 <./images/fevd.png>]) [31]
+[31 <./images/impose.png>]
+Underfull \vbox (badness 2707) has occurred while \output is active []
+
+ [32 <./images/fevd.png>]) [33]
 \openout2 = `Chapters/Chapter5.aux'.
 
-
-(Chapters/Chapter5.tex [32
+ (Chapters/Chapter5.tex [34
 
 
 
@@ -1652,11 +1647,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\\' on input line 1.
 
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [33]
-[34] [35
+[35]) [36] [37
 
 
 
@@ -1665,7 +1656,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Package biblatex Warning: No driver for 'web_page'.
 (biblatex)                Using fallback driver on input line 320.
 
-[36]
+[38]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
 28.
  (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
@@ -1677,274 +1668,371 @@ LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-[37
+[39
 
 ]
-Underfull \vbox (badness 10000) detected at line 395
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [38]
-Underfull \vbox (badness 10000) detected at line 429
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [39]
-Underfull \vbox (badness 3872) detected at line 467
+Overfull \hbox (22.50697pt too wide) in paragraph at lines 394--394
+[]\T1/lmtt/m/n/12 Evapotranspiration <- ee$ImageCollection("NASA/FLDAS/NOAH01/C
+/GL/M/V001") %>%[] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [40]
-[41] [42
+Overfull \hbox (3.98196pt too wide) in paragraph at lines 428--428
+[]         \T1/lmtt/m/n/12 Precipitation       <- ee_extract(x = Precipitation 
+, y = aoi.ee,[] 
+ []
 
-]
-Overfull \hbox (13.20975pt too wide) in paragraph at lines 729--729
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [41]
+[42] [43] [44
+
+] [45]
+Overfull \hbox (34.85698pt too wide) in paragraph at lines 729--729
+[]\T1/lmtt/m/n/12 cc.evi <- ee_extract(x = modis.evi, y = hex["hex_id"], sf = F
+ALSE, scale = 250,[] 
+ []
+
+
+Overfull \hbox (10.15697pt too wide) in paragraph at lines 729--729
+[]\T1/lmtt/m/n/12 evi.trend <- data.frame(hex_id = evi.df$hex_id, na.cnt = NA, 
+na.cnt.2 = NA,[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [46]
+Overfull \hbox (78.082pt too wide) in paragraph at lines 729--729
 []\T1/lmtt/m/n/12 mutate(month = month(as.Date(rownames(tsv))), year = year(as.
 Date(rownames(tsv)))) %>%[] 
  []
 
 
-Overfull \hbox (7.03474pt too wide) in paragraph at lines 729--729
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [47]
+Overfull \hbox (71.907pt too wide) in paragraph at lines 729--729
 []\T1/lmtt/m/n/12 tdx <- ts(data = tdx$mean_evi, start = c(2000, 1), end = c(20
 22, 01), frequency = 12)[] 
  []
 
 
-Overfull \hbox (0.85974pt too wide) in paragraph at lines 729--729
+Overfull \hbox (47.20699pt too wide) in paragraph at lines 729--729
+[]\T1/lmtt/m/n/12 tdx <- if(na.cnt > 0){imputeTS::na_kalman(tdx, model = "auto.
+arima", smooth = T)}[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [48]
+Overfull \hbox (65.732pt too wide) in paragraph at lines 729--729
 []\T1/lmtt/m/n/12 tdx.ns <- data.frame(time = c(1:length(tdx)), trend = tdx - t
 dx.dcp$time.series[,1])[] 
  []
 
 
-Overfull \hbox (7.03474pt too wide) in paragraph at lines 729--729
+Overfull \hbox (71.907pt too wide) in paragraph at lines 729--729
 []\T1/lmtt/m/n/12 abline(a = trend.summ$coefficients[1,1], b = trend.summ$coeff
 icients[2,1], col=\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 red\TS1/lmtt/m/n/12 '\T1/lm
 tt/m/n/12 )[] 
  []
 
 
-Overfull \hbox (13.20975pt too wide) in paragraph at lines 729--729
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [49]
+Overfull \hbox (78.082pt too wide) in paragraph at lines 729--729
 []\T1/lmtt/m/n/12 mutate(month = month(as.Date(rownames(tsv))), year = year(as.
 Date(rownames(tsv)))) %>%[] 
  []
 
 
-Overfull \hbox (7.02774pt too wide) in paragraph at lines 729--729
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [50]
+Overfull \hbox (71.9pt too wide) in paragraph at lines 729--729
 []\T1/lmtt/m/n/12 tdx <- ts(data = tdx$mean_evi, start = c(2001, 1), end = c(20
 19, 11), frequency = 12)[] 
  []
 
 
-Overfull \hbox (0.85974pt too wide) in paragraph at lines 729--729
+Overfull \hbox (47.20699pt too wide) in paragraph at lines 729--729
+[]\T1/lmtt/m/n/12 tdx <- if(na.cnt > 0){imputeTS::na_kalman(tdx, model = "auto.
+arima", smooth = T)}[] 
+ []
+
+
+Overfull \hbox (65.732pt too wide) in paragraph at lines 729--729
 []\T1/lmtt/m/n/12 tdx.ns <- data.frame(time = c(1:length(tdx)), trend = tdx - t
 dx.dcp$time.series[,1])[] 
  []
 
-[43]
-Underfull \vbox (badness 10000) detected at line 730
- []
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Underfull \vbox (badness 10000) detected at line 730
- []
-
-[44]
-Underfull \vbox (badness 10000) detected at line 730
- []
-
-
-Underfull \vbox (badness 10000) detected at line 730
- []
-
-[45]
-Underfull \vbox (badness 10000) detected at line 730
- []
-
-
-Underfull \vbox (badness 10000) detected at line 730
- []
-
-[46]
-Underfull \vbox (badness 10000) detected at line 730
- []
-
-
-Underfull \vbox (badness 10000) detected at line 730
- []
-
-[47]
-Underfull \vbox (badness 10000) detected at line 730
- []
-
-
-Underfull \vbox (badness 10000) detected at line 730
- []
-
-[48]
-Underfull \vbox (badness 10000) detected at line 730
- []
-
-
-Underfull \vbox (badness 10000) detected at line 730
- []
-
-[49]
-Underfull \vbox (badness 10000) detected at line 730
- []
-
-
-Underfull \vbox (badness 10000) detected at line 730
- []
-
-[50]
-Underfull \vbox (badness 10000) detected at line 730
- []
-
-
-Underfull \vbox (badness 10000) detected at line 730
- []
-
-[51]
-Underfull \vbox (badness 1275) detected at line 770
- []
-
-
-Underfull \vbox (badness 2698) has occurred while \output is active []
+ [51]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [52]
-Underfull \vbox (badness 1028) detected at line 820
+Overfull \hbox (28.68198pt too wide) in paragraph at lines 729--729
+[] \T1/lmtt/m/n/12 format(round(hex_trend$trend, 4), scientific = FALSE),"<br><
+b> P-Value:</b>",[] 
  []
 
 
-Underfull \vbox (badness 1755) has occurred while \output is active []
+Overfull \hbox (41.03198pt too wide) in paragraph at lines 729--729
+[] \T1/lmtt/m/n/12 "<br><b>Std Err: </b>",round(hex_trend$std.er, 4),"<br><b>Tr
+end Strength:</b>",[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [53]
-Overfull \vbox (2.35017pt too high) detected at line 844
+Underfull \vbox (badness 1748) has occurred while \output is active []
+
+ [54]
+Overfull \hbox (53.38199pt too wide) in paragraph at lines 754--754
+[]\T1/lmtt/m/n/12 colnames(DATA)<- c("Date","EVI","Precipitation","Evapiration"
+,"TempMin","TempMax",[] 
  []
 
-[54]
-Underfull \vbox (badness 5245) detected at line 886
+
+Overfull \hbox (59.55699pt too wide) in paragraph at lines 769--769
+[]\T1/lmtt/m/n/12 non_collinear_vars(DATA,TempMin,TempMax,Evapiration,Precipita
+tion,Humidity,Drought,[] 
+ []
+
+
+Overfull \hbox (22.50697pt too wide) in paragraph at lines 769--769
+[]\T1/lmtt/m/n/12 dplyr::select(Date,Drought, TempMin, Precipitation, TempMax, 
+Evapiration,EVI)
+ []
+
+[55]
+Overfull \hbox (28.68198pt too wide) in paragraph at lines 819--819
+[]\T1/lmtt/m/n/12 Precipitation = ur.df(DATA$Precipitation, type=\TS1/lmtt/m/n/
+12 '\T1/lmtt/m/n/12 none\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 , selectlags = c("AIC
+")),[] 
+ []
+
+
+Overfull \hbox (3.98196pt too wide) in paragraph at lines 819--819
+[]\T1/lmtt/m/n/12 Evapiration = ur.df(DATA$Evapiration, type=\TS1/lmtt/m/n/12 '
+\T1/lmtt/m/n/12 none\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 , selectlags = c("AIC")),
+[] 
+ []
+
+
+Overfull \hbox (34.85698pt too wide) in paragraph at lines 819--819
+[]\T1/lmtt/m/n/12 Precipitation = ur.df(DATA$Precipitation, type=\TS1/lmtt/m/n/
+12 '\T1/lmtt/m/n/12 drift\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 , selectlags = c("AI
+C")),[] 
+ []
+
+
+Overfull \hbox (10.15697pt too wide) in paragraph at lines 819--819
+[]\T1/lmtt/m/n/12 Evapiration = ur.df(DATA$Evapiration, type=\TS1/lmtt/m/n/12 '
+\T1/lmtt/m/n/12 drift\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 , selectlags = c("AIC"))
+,[] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [55]
-Underfull \vbox (badness 1668) has occurred while \output is active []
 
  [56]
+Overfull \hbox (34.85698pt too wide) in paragraph at lines 819--819
+[]\T1/lmtt/m/n/12 Precipitation = ur.df(DATA$Precipitation, type=\TS1/lmtt/m/n/
+12 '\T1/lmtt/m/n/12 trend\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 , selectlags = c("AI
+C")),[] 
+ []
+
+
+Overfull \hbox (10.15697pt too wide) in paragraph at lines 819--819
+[]\T1/lmtt/m/n/12 Evapiration = ur.df(DATA$Evapiration, type=\TS1/lmtt/m/n/12 '
+\T1/lmtt/m/n/12 trend\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 , selectlags = c("AIC"))
+,[] 
+ []
+
+[57]
+Overfull \hbox (16.33197pt too wide) in paragraph at lines 885--885
+[]\T1/lmtt/m/n/12 Precipitation = ur.df(df$Precipitation, type=\TS1/lmtt/m/n/12
+ '\T1/lmtt/m/n/12 none\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 , selectlags = c("AIC")
+),[] 
+ []
+
+
+Overfull \hbox (22.50697pt too wide) in paragraph at lines 885--885
+[]\T1/lmtt/m/n/12 Precipitation = ur.df(df$Precipitation, type=\TS1/lmtt/m/n/12
+ '\T1/lmtt/m/n/12 drift\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 , selectlags = c("AIC"
+)),[] 
+ []
+
+
+Overfull \hbox (22.50697pt too wide) in paragraph at lines 885--885
+[]\T1/lmtt/m/n/12 Precipitation = ur.df(df$Precipitation, type=\TS1/lmtt/m/n/12
+ '\T1/lmtt/m/n/12 trend\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 , selectlags = c("AIC"
+)),[] 
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [57]
-Overfull \hbox (93.48479pt too wide) in paragraph at lines 957--957
-[]\T1/lmtt/m/n/12 Precipitation <- ts(data = df$Precipitation, start = c(2000, 
-1), end = c(2022, 01), frequency = 12)[] 
+ [58]
+Overfull \hbox (28.68198pt too wide) in paragraph at lines 937--937
+[]\T1/lmtt/m/n/12 cbind(t(df.adf.trend$Precipitation@teststat), df.adf.trend$Pr
+ecipitation@cval)[] 
  []
 
 
-Overfull \hbox (68.78477pt too wide) in paragraph at lines 957--957
-[]\T1/lmtt/m/n/12 Evapiration <- ts(data = df$Evapiration, start = c(2000, 1), 
-end = c(2022, 01), frequency = 12)[] 
- []
-
-
-Overfull \hbox (19.38475pt too wide) in paragraph at lines 957--957
-[]\T1/lmtt/m/n/12 TempMin <- ts(data = df$TempMin, start = c(2000, 1), end = c(
-2022, 01), frequency = 12)[] 
- []
-
-
-Overfull \hbox (19.38475pt too wide) in paragraph at lines 957--957
-[]\T1/lmtt/m/n/12 TempMax <- ts(data = df$TempMax, start = c(2000, 1), end = c(
-2022, 01), frequency = 12)[] 
- []
-
-
-Overfull \hbox (19.38475pt too wide) in paragraph at lines 957--957
-[]\T1/lmtt/m/n/12 Drought <- ts(data = df$Drought, start = c(2000, 1), end = c(
-2022, 01), frequency = 12)[] 
- []
-
-
-Overfull \hbox (7.03474pt too wide) in paragraph at lines 971--971
-[]\T1/lmtt/m/n/12 Precipitation <- ts(data = DATA$Precipitation, start = c(2000
-, 1), end = c(2022, 01),[] 
- []
-
-
-Overfull \hbox (31.73476pt too wide) in paragraph at lines 971--971
-[]\T1/lmtt/m/n/12 TempMin <- ts(data = DATA$TempMin, start = c(2000, 1), end = 
-c(2022, 01), frequency = 12)[] 
- []
-
-
-Overfull \hbox (31.73476pt too wide) in paragraph at lines 971--971
-[]\T1/lmtt/m/n/12 TempMax <- ts(data = DATA$TempMax, start = c(2000, 1), end = 
-c(2022, 01), frequency = 12)[] 
- []
-
-
-Overfull \hbox (31.73476pt too wide) in paragraph at lines 971--971
-[]\T1/lmtt/m/n/12 Drought <- ts(data = DATA$Drought, start = c(2000, 1), end = 
-c(2022, 01), frequency = 12)[] 
- []
-
-
-Overfull \vbox (2.18367pt too high) detected at line 983
- []
-
-[58]
-Overfull \hbox (0.85974pt too wide) in paragraph at lines 997--997
-[]\T1/lmtt/m/n/12 LagSelection <-VARselect(TimeSeries,type = "const", lag.max =
- 12) #highest lag order[] 
- []
-
-
-Overfull \hbox (0.85974pt too wide) in paragraph at lines 997--997
-[]\T1/lmtt/m/n/12 kable(t(LagSelection1$criteria))%>%kable_styling(latex_option
-s = c("repeat_header"))[] 
- []
-
-
-Overfull \hbox (19.38475pt too wide) in paragraph at lines 1007--1007
-[]\T1/lmtt/m/n/12 Model <- VAR(TimeSeries,p= 8,lag.max = 12,season = NULL,  exo
-gen = NULL,type = "const")[] 
- []
-
-
-Overfull \hbox (37.90976pt too wide) in paragraph at lines 1015--1015
-[]\T1/lmtt/m/n/12 Model1 <- VAR(TimeSeries1,p= 10,lag.max = 12,season = NULL,  
-exogen = NULL,type = "const")[] 
+Overfull \hbox (3.98196pt too wide) in paragraph at lines 937--937
+[]\T1/lmtt/m/n/12 cbind(t(df.adf.trend$Evapiration@teststat), df.adf.trend$Evap
+iration@cval)[] 
  []
 
 [59]
-Overfull \hbox (37.90976pt too wide) in paragraph at lines 1042--1042
-[]\T1/lmtt/m/n/12 Model2 <- VAR(TimeSeries1,p= 10,lag.max = 12,season = NULL,  
-exogen = NULL,type = "const")[] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 1118
+Overfull \hbox (34.85698pt too wide) in paragraph at lines 957--957
+[]\T1/lmtt/m/n/12 EVI <- ts(data = df$EVI, start = c(2000, 1), end = c(2022, 01
+), frequency = 12)[] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [60]
-Underfull \vbox (badness 10000) detected at line 1118
+Overfull \hbox (158.35704pt too wide) in paragraph at lines 957--957
+[]\T1/lmtt/m/n/12 Precipitation <- ts(data = df$Precipitation, start = c(2000, 
+1), end = c(2022, 01), frequency = 12)[] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1118
+Overfull \hbox (133.65703pt too wide) in paragraph at lines 957--957
+[]\T1/lmtt/m/n/12 Evapiration <- ts(data = df$Evapiration, start = c(2000, 1), 
+end = c(2022, 01), frequency = 12)[] 
  []
 
-[61] [62] [63] (index.aux (Chapters/Chapter1.aux) (Chapters/Chapter2.aux)
+
+Overfull \hbox (84.257pt too wide) in paragraph at lines 957--957
+[]\T1/lmtt/m/n/12 TempMin <- ts(data = df$TempMin, start = c(2000, 1), end = c(
+2022, 01), frequency = 12)[] 
+ []
+
+
+Overfull \hbox (84.257pt too wide) in paragraph at lines 957--957
+[]\T1/lmtt/m/n/12 TempMax <- ts(data = df$TempMax, start = c(2000, 1), end = c(
+2022, 01), frequency = 12)[] 
+ []
+
+
+Overfull \hbox (84.257pt too wide) in paragraph at lines 957--957
+[]\T1/lmtt/m/n/12 Drought <- ts(data = df$Drought, start = c(2000, 1), end = c(
+2022, 01), frequency = 12)[] 
+ []
+
+
+Overfull \hbox (10.15697pt too wide) in paragraph at lines 957--957
+[]\T1/lmtt/m/n/12 TimeSeries1 <- cbind(EVI,Precipitation,Evapiration,TempMin,Te
+mpMax,Drought)[] 
+ []
+
+
+Overfull \hbox (47.20699pt too wide) in paragraph at lines 971--971
+[]\T1/lmtt/m/n/12 EVI <- ts(data = DATA$EVI, start = c(2000, 1), end = c(2022, 
+01), frequency = 12)[] 
+ []
+
+
+Overfull \hbox (71.907pt too wide) in paragraph at lines 971--971
+[]\T1/lmtt/m/n/12 Precipitation <- ts(data = DATA$Precipitation, start = c(2000
+, 1), end = c(2022, 01),[] 
+ []
+
+
+Overfull \hbox (47.20699pt too wide) in paragraph at lines 971--971
+[]\T1/lmtt/m/n/12 Evapiration <- ts(data = DATA$Evapiration, start = c(2000, 1)
+, end = c(2022, 01),[] 
+ []
+
+
+Overfull \hbox (96.60701pt too wide) in paragraph at lines 971--971
+[]\T1/lmtt/m/n/12 TempMin <- ts(data = DATA$TempMin, start = c(2000, 1), end = 
+c(2022, 01), frequency = 12)[] 
+ []
+
+
+Overfull \hbox (96.60701pt too wide) in paragraph at lines 971--971
+[]\T1/lmtt/m/n/12 TempMax <- ts(data = DATA$TempMax, start = c(2000, 1), end = 
+c(2022, 01), frequency = 12)[] 
+ []
+
+
+Overfull \hbox (96.60701pt too wide) in paragraph at lines 971--971
+[]\T1/lmtt/m/n/12 Drought <- ts(data = DATA$Drought, start = c(2000, 1), end = 
+c(2022, 01), frequency = 12)[] 
+ []
+
+
+Overfull \hbox (3.98196pt too wide) in paragraph at lines 971--971
+[]\T1/lmtt/m/n/12 TimeSeries <- cbind(EVI,Precipitation,Evapiration,TempMin,Tem
+pMax,Drought)[] 
+ []
+
+[61]
+Overfull \hbox (65.732pt too wide) in paragraph at lines 997--997
+[]\T1/lmtt/m/n/12 LagSelection <-VARselect(TimeSeries,type = "const", lag.max =
+ 12) #highest lag order[] 
+ []
+
+
+Overfull \hbox (59.55699pt too wide) in paragraph at lines 997--997
+[]\T1/lmtt/m/n/12 kable(t(LagSelection$criteria))%>%kable_styling(latex_options
+ = c("repeat_header"))[] 
+ []
+
+
+Overfull \hbox (65.732pt too wide) in paragraph at lines 997--997
+[]\T1/lmtt/m/n/12 kable(t(LagSelection1$criteria))%>%kable_styling(latex_option
+s = c("repeat_header"))[] 
+ []
+
+
+Overfull \hbox (84.257pt too wide) in paragraph at lines 1007--1007
+[]\T1/lmtt/m/n/12 Model <- VAR(TimeSeries,p= 8,lag.max = 12,season = NULL,  exo
+gen = NULL,type = "const")[] 
+ []
+
+
+Overfull \hbox (102.78201pt too wide) in paragraph at lines 1015--1015
+[]\T1/lmtt/m/n/12 Model1 <- VAR(TimeSeries1,p= 10,lag.max = 12,season = NULL,  
+exogen = NULL,type = "const")[] 
+ []
+
+[62]
+Overfull \hbox (102.78201pt too wide) in paragraph at lines 1042--1042
+[]\T1/lmtt/m/n/12 Model2 <- VAR(TimeSeries1,p= 10,lag.max = 12,season = NULL,  
+exogen = NULL,type = "const")[] 
+ []
+
+
+Overfull \hbox (34.85698pt too wide) in paragraph at lines 1117--1117
+[]\T1/lmtt/m/n/12 plot.varfevd  <-function (x, plot.type = c("multiple", "singl
+e"), names = NULL,[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [63]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [64]
+[65] [66] (index.aux (Chapters/Chapter1.aux) (Chapters/Chapter2.aux)
 (Chapters/Chapter3.aux) (Chapters/Chapter4.aux) (Chapters/Chapter5.aux))
 
 LaTeX Warning: There were undefined references.
@@ -1954,11 +2042,11 @@ Package logreq Info: Writing requests to 'index.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25577 strings out of 478338
- 455845 string characters out of 2835284
- 1314148 words of memory out of 3000000
+ 25580 strings out of 478338
+ 455862 string characters out of 2835284
+ 1303096 words of memory out of 3000000
  43206 multiletter control sequences out of 15000+600000
- 545923 words of font info for 175 fonts, out of 8000000 for 9000
+ 545945 words of font info for 175 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,16n,81p,1388b,5044s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/Benjamin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.en
@@ -1984,9 +2072,9 @@ l/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/Benjamin/AppData/Lo
 cal/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/Benjamin/AppData/
 Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Users/Benjamin/AppDa
 ta/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb>
-Output written on index.pdf (78 pages, 2894868 bytes).
+Output written on index.pdf (81 pages, 2900485 bytes).
 PDF statistics:
- 853 PDF objects out of 1000 (max. 8388607)
- 192 named destinations out of 1000 (max. 500000)
+ 866 PDF objects out of 1000 (max. 8388607)
+ 195 named destinations out of 1000 (max. 500000)
  35260 words of extra memory for PDF output out of 35830 (max. 10000000)
 

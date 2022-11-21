@@ -13,10 +13,10 @@
 \usepackage{makeidx}
 \usepackage{graphicx}
 \usepackage{booktabs}
-\usepackage{lscape}
+\usepackage{lscape}%margin=2.54cm
 \usepackage{tabularx}%left=3.75cm, right=2.5cm, top=2.5cm, bottom=2.5cm
 \usepackage{times}%left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm
-\usepackage[left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm]{geometry}
+\usepackage[margin=2.54cm]{geometry}
 \usepackage[section]{placeins}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{dfn}{Definition}[section]
@@ -324,7 +324,7 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
 	\addcontentsline{toc}{chapter}{APPENDICES}
 	\chapter{Appendix Chapter 1}
 	\section{Data Extraction Using R code From Google Earth Engine}
-			\begin{shaded}
+			%\begin{shaded}
 				\begin{verbatim}
 				library(tidyverse)  # for data wrangling and visualization
 				library('sf')
@@ -338,10 +338,10 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
 				ee_Initialize("kalong",drive = TRUE) # initialize GEE,
 				#this will have you log in to Google Drive
 				\end{verbatim}
-			\end{shaded}
+			%\end{shaded}
 				
 			Load shape file
-			\begin{shaded}
+			%\begin{shaded}
 				\begin{verbatim}
 					{
 						aoi <- read_sf('Ghana shp file/ROI/new_roi.shp')
@@ -353,11 +353,11 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
 					
 					Date <- Sys.Date()
 				\end{verbatim}
-			\end{shaded}
+			%\end{shaded}
 			Map each image from 2000 to extract the monthly Climatic Data from the
 			 Terraclimate dataset and rename the bands of the image
 			
-			\begin{shaded}
+			%\begin{shaded}
 				\begin{verbatim}
 					{
 						Precipitation  <- ee$ImageCollection("UCSB-CHG/CHIRPS/DAILY") %>%
@@ -392,12 +392,12 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
 						ee$ImageCollection$map(function(x) x$select("pdsi")) %>% 
 						ee$ImageCollection$toBands()}
 				\end{verbatim}
-			\end{shaded}			
+			%\end{shaded}			
 			Extract monthly precipitation values from the Terraclimate ImageCollection
 			 through $ ee_extract $. $ ee_extract $ works similar to $ raster::extract $, 
 			 you just need to define: the ImageCollection object (x), the geometry (y),
 			 and a function to summarize the values (fun).	  
-        \begin{shaded}
+        %\begin{shaded}
         	\begin{verbatim}
         		{
         			Precipitation       <- ee_extract(x = Precipitation , y = aoi.ee,
@@ -426,9 +426,9 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
         		}
         		
         	\end{verbatim}
-        \end{shaded}
+        %\end{shaded}
     Save the Data to an excell file 
-		\begin{shaded}
+		%\begin{shaded}
 			\begin{verbatim}
 				{
 					write.csv(Precipitation,"Data/Precipitation.csv")
@@ -439,9 +439,9 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
 					write.csv(Drought,"Data/Drought.csv")
 				}
 			\end{verbatim}
-		\end{shaded}
+		%\end{shaded}
 		Tidy the Data
-		\begin{shaded}
+		%\begin{shaded}
 			\begin{verbatim}
 				{
 					Precipitation <- Precipitation%>%
@@ -464,9 +464,9 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
 					separate(Date, into = c('year', 'month'), sep = -2, convert = TRUE)%>%
 					select(year,month,MaxTemperature)}
 			\end{verbatim}
-		\end{shaded}
+		%\end{shaded}
 	\chapter{Appendix  Chapter 2}
-	\begin{shaded}
+	%\begin{shaded}
 		\begin{verbatim}
 			getQABits <- function(image, qa) {
 				# Convert binary (character) to decimal (little endian)
@@ -727,11 +727,11 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
 			map
 			
 		\end{verbatim}
-	\end{shaded}
+	%\end{shaded}
 	\section{VAR}
 	
 			Import Data
-			\begin{shaded}
+			%\begin{shaded}
 				\begin{verbatim}
 			DATA <- read.csv("Data/Data.csv")%>%
 			dplyr::select(date,mean_evi,Precipitation,Evapotranspiration,
@@ -743,18 +743,18 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
 			skimr::skim_tee(DATA)
 			summary(DATA)
 				\end{verbatim}
-		\end{shaded}
+		%\end{shaded}
 	
-				\begin{shaded}
+				%\begin{shaded}
 				\begin{verbatim}
 			# Correlation			
 			colnames(DATA)<- c("Date","EVI","Precipitation","Evapiration","TempMin","TempMax",
 			                  "Humidity","Drought")
 			plot(corr_coef(DATA))
 				\end{verbatim}
-		\end{shaded}
+		%\end{shaded}
 	
-				\begin{shaded}
+				%\begin{shaded}
 				\begin{verbatim}
 			# Select a set of predictors with minimal multicollinearity			
 			non_collinear_vars(DATA,TempMin,TempMax,Evapiration,Precipitation,Humidity,Drought,
@@ -767,9 +767,9 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
 			head(DATA)
 			
 				\end{verbatim}
-	     	\end{shaded}
+	     	%\end{shaded}
 	Input Missing Values 
-				\begin{shaded}
+				%\begin{shaded}
 				\begin{verbatim}
 			DATA$EVI <- if(is.na(DATA$EVI) > 0){imputeTS::na_kalman(DATA$EVI, 
 				model = "auto.arima",smooth = T)} else {
@@ -778,10 +778,10 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
 			head(DATA)
 		 	
 				\end{verbatim}
-		       \end{shaded}
+		       %\end{shaded}
 	
 			Check if Impute worked
-				\begin{shaded}
+				%\begin{shaded}
 				\begin{verbatim}
 			vis_dat(DATA)
 			df<- DATA%>%
@@ -817,9 +817,9 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
 			Drought = ur.df(DATA$Drought, type='trend', selectlags = c("AIC"))
 			)
 				\end{verbatim}
-		\end{shaded}
+		%\end{shaded}
 	
-				\begin{shaded}
+				%\begin{shaded}
 				\begin{verbatim}			
 			summary(adf.none$EVI)
 			summary(adf.none$Precipitation)
@@ -829,10 +829,10 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
 			summary(adf.none$Drought)
 			
 				\end{verbatim}
-		\end{shaded}
+		%\end{shaded}
 	
 			
-				\begin{shaded}
+				%\begin{shaded}
 				\begin{verbatim}
 			summary(adf.trend$EVI)
 			summary(adf.trend$Precipitation)
@@ -841,10 +841,10 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
 			summary(adf.trend$TempMax)
 			summary(adf.trend$Drought)			
 				\end{verbatim}
-		\end{shaded}
+		%\end{shaded}
 
 			
-				\begin{shaded}
+				%\begin{shaded}
 				\begin{verbatim}
 			summary(adf.drift$EVI)
 			summary(adf.drift$Precipitation)
@@ -853,9 +853,9 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
 			summary(adf.drift$TempMin)
 			summary(adf.drift$Drought)
 				\end{verbatim}
-		\end{shaded}			
+		%\end{shaded}			
 			1st differenced data
-				\begin{shaded}
+				%\begin{shaded}
 				\begin{verbatim}
 			df <- as.data.frame(diff(as.matrix(DATA[,-1]), lag = 1))
 			df.adf.none  <- list(
@@ -883,11 +883,11 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
 			Drought = ur.df(df$Drought, type='trend', selectlags = c("AIC"))
 			)
 				\end{verbatim}
-		\end{shaded}
+		%\end{shaded}
 	
 			The ADF result for our variable from the above R code is generated as follows
 			
-				\begin{shaded}
+				%\begin{shaded}
 				\begin{verbatim}
 			summary(adf.trend$EVI)
 			summary(df.adf.trend$Precipitation)
@@ -897,10 +897,10 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
 			summary(df.adf.trend$Drought)
 			
 				\end{verbatim}
-		\end{shaded}
+		%\end{shaded}
 	
 			Interpretation of ADF test follow the general-to-specific approach. As such, three regression models are applied sequentially.
-				\begin{shaded}
+				%\begin{shaded}
 				\begin{verbatim}
 			#========================================================
 			# General-to-Specific Investigation
@@ -935,7 +935,7 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
 			cbind(t(df.adf.none$EVI@teststat), df.adf.none$EVI@cval)
 			
 				\end{verbatim}
-		\end{shaded}
+		%\end{shaded}
 	
 			Finally, we can conclude that logarithm of real income contains a unit root and 
 			can be stationay time series by differencing the first order. Now that this transformed
@@ -944,7 +944,7 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
 			In this process, the alphanumeric names of test statistics are a little confusing but 
 			when we refer the above three specifications of regression equations, the meanings of 
 			names of test statistics are clear.
-				\begin{shaded}
+				%\begin{shaded}
 				\begin{verbatim}
 			EVI <- ts(data = df$EVI, start = c(2000, 1), end = c(2022, 01), frequency = 12)
 			Precipitation <- ts(data = df$Precipitation, start = c(2000, 1), end = c(2022, 01), frequency = 12)
@@ -955,9 +955,9 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
 			TimeSeries1 <- cbind(EVI,Precipitation,Evapiration,TempMin,TempMax,Drought)
 			plot(TimeSeries1)
 				\end{verbatim}
-		\end{shaded}
+		%\end{shaded}
 	Time Series using  VAR
-				\begin{shaded}
+				%\begin{shaded}
 				\begin{verbatim}
 			EVI <- ts(data = DATA$EVI, start = c(2000, 1), end = c(2022, 01), frequency = 12)
 			Precipitation <- ts(data = DATA$Precipitation, start = c(2000, 1), end = c(2022, 01),
@@ -969,9 +969,9 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
 			Drought <- ts(data = DATA$Drought, start = c(2000, 1), end = c(2022, 01), frequency = 12)
 			TimeSeries <- cbind(EVI,Precipitation,Evapiration,TempMin,TempMax,Drought)
 				\end{verbatim}
-		\end{shaded}
+		%\end{shaded}
 	
-				\begin{shaded}
+				%\begin{shaded}
 				\begin{verbatim}
 			library(TSstudio)
 			ts_plot(EVI)
@@ -980,10 +980,10 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
 			plot(TimeSeries)
 			
 				\end{verbatim}
-		\end{shaded}
+		%\end{shaded}
 	 Lag Selection \\
 	Type of deterministic Regressors to include. We use none because the time series was made stationary using differencing above.
-				\begin{shaded}
+				%\begin{shaded}
 				\begin{verbatim}
 			LagSelection <-VARselect(TimeSeries,type = "const", lag.max = 12) #highest lag order
 			LagSelection$selection
@@ -995,54 +995,54 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
 			LagSelection1$selection
 			kable(t(LagSelection1$criteria))%>%kable_styling(latex_options = c("repeat_header")) 
 				\end{verbatim}
-		\end{shaded}
+		%\end{shaded}
 	
 			 Estimating Models
 			 
-				\begin{shaded}
+				%\begin{shaded}
 				\begin{verbatim}
 			# Creating a VAR model with vars
 			Model <- VAR(TimeSeries,p= 8,lag.max = 12,season = NULL,  exogen = NULL,type = "const")
 			summary(Model)
 				\end{verbatim}
-		\end{shaded}
+		%\end{shaded}
 	
-				\begin{shaded}
+				%\begin{shaded}
 				\begin{verbatim}
 			# Creating a VAR model with vars
 			Model1 <- VAR(TimeSeries1,p= 10,lag.max = 12,season = NULL,  exogen = NULL,type = "const")
 			summary(Model1)
 				\end{verbatim}
-		\end{shaded}
+		%\end{shaded}
 	
-				\begin{shaded}
+				%\begin{shaded}
 				\begin{verbatim}
 			predict(Model1, n.ahead = 12, ci = 0.95)
 				\end{verbatim}
-		\end{shaded}
+		%\end{shaded}
 			forecast is a generic function for forecasting from time series or time series models. The function invokes particular methods which depend on the class of the first argument.
-			\begin{shaded}
+			%\begin{shaded}
 				\begin{verbatim}
 			forecast(Model1)
 			plot(forecast(Model1))
 				\end{verbatim}
-		     \end{shaded}
+		     %\end{shaded}
 	
-				\begin{shaded}
+				%\begin{shaded}
 				\begin{verbatim}
 			accuracy(forecast(Model1),d=10, D= 1)
 				\end{verbatim}
-		      \end{shaded}
+		      %\end{shaded}
 	
-				\begin{shaded}
+				%\begin{shaded}
 				\begin{verbatim}
 			library(vars)
 			colnames(TimeSeries1) <-c("EVI","Prep","Evap","TMin","TMax","Drght")
 			Model2 <- VAR(TimeSeries1,p= 10,lag.max = 12,season = NULL,  exogen = NULL,type = "const")
 				\end{verbatim}
-		\end{shaded}
+		%\end{shaded}
 		
-				\begin{shaded}
+				%\begin{shaded}
 				\begin{verbatim}
 			plot.varfevd  <-function (x, plot.type = c("multiple", "single"), names = NULL,
 			main = NULL, col = NULL, ylim = NULL, ylab = NULL, xlab = NULL,
@@ -1115,9 +1115,9 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
 				#    on.exit(par(op))
 			}
 				\end{verbatim}
-		\end{shaded}
+		%\end{shaded}
 	
-			\begin{shaded}
+			%\begin{shaded}
 				\begin{verbatim}
 			
 			win.graph(width=13,height=8)
@@ -1125,9 +1125,9 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
 			plot.varfevd(fevd(Model2, n.ahead = 10 ),plot.type = "multiple", col=1:6)
 			
 				\end{verbatim}
-		\end{shaded}
+		%\end{shaded}
 			 Impulse Responds Analysis
-				\begin{shaded}
+				%\begin{shaded}
 				\begin{verbatim}
 			plot(irf(Model2,impulse = "EVI",response = "EVI"))
 			plot(irf(Model2,impulse = "EVI",response = "Prep"))
@@ -1136,8 +1136,8 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
 			plot(irf(Model2,impulse = "EVI",response = "TMax"))
 			plot(irf(Model2,impulse = "EVI",response = "Drght"))
 			\end{verbatim}
-	    \end{shaded}	
-		\begin{shaded}
+	    %\end{shaded}	
+		%\begin{shaded}
 				\begin{verbatim}
 			grangertest(EVI~Precipitation, order = 12, data = TimeSeries1)
 			grangertest(EVI~TempMin, order = 12, data = TimeSeries1)
@@ -1145,13 +1145,13 @@ We also dedicate this work to the All-Powerful God. We are grateful for your dir
 			grangertest(EVI~Evapiration, order = 12, data = TimeSeries1)
 			grangertest(EVI~Drought, order = 12, data = TimeSeries1)
 				\end{verbatim}
-		\end{shaded}
+		%\end{shaded}
 	
-		\begin{shaded}
+		%\begin{shaded}
 				\begin{verbatim}
 			plot(forecast(Model1))
 				\end{verbatim}
-		\end{shaded}
+		%\end{shaded}
 			
 	
 \end{document}

@@ -18,7 +18,7 @@ Find in the tables ~\ref{label:Variable}  the definition of variables and parame
 		\noalign{\smallskip}\hline\noalign{\smallskip}
 	     EVI          & Vegetation Index\\  
 		Precipitation & Atmospheric water vapor  \\ 
-		Evaporation   & Actual evapotranspiration, derived using a one-dimensional soil water balance model\\ 
+		Evaporation   & Actual evapotranspiration\\ 
 		TempMin       & Minimum Temperature \\ 
 		TempMax       & Maximum Temperature \\
 		Drought       &Palmer Drought Severity Index\\
@@ -36,10 +36,12 @@ To help machine learning classifiers work with time series data, we provide seve
 	\label{DataFrame}
 	\caption{Data Collected from 2000-2022 on Google Earth Engine }
 	\centering
+	\small
+	\addtolength{\tabcolsep}{-2pt}
 	\begin{tabularx}{\textwidth}{@{}cllllll@{}}
 		\toprule
 		& \multicolumn{1}{c}{Vegetation Indices}   & \multicolumn{3}{c}{Climate Change}  \\ \midrule
-		\multicolumn{1}{c}{Date} & \multicolumn{1}{c}{EVI} & \multicolumn{1}{c}{Precipitation} & \multicolumn{1}{c}{Evaporation} & \multicolumn{1}{c}{TempMin} & \multicolumn{1}{c}{TempMax} &\multicolumn{1}{c}{Drought}\\ \midrule
+		\multicolumn{1}{l}{Date} & \multicolumn{1}{l}{EVI} & \multicolumn{1}{l}{Precipitation} & \multicolumn{1}{l}{Evaporation} & \multicolumn{1}{l}{TempMin} & \multicolumn{1}{l}{TempMax} &\multicolumn{1}{l}{Drought}\\ \midrule
 		
 		
 		2000-01-01&	-0.38280560&	1.0344619&	2.936857e-05&	217.1814&	315.8379&	-86.12496\\
@@ -55,6 +57,7 @@ To help machine learning classifiers work with time series data, we provide seve
 	\label{table:Summary Statistics}
 	\caption{Summary statistics for Climate Date and Vegetation Loss In Ghana}
 	\centering
+	
 	\begin{tabularx}{\textwidth}{|l*{3}{X|}*{3}{X|}}
 		\toprule
 		                   & Min.      & 1st Qu. & median   & Mean     & 3rd Qu   & Max.  \\ \midrule
@@ -113,7 +116,8 @@ Before building our models we first checked  if the series is stationary.We used
 	\label{table:(ADF) unit root test}
 	\caption{Augmented Dickey Fuller (ADF) unit root test }
 	\centering
-	\addtolength{\tabcolsep}{4pt}
+	\small
+	\addtolength{\tabcolsep}{2pt}
 	\begin{tabularx}{\textwidth}{@{}cllllll@{}}
 		\toprule
 		& \multicolumn{3}{c}{EVI}   & \multicolumn{3}{c}{Precipitation}  \\ \midrule
@@ -177,7 +181,7 @@ Before building our models we first checked  if the series is stationary.We used
 	\label{table:Prediction}
 	\caption{EVI forecast for the next 12 month.}
 	\centering
-	\addtolength{\tabcolsep}{25pt}
+	\addtolength{\tabcolsep}{20pt}
 	\begin{tabularx}{\textwidth}{@{}lllll@{}}
 		\toprule
    Month       & Forecast& Lower  &   Upper  &CI\\
@@ -201,8 +205,8 @@ Nov &  0.37177202& -0.53806829& 1.2816123& 0.9098403\\
 	\label{Optimal lag}
 	\caption{Granger causality tests.}
 	\centering
-	
-	\addtolength{\tabcolsep}{3pt}
+	\small
+	\addtolength{\tabcolsep}{-3pt}
 	\begin{tabularx}{\textwidth}{@{}lllll@{}}
 	\hline
 	Cause variable &Null hypothesis& F-value& p-value& Decision\\
