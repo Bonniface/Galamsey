@@ -419,7 +419,7 @@ The Republic of Ghana, a nation in West Africa, will serve as the location for t
 # | tbl-cap: "Collected from Google Earth Engine"
 Data_Frame <- read.csv("Data/Time_Series.csv")
 Time_Serie <- read.csv("Data/Time_Series.csv")%>%
-dplyr::select(year,NDVI,EVI,Precipitation,MinTemperature,MaxTemperature)%>%
+  select(year,NDVI,EVI,Precipitation,MinTemperature,MaxTemperature)%>%
   group_by(year)%>%
   summarise_each(funs(median))
 
@@ -434,11 +434,30 @@ add_header_above(c(" ","Vegetation Indices" = 2,"Climate Change"= 3))%>%
 ```{r,message=FALSE,warning=FALSE}
 #| label: tbl-Summar Statistics
 #| tbl-cap: "Summary statistics for Climate Date and Vegetation Loss In Ghana"
-Describe <-Time_Serie%>%
-  dplyr::select(-year)
-
-kable(summary(Describe ),longtable = T, booktabs = T)%>%
+Describe <- describe(Time_Serie%>%select(-year))
+kable(Describe,longtable = T, booktabs = T)%>%
   kable_styling(latex_options = "scale_down")
+
+```
+
+```{r,warning=FALSE,include=FALSE}
+
+# mpg_list <- split(Time_Serie$EVI,Time_Serie$Precipitation)
+# disp_list <- split(Time_Serie$NDVI,Time_Serie$Precipitation )
+# inline_plot <- data.frame(year = c(2002, 2010, 2018),
+#     mpg_box = "",mpg_hist = "",mpg_line1 = "", mpg_line2 = "",
+#            mpg_points1 = "", mpg_points2 = "", mpg_poly = "")
+# 
+# inline_plot %>%
+# kbl(booktabs = TRUE) %>%
+# kable_paper(full_width = FALSE) %>%
+# column_spec(2, image = spec_boxplot(mpg_list)) %>%
+# column_spec(3, image = spec_hist(mpg_list)) %>%
+# column_spec(4, image = spec_plot(mpg_list, same_lim = TRUE)) %>%
+# column_spec(5, image = spec_plot(mpg_list, same_lim = FALSE)) %>%
+# column_spec(6, image = spec_plot(mpg_list, type = "p")) %>%
+# column_spec(7, image = spec_plot(mpg_list, disp_list, type = "p")) %>%
+# column_spec(8, image = spec_plot(mpg_list, polymin = 5))
 
 ```
 
@@ -449,7 +468,7 @@ pairs(Time_Serie,bg = c("red", "green", "blue"),pch = 21)
 ```
 
 ```{r}
-summary(lm(EVI~tiPrecipitation+MinTemperature+MaxTemperature,Time_Serie))
+summary(lm(EVI~Precipitation+MinTemperature+MaxTemperature,Time_Serie))
 
 ```
 
@@ -583,7 +602,7 @@ plot(evi.hw <- forecast::hw(y = Time_Series, h = 12, damped = T))
 
 VAR
 
-```{r,warning=FALSE,message=FALSE}
+```{r,warning=FALSE}
 require(tidyverse)
 require(tidymodels)
 require(data.table)
@@ -649,8 +668,7 @@ summary(var.a)
 ```
 
 ```{r}
-vars::causality(var.a)
-plot(vars::fevd(var.a))
+
 ```
 
 # CHAPTER FIVE
