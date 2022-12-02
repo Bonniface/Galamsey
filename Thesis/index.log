@@ -1,15 +1,15 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.11.4)  21 NOV 2022 01:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.11.22)  22 NOV 2022 09:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **./index.tex
 (index.tex
-LaTeX2e <2022-06-01> patch level 5
-L3 programming layer <2022-07-04>
+LaTeX2e <2022-11-01>
+L3 programming layer <2022-11-02>
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
-Document Class: book 2021/10/04 v1.4n Standard LaTeX document class
+Document Class: book 2022/07/02 v1.4n Standard LaTeX document class
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/base\bk12.clo
-File: bk12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+File: bk12.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
 \c@chapter=\count186
@@ -22,7 +22,7 @@ File: bk12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 \c@table=\count193
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
-\bibindent=\dimen138
+\bibindent=\dimen140
 )
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
@@ -33,9 +33,9 @@ Package: inputenc 2021/02/14 v1.3d Input encoding file
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
-Package: babel 2022/06/26 3.77 The Babel package
+Package: babel 2022/10/23 3.82 The Babel package
 \babel@savecnt=\count194
-\U@D=\dimen139
+\U@D=\dimen141
 \l@unhyphenated=\language79
 
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def
@@ -76,11 +76,11 @@ Package: amstext 2021/08/26 v2.01 AMS text
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks18
-\ex@=\dimen140
+\ex@=\dimen142
 )) (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.st
 y
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen141
+\pmbraise@=\dimen143
 ) (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
@@ -101,7 +101,7 @@ LaTeX Info: Redefining \big on input line 722.
 LaTeX Info: Redefining \Big on input line 723.
 LaTeX Info: Redefining \bigg on input line 724.
 LaTeX Info: Redefining \Bigg on input line 725.
-\big@size=\dimen142
+\big@size=\dimen144
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \macc@depth=\count267
@@ -119,12 +119,12 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \column@=\count272
 \maxfields@=\count273
 \andhelp@=\toks20
-\eqnshift@=\dimen143
-\alignsep@=\dimen144
-\tagshift@=\dimen145
-\tagwidth@=\dimen146
-\totwidth@=\dimen147
-\lineht@=\dimen148
+\eqnshift@=\dimen145
+\alignsep@=\dimen146
+\tagshift@=\dimen147
+\tagwidth@=\dimen148
+\totwidth@=\dimen149
+\lineht@=\dimen150
 \@envbody=\toks21
 \multlinegap=\skip50
 \multlinetaggap=\skip51
@@ -203,11 +203,11 @@ Package: mathpazo 2020/03/25 PSNFSS-v9.3 Palatino w/ Pazo Math (D.Puga, WaS)
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/aligned-overset\alig
 ned-overset.sty
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
-Package: expl3 2022-07-04 L3 programming layer (loader) 
+Package: expl3 2022-11-02 L3 programming layer (loader) 
 
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-
 pdftex.def
-File: l3backend-pdftex.def 2022-07-01 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count276
 \l__pdf_internal_box=\box53
 ))
@@ -228,8 +228,8 @@ Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count277
 \calc@Bcount=\count278
-\calc@Adimen=\dimen149
-\calc@Bdimen=\dimen150
+\calc@Adimen=\dimen151
+\calc@Bdimen=\dimen152
 \calc@Askip=\skip52
 \calc@Bskip=\skip53
 LaTeX Info: Redefining \setlength on input line 80.
@@ -242,16 +242,16 @@ y
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
 \g_MT_multlinerow_int=\count280
-\l_MT_multwidth_dim=\dimen151
+\l_MT_multwidth_dim=\dimen153
 \origjot=\skip55
-\l_MT_shortvdotswithinadjustabove_dim=\dimen152
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen153
-\l_MT_above_intertext_sep=\dimen154
-\l_MT_below_intertext_sep=\dimen155
-\l_MT_above_shortintertext_sep=\dimen156
-\l_MT_below_shortintertext_sep=\dimen157
+\l_MT_shortvdotswithinadjustabove_dim=\dimen154
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen155
+\l_MT_above_intertext_sep=\dimen156
+\l_MT_below_intertext_sep=\dimen157
+\l_MT_above_shortintertext_sep=\dimen158
+\l_MT_below_shortintertext_sep=\dimen159
 \xmathstrut@box=\box54
-\xmathstrut@dim=\dimen158
+\xmathstrut@dim=\dimen160
 )
 \l__alignedsets_clap_box=\box55
 \l__alignedsets_full_box=\box56
@@ -281,31 +281,31 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
 
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.
 def
-File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen159
-\Gin@req@width=\dimen160
+\Gin@req@height=\dimen161
+\Gin@req@width=\dimen162
 )
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.st
 y
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen161
-\lightrulewidth=\dimen162
-\cmidrulewidth=\dimen163
-\belowrulesep=\dimen164
-\belowbottomsep=\dimen165
-\aboverulesep=\dimen166
-\abovetopsep=\dimen167
-\cmidrulesep=\dimen168
-\cmidrulekern=\dimen169
-\defaultaddspace=\dimen170
+\heavyrulewidth=\dimen163
+\lightrulewidth=\dimen164
+\cmidrulewidth=\dimen165
+\belowrulesep=\dimen166
+\belowbottomsep=\dimen167
+\aboverulesep=\dimen168
+\abovetopsep=\dimen169
+\cmidrulesep=\dimen170
+\cmidrulekern=\dimen171
+\defaultaddspace=\dimen172
 \@cmidla=\count281
 \@cmidlb=\count282
-\@aboverulesep=\dimen171
-\@belowrulesep=\dimen172
+\@aboverulesep=\dimen173
+\@belowrulesep=\dimen174
 \@thisruleclass=\count283
 \@lastruleclass=\count284
-\@thisrulewidth=\dimen173
+\@thisrulewidth=\dimen175
 )
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
@@ -313,20 +313,20 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
 
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
-Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
-\col@sep=\dimen174
+Package: array 2022/03/10 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen176
 \ar@mcellbox=\box57
-\extrarowheight=\dimen175
+\extrarowheight=\dimen177
 \NC@list=\toks25
 \extratabsurround=\skip56
 \backup@length=\skip57
 \ar@cellbox=\box58
 )
-\TX@col@width=\dimen176
-\TX@old@table=\dimen177
-\TX@old@col=\dimen178
-\TX@target=\dimen179
-\TX@delta=\dimen180
+\TX@col@width=\dimen178
+\TX@old@table=\dimen179
+\TX@old@col=\dimen180
+\TX@target=\dimen181
+\TX@delta=\dimen182
 \TX@cols=\count285
 \TX@ftn=\toks26
 )
@@ -344,14 +344,14 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 \Gm@cnth=\count286
 \Gm@cntv=\count287
 \c@Gm@tempcnt=\count288
-\Gm@bindingoffset=\dimen181
-\Gm@wd@mp=\dimen182
-\Gm@odd@mp=\dimen183
-\Gm@even@mp=\dimen184
-\Gm@layoutwidth=\dimen185
-\Gm@layoutheight=\dimen186
-\Gm@layouthoffset=\dimen187
-\Gm@layoutvoffset=\dimen188
+\Gm@bindingoffset=\dimen183
+\Gm@wd@mp=\dimen184
+\Gm@odd@mp=\dimen185
+\Gm@even@mp=\dimen186
+\Gm@layoutwidth=\dimen187
+\Gm@layoutheight=\dimen188
+\Gm@layouthoffset=\dimen189
+\Gm@layoutvoffset=\dimen190
 \Gm@dimlist=\toks27
 
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cf
@@ -370,12 +370,12 @@ Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \ttl@box=\box59
 \beforetitleunit=\skip58
 \aftertitleunit=\skip59
-\ttl@plus=\dimen189
-\ttl@minus=\dimen190
+\ttl@plus=\dimen191
+\ttl@minus=\dimen192
 \ttl@toksa=\toks28
-\titlewidth=\dimen191
-\titlewidthlast=\dimen192
-\titlewidthfirst=\dimen193
+\titlewidth=\dimen193
+\titlewidthlast=\dimen194
+\titlewidthfirst=\dimen195
 )
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.st
 y
@@ -682,7 +682,7 @@ File: biblatex.cfg
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Document encoding is UTF8 ....
 Package biblatex Info: ... and expl3
-(biblatex)             2022-07-04 L3 programming layer (loader) 
+(biblatex)             2022-11-02 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
 
@@ -713,8 +713,8 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 227.
 
-(C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex-dev/graphics\mathcol
-or.ltx)
+(C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.l
+tx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
 Package xcolor Info: Model `RGB' extended on input line 1369.
@@ -724,8 +724,7 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
-)
-(C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
+) (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
 Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/ppl/m/n --> OT1/lmr/m/n on input line 22.
@@ -759,8 +758,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/ppl/b/it --> OT1/lmr/bx/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
-)
-(C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
+) (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 )
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/upquote\upquote.sty
@@ -777,7 +775,7 @@ LaTeX Info: Redefining \noprotrusionifhmode on input line 1045.
 LaTeX Info: Redefining \leftprotrusion on input line 1046.
 LaTeX Info: Redefining \rightprotrusion on input line 1056.
 LaTeX Info: Redefining \textls on input line 1234.
-\MT@outer@kern=\dimen194
+\MT@outer@kern=\dimen196
 LaTeX Info: Redefining \textmicrotypecontext on input line 1858.
 \MT@listname@count=\count430
 
@@ -800,10 +798,10 @@ Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
 ) (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/framed\framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip92
-\fb@frw=\dimen195
-\fb@frh=\dimen196
-\FrameRule=\dimen197
-\FrameSep=\dimen198
+\fb@frw=\dimen197
+\fb@frh=\dimen198
+\FrameRule=\dimen199
+\FrameSep=\dimen256
 )
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
 Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
@@ -812,7 +810,7 @@ Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 \LTpre=\skip95
 \LTpost=\skip96
 \LTchunksize=\count431
-\LTcapwidth=\dimen199
+\LTcapwidth=\dimen257
 \LT@head=\box61
 \LT@firsthead=\box62
 \LT@foot=\box63
@@ -828,7 +826,7 @@ Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 tehyper.sty
 Package: footnotehyper 2021/08/13 v1.1e hyperref aware footnote.sty (JFB)
 \FNH@notes=\box66
-\FNH@width=\dimen256
+\FNH@width=\dimen258
 \FNH@toks=\toks31
 )
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bookmark.st
@@ -837,7 +835,7 @@ Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.st
 y
-Package: hyperref 2022-06-20 v7.00s Hypertext links for LaTeX
+Package: hyperref 2022-11-13 v7.00u Hypertext links for LaTeX
 
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdef
 inekeys.sty
@@ -870,12 +868,12 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count436
 )
-\@linkdim=\dimen257
+\@linkdim=\dimen259
 \Hy@linkcounter=\count437
 \Hy@pagecounter=\count438
 
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
-File: pd1enc.def 2022-06-20 v7.00s Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2022-11-13 v7.00u Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
@@ -890,7 +888,7 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 \Hy@SavedSpaceFactor=\count439
 
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
-File: puenc.def 2022-06-20 v7.00s Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2022-11-13 v7.00u Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
@@ -901,10 +899,10 @@ Package hyperref Info: Hyper index ON on input line 4170.
 Package hyperref Info: Plain pages OFF on input line 4177.
 Package hyperref Info: Backreferencing OFF on input line 4182.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4408.
+Package hyperref Info: Bookmarks ON on input line 4410.
 \c@Hy@tempcnt=\count440
-LaTeX Info: Redefining \url on input line 4746.
-\XeTeXLinkMargin=\dimen258
+LaTeX Info: Redefining \url on input line 4748.
+\XeTeXLinkMargin=\dimen260
 
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -915,15 +913,15 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
 \Fld@menulength=\count441
-\Field@Width=\dimen259
-\Fld@charsize=\dimen260
-Package hyperref Info: Hyper figures OFF on input line 6024.
-Package hyperref Info: Link nesting OFF on input line 6029.
-Package hyperref Info: Hyper index ON on input line 6032.
-Package hyperref Info: backreferencing OFF on input line 6039.
-Package hyperref Info: Link coloring OFF on input line 6044.
-Package hyperref Info: Link coloring with OCG OFF on input line 6049.
-Package hyperref Info: PDF/A mode OFF on input line 6054.
+\Field@Width=\dimen261
+\Fld@charsize=\dimen262
+Package hyperref Info: Hyper figures OFF on input line 6027.
+Package hyperref Info: Link nesting OFF on input line 6032.
+Package hyperref Info: Hyper index ON on input line 6035.
+Package hyperref Info: backreferencing OFF on input line 6042.
+Package hyperref Info: Link coloring OFF on input line 6047.
+Package hyperref Info: Link coloring with OCG OFF on input line 6052.
+Package hyperref Info: PDF/A mode OFF on input line 6057.
 
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.st
 y
@@ -937,7 +935,7 @@ package with kernel methods
 Package hyperref Info: Driver (autodetected): hpdftex.
 
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
-File: hpdftex.def 2022-06-20 v7.00s Hyperref driver for pdfTeX
+File: hpdftex.def 2022-11-13 v7.00u Hyperref driver for pdfTeX
 
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.s
 ty
@@ -1008,13 +1006,13 @@ LaTeX Font Info:    ... okay on input line 150.
 .mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count450
-\scratchdimen=\dimen261
+\scratchdimen=\dimen263
 \scratchbox=\box67
 \nofMPsegments=\count451
 \nofMParguments=\count452
 \everyMPshowfont=\toks32
 \MPscratchCnt=\count453
-\MPscratchDim=\dimen262
+\MPscratchDim=\dimen264
 \MPnumerator=\count454
 \makeMPintoPDFobject=\count455
 \everyMPtoPDFconversion=\toks33
@@ -1102,50 +1100,7 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'index.bbl' found.
- (index.bbl
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                alex2013
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                defries2010
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                gertler2016
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                goldgu2017
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                hipel1994
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                specht2015
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-)
+ (index.bbl)
 Package biblatex Info: Reference section=0 on input line 150.
 Package biblatex Info: Reference segment=0 on input line 150.
 LaTeX Info: Redefining \microtypecontext on input line 150.
@@ -1417,31 +1372,26 @@ LaTeX Warning: Hyper reference `acro:FEVD' on page xiv undefined on input line
 LaTeX Warning: Hyper reference `acro:FEVD' on page xiv undefined on input line 
 299.
 
-[14] [1]
+[14]
 \openout2 = `Chapters/Chapter1.aux'.
 
- (Chapters/Chapter1.tex [2
-
-
-]
+ (Chapters/Chapter1.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\\' on input line 3.
 
-[3]
+[1
 
-LaTeX Warning: Citation 'goldgu2017' on page 4 undefined on input line 21.
 
-[4]
+] [2]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
 6.
  (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-[5] [6]) [7]
+) [3] [4]) [5]
 \openout2 = `Chapters/Chapter2.aux'.
 
- (Chapters/Chapter2.tex [8
+ (Chapters/Chapter2.tex [6
 
 
 
@@ -1450,30 +1400,18 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\\' on input line 3.
-
-
-LaTeX Warning: Citation 'alex2013' on page 9 undefined on input line 20.
-
-
-LaTeX Warning: Citation 'gertler2016' on page 9 undefined on input line 23.
-
-
-LaTeX Warning: Citation 'specht2015' on page 9 undefined on input line 24.
-
-
-LaTeX Warning: Citation 'defries2010' on page 9 undefined on input line 28.
 
 
 Underfull \vbox (badness 1215) has occurred while \output is active []
 
- [9]
+ [7]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10])
-[11]
+ [8])
+[9]
 \openout2 = `Chapters/Chapter3.aux'.
 
- (Chapters/Chapter3.tex [12
+ (Chapters/Chapter3.tex [10
 
 
 
@@ -1483,19 +1421,29 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\\' on input line 3.
 
-<images/StudyArea.png, id=295, 844.8363pt x 597.432pt>
+<images/StudyArea.png, id=297, 844.8363pt x 597.432pt>
 File: images/StudyArea.png Graphic file (type png)
 <use images/StudyArea.png>
 Package pdftex.def Info: images/StudyArea.png  used on input line 15.
 (pdftex.def)             Requested size: 407.66965pt x 288.28648pt.
-[13] [14 <./images/StudyArea.png>] [15]
+[11] [12 <./images/StudyArea.png>] [13]
+Overfull \hbox (24.07903pt too wide) in paragraph at lines 47--50
+\T1/lmr/m/n/12 (-20) poses of this study, yt = $\OT1/zplm/m/n/12 (\OML/lmm/m/it
+/12 EVI[]\OT1/lmr/m/n/12 (-20) , \OML/lmm/m/it/12 Temperature[]\OT1/lmr/m/n/12 
+(-20) , \OML/lmm/m/it/12 Rain[]\OT1/lmr/m/n/12 (-20) , \OML/lmm/m/it/12 Precipi
+tation[]\OT1/lmr/m/n/12 (-20) , \OML/lmm/m/it/12 Drought[]\OT1/lmr/m/n/12 (-20)
+ , \OML/lmm/m/it/12 Evaporation[]\OT1/zplm/m/n/12 )[]$
+ []
 
-LaTeX Warning: Citation 'hipel1994' on page 16 undefined on input line 42.
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 54--56
 
-[16] [17] [18] [19] [20]
+ []
+
+[15] [16] [17] [18]
 Underfull \vbox (badness 3815) has occurred while \output is active []
 
- [21]
+ [19]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 178.
@@ -1505,7 +1453,7 @@ Overfull \hbox (2.99118pt too wide) in alignment at lines 189--189
 [][][][] 
  []
 
-) [22]
+) [20]
 \openout2 = `Chapters/Chapter4.aux'.
 
  (Chapters/Chapter4.tex
@@ -1527,7 +1475,7 @@ Underfull \hbox (badness 10000) in alignment at lines 26--26
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [23
+ [21
 
 
 
@@ -1546,13 +1494,13 @@ Overfull \hbox (2.24954pt too wide) in alignment at lines 54--54
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 56.
 
-<images/Map.png, id=384, 1025.33063pt x 496.10344pt>
+<images/Map.png, id=387, 1025.33063pt x 496.10344pt>
 File: images/Map.png Graphic file (type png)
 <use images/Map.png>
 Package pdftex.def Info: images/Map.png  used on input line 74.
 (pdftex.def)             Requested size: 407.66867pt x 197.24937pt.
-[24]
-<images/Correlation.png, id=390, 618.05907pt x 445.665pt>
+[22]
+<images/Correlation.png, id=394, 618.05907pt x 445.665pt>
 File: images/Correlation.png Graphic file (type png)
 <use images/Correlation.png>
 Package pdftex.def Info: images/Correlation.png  used on input line 83.
@@ -1560,11 +1508,11 @@ Package pdftex.def Info: images/Correlation.png  used on input line 83.
 
 Underfull \vbox (badness 3029) has occurred while \output is active []
 
- [25 <./images/Map.png>]
+ [23 <./images/Map.png>]
 
 Package hyperref Warning: Suppressing empty link on input line 89.
 
-[26 <./images/Correlation.png (PNG copy)>]
+[24 <./images/Correlation.png (PNG copy)>]
 
 Package hyperref Warning: Suppressing empty link on input line 113.
 
@@ -1577,7 +1525,7 @@ Underfull \hbox (badness 10000) in alignment at lines 147--147
 [][][][][][][] 
  []
 
-[27]
+[25]
 
 Package hyperref Warning: Suppressing empty link on input line 149.
 
@@ -1590,7 +1538,7 @@ Overfull \hbox (15.17882pt too wide) in alignment at lines 172--172
 [][][][][] 
  []
 
-<images/TimeSeries.png, id=407, 618.05907pt x 445.665pt>
+<images/TimeSeries.png, id=411, 618.05907pt x 445.665pt>
 File: images/TimeSeries.png Graphic file (type png)
 <use images/TimeSeries.png>
 Package pdftex.def Info: images/TimeSeries.png  used on input line 176.
@@ -1613,31 +1561,31 @@ Overfull \hbox (18.32433pt too wide) in alignment at lines 224--224
 [][][][][] 
  []
 
-[28] [29 <./images/TimeSeries.png>]
-<images/impose.png, id=419, 963.6pt x 542.025pt>
+[26] [27 <./images/TimeSeries.png>]
+<images/impose.png, id=422, 963.6pt x 542.025pt>
 File: images/impose.png Graphic file (type png)
 <use images/impose.png>
 Package pdftex.def Info: images/impose.png  used on input line 230.
 (pdftex.def)             Requested size: 452.96558pt x 254.79314pt.
-<images/fevd.png, id=421, 1056.94875pt x 647.41875pt>
+<images/fevd.png, id=424, 1056.94875pt x 647.41875pt>
 File: images/fevd.png Graphic file (type png)
 <use images/fevd.png>
 Package pdftex.def Info: images/fevd.png  used on input line 238.
 (pdftex.def)             Requested size: 407.66034pt x 249.70647pt.
- [30]
+ [28]
 
 Package hyperref Warning: Suppressing empty link on input line 242.
 
 
 Package hyperref Warning: Suppressing empty link on input line 244.
 
-[31 <./images/impose.png>]
+[29 <./images/impose.png>]
 Underfull \vbox (badness 2707) has occurred while \output is active []
 
- [32 <./images/fevd.png>]) [33]
+ [30 <./images/fevd.png>]) [31]
 \openout2 = `Chapters/Chapter5.aux'.
 
- (Chapters/Chapter5.tex [34
+ (Chapters/Chapter5.tex [32
 
 
 
@@ -1647,31 +1595,41 @@ Underfull \vbox (badness 2707) has occurred while \output is active []
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\\' on input line 1.
 
-[35]) [36] [37
+[33]) [34]
+
+Package biblatex Warning: No driver for 'web'.
+(biblatex)                Using fallback driver on input line 318.
+
+[35
 
 
 
 ]
 
-Package biblatex Warning: No driver for 'web_page'.
-(biblatex)                Using fallback driver on input line 320.
+Package biblatex Warning: No driver for 'arcticle'.
+(biblatex)                Using fallback driver on input line 318.
 
-[38]
+
+Package biblatex Warning: No driver for 'web_page'.
+(biblatex)                Using fallback driver on input line 318.
+
+[36] [37] [38
+
+]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
-28.
- (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+26.
+
+(C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-340.
+338.
 
 (C:\Users\Benjamin\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-[39
-
-]
-Overfull \hbox (22.50697pt too wide) in paragraph at lines 394--394
+[39]
+Overfull \hbox (22.50697pt too wide) in paragraph at lines 392--392
 []\T1/lmtt/m/n/12 Evapotranspiration <- ee$ImageCollection("NASA/FLDAS/NOAH01/C
 /GL/M/V001") %>%[] 
  []
@@ -1680,7 +1638,7 @@ Overfull \hbox (22.50697pt too wide) in paragraph at lines 394--394
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [40]
-Overfull \hbox (3.98196pt too wide) in paragraph at lines 428--428
+Overfull \hbox (3.98196pt too wide) in paragraph at lines 426--426
 []         \T1/lmtt/m/n/12 Precipitation       <- ee_extract(x = Precipitation 
 , y = aoi.ee,[] 
  []
@@ -1692,13 +1650,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [42] [43] [44
 
 ] [45]
-Overfull \hbox (34.85698pt too wide) in paragraph at lines 729--729
+Overfull \hbox (34.85698pt too wide) in paragraph at lines 727--727
 []\T1/lmtt/m/n/12 cc.evi <- ee_extract(x = modis.evi, y = hex["hex_id"], sf = F
 ALSE, scale = 250,[] 
  []
 
 
-Overfull \hbox (10.15697pt too wide) in paragraph at lines 729--729
+Overfull \hbox (10.15697pt too wide) in paragraph at lines 727--727
 []\T1/lmtt/m/n/12 evi.trend <- data.frame(hex_id = evi.df$hex_id, na.cnt = NA, 
 na.cnt.2 = NA,[] 
  []
@@ -1707,7 +1665,7 @@ na.cnt.2 = NA,[]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [46]
-Overfull \hbox (78.082pt too wide) in paragraph at lines 729--729
+Overfull \hbox (78.082pt too wide) in paragraph at lines 727--727
 []\T1/lmtt/m/n/12 mutate(month = month(as.Date(rownames(tsv))), year = year(as.
 Date(rownames(tsv)))) %>%[] 
  []
@@ -1716,13 +1674,13 @@ Date(rownames(tsv)))) %>%[]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [47]
-Overfull \hbox (71.907pt too wide) in paragraph at lines 729--729
+Overfull \hbox (71.907pt too wide) in paragraph at lines 727--727
 []\T1/lmtt/m/n/12 tdx <- ts(data = tdx$mean_evi, start = c(2000, 1), end = c(20
 22, 01), frequency = 12)[] 
  []
 
 
-Overfull \hbox (47.20699pt too wide) in paragraph at lines 729--729
+Overfull \hbox (47.20699pt too wide) in paragraph at lines 727--727
 []\T1/lmtt/m/n/12 tdx <- if(na.cnt > 0){imputeTS::na_kalman(tdx, model = "auto.
 arima", smooth = T)}[] 
  []
@@ -1731,13 +1689,13 @@ arima", smooth = T)}[]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [48]
-Overfull \hbox (65.732pt too wide) in paragraph at lines 729--729
+Overfull \hbox (65.732pt too wide) in paragraph at lines 727--727
 []\T1/lmtt/m/n/12 tdx.ns <- data.frame(time = c(1:length(tdx)), trend = tdx - t
 dx.dcp$time.series[,1])[] 
  []
 
 
-Overfull \hbox (71.907pt too wide) in paragraph at lines 729--729
+Overfull \hbox (71.907pt too wide) in paragraph at lines 727--727
 []\T1/lmtt/m/n/12 abline(a = trend.summ$coefficients[1,1], b = trend.summ$coeff
 icients[2,1], col=\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 red\TS1/lmtt/m/n/12 '\T1/lm
 tt/m/n/12 )[] 
@@ -1747,7 +1705,7 @@ tt/m/n/12 )[]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [49]
-Overfull \hbox (78.082pt too wide) in paragraph at lines 729--729
+Overfull \hbox (78.082pt too wide) in paragraph at lines 727--727
 []\T1/lmtt/m/n/12 mutate(month = month(as.Date(rownames(tsv))), year = year(as.
 Date(rownames(tsv)))) %>%[] 
  []
@@ -1756,19 +1714,19 @@ Date(rownames(tsv)))) %>%[]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [50]
-Overfull \hbox (71.9pt too wide) in paragraph at lines 729--729
+Overfull \hbox (71.9pt too wide) in paragraph at lines 727--727
 []\T1/lmtt/m/n/12 tdx <- ts(data = tdx$mean_evi, start = c(2001, 1), end = c(20
 19, 11), frequency = 12)[] 
  []
 
 
-Overfull \hbox (47.20699pt too wide) in paragraph at lines 729--729
+Overfull \hbox (47.20699pt too wide) in paragraph at lines 727--727
 []\T1/lmtt/m/n/12 tdx <- if(na.cnt > 0){imputeTS::na_kalman(tdx, model = "auto.
 arima", smooth = T)}[] 
  []
 
 
-Overfull \hbox (65.732pt too wide) in paragraph at lines 729--729
+Overfull \hbox (65.732pt too wide) in paragraph at lines 727--727
 []\T1/lmtt/m/n/12 tdx.ns <- data.frame(time = c(1:length(tdx)), trend = tdx - t
 dx.dcp$time.series[,1])[] 
  []
@@ -1780,13 +1738,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [52]
-Overfull \hbox (28.68198pt too wide) in paragraph at lines 729--729
+Overfull \hbox (28.68198pt too wide) in paragraph at lines 727--727
 [] \T1/lmtt/m/n/12 format(round(hex_trend$trend, 4), scientific = FALSE),"<br><
 b> P-Value:</b>",[] 
  []
 
 
-Overfull \hbox (41.03198pt too wide) in paragraph at lines 729--729
+Overfull \hbox (41.03198pt too wide) in paragraph at lines 727--727
 [] \T1/lmtt/m/n/12 "<br><b>Std Err: </b>",round(hex_trend$std.er, 4),"<br><b>Tr
 end Strength:</b>",[] 
  []
@@ -1798,46 +1756,46 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 1748) has occurred while \output is active []
 
  [54]
-Overfull \hbox (53.38199pt too wide) in paragraph at lines 754--754
+Overfull \hbox (53.38199pt too wide) in paragraph at lines 752--752
 []\T1/lmtt/m/n/12 colnames(DATA)<- c("Date","EVI","Precipitation","Evapiration"
 ,"TempMin","TempMax",[] 
  []
 
 
-Overfull \hbox (59.55699pt too wide) in paragraph at lines 769--769
+Overfull \hbox (59.55699pt too wide) in paragraph at lines 767--767
 []\T1/lmtt/m/n/12 non_collinear_vars(DATA,TempMin,TempMax,Evapiration,Precipita
 tion,Humidity,Drought,[] 
  []
 
 
-Overfull \hbox (22.50697pt too wide) in paragraph at lines 769--769
+Overfull \hbox (22.50697pt too wide) in paragraph at lines 767--767
 []\T1/lmtt/m/n/12 dplyr::select(Date,Drought, TempMin, Precipitation, TempMax, 
 Evapiration,EVI)
  []
 
 [55]
-Overfull \hbox (28.68198pt too wide) in paragraph at lines 819--819
+Overfull \hbox (28.68198pt too wide) in paragraph at lines 817--817
 []\T1/lmtt/m/n/12 Precipitation = ur.df(DATA$Precipitation, type=\TS1/lmtt/m/n/
 12 '\T1/lmtt/m/n/12 none\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 , selectlags = c("AIC
 ")),[] 
  []
 
 
-Overfull \hbox (3.98196pt too wide) in paragraph at lines 819--819
+Overfull \hbox (3.98196pt too wide) in paragraph at lines 817--817
 []\T1/lmtt/m/n/12 Evapiration = ur.df(DATA$Evapiration, type=\TS1/lmtt/m/n/12 '
 \T1/lmtt/m/n/12 none\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 , selectlags = c("AIC")),
 [] 
  []
 
 
-Overfull \hbox (34.85698pt too wide) in paragraph at lines 819--819
+Overfull \hbox (34.85698pt too wide) in paragraph at lines 817--817
 []\T1/lmtt/m/n/12 Precipitation = ur.df(DATA$Precipitation, type=\TS1/lmtt/m/n/
 12 '\T1/lmtt/m/n/12 drift\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 , selectlags = c("AI
 C")),[] 
  []
 
 
-Overfull \hbox (10.15697pt too wide) in paragraph at lines 819--819
+Overfull \hbox (10.15697pt too wide) in paragraph at lines 817--817
 []\T1/lmtt/m/n/12 Evapiration = ur.df(DATA$Evapiration, type=\TS1/lmtt/m/n/12 '
 \T1/lmtt/m/n/12 drift\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 , selectlags = c("AIC"))
 ,[] 
@@ -1847,35 +1805,35 @@ Overfull \hbox (10.15697pt too wide) in paragraph at lines 819--819
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [56]
-Overfull \hbox (34.85698pt too wide) in paragraph at lines 819--819
+Overfull \hbox (34.85698pt too wide) in paragraph at lines 817--817
 []\T1/lmtt/m/n/12 Precipitation = ur.df(DATA$Precipitation, type=\TS1/lmtt/m/n/
 12 '\T1/lmtt/m/n/12 trend\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 , selectlags = c("AI
 C")),[] 
  []
 
 
-Overfull \hbox (10.15697pt too wide) in paragraph at lines 819--819
+Overfull \hbox (10.15697pt too wide) in paragraph at lines 817--817
 []\T1/lmtt/m/n/12 Evapiration = ur.df(DATA$Evapiration, type=\TS1/lmtt/m/n/12 '
 \T1/lmtt/m/n/12 trend\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 , selectlags = c("AIC"))
 ,[] 
  []
 
 [57]
-Overfull \hbox (16.33197pt too wide) in paragraph at lines 885--885
+Overfull \hbox (16.33197pt too wide) in paragraph at lines 883--883
 []\T1/lmtt/m/n/12 Precipitation = ur.df(df$Precipitation, type=\TS1/lmtt/m/n/12
  '\T1/lmtt/m/n/12 none\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 , selectlags = c("AIC")
 ),[] 
  []
 
 
-Overfull \hbox (22.50697pt too wide) in paragraph at lines 885--885
+Overfull \hbox (22.50697pt too wide) in paragraph at lines 883--883
 []\T1/lmtt/m/n/12 Precipitation = ur.df(df$Precipitation, type=\TS1/lmtt/m/n/12
  '\T1/lmtt/m/n/12 drift\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 , selectlags = c("AIC"
 )),[] 
  []
 
 
-Overfull \hbox (22.50697pt too wide) in paragraph at lines 885--885
+Overfull \hbox (22.50697pt too wide) in paragraph at lines 883--883
 []\T1/lmtt/m/n/12 Precipitation = ur.df(df$Precipitation, type=\TS1/lmtt/m/n/12
  '\T1/lmtt/m/n/12 trend\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 , selectlags = c("AIC"
 )),[] 
@@ -1885,19 +1843,19 @@ Overfull \hbox (22.50697pt too wide) in paragraph at lines 885--885
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [58]
-Overfull \hbox (28.68198pt too wide) in paragraph at lines 937--937
+Overfull \hbox (28.68198pt too wide) in paragraph at lines 935--935
 []\T1/lmtt/m/n/12 cbind(t(df.adf.trend$Precipitation@teststat), df.adf.trend$Pr
 ecipitation@cval)[] 
  []
 
 
-Overfull \hbox (3.98196pt too wide) in paragraph at lines 937--937
+Overfull \hbox (3.98196pt too wide) in paragraph at lines 935--935
 []\T1/lmtt/m/n/12 cbind(t(df.adf.trend$Evapiration@teststat), df.adf.trend$Evap
 iration@cval)[] 
  []
 
 [59]
-Overfull \hbox (34.85698pt too wide) in paragraph at lines 957--957
+Overfull \hbox (34.85698pt too wide) in paragraph at lines 955--955
 []\T1/lmtt/m/n/12 EVI <- ts(data = df$EVI, start = c(2000, 1), end = c(2022, 01
 ), frequency = 12)[] 
  []
@@ -1906,121 +1864,121 @@ Overfull \hbox (34.85698pt too wide) in paragraph at lines 957--957
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [60]
-Overfull \hbox (158.35704pt too wide) in paragraph at lines 957--957
+Overfull \hbox (158.35704pt too wide) in paragraph at lines 955--955
 []\T1/lmtt/m/n/12 Precipitation <- ts(data = df$Precipitation, start = c(2000, 
 1), end = c(2022, 01), frequency = 12)[] 
  []
 
 
-Overfull \hbox (133.65703pt too wide) in paragraph at lines 957--957
+Overfull \hbox (133.65703pt too wide) in paragraph at lines 955--955
 []\T1/lmtt/m/n/12 Evapiration <- ts(data = df$Evapiration, start = c(2000, 1), 
 end = c(2022, 01), frequency = 12)[] 
  []
 
 
-Overfull \hbox (84.257pt too wide) in paragraph at lines 957--957
+Overfull \hbox (84.257pt too wide) in paragraph at lines 955--955
 []\T1/lmtt/m/n/12 TempMin <- ts(data = df$TempMin, start = c(2000, 1), end = c(
 2022, 01), frequency = 12)[] 
  []
 
 
-Overfull \hbox (84.257pt too wide) in paragraph at lines 957--957
+Overfull \hbox (84.257pt too wide) in paragraph at lines 955--955
 []\T1/lmtt/m/n/12 TempMax <- ts(data = df$TempMax, start = c(2000, 1), end = c(
 2022, 01), frequency = 12)[] 
  []
 
 
-Overfull \hbox (84.257pt too wide) in paragraph at lines 957--957
+Overfull \hbox (84.257pt too wide) in paragraph at lines 955--955
 []\T1/lmtt/m/n/12 Drought <- ts(data = df$Drought, start = c(2000, 1), end = c(
 2022, 01), frequency = 12)[] 
  []
 
 
-Overfull \hbox (10.15697pt too wide) in paragraph at lines 957--957
+Overfull \hbox (10.15697pt too wide) in paragraph at lines 955--955
 []\T1/lmtt/m/n/12 TimeSeries1 <- cbind(EVI,Precipitation,Evapiration,TempMin,Te
 mpMax,Drought)[] 
  []
 
 
-Overfull \hbox (47.20699pt too wide) in paragraph at lines 971--971
+Overfull \hbox (47.20699pt too wide) in paragraph at lines 969--969
 []\T1/lmtt/m/n/12 EVI <- ts(data = DATA$EVI, start = c(2000, 1), end = c(2022, 
 01), frequency = 12)[] 
  []
 
 
-Overfull \hbox (71.907pt too wide) in paragraph at lines 971--971
+Overfull \hbox (71.907pt too wide) in paragraph at lines 969--969
 []\T1/lmtt/m/n/12 Precipitation <- ts(data = DATA$Precipitation, start = c(2000
 , 1), end = c(2022, 01),[] 
  []
 
 
-Overfull \hbox (47.20699pt too wide) in paragraph at lines 971--971
+Overfull \hbox (47.20699pt too wide) in paragraph at lines 969--969
 []\T1/lmtt/m/n/12 Evapiration <- ts(data = DATA$Evapiration, start = c(2000, 1)
 , end = c(2022, 01),[] 
  []
 
 
-Overfull \hbox (96.60701pt too wide) in paragraph at lines 971--971
+Overfull \hbox (96.60701pt too wide) in paragraph at lines 969--969
 []\T1/lmtt/m/n/12 TempMin <- ts(data = DATA$TempMin, start = c(2000, 1), end = 
 c(2022, 01), frequency = 12)[] 
  []
 
 
-Overfull \hbox (96.60701pt too wide) in paragraph at lines 971--971
+Overfull \hbox (96.60701pt too wide) in paragraph at lines 969--969
 []\T1/lmtt/m/n/12 TempMax <- ts(data = DATA$TempMax, start = c(2000, 1), end = 
 c(2022, 01), frequency = 12)[] 
  []
 
 
-Overfull \hbox (96.60701pt too wide) in paragraph at lines 971--971
+Overfull \hbox (96.60701pt too wide) in paragraph at lines 969--969
 []\T1/lmtt/m/n/12 Drought <- ts(data = DATA$Drought, start = c(2000, 1), end = 
 c(2022, 01), frequency = 12)[] 
  []
 
 
-Overfull \hbox (3.98196pt too wide) in paragraph at lines 971--971
+Overfull \hbox (3.98196pt too wide) in paragraph at lines 969--969
 []\T1/lmtt/m/n/12 TimeSeries <- cbind(EVI,Precipitation,Evapiration,TempMin,Tem
 pMax,Drought)[] 
  []
 
 [61]
-Overfull \hbox (65.732pt too wide) in paragraph at lines 997--997
+Overfull \hbox (65.732pt too wide) in paragraph at lines 995--995
 []\T1/lmtt/m/n/12 LagSelection <-VARselect(TimeSeries,type = "const", lag.max =
  12) #highest lag order[] 
  []
 
 
-Overfull \hbox (59.55699pt too wide) in paragraph at lines 997--997
+Overfull \hbox (59.55699pt too wide) in paragraph at lines 995--995
 []\T1/lmtt/m/n/12 kable(t(LagSelection$criteria))%>%kable_styling(latex_options
  = c("repeat_header"))[] 
  []
 
 
-Overfull \hbox (65.732pt too wide) in paragraph at lines 997--997
+Overfull \hbox (65.732pt too wide) in paragraph at lines 995--995
 []\T1/lmtt/m/n/12 kable(t(LagSelection1$criteria))%>%kable_styling(latex_option
 s = c("repeat_header"))[] 
  []
 
 
-Overfull \hbox (84.257pt too wide) in paragraph at lines 1007--1007
+Overfull \hbox (84.257pt too wide) in paragraph at lines 1005--1005
 []\T1/lmtt/m/n/12 Model <- VAR(TimeSeries,p= 8,lag.max = 12,season = NULL,  exo
 gen = NULL,type = "const")[] 
  []
 
 
-Overfull \hbox (102.78201pt too wide) in paragraph at lines 1015--1015
+Overfull \hbox (102.78201pt too wide) in paragraph at lines 1013--1013
 []\T1/lmtt/m/n/12 Model1 <- VAR(TimeSeries1,p= 10,lag.max = 12,season = NULL,  
 exogen = NULL,type = "const")[] 
  []
 
 [62]
-Overfull \hbox (102.78201pt too wide) in paragraph at lines 1042--1042
+Overfull \hbox (102.78201pt too wide) in paragraph at lines 1040--1040
 []\T1/lmtt/m/n/12 Model2 <- VAR(TimeSeries1,p= 10,lag.max = 12,season = NULL,  
 exogen = NULL,type = "const")[] 
  []
 
 
-Overfull \hbox (34.85698pt too wide) in paragraph at lines 1117--1117
+Overfull \hbox (34.85698pt too wide) in paragraph at lines 1115--1115
 []\T1/lmtt/m/n/12 plot.varfevd  <-function (x, plot.type = c("multiple", "singl
 e"), names = NULL,[] 
  []
@@ -2042,11 +2000,11 @@ Package logreq Info: Writing requests to 'index.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25580 strings out of 478338
- 455862 string characters out of 2835284
- 1303096 words of memory out of 3000000
- 43206 multiletter control sequences out of 15000+600000
- 545945 words of font info for 175 fonts, out of 8000000 for 9000
+ 25660 strings out of 475285
+ 457900 string characters out of 2772703
+ 1347904 words of memory out of 3000000
+ 46305 multiletter control sequences out of 15000+600000
+ 547178 words of font info for 188 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,16n,81p,1388b,5044s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/Benjamin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.en
@@ -2072,9 +2030,9 @@ l/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/Benjamin/AppData/Lo
 cal/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/Benjamin/AppData/
 Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Users/Benjamin/AppDa
 ta/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb>
-Output written on index.pdf (81 pages, 2900485 bytes).
+Output written on index.pdf (81 pages, 2910420 bytes).
 PDF statistics:
- 866 PDF objects out of 1000 (max. 8388607)
- 195 named destinations out of 1000 (max. 500000)
+ 884 PDF objects out of 1000 (max. 8388607)
+ 201 named destinations out of 1000 (max. 500000)
  35260 words of extra memory for PDF output out of 35830 (max. 10000000)
 

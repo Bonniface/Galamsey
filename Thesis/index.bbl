@@ -220,6 +220,94 @@
       \field{pages}{70\bibrangedash 79}
       \range{pages}{10}
     \endentry
+    \entry{goldgu2017}{web}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=5f51ea176f6f64240f98151f862bfb8e}{%
+           family={BURROWS},
+           familyi={B\bibinitperiod},
+           given={EDWARD},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b57d4dcdbe85d5096150bef837ce47f6}{%
+           family={BIRD},
+           familyi={B\bibinitperiod},
+           given={LUCIA},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9877c01bed266da6d01b50d509740d6e}
+      \strng{fullhash}{9877c01bed266da6d01b50d509740d6e}
+      \strng{bibnamehash}{9877c01bed266da6d01b50d509740d6e}
+      \strng{authorbibnamehash}{9877c01bed266da6d01b50d509740d6e}
+      \strng{authornamehash}{9877c01bed266da6d01b50d509740d6e}
+      \strng{authorfullhash}{9877c01bed266da6d01b50d509740d6e}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Gold, guns and China: Ghana’s fight to end galamsey}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://africanarguments.org/2017/05/gold-guns-and-china-ghanas-fight-to-end-galamsey/
+      \endverb
+      \verb{url}
+      \verb https://africanarguments.org/2017/05/gold-guns-and-china-ghanas-fight-to-end-galamsey/
+      \endverb
+    \endentry
+    \entry{defries2010deforestation}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=973150ffa28f16777bb27bc9a9cd3b69}{%
+           family={DeFries},
+           familyi={D\bibinitperiod},
+           given={Ruth\bibnamedelima S},
+           giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6fbc7e0026be0622e904e93de322ab85}{%
+           family={Rudel},
+           familyi={R\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0d5d0ea34c92e98930815e43141e5a66}{%
+           family={Uriarte},
+           familyi={U\bibinitperiod},
+           given={Maria},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ccc6bdf93ca65a95f6cc3745fa4123d4}{%
+           family={Hansen},
+           familyi={H\bibinitperiod},
+           given={Matthew},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{d6e95edc17653661db5c61c3ffd2313a}
+      \strng{fullhash}{97cddb2ff711e88224a31e0cad2dc7d4}
+      \strng{bibnamehash}{97cddb2ff711e88224a31e0cad2dc7d4}
+      \strng{authorbibnamehash}{97cddb2ff711e88224a31e0cad2dc7d4}
+      \strng{authornamehash}{d6e95edc17653661db5c61c3ffd2313a}
+      \strng{authorfullhash}{97cddb2ff711e88224a31e0cad2dc7d4}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature Geoscience}
+      \field{number}{3}
+      \field{title}{Deforestation driven by urban population growth and agricultural trade in the twenty-first century}
+      \field{volume}{3}
+      \field{year}{2010}
+      \field{pages}{178\bibrangedash 181}
+      \range{pages}{4}
+    \endentry
     \entry{dickey1979distribution}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=f71b803d01236b0fcd2bb3e25e740864}{%
@@ -258,6 +346,54 @@
       \field{year}{1979}
       \field{pages}{427\bibrangedash 431}
       \range{pages}{5}
+    \endentry
+    \entry{gertler2016demand}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=fbef8be40ff7f888d6c277568f68db9b}{%
+           family={Gertler},
+           familyi={G\bibinitperiod},
+           given={Paul\bibnamedelima J},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3154c474aee13ce3b79b06530a826d3f}{%
+           family={Shelef},
+           familyi={S\bibinitperiod},
+           given={Orie},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=19df16d16f4fd0bf4a4e521b3bf35178}{%
+           family={Wolfram},
+           familyi={W\bibinitperiod},
+           given={Catherine\bibnamedelima D},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=38a703a5ad3949680d5763f030a68e43}{%
+           family={Fuchs},
+           familyi={F\bibinitperiod},
+           given={Alan},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{12cbc9d757084cbc0503c66bc8011281}
+      \strng{fullhash}{a754ca1189deb77c6e8ffadbdd2940f4}
+      \strng{bibnamehash}{a754ca1189deb77c6e8ffadbdd2940f4}
+      \strng{authorbibnamehash}{a754ca1189deb77c6e8ffadbdd2940f4}
+      \strng{authornamehash}{12cbc9d757084cbc0503c66bc8011281}
+      \strng{authorfullhash}{a754ca1189deb77c6e8ffadbdd2940f4}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Economic Review}
+      \field{number}{6}
+      \field{title}{The demand for energy-using assets among the world's rising middle classes}
+      \field{volume}{106}
+      \field{year}{2016}
+      \field{pages}{1366\bibrangedash 1401}
+      \range{pages}{36}
     \endentry
     \entry{Gracia2018}{article}{}
       \name{author}{1}{}{%
@@ -353,6 +489,40 @@
       \verb http://www.gbcghana.com/1.11923484
       \endverb
     \endentry
+    \entry{hipel1994time}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=51abd6ce5beaf40d4b4c652e8d9dbd5d}{%
+           family={Hipel},
+           familyi={H\bibinitperiod},
+           given={Keith\bibnamedelima W},
+           giveni={K\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1b0d202d83d1ec9220b9814f52dd2962}{%
+           family={McLeod},
+           familyi={M\bibinitperiod},
+           given={A\bibnamedelima Ian},
+           giveni={A\bibinitperiod\bibinitdelim I\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{95dab7caade019a5166ce3b06488aab9}
+      \strng{fullhash}{95dab7caade019a5166ce3b06488aab9}
+      \strng{bibnamehash}{95dab7caade019a5166ce3b06488aab9}
+      \strng{authorbibnamehash}{95dab7caade019a5166ce3b06488aab9}
+      \strng{authornamehash}{95dab7caade019a5166ce3b06488aab9}
+      \strng{authorfullhash}{95dab7caade019a5166ce3b06488aab9}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Time series modelling of water resources and environmental systems}
+      \field{year}{1994}
+    \endentry
     \entry{kattge2011try}{article}{}
       \true{moreauthor}
       \true{morelabelname}
@@ -441,6 +611,37 @@
       \field{year}{2011}
       \field{pages}{2905\bibrangedash 2935}
       \range{pages}{31}
+    \endentry
+    \entry{alex2013climate}{arcticle}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c684b6ed972cc0b14e215a9d803d08c0}{%
+           family={Kirby},
+           familyi={K\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c684b6ed972cc0b14e215a9d803d08c0}
+      \strng{fullhash}{c684b6ed972cc0b14e215a9d803d08c0}
+      \strng{bibnamehash}{c684b6ed972cc0b14e215a9d803d08c0}
+      \strng{authorbibnamehash}{c684b6ed972cc0b14e215a9d803d08c0}
+      \strng{authornamehash}{c684b6ed972cc0b14e215a9d803d08c0}
+      \strng{authorfullhash}{c684b6ed972cc0b14e215a9d803d08c0}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Climate Change Responsible for Global Vegetation Change}
+      \field{year}{2013}
+      \verb{urlraw}
+      \verb https://www.climatecentral.org/news/climate-change-responsible-for-global-vegetation-change-15883
+      \endverb
+      \verb{url}
+      \verb https://www.climatecentral.org/news/climate-change-responsible-for-global-vegetation-change-15883
+      \endverb
     \endentry
     \entry{lutkepohl2005new}{book}{}
       \name{author}{1}{}{%
@@ -895,6 +1096,62 @@
       \field{year}{1998}
       \field{pages}{24\bibrangedash 36}
       \range{pages}{13}
+    \endentry
+    \entry{specht2015burning}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=f3de402d3c7d7d39073c667ec5f77c45}{%
+           family={Specht},
+           familyi={S\bibinitperiod},
+           given={Maria\bibnamedelima Joana},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=634bc6c88f3796c241c1b87958c556c5}{%
+           family={Pinto},
+           familyi={P\bibinitperiod},
+           given={Severino\bibnamedelimb Rodrigo\bibnamedelima Ribeiro},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=19a3c4202da289073230f1c9c94f264b}{%
+           family={Albuquerque},
+           familyi={A\bibinitperiod},
+           given={Ulysses\bibnamedelima Paulino},
+           giveni={U\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=29e513aaf28a373132fc5fa991ac4402}{%
+           family={Tabarelli},
+           familyi={T\bibinitperiod},
+           given={Marcelo},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=07e3cf25b152bd7ff9be8363cee200c6}{%
+           family={Melo},
+           familyi={M\bibinitperiod},
+           given={Felipe\bibnamedelima PL},
+           giveni={F\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{c7cecac5a3059363c952cb7128aca728}
+      \strng{fullhash}{307c43b763bf1dd5cf31c14a8427ad65}
+      \strng{bibnamehash}{307c43b763bf1dd5cf31c14a8427ad65}
+      \strng{authorbibnamehash}{307c43b763bf1dd5cf31c14a8427ad65}
+      \strng{authornamehash}{c7cecac5a3059363c952cb7128aca728}
+      \strng{authorfullhash}{307c43b763bf1dd5cf31c14a8427ad65}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Global Ecology and Conservation}
+      \field{title}{Burning biodiversity: Fuelwood harvesting causes forest degradation in human-dominated tropical landscapes}
+      \field{volume}{3}
+      \field{year}{2015}
+      \field{pages}{200\bibrangedash 209}
+      \range{pages}{10}
     \endentry
   \enddatalist
   \datalist[entry]{apa/global//global/global}
@@ -1099,6 +1356,94 @@
       \field{pages}{70\bibrangedash 79}
       \range{pages}{10}
     \endentry
+    \entry{goldgu2017}{web}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=5f51ea176f6f64240f98151f862bfb8e}{%
+           family={BURROWS},
+           familyi={B\bibinitperiod},
+           given={EDWARD},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b57d4dcdbe85d5096150bef837ce47f6}{%
+           family={BIRD},
+           familyi={B\bibinitperiod},
+           given={LUCIA},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9877c01bed266da6d01b50d509740d6e}
+      \strng{fullhash}{9877c01bed266da6d01b50d509740d6e}
+      \strng{bibnamehash}{9877c01bed266da6d01b50d509740d6e}
+      \strng{authorbibnamehash}{9877c01bed266da6d01b50d509740d6e}
+      \strng{authornamehash}{9877c01bed266da6d01b50d509740d6e}
+      \strng{authorfullhash}{9877c01bed266da6d01b50d509740d6e}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Gold, guns and China: Ghana’s fight to end galamsey}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://africanarguments.org/2017/05/gold-guns-and-china-ghanas-fight-to-end-galamsey/
+      \endverb
+      \verb{url}
+      \verb https://africanarguments.org/2017/05/gold-guns-and-china-ghanas-fight-to-end-galamsey/
+      \endverb
+    \endentry
+    \entry{defries2010deforestation}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=973150ffa28f16777bb27bc9a9cd3b69}{%
+           family={DeFries},
+           familyi={D\bibinitperiod},
+           given={Ruth\bibnamedelima S},
+           giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6fbc7e0026be0622e904e93de322ab85}{%
+           family={Rudel},
+           familyi={R\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0d5d0ea34c92e98930815e43141e5a66}{%
+           family={Uriarte},
+           familyi={U\bibinitperiod},
+           given={Maria},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ccc6bdf93ca65a95f6cc3745fa4123d4}{%
+           family={Hansen},
+           familyi={H\bibinitperiod},
+           given={Matthew},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{d6e95edc17653661db5c61c3ffd2313a}
+      \strng{fullhash}{97cddb2ff711e88224a31e0cad2dc7d4}
+      \strng{bibnamehash}{97cddb2ff711e88224a31e0cad2dc7d4}
+      \strng{authorbibnamehash}{97cddb2ff711e88224a31e0cad2dc7d4}
+      \strng{authornamehash}{d6e95edc17653661db5c61c3ffd2313a}
+      \strng{authorfullhash}{97cddb2ff711e88224a31e0cad2dc7d4}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature Geoscience}
+      \field{number}{3}
+      \field{title}{Deforestation driven by urban population growth and agricultural trade in the twenty-first century}
+      \field{volume}{3}
+      \field{year}{2010}
+      \field{pages}{178\bibrangedash 181}
+      \range{pages}{4}
+    \endentry
     \entry{dickey1979distribution}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=f71b803d01236b0fcd2bb3e25e740864}{%
@@ -1137,6 +1482,54 @@
       \field{year}{1979}
       \field{pages}{427\bibrangedash 431}
       \range{pages}{5}
+    \endentry
+    \entry{gertler2016demand}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=fbef8be40ff7f888d6c277568f68db9b}{%
+           family={Gertler},
+           familyi={G\bibinitperiod},
+           given={Paul\bibnamedelima J},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3154c474aee13ce3b79b06530a826d3f}{%
+           family={Shelef},
+           familyi={S\bibinitperiod},
+           given={Orie},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=19df16d16f4fd0bf4a4e521b3bf35178}{%
+           family={Wolfram},
+           familyi={W\bibinitperiod},
+           given={Catherine\bibnamedelima D},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=38a703a5ad3949680d5763f030a68e43}{%
+           family={Fuchs},
+           familyi={F\bibinitperiod},
+           given={Alan},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{12cbc9d757084cbc0503c66bc8011281}
+      \strng{fullhash}{a754ca1189deb77c6e8ffadbdd2940f4}
+      \strng{bibnamehash}{a754ca1189deb77c6e8ffadbdd2940f4}
+      \strng{authorbibnamehash}{a754ca1189deb77c6e8ffadbdd2940f4}
+      \strng{authornamehash}{12cbc9d757084cbc0503c66bc8011281}
+      \strng{authorfullhash}{a754ca1189deb77c6e8ffadbdd2940f4}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Economic Review}
+      \field{number}{6}
+      \field{title}{The demand for energy-using assets among the world's rising middle classes}
+      \field{volume}{106}
+      \field{year}{2016}
+      \field{pages}{1366\bibrangedash 1401}
+      \range{pages}{36}
     \endentry
     \entry{Gracia2018}{article}{}
       \name{author}{1}{}{%
@@ -1232,6 +1625,40 @@
       \verb http://www.gbcghana.com/1.11923484
       \endverb
     \endentry
+    \entry{hipel1994time}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=51abd6ce5beaf40d4b4c652e8d9dbd5d}{%
+           family={Hipel},
+           familyi={H\bibinitperiod},
+           given={Keith\bibnamedelima W},
+           giveni={K\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1b0d202d83d1ec9220b9814f52dd2962}{%
+           family={McLeod},
+           familyi={M\bibinitperiod},
+           given={A\bibnamedelima Ian},
+           giveni={A\bibinitperiod\bibinitdelim I\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{95dab7caade019a5166ce3b06488aab9}
+      \strng{fullhash}{95dab7caade019a5166ce3b06488aab9}
+      \strng{bibnamehash}{95dab7caade019a5166ce3b06488aab9}
+      \strng{authorbibnamehash}{95dab7caade019a5166ce3b06488aab9}
+      \strng{authornamehash}{95dab7caade019a5166ce3b06488aab9}
+      \strng{authorfullhash}{95dab7caade019a5166ce3b06488aab9}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Time series modelling of water resources and environmental systems}
+      \field{year}{1994}
+    \endentry
     \entry{kattge2011try}{article}{}
       \true{moreauthor}
       \true{morelabelname}
@@ -1320,6 +1747,37 @@
       \field{year}{2011}
       \field{pages}{2905\bibrangedash 2935}
       \range{pages}{31}
+    \endentry
+    \entry{alex2013climate}{arcticle}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c684b6ed972cc0b14e215a9d803d08c0}{%
+           family={Kirby},
+           familyi={K\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c684b6ed972cc0b14e215a9d803d08c0}
+      \strng{fullhash}{c684b6ed972cc0b14e215a9d803d08c0}
+      \strng{bibnamehash}{c684b6ed972cc0b14e215a9d803d08c0}
+      \strng{authorbibnamehash}{c684b6ed972cc0b14e215a9d803d08c0}
+      \strng{authornamehash}{c684b6ed972cc0b14e215a9d803d08c0}
+      \strng{authorfullhash}{c684b6ed972cc0b14e215a9d803d08c0}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Climate Change Responsible for Global Vegetation Change}
+      \field{year}{2013}
+      \verb{urlraw}
+      \verb https://www.climatecentral.org/news/climate-change-responsible-for-global-vegetation-change-15883
+      \endverb
+      \verb{url}
+      \verb https://www.climatecentral.org/news/climate-change-responsible-for-global-vegetation-change-15883
+      \endverb
     \endentry
     \entry{lutkepohl2005new}{book}{}
       \name{author}{1}{}{%
@@ -1775,13 +2233,63 @@
       \field{pages}{24\bibrangedash 36}
       \range{pages}{13}
     \endentry
+    \entry{specht2015burning}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=f3de402d3c7d7d39073c667ec5f77c45}{%
+           family={Specht},
+           familyi={S\bibinitperiod},
+           given={Maria\bibnamedelima Joana},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=634bc6c88f3796c241c1b87958c556c5}{%
+           family={Pinto},
+           familyi={P\bibinitperiod},
+           given={Severino\bibnamedelimb Rodrigo\bibnamedelima Ribeiro},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=19a3c4202da289073230f1c9c94f264b}{%
+           family={Albuquerque},
+           familyi={A\bibinitperiod},
+           given={Ulysses\bibnamedelima Paulino},
+           giveni={U\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=29e513aaf28a373132fc5fa991ac4402}{%
+           family={Tabarelli},
+           familyi={T\bibinitperiod},
+           given={Marcelo},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=07e3cf25b152bd7ff9be8363cee200c6}{%
+           family={Melo},
+           familyi={M\bibinitperiod},
+           given={Felipe\bibnamedelima PL},
+           giveni={F\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{c7cecac5a3059363c952cb7128aca728}
+      \strng{fullhash}{307c43b763bf1dd5cf31c14a8427ad65}
+      \strng{bibnamehash}{307c43b763bf1dd5cf31c14a8427ad65}
+      \strng{authorbibnamehash}{307c43b763bf1dd5cf31c14a8427ad65}
+      \strng{authornamehash}{c7cecac5a3059363c952cb7128aca728}
+      \strng{authorfullhash}{307c43b763bf1dd5cf31c14a8427ad65}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Global Ecology and Conservation}
+      \field{title}{Burning biodiversity: Fuelwood harvesting causes forest degradation in human-dominated tropical landscapes}
+      \field{volume}{3}
+      \field{year}{2015}
+      \field{pages}{200\bibrangedash 209}
+      \range{pages}{10}
+    \endentry
   \enddatalist
-  \missing{alex2013}
-  \missing{defries2010}
-  \missing{gertler2016}
-  \missing{goldgu2017}
-  \missing{hipel1994}
-  \missing{specht2015}
 \endrefsection
 \endinput
 
