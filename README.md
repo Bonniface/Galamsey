@@ -85,7 +85,6 @@ This research highlights the importance of considering climate variability in un
 
 Please refer to the full research paper for a comprehensive list of references and citations.
 
----
 
 **Contact Information:**
 
